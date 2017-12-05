@@ -1,3 +1,7 @@
+swlcalc
+=======
+swlcalc is (will be) a gear planner for Secret World Legends. It is based on tswcalc from joakibj (see below)
+
 tswcalc
 =======
 
