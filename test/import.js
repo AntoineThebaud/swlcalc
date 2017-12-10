@@ -10,7 +10,7 @@ module('import-integration-tests', {
     }
 });
 
-test('should import URL and set summary and slots for 0.4.0 links', 94, function() {
+test('should import URL and set summary and slots for 0.4.0 links', 92, function() {
     var vars = {
         head: '4,1,5,5,0,4,0',
         luck: '4,3,4,8,0,4,0',
@@ -34,9 +34,7 @@ test('should import URL and set summary and slots for 0.4.0 links', 94, function
     equal($('#stat-critical-chance').html(), '5.0 %');
     equal($('#stat-critical-power').html(), '0');
     equal($('#stat-critical-power-percentage').html(), '25.0 %');
-    equal($('#stat-penetration-rating').html(), '0');
     equal($('#stat-hit-rating').html(), '+504');
-    equal($('#stat-block-rating').html(), '+691');
     equal($('#stat-defense-rating').html(), '+576');
     equal($('#stat-evade-rating').html(), '0');
     equal($('#stat-physical-protection').html(), '+660');
@@ -131,7 +129,7 @@ test('should import URL and set summary and slots for 0.4.0 links', 94, function
     equal($('#occult-pick-signet').val(), 'none');
 });
 
-test('should import URL and set summary and slots for pre-1.3 links', 98, function() {
+test('should import URL and set summary and slots for pre-1.3 links', 96, function() {
     var vars = {
         head: '4,1,5,5,0,4,0,3,18',
         luck: '4,3,4,8,0,4,0,3,39',
@@ -155,9 +153,7 @@ test('should import URL and set summary and slots for pre-1.3 links', 98, functi
     equal($('#stat-critical-chance').html(), '5.0 %');
     equal($('#stat-critical-power').html(), '0');
     equal($('#stat-critical-power-percentage').html(), '25.0 %');
-    equal($('#stat-penetration-rating').html(), '0');
     equal($('#stat-hit-rating').html(), '+504');
-    equal($('#stat-block-rating').html(), '+691');
     equal($('#stat-defense-rating').html(), '+576');
     equal($('#stat-evade-rating').html(), '0');
     equal($('#stat-physical-protection').html(), '+660');
@@ -256,7 +252,7 @@ test('should import URL and set summary and slots for pre-1.3 links', 98, functi
     equal($('#occult-pick-signet').val(), '41');
 });
 
-test('should import URL and set summary and slots for 1.3 links (secondary weapon added)', 110, function() {
+test('should import URL and set summary and slots for 1.3 links (secondary weapon added)', 108, function() {
     var vars = {
         head: '4,1,5,5,0,4,0,3,18',
         luck: '4,3,4,8,0,4,0,3,39',
@@ -281,9 +277,7 @@ test('should import URL and set summary and slots for 1.3 links (secondary weapo
     equal($('#stat-critical-chance').html(), '5.0 %');
     equal($('#stat-critical-power').html(), '0');
     equal($('#stat-critical-power-percentage').html(), '25.0 %');
-    equal($('#stat-penetration-rating').html(), '0');
     equal($('#stat-hit-rating').html(), '+504');
-    equal($('#stat-block-rating').html(), '+691');
     equal($('#stat-defense-rating').html(), '+576');
     equal($('#stat-evade-rating').html(), '0');
     equal($('#stat-physical-protection').html(), '+660');

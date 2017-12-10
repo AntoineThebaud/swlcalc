@@ -12,7 +12,7 @@ test('should initate swlcalc submodules', 8, function() {
     ok(swlcalc.import);
 });
 
-test('should import pre-1.3 build from hash', 119, function() {
+test('should import pre-1.3 build from hash', 117, function() {
     location.hash = 'weapon=5,5,4,4,0,4,0,2,5&head=4,1,5,5,0,4,0,3,18&ring=4,2,4,1,0,4,0,3,83&neck=4,1,5,5,0,4,0,1,21&wrist=4,1,4,6,0,4,0,3,85&luck=4,3,4,8,0,4,0,3,39&waist=4,1,4,8,0,4,0,3,87&occult=4,2,4,1,0,4,0,3,88';
     swlcalc.init();
 
@@ -26,9 +26,7 @@ test('should import pre-1.3 build from hash', 119, function() {
     equal($('#stat-critical-chance').html(), '19.2 %');
     equal($('#stat-critical-power').html(), '0');
     equal($('#stat-critical-power-percentage').html(), '25.0 %');
-    equal($('#stat-penetration-rating').html(), '0');
     equal($('#stat-hit-rating').html(), '+319');
-    equal($('#stat-block-rating').html(), '+691');
     equal($('#stat-defense-rating').html(), '+288');
     equal($('#stat-evade-rating').html(), '0');
     equal($('#stat-physical-protection').html(), '+660');
@@ -149,7 +147,7 @@ test('should import pre-1.3 build from hash', 119, function() {
     ok(!$('#occult-ql option[value="10.9"]').attr('disabled'));
 });
 
-test('should import post-1.3 build from hash', 119, function() {
+test('should import post-1.3 build from hash', 117, function() {
     location.hash = 'weapon=5,5,4,4,0,4,0,2,5&weapon2=5,3,4,1,2,2,2,3,15&head=4,1,5,5,0,4,0,3,18&ring=4,2,4,1,0,4,0,3,83&neck=4,1,5,5,0,4,0,1,21&wrist=4,1,4,6,0,4,0,3,85&luck=4,3,4,8,0,4,0,3,39&waist=4,1,4,8,0,4,0,3,87&occult=4,2,4,1,0,4,0,3,88';
     swlcalc.init();
 
@@ -163,9 +161,7 @@ test('should import post-1.3 build from hash', 119, function() {
     equal($('#stat-critical-chance').html(), '19.2 %');
     equal($('#stat-critical-power').html(), '0');
     equal($('#stat-critical-power-percentage').html(), '25.0 %');
-    equal($('#stat-penetration-rating').html(), '0');
     equal($('#stat-hit-rating').html(), '+319');
-    equal($('#stat-block-rating').html(), '+691');
     equal($('#stat-defense-rating').html(), '+288');
     equal($('#stat-evade-rating').html(), '0');
     equal($('#stat-physical-protection').html(), '+660');

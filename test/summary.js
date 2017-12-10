@@ -5,7 +5,7 @@ module('summary-dom', {
     }
 });
 
-test('should have required summary in DOM', 17, function() {
+test('should have required summary in DOM', 15, function() {
     ok($('#stat-hitpoints').length !== 0, 'stat-hitpoints exists');
     ok($('#stat-combat-power').length !== 0, 'stat-combat-power exists');
     ok($('#stat-attack-rating').length !== 0, 'stat-attack-rating exists');
@@ -15,9 +15,7 @@ test('should have required summary in DOM', 17, function() {
     ok($('#stat-critical-chance').length !== 0, 'stat-critical-chance exists');
     ok($('#stat-critical-power').length !== 0, 'stat-critical-power exists');
     ok($('#stat-critical-power-percentage').length !== 0, 'stat-critical-power-percentage exists');
-    ok($('#stat-penetration-rating').length !== 0, 'stat-penetration-rating exists');
     ok($('#stat-hit-rating').length !== 0, 'stat-hit-rating exists');
-    ok($('#stat-block-rating').length !== 0, 'stat-block-rating exists');
     ok($('#stat-defense-rating').length !== 0, 'stat-defense-rating exists');
     ok($('#stat-evade-rating').length !== 0, 'stat-evade-rating exists');
     ok($('#stat-evade-chance').length !== 0, 'stat-evade-chance exists');
@@ -153,7 +151,7 @@ test('should collect all stats and return two objects', 2, function() {
     deepEqual(allSums.offensive_defensive, expectedOffensiveDefensiveStats);
 });
 
-test('should update all stats', 17, function() {
+test('should update all stats', 15, function() {
     createTankBuild();
 
     swlcalc.summary.updateAllStats();
@@ -167,9 +165,7 @@ test('should update all stats', 17, function() {
     equal($('#stat-critical-chance').html(), '5.0 %');
     equal($('#stat-critical-power').html(), '0');
     equal($('#stat-critical-power-percentage').html(), '25.0 %');
-    equal($('#stat-penetration-rating').html(), '0');
     equal($('#stat-hit-rating').html(), '+504');
-    equal($('#stat-block-rating').html(), '+691');
     equal($('#stat-defense-rating').html(), '+576');
     equal($('#stat-evade-rating').html(), '0');
     equal($('#stat-evade-chance').html(), '5.0 %');
@@ -238,7 +234,7 @@ test('should have pure anima bonus', 14, function() {
     equal($('#stat-hitpoints').html(), '10788');
     equal($('#stat-attack-rating').html(), '1565');
     equal($('#stat-heal-rating').html(), '240');
-	
+
     swlcalc.miscslot.pureAnima('benefaction-tonic');
     swlcalc.summary.updateAllStats();
     equal($('#stat-hitpoints').html(), '11258');
@@ -247,13 +243,9 @@ test('should have pure anima bonus', 14, function() {
     equal($('#stat-heal-rating').html(), '120');
 });
 
-test('should have anima bonus', 5, function() {
+test('should have anima bonus', 4, function() {
     createTankBuild();
 
-    swlcalc.miscslot.anima('block-rating');
-    swlcalc.summary.updateAllStats();
-    equal($('#stat-block-rating').html(), '+791');
-    
     swlcalc.miscslot.anima('critical-rating');
     swlcalc.summary.updateAllStats();
     equal($('#stat-critical-rating').html(), '+119');
@@ -267,7 +259,7 @@ test('should have anima bonus', 5, function() {
 
 test('should calculate primary stats for 10.6+ QLs', 1, function() {
     create10_6To10_9MixBuild();
-    
+
     var expectedPrimaryStats = {
         'combat-power': 677,
         'weapon-power': 510,
@@ -283,7 +275,7 @@ test('should calculate primary stats for 10.6+ QLs', 1, function() {
 
 test('should calculate primary stats for 11.0 QL', 1, function() {
     create11_0MixBuild();
-    
+
     var expectedPrimaryStats = {
         'combat-power': 735,
         'weapon-power': 528,
@@ -348,7 +340,7 @@ test('combat power above 5200 check', 3, function() {
     var allSums = swlcalc.summary.collectAllStats();
 
     deepEqual(allSums.primary, expectedPrimaryStats);
-    
+
     //Add epic violences
     $('#ring-signet-quality').val('epic');
     $('#ring-pick-signet').val('21');
@@ -356,7 +348,7 @@ test('combat power above 5200 check', 3, function() {
     $('#neck-pick-signet').val('21');
     $('#wrist-signet-quality').val('epic');
     $('#wrist-pick-signet').val('21');
-    
+
     expectedPrimaryStats = {
         'combat-power': 929,
         'weapon-power': 510,
@@ -368,10 +360,10 @@ test('combat power above 5200 check', 3, function() {
     var allSums = swlcalc.summary.collectAllStats();
 
     deepEqual(allSums.primary, expectedPrimaryStats);
-    
+
     //Now with a 10.5 weapon
     $('#weapon-ql').val('10.5');
-    
+
     expectedPrimaryStats = {
         'combat-power': 874,
         'weapon-power': 457,
