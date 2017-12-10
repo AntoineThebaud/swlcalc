@@ -1,23 +1,23 @@
-var tswcalc = tswcalc || {};
+var swlcalc = swlcalc || {};
 
-tswcalc.slots = function() {
+swlcalc.slots = function() {
     //this method can only be called after the document is ready
     var init = function() {
-        for (var i = 0; i < tswcalc.data.template_data.slots.length; i++) {
-            var slotData = tswcalc.data.template_data.slots[i];
-            this[slotData.id_prefix] = new tswcalc.slots.Slot(slotData.id_prefix, slotData.name, slotData.group);
+        for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
+            var slotData = swlcalc.data.template_data.slots[i];
+            this[slotData.id_prefix] = new swlcalc.slots.Slot(slotData.id_prefix, slotData.name, slotData.group);
             this[slotData.id_prefix].el.nameWarning.hide();
         }
         drawPrimaryWeapon();
     };
 
     var drawPrimaryWeapon = function() {
-        tswcalc.slots.weapon2.sheathWeapon();
-        tswcalc.slots.weapon.weaponDrawn = true;
+        swlcalc.slots.weapon2.sheathWeapon();
+        swlcalc.slots.weapon.weaponDrawn = true;
     };
 
     var length = function() {
-        return tswcalc.data.template_data.slots.length;
+        return swlcalc.data.template_data.slots.length;
     };
 
     var indices = function() {
@@ -69,7 +69,7 @@ tswcalc.slots = function() {
     return oPublic;
 }();
 
-tswcalc.slots.Slot = function Slot(id, name, group) {
+swlcalc.slots.Slot = function Slot(id, name, group) {
     var self = this;
     this.id = id;
     this.name = name;
@@ -128,13 +128,13 @@ tswcalc.slots.Slot = function Slot(id, name, group) {
 
     this.item = function(){
         var itemId = this.itemId()
-        var item = tswcalc.data.items.find(function(item) {
+        var item = swlcalc.data.items.find(function(item) {
             return item.id == itemId; 
         });
         if (item) {
             return item;
         }
-        return tswcalc.data.items[0];
+        return swlcalc.data.items[0];
     }
 
     this.itemId = function() {
@@ -189,14 +189,14 @@ tswcalc.slots.Slot = function Slot(id, name, group) {
         if (this.primaryGlyph() == 'none') {
             return 0;
         }
-        return tswcalc.data.glyph_data.stat[this.primaryGlyph()].ql[this.glyphQl()].slot[this.group].dist[this.primaryDist()];
+        return swlcalc.data.glyph_data.stat[this.primaryGlyph()].ql[this.glyphQl()].slot[this.group].dist[this.primaryDist()];
     };
 
     this.secondaryGlyphValue = function() {
         if (this.secondaryGlyph() == 'none') {
             return 0;
         }
-        return tswcalc.data.glyph_data.stat[this.secondaryGlyph()].ql[this.glyphQl()].slot[this.group].dist[this.secondaryDist()];
+        return swlcalc.data.glyph_data.stat[this.secondaryGlyph()].ql[this.glyphQl()].slot[this.group].dist[this.secondaryDist()];
     };
 
     this.primaryDist = function() {
@@ -229,7 +229,7 @@ tswcalc.slots.Slot = function Slot(id, name, group) {
                 pantheon: 0
             };
         }
-        return tswcalc.data.costs[this.isWeapon() ? 'weapon' : 'talisman'][this.ql()];
+        return swlcalc.data.costs[this.isWeapon() ? 'weapon' : 'talisman'][this.ql()];
     };
 
     this.glyphCost = function () {
@@ -240,7 +240,7 @@ tswcalc.slots.Slot = function Slot(id, name, group) {
                 pantheon: 0
             };
         }
-        return tswcalc.data.costs['glyph'][this.glyphQl()];
+        return swlcalc.data.costs['glyph'][this.glyphQl()];
     }
 
     this.blackBullionCost = function() {
@@ -294,9 +294,9 @@ tswcalc.slots.Slot = function Slot(id, name, group) {
             return this.item().signet;
         }
 
-        foundSignet = tswcalc.data.signet_data.find(this.group, this.signetId());
-        if (foundSignet.id == 0 && tswcalc.data.signet_data[this.id] !== undefined) {
-            return foundSignet = tswcalc.data.signet_data.find(this.id, this.signetId());
+        foundSignet = swlcalc.data.signet_data.find(this.group, this.signetId());
+        if (foundSignet.id == 0 && swlcalc.data.signet_data[this.id] !== undefined) {
+            return foundSignet = swlcalc.data.signet_data.find(this.id, this.signetId());
         }
         return foundSignet !== 0 || foundSignet !== undefined ? foundSignet : null;
     };
@@ -451,12 +451,12 @@ tswcalc.slots.Slot = function Slot(id, name, group) {
                 return '11';
             }
             return val.split('.')[1];
-        } else if ($.inArray(val, Object.keys(tswcalc.data.wtype_mapping.to_num)) != -1) {
-            return tswcalc.data.wtype_mapping.to_num[val];
-        } else if ($.inArray(val, Object.keys(tswcalc.data.stat_mapping.to_num)) != -1) {
-            return tswcalc.data.stat_mapping.to_num[val];
-        } else if ($.inArray(val, Object.keys(tswcalc.data.signet_quality_mapping.to_num)) != -1) {
-            return tswcalc.data.signet_quality_mapping.to_num[val];
+        } else if ($.inArray(val, Object.keys(swlcalc.data.wtype_mapping.to_num)) != -1) {
+            return swlcalc.data.wtype_mapping.to_num[val];
+        } else if ($.inArray(val, Object.keys(swlcalc.data.stat_mapping.to_num)) != -1) {
+            return swlcalc.data.stat_mapping.to_num[val];
+        } else if ($.inArray(val, Object.keys(swlcalc.data.signet_quality_mapping.to_num)) != -1) {
+            return swlcalc.data.signet_quality_mapping.to_num[val];
         } else {
             return val;
         }

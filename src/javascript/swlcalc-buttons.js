@@ -1,12 +1,12 @@
-var tswcalc = tswcalc || {};
+var swlcalc = swlcalc || {};
 
-tswcalc.button = function() {
+swlcalc.button = function() {
     var dists = {};
     var weaponSwap = {};
     var init = function() {
-        for (var i = 0; i < tswcalc.data.template_data.slots.length; i++) {
-            var slotId = tswcalc.data.template_data.slots[i].id_prefix;
-            dists[slotId] = new tswcalc.button.DistributionButtonHandler(slotId);
+        for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
+            var slotId = swlcalc.data.template_data.slots[i].id_prefix;
+            dists[slotId] = new swlcalc.button.DistributionButtonHandler(slotId);
             dists[slotId].init();
         }
         initWeaponSwap('weapon');
@@ -14,7 +14,7 @@ tswcalc.button = function() {
     };
 
     var initWeaponSwap = function(slotId) {
-        weaponSwap[slotId] = new tswcalc.button.SwapWeaponButton(slotId);
+        weaponSwap[slotId] = new swlcalc.button.SwapWeaponButton(slotId);
         weaponSwap[slotId].init();
     };
 
@@ -26,7 +26,7 @@ tswcalc.button = function() {
 }();
 
 
-tswcalc.button.SwapWeaponButton = function SwapWeaponButton(slotId) {
+swlcalc.button.SwapWeaponButton = function SwapWeaponButton(slotId) {
     var self = this;
 
     this.init = function() {
@@ -38,9 +38,9 @@ tswcalc.button.SwapWeaponButton = function SwapWeaponButton(slotId) {
     };
 
     this.weaponSwap = function(event) {
-        tswcalc.slots[slotId].sheathWeapon();
-        tswcalc.slots[self.otherWeapon()].drawWeapon();
-        tswcalc.summary.updateAllStats();
+        swlcalc.slots[slotId].sheathWeapon();
+        swlcalc.slots[self.otherWeapon()].drawWeapon();
+        swlcalc.summary.updateAllStats();
     };
 
     this.otherWeapon = function() {
@@ -48,7 +48,7 @@ tswcalc.button.SwapWeaponButton = function SwapWeaponButton(slotId) {
     };
 };
 
-tswcalc.button.DistributionButtonHandler = function DistributionButtonHandler(slotId) {
+swlcalc.button.DistributionButtonHandler = function DistributionButtonHandler(slotId) {
     var self = this;
 
     this.init = function() {
@@ -62,12 +62,12 @@ tswcalc.button.DistributionButtonHandler = function DistributionButtonHandler(sl
     };
 
     this.bindButtonEvents = function(glyph) {
-        $.each(tswcalc.slots[slotId].el.btn[glyph], function(btnIndex, btn) {
+        $.each(swlcalc.slots[slotId].el.btn[glyph], function(btnIndex, btn) {
             btn.on('click', function(event) {
                 var btnId = event.target.id;
                 self.activate(btnId.split('-')[1], btnId.substring(btnId.length - 1, btnId.length));
                 self.balance(btnId.split('-')[1]);
-                tswcalc.summary.updateAllStats();
+                swlcalc.summary.updateAllStats();
             });
         });
     };
@@ -93,12 +93,12 @@ tswcalc.button.DistributionButtonHandler = function DistributionButtonHandler(sl
     };
 
     this.getDist = function(glyph) {
-        var slot = tswcalc.slots[slotId];
+        var slot = swlcalc.slots[slotId];
         return glyph == 'primary' ? parseInt(slot.primaryDist(), 10) : parseInt(slot.secondaryDist(), 10);
     };
 
     this.activate = function(glyph, index) {
-        var elem = tswcalc.slots[slotId].el.btn[glyph][index];
+        var elem = swlcalc.slots[slotId].el.btn[glyph][index];
         elem.siblings().removeClass('active');
         elem.siblings().removeClass('btn-success');
         elem.addClass('active');

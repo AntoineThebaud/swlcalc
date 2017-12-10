@@ -32,23 +32,23 @@ module('summary-unit-tests', {
 });
 
 test('should calculate critical chance', 2, function() {
-    equal(tswcalc.summary.calculateCriticalChance(0), 4.990000000000002);
-    equal(tswcalc.summary.calculateCriticalChance(309), 14.671074609766634);
+    equal(swlcalc.summary.calculateCriticalChance(0), 4.990000000000002);
+    equal(swlcalc.summary.calculateCriticalChance(309), 14.671074609766634);
 });
 
 test('should calculate critical power', 2, function() {
-    equal(tswcalc.summary.calculateCriticalPowerPercentage(0), 25);
-    equal(tswcalc.summary.calculateCriticalPowerPercentage(238), 42.60281680828159);
+    equal(swlcalc.summary.calculateCriticalPowerPercentage(0), 25);
+    equal(swlcalc.summary.calculateCriticalPowerPercentage(238), 42.60281680828159);
 });
 
 test('should calculate combat power', 2, function() {
-    equal(tswcalc.summary.calculateCombatPower(0, 0), 75);
-    equal(tswcalc.summary.calculateCombatPower(3049, 398), 647);
+    equal(swlcalc.summary.calculateCombatPower(0, 0), 75);
+    equal(swlcalc.summary.calculateCombatPower(3049, 398), 647);
 });
 
 test('should calculate evade chance', 2, function() {
-    equal(tswcalc.summary.calculateEvadeChance(0), 5.030000000000001);
-    equal(tswcalc.summary.calculateEvadeChance(2174), 27.90736684449651);
+    equal(swlcalc.summary.calculateEvadeChance(0), 5.030000000000001);
+    equal(swlcalc.summary.calculateEvadeChance(2174), 27.90736684449651);
 });
 
 module('summary-integration-tests', {
@@ -65,7 +65,7 @@ module('summary-integration-tests', {
 });
 
 test('should collect primary stats at initial state', 5, function() {
-    var sums = tswcalc.summary.collectPrimaryStats();
+    var sums = swlcalc.summary.collectPrimaryStats();
 
     equal(sums['combat-power'], 647);
     equal(sums['weapon-power'], 398);
@@ -77,7 +77,7 @@ test('should collect primary stats at initial state', 5, function() {
 test('should collect primary stats for tank build', 5, function() {
     createTankBuild();
 
-    var sums = tswcalc.summary.collectPrimaryStats();
+    var sums = swlcalc.summary.collectPrimaryStats();
 
     equal(sums['combat-power'], 504);
     equal(sums['weapon-power'], 457);
@@ -87,7 +87,7 @@ test('should collect primary stats for tank build', 5, function() {
 });
 
 test('should collect offensive and defensive stats for initial state', 12, function() {
-    var sums = tswcalc.summary.collectOffensiveDefensiveStats();
+    var sums = swlcalc.summary.collectOffensiveDefensiveStats();
 
     equal(sums['critical-rating'], 0);
     equal(sums['critical-chance'], 5.0);
@@ -106,7 +106,7 @@ test('should collect offensive and defensive stats for initial state', 12, funct
 test('should collect offensive and defensive stats for tank build', 12, function() {
     createTankBuild();
 
-    var sums = tswcalc.summary.collectOffensiveDefensiveStats();
+    var sums = swlcalc.summary.collectOffensiveDefensiveStats();
 
     equal(sums['critical-rating'], 0);
     equal(sums['critical-chance'], 5.0);
@@ -147,7 +147,7 @@ test('should collect all stats and return two objects', 2, function() {
         'magical-protection': 300
     };
 
-    var allSums = tswcalc.summary.collectAllStats();
+    var allSums = swlcalc.summary.collectAllStats();
 
     deepEqual(allSums.primary, expectedPrimaryStats);
     deepEqual(allSums.offensive_defensive, expectedOffensiveDefensiveStats);
@@ -156,7 +156,7 @@ test('should collect all stats and return two objects', 2, function() {
 test('should update all stats', 17, function() {
     createTankBuild();
 
-    tswcalc.summary.updateAllStats();
+    swlcalc.summary.updateAllStats();
 
     equal($('#stat-hitpoints').html(), '10788');
     equal($('#stat-combat-power').html(), '504');
@@ -178,7 +178,7 @@ test('should update all stats', 17, function() {
 });
 
 test('should have initial costs at 10.0 price, including secondary weapon', 4, function() {
-    tswcalc.summary.updateAllStats();
+    swlcalc.summary.updateAllStats();
 
     equal($('#bb-cost').html(), '2700');
     equal($('#pantheon-cost').html(), '0');
@@ -189,7 +189,7 @@ test('should have initial costs at 10.0 price, including secondary weapon', 4, f
 test('should update costs for tank build, including secondary weapon', 4, function() {
     createTankBuild();
 
-    tswcalc.summary.updateAllStats();
+    swlcalc.summary.updateAllStats();
 
     equal($('#bb-cost').html(), '17700');
     equal($('#pantheon-cost').html(), '0');
@@ -199,9 +199,9 @@ test('should update costs for tank build, including secondary weapon', 4, functi
 
 test('should collect offensive and defensive stats for NY raid DPS build with raid items that modify stats when activate raid button is checked', 12, function() {
     createDPSNYRaidBuild();
-    tswcalc.summary.checkActivateRaid();
+    swlcalc.summary.checkActivateRaid();
 
-    var sums = tswcalc.summary.collectOffensiveDefensiveStats();
+    var sums = swlcalc.summary.collectOffensiveDefensiveStats();
 
     equal(sums['critical-rating'], 379);
     equal(sums['critical-chance'], 16.8);
@@ -220,27 +220,27 @@ test('should collect offensive and defensive stats for NY raid DPS build with ra
 test('should have pure anima bonus', 14, function() {
     createTankBuild();
 
-    tswcalc.miscslot.pureAnima('health');
-    tswcalc.summary.updateAllStats();
+    swlcalc.miscslot.pureAnima('health');
+    swlcalc.summary.updateAllStats();
     equal($('#stat-hitpoints').html(), '11728');
     equal($('#stat-attack-rating').html(), '1565');
     equal($('#stat-heal-rating').html(), '0');
 
-    tswcalc.miscslot.pureAnima('attack-rating');
-    tswcalc.summary.updateAllStats();
+    swlcalc.miscslot.pureAnima('attack-rating');
+    swlcalc.summary.updateAllStats();
     equal($('#stat-hitpoints').html(), '10788');
     equal($('#stat-attack-rating').html(), '1805');
     equal($('#stat-combat-power').html(), '544');
     equal($('#stat-heal-rating').html(), '0');
 
-    tswcalc.miscslot.pureAnima('heal-rating');
-    tswcalc.summary.updateAllStats();
+    swlcalc.miscslot.pureAnima('heal-rating');
+    swlcalc.summary.updateAllStats();
     equal($('#stat-hitpoints').html(), '10788');
     equal($('#stat-attack-rating').html(), '1565');
     equal($('#stat-heal-rating').html(), '240');
 	
-    tswcalc.miscslot.pureAnima('benefaction-tonic');
-    tswcalc.summary.updateAllStats();
+    swlcalc.miscslot.pureAnima('benefaction-tonic');
+    swlcalc.summary.updateAllStats();
     equal($('#stat-hitpoints').html(), '11258');
     equal($('#stat-attack-rating').html(), '1685');
     equal($('#stat-combat-power').html(), '525');
@@ -250,17 +250,17 @@ test('should have pure anima bonus', 14, function() {
 test('should have anima bonus', 5, function() {
     createTankBuild();
 
-    tswcalc.miscslot.anima('block-rating');
-    tswcalc.summary.updateAllStats();
+    swlcalc.miscslot.anima('block-rating');
+    swlcalc.summary.updateAllStats();
     equal($('#stat-block-rating').html(), '+791');
     
-    tswcalc.miscslot.anima('critical-rating');
-    tswcalc.summary.updateAllStats();
+    swlcalc.miscslot.anima('critical-rating');
+    swlcalc.summary.updateAllStats();
     equal($('#stat-critical-rating').html(), '+119');
     equal($('#stat-critical-chance').html(), '8.8 %');
 
-    tswcalc.miscslot.anima('evade-rating');
-    tswcalc.summary.updateAllStats();
+    swlcalc.miscslot.anima('evade-rating');
+    swlcalc.summary.updateAllStats();
     equal($('#stat-evade-rating').html(), '+110');
     equal($('#stat-evade-chance').html(), '7.0 %');
 });
@@ -276,7 +276,7 @@ test('should calculate primary stats for 10.6+ QLs', 1, function() {
         'heal-rating': 1515
     };
 
-    var allSums = tswcalc.summary.collectAllStats();
+    var allSums = swlcalc.summary.collectAllStats();
 
     deepEqual(allSums.primary, expectedPrimaryStats);
 });
@@ -292,7 +292,7 @@ test('should calculate primary stats for 11.0 QL', 1, function() {
         'heal-rating': 1697
     };
 
-    var allSums = tswcalc.summary.collectAllStats();
+    var allSums = swlcalc.summary.collectAllStats();
 
     deepEqual(allSums.primary, expectedPrimaryStats);
 });
@@ -300,7 +300,7 @@ test('should calculate primary stats for 11.0 QL', 1, function() {
 test('should calculate costs for 10.6+ QL build', 5, function() {
     create10_6To10_9MixBuild();
 
-    tswcalc.summary.updateAllStats();
+    swlcalc.summary.updateAllStats();
 
     equal($('#bb-cost').html(), '19600');
     equal($('#pantheon-cost').html(), '1930');
@@ -312,8 +312,8 @@ test('should calculate costs for 10.6+ QL build', 5, function() {
 test('should include currency costs when includeItemCosts checked', 5, function() {
     create10_6To10_9MixBuild();
 
-    tswcalc.summary.updateAllStats();
-    tswcalc.summary.checkIncludeItemCosts();
+    swlcalc.summary.updateAllStats();
+    swlcalc.summary.checkIncludeItemCosts();
 
     equal($('#bb-cost').html(), '21850');
     equal($('#pantheon-cost').html(), '2290');
@@ -325,7 +325,7 @@ test('should include currency costs when includeItemCosts checked', 5, function(
 test('should calculate costs for 11.0 QL build', 5, function() {
     create11_0MixBuild();
 
-    tswcalc.summary.updateAllStats();
+    swlcalc.summary.updateAllStats();
 
     equal($('#bb-cost').html(), '25400');
     equal($('#pantheon-cost').html(), '3640');
@@ -345,7 +345,7 @@ test('combat power above 5200 check', 3, function() {
         'heal-rating': 0
     };
 
-    var allSums = tswcalc.summary.collectAllStats();
+    var allSums = swlcalc.summary.collectAllStats();
 
     deepEqual(allSums.primary, expectedPrimaryStats);
     
@@ -365,7 +365,7 @@ test('combat power above 5200 check', 3, function() {
         'heal-rating': 0
     };
 
-    var allSums = tswcalc.summary.collectAllStats();
+    var allSums = swlcalc.summary.collectAllStats();
 
     deepEqual(allSums.primary, expectedPrimaryStats);
     
@@ -380,7 +380,7 @@ test('combat power above 5200 check', 3, function() {
         'heal-rating': 0
     };
 
-    var allSums = tswcalc.summary.collectAllStats();
+    var allSums = swlcalc.summary.collectAllStats();
 
     deepEqual(allSums.primary, expectedPrimaryStats);
 });

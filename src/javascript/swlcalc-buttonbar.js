@@ -1,6 +1,6 @@
-var tswcalc = tswcalc || {};
+var swlcalc = swlcalc || {};
 
-tswcalc.buttonBar = function() {
+swlcalc.buttonBar = function() {
 
     var el = {};
     var elInit = function() {
@@ -34,23 +34,23 @@ tswcalc.buttonBar = function() {
 
     var setRoleOnAllSlots = function(event) {
         var newItem = extractRole(event);
-        for (var slotId in tswcalc.slots) {
-            if (tswcalc.slots.hasSlot(slotId)) {
-                var slot = tswcalc.slots[slotId];
+        for (var slotId in swlcalc.slots) {
+            if (swlcalc.slots.hasSlot(slotId)) {
+                var slot = swlcalc.slots[slotId];
                 slot.itemId(newItem);
                 slot.el.itemId.change();
             }
         }
-        tswcalc.summary.updateAllStats();
+        swlcalc.summary.updateAllStats();
     };
 
     var setQlOnAllSlots = function (event) {
         var newItemQl = extractItemQl(event);
         var newGlyphQl = extractGlyphQl(event);
         
-        for (var slotId in tswcalc.slots) {
-            if (tswcalc.slots.hasSlot(slotId)) {
-                var slot = tswcalc.slots[slotId];
+        for (var slotId in swlcalc.slots) {
+            if (swlcalc.slots.hasSlot(slotId)) {
+                var slot = swlcalc.slots[slotId];
                 if(!slot.item().ql) {
                     slot.ql(newItemQl);
                 }
@@ -60,12 +60,12 @@ tswcalc.buttonBar = function() {
                 }
             }
         }
-        tswcalc.summary.updateAllStats();
+        swlcalc.summary.updateAllStats();
     };
 
     var resetAllSlots = function(event) {
-        tswcalc.slots.reset();
-        tswcalc.summary.updateAllStats();
+        swlcalc.slots.reset();
+        swlcalc.summary.updateAllStats();
     };
 
     var extractItemQl = function (event) {

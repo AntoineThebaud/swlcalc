@@ -1,6 +1,6 @@
-var tswcalc = tswcalc || {};
+var swlcalc = swlcalc || {};
 
-tswcalc.import = function() {
+swlcalc.import = function() {
 
     var start = function(vars) {
         for (var slotId in vars) {
@@ -9,11 +9,11 @@ tswcalc.import = function() {
                 updateSlot(slotId, splitVars);
             }
         }
-        tswcalc.summary.updateAllStats();
+        swlcalc.summary.updateAllStats();
     };
 
     var updateSlot = function(slotId, values) {
-        var slotObj = tswcalc.slots[slotId];
+        var slotObj = swlcalc.slots[slotId];
         if(values[0] > 10){
             slotObj.ql('11.0');
         }
@@ -21,7 +21,7 @@ tswcalc.import = function() {
             slotObj.ql('10.' + values[0]);
         }
         if(slotObj.isWeapon()) {
-            slotObj.wtype(tswcalc.data.wtype_mapping.to_name[values[1]]);
+            slotObj.wtype(swlcalc.data.wtype_mapping.to_name[values[1]]);
             slotObj.el.wtype.change();
         } else {
             slotObj.itemId(values[1]);
@@ -34,8 +34,8 @@ tswcalc.import = function() {
         else {
             slotObj.glyphQl('10.' + values[2]);
         }
-        slotObj.primaryGlyph(tswcalc.data.stat_mapping.to_stat[values[3]]);
-        slotObj.secondaryGlyph(tswcalc.data.stat_mapping.to_stat[values[4]]);
+        slotObj.primaryGlyph(swlcalc.data.stat_mapping.to_stat[values[3]]);
+        slotObj.secondaryGlyph(swlcalc.data.stat_mapping.to_stat[values[4]]);
         slotObj.el.btn.primary[values[5]].click();
         slotObj.el.btn.secondary[values[6]].click();
         // support signets
@@ -46,7 +46,7 @@ tswcalc.import = function() {
                 slotObj.el.itemId.change();
             }
             else {
-                var signetQuality = tswcalc.data.signet_quality_mapping.to_name[values[7]];
+                var signetQuality = swlcalc.data.signet_quality_mapping.to_name[values[7]];
                 var signetId = values[8] != '0' ? values[8] : 'none';
                 changeSignet(slotId, signetQuality, signetId);
             }
@@ -54,7 +54,7 @@ tswcalc.import = function() {
     };
 
     var changeSignet = function(slotId, quality, id) {
-        var slotObj = tswcalc.slots[slotId];
+        var slotObj = swlcalc.slots[slotId];
         slotObj.signetQuality(quality);
         slotObj.signetId(id);
         slotObj.el.signetId.change();

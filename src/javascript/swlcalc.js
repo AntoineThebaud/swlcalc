@@ -1,12 +1,12 @@
 $(document).ready(function() {
-    tswcalc.init();
+    swlcalc.init();
 });
 
-var tswcalc = tswcalc || {};
+var swlcalc = swlcalc || {};
 
-tswcalc = function() {
+swlcalc = function() {
     var init = function() {
-        renderContainer(tswcalc.data.template_data);
+        renderContainer(swlcalc.data.template_data);
         addHash();
 
         activateToolTips();
@@ -52,15 +52,17 @@ tswcalc = function() {
 
     var renderContainer = function(data) {
         dust.render('container', {
-            slots: tswcalc.data.template_data.slots,
-            signets: tswcalc.data.signet_data
+            slots: swlcalc.data.template_data.slots,
+            signets: swlcalc.data.signet_data
         },
 
         function(err, out) {
             if (err) {
                 console.log(err);
             }
-            $('.container').html(out);
+            //$('#main-container').html(out);
+			//$('.container-fluid').html(out);
+			$('.container').html(out);
         });
     };
 
@@ -69,22 +71,22 @@ tswcalc = function() {
         // length == 8 is pre 1.3 links
         // length == 9 is post 1.3 links (secondary weapon added)
         if (!$.isEmptyObject(vars) && Object.keys(vars).length == 8 || Object.keys(vars).length == 9) {
-            tswcalc.import.start(vars);
+            swlcalc.import.start(vars);
             return true;
         }
         return false;
     };
 
     var startSubModules = function() {
-        tswcalc.slots.init();
-        tswcalc.miscslot.init();
-        for (var i = 0; i < tswcalc.data.template_data.slots.length; i++) {
-            startSelectHandler(tswcalc.data.template_data.slots[i]);
+        swlcalc.slots.init();
+        swlcalc.miscslot.init();
+        for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
+            startSelectHandler(swlcalc.data.template_data.slots[i]);
         }
-        tswcalc.button.init();
-        tswcalc.buttonBar.init();
-        tswcalc.summary.init();
-        tswcalc.export.init();
+        swlcalc.button.init();
+        swlcalc.buttonBar.init();
+        swlcalc.summary.init();
+        swlcalc.export.init();
     };
 
     var addHash = function() {
@@ -94,8 +96,8 @@ tswcalc = function() {
     };
 
     var startSelectHandler = function(slot) {
-        tswcalc.select[slot.id_prefix] = new tswcalc.select.SelectHandler(slot);
-        tswcalc.select[slot.id_prefix].initiate();
+        swlcalc.select[slot.id_prefix] = new swlcalc.select.SelectHandler(slot);
+        swlcalc.select[slot.id_prefix].initiate();
     };
 
     var oPublic = {

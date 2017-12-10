@@ -22,7 +22,7 @@ test('should import URL and set summary and slots for 0.4.0 links', 94, function
         wrist: '4,1,4,6,0,4,0,3,85'
     };
 
-    tswcalc.import.start(vars);
+    swlcalc.import.start(vars);
 
     // Summary
     equal($('#stat-hitpoints').html(), '10458');
@@ -143,7 +143,7 @@ test('should import URL and set summary and slots for pre-1.3 links', 98, functi
         wrist: '4,1,4,6,0,4,0,3,85'
     };
 
-    tswcalc.import.start(vars);
+    swlcalc.import.start(vars);
 
     // Summary
     equal($('#stat-hitpoints').html(), '10788');
@@ -269,7 +269,7 @@ test('should import URL and set summary and slots for 1.3 links (secondary weapo
         wrist: '4,1,4,6,0,4,0,3,85'
     };
 
-    tswcalc.import.start(vars);
+    swlcalc.import.start(vars);
 
     // Summary
     equal($('#stat-hitpoints').html(), '11104');

@@ -1,20 +1,20 @@
-module('tswcalc');
+module('swlcalc');
 
-test('should initate tswcalc submodules', 8, function() {
-    tswcalc.init();
-    ok(tswcalc);
-    ok(tswcalc.data);
-    ok(tswcalc.button);
-    ok(tswcalc.select);
-    ok(tswcalc.buttonBar);
-    ok(tswcalc.summary);
-    ok(tswcalc.export);
-    ok(tswcalc.import);
+test('should initate swlcalc submodules', 8, function() {
+    swlcalc.init();
+    ok(swlcalc);
+    ok(swlcalc.data);
+    ok(swlcalc.button);
+    ok(swlcalc.select);
+    ok(swlcalc.buttonBar);
+    ok(swlcalc.summary);
+    ok(swlcalc.export);
+    ok(swlcalc.import);
 });
 
 test('should import pre-1.3 build from hash', 119, function() {
     location.hash = 'weapon=5,5,4,4,0,4,0,2,5&head=4,1,5,5,0,4,0,3,18&ring=4,2,4,1,0,4,0,3,83&neck=4,1,5,5,0,4,0,1,21&wrist=4,1,4,6,0,4,0,3,85&luck=4,3,4,8,0,4,0,3,39&waist=4,1,4,8,0,4,0,3,87&occult=4,2,4,1,0,4,0,3,88';
-    tswcalc.init();
+    swlcalc.init();
 
     // Summary
     equal($('#stat-hitpoints').html(), '10458');
@@ -151,7 +151,7 @@ test('should import pre-1.3 build from hash', 119, function() {
 
 test('should import post-1.3 build from hash', 119, function() {
     location.hash = 'weapon=5,5,4,4,0,4,0,2,5&weapon2=5,3,4,1,2,2,2,3,15&head=4,1,5,5,0,4,0,3,18&ring=4,2,4,1,0,4,0,3,83&neck=4,1,5,5,0,4,0,1,21&wrist=4,1,4,6,0,4,0,3,85&luck=4,3,4,8,0,4,0,3,39&waist=4,1,4,8,0,4,0,3,87&occult=4,2,4,1,0,4,0,3,88';
-    tswcalc.init();
+    swlcalc.init();
 
     // Summary
     equal($('#stat-hitpoints').html(), '10458');

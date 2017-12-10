@@ -1,14 +1,14 @@
-var tswcalc = tswcalc || {};
-tswcalc.data = tswcalc.data || {};
+var swlcalc = swlcalc || {};
+swlcalc.data = swlcalc.data || {};
 
-tswcalc.data.findItems = function (slot) {
-    var slotItems = tswcalc.data.items.filter(function (item) {
+swlcalc.data.findItems = function (slot) {
+    var slotItems = swlcalc.data.items.filter(function (item) {
         return item.slots.indexOf(slot) != -1;
     });
     return slotItems;
 }
 
-tswcalc.data.items = [
+swlcalc.data.items = [
     {
         id: '3',
         name: 'DPS',
@@ -1772,7 +1772,7 @@ tswcalc.data.items = [
         }
     }
     //last item-id in this file: 192
-    //last item-id in tswcalc-data-signets.js: 195
+    //last item-id in swlcalc-data-signets.js: 195
     //update these item-ids when adding new items/signets either place to avoid conflicts
 
 ];

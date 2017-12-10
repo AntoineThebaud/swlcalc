@@ -1,6 +1,6 @@
-var tswcalc = tswcalc || {};
+var swlcalc = swlcalc || {};
 
-tswcalc.export = function() {
+swlcalc.export = function() {
     var exportType = 0;
     var slotState = {};
 
@@ -56,11 +56,11 @@ tswcalc.export = function() {
     var createExportUrl = function() {
         var url = '';
         var i = 0;
-        for (var slotId in tswcalc.slots) {
-            if (tswcalc.slots.hasSlot(slotId)) {
-                var slot = tswcalc.slots[slotId];
+        for (var slotId in swlcalc.slots) {
+            if (swlcalc.slots.hasSlot(slotId)) {
+                var slot = swlcalc.slots[slotId];
                 url += createSlotUrl(slot, slot.mappedState());
-                if (i < tswcalc.slots.length() - 1) {
+                if (i < swlcalc.slots.length() - 1) {
                     url += '&';
                 }
                 i++;
@@ -88,7 +88,7 @@ tswcalc.export = function() {
         collectAllSlotStates();
         dust.render('export@@pathsepbbcode', {
             slotState: dustSlotState(),
-            summary: tswcalc.summary.collectAllStats()
+            summary: swlcalc.summary.collectAllStats()
         },
 
         function(err, out) {
@@ -103,54 +103,54 @@ tswcalc.export = function() {
     //TODO: refactor this mess
     var dustSlotState = function() {
         var states = [];
-        for (var i = 0; i < tswcalc.data.template_data.slots.length; i++) {
-            var slot = tswcalc.data.template_data.slots[i];
+        for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
+            var slot = swlcalc.data.template_data.slots[i];
             var slotId = slot.id_prefix;
             var group = slot.group;
             var curState = slotState[slotId];
-            var primaryValue = tswcalc.slots[slotId].primaryGlyphValue();
-            var secondaryValue = tswcalc.slots[slotId].secondaryGlyphValue();
+            var primaryValue = swlcalc.slots[slotId].primaryGlyphValue();
+            var secondaryValue = swlcalc.slots[slotId].secondaryGlyphValue();
             var statType = 0;
             var statValue = 0;
-            if (tswcalc.data.template_data.slots[i].is_weapon) {
+            if (swlcalc.data.template_data.slots[i].is_weapon) {
                 statType = 'Weapon Power';
-                statValue = tswcalc.data.custom_gear_data[group]['10.' + curState.ql].weapon_power;
+                statValue = swlcalc.data.custom_gear_data[group]['10.' + curState.ql].weapon_power;
             } else {
                 switch(curState.role) {
                     case 'healer':
                         statType = 'Heal Rating';
-                        statValue = tswcalc.data.custom_gear_data[group].heal_dps['ql10.' + curState.ql].rating;
+                        statValue = swlcalc.data.custom_gear_data[group].heal_dps['ql10.' + curState.ql].rating;
                         break;
                     case 'dps':
                         statType = 'Attack Rating';
-                        statValue = tswcalc.data.custom_gear_data[group].heal_dps['ql10.' + curState.ql].rating;
+                        statValue = swlcalc.data.custom_gear_data[group].heal_dps['ql10.' + curState.ql].rating;
                         break;
                     case 'tank':
                         statType = 'Hitpoints';
-                        statValue = tswcalc.data.custom_gear_data[group].tank['ql10.' + curState.ql].hitpoints;
+                        statValue = swlcalc.data.custom_gear_data[group].tank['ql10.' + curState.ql].hitpoints;
                         break;
                 }
             }
 
-            var signet = tswcalc.slots[slotId].signet();
+            var signet = swlcalc.slots[slotId].signet();
 
             var state = {
-                name: slot.is_weapon ? tswcalc.util.capitalise(slot.name + ": " + tswcalc.util.capitalise(tswcalc.data.wtype_mapping.to_name[curState.wtype])) : tswcalc.util.capitalise(slotId),
-                role: slot.is_weapon ? null : (curState.role === 'dps' ? 'DPS' : tswcalc.util.capitalise(curState.role)),
+                name: slot.is_weapon ? swlcalc.util.capitalise(slot.name + ": " + swlcalc.util.capitalise(swlcalc.data.wtype_mapping.to_name[curState.wtype])) : swlcalc.util.capitalise(slotId),
+                role: slot.is_weapon ? null : (curState.role === 'dps' ? 'DPS' : swlcalc.util.capitalise(curState.role)),
                 ql: curState.ql,
                 stat_type: statType,
                 stat_value: statValue,
                 glyph_ql: curState.glyph_ql,
-                primary_glyph: tswcalc.util.blankIfNone(tswcalc.util.capitalise(tswcalc.data.stat_mapping.to_stat[curState.primary_glyph])),
+                primary_glyph: swlcalc.util.blankIfNone(swlcalc.util.capitalise(swlcalc.data.stat_mapping.to_stat[curState.primary_glyph])),
                 primary_dist: curState.primary_dist,
                 primary_value: primaryValue,
-                secondary_glyph: tswcalc.util.blankIfNone(tswcalc.util.capitalise(tswcalc.data.stat_mapping.to_stat[curState.secondary_glyph])),
+                secondary_glyph: swlcalc.util.blankIfNone(swlcalc.util.capitalise(swlcalc.data.stat_mapping.to_stat[curState.secondary_glyph])),
                 secondary_dist: curState.secondary_dist,
                 secondary_value: secondaryValue,
                 signet_name: signet.name,
-                signet_quality: tswcalc.util.blankIfNone(tswcalc.util.capitalise(tswcalc.data.signet_quality_mapping.to_name[curState.signet_quality])),
-                signet_description: tswcalc.slots[slotId].signetDescription(),
-                signet_colour: tswcalc.data.signet_quality_mapping.to_colour[tswcalc.data.signet_quality_mapping.to_name[curState.signet_quality]],
+                signet_quality: swlcalc.util.blankIfNone(swlcalc.util.capitalise(swlcalc.data.signet_quality_mapping.to_name[curState.signet_quality])),
+                signet_description: swlcalc.slots[slotId].signetDescription(),
+                signet_colour: swlcalc.data.signet_quality_mapping.to_colour[swlcalc.data.signet_quality_mapping.to_name[curState.signet_quality]],
                 is_item: curState.itemId > 3 ? true : false
             };
             states.push(state);
@@ -159,7 +159,7 @@ tswcalc.export = function() {
     };
 
     var collectAllSlotStates = function() {
-        slotState = tswcalc.slots.mappedState();
+        slotState = swlcalc.slots.mappedState();
     };
 
     var oPublic = {

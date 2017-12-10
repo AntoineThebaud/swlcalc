@@ -6,8 +6,8 @@ module('selects-dom', {
 });
 
 test('should have required selects in the DOM', 61, function() {
-    for (var i = 0; i < tswcalc.data.template_data.slots.length; i++) {
-        var slotId = tswcalc.data.template_data.slots[i].id_prefix;
+    for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
+        var slotId = swlcalc.data.template_data.slots[i].id_prefix;
         if (slotId != 'weapon' && slotId != 'weapon2') {
             ok($('#' + slotId + '-itemId').length !== 0, slotId + '-itemId exists');
         }
@@ -32,8 +32,8 @@ module('selects-events', {
 });
 
 test('should have required event listeners for change on selects in the DOM', 61, function() {
-    for (var i = 0; i < tswcalc.data.template_data.slots.length; i++) {
-        var slotId = tswcalc.data.template_data.slots[i].id_prefix;
+    for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
+        var slotId = swlcalc.data.template_data.slots[i].id_prefix;
         ok($._data($('#' + slotId + '-ql').get(0), 'events').change instanceof Array);
         if (slotId != 'weapon' && slotId != 'weapon2') {
             ok($._data($('#' + slotId + '-itemId').get(0), 'events').change instanceof Array);
@@ -68,7 +68,7 @@ test('should have added signets to correct group', 8, function() {
 });
 
 test('should get signets for head', 1, function() {
-    equal(tswcalc.select['head'].getSignetsForHead('head').length, 22);
+    equal(swlcalc.select['head'].getSignetsForHead('head').length, 22);
 });
 
 module('selects-integration-tests', {
@@ -77,14 +77,14 @@ module('selects-integration-tests', {
         renderSlots();
         initiateButtonHandlers();
         initiateSelectHandlers();
-        tswcalc.slots.init();
+        swlcalc.slots.init();
     }
 });
 
 test('should only allow epic version of signet when cadoro signets are selected', 5, function() {
-    tswcalc.slots['head'].itemId('3');
-    tswcalc.slots['head'].signetId('53');
-    tswcalc.slots['head'].el.signetId.change();
+    swlcalc.slots['head'].itemId('3');
+    swlcalc.slots['head'].signetId('53');
+    swlcalc.slots['head'].el.signetId.change();
 
     equal($('#head-name').html(), ': Forgotten Ashes');
     equal($('#head-pick-signet').val(), '53');
@@ -94,11 +94,11 @@ test('should only allow epic version of signet when cadoro signets are selected'
 });
 
 test('should only allow epic version of signet when quality different than normal is selected before cadoro signet', 4, function() {
-    tswcalc.slots['head'].signetId('20');
-    tswcalc.slots['head'].signetQuality('elite');
-    tswcalc.slots['head'].el.signetId.change();
-    tswcalc.slots['head'].signetId('53');
-    tswcalc.slots['head'].el.signetId.change();
+    swlcalc.slots['head'].signetId('20');
+    swlcalc.slots['head'].signetQuality('elite');
+    swlcalc.slots['head'].el.signetId.change();
+    swlcalc.slots['head'].signetId('53');
+    swlcalc.slots['head'].el.signetId.change();
 
     equal($('#head-pick-signet').val(), '53');
     equal($('#head-signet-quality').val(), 'epic');
@@ -107,42 +107,42 @@ test('should only allow epic version of signet when quality different than norma
 });
 
 test('should enable signet quality when a cadoro signet has been selected and then changed to a different signet', 1, function() {
-    tswcalc.slots['head'].signetId('53');
-    tswcalc.slots['head'].el.signetId.change();
-    tswcalc.slots['head'].signetId('20');
-    tswcalc.slots['head'].el.signetId.change();
+    swlcalc.slots['head'].signetId('53');
+    swlcalc.slots['head'].el.signetId.change();
+    swlcalc.slots['head'].signetId('20');
+    swlcalc.slots['head'].el.signetId.change();
 
     deepEqual($('#head-pick-signet').attr('disabled'), undefined, 'quality select enabled');
 });
 
 test('should enable changing of weapon type and set the slot name', 1, function() {
-    tswcalc.slots['weapon'].wtype('blade');
-    tswcalc.slots['weapon'].el.wtype.change();
+    swlcalc.slots['weapon'].wtype('blade');
+    swlcalc.slots['weapon'].el.wtype.change();
 
-    deepEqual(tswcalc.slots['weapon'].name(), ': Blade');
+    deepEqual(swlcalc.slots['weapon'].name(), ': Blade');
 });
 
 test('should enable changing of weapon2 type and set the slot name', 1, function() {
-    tswcalc.slots['weapon2'].wtype('blade');
-    tswcalc.slots['weapon2'].el.wtype.change();
+    swlcalc.slots['weapon2'].wtype('blade');
+    swlcalc.slots['weapon2'].el.wtype.change();
 
-    deepEqual(tswcalc.slots['weapon2'].name(), ': Blade');
+    deepEqual(swlcalc.slots['weapon2'].name(), ': Blade');
 });
 
 test('should enable changing of weapon type to none and set the slot name to blank', 1, function() {
-    tswcalc.slots['weapon'].wtype('blade');
-    tswcalc.slots['weapon'].el.wtype.change();
-    tswcalc.slots['weapon'].wtype('none');
-    tswcalc.slots['weapon'].el.wtype.change();
+    swlcalc.slots['weapon'].wtype('blade');
+    swlcalc.slots['weapon'].el.wtype.change();
+    swlcalc.slots['weapon'].wtype('none');
+    swlcalc.slots['weapon'].el.wtype.change();
 
-    deepEqual(tswcalc.slots['weapon'].name(), '');
+    deepEqual(swlcalc.slots['weapon'].name(), '');
 });
 
 test('should enable changing of weapon2 type to none and set the slot name to blank', 1, function() {
-    tswcalc.slots['weapon2'].wtype('blade');
-    tswcalc.slots['weapon2'].el.wtype.change();
-    tswcalc.slots['weapon2'].wtype('none');
-    tswcalc.slots['weapon2'].el.wtype.change();
+    swlcalc.slots['weapon2'].wtype('blade');
+    swlcalc.slots['weapon2'].el.wtype.change();
+    swlcalc.slots['weapon2'].wtype('none');
+    swlcalc.slots['weapon2'].el.wtype.change();
 
-    deepEqual(tswcalc.slots['weapon2'].name(), '');
+    deepEqual(swlcalc.slots['weapon2'].name(), '');
 });

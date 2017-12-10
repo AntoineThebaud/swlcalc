@@ -20,101 +20,101 @@ module('buttonbar-integration-tests', {
         renderSlots();
         initiateButtonHandlers();
         initiateSelectHandlers();
-        tswcalc.buttonBar.init();
+        swlcalc.buttonBar.init();
         initiateSummary();
         createTankBuild();
     }
 });
 
 test('should set role on all slots to dps', 7, function() {
-    tswcalc.buttonBar.setRoleOnAllSlots({
+    swlcalc.buttonBar.setRoleOnAllSlots({
         target: {
             id: '#btn-all-dps'
         }
     });
 
-    equal(tswcalc.slots.head.item().role, 'dps');
-    equal(tswcalc.slots.ring.item().role, 'dps');
-    equal(tswcalc.slots.neck.item().role, 'dps');
-    equal(tswcalc.slots.wrist.item().role, 'dps');
-    equal(tswcalc.slots.luck.item().role, 'dps');
-    equal(tswcalc.slots.waist.item().role, 'dps');
-    equal(tswcalc.slots.occult.item().role, 'dps');
+    equal(swlcalc.slots.head.item().role, 'dps');
+    equal(swlcalc.slots.ring.item().role, 'dps');
+    equal(swlcalc.slots.neck.item().role, 'dps');
+    equal(swlcalc.slots.wrist.item().role, 'dps');
+    equal(swlcalc.slots.luck.item().role, 'dps');
+    equal(swlcalc.slots.waist.item().role, 'dps');
+    equal(swlcalc.slots.occult.item().role, 'dps');
 });
 
 test('should set ql and glyph ql on all slots to 10.5 with the exception of ql on raid items', 16, function() {
-    tswcalc.buttonBar.setQlOnAllSlots({
+    swlcalc.buttonBar.setQlOnAllSlots({
         target: {
             id: '#btn-all-10-5'
         }
     });
 
-    equal(tswcalc.slots.weapon.ql(), '10.5');
-    equal(tswcalc.slots.weapon.glyphQl(), '10.5');
-    equal(tswcalc.slots.head.ql(), '10.5');
-    equal(tswcalc.slots.head.glyphQl(), '10.5');
-    equal(tswcalc.slots.ring.ql(), '10.5');
-    equal(tswcalc.slots.ring.glyphQl(), '10.5');
-    equal(tswcalc.slots.neck.ql(), '10.5');
-    equal(tswcalc.slots.neck.glyphQl(), '10.5');
-    equal(tswcalc.slots.wrist.ql(), '10.4');
-    equal(tswcalc.slots.wrist.glyphQl(), '10.5');
-    equal(tswcalc.slots.luck.ql(), '10.5');
-    equal(tswcalc.slots.luck.glyphQl(), '10.5');
-    equal(tswcalc.slots.waist.ql(), '10.4');
-    equal(tswcalc.slots.waist.glyphQl(), '10.5');
-    equal(tswcalc.slots.occult.ql(), '10.5');
-    equal(tswcalc.slots.occult.glyphQl(), '10.5');
+    equal(swlcalc.slots.weapon.ql(), '10.5');
+    equal(swlcalc.slots.weapon.glyphQl(), '10.5');
+    equal(swlcalc.slots.head.ql(), '10.5');
+    equal(swlcalc.slots.head.glyphQl(), '10.5');
+    equal(swlcalc.slots.ring.ql(), '10.5');
+    equal(swlcalc.slots.ring.glyphQl(), '10.5');
+    equal(swlcalc.slots.neck.ql(), '10.5');
+    equal(swlcalc.slots.neck.glyphQl(), '10.5');
+    equal(swlcalc.slots.wrist.ql(), '10.4');
+    equal(swlcalc.slots.wrist.glyphQl(), '10.5');
+    equal(swlcalc.slots.luck.ql(), '10.5');
+    equal(swlcalc.slots.luck.glyphQl(), '10.5');
+    equal(swlcalc.slots.waist.ql(), '10.4');
+    equal(swlcalc.slots.waist.glyphQl(), '10.5');
+    equal(swlcalc.slots.occult.ql(), '10.5');
+    equal(swlcalc.slots.occult.glyphQl(), '10.5');
 });
 
 test('should set ql and glyph ql on all slots to 10.4 with the exception of ql on raid items after changing QL then changing role', 23, function() {
-    tswcalc.buttonBar.setQlOnAllSlots({
+    swlcalc.buttonBar.setQlOnAllSlots({
         target: {
             id: '#btn-all-10-4'
         }
     });
-    tswcalc.buttonBar.setRoleOnAllSlots({
+    swlcalc.buttonBar.setRoleOnAllSlots({
         target: {
             id: '#btn-all-1'
         }
     });
 
-    equal(tswcalc.slots.weapon.ql(), '10.4');
-    equal(tswcalc.slots.weapon.glyphQl(), '10.4');
-    equal(tswcalc.slots.head.ql(), '10.4');
-    equal(tswcalc.slots.head.glyphQl(), '10.4');
-    equal(tswcalc.slots.ring.ql(), '10.4');
-    equal(tswcalc.slots.ring.glyphQl(), '10.4');
-    equal(tswcalc.slots.neck.ql(), '10.4');
-    equal(tswcalc.slots.neck.glyphQl(), '10.4');
-    equal(tswcalc.slots.wrist.ql(), '10.4');
-    equal(tswcalc.slots.wrist.glyphQl(), '10.4');
-    equal(tswcalc.slots.luck.ql(), '10.4');
-    equal(tswcalc.slots.luck.glyphQl(), '10.4');
-    equal(tswcalc.slots.waist.ql(), '10.4');
-    equal(tswcalc.slots.waist.glyphQl(), '10.4');
-    equal(tswcalc.slots.occult.ql(), '10.4');
-    equal(tswcalc.slots.occult.glyphQl(), '10.4');
-    equal(tswcalc.slots.head.item().role, 'tank');
-    equal(tswcalc.slots.ring.item().role, 'tank');
-    equal(tswcalc.slots.neck.item().role, 'tank');
-    equal(tswcalc.slots.wrist.item().role, 'tank');
-    equal(tswcalc.slots.luck.item().role, 'tank');
-    equal(tswcalc.slots.waist.item().role, 'tank');
-    equal(tswcalc.slots.occult.item().role, 'tank');
+    equal(swlcalc.slots.weapon.ql(), '10.4');
+    equal(swlcalc.slots.weapon.glyphQl(), '10.4');
+    equal(swlcalc.slots.head.ql(), '10.4');
+    equal(swlcalc.slots.head.glyphQl(), '10.4');
+    equal(swlcalc.slots.ring.ql(), '10.4');
+    equal(swlcalc.slots.ring.glyphQl(), '10.4');
+    equal(swlcalc.slots.neck.ql(), '10.4');
+    equal(swlcalc.slots.neck.glyphQl(), '10.4');
+    equal(swlcalc.slots.wrist.ql(), '10.4');
+    equal(swlcalc.slots.wrist.glyphQl(), '10.4');
+    equal(swlcalc.slots.luck.ql(), '10.4');
+    equal(swlcalc.slots.luck.glyphQl(), '10.4');
+    equal(swlcalc.slots.waist.ql(), '10.4');
+    equal(swlcalc.slots.waist.glyphQl(), '10.4');
+    equal(swlcalc.slots.occult.ql(), '10.4');
+    equal(swlcalc.slots.occult.glyphQl(), '10.4');
+    equal(swlcalc.slots.head.item().role, 'tank');
+    equal(swlcalc.slots.ring.item().role, 'tank');
+    equal(swlcalc.slots.neck.item().role, 'tank');
+    equal(swlcalc.slots.wrist.item().role, 'tank');
+    equal(swlcalc.slots.luck.item().role, 'tank');
+    equal(swlcalc.slots.waist.item().role, 'tank');
+    equal(swlcalc.slots.occult.item().role, 'tank');
 });
 
 test('should reset all slots', 72, function() {
-    tswcalc.buttonBar.resetAllSlots();
+    swlcalc.buttonBar.resetAllSlots();
 
-    assertReset(tswcalc.slots.weapon);
-    assertReset(tswcalc.slots.head);
-    assertReset(tswcalc.slots.ring);
-    assertReset(tswcalc.slots.neck);
-    assertReset(tswcalc.slots.wrist);
-    assertReset(tswcalc.slots.luck);
-    assertReset(tswcalc.slots.waist);
-    assertReset(tswcalc.slots.occult);
+    assertReset(swlcalc.slots.weapon);
+    assertReset(swlcalc.slots.head);
+    assertReset(swlcalc.slots.ring);
+    assertReset(swlcalc.slots.neck);
+    assertReset(swlcalc.slots.wrist);
+    assertReset(swlcalc.slots.luck);
+    assertReset(swlcalc.slots.waist);
+    assertReset(swlcalc.slots.occult);
 });
 
 function assertReset(slot) {

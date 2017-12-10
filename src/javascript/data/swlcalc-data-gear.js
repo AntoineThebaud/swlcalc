@@ -1,7 +1,7 @@
-var tswcalc = tswcalc || {};
-tswcalc.data = tswcalc.data || {};
+var swlcalc = swlcalc || {};
+swlcalc.data = swlcalc.data || {};
 
-tswcalc.data.custom_gear_data = {
+swlcalc.data.custom_gear_data = {
     'weapon': {
         '10.0': {
             weapon_power: 398

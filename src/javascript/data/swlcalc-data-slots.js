@@ -1,7 +1,7 @@
-var tswcalc = tswcalc || {};
-tswcalc.data = tswcalc.data || {};
+var swlcalc = swlcalc || {};
+swlcalc.data = swlcalc.data || {};
 
-tswcalc.data.template_data = {
+swlcalc.data.template_data = {
     slots: [{
             id_prefix: 'weapon',
             name: 'Primary Weapon',

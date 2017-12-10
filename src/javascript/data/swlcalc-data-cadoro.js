@@ -1,7 +1,7 @@
-var tswcalc = tswcalc || {};
-tswcalc.data = tswcalc.data || {};
+var swlcalc = swlcalc || {};
+swlcalc.data = swlcalc.data || {};
 
-tswcalc.data.cadoro_items = {
+swlcalc.data.cadoro_items = {
     'issue-6': {
         'warning_text': "This signet can only be attached to Ageless Blood, Forgotten Ashes or Time's Mark. These items can be purchased from the Ca' d'Oro merchant in Scorched Desert.",
         'head': {

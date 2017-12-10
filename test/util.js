@@ -1,10 +1,10 @@
 module('util-unit-tests', {});
 
 test('should capitalise word', 1, function() {
-    deepEqual(tswcalc.util.capitalise('tswcalc'), 'Tswcalc');
+    deepEqual(swlcalc.util.capitalise('swlcalc'), 'Swlcalc');
 });
 
 test('should return blank if None/none', 2, function() {
-    deepEqual(tswcalc.util.blankIfNone('none'), '');
-    deepEqual(tswcalc.util.blankIfNone('None'), '');
+    deepEqual(swlcalc.util.blankIfNone('none'), '');
+    deepEqual(swlcalc.util.blankIfNone('None'), '');
 });

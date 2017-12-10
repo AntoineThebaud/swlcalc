@@ -1,6 +1,6 @@
-var tswcalc = tswcalc || {};
+var swlcalc = swlcalc || {};
 
-tswcalc.summary = function() {
+swlcalc.summary = function() {
 
     var el = {};
     var elInit = function() {
@@ -39,7 +39,7 @@ tswcalc.summary = function() {
     };
     
    var updateURL = function(event) {
-        window.location.hash = tswcalc.export.createExportUrl();
+        window.location.hash = swlcalc.export.createExportUrl();
     };
 
     var collectAllStats = function() {
@@ -56,9 +56,9 @@ tswcalc.summary = function() {
         var supernalUpgrades = 0;
         var astralFuses = 0;
         var eleventhHourKits = 0;
-        for (var slotId in tswcalc.slots) {
-            if (tswcalc.slots.hasSlot(slotId)) {
-                var slot = tswcalc.slots[slotId];
+        for (var slotId in swlcalc.slots) {
+            if (swlcalc.slots.hasSlot(slotId)) {
+                var slot = swlcalc.slots[slotId];
                 blackBullions += slot.blackBullionCost();
                 pantheons += slot.markOfThePantheonCost();
                 criterionUpgrades += slot.criterionUpgradeCost();
@@ -68,10 +68,10 @@ tswcalc.summary = function() {
             }
         }
         if(el.includeItemCosts.is(':checked')) {
-            blackBullions += tswcalc.data.costs.item.criterion.bullion * criterionUpgrades;
-            pantheons += tswcalc.data.costs.item.criterion.pantheon * criterionUpgrades;
-            blackBullions += tswcalc.data.costs.item.astral.bullion * astralFuses;
-            pantheons += tswcalc.data.costs.item.astral.pantheon * astralFuses;
+            blackBullions += swlcalc.data.costs.item.criterion.bullion * criterionUpgrades;
+            pantheons += swlcalc.data.costs.item.criterion.pantheon * criterionUpgrades;
+            blackBullions += swlcalc.data.costs.item.astral.bullion * astralFuses;
+            pantheons += swlcalc.data.costs.item.astral.pantheon * astralFuses;
         }
         el.black_bullion_cost.html(blackBullions);
         el.pantheon_cost.html(pantheons);
@@ -104,9 +104,9 @@ tswcalc.summary = function() {
             'heal-rating': 0
         };
 
-        for (var slotId in tswcalc.slots) {
-            if (tswcalc.slots.hasSlot(slotId)) {
-                var slot = tswcalc.slots[slotId];
+        for (var slotId in swlcalc.slots) {
+            if (swlcalc.slots.hasSlot(slotId)) {
+                var slot = swlcalc.slots[slotId];
                 if(slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
                 }
@@ -119,18 +119,18 @@ tswcalc.summary = function() {
                 }
                 //TODO: refactor
                 if (slot.isWeapon()) {
-                    sums['weapon-power'] = tswcalc.data.custom_gear_data[slot.group][ql].weapon_power;
+                    sums['weapon-power'] = swlcalc.data.custom_gear_data[slot.group][ql].weapon_power;
                 }
                 else {
                     switch (slot.item().role) {
                         case 'dps':
-                            sums['attack-rating'] += tswcalc.data.custom_gear_data[slot.group].heal_dps['ql' + (ql)].rating;
+                            sums['attack-rating'] += swlcalc.data.custom_gear_data[slot.group].heal_dps['ql' + (ql)].rating;
                             break;
                         case 'healer':
-                            sums['heal-rating'] += tswcalc.data.custom_gear_data[slot.group].heal_dps['ql' + (ql)].rating;
+                            sums['heal-rating'] += swlcalc.data.custom_gear_data[slot.group].heal_dps['ql' + (ql)].rating;
                             break;
                         case 'tank':
-                            sums['hitpoints'] += tswcalc.data.custom_gear_data[slot.group].tank['ql' + (ql)].hitpoints;
+                            sums['hitpoints'] += swlcalc.data.custom_gear_data[slot.group].tank['ql' + (ql)].hitpoints;
                             break;
                         default:
                             console.log('Illegal role value when collecting primary stats');
@@ -139,7 +139,7 @@ tswcalc.summary = function() {
                 }
             }
         }
-        var pureAnima = tswcalc.miscslot.pureAnima();
+        var pureAnima = swlcalc.miscslot.pureAnima();
         pureAnima.bonus.forEach(function(bonus){
             sums[bonus.stat] += bonus.add;
         });
@@ -176,9 +176,9 @@ tswcalc.summary = function() {
             'physical-protection': 300,
             'magical-protection': 300
         };
-        for (var slotId in tswcalc.slots) {
-            if (tswcalc.slots.hasSlot(slotId)) {
-                var slot = tswcalc.slots[slotId];
+        for (var slotId in swlcalc.slots) {
+            if (swlcalc.slots.hasSlot(slotId)) {
+                var slot = swlcalc.slots[slotId];
                 if(slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
                 }
@@ -187,15 +187,15 @@ tswcalc.summary = function() {
             }
         }
 
-        var anima = tswcalc.miscslot.anima();
+        var anima = swlcalc.miscslot.anima();
         sums[anima.bonus.stat] += anima.bonus.add;
         sums['critical-power-percentage'] = calculateCriticalPowerPercentage(sums['critical-power']);
 
         //TODO: refactor
         if (el.activateRaid.is(':checked')) {
-            for (var slotId in tswcalc.slots) {
-                if (tswcalc.slots.hasSlot(slotId)) {
-                    var signet = tswcalc.slots[slotId].signet();
+            for (var slotId in swlcalc.slots) {
+                if (swlcalc.slots.hasSlot(slotId)) {
+                    var signet = swlcalc.slots[slotId].signet();
                     if (signet.bonus !== undefined) {
                         for (var statIdx = 0; statIdx < signet.bonus.stat.length; statIdx++) {
                             if (signet.bonus.add !== undefined) {
@@ -222,9 +222,9 @@ tswcalc.summary = function() {
     };
 
     var updateGlyphValues = function() {
-        for (var slotId in tswcalc.slots) {
-            if (tswcalc.slots.hasSlot(slotId)) {
-                var slot = tswcalc.slots[slotId];
+        for (var slotId in swlcalc.slots) {
+            if (swlcalc.slots.hasSlot(slotId)) {
+                var slot = swlcalc.slots[slotId];
                 slot.updateGlyphValues();
             }
         }

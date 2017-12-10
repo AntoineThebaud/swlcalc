@@ -1,15 +1,15 @@
 function renderSlots() {
     renderTemplate('slots', {
-        slots: tswcalc.data.template_data.slots,
-        signets: tswcalc.data.signet_data
+        slots: swlcalc.data.template_data.slots,
+        signets: swlcalc.data.signet_data
     });
-    tswcalc.slots.init();
+    swlcalc.slots.init();
     renderMiscSlot();
 }
 
 function renderMiscSlot() {
     renderTemplate('miscslot', {});
-    tswcalc.miscslot.init();
+    swlcalc.miscslot.init();
 }
 
 function renderSummary() {
@@ -43,17 +43,17 @@ function clearFixture() {
 }
 
 function initiateSummary() {
-    tswcalc.summary.init();
+    swlcalc.summary.init();
 }
 
 function initiateButtonHandlers() {
-    tswcalc.button.init();
+    swlcalc.button.init();
 }
 
 function initiateSelectHandlers() {
-    for (var i = 0; i < tswcalc.data.template_data.slots.length; i++) {
-        var slot = tswcalc.data.template_data.slots[i];
-        tswcalc.select[slot.id_prefix] = new tswcalc.select.SelectHandler(slot);
-        tswcalc.select[slot.id_prefix].initiate();
+    for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
+        var slot = swlcalc.data.template_data.slots[i];
+        swlcalc.select[slot.id_prefix] = new swlcalc.select.SelectHandler(slot);
+        swlcalc.select[slot.id_prefix].initiate();
     }
 }

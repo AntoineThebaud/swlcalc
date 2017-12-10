@@ -1,7 +1,7 @@
-var tswcalc = tswcalc || {};
-tswcalc.data = tswcalc.data || {};
+var swlcalc = swlcalc || {};
+swlcalc.data = swlcalc.data || {};
 
-tswcalc.data.signet_data = {
+swlcalc.data.signet_data = {
     find: function(group, id) {
         for (var i = this[group].length - 1; i >= 0; i--) {
             if (this[group][i].id == id) {
@@ -1216,6 +1216,6 @@ tswcalc.data.signet_data = {
         }
 		]
     //last item-id in this file: 195
-    //last item-id in tswcalc-data-items.js: 192
+    //last item-id in swlcalc-data-items.js: 192
     //update these item-ids when adding new items/signets either place to avoid conflicts
 };

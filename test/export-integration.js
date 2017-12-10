@@ -5,14 +5,14 @@ module('export-integration-tests', {
         initiateSelectHandlers();
         initiateButtonHandlers();
         initiateSummary();
-        tswcalc.export.init();
+        swlcalc.export.init();
     }
 });
 
 test('should create BBCode export', 1, function() {
     createTankBuild();
 
-    tswcalc.export.startExportBBCode();
+    swlcalc.export.startExportBBCode();
 
     equal($('#export-textarea').html(), bbcode);
 });

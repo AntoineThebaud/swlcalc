@@ -1,16 +1,22 @@
 {
-  "name": "tswcalc",
-  "version": "1.14.0",
-  "author": "Joakim Bjørnstad <joakibj@gmail.com>",
-  "description": "A living glyph and gear calculator for The Secret World",
+  "name": "swlcalc",
+  "version": "0.1.0",
+  "author": "Antoine THEBAUD <antoine.thebaud@yahoo.fr>",
+  "description": "Gear planner for Secret World Legends",
   "repository": {
     "type": "git",
-    "url": "git@github.com:joakibj/tswcalc.git"
+    "url": "https://github.com/AntoineThebaud/swlcalc.git"
   },
   "contributors": [
     {
+      "name": "Antoine THEBAUD",
+      "email": "antoine.thebaud@yahoo.fr",
+      "contribution": "creator and main contributor of swlcalc"
+    },
+    {
       "name": "Joakim Bjørnstad",
-      "email": "joakibj@gmail.com"
+      "email": "joakibj@gmail.com",
+      "contribution": "creator and main contributor of tswcalc, the code base of swlcalc"
     }
   ],
   "license": "MIT",

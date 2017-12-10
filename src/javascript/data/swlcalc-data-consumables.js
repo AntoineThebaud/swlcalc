@@ -1,7 +1,7 @@
-var tswcalc = tswcalc || {};
-tswcalc.data = tswcalc.data || {};
+var swlcalc = swlcalc || {};
+swlcalc.data = swlcalc.data || {};
 
-tswcalc.data.consumables = {
+swlcalc.data.consumables = {
     pure_anima: {
         'none': {
             name: 'None',

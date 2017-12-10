@@ -1,7 +1,7 @@
-var tswcalc = tswcalc || {};
-tswcalc.data = tswcalc.data || {};
+var swlcalc = swlcalc || {};
+swlcalc.data = swlcalc.data || {};
 
-tswcalc.data.stat_mapping = {
+swlcalc.data.stat_mapping = {
     to_num: {
         'none': 0,
         'critical-rating': 1,
@@ -29,7 +29,7 @@ tswcalc.data.stat_mapping = {
     }
 };
 
-tswcalc.data.signet_quality_mapping = {
+swlcalc.data.signet_quality_mapping = {
     to_num: {
         'none': 0,
         'normal': 1,
@@ -50,7 +50,7 @@ tswcalc.data.signet_quality_mapping = {
     }
 };
 
-tswcalc.data.wtype_mapping = {
+swlcalc.data.wtype_mapping = {
     to_num: {
         'none': 0,
         'blade': 1,

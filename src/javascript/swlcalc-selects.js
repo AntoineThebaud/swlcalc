@@ -1,9 +1,9 @@
-var tswcalc = tswcalc || {};
-tswcalc.select = tswcalc.select || {};
+var swlcalc = swlcalc || {};
+swlcalc.select = swlcalc.select || {};
 
-tswcalc.select.SelectHandler = function SelectHandler(slot) {
+swlcalc.select.SelectHandler = function SelectHandler(slot) {
     var self = this;
-    var slotObj = tswcalc.slots[slot.id_prefix];
+    var slotObj = swlcalc.slots[slot.id_prefix];
 
     this.initiate = function() {
         this.bindEvents();
@@ -26,9 +26,9 @@ tswcalc.select.SelectHandler = function SelectHandler(slot) {
     };
     
     this.addItemsToSelect = function() {
-        var items = tswcalc.data.findItems(slot.group);
+        var items = swlcalc.data.findItems(slot.group);
         if(slot.id_prefix != 'head'){
-            items = items.concat(tswcalc.data.findItems(slot.id_prefix));
+            items = items.concat(swlcalc.data.findItems(slot.id_prefix));
         }
         
         items.forEach(function(item) {
@@ -48,7 +48,7 @@ tswcalc.select.SelectHandler = function SelectHandler(slot) {
 
         this.updateToDefaultSignet();
 
-        var signetsInSlotGroup = $.merge([], tswcalc.data.signet_data[slot.group]);
+        var signetsInSlotGroup = $.merge([], swlcalc.data.signet_data[slot.group]);
         // weapon signets can also be slotted in head
         $.merge(signetsInSlotGroup, this.getSignetsForHead(slot.group));
         // merge in non-head and non-weapon signets in this slot
@@ -78,14 +78,14 @@ tswcalc.select.SelectHandler = function SelectHandler(slot) {
 
     this.getSignetsForHead = function(group) {
         if (group == 'head') {
-            return tswcalc.data.signet_data['weapon'];
+            return swlcalc.data.signet_data['weapon'];
         }
         return [];
     };
 
     this.getSignetsForSlot = function() {
-        if (slot.id_prefix !== 'head' && slot.id_prefix !== 'weapon' && typeof tswcalc.data.signet_data[slot.id_prefix] !== 'undefined') {
-            return tswcalc.data.signet_data[slot.id_prefix];
+        if (slot.id_prefix !== 'head' && slot.id_prefix !== 'weapon' && typeof swlcalc.data.signet_data[slot.id_prefix] !== 'undefined') {
+            return swlcalc.data.signet_data[slot.id_prefix];
         }
         return [];
     };
@@ -94,7 +94,7 @@ tswcalc.select.SelectHandler = function SelectHandler(slot) {
         var signet = slotObj.signet();
 
         if (typeof signet.requires !== 'undefined') {
-            var cadoro = tswcalc.data.cadoro_items[signet.requires];
+            var cadoro = swlcalc.data.cadoro_items[signet.requires];
             var cadoroItem = cadoro[slot.id_prefix][slotObj.item().role];
             if (cadoroItem !== undefined && cadoroItem.name !== '') {
                 slotObj.name(': ' + cadoroItem.name);
@@ -111,32 +111,32 @@ tswcalc.select.SelectHandler = function SelectHandler(slot) {
             slotObj.el.nameWarning.hide();
         }
         slotObj.updateSignet();
-        tswcalc.summary.updateAllStats();
+        swlcalc.summary.updateAllStats();
     };
 
     this.itemChange = function(event) {
         self.enableControls();
         self.updateControlsForItem();
-        tswcalc.summary.updateAllStats();
+        swlcalc.summary.updateAllStats();
     };
 
     this.wtypeChange = function(event) {
         var wtype = $(this).val();
 
         if(wtype != 'none') {
-            slotObj.name(': ' + tswcalc.util.capitalise(wtype));
+            slotObj.name(': ' + swlcalc.util.capitalise(wtype));
         } else {
             slotObj.name('');
         }
     };
 
     this.qlChange = function(event) {
-        tswcalc.summary.updateAllStats();
+        swlcalc.summary.updateAllStats();
     };
 
     this.glyphChange = function(id_suffix) {
         self.updateGlyphDistributionButtons();
-        tswcalc.summary.updateAllStats();
+        swlcalc.summary.updateAllStats();
     };
     
     this.updateGlyphDistributionButtons = function() {
@@ -255,6 +255,6 @@ tswcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.signetId.find('option[value=999]').remove();
         slotObj.updateSignet();
         slotObj.el.signetId.change();
-        tswcalc.summary.updateAllStats();
+        swlcalc.summary.updateAllStats();
     };
 };

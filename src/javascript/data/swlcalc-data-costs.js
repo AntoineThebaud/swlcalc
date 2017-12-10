@@ -1,8 +1,7 @@
+var swlcalc = swlcalc || {};
+swlcalc.data = swlcalc.data || {};
 
-var tswcalc = tswcalc || {};
-tswcalc.data = tswcalc.data || {};
-
-tswcalc.data.costs = {
+swlcalc.data.costs = {
     'weapon': {
         '10.0': {
             bullion: 300
