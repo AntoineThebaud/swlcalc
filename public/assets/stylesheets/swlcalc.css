@@ -3,7 +3,7 @@ body {
   padding-bottom: 20px;
 }
 
-.logo {     
+.logo {
     font-size: 50px;
 }
 
@@ -28,6 +28,26 @@ body {
     color: #3f3f3f;
 }
 
+.color-standard {
+    color: #05B114;
+}
+
+.color-rare {
+    color: #039BD9;
+}
+
+.color-epic {
+    color: #AE58FF;
+}
+
+.color-mythic {
+    color: #E2A002;
+}
+
+.color-legendary {
+    color: #E62C38;
+}
+
 .slogan {
     font-size: 12px;
 }
@@ -40,7 +60,7 @@ body {
     min-width: 32px;
     min-height: 32px;
     font-size: 12px;
-    padding: 0px;   
+    padding: 0px;
     padding-top: 2px;
     padding-bottom: 2px;
     padding-right: 2px;
@@ -59,11 +79,19 @@ td.item-select, .wtype-select {
     width: 210px;
 }
 
-td.ql-label {
+td.quality-label {
     width: 34px;
 }
 
-td.ql-select {
+td.quality-select {
+    width: 130px;
+}
+
+td.level-label {
+    width: 34px;
+}
+
+td.level-select {
     width: 130px;
 }
 
@@ -113,17 +141,17 @@ td.item-description {
 
 .table-stats td {
     font-size: 12px;
-    padding: 0px;   
+    padding: 0px;
 }
 
 .table-stats th {
-    padding: 5px 5px 5px 0px;   
+    padding: 5px 5px 5px 0px;
 }
 
 select {
     font-size: 12px;
     width: auto;
-    height:auto;   
+    height:auto;
     margin-top: 3px;
     margin-bottom: 3px;
 }

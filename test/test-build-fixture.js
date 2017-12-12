@@ -6,7 +6,7 @@ function createTankBuild() {
     $('#weapon-secondary-glyph').val('none');
     $('#weapon-primary-glyph-dist-btn4').trigger('click');
     $('#weapon-secondary-glyph-dist-btn0').trigger('click');
-    $('#weapon-signet-quality').val('elite');
+    $('#weapon-signet-quality').val('rare');
     $('#weapon-pick-signet').val('5');
 
     $('#weapon2-wtype').val('hammer');
@@ -16,7 +16,7 @@ function createTankBuild() {
     $('#weapon2-secondary-glyph').val('none');
     $('#weapon2-primary-glyph-dist-btn4').trigger('click');
     $('#weapon2-secondary-glyph-dist-btn0').trigger('click');
-    $('#weapon2-signet-quality').val('elite');
+    $('#weapon2-signet-quality').val('rare');
     $('#weapon2-pick-signet').val('6');
 
     $('#head-ql').val('10.4');
@@ -38,7 +38,7 @@ function createTankBuild() {
     $('#ring-secondary-glyph').val('none');
     $('#ring-primary-glyph-dist-btn4').trigger('click');
     $('#ring-secondary-glyph-dist-btn0').trigger('click');
-    $('#ring-signet-quality').val('elite');
+    $('#ring-signet-quality').val('rare');
     $('#ring-pick-signet').val('22');
 
     $('#neck-ql').val('10.4');
@@ -98,7 +98,7 @@ function createDPSNYRaidBuild() {
     $('#weapon-secondary-glyph').val('none');
     $('#weapon-primary-glyph-dist-btn4').trigger('click');
     $('#weapon-secondary-glyph-dist-btn0').trigger('click');
-    $('#weapon-signet-quality').val('elite');
+    $('#weapon-signet-quality').val('rare');
     $('#weapon-pick-signet').val('5');
 
     $('#head-itemId').val('82');

@@ -19,7 +19,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 0,
-                elite: 0,
+                rare: 0,
                 normal: 0
             },
             id: 0,
@@ -32,7 +32,7 @@ swlcalc.data.signet_data = {
             cooldown: '11',
             quality: {
                 epic: 24,
-                elite: 16,
+                rare: 16,
                 normal: 8
             },
             id: 52,
@@ -43,7 +43,7 @@ swlcalc.data.signet_data = {
             cooldown: '9',
             quality: {
                 epic: 15,
-                elite: 10,
+                rare: 10,
                 normal: 5
             },
             id: 1,
@@ -54,7 +54,7 @@ swlcalc.data.signet_data = {
             cooldown: '7',
             quality: {
                 epic: 24,
-                elite: 16,
+                rare: 16,
                 normal: 8
             },
             id: 2,
@@ -65,11 +65,11 @@ swlcalc.data.signet_data = {
             cooldown: '12',
             quality: [{
                     epic: 12,
-                    elite: 8,
+                    rare: 8,
                     normal: 4
                 }, {
                     epic: 3,
-                    elite: 2,
+                    rare: 2,
                     normal: 1
                 }
             ],
@@ -81,7 +81,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 30,
-                elite: 20,
+                rare: 20,
                 normal: 10
             },
             id: 4,
@@ -92,7 +92,7 @@ swlcalc.data.signet_data = {
             cooldown: '6',
             quality: {
                 epic: 15,
-                elite: 10,
+                rare: 10,
                 normal: 5
             },
             id: 5,
@@ -103,7 +103,7 @@ swlcalc.data.signet_data = {
             cooldown: '15',
             quality: {
                 epic: 24,
-                elite: 16,
+                rare: 16,
                 normal: 8
             },
             id: 6,
@@ -114,7 +114,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 6,
-                elite: 4,
+                rare: 4,
                 normal: 2
             },
             id: 7,
@@ -125,7 +125,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 224,
-                elite: 149,
+                rare: 149,
                 normal: 74
             },
             id: 8,
@@ -136,7 +136,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 427,
-                elite: 284,
+                rare: 284,
                 normal: 80
             },
             id: 9,
@@ -147,7 +147,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 142,
-                elite: 94,
+                rare: 94,
                 normal: 47
             },
             id: 10,
@@ -158,7 +158,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 120,
-                elite: 80,
+                rare: 80,
                 normal: 40
             },
             id: 11,
@@ -169,7 +169,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 198,
-                elite: 132,
+                rare: 132,
                 normal: 66
             },
             id: 12,
@@ -180,7 +180,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 141,
-                elite: 94,
+                rare: 94,
                 normal: 47
             },
             id: 13,
@@ -191,7 +191,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 167,
-                elite: 111,
+                rare: 111,
                 normal: 55
             },
             id: 14,
@@ -202,7 +202,7 @@ swlcalc.data.signet_data = {
             cooldown: '8',
             quality: {
                 epic: 94,
-                elite: 63,
+                rare: 63,
                 normal: 32
             },
             id: 15,
@@ -215,7 +215,7 @@ swlcalc.data.signet_data = {
 		cooldown: '0', 
 		quality: { 
 			epic: 12, 
-			elite: 8, 
+			rare: 8, 
 			normal: 4
 			}, 
 		icon: 'weapon_util', 
@@ -227,7 +227,7 @@ swlcalc.data.signet_data = {
 		cooldown: '0', 
 		quality: { 
 		epic: 12, 
-		elite: 8, 
+		rare: 8, 
 		normal: 4}, 
 		icon: 'weapon_dps', 
 		shambala: true
@@ -238,7 +238,7 @@ swlcalc.data.signet_data = {
 		cooldown: '0', 
 		quality: { 
 			epic: 450, 
-			elite: 300, 
+			rare: 300, 
 			normal: 150
 			}, 
 		icon: 'weapon_dps', 
@@ -250,7 +250,7 @@ swlcalc.data.signet_data = {
 		cooldown: '0', 
 		quality: { 
 			epic: 30, 
-			elite: 20, 
+			rare: 20, 
 			normal: 10
 			}, 
 		icon: 'weapon_heal', 
@@ -262,7 +262,7 @@ swlcalc.data.signet_data = {
 		cooldown: '0', 
 		quality: { 
 			epic: 45, 
-			elite: 30, 
+			rare: 30, 
 			normal: 15
 			}, 
 		icon: 'weapon_heal', 
@@ -274,7 +274,7 @@ swlcalc.data.signet_data = {
 		cooldown: '0', 
 		quality: { 
 			epic: 30, 
-			elite: 20, 
+			rare: 20, 
 			normal: 10
 			}, 
 		icon: 'weapon_dps', 
@@ -286,7 +286,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 21,
-                elite: 14,
+                rare: 14,
                 normal: 7
             },
             id: 16,
@@ -297,7 +297,7 @@ swlcalc.data.signet_data = {
             cooldown: '8',
             quality: {
                 epic: 450,
-                elite: 300,
+                rare: 300,
                 normal: 150
             },
             id: 17,
@@ -308,7 +308,7 @@ swlcalc.data.signet_data = {
             cooldown: '10',
             quality: {
                 epic: 45,
-                elite: 30,
+                rare: 30,
                 normal: 15
             },
             id: 18,
@@ -319,7 +319,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 0.9,
-                elite: 0.6,
+                rare: 0.6,
                 normal: 0.3
             },
             id: 19,
@@ -330,7 +330,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 150,
-                elite: 100,
+                rare: 100,
                 normal: 50
             },
             id: 20,
@@ -376,7 +376,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 9, 
-				elite: 6, 
+				rare: 6, 
 				normal: 3
 			}, 
 		icon: 'head_tank', 
@@ -388,7 +388,7 @@ swlcalc.data.signet_data = {
 		cooldown: '0', 
 		quality: { 
 			epic: 12, 
-			elite: 8, 
+			rare: 8, 
 			normal: 4
 			}, 
 		icon: 'head_dps', 
@@ -400,7 +400,7 @@ swlcalc.data.signet_data = {
 		cooldown: '0', 
 		quality: { 
 			epic: 18, 
-			elite: 12, 
+			rare: 12, 
 			normal: 9
 			}, 
 		icon: 'head_tank', 
@@ -412,7 +412,7 @@ swlcalc.data.signet_data = {
 		cooldown: '0',
 		quality: { 
 			epic: 60, 
-			elite: 40, 
+			rare: 40, 
 			normal: 20
 		}, 
 		icon: 'head_dps', 
@@ -424,7 +424,7 @@ swlcalc.data.signet_data = {
 		cooldown: '0', 
 		quality: { 
 			epic: 20, 
-			elite: 40, 
+			rare: 40, 
 			normal: 60
 			},
 		icon: 'head_dps', 
@@ -436,7 +436,7 @@ swlcalc.data.signet_data = {
 		cooldown: '0', 
 		quality: { 
 			epic: 2.25, 
-			elite: 1.5, 
+			rare: 1.5, 
 			normal: 0.75
 			}, 
 		icon: 'head_util', 
@@ -448,7 +448,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 4.5,
-                elite: 3,
+                rare: 3,
                 normal: 1.5
             },
             id: 24,
@@ -459,7 +459,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 4.5,
-                elite: 3,
+                rare: 3,
                 normal: 1.5
             },
             id: 25,
@@ -470,7 +470,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 4.5,
-                elite: 3,
+                rare: 3,
                 normal: 1.5
             },
             id: 26,
@@ -481,7 +481,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 3,
-                elite: 2,
+                rare: 2,
                 normal: 1
             },
             id: 27,
@@ -492,7 +492,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 3,
-                elite: 2,
+                rare: 2,
                 normal: 1
             },
             id: 28,
@@ -503,7 +503,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 3,
-                elite: 2,
+                rare: 2,
                 normal: 1
             },
             id: 29,
@@ -514,7 +514,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 3,
-                elite: 2,
+                rare: 2,
                 normal: 1
             },
             id: 30,
@@ -525,7 +525,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 4.5,
-                elite: 3,
+                rare: 3,
                 normal: 1.5
             },
             id: 31,
@@ -536,7 +536,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 4.5,
-                elite: 3,
+                rare: 3,
                 normal: 1.5
             },
             id: 32,
@@ -547,7 +547,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 3,
-                elite: 2,
+                rare: 2,
                 normal: 1
             },
             id: 33,
@@ -558,7 +558,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 3,
-                elite: 2,
+                rare: 2,
                 normal: 1
             },
             id: 34,
@@ -569,7 +569,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 3,
-                elite: 2,
+                rare: 2,
                 normal: 1
             },
             id: 35,
@@ -580,7 +580,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 4.5,
-                elite: 3,
+                rare: 3,
                 normal: 1.5
             },
             id: 36,
@@ -591,7 +591,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 3,
-                elite: 2,
+                rare: 2,
                 normal: 1
             },
             id: 37,
@@ -602,7 +602,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 3,
-                elite: 2,
+                rare: 2,
                 normal: 1
             },
             id: 38,
@@ -613,7 +613,7 @@ swlcalc.data.signet_data = {
             cooldown: '12',
             quality: {
                 epic: 25,
-                elite: 17,
+                rare: 17,
                 normal: 9
             },
             id: 39,
@@ -624,7 +624,7 @@ swlcalc.data.signet_data = {
             cooldown: '12',
             quality: {
                 epic: 378,
-                elite: 252,
+                rare: 252,
                 normal: 162
             },
             id: 40,
@@ -635,7 +635,7 @@ swlcalc.data.signet_data = {
             cooldown: '6',
             quality: {
                 epic: 6,
-                elite: 4,
+                rare: 4,
                 normal: 2
             },
             id: 41,
@@ -646,7 +646,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 3,
-                elite: 2,
+                rare: 2,
                 normal: 1
             },
             id: 42,
@@ -657,7 +657,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 20,
-                elite: 13,
+                rare: 13,
                 normal: 7
             },
             id: 43,
@@ -668,7 +668,7 @@ swlcalc.data.signet_data = {
             cooldown: '15',
             quality: {
                 epic: 15,
-                elite: 10,
+                rare: 10,
                 normal: 5
             },
             id: 44,
@@ -679,7 +679,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 3,
-                elite: 2,
+                rare: 2,
                 normal: 1
             },
             id: 45,
@@ -690,7 +690,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 3,
-                elite: 2,
+                rare: 2,
                 normal: 1
             },
             id: 46,
@@ -701,11 +701,11 @@ swlcalc.data.signet_data = {
             cooldown: '12',
             quality: [{
                     epic: 150,
-                    elite: 100,
+                    rare: 100,
                     normal: 50
                 }, {
                     epic: 57,
-                    elite: 38,
+                    rare: 38,
                     normal: 19
                 }
             ],
@@ -717,7 +717,7 @@ swlcalc.data.signet_data = {
             cooldown: '5',
             quality: {
                 epic: 15,
-                elite: 10,
+                rare: 10,
                 normal: 5
             },
             id: 48,
@@ -728,7 +728,7 @@ swlcalc.data.signet_data = {
             cooldown: '6',
             quality: {
                 epic: 'large',
-                elite: 'medium',
+                rare: 'medium',
                 normal: 'small'
             },
             id: 49,
@@ -739,7 +739,7 @@ swlcalc.data.signet_data = {
             cooldown: '15',
             quality: {
                 epic: 'large',
-                elite: 'medium',
+                rare: 'medium',
                 normal: 'small'
             },
             id: 50,
@@ -750,7 +750,7 @@ swlcalc.data.signet_data = {
             cooldown: '15',
             quality: {
                 epic: 'large',
-                elite: 'medium',
+                rare: 'medium',
                 normal: 'small'
             },
             id: 51,
@@ -763,7 +763,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 375, 
-				elite: 250, 
+				rare: 250, 
 				normal: 125
 				},  
 			icon: 'minor_dps', 
@@ -775,7 +775,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 60, 
-				elite: 40, 
+				rare: 40, 
 				normal: 20
 				},  
 			icon: 'minor_tank', 
@@ -787,7 +787,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 15, 
-				elite: 10, 
+				rare: 10, 
 				normal: 5
 				},  
 			icon: 'minor_tank', 
@@ -799,7 +799,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 9, 
-				elite: 6, 
+				rare: 6, 
 				normal: 3
 				},  
 			icon: 'minor_tank', 
@@ -811,7 +811,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: '600 - 2400', 
-				elite: '400 - 1600', 
+				rare: '400 - 1600', 
 				normal: '200 - 800'
 				},  
 			icon: 'minor_heal', 
@@ -823,11 +823,11 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: [{ 
 				epic: 100, 
-				elite: 66, 
+				rare: 66, 
 				normal: 33
 				}, {
 					epic: 22.5, 
-					elite: 15, 
+					rare: 15, 
 					normal: 7.5
 				}],  
 			icon: 'minor_heal', 
@@ -839,7 +839,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 150, 
-				elite: 100, 
+				rare: 100, 
 				normal: 50
 				},  
 			icon: 'minor_heal', 
@@ -851,7 +851,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 150, 
-				elite: 100, 
+				rare: 100, 
 				normal: 50
 				},  
 			icon: 'minor_heal', 
@@ -863,7 +863,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 				quality: { 
 				epic: 15, 
-				elite: 10, 
+				rare: 10, 
 				normal: 5
 			},  
 			icon: 'minor_tank', 
@@ -875,7 +875,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 141,
-                elite: 94,
+                rare: 94,
                 normal: 47
             },
             id: 21,
@@ -887,7 +887,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 495,
-                elite: 330,
+                rare: 330,
                 normal: 165
             },
             id: 22,
@@ -899,7 +899,7 @@ swlcalc.data.signet_data = {
             cooldown: '0',
             quality: {
                 epic: 141,
-                elite: 94,
+                rare: 94,
                 normal: 47
             },
             id: 23,
@@ -913,7 +913,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: '450 - 900', 
-				elite: '300 - 600', 
+				rare: '300 - 600', 
 				normal: '150 - 300'
 				}, 
 			icon: 'major_dps', 
@@ -925,7 +925,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 				quality: { 
 				epic: 300, 
-				elite: 200, 
+				rare: 200, 
 				normal: 100
 				},  
 			icon: 'major_tank', 
@@ -937,7 +937,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 15, 
-				elite: 10, 
+				rare: 10, 
 				normal: 5
 				}, 
 			icon: 'major_tank', 
@@ -948,7 +948,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 21, 
-				elite: 14, 
+				rare: 14, 
 				normal: 7
 				},  
 			icon: 'major_heal', 
@@ -959,7 +959,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 15, 
-				elite: 10, 
+				rare: 10, 
 				normal: 5
 				},  
 			icon: 'major_dps', 
@@ -971,7 +971,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 15, 
-				elite: 10, 
+				rare: 10, 
 				normal: 5
 				},  
 			icon: 'major_heal', 
@@ -983,7 +983,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 96, 
-				elite: 64, 
+				rare: 64, 
 				normal: 32
 				},  
 			icon: 'major_heal', 
@@ -995,7 +995,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 9, 
-				elite: 6, 
+				rare: 6, 
 				normal: 3
 				}, 
 			icon: 'major_dps', 
@@ -1007,7 +1007,7 @@ swlcalc.data.signet_data = {
 			cooldown: '0', 
 			quality: { 
 				epic: 3000, 
-				elite: 2000, 
+				rare: 2000, 
 				normal: 1000
 				},  
 			icon: 'major_dps', 

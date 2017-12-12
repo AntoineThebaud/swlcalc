@@ -192,7 +192,7 @@ swlcalc.data.items = [
         signet: {
             name: 'The Woodcutter\'s Sorrow',
             description: 'Whenever you directly heal an ally, you trigger <strong>Maternal Band</strong>: If your ally has an existing barrier, they are healed for twice the strength of that barrier. Maternal Band can only occur once per ally every 4 seconds.',
-            quality: 'heroic',
+            quality: 'mythic',
             icon: 'woodcutter_sorrow'
         }
     },
@@ -216,7 +216,7 @@ swlcalc.data.items = [
         signet: {
             name: 'The Woodcutter\'s Regret',
             description: 'Whenever you are hit, you have a 33% chance to trigger <strong>Guardian Spirit</strong>: Increases the lowest of your Evade, Defence and Block Rating by 300 for 5 seconds. This effect will not trigger if two or more of these stats are of equal value.',
-            quality: 'heroic',
+            quality: 'mythic',
             icon: 'woodcutter_regret'
         }
     },
@@ -240,7 +240,7 @@ swlcalc.data.items = [
         signet: {
             name: 'The Woodcutter\'s Wrath',
             description: 'Whenever an attack fails to penetrate, you gain a <strong>Mother\'s Wrath</strong> counter. When you reach 5 counters, they are removed and you gain a beneficial effect which increases your Penetration Chance by 40% for 3 seconds. Whenever you penetrate, all Mother\'s Wrath counters are removed. 6 seconds cooldown.',
-            quality: 'heroic',
+            quality: 'mythic',
             icon: 'woodcutter_wrath'
         }
     },
@@ -265,7 +265,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Anansi Chance Bender',
             description: 'When you hit a target you have a 10% chance to gain a damage increase of 16% for 5 seconds. 11 second cooldown.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'weapon_dps'
         }
     },
@@ -313,7 +313,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Anansi Chance-Enhancement Coins',
             description: 'When you block, evade or are glanced you gain 4% damage reduction for 5 seconds. 6 second cooldown',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'minor_tank'
         }
     },
@@ -361,7 +361,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Anansi Chaos Generators',
             description: 'Increases damage dealt by 1%.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'minor_dps'
         }
     },
@@ -409,7 +409,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Anansi Smart-Tarot',
             description: 'Your Healing effects are increased by 2%.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'minor_heal'
         }
     },
@@ -457,7 +457,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Anansi Smart-Tome',
             description: 'When you penetrate a target you make that target take 16% more damage from further penetrating hits for 7 seconds. 7 second cooldown.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'weapon_dps'
         }
     },
@@ -529,7 +529,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Anima-Calibrated Power Cable',
             description: 'Your Healing effects are increased by 2%.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'minor_heal'
         }
     },
@@ -577,7 +577,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Biotech Amulet',
             description: 'Your heal rating is increased by an additional 94.',
-            quality: 'elite',
+            quality: 'rare',
             stat: 'heal-rating',
             icon: 'major_heal'
         }
@@ -627,7 +627,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Biotech Band',
             description: 'Your heal rating is increased by an additional 94.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'major_heal'
         }
     },
@@ -675,7 +675,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Chemical Enhancement Knot',
             description: 'Your health is increased by an additional 330.',
-            quality: 'elite',
+            quality: 'rare',
             stat: 'hitpoints',
             icon: 'major_tank'
         }
@@ -725,7 +725,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Draug Lord Ink',
             description: 'When you heal a target, there is a 20% chance they will gain a barrier that absorbs 94 points of damage and lasts 10 seconds.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'head_heal'
         }
     },
@@ -773,7 +773,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Experimental Forcefield Pendant',
             description: 'Your health is increased by an additional 330.',
-            quality: 'elite',
+            quality: 'rare',
             stat: 'hitpoints',
             icon: 'major_tank'
         }
@@ -823,7 +823,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Experimental Repulsor Bracer',
             description: 'Your health is increased by an additional 330.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'major_tank'
         }
     },
@@ -871,7 +871,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Invinci-Tech Belt',
             description: 'When your health is below 50% the next 5 hits against you do 17% less damage. 12 second cooldown',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'minor_tank'
         }
     },
@@ -919,7 +919,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Lycanthrope Bone Powder',
             description: 'When you penetrate a target you make that target take 16% more damage from further penetrating hits for 7 seconds. 7 second cooldown.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'head_dps'
         }
     },
@@ -967,7 +967,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Manticore Cross-Supremacy',
             description: 'When you hit a target you have a 10% chance to gain a damage increase of 16% for 5 seconds. 11 second cooldown.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'weapon_dps'
         }
     },
@@ -1015,7 +1015,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Manticore Cyber-Slice',
             description: 'When you penetrate a target you make that target take 16% more damage from further penetrating hits for 7 seconds. 7 second cooldown.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'weapon_dps'
         }
     },
@@ -1063,7 +1063,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Manticore Dread-Reaper',
             description: 'When you penetrate a target you make that target take 16% more damage from further penetrating hits for 7 seconds. 7 second cooldown.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'weapon_dps'
         }
     },
@@ -1093,7 +1093,7 @@ swlcalc.data.items = [
     },
     {
         id: '146',
-        name: 'Manticore Elite Chain [10.8]',
+        name: 'Manticore rare Chain [10.8]',
         ql: '10.8',
         role: 'dps',
         slots: ['waist'],
@@ -1109,15 +1109,15 @@ swlcalc.data.items = [
             }
         },
         signet: {
-            name: 'Manticore Elite Chain',
+            name: 'Manticore rare Chain',
             description: 'Increases damage dealt by 1%.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'minor_dps'
         }
     },
     {
         id: '189',
-        name: 'Manticore Elite Chain [10.9]',
+        name: 'Manticore rare Chain [10.9]',
         ql: '10.9',
         role: 'dps',
         slots: ['waist'],
@@ -1133,7 +1133,7 @@ swlcalc.data.items = [
             }
         },
         signet: {
-            name: 'Manticore Elite Chain',
+            name: 'Manticore rare Chain',
             description: 'Increases damage dealt by 1.5%.',
             quality: 'epic',
             icon: 'minor_dps'
@@ -1141,7 +1141,7 @@ swlcalc.data.items = [
     },
     {
         id: '143',
-        name: 'Manticore Elite Effigy [10.8]',
+        name: 'Manticore rare Effigy [10.8]',
         ql: '10.8',
         role: 'dps',
         slots: ['occult'],
@@ -1157,15 +1157,15 @@ swlcalc.data.items = [
             }
         },
         signet: {
-            name: 'Manticore Elite Effigy',
+            name: 'Manticore rare Effigy',
             description: 'Increases damage dealt by 1%.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'minor_dps'
         }
     },
     {
         id: '192',
-        name: 'Manticore Elite Effigy [10.9]',
+        name: 'Manticore rare Effigy [10.9]',
         ql: '10.9',
         role: 'dps',
         slots: ['occult'],
@@ -1181,7 +1181,7 @@ swlcalc.data.items = [
             }
         },
         signet: {
-            name: 'Manticore Elite Effigy',
+            name: 'Manticore rare Effigy',
             description: 'Increases damage dealt by 1.5%.',
             quality: 'epic',
             icon: 'minor_dps'
@@ -1189,7 +1189,7 @@ swlcalc.data.items = [
     },
     {
         id: '140',
-        name: 'Manticore Elite Ring [10.8]',
+        name: 'Manticore rare Ring [10.8]',
         ql: '10.8',
         role: 'dps',
         slots: ['ring'],
@@ -1205,16 +1205,16 @@ swlcalc.data.items = [
             }
         },
         signet: {
-            name: 'Manticore Elite Ring',
+            name: 'Manticore rare Ring',
             description: 'Your attack rating is increased by an additional 94.',
-            quality: 'elite',
+            quality: 'rare',
             stat: 'attack-rating',
             icon: 'major_dps'
         }
     },
     {
         id: '169',
-        name: 'Manticore Elite Ring [10.9]',
+        name: 'Manticore rare Ring [10.9]',
         ql: '10.9',
         role: 'dps',
         slots: ['ring'],
@@ -1230,7 +1230,7 @@ swlcalc.data.items = [
             }
         },
         signet: {
-            name: 'Manticore Elite Ring',
+            name: 'Manticore rare Ring',
             description: 'Your attack rating is increased by an additional 141.',
             quality: 'epic',
             stat: 'attack-rating',
@@ -1239,7 +1239,7 @@ swlcalc.data.items = [
     },
     {
         id: '137',
-        name: 'Manticore Elite Tags [10.8]',
+        name: 'Manticore rare Tags [10.8]',
         ql: '10.8',
         role: 'dps',
         slots: ['neck'],
@@ -1255,16 +1255,16 @@ swlcalc.data.items = [
             }
         },
         signet: {
-            name: 'Manticore Elite Tags',
+            name: 'Manticore rare Tags',
             description: 'Your attack rating is increased by an additional 94.',
-            quality: 'elite',
+            quality: 'rare',
             stat: 'attack-rating',
             icon: 'major_dps'
         }
     },
     {
         id: '172',
-        name: 'Manticore Elite Tags [10.9]',
+        name: 'Manticore rare Tags [10.9]',
         ql: '10.9',
         role: 'dps',
         slots: ['neck'],
@@ -1280,7 +1280,7 @@ swlcalc.data.items = [
             }
         },
         signet: {
-            name: 'Manticore Elite Tags',
+            name: 'Manticore rare Tags',
             description: 'Your attack rating is increased by an additional 141.',
             quality: 'epic',
             stat: 'attack-rating',
@@ -1289,7 +1289,7 @@ swlcalc.data.items = [
     },
     {
         id: '135',
-        name: 'Manticore Elite Wristlet [10.8]',
+        name: 'Manticore rare Wristlet [10.8]',
         ql: '10.8',
         role: 'dps',
         slots: ['wrist'],
@@ -1305,16 +1305,16 @@ swlcalc.data.items = [
             }
         },
         signet: {
-            name: 'Manticore Elite Wristlet',
+            name: 'Manticore rare Wristlet',
             description: 'Your attack rating is increased by an additional 94.',
-            quality: 'elite',
+            quality: 'rare',
             stat: 'attack-rating',
             icon: 'major_dps'
         }
     },
     {
         id: '175',
-        name: 'Manticore Elite Wristlet [10.9]',
+        name: 'Manticore rare Wristlet [10.9]',
         ql: '10.9',
         role: 'dps',
         slots: ['wrist'],
@@ -1330,7 +1330,7 @@ swlcalc.data.items = [
             }
         },
         signet: {
-            name: 'Manticore Elite Wristlet',
+            name: 'Manticore rare Wristlet',
             description: 'Your attack rating is increased by an additional 141.',
             quality: 'epic',
             stat: 'attack-rating',
@@ -1357,7 +1357,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Manticore Obliterator',
             description: 'When you hit a target you have a 10% chance to gain a damage increase of 16% for 5 seconds. 11 second cooldown.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'weapon_dps'
         }
     },
@@ -1405,7 +1405,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Manticore Subjugator',
             description: 'When you hit a target you have a 10% chance to gain a damage increase of 16% for 5 seconds. 11 second cooldown.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'weapon_dps'
         }
     },
@@ -1477,7 +1477,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Manticore Talon',
             description: 'When you hit a target you have a 10% chance to gain a damage increase of 16% for 5 seconds. 11 second cooldown.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'weapon_dps'
         }
     },
@@ -1549,7 +1549,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Preserved Wendigo Bone',
             description: 'When your health is below 50% you are healed for 100 and affected by a heal over time effect healing you for 38 every 2 seconds for 8 seconds. 12 second cooldown',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'minor_tank'
         }
     },
@@ -1597,7 +1597,7 @@ swlcalc.data.items = [
         signet: {
             name: 'Sycoil Supreme Effigy',
             description: 'When you penetrate a target you make that target take 16% more damage from further penetrating hits for 7 seconds. 7 second cooldown.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'weapon_dps'
         }
     },
@@ -1645,7 +1645,7 @@ swlcalc.data.items = [
         signet: {
             name: 'The Colour Out of Space',
             description: 'When you block you gain 30% block chance for 4 seconds. 10 second cooldown.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'head_tank'
         }
     },
@@ -1693,7 +1693,7 @@ swlcalc.data.items = [
         signet: {
             name: 'V\u00E1li Resilience Buckle',
             description: 'Your Healing effects are increased by 2%.',
-            quality: 'elite',
+            quality: 'rare',
             icon: 'minor_heal'
         }
     },
@@ -1741,7 +1741,7 @@ swlcalc.data.items = [
         signet: {
             name: 'V\u00E1li Smart-Watch',
             description: 'Your heal rating is increased by an additional 94.',
-            quality: 'elite',
+            quality: 'rare',
             stat: 'heal-rating',
             icon: 'major_heal'
         }

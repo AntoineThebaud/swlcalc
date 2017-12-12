@@ -4,12 +4,15 @@ module('buttonbar-dom', {
     }
 });
 
-test('should have required buttonbar buttons in DOM', 6, function() {
+test('should have required buttonbar buttons in DOM', 9, function() {
     ok($('#btn-all-3').length !== 0, 'all-dps button exists');
     ok($('#btn-all-2').length !== 0, 'all-healer button exists');
     ok($('#btn-all-1').length !== 0, 'all-tank button exists');
-    ok($('#btn-all-10-4').length !== 0, 'all-10-4 button exists');
-    ok($('#btn-all-10-5').length !== 0, 'all-10-5 button exists');
+    ok($('#btn-all-standard').length !== 0, 'all-standard button exists');
+    ok($('#btn-all-rare').length !== 0, 'all-rare button exists');
+    ok($('#btn-all-epic').length !== 0, 'all-epic button exists');
+    ok($('#btn-all-mythic').length !== 0, 'all-mythic button exists');
+    ok($('#btn-all-legendary').length !== 0, 'all-legendary button exists');
     ok($('#btn-reset').length !== 0, 'reset button exists');
 });
 

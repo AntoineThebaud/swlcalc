@@ -41,7 +41,7 @@ test('should import pre-1.3 build from hash', 117, function() {
     equal($('#weapon-secondary-glyph').val(), 'none');
     ok($('#weapon-primary-glyph-dist-btn4').hasClass('active'));
     ok($('#weapon-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#weapon-signet-quality').val(), 'elite');
+    equal($('#weapon-signet-quality').val(), 'rare');
     equal($('#weapon-pick-signet').val(), '5');
 
     ok(!$('#weapon2-slot').is(':visible'));
@@ -176,7 +176,7 @@ test('should import post-1.3 build from hash', 117, function() {
     equal($('#weapon-secondary-glyph').val(), 'none');
     ok($('#weapon-primary-glyph-dist-btn4').hasClass('active'));
     ok($('#weapon-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#weapon-signet-quality').val(), 'elite');
+    equal($('#weapon-signet-quality').val(), 'rare');
     equal($('#weapon-pick-signet').val(), '5');
 
     ok(!$('#weapon2-slot').is(':visible'));

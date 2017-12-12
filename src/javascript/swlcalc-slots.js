@@ -129,7 +129,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     this.item = function(){
         var itemId = this.itemId()
         var item = swlcalc.data.items.find(function(item) {
-            return item.id == itemId; 
+            return item.id == itemId;
         });
         if (item) {
             return item;
@@ -233,7 +233,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     this.glyphCost = function () {
-        // items with built in glyphs to not cost bullion/pantheon
+        // items with built in glyphs do not cost bullion/pantheon
         if(this.item().glyph) {
             return {
                 bullion: 0,
@@ -261,11 +261,11 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     this.criterionUpgradeCost = function () {
         return this.itemCost().criterion_upgrade ? 1 : 0;
     };
-    
+
     this.supernalUpgradeCost = function () {
         return this.itemCost().supernal_upgrade ? 1 : 0;
     };
-    
+
     this.eleventhHourCost = function () {
         return this.glyphCost().eleventh_hour_kit ? 1 : 0;
     };
@@ -283,7 +283,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             this.el.signetQuality.val(arguments[0]);
         } else {
              if(this.el.signetQuality.val() === null) {
-                return "heroic";
+                return "mythic";
             }
             return this.el.signetQuality.val();
         }
@@ -330,12 +330,12 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
                 return 0;
             case 'normal':
                 return quality_index == -1 ? signet.quality.normal : signet.quality[quality_index].normal;
-            case 'elite':
-                return quality_index == -1 ? signet.quality.elite : signet.quality[quality_index].elite;
+            case 'rare':
+                return quality_index == -1 ? signet.quality.rare : signet.quality[quality_index].rare;
             case 'epic':
                 return quality_index == -1 ? signet.quality.epic : signet.quality[quality_index].epic;
-            case 'heroic':
-                return quality_index == -1 ? signet.quality.heroic : signet.quality[quality_index].heroic;
+            case 'mythic':
+                return quality_index == -1 ? signet.quality.mythic : signet.quality[quality_index].mythic;
             default:
                 return 0;
         }

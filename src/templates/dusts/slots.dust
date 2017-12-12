@@ -5,13 +5,13 @@
             <table class="table table-slots">
               <tr>
             {^is_weapon}
-              <td class="item-label"><strong>Item: </strong></td>
+              <td class="item-label"><strong>Item :</strong></td>
               <td class="item-select">
                 <select id="{id_prefix}-itemId" class="select-item" title="Please select item">
                 </select>
               </td>
             {:else}
-              <td class="wtype-label"><strong>Type: </strong></td>
+              <td class="wtype-label"><strong>Type :</strong></td>
               <td class="wtype-select">
                 <select id="{id_prefix}-wtype" class="select-wtype" title="Please select weapon type">
                   <option value="none" selected="true">None</option>
@@ -27,21 +27,22 @@
                 </select>
               </td>
             {/is_weapon}
-              <td class="ql-label"><strong>QL:</strong></td><td class="ql-select">{>qlselect id_suffix="" is_item="true"/}</td>
+              <td class="quality-label"><strong>Quality :</strong></td><td class="quality-select">{>qualityselect id_suffix="" is_item="true"/}</td>
+              <td class="level-label"><strong>Level :</strong></td><td class="level-select">{>levelselect id_suffix="" is_item="true"/}</td>
               {?is_weapon}
-                <td><a id="{id_prefix}-swap-weapon" class="btn btn-info swap-weapon" href="#"><i class="icon-retweet icon-white icon-align-left"></i> Swap weapon</a></td>
+              <td><a id="{id_prefix}-swap-weapon" class="btn btn-info swap-weapon" href="#"><i class="icon-retweet icon-white icon-align-left"></i> Swap weapon</a></td>
               {/is_weapon}
               <td class="filler"></td></tr>
             </table>
             <div>
               <table id="{id_prefix}-glyphs" class="table table-glyphs">
               <tr>
-              <td class="glyph-ql" rowspan="2"><a href="#" class="glyph-tooltip" data-toggle="tooltip" title="Glyph for the {name} slot. Choose which QL and stats it will have in your build."><img src="assets/images/icons/glyph.png" alt="Glyph"/></a> {>qlselect id_suffix="-glyph"/}</td>
+              <td class="glyph-ql" rowspan="2"><a href="#" class="glyph-tooltip" data-toggle="tooltip" title="Glyph for the {name} slot. Choose which QL and stats it will have in your build."><img src="assets/images/icons/glyph.png" alt="Glyph"/></a> {>qualityselect id_suffix="-glyph"/}</td>
               <td><strong>Primary Stat</strong></td>
               <td>{>statselect id_suffix="primary"/}</td>
               <td><strong>Distribution:</strong> {>glyphbuttons id_suffix="-primary-glyph"/}</td>
               <td id="{id_prefix}-primary-glyph-value" class="statvalue">0</td></tr>
-            
+
               <tr><td><strong>Secondary Stat</strong></td>
               <td>{>statselect id_suffix="secondary"/}</td>
               <td><strong>Distribution:</strong> {>glyphbuttons id_suffix="-secondary-glyph"/}</td>
@@ -53,16 +54,16 @@
                 <tr>
                   <td>
                     <a href="#" class="signet-tooltip" data-toggle="tooltip" title="Signet for the {name} slot. Choose the quality and type of signet.">
-                      <img id="{id_prefix}-signet-img-quality" class="item-border" src="assets/images/icons/normal.png"/><img id="{id_prefix}-signet-img-icon" class="signet" src="assets/images/icons/minor_dps.png"/></a>
+                      <img id="{id_prefix}-signet-img-quality" class="item-border" src="assets/images/icons/standard.png"/><img id="{id_prefix}-signet-img-icon" class="signet" src="assets/images/icons/minor_dps.png"/></a>
                   </td>
                   <td>
                     <select id="{id_prefix}-signet-quality"  title="Please select signet quality">
                       <option value="none" selected="true">Quality</option>
                       <option value="normal">Normal</option>
-                      <option value="elite">Elite</option>
+                      <option value="rare">Rare</option>
                       <option value="epic">Epic</option>
                       {?is_neck}
-                      <option value="heroic" disabled>Heroic</option>
+                      <option value="mythic" disabled>Mythic</option>
                       {/is_neck}
                     </select>
                   </td>
@@ -72,7 +73,7 @@
                     <td id="{id_prefix}-signet-description" class="item-description"></td></tr>
               </table>
             </div>
-          </div>  
+          </div>
 {:else}
   <p>No slots found (Bug)!</p>
 {/slots}

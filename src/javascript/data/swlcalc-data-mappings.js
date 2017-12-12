@@ -33,19 +33,19 @@ swlcalc.data.signet_quality_mapping = {
     to_num: {
         'none': 0,
         'normal': 1,
-        'elite': 2,
+        'rare': 2,
         'epic': 3
     },
     to_name: {
         0: 'none',
         1: 'normal',
-        2: 'elite',
+        2: 'rare',
         3: 'epic'
     },
     to_colour: {
         'none': 'white',
         'normal': 'green',
-        'elite': 'blue',
+        'rare': 'blue',
         'epic': 'purple'
     }
 };

@@ -167,7 +167,7 @@ test('should import URL and set summary and slots for pre-1.3 links', 96, functi
     equal($('#weapon-secondary-glyph').val(), 'none');
     ok($('#weapon-primary-glyph-dist-btn4').hasClass('active'));
     ok($('#weapon-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#weapon-signet-quality').val(), 'elite');
+    equal($('#weapon-signet-quality').val(), 'rare');
     equal($('#weapon-pick-signet').val(), '5');
 
     equal($('#head-ql').val(), '10.4');
@@ -187,7 +187,7 @@ test('should import URL and set summary and slots for pre-1.3 links', 96, functi
     equal($('#ring-secondary-glyph').val(), 'none');
     ok($('#ring-primary-glyph-dist-btn4').hasClass('active'));
     ok($('#ring-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#ring-signet-quality').val(), 'elite');
+    equal($('#ring-signet-quality').val(), 'rare');
     equal($('#ring-pick-signet').val(), '22');
 
     equal($('#neck-ql').val(), '10.4');
@@ -292,7 +292,7 @@ test('should import URL and set summary and slots for 1.3 links (secondary weapo
     equal($('#weapon-secondary-glyph').val(), 'none');
     ok($('#weapon-primary-glyph-dist-btn4').hasClass('active'));
     ok($('#weapon-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#weapon-signet-quality').val(), 'elite');
+    equal($('#weapon-signet-quality').val(), 'rare');
     equal($('#weapon-pick-signet').val(), '5');
 
     ok(!$('#weapon2-slot').is(':visible'));
@@ -304,7 +304,7 @@ test('should import URL and set summary and slots for 1.3 links (secondary weapo
     equal($('#weapon2-secondary-glyph').val(), 'none');
     ok($('#weapon2-primary-glyph-dist-btn4').hasClass('active'));
     ok($('#weapon2-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#weapon2-signet-quality').val(), 'elite');
+    equal($('#weapon2-signet-quality').val(), 'rare');
     equal($('#weapon2-pick-signet').val(), '6');
 
     equal($('#head-ql').val(), '10.4');
@@ -324,7 +324,7 @@ test('should import URL and set summary and slots for 1.3 links (secondary weapo
     equal($('#ring-secondary-glyph').val(), 'none');
     ok($('#ring-primary-glyph-dist-btn4').hasClass('active'));
     ok($('#ring-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#ring-signet-quality').val(), 'elite');
+    equal($('#ring-signet-quality').val(), 'rare');
     equal($('#ring-pick-signet').val(), '22');
 
     equal($('#neck-ql').val(), '10.4');

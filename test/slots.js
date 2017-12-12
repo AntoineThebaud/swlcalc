@@ -93,10 +93,10 @@ test('should get talisman signet id and quality', 2, function() {
 
 test('should set talisman signet id and quality', 2, function() {
     swlcalc.slots.head.signetId('16');
-    swlcalc.slots.head.signetQuality('elite');
+    swlcalc.slots.head.signetQuality('rare');
 
     equal(swlcalc.slots.head.signetId(), '16');
-    equal(swlcalc.slots.head.signetQuality(), 'elite');
+    equal(swlcalc.slots.head.signetQuality(), 'rare');
 });
 
 test('should get talisman signet object', 1, function() {
@@ -215,7 +215,7 @@ test('should collect all slot states', 17, function() {
     deepEqual(slotStates.weapon.secondary_glyph, 'none');
     deepEqual(slotStates.weapon.primary_dist, '4');
     deepEqual(slotStates.weapon.secondary_dist, '0');
-    deepEqual(slotStates.weapon.signet_quality, 'elite');
+    deepEqual(slotStates.weapon.signet_quality, 'rare');
     deepEqual(slotStates.weapon.signet_id, '5');
 
     deepEqual(slotStates.head.ql, '10.4');

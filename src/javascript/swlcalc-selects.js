@@ -71,7 +71,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     this.updateToDefaultSignet = function() {
         var signet_icon_url = 'assets/images/icons/' + slot.group + '_dps.png';
-        var signet_quality_url = 'assets/images/icons/normal.png';
+        var signet_quality_url = 'assets/images/icons/standard.png';
         $('#' + slot.id_prefix + '-signet-img-icon').attr('src', signet_icon_url);
         $('#' + slot.id_prefix + '-signet-img-quality').attr('src', signet_quality_url);
     };
@@ -248,7 +248,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.ql.removeAttr('disabled');
         slotObj.el.ql.find('option[disabled]').removeAttr('disabled');
         slotObj.el.signetId.removeAttr('disabled');
-        if(slotObj.signetQuality() === 'heroic') {
+        if(slotObj.signetQuality() === 'mythic') {
             slotObj.signetQuality('none');
         }
         slotObj.el.signetQuality.removeAttr('disabled');
