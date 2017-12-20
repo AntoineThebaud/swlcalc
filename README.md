@@ -1,14 +1,10 @@
 swlcalc
 =======
-swlcalc is (will be) a gear planner for Secret World Legends. It is based on tswcalc from joakibj (see below)
 
-tswcalc
-=======
+swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by Funcom. It can be used to plan how to spend your Black Bullions, Criterion Upgrades and Astral Fuses. In addition to share and show others what gear you use to tackle encounters in PvE or PvP. 
+It is a fork of [tswcalc](http://joakibj.github.io/tswcalc), a gear planner designed for The Secret World (TSW).
 
-tswcalc is a fan-made living talisman and glyph calculator for The Secret World (TSW), a MMORPG by Funcom. It can be used to plan how to spend your Black Bullions, Criterion Upgrades and Astral Fuses. In addition to share and show others what gear you use to tackle encounters in PvE or PvP.
-
-tswcalc features:
-
+swlcalc features: [TO UPDATE !]
 * All custom gear from QL 10.0 to 11.0.
 * All glyphs from QL 10.0 to 10.5.
 * Custom gear able to be attached with all signets in normal, elite and epic variations.
@@ -17,13 +13,13 @@ tswcalc features:
 * NY Raid items.
 * Woodcutter's talismans.
 
-tswcalc can be found at: http://joakibj.github.io/tswcalc
+swlcalc can be found at: https://github.com/AntoineThebaud/swlcalc
 
-**Note:** all active development of tswcalc takes place in the [`develop`](https://github.com/joakibj/tswcalc/tree/develop) branch. The tip of [`master`](https://github.com/joakibj/tswcalc/tree/master) always points to the latest, stable release. All releases are tagged. The latest release is deployed to the [`gh-pages`](https://github.com/joakibj/tswcalc/tree/gh-pages) branch.
+**Note:** all active development of swlcalc takes place in the [`develop`](https://github.com/joakibj/tswcalc/tree/develop) branch. The tip of [`master`](https://github.com/joakibj/tswcalc/tree/master) always points to the latest, stable release. All releases are tagged. The latest release is deployed to the [`gh-pages`](https://github.com/joakibj/tswcalc/tree/gh-pages) branch.
 
 Prerequisites
 --------
-The tools needed to build tswcalc are:
+The tools needed to build swlcalc are:
 * [node.js](http://nodejs.org/) (v0.10.45)
 * npm (v2.15.1)
 * [grunt](http://gruntjs.com/) (v0.4.1)
@@ -46,17 +42,17 @@ Building
 --------
 Fetch the source code (if you have added a [SSH key to github](https://help.github.com/articles/generating-ssh-keys)):
 
-    git clone git@github.com:joakibj/tswcalc.git
+    git clone git@github.com:AntoineThebaud/swlcalc.git
 
 Alternatively:
 
-    git clone https://github.com/joakibj/tswcalc.git
+    git clone https://github.com/AntoineThebaud/swlcalc.git
 
-Install tswcalc dependencies, defined in `package.json`:
+Install swlcalc dependencies, defined in `package.json`:
 
     npm install
 
-Build tswcalc by running:
+Build swlcalc by running:
 
     grunt
 
@@ -93,7 +89,7 @@ There are many things to do. Some suggestions can be found in [issues](https://g
 
 Contributions can also be bug reports, feature requests and other feedback.
 
-License
+License [TO UPDATE !]
 -------
 MIT License for the source code. Please see the LICENSE file.
 
