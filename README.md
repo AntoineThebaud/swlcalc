@@ -1,10 +1,10 @@
 swlcalc
 =======
 
-swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by Funcom. It can be used to plan how to spend your Black Bullions, Criterion Upgrades and Astral Fuses. In addition to share and show others what gear you use to tackle encounters in PvE or PvP. 
-It is a fork of [tswcalc](http://joakibj.github.io/tswcalc), a gear planner designed for The Secret World (TSW).
+swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by Funcom. It can be used to plan how to spend your [TO UPDATE : still tsw content] Black Bullions, Criterion Upgrades and Astral Fuses. In addition to share and show others what gear you use to tackle encounters in PvE or PvP. 
+swlcalc is a fork of [tswcalc](http://joakibj.github.io/tswcalc), a gear planner designed for The Secret World (TSW).
 
-swlcalc features: [TO UPDATE !]
+swlcalc features: [TO UPDATE : still tsw content]
 * All custom gear from QL 10.0 to 11.0.
 * All glyphs from QL 10.0 to 10.5.
 * Custom gear able to be attached with all signets in normal, elite and epic variations.
@@ -89,8 +89,8 @@ There are many things to do. Some suggestions can be found in [issues](https://g
 
 Contributions can also be bug reports, feature requests and other feedback.
 
-License [TO UPDATE !]
+License
 -------
 MIT License for the source code. Please see the LICENSE file.
 
-All art assets included in `public/assets/images/icons/` folder are taken from [The Secret World™ Chronicle](http://chronicle.thesecretworld.com/). The artwork should be considered property of Funcom GmBH unless otherwise noted. A small sample of signet, glyph and item icons are redistributed under fair use.
+All art assets included in `public/assets/images/icons/` folder are taken from [The Secret World™ Chronicle](http://chronicle.thesecretworld.com/) [TO UPDATE : dead link]. The artwork should be considered property of Funcom GmBH unless otherwise noted. A small sample of signet, glyph and item icons are redistributed under fair use.
