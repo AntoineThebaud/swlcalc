@@ -173,25 +173,27 @@ test('should update all stats', 15, function() {
     equal($('#stat-magical-protection').html(), '+300');
 });
 
-test('should have initial costs at 10.0 price, including secondary weapon', 4, function() {
-    swlcalc.summary.updateAllStats();
+// COST FEATURE DISABLED. NEED REVAMP
+// test('should have initial costs at 10.0 price, including secondary weapon', 4, function() {
+//     swlcalc.summary.updateAllStats();
+//
+//     equal($('#bb-cost').html(), '2700');
+//     equal($('#pantheon-cost').html(), '0');
+//     equal($('#cu-cost').html(), '0');
+//     equal($('#af-cost').html(), '0');
+// });
 
-    equal($('#bb-cost').html(), '2700');
-    equal($('#pantheon-cost').html(), '0');
-    equal($('#cu-cost').html(), '0');
-    equal($('#af-cost').html(), '0');
-});
-
-test('should update costs for tank build, including secondary weapon', 4, function() {
-    createTankBuild();
-
-    swlcalc.summary.updateAllStats();
-
-    equal($('#bb-cost').html(), '17700');
-    equal($('#pantheon-cost').html(), '0');
-    equal($('#cu-cost').html(), '2');
-    equal($('#af-cost').html(), '2');
-});
+// COST FEATURE DISABLED. NEED REVAMP
+// test('should update costs for tank build, including secondary weapon', 4, function() {
+//     createTankBuild();
+//
+//     swlcalc.summary.updateAllStats();
+//
+//     equal($('#bb-cost').html(), '17700');
+//     equal($('#pantheon-cost').html(), '0');
+//     equal($('#cu-cost').html(), '2');
+//     equal($('#af-cost').html(), '2');
+// });
 
 test('should collect offensive and defensive stats for NY raid DPS build with raid items that modify stats when activate raid button is checked', 12, function() {
     createDPSNYRaidBuild();
@@ -289,42 +291,43 @@ test('should calculate primary stats for 11.0 QL', 1, function() {
     deepEqual(allSums.primary, expectedPrimaryStats);
 });
 
-test('should calculate costs for 10.6+ QL build', 5, function() {
-    create10_6To10_9MixBuild();
+// COST FEATURE DISABLED. NEED REVAMP
+// test('should calculate costs for 10.6+ QL build', 5, function() {
+//     create10_6To10_9MixBuild();
+//
+//     swlcalc.summary.updateAllStats();
+//
+//     equal($('#bb-cost').html(), '19600');
+//     equal($('#pantheon-cost').html(), '1930');
+//     equal($('#cu-cost').html(), '9');
+//     equal($('#af-cost').html(), '0');
+//     equal($('#su-cost').html(), '0');
+// });
 
-    swlcalc.summary.updateAllStats();
+// test('should include currency costs when includeItemCosts checked', 5, function() {
+//     create10_6To10_9MixBuild();
+//
+//     swlcalc.summary.updateAllStats();
+//     swlcalc.summary.checkIncludeItemCosts();
+//
+//     equal($('#bb-cost').html(), '21850');
+//     equal($('#pantheon-cost').html(), '2290');
+//     equal($('#cu-cost').html(), '9');
+//     equal($('#af-cost').html(), '0');
+//     equal($('#su-cost').html(), '0');
+// });
 
-    equal($('#bb-cost').html(), '19600');
-    equal($('#pantheon-cost').html(), '1930');
-    equal($('#cu-cost').html(), '9');
-    equal($('#af-cost').html(), '0');
-    equal($('#su-cost').html(), '0');
-});
-
-test('should include currency costs when includeItemCosts checked', 5, function() {
-    create10_6To10_9MixBuild();
-
-    swlcalc.summary.updateAllStats();
-    swlcalc.summary.checkIncludeItemCosts();
-
-    equal($('#bb-cost').html(), '21850');
-    equal($('#pantheon-cost').html(), '2290');
-    equal($('#cu-cost').html(), '9');
-    equal($('#af-cost').html(), '0');
-    equal($('#su-cost').html(), '0');
-});
-
-test('should calculate costs for 11.0 QL build', 5, function() {
-    create11_0MixBuild();
-
-    swlcalc.summary.updateAllStats();
-
-    equal($('#bb-cost').html(), '25400');
-    equal($('#pantheon-cost').html(), '3640');
-    equal($('#cu-cost').html(), '9');
-    equal($('#af-cost').html(), '0');
-    equal($('#su-cost').html(), '9');
-});
+// test('should calculate costs for 11.0 QL build', 5, function() {
+//     create11_0MixBuild();
+//
+//     swlcalc.summary.updateAllStats();
+//
+//     equal($('#bb-cost').html(), '25400');
+//     equal($('#pantheon-cost').html(), '3640');
+//     equal($('#cu-cost').html(), '9');
+//     equal($('#af-cost').html(), '0');
+//     equal($('#su-cost').html(), '9');
+// });
 
 test('combat power above 5200 check', 3, function() {
     create10_9DPSBuild();

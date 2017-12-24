@@ -80,7 +80,7 @@ swlcalc.export = function() {
         if(state.signet_id !== 0 && state.signet_id !== '999') {
             slotUrl += ',' + state.signet_quality + ',' + state.signet_id;
         }
-                
+
         return slotUrl;
     };
 
@@ -141,10 +141,10 @@ swlcalc.export = function() {
                 stat_type: statType,
                 stat_value: statValue,
                 glyph_ql: curState.glyph_ql,
-                primary_glyph: swlcalc.util.blankIfNone(swlcalc.util.capitalise(swlcalc.data.stat_mapping.to_stat[curState.primary_glyph])),
+                primary_glyph: swlcalc.util.blankIfNone(swlcalc.util.capitalise(swlcalc.data.glyph_stat_mapping.to_stat[curState.primary_glyph])),
                 primary_dist: curState.primary_dist,
                 primary_value: primaryValue,
-                secondary_glyph: swlcalc.util.blankIfNone(swlcalc.util.capitalise(swlcalc.data.stat_mapping.to_stat[curState.secondary_glyph])),
+                secondary_glyph: swlcalc.util.blankIfNone(swlcalc.util.capitalise(swlcalc.data.glyph_stat_mapping.to_stat[curState.secondary_glyph])),
                 secondary_dist: curState.secondary_dist,
                 secondary_value: secondaryValue,
                 signet_name: signet.name,

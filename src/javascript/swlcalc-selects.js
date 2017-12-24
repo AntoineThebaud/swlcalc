@@ -24,13 +24,13 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.signetId.change(this.signetChange);
         slotObj.el.signetQuality.change(this.signetChange);
     };
-    
+
     this.addItemsToSelect = function() {
         var items = swlcalc.data.findItems(slot.group);
         if(slot.id_prefix != 'head'){
             items = items.concat(swlcalc.data.findItems(slot.id_prefix));
         }
-        
+
         items.forEach(function(item) {
             slotObj.el.itemId.append($('<option>', {
                 value: item.id,
@@ -130,22 +130,23 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         }
     };
 
-    this.qlChange = function(event) {
-        swlcalc.summary.updateAllStats();
-    };
+	this.qlChange = function(event) {
+		swlcalc.summary.updateAllStats();
+		self.updateColor(event.target);
+	};
 
     this.glyphChange = function(id_suffix) {
         self.updateGlyphDistributionButtons();
         swlcalc.summary.updateAllStats();
     };
-    
+
     this.updateGlyphDistributionButtons = function() {
         if(slotObj.el.glyphQl.val() === "11.0") {
             this.updateGlyphDistributionButton(slotObj.el.btn.primary[1], false, 'top');
             this.updateGlyphDistributionButton(slotObj.el.btn.primary[3], false, 'top');
             this.updateGlyphDistributionButton(slotObj.el.btn.secondary[1], false, 'bottom');
             this.updateGlyphDistributionButton(slotObj.el.btn.secondary[3], false, 'bottom');
-            
+
             if(slotObj.primaryDist() == 1 || slotObj.primaryDist() == 3) {
                 slotObj.el.btn.primary[4].trigger('click');
                 slotObj.el.btn.secondary[0].trigger('click');
@@ -157,7 +158,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             this.updateGlyphDistributionButton(slotObj.el.btn.secondary[3], true, 'bottom');
         }
     };
-    
+
     this.updateGlyphDistributionButton = function(button, enable, tooltipPlacement) {
         if(enable) {
             button.removeAttr('disabled');
@@ -215,7 +216,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             slotObj.signetQuality(item.signet.quality);
             slotObj.el.signetId.attr('disabled', 'disabled');
             slotObj.el.signetQuality.attr('disabled', 'disabled');
-            
+
             slotObj.el.signetId.append($('<option>', {
                 value: 999,
                 text: item.signet.name,
@@ -256,5 +257,10 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateSignet();
         slotObj.el.signetId.change();
         swlcalc.summary.updateAllStats();
+    };
+
+	this.updateColor = function(select) {
+        console.log(select);
+		$(select).attr("class", select.selectedOptions[0].className);
     };
 };

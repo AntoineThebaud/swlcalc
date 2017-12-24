@@ -3,6 +3,7 @@ var swlcalc = swlcalc || {};
 swlcalc.summary = function() {
 
     var el = {};
+	// COST FEATURE DISABLED. NEED REVAMP
     var elInit = function() {
         return {
             black_bullion_cost: $('#bb-cost'),
@@ -31,13 +32,13 @@ swlcalc.summary = function() {
     };
 
     var updateAllStats = function() {
-        updateCosts();
+        // updateCosts();
         updatePrimaryStats();
         updateOffensiveDefensiveStats();
         updateGlyphValues();
         updateURL();
     };
-    
+
    var updateURL = function(event) {
         window.location.hash = swlcalc.export.createExportUrl();
     };
@@ -49,37 +50,38 @@ swlcalc.summary = function() {
         };
     };
 
-    var updateCosts = function() {
-        var blackBullions = 0;
-        var pantheons = 0;
-        var criterionUpgrades = 0;
-        var supernalUpgrades = 0;
-        var astralFuses = 0;
-        var eleventhHourKits = 0;
-        for (var slotId in swlcalc.slots) {
-            if (swlcalc.slots.hasSlot(slotId)) {
-                var slot = swlcalc.slots[slotId];
-                blackBullions += slot.blackBullionCost();
-                pantheons += slot.markOfThePantheonCost();
-                criterionUpgrades += slot.criterionUpgradeCost();
-                supernalUpgrades += slot.supernalUpgradeCost();
-                astralFuses += slot.astralFuseCost();
-                eleventhHourKits += slot.eleventhHourCost();
-            }
-        }
-        if(el.includeItemCosts.is(':checked')) {
-            blackBullions += swlcalc.data.costs.item.criterion.bullion * criterionUpgrades;
-            pantheons += swlcalc.data.costs.item.criterion.pantheon * criterionUpgrades;
-            blackBullions += swlcalc.data.costs.item.astral.bullion * astralFuses;
-            pantheons += swlcalc.data.costs.item.astral.pantheon * astralFuses;
-        }
-        el.black_bullion_cost.html(blackBullions);
-        el.pantheon_cost.html(pantheons);
-        el.criterion_upgrade_cost.html(criterionUpgrades);
-        el.supernal_upgrade_cost.html(supernalUpgrades);
-        el.astral_fuse_cost.html(astralFuses);
-        el.eleventh_hour_cost.html(eleventhHourKits);
-    };
+	// COST FEATURE DISABLED. NEED REVAMP
+    // var updateCosts = function() {
+    //     var blackBullions = 0;
+    //     var pantheons = 0;
+    //     var criterionUpgrades = 0;
+    //     var supernalUpgrades = 0;
+    //     var astralFuses = 0;
+    //     var eleventhHourKits = 0;
+    //     for (var slotId in swlcalc.slots) {
+    //         if (swlcalc.slots.hasSlot(slotId)) {
+    //             var slot = swlcalc.slots[slotId];
+    //             blackBullions += slot.blackBullionCost();
+    //             pantheons += slot.markOfThePantheonCost();
+    //             criterionUpgrades += slot.criterionUpgradeCost();
+    //             supernalUpgrades += slot.supernalUpgradeCost();
+    //             astralFuses += slot.astralFuseCost();
+    //             eleventhHourKits += slot.eleventhHourCost();
+    //         }
+    //     }
+    //     if(el.includeItemCosts.is(':checked')) {
+    //         blackBullions += swlcalc.data.costs.item.criterion.bullion * criterionUpgrades;
+    //         pantheons += swlcalc.data.costs.item.criterion.pantheon * criterionUpgrades;
+    //         blackBullions += swlcalc.data.costs.item.astral.bullion * astralFuses;
+    //         pantheons += swlcalc.data.costs.item.astral.pantheon * astralFuses;
+    //     }
+    //     el.black_bullion_cost.html(blackBullions);
+    //     el.pantheon_cost.html(pantheons);
+    //     el.criterion_upgrade_cost.html(criterionUpgrades);
+    //     el.supernal_upgrade_cost.html(supernalUpgrades);
+    //     el.astral_fuse_cost.html(astralFuses);
+    //     el.eleventh_hour_cost.html(eleventhHourKits);
+    // };
 
     var updatePrimaryStats = function() {
         var sums = collectPrimaryStats();
@@ -110,27 +112,30 @@ swlcalc.summary = function() {
                 if(slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
                 }
-                var ql = slot.ql();
+                var ql = slot.ql();//.toLowerCase();
                 if (slot.group == 'major') {
                     var signet = slot.signet();
                     if (signet.id !== 0 && signet.id < 80) {
                         sums[signet.stat] += slot.determineSignetQualityValue(signet);
                     }
                 }
-                //TODO: refactor
+                // //TODO: refactor
+				// console.log("[swlcalc-summary] slot.group == " + slot.group);
+				// console.log("[swlcalc-summary] ql == " + ql);
                 if (slot.isWeapon()) {
-                    sums['weapon-power'] = swlcalc.data.custom_gear_data[slot.group][ql].weapon_power;
+                    //sums['weapon-power'] = swlcalc.data.custom_gear_data[slot.group][ql].weapon_power;
+					sums['weapon-power'] = swlcalc.data.custom_gear_data.slot[slot.group].quality['standard']['crude'].weapon_power[1]; //TODO : remove fixed value
                 }
                 else {
                     switch (slot.item().role) {
                         case 'dps':
-                            sums['attack-rating'] += swlcalc.data.custom_gear_data[slot.group].heal_dps['ql' + (ql)].rating;
+                            sums['attack-rating'] += 1;// TODO : swlcalc.data.custom_gear_data[slot.group].heal_dps['ql' + (ql)].rating;
                             break;
                         case 'healer':
-                            sums['heal-rating'] += swlcalc.data.custom_gear_data[slot.group].heal_dps['ql' + (ql)].rating;
+                            sums['heal-rating'] += 1;// TODO : swlcalc.data.custom_gear_data[slot.group].heal_dps['ql' + (ql)].rating;
                             break;
                         case 'tank':
-                            sums['hitpoints'] += swlcalc.data.custom_gear_data[slot.group].tank['ql' + (ql)].hitpoints;
+                            sums['hitpoints'] += 1;// TODO : swlcalc.data.custom_gear_data[slot.group].tank['ql' + (ql)].hitpoints;
                             break;
                         default:
                             console.log('Illegal role value when collecting primary stats');
@@ -167,10 +172,9 @@ swlcalc.summary = function() {
             'critical-chance': 0,
             'critical-power': 0,
             'critical-power-percentage': 0,
-            'penetration-rating': 0,
             'hit-rating': 0,
-            'block-rating': 0,
             'defense-rating': 0,
+			'glance-chance': 0,
             'evade-rating': 0,
             'evade-chance': 0,
             'physical-protection': 300,
@@ -210,11 +214,10 @@ swlcalc.summary = function() {
         }
         sums['critical-chance'] = calculateCriticalChance(sums['critical-rating']);
         sums['evade-chance'] = calculateEvadeChance(sums['evade-rating']);
-
+		
         sums['critical-rating'] = parseInt(sums['critical-rating'].toFixed(0), 10);
         sums['critical-chance'] = sums['critical-chance'].toFixed(1);
         sums['critical-power-percentage'] = sums['critical-power-percentage'].toFixed(2);
-        sums['penetration-rating'] = parseInt(sums['penetration-rating'].toFixed(0), 10);
         sums['evade-chance'] = sums['evade-chance'].toFixed(1);
         sums['magical-protection'] = parseInt(sums['magical-protection'].toFixed(0), 10);
         sums['physical-protection'] = parseInt(sums['physical-protection'].toFixed(0), 10);
@@ -262,11 +265,11 @@ swlcalc.summary = function() {
         el.activateRaid.prop('checked', true);
         el.activateRaid.change();
     };
-    
-    var checkIncludeItemCosts = function() {
-        el.includeItemCosts.prop('checked', true);
-        el.includeItemCosts.change();
-    };
+
+    // var checkIncludeItemCosts = function() {
+    //     el.includeItemCosts.prop('checked', true);
+    //     el.includeItemCosts.change();
+    // };
 
     var oPublic = {
         init: init,
@@ -279,7 +282,7 @@ swlcalc.summary = function() {
         collectAllStats: collectAllStats,
         updateAllStats: updateAllStats,
         checkActivateRaid: checkActivateRaid,
-        checkIncludeItemCosts : checkIncludeItemCosts
+        // checkIncludeItemCosts : checkIncludeItemCosts
     };
 
     return oPublic;

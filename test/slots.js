@@ -2,7 +2,7 @@
 module('slots-unit-tests', {
     setup: function() {
         renderSlots();
-        renderSummary();        
+        renderSummary();
         initiateSelectHandlers();
         initiateButtonHandlers();
         initiateSummary();
@@ -93,10 +93,10 @@ test('should get talisman signet id and quality', 2, function() {
 
 test('should set talisman signet id and quality', 2, function() {
     swlcalc.slots.head.signetId('16');
-    swlcalc.slots.head.signetQuality('rare');
+    swlcalc.slots.head.signetQuality('superior');
 
     equal(swlcalc.slots.head.signetId(), '16');
-    equal(swlcalc.slots.head.signetQuality(), 'rare');
+    equal(swlcalc.slots.head.signetQuality(), 'superior');
 });
 
 test('should get talisman signet object', 1, function() {
@@ -139,19 +139,20 @@ test('should get single signet value based on quality', 1, function() {
     deepEqual(swlcalc.slots.head.determineSignetQualityValue(signet), 45);
 });
 
-test('should get black bullion cost for head slot (10.4/10.5)', 1, function() {
-    deepEqual(swlcalc.slots.head.blackBullionCost(), 2100);
-});
-
-test('should get astral fuse cost for slot', 2, function() {
-   deepEqual(swlcalc.slots.head.astralFuseCost(), 1); 
-   deepEqual(swlcalc.slots.weapon.astralFuseCost(), 0); 
-});
-
-test('should get criterion upgrade cost for slot', 2, function() {
-   deepEqual(swlcalc.slots.weapon.criterionUpgradeCost(), 1);  
-   deepEqual(swlcalc.slots.head.criterionUpgradeCost(), 0);  
-});
+// COST FEATURE DISABLED. NEED REVAMP
+// test('should get black bullion cost for head slot (10.4/10.5)', 1, function() {
+//     deepEqual(swlcalc.slots.head.blackBullionCost(), 2100);
+// });
+//
+// test('should get astral fuse cost for slot', 2, function() {
+//    deepEqual(swlcalc.slots.head.astralFuseCost(), 1);
+//    deepEqual(swlcalc.slots.weapon.astralFuseCost(), 0);
+// });
+//
+// test('should get criterion upgrade cost for slot', 2, function() {
+//    deepEqual(swlcalc.slots.weapon.criterionUpgradeCost(), 1);
+//    deepEqual(swlcalc.slots.head.criterionUpgradeCost(), 0);
+// });
 
 test('should get indexed signet value based on quality', 2, function() {
     swlcalc.slots.occult.signetId('47');
@@ -215,7 +216,7 @@ test('should collect all slot states', 17, function() {
     deepEqual(slotStates.weapon.secondary_glyph, 'none');
     deepEqual(slotStates.weapon.primary_dist, '4');
     deepEqual(slotStates.weapon.secondary_dist, '0');
-    deepEqual(slotStates.weapon.signet_quality, 'rare');
+    deepEqual(slotStates.weapon.signet_quality, 'superior');
     deepEqual(slotStates.weapon.signet_id, '5');
 
     deepEqual(slotStates.head.ql, '10.4');

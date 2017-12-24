@@ -13,13 +13,13 @@ module('import-integration-tests', {
 test('should import URL and set summary and slots for 0.4.0 links', 92, function() {
     var vars = {
         head: '4,1,5,5,0,4,0',
-        luck: '4,3,4,8,0,4,0',
+        luck: '4,3,4,4,0,4,0',
         neck: '4,1,5,5,0,4,0',
         occult: '4,3,4,4,0,4,0',
-        ring: '4,3,4,6,0,4,0',
-        waist: '4,1,4,8,0,4,0,3,87',
+        ring: '4,3,4,3,0,4,0',
+        waist: '4,1,4,2,0,4,0,3,2',//TODO : test to enhance, last number previously was 87
         weapon: '5,0,4,4,0,4,0',
-        wrist: '4,1,4,6,0,4,0,3,85'
+        wrist: '4,1,4,5,0,4,0,3,1' //TODO : test to enhance, last number previously was 87
     };
 
     swlcalc.import.start(vars);
@@ -131,14 +131,14 @@ test('should import URL and set summary and slots for 0.4.0 links', 92, function
 
 test('should import URL and set summary and slots for pre-1.3 links', 96, function() {
     var vars = {
-        head: '4,1,5,5,0,4,0,3,18',
-        luck: '4,3,4,8,0,4,0,3,39',
-        neck: '4,1,5,5,0,4,0,1,21',
-        occult: '4,3,4,4,0,4,0,3,41',
-        ring: '4,3,4,6,0,4,0,2,22',
-        waist: '4,1,4,8,0,4,0,3,87',
-        weapon: '5,1,4,4,0,4,0,2,5',
-        wrist: '4,1,4,6,0,4,0,3,85'
+        head: '4,1,5,5,0,4,0,3,1',//TODO : test to enhance, last number previously 18
+        luck: '4,3,4,5,0,4,0,3,2',//TODO : test to enhance, last number previously 39
+        neck: '4,1,5,5,0,4,0,1,3',//TODO : test to enhance, last number previously 21
+        occult: '4,3,4,4,0,4,0,3,1',//TODO : test to enhance, last number previously 21
+        ring: '4,3,4,4,0,4,0,2,2',//TODO : test to enhance, last number previously 22
+        waist: '4,1,4,3,0,4,0,3,3',//TODO : test to enhance, last number previously 87
+        weapon: '5,1,4,4,0,4,0,2,1',//TODO : test to enhance, last number previously 5
+        wrist: '4,1,4,2,0,4,0,3,2'//TODO : test to enhance, last number previously 85
     };
 
     swlcalc.import.start(vars);
@@ -167,7 +167,7 @@ test('should import URL and set summary and slots for pre-1.3 links', 96, functi
     equal($('#weapon-secondary-glyph').val(), 'none');
     ok($('#weapon-primary-glyph-dist-btn4').hasClass('active'));
     ok($('#weapon-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#weapon-signet-quality').val(), 'rare');
+    equal($('#weapon-signet-quality').val(), 'superior');
     equal($('#weapon-pick-signet').val(), '5');
 
     equal($('#head-ql').val(), '10.4');
@@ -187,7 +187,7 @@ test('should import URL and set summary and slots for pre-1.3 links', 96, functi
     equal($('#ring-secondary-glyph').val(), 'none');
     ok($('#ring-primary-glyph-dist-btn4').hasClass('active'));
     ok($('#ring-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#ring-signet-quality').val(), 'rare');
+    equal($('#ring-signet-quality').val(), 'superior');
     equal($('#ring-pick-signet').val(), '22');
 
     equal($('#neck-ql').val(), '10.4');
@@ -254,15 +254,15 @@ test('should import URL and set summary and slots for pre-1.3 links', 96, functi
 
 test('should import URL and set summary and slots for 1.3 links (secondary weapon added)', 108, function() {
     var vars = {
-        head: '4,1,5,5,0,4,0,3,18',
-        luck: '4,3,4,8,0,4,0,3,39',
-        neck: '4,1,5,5,0,4,0,1,21',
-        occult: '4,3,4,4,0,4,0,3,41',
-        ring: '4,3,4,6,0,4,0,2,22',
-        waist: '9,1,4,8,0,4,0,3,87',
-        weapon: '5,1,4,4,0,4,0,2,5',
-        weapon2: '5,2,4,4,0,4,0,2,6',
-        wrist: '4,1,4,6,0,4,0,3,85'
+        head: '4,1,5,5,0,4,0,3,1',//TODO : test to enhance, last number previously 18
+        luck: '4,3,4,4,0,4,0,3,2',//TODO : test to enhance, last number previously 39
+        neck: '4,1,5,5,0,4,0,1,3',//TODO : test to enhance, last number previously 21
+        occult: '4,3,4,4,0,4,0,3,1',//TODO : test to enhance, last number previously 41
+        ring: '4,3,4,3,0,4,0,2,2',//TODO : test to enhance, last number previously 22
+        waist: '9,1,4,2,0,4,0,3,3',//TODO : test to enhance, last number previously 87
+        weapon: '5,1,4,4,0,4,0,2,1',//TODO : test to enhance, last number previously 5
+        weapon2: '5,2,4,4,0,4,0,2,2',//TODO : test to enhance, last number previously 6
+        wrist: '4,1,4,1,0,4,0,3,3'//TODO : test to enhance, last number previously 85
     };
 
     swlcalc.import.start(vars);
@@ -292,7 +292,7 @@ test('should import URL and set summary and slots for 1.3 links (secondary weapo
     equal($('#weapon-secondary-glyph').val(), 'none');
     ok($('#weapon-primary-glyph-dist-btn4').hasClass('active'));
     ok($('#weapon-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#weapon-signet-quality').val(), 'rare');
+    equal($('#weapon-signet-quality').val(), 'superior');
     equal($('#weapon-pick-signet').val(), '5');
 
     ok(!$('#weapon2-slot').is(':visible'));
@@ -304,7 +304,7 @@ test('should import URL and set summary and slots for 1.3 links (secondary weapo
     equal($('#weapon2-secondary-glyph').val(), 'none');
     ok($('#weapon2-primary-glyph-dist-btn4').hasClass('active'));
     ok($('#weapon2-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#weapon2-signet-quality').val(), 'rare');
+    equal($('#weapon2-signet-quality').val(), 'superior');
     equal($('#weapon2-pick-signet').val(), '6');
 
     equal($('#head-ql').val(), '10.4');
@@ -324,7 +324,7 @@ test('should import URL and set summary and slots for 1.3 links (secondary weapo
     equal($('#ring-secondary-glyph').val(), 'none');
     ok($('#ring-primary-glyph-dist-btn4').hasClass('active'));
     ok($('#ring-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#ring-signet-quality').val(), 'rare');
+    equal($('#ring-signet-quality').val(), 'superior');
     equal($('#ring-pick-signet').val(), '22');
 
     equal($('#neck-ql').val(), '10.4');

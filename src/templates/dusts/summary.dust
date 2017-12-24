@@ -1,7 +1,8 @@
 <div id="summary">
 	<div id="table-primary">
 		<h4>Gear cost</h4>
-		<div class="row-fluid">
+		<p>COST FEATURE DISABLED</p>
+		<!--<div class="row-fluid">
 			<span class="span4"><a href="#" class="cost-tooltip" data-toggle="tooltip" title="Black Bullions are rewards for all content."><img src="assets/images/icons/black_bullion.png" alt="Black Bullion"/></a> <span id="bb-cost">0</span></span>
 			<span class="span4"><a href="#" class="cost-tooltip" data-toggle="tooltip" title="Marks of the Pantheon are rewards for doing Nightmare content."><img src="assets/images/icons/pantheon.png" alt="Mark of the Pantheon"/></a> <span id="pantheon-cost">0</span></span>
 		</div>
@@ -13,7 +14,7 @@
 		<div class="row-fluid">
 			<span class="span4"><a href="#" class="cost-tooltip" data-toggle="tooltip" title="Supernal Upgrades drop from Nightmare Raid Bosses. Use with a Supernal Upgrade Kit to create 11.0 gear."><img src="assets/images/icons/supernal_upgrade.png" alt="Supernal Upgrade"/></a> <span id="su-cost">0</span></span>
 			<span class="span4"><a href="#" class="cost-tooltip" data-toggle="tooltip" title="11th Hour Glyph Toolkits drop from Nightmare Raid Bosses. Used to assemble QL 11 glyphs from pure materials."><img src="assets/images/icons/toolkit.png" alt="11th Hour Glyph Toolkit"/></a> <span id="11th-cost">0</span></span>
-		</div>
+		</div> -->
 		<h4>Gear stats</h4>
 		<table class="table table-stats">
 			<thead>

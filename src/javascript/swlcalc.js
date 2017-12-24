@@ -1,108 +1,133 @@
 $(document).ready(function() {
-    swlcalc.init();
+	swlcalc.init();
 });
 
 var swlcalc = swlcalc || {};
 
 swlcalc = function() {
-    var init = function() {
-        renderContainer(swlcalc.data.template_data);
-        addHash();
 
-        activateToolTips();
+	/**
+	* Init function. Triggered when document is ready.
+	*/
+	var init = function() {
+		renderContainer(swlcalc.data.template_data);
+		addHash();
+		startSubModules();
+		if (!checkIfExported()) {
+			// if no parameters are present in the URL, trigger artificial reset to generate base parameters ("#weapon=0,0,0,0,0,4,0&weapon2=0,0,[...]")
+			triggerReset();
+		}
+		// visual settings :
+		activateToolTips();
+		$('#summary').scrollToFixed();
+	};
 
-        startSubModules();
-        if (!checkIfExported()) {
-            triggerReset();
-        }
+	/**
+	* Trigger "Reset" button.
+	*/
+	var triggerReset = function() {
+		$('#btn-reset').trigger('click');
+	};
 
-        $('#summary').scrollToFixed();
-    };
+	/**
+	* Add tooltips for images (signets, glyphs, currencies..)
+	*/
+	var activateToolTips = function() {
+		$('.glyph-tooltip, .signet-tooltip, .consumable-tooltip').tooltip({
+			placement: 'left'
+		});
+		// COST FEATURE DISABLED. NEED REVAMP
+		// $('.cost-tooltip').tooltip({
+		//     placement: function(context, source) {
+		//         var position = $(source).position();
+		//         if (position.top < 50) {
+		//             return 'bottom';
+		//         } else {
+		//             return 'top';
+		//         }
+		//     }
+		// });
+		$('#table-primary > label').tooltip({
+			placement: 'left'
+		});
+		$('#raid-stats > label').tooltip({
+			placement: 'bottom'
+		});
+		// COST FEATURE DISABLED. NEED REVAMP
+		// $('.cost-tooltip, .glyph-tooltip, .signet-tooltip, .slot-warning, .swap-weapon, .consumable-tooltip').on('click', function(event) {
+		//     event.preventDefault();
+		//     event.stopPropagation();
+		// });
 
-    var triggerReset = function() {
-        $('#btn-reset').trigger('click');
-    };
+	};
 
-    var activateToolTips = function() {
-        $('.glyph-tooltip, .signet-tooltip, .consumable-tooltip').tooltip({
-            placement: 'left'
-        });
-        $('.cost-tooltip').tooltip({
-            placement: function(context, source) {
-                var position = $(source).position();
-                if (position.top < 50) {
-                    return 'bottom';
-                } else {
-                    return 'top';
-                }
-            }
-        });
-        $('#table-primary > label').tooltip({
-            placement: 'left'
-        });
-        $('#raid-stats > label').tooltip({
-            placement: 'bottom'
-        });
-        $('.cost-tooltip, .glyph-tooltip, .signet-tooltip, .slot-warning, .swap-weapon, .consumable-tooltip').on('click', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-        });
+	/**
+	* Generate html code in the container, based on .dust template files
+	*/
+	var renderContainer = function(data) {
+		dust.render('container', {
+			slots: swlcalc.data.template_data.slots,
+			signets: swlcalc.data.signet_data
+		},
 
-    };
-
-    var renderContainer = function(data) {
-        dust.render('container', {
-            slots: swlcalc.data.template_data.slots,
-            signets: swlcalc.data.signet_data
-        },
-
-        function(err, out) {
-            if (err) {
-                console.log(err);
-            }
-            //$('#main-container').html(out);
-			//$('.container-fluid').html(out);
+		function(err, out) {
+			if (err) {
+				console.log(err);
+			}
 			$('.container').html(out);
-        });
-    };
+		});
+	};
 
-    var checkIfExported = function() {
-        var vars = $.getUrlVars();
-        // length == 8 is pre 1.3 links
-        // length == 9 is post 1.3 links (secondary weapon added)
-        if (!$.isEmptyObject(vars) && Object.keys(vars).length == 8 || Object.keys(vars).length == 9) {
-            swlcalc.import.start(vars);
-            return true;
-        }
-        return false;
-    };
+	/**
+	* Check if parameters are present in the URL.
+	*/
+	var checkIfExported = function() {
+		var vars = $.getUrlVars();
+		// length == 8 is pre 1.3 links
+		// length == 9 is post 1.3 links (secondary weapon added)
+		if (!$.isEmptyObject(vars) && Object.keys(vars).length == 8 || Object.keys(vars).length == 9) {
+			swlcalc.import.start(vars);
+			return true;
+		}
+		return false;
+	};
 
-    var startSubModules = function() {
-        swlcalc.slots.init();
-        swlcalc.miscslot.init();
-        for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-            startSelectHandler(swlcalc.data.template_data.slots[i]);
-        }
-        swlcalc.button.init();
-        swlcalc.buttonBar.init();
-        swlcalc.summary.init();
-        swlcalc.export.init();
-    };
+	/**
+	* Initialize all sub modules (slots, buttonbar, summary...)
+	*/
+	var startSubModules = function() {
+		swlcalc.slots.init();
+		swlcalc.miscslot.init();
+		for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
+			startSelectHandler(swlcalc.data.template_data.slots[i]);
+		}
+		swlcalc.button.init();
+		swlcalc.buttonBar.init();
+		swlcalc.summary.init();
+		swlcalc.export.init();
+	};
 
-    var addHash = function() {
-        if (location.hash == '') {
-            location.hash = ' ';
-        }
-    };
+	/**
+	* Add an empty hash if current is null
+	* TODO : check if still accurate ?
+	*/
+	var addHash = function() {
+		if (location.hash == '') {
+			location.hash = ' ';
+		}
+	};
 
-    var startSelectHandler = function(slot) {
-        swlcalc.select[slot.id_prefix] = new swlcalc.select.SelectHandler(slot);
-        swlcalc.select[slot.id_prefix].initiate();
-    };
+	/**
+	* TODO : description missing.
+	*/
+	var startSelectHandler = function(slot) {
+		swlcalc.select[slot.id_prefix] = new swlcalc.select.SelectHandler(slot);
+		swlcalc.select[slot.id_prefix].initiate();
+	};
 
-    var oPublic = {
-        init: init
-    };
+	var oPublic = {
+		init: init
+	};
 
-    return oPublic;
+	return oPublic;
 }();

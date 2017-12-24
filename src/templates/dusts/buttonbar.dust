@@ -2,10 +2,10 @@
 <div class="btn-group">
 	<button id="btn-reset" class="btn btn-danger">Reset</button>
 </div>
-<!-- [ All Standard ][ All Rare ][ All Epic ][ All Mythic ][ All Legendary ] -->
+<!-- [ All Standard ][ All Superior ][ All Epic ][ All Mythic ][ All Legendary ] -->
 <div class="btn-group">
 	<button id="btn-all-standard" class="btn">All <span class="color-standard">Standard</span></button>
-	<button id="btn-all-rare" class="btn">All <span class="color-rare">Rare</span></button>
+	<button id="btn-all-superior" class="btn">All <span class="color-superior">Superior</span></button>
 	<button id="btn-all-epic" class="btn">All <span class="color-epic">Epic</span></button>
 	<button id="btn-all-mythic" class="btn">All <span class="color-mythic">Mythic</span></button>
 	<button id="btn-all-legendary" class="btn">All <span class="color-legendary">Legendary</span></button>

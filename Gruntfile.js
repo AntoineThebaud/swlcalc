@@ -55,7 +55,8 @@ module.exports = function(grunt) {
         src: [
             '<%= dirs.src %>/data/<%= pkg.name %>-data-slots.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-gear.js',
-            '<%= dirs.src %>/data/<%= pkg.name %>-data-costs.js',
+			// COST FEATURE DISABLED. NEED REVAMP
+            //'<%= dirs.src %>/data/<%= pkg.name %>-data-costs.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-mappings.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-signets.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-glyphs.js',

@@ -95,7 +95,7 @@ test('should only allow epic version of signet when cadoro signets are selected'
 
 test('should only allow epic version of signet when quality different than normal is selected before cadoro signet', 4, function() {
     swlcalc.slots['head'].signetId('20');
-    swlcalc.slots['head'].signetQuality('rare');
+    swlcalc.slots['head'].signetQuality('superior');
     swlcalc.slots['head'].el.signetId.change();
     swlcalc.slots['head'].signetId('53');
     swlcalc.slots['head'].el.signetId.change();

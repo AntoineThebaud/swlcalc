@@ -1,53 +1,50 @@
 var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
-swlcalc.data.stat_mapping = {
-    to_num: {
-        'none': 0,
-        'critical-rating': 1,
-        'critical-power': 2,
-        'penetration-rating': 3,
-        'hit-rating': 4,
-        'block-rating': 5,
-        'defense-rating': 6,
-        'evade-rating': 7,
-        'physical-protection': 8,
-        'magical-protection': 9
-    },
-
-    to_stat: {
-        0: 'none',
-        1: 'critical-rating',
-        2: 'critical-power',
-        3: 'penetration-rating',
-        4: 'hit-rating',
-        5: 'block-rating',
-        6: 'defense-rating',
-        7: 'evade-rating',
-        8: 'physical-protection',
-        9: 'magical-protection'
-    }
+swlcalc.data.glyph_stat_mapping = {
+	to_num: {
+		'none': 0,
+		'critical-rating': 1,
+		'critical-power': 2,
+		'hit-rating': 3,
+		'defense-rating': 4,
+		'evade-rating': 5,
+	},
+	to_stat: {
+		0: 'none',
+		1: 'critical-rating',
+		2: 'critical-power',
+		3: 'hit-rating',
+		4: 'defense-rating',
+		5: 'evade-rating',
+	}
 };
 
 swlcalc.data.signet_quality_mapping = {
-    to_num: {
-        'none': 0,
-        'normal': 1,
-        'rare': 2,
-        'epic': 3
-    },
-    to_name: {
-        0: 'none',
-        1: 'normal',
-        2: 'rare',
-        3: 'epic'
-    },
-    to_colour: {
-        'none': 'white',
-        'normal': 'green',
-        'rare': 'blue',
-        'epic': 'purple'
-    }
+	to_num: {
+		'none': 0,
+		'standard': 1,
+		'superior': 2,
+		'epic': 3,
+		'mythic': 4,
+		'legendary': 5
+	},
+	to_name: {
+		0: 'none',
+		1: 'standard',
+		2: 'superior',
+		3: 'epic',
+		4: 'mythic',
+		5: 'legendary'
+	},
+	to_colour: {
+		'none': 'white',
+		'standard': 'green',
+		'superior': 'blue',
+		'epic': 'purple',
+		'mythic': 'yellow',
+		'legendary': 'red'
+	}
 };
 
 swlcalc.data.wtype_mapping = {
