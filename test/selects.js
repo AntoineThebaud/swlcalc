@@ -11,12 +11,12 @@ test('should have required selects in the DOM', 61, function() {
         if (slotId != 'weapon' && slotId != 'weapon2') {
             ok($('#' + slotId + '-itemId').length !== 0, slotId + '-itemId exists');
         }
-        ok($('#' + slotId + '-ql').length !== 0, slotId + '-ql exists');
-        ok($('#' + slotId + '-glyph-ql').length !== 0, slotId + '-glyph-ql exists');
+        ok($('#' + slotId + '-rarity').length !== 0, slotId + '-rarity exists');
+        ok($('#' + slotId + '-glyph-rarity').length !== 0, slotId + '-glyph-rarity exists');
         ok($('#' + slotId + '-primary-glyph').length !== 0, slotId + '-primary-glyph exists');
         ok($('#' + slotId + '-secondary-glyph').length !== 0, slotId + '-secondary-glyph exists');
         ok($('#' + slotId + '-pick-signet').length !== 0, slotId + '-pick-signet exists');
-        ok($('#' + slotId + '-signet-quality').length !== 0, slotId + '-signet-quality exists');
+        ok($('#' + slotId + '-signet-rarity').length !== 0, slotId + '-signet-rarity exists');
     }
 });
 
@@ -34,15 +34,15 @@ module('selects-events', {
 test('should have required event listeners for change on selects in the DOM', 61, function() {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var slotId = swlcalc.data.template_data.slots[i].id_prefix;
-        ok($._data($('#' + slotId + '-ql').get(0), 'events').change instanceof Array);
+        ok($._data($('#' + slotId + '-rarity').get(0), 'events').change instanceof Array);
         if (slotId != 'weapon' && slotId != 'weapon2') {
             ok($._data($('#' + slotId + '-itemId').get(0), 'events').change instanceof Array);
         }
-        ok($._data($('#' + slotId + '-glyph-ql').get(0), 'events').change instanceof Array);
+        ok($._data($('#' + slotId + '-glyph-rarity').get(0), 'events').change instanceof Array);
         ok($._data($('#' + slotId + '-primary-glyph').get(0), 'events').change instanceof Array);
         ok($._data($('#' + slotId + '-secondary-glyph').get(0), 'events').change instanceof Array);
         ok($._data($('#' + slotId + '-pick-signet').get(0), 'events').change instanceof Array);
-        ok($._data($('#' + slotId + '-signet-quality').get(0), 'events').change instanceof Array);
+        ok($._data($('#' + slotId + '-signet-rarity').get(0), 'events').change instanceof Array);
     }
 });
 
@@ -88,31 +88,31 @@ test('should only allow epic version of signet when cadoro signets are selected'
 
     equal($('#head-name').html(), ': Forgotten Ashes');
     equal($('#head-pick-signet').val(), '53');
-    equal($('#head-signet-quality').val(), 'epic');
-    deepEqual($('#head-signet-quality').attr('disabled'), 'disabled', 'quality select disabled');
+    equal($('#head-signet-rarity').val(), 'epic');
+    deepEqual($('#head-signet-rarity').attr('disabled'), 'disabled', 'rarity select disabled');
     deepEqual($('#head-signet-description').html(), 'Whenever you hit you gain a single Kingdom counter which increases your Hit Rating by 6 for 4 seconds per stack. This effect can stack up to 20 times. An additional stack is gained if an attack penetrates or critically hits.');
 });
 
-test('should only allow epic version of signet when quality different than normal is selected before cadoro signet', 4, function() {
+test('should only allow epic version of signet when rarity different than normal is selected before cadoro signet', 4, function() {
     swlcalc.slots['head'].signetId('20');
-    swlcalc.slots['head'].signetQuality('superior');
+    swlcalc.slots['head'].signetRarity('superior');
     swlcalc.slots['head'].el.signetId.change();
     swlcalc.slots['head'].signetId('53');
     swlcalc.slots['head'].el.signetId.change();
 
     equal($('#head-pick-signet').val(), '53');
-    equal($('#head-signet-quality').val(), 'epic');
-    deepEqual($('#head-signet-quality').attr('disabled'), 'disabled', 'quality select disabled');
+    equal($('#head-signet-rarity').val(), 'epic');
+    deepEqual($('#head-signet-rarity').attr('disabled'), 'disabled', 'rarity select disabled');
     deepEqual($('#head-signet-description').html(), 'Whenever you hit you gain a single Kingdom counter which increases your Hit Rating by 6 for 4 seconds per stack. This effect can stack up to 20 times. An additional stack is gained if an attack penetrates or critically hits.');
 });
 
-test('should enable signet quality when a cadoro signet has been selected and then changed to a different signet', 1, function() {
+test('should enable signet rarity when a cadoro signet has been selected and then changed to a different signet', 1, function() {
     swlcalc.slots['head'].signetId('53');
     swlcalc.slots['head'].el.signetId.change();
     swlcalc.slots['head'].signetId('20');
     swlcalc.slots['head'].el.signetId.change();
 
-    deepEqual($('#head-pick-signet').attr('disabled'), undefined, 'quality select enabled');
+    deepEqual($('#head-pick-signet').attr('disabled'), undefined, 'rarity select enabled');
 });
 
 test('should enable changing of weapon type and set the slot name', 1, function() {

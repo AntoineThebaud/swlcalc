@@ -74,11 +74,21 @@ swlcalc.export = function() {
         if(slot.isWeapon()) {
             idOrWtype = state.wtype;
         }
-        var slotUrl = slot.id + '=' + state.ql + ',' + idOrWtype + ',' + state.glyph_ql + ',' + state.primary_glyph + ',' +
-            state.secondary_glyph + ',' + state.primary_dist + ',' + state.secondary_dist;
+        // see swlcalc-import.js for the order
+        var slotUrl = slot.id + '='
+            + state.rarity + ','
+            + idOrWtype + ','
+            + state.quality + ','
+            + state.level + ','
+            + state.glyph_rarity + ','
+            + state.glyph + ','
+            + state.glyph_quality + ','
+            + state.glyph_level;
 
         if(state.signet_id !== 0 && state.signet_id !== '999') {
-            slotUrl += ',' + state.signet_quality + ',' + state.signet_id;
+            slotUrl += ',' + state.signet_rarity
+                    + ',' + state.signet_id
+                    + ',' + state.signet_level;
         }
 
         return slotUrl;
@@ -114,20 +124,20 @@ swlcalc.export = function() {
             var statValue = 0;
             if (swlcalc.data.template_data.slots[i].is_weapon) {
                 statType = 'Weapon Power';
-                statValue = swlcalc.data.custom_gear_data[group]['10.' + curState.ql].weapon_power;
+                statValue = swlcalc.data.custom_gear_data[group]['10.' + curState.rarity].weapon_power;
             } else {
                 switch(curState.role) {
                     case 'healer':
                         statType = 'Heal Rating';
-                        statValue = swlcalc.data.custom_gear_data[group].heal_dps['ql10.' + curState.ql].rating;
+                        statValue = swlcalc.data.custom_gear_data[group].heal_dps['ql10.' + curState.rarity].rating;
                         break;
                     case 'dps':
                         statType = 'Attack Rating';
-                        statValue = swlcalc.data.custom_gear_data[group].heal_dps['ql10.' + curState.ql].rating;
+                        statValue = swlcalc.data.custom_gear_data[group].heal_dps['ql10.' + curState.rarity].rating;
                         break;
                     case 'tank':
                         statType = 'Hitpoints';
-                        statValue = swlcalc.data.custom_gear_data[group].tank['ql10.' + curState.ql].hitpoints;
+                        statValue = swlcalc.data.custom_gear_data[group].tank['ql10.' + curState.rarity].hitpoints;
                         break;
                 }
             }
@@ -137,10 +147,10 @@ swlcalc.export = function() {
             var state = {
                 name: slot.is_weapon ? swlcalc.util.capitalise(slot.name + ": " + swlcalc.util.capitalise(swlcalc.data.wtype_mapping.to_name[curState.wtype])) : swlcalc.util.capitalise(slotId),
                 role: slot.is_weapon ? null : (curState.role === 'dps' ? 'DPS' : swlcalc.util.capitalise(curState.role)),
-                ql: curState.ql,
+                rarity: curState.rarity,
                 stat_type: statType,
                 stat_value: statValue,
-                glyph_ql: curState.glyph_ql,
+                glyph_rarity: curState.glyph_rarity,
                 primary_glyph: swlcalc.util.blankIfNone(swlcalc.util.capitalise(swlcalc.data.glyph_stat_mapping.to_stat[curState.primary_glyph])),
                 primary_dist: curState.primary_dist,
                 primary_value: primaryValue,
@@ -148,9 +158,9 @@ swlcalc.export = function() {
                 secondary_dist: curState.secondary_dist,
                 secondary_value: secondaryValue,
                 signet_name: signet.name,
-                signet_quality: swlcalc.util.blankIfNone(swlcalc.util.capitalise(swlcalc.data.signet_quality_mapping.to_name[curState.signet_quality])),
+                signet_rarity: swlcalc.util.blankIfNone(swlcalc.util.capitalise(swlcalc.data.rarity_mapping.to_name[curState.signet_rarity])),
                 signet_description: swlcalc.slots[slotId].signetDescription(),
-                signet_colour: swlcalc.data.signet_quality_mapping.to_colour[swlcalc.data.signet_quality_mapping.to_name[curState.signet_quality]],
+                signet_colour: swlcalc.data.rarity_mapping.to_colour[swlcalc.data.rarity_mapping.to_name[curState.signet_rarity]],
                 is_item: curState.itemId > 3 ? true : false
             };
             states.push(state);

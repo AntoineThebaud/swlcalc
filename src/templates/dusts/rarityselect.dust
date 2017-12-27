@@ -1,0 +1,7 @@
+<select id="{id_prefix}{id_suffix}-rarity" class="color-standard" title="Please select rarity"><!--TODO : dynamic class, should not be mentioned here"-->
+	<option value="standard" class="color-standard">Standard</option>
+	<option value="superior" class="color-superior">Superior</option>
+	<option value="epic" class="color-epic">Epic</option>
+	<option value="mythic" class="color-mythic">Mythic</option>
+	<option value="legendary" class="color-legendary">Legendary</option>
+</select>

@@ -17,7 +17,7 @@ swlcalc.data.signet_data = {
         return {
             description: '',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 0,
                 superior: 0,
                 standard: 0
@@ -30,7 +30,7 @@ swlcalc.data.signet_data = {
     'weapon': [{
             description: 'When you hit a target you have a 10% chance to gain a damage increase of %d% for 5 seconds.',
             cooldown: '11',
-            quality: {
+            rarity: {
                 epic: 24,
                 superior: 16,
                 standard: 8
@@ -41,7 +41,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you hit a weakened target you have a 15% chance to gain %d% damage increase for 6 seconds.',
             cooldown: '9',
-            quality: {
+            rarity: {
                 epic: 15,
                 superior: 10,
                 standard: 5
@@ -52,7 +52,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you penetrate a target you make that target take %d% more damage from further penetrating hits for 7 seconds.',
             cooldown: '7',
-            quality: {
+            rarity: {
                 epic: 24,
                 superior: 16,
                 standard: 8
@@ -63,7 +63,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you hit a target you have a 10% chance to make your next %0 hits never glance and deal %1 more damage.',
             cooldown: '12',
-            quality: [{
+            rarity: [{
                     epic: 12,
                     superior: 8,
                     standard: 4
@@ -79,7 +79,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your hinder effects last %d% longer.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 30,
                 superior: 20,
                 standard: 10
@@ -90,7 +90,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you achieve 10 hits you gain %d% damage increase for 6 seconds.',
             cooldown: '6',
-            quality: {
+            rarity: {
                 epic: 15,
                 superior: 10,
                 standard: 5
@@ -101,7 +101,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you critically hit a target, you gain a critical damage increase of %d% for 15 seconds.',
             cooldown: '15',
-            quality: {
+            rarity: {
                 epic: 24,
                 superior: 16,
                 standard: 8
@@ -112,7 +112,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you hit an impaired target you gain increased damage of %d% per stack for 5 seconds, up to 3 stacks.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 6,
                 superior: 4,
                 standard: 2
@@ -123,7 +123,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you hit an afflicted target, you have a 20% chance to hit them for an additional %d magical damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 224,
                 superior: 149,
                 standard: 74
@@ -134,7 +134,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you hit a target you have a 10% chance to hit them for an additional %d magical damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 427,
                 superior: 284,
                 standard: 80
@@ -145,7 +145,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you heal a target, there is a 20% chance they will gain a barrier that absorbs %d points of damage and lasts 10 seconds.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 142,
                 superior: 94,
                 standard: 47
@@ -156,7 +156,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you critically hit a target you gain a barrier that absorbs %d and last 10 seconds.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 120,
                 superior: 80,
                 standard: 40
@@ -167,7 +167,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you hit a weakened target, you have a 5% chance to be healed for %d every 2 seconds for 8 seconds.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 198,
                 superior: 132,
                 standard: 66
@@ -178,7 +178,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you hinder a target you are healed for %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 141,
                 superior: 94,
                 standard: 47
@@ -189,7 +189,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you impair a target, you are healed for %d every 2 seconds for 6 seconds.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 167,
                 superior: 111,
                 standard: 55
@@ -200,7 +200,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you heal a target below 50% health they are healed for %d every 2 seconds for 8 seconds.',
             cooldown: '8',
-            quality: {
+            rarity: {
                 epic: 94,
                 superior: 63,
                 standard: 32
@@ -209,82 +209,82 @@ swlcalc.data.signet_data = {
             name: 'Temperance',
             icon: 'weapon_heal'
         }, {
-		id:106,
-		name: 'Blessed Steps',
-		description: 'Whenever you apply a barrier effect to an ally, that ally gains a beneficial effect which increases Evade Chance by %d% for 10 seconds. This effect is removed when the barrier effect is removed from that ally.',
-		cooldown: '0',
-		quality: {
-			epic: 12,
-			superior: 8,
-			standard: 4
-			},
-		icon: 'weapon_util',
-		shambala: true
-	}, {
-		id:107,
-		name: 'Divine Inspiration',
-		description: 'Whenever you apply a barrier effect to an ally, that ally gains a beneficial effect which increases damage dealt by %d% for 10 seconds. This effect is removed when the barrier effect is removed from that ally.',
-		cooldown: '0',
-		quality: {
-		epic: 12,
-		superior: 8,
-		standard: 4},
-		icon: 'weapon_dps',
-		shambala: true
-	}, {
-		id:108,
-		name: 'Death\'s Note',
-		description: 'When you hit a target apply a detrimental effect for 5 seconds which causes them to take an additional %d physical damage every time you or anyone else with this signet hits them. This effect can only be applied once every 20 seconds.',
-		cooldown: '0',
-		quality: {
-			epic: 450,
-			superior: 300,
-			standard: 150
-			},
-		icon: 'weapon_dps',
-		shambala: true
-	}, {
-		id:109,
-		name: 'Healer\'s Zeal',
-		description: 'Whenever you directly heal an ally who is below 50% health, you have a %d% chance to gain a resource for both weapons.',
-		cooldown: '0',
-		quality: {
-			epic: 30,
-			superior: 20,
-			standard: 10
-			},
-		icon: 'weapon_heal',
-		shambala: true
-	}, {
-		id:110,
-		name: 'Karma',
-		description: 'Whenever you directly heal an ally, you have a 25% chance to heal yourself for %d% of the heal amount.',
-		cooldown: '0',
-		quality: {
-			epic: 45,
-			superior: 30,
-			standard: 15
-			},
-		icon: 'weapon_heal',
-		shambala: true
-	}, {
-		id:111,
-		name: 'Insurance',
-		description: 'Whenever you hit or heal, you gain a beneficial effect which lasts 10 seconds. This effect can only be gained once every 15 seconds. If this effect is purged, you gain a beneficial effect which increases your Evade Chance and the chance for attacks to glance you by %d% for 10 seconds. This effect cannot be purged.',
-		cooldown: '0',
-		quality: {
-			epic: 30,
-			superior: 20,
-			standard: 10
-			},
-		icon: 'weapon_dps',
-		shambala: true
-	}
+        id:106,
+        name: 'Blessed Steps',
+        description: 'Whenever you apply a barrier effect to an ally, that ally gains a beneficial effect which increases Evade Chance by %d% for 10 seconds. This effect is removed when the barrier effect is removed from that ally.',
+        cooldown: '0',
+        rarity: {
+            epic: 12,
+            superior: 8,
+            standard: 4
+            },
+        icon: 'weapon_util',
+        shambala: true
+    }, {
+        id:107,
+        name: 'Divine Inspiration',
+        description: 'Whenever you apply a barrier effect to an ally, that ally gains a beneficial effect which increases damage dealt by %d% for 10 seconds. This effect is removed when the barrier effect is removed from that ally.',
+        cooldown: '0',
+        rarity: {
+        epic: 12,
+        superior: 8,
+        standard: 4},
+        icon: 'weapon_dps',
+        shambala: true
+    }, {
+        id:108,
+        name: 'Death\'s Note',
+        description: 'When you hit a target apply a detrimental effect for 5 seconds which causes them to take an additional %d physical damage every time you or anyone else with this signet hits them. This effect can only be applied once every 20 seconds.',
+        cooldown: '0',
+        rarity: {
+            epic: 450,
+            superior: 300,
+            standard: 150
+            },
+        icon: 'weapon_dps',
+        shambala: true
+    }, {
+        id:109,
+        name: 'Healer\'s Zeal',
+        description: 'Whenever you directly heal an ally who is below 50% health, you have a %d% chance to gain a resource for both weapons.',
+        cooldown: '0',
+        rarity: {
+            epic: 30,
+            superior: 20,
+            standard: 10
+            },
+        icon: 'weapon_heal',
+        shambala: true
+    }, {
+        id:110,
+        name: 'Karma',
+        description: 'Whenever you directly heal an ally, you have a 25% chance to heal yourself for %d% of the heal amount.',
+        cooldown: '0',
+        rarity: {
+            epic: 45,
+            superior: 30,
+            standard: 15
+            },
+        icon: 'weapon_heal',
+        shambala: true
+    }, {
+        id:111,
+        name: 'Insurance',
+        description: 'Whenever you hit or heal, you gain a beneficial effect which lasts 10 seconds. This effect can only be gained once every 15 seconds. If this effect is purged, you gain a beneficial effect which increases your Evade Chance and the chance for attacks to glance you by %d% for 10 seconds. This effect cannot be purged.',
+        cooldown: '0',
+        rarity: {
+            epic: 30,
+            superior: 20,
+            standard: 10
+            },
+        icon: 'weapon_dps',
+        shambala: true
+    }
     ],
     'head': [{
             description: 'Your Affliction effects deal %d% more damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 21,
                 superior: 14,
                 standard: 7
@@ -295,7 +295,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you are glanced you gain a %d Defense Rating for 8 seconds.',
             cooldown: '8',
-            quality: {
+            rarity: {
                 epic: 450,
                 superior: 300,
                 standard: 150
@@ -306,7 +306,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you block you gain %d% block chance for 4 seconds.',
             cooldown: '10',
-            quality: {
+            rarity: {
                 epic: 45,
                 superior: 30,
                 standard: 15
@@ -317,7 +317,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you are hit you gain a stacking buff that increases healing received by %d% per stack for 3 seconds, up to 10 stacks.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 0.9,
                 superior: 0.6,
                 standard: 0.3
@@ -328,7 +328,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you block, evade or are glanced, you gain %d physical and magical protection per stack for 4 seconds, up to 3 stacks.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 150,
                 superior: 100,
                 standard: 50
@@ -341,7 +341,7 @@ swlcalc.data.signet_data = {
             name: 'Kingdom',
             description: 'Whenever you hit you gain a single Kingdom counter which increases your Hit Rating by %d for 4 seconds per stack. This effect can stack up to 20 times. An additional stack is gained if an attack penetrates or critically hits.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 6
             },
             icon: 'head_dps',
@@ -351,7 +351,7 @@ swlcalc.data.signet_data = {
             name: 'Thinis',
             description: 'Whenever you use a healing ability which builds a resource, you have a %d% chance to gain a resource for your secondary weapon.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 20
             },
             icon: 'head_heal',
@@ -361,7 +361,7 @@ swlcalc.data.signet_data = {
             name: 'Trenches',
             description: 'Whenever you are glanced, you evade, or block an attack, you gain a Trench counter. Once this counter reaches %0 you are healed for %1% of your maximum health.',
             cooldown: '8',
-            quality: [{
+            rarity: [{
                     epic: 6
                 }, {
                     epic: 3
@@ -369,84 +369,84 @@ swlcalc.data.signet_data = {
             ],
             icon: 'head_tank',
             requires: 'issue-6'
-		}, {
-			id:100,
-			name: 'Houdini\'s Guile',
-			description: 'Whenever you are Impaired or Hindered, the currently running recharge timers on your crowd control breaking abilities are reduced by %d seconds.',
-			cooldown: '0',
-			quality: {
-				epic: 9,
-				superior: 6,
-				standard: 3
-			},
-		icon: 'head_tank',
-		shambala: true
-	}, {
-		id:101,
-		name: 'Perpetual Motion',
-		description: 'While you are moving, you gain a beneficial effect which increases your damage by %d%. Standing still removes this effect. If this effect is removed it cannot be regained for 4 seconds.',
-		cooldown: '0',
-		quality: {
-			epic: 12,
-			superior: 8,
-			standard: 4
-			},
-		icon: 'head_dps',
-		shambala: true
-	}, {
-		id:102,
-		name: 'Riposte',
-		description: 'When you block, evade or are glanced, you gain a beneficial effect which increases your Critical Chance and Penetration Chance by %d% for 2 seconds.',
-		cooldown: '0',
-		quality: {
-			epic: 18,
-			superior: 12,
-			standard: 9
-			},
-		icon: 'head_tank',
-		shambala: true
-	}, {
-		id:103,
-		name: 'Soul Eating',
-		description: 'When you score the killing blow on an enemy player, you regain %d% of your health.',
-		cooldown: '0',
-		quality: {
-			epic: 60,
-			superior: 40,
-			standard: 20
-		},
-		icon: 'head_dps',
-		shambala: true
-	}, {
-		id:104,
-		name: 'the Time Thief',
-		description: 'When you score the killing blow on an enemy player, the duration of your currently running recharge timers is reduced by %d%.',
-		cooldown: '0',
-		quality: {
-			epic: 20,
-			superior: 40,
-			standard: 60
-			},
-		icon: 'head_dps',
-		shambala: true
-	}, {
-		id:105,
-		name: 'Autonomy',
-		description: 'Whenever a Hinder or Impair effect ends, gain immunity to Hinder and Impair effects for %d seconds.',
-		cooldown: '0',
-		quality: {
-			epic: 2.25,
-			superior: 1.5,
-			standard: 0.75
-			},
-		icon: 'head_util',
-		shambala: true
+        }, {
+            id:100,
+            name: 'Houdini\'s Guile',
+            description: 'Whenever you are Impaired or Hindered, the currently running recharge timers on your crowd control breaking abilities are reduced by %d seconds.',
+            cooldown: '0',
+            rarity: {
+                epic: 9,
+                superior: 6,
+                standard: 3
+            },
+        icon: 'head_tank',
+        shambala: true
+    }, {
+        id:101,
+        name: 'Perpetual Motion',
+        description: 'While you are moving, you gain a beneficial effect which increases your damage by %d%. Standing still removes this effect. If this effect is removed it cannot be regained for 4 seconds.',
+        cooldown: '0',
+        rarity: {
+            epic: 12,
+            superior: 8,
+            standard: 4
+            },
+        icon: 'head_dps',
+        shambala: true
+    }, {
+        id:102,
+        name: 'Riposte',
+        description: 'When you block, evade or are glanced, you gain a beneficial effect which increases your Critical Chance and Penetration Chance by %d% for 2 seconds.',
+        cooldown: '0',
+        rarity: {
+            epic: 18,
+            superior: 12,
+            standard: 9
+            },
+        icon: 'head_tank',
+        shambala: true
+    }, {
+        id:103,
+        name: 'Soul Eating',
+        description: 'When you score the killing blow on an enemy player, you regain %d% of your health.',
+        cooldown: '0',
+        rarity: {
+            epic: 60,
+            superior: 40,
+            standard: 20
+        },
+        icon: 'head_dps',
+        shambala: true
+    }, {
+        id:104,
+        name: 'the Time Thief',
+        description: 'When you score the killing blow on an enemy player, the duration of your currently running recharge timers is reduced by %d%.',
+        cooldown: '0',
+        rarity: {
+            epic: 20,
+            superior: 40,
+            standard: 60
+            },
+        icon: 'head_dps',
+        shambala: true
+    }, {
+        id:105,
+        name: 'Autonomy',
+        description: 'Whenever a Hinder or Impair effect ends, gain immunity to Hinder and Impair effects for %d seconds.',
+        cooldown: '0',
+        rarity: {
+            epic: 2.25,
+            superior: 1.5,
+            standard: 0.75
+            },
+        icon: 'head_util',
+        shambala: true
         }
     ],
     'minor': [{
             description: 'Your Strike attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 4.5,
                 superior: 3,
                 standard: 1.5
@@ -457,7 +457,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Blast attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 4.5,
                 superior: 3,
                 standard: 1.5
@@ -468,7 +468,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Focus attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 4.5,
                 superior: 3,
                 standard: 1.5
@@ -479,7 +479,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Chaos attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 3,
                 superior: 2,
                 standard: 1
@@ -490,7 +490,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Assault Rifle attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 3,
                 superior: 2,
                 standard: 1
@@ -501,7 +501,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Elemental attacks doing an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 3,
                 superior: 2,
                 standard: 1
@@ -512,7 +512,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Pistol attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 3,
                 superior: 2,
                 standard: 1
@@ -523,7 +523,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Frenzy attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 4.5,
                 superior: 3,
                 standard: 1.5
@@ -534,7 +534,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Chain attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 4.5,
                 superior: 3,
                 standard: 1.5
@@ -545,7 +545,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Fist attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 3,
                 superior: 2,
                 standard: 1
@@ -556,7 +556,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Shotgun attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 3,
                 superior: 2,
                 standard: 1
@@ -567,7 +567,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Hammer attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 3,
                 superior: 2,
                 standard: 1
@@ -578,7 +578,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Burst attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 4.5,
                 superior: 3,
                 standard: 1.5
@@ -589,7 +589,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Blade attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 3,
                 superior: 2,
                 standard: 1
@@ -600,7 +600,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Blood attacks do an additional %d% damage.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 3,
                 superior: 2,
                 standard: 1
@@ -611,7 +611,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When your health is below 50% the next 5 hits against you do %d% less damage.',
             cooldown: '12',
-            quality: {
+            rarity: {
                 epic: 25,
                 superior: 17,
                 standard: 9
@@ -622,7 +622,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When your health is below 50% you gain a barrier that will absorb up to %d damage for 10 seconds.',
             cooldown: '12',
-            quality: {
+            rarity: {
                 epic: 378,
                 superior: 252,
                 standard: 162
@@ -633,7 +633,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you Block, Evade, or are Glanced, you gain %d% damage reduction for 5 seconds.',
             cooldown: '6',
-            quality: {
+            rarity: {
                 epic: 6,
                 superior: 4,
                 standard: 2
@@ -644,7 +644,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Barrier effects are increased by %d%.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 3,
                 superior: 2,
                 standard: 1
@@ -655,7 +655,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Whenever you critically heal a target they gain a heal over time effect, healing them for %d heal every 1 second for 5 seconds.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 20,
                 superior: 13,
                 standard: 7
@@ -666,7 +666,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you critically heal a target they gain a %d% damage increase for 5 seconds.',
             cooldown: '15',
-            quality: {
+            rarity: {
                 epic: 15,
                 superior: 10,
                 standard: 5
@@ -677,7 +677,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Healing effects are increased by %d%.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 3,
                 superior: 2,
                 standard: 1
@@ -688,7 +688,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Leech effects are increased by %d%.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 3,
                 superior: 2,
                 standard: 1
@@ -699,7 +699,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When your health is below 50% you are healed for %0 and affected by a heal over time effect healing you for %1 every 2 seconds for 8 seconds.',
             cooldown: '12',
-            quality: [{
+            rarity: [{
                     epic: 150,
                     superior: 100,
                     standard: 50
@@ -715,7 +715,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you critically heal a target they gain a %d% leech effect.',
             cooldown: '5',
-            quality: {
+            rarity: {
                 epic: 15,
                 superior: 10,
                 standard: 5
@@ -726,7 +726,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you block, evade or are glanced you generate a %s amount of hate on your offensive target.',
             cooldown: '6',
-            quality: {
+            rarity: {
                 epic: 'large',
                 superior: 'medium',
                 standard: 'small'
@@ -737,7 +737,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you critically heal a target you reduce your offensive target\'s hate towards you by a %s amount.',
             cooldown: '15',
-            quality: {
+            rarity: {
                 epic: 'large',
                 superior: 'medium',
                 standard: 'small'
@@ -748,7 +748,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'When you land a critical or penetrating hit you reduce your offensive targets hate towards you by a %s amount.',
             cooldown: '15',
-            quality: {
+            rarity: {
                 epic: 'large',
                 superior: 'medium',
                 standard: 'small'
@@ -757,123 +757,123 @@ swlcalc.data.signet_data = {
             name: 'Subjugation',
             icon: 'minor_dps'
         }, {
-		id:121,
-			name: 'Backbite',
-			description: 'Whenever you hit a target from behind who is less than 5 metres away from you, you deal an additional %d physical damage. This additional damage cannot be blocked and it cannot glance.',
-			cooldown: '0',
-			quality: {
-				epic: 375,
-				superior: 250,
-				standard: 125
-				},
-			icon: 'minor_dps',
-			shambala: true
-			}, {
-			id:122,
-			name: 'Displacement',
-			description: 'Whenever you use your Active Dodge, your Evade Chance is increased by %d% for 1.5 seconds.',
-			cooldown: '0',
-			quality: {
-				epic: 60,
-				superior: 40,
-				standard: 20
-				},
-			icon: 'minor_tank',
-			shambala: true
-		}, {
-			id:123,
-			name: 'Defiance',
-			description: 'Whenever you receive damage greater than 10% of your maximum health in a single hit, you gain a barrier which absorbs 100% of incoming damage. The barrier\'s strength is equal to %d% of your maximum health. This effect cannot occur more than once every 20 seconds.',
-			cooldown: '0',
-			quality: {
-				epic: 15,
-				superior: 10,
-				standard: 5
-				},
-			icon: 'minor_tank',
-			shambala: true
-		}, {
-			id:124,
-			name: 'Deflection',
-			description: 'Whenever you are hit by a target who is more than 12 metres away from you, you gain a beneficial effect which reduces the damage you take by %d% for 3 seconds.',
-			cooldown: '0',
-			quality: {
-				epic: 9,
-				superior: 6,
-				standard: 3
-				},
-			icon: 'minor_tank',
-			shambala: true
-		}, {
-			id:125,
-			name: 'Desperation',
-			description: 'Whenever you directly heal an ally whose health is below 50%, you heal them for an additional %s. The amount healed is increased the closer your ally is to death. This effect cannot occur more than once every 20 seconds.',
-			cooldown: '0',
-			quality: {
-				epic: '600 - 2400',
-				superior: '400 - 1600',
-				standard: '200 - 800'
-				},
-			icon: 'minor_heal',
-			shambala: true
-		}, {
-			id:126,
-			name: 'Recuperation',
-			description: 'Whenever you apply a heal over time effect to an ally, you have a %0% chance to apply a beneficial effect to that ally which lasts for 4 seconds. When this effect expires, that ally regains health equal to %2% of the damage they received while the effect was active. This effect cannot be applied more than once every 15 seconds.',
-			cooldown: '0',
-			quality: [{
-				epic: 100,
-				superior: 66,
-				standard: 33
-				}, {
-					epic: 22.5,
-					superior: 15,
-					standard: 7.5
-				}],
-			icon: 'minor_heal',
-			shambala: true
-		}, {
-			id:127,
-			name: 'the Physician',
-			description: 'Whenever you directly heal an ally who is within 5 metres, you heal them for an additional %d.',
-			cooldown: '0',
-			quality: {
-				epic: 150,
-				superior: 100,
-				standard: 50
-				},
-			icon: 'minor_heal',
-			shambala: true
-		}, {
-			id:128,
-			name: 'the Protected',
-			description: 'Whenever you apply a barrier effect to an ally who already has a barrier, you heal them for %d.',
-			cooldown: '0',
-			quality: {
-				epic: 150,
-				superior: 100,
-				standard: 50
-				},
-			icon: 'minor_heal',
-			shambala: true
-		}, {
-			id:129,
-			name: 'Unceasing',
-			description: 'Whenever an attack penetrates or critically hits you for more than 700 damage, you are instantly healed for %d% of that damage.',
-			cooldown: '0',
-				quality: {
-				epic: 15,
-				superior: 10,
-				standard: 5
-			},
-			icon: 'minor_tank',
-			shambala: true
-		}
+        id:121,
+            name: 'Backbite',
+            description: 'Whenever you hit a target from behind who is less than 5 metres away from you, you deal an additional %d physical damage. This additional damage cannot be blocked and it cannot glance.',
+            cooldown: '0',
+            rarity: {
+                epic: 375,
+                superior: 250,
+                standard: 125
+                },
+            icon: 'minor_dps',
+            shambala: true
+            }, {
+            id:122,
+            name: 'Displacement',
+            description: 'Whenever you use your Active Dodge, your Evade Chance is increased by %d% for 1.5 seconds.',
+            cooldown: '0',
+            rarity: {
+                epic: 60,
+                superior: 40,
+                standard: 20
+                },
+            icon: 'minor_tank',
+            shambala: true
+        }, {
+            id:123,
+            name: 'Defiance',
+            description: 'Whenever you receive damage greater than 10% of your maximum health in a single hit, you gain a barrier which absorbs 100% of incoming damage. The barrier\'s strength is equal to %d% of your maximum health. This effect cannot occur more than once every 20 seconds.',
+            cooldown: '0',
+            rarity: {
+                epic: 15,
+                superior: 10,
+                standard: 5
+                },
+            icon: 'minor_tank',
+            shambala: true
+        }, {
+            id:124,
+            name: 'Deflection',
+            description: 'Whenever you are hit by a target who is more than 12 metres away from you, you gain a beneficial effect which reduces the damage you take by %d% for 3 seconds.',
+            cooldown: '0',
+            rarity: {
+                epic: 9,
+                superior: 6,
+                standard: 3
+                },
+            icon: 'minor_tank',
+            shambala: true
+        }, {
+            id:125,
+            name: 'Desperation',
+            description: 'Whenever you directly heal an ally whose health is below 50%, you heal them for an additional %s. The amount healed is increased the closer your ally is to death. This effect cannot occur more than once every 20 seconds.',
+            cooldown: '0',
+            rarity: {
+                epic: '600 - 2400',
+                superior: '400 - 1600',
+                standard: '200 - 800'
+                },
+            icon: 'minor_heal',
+            shambala: true
+        }, {
+            id:126,
+            name: 'Recuperation',
+            description: 'Whenever you apply a heal over time effect to an ally, you have a %0% chance to apply a beneficial effect to that ally which lasts for 4 seconds. When this effect expires, that ally regains health equal to %2% of the damage they received while the effect was active. This effect cannot be applied more than once every 15 seconds.',
+            cooldown: '0',
+            rarity: [{
+                epic: 100,
+                superior: 66,
+                standard: 33
+                }, {
+                    epic: 22.5,
+                    superior: 15,
+                    standard: 7.5
+                }],
+            icon: 'minor_heal',
+            shambala: true
+        }, {
+            id:127,
+            name: 'the Physician',
+            description: 'Whenever you directly heal an ally who is within 5 metres, you heal them for an additional %d.',
+            cooldown: '0',
+            rarity: {
+                epic: 150,
+                superior: 100,
+                standard: 50
+                },
+            icon: 'minor_heal',
+            shambala: true
+        }, {
+            id:128,
+            name: 'the Protected',
+            description: 'Whenever you apply a barrier effect to an ally who already has a barrier, you heal them for %d.',
+            cooldown: '0',
+            rarity: {
+                epic: 150,
+                superior: 100,
+                standard: 50
+                },
+            icon: 'minor_heal',
+            shambala: true
+        }, {
+            id:129,
+            name: 'Unceasing',
+            description: 'Whenever an attack penetrates or critically hits you for more than 700 damage, you are instantly healed for %d% of that damage.',
+            cooldown: '0',
+                rarity: {
+                epic: 15,
+                superior: 10,
+                standard: 5
+            },
+            icon: 'minor_tank',
+            shambala: true
+        }
     ],
     'major': [{
             description: 'Your attack rating is increased by %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 141,
                 superior: 94,
                 standard: 47
@@ -885,7 +885,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your health is increased by %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 495,
                 superior: 330,
                 standard: 165
@@ -897,7 +897,7 @@ swlcalc.data.signet_data = {
         }, {
             description: 'Your Heal rating is increased by %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 141,
                 superior: 94,
                 standard: 47
@@ -907,119 +907,119 @@ swlcalc.data.signet_data = {
             stat: 'heal-rating',
             icon: 'major_heal'
         },{
-			id:112,
-			name: 'Coup De Gr\u00E2ce',
-			description: 'Whenever you hit a target who is below 35% health, you have a 33% chance to deal an additional %s physical damage to that target. Damage dealt increases the closer the target gets to death.',
-			cooldown: '0',
-			quality: {
-				epic: '450 - 900',
-				superior: '300 - 600',
-				standard: '150 - 300'
-				},
-			icon: 'major_dps',
-			shambala: true
-		}, {
-			id:113,
-			name: 'Agony Shared',
-			description: 'Whenever you receive 300 or more damage in a single hit, you deal %d physical damage to enemies near you.',
-			cooldown: '0',
-				quality: {
-				epic: 300,
-				superior: 200,
-				standard: 100
-				},
-			icon: 'major_tank',
-			shambala: true
-		}, {
-			id:114,
-			name: 'Nergal\'s Ire',
-			description: 'Whenever you are hit, you have a %d% chance to apply one stack of Corrupt, Debilitated, or Exposed to your attacker. If the attack was blocked, evaded, or if it glanced you, there is an additional %d% chance to apply one stack of Corrupt, Debilitated, or Exposed to your attacker.',
-			cooldown: '0',
-			quality: {
-				epic: 15,
-				superior: 10,
-				standard: 5
-				},
-			icon: 'major_tank',
-			shambala: true
-			}, { /*!!*/
-			id:115, name: 'Protector\'s Wrath',
-			description: 'Whenever you heal an ally, you have a %d% chance to also deal %d damage to enemies within 5 metres of that ally. The damage dealt increases with your Heal Rating.',
-			cooldown: '0',
-			quality: {
-				epic: 21,
-				superior: 14,
-				standard: 7
-				},
-			icon: 'major_heal',
-			shambala: true
-		}, {
-			id:116, name: 'Hermes\' Feet',
-			description: 'Whenever you activate a movement ability, your movement speed is increased by %d% for 5 seconds.',
-			cooldown: '0',
-			quality: {
-				epic: 15,
-				superior: 10,
-				standard: 5
-				},
-			icon: 'major_dps',
-			shambala: true
-		}, {
-			id:117,
-			name: 'Renewed Vigil',
-			description: 'Whenever your barrier effects expire for any reason, you gain a beneficial effect which increases the strength of the next barrier you apply by %d%.',
-			cooldown: '0',
-			quality: {
-				epic: 15,
-				superior: 10,
-				standard: 5
-				},
-			icon: 'major_heal',
-			shambala: true
-		}, { /*!!*/
-			id:118,
-			name: 'Martyr\'s Miracle',
-			description: 'Whenever you die, you create a healing area near where you died which lasts 10 seconds. Allies standing in the area are healed for %d every second. The amount healed increases with your heal rating.',
-			cooldown: '0',
-			quality: {
-				epic: 96,
-				superior: 64,
-				standard: 32
-				},
-			icon: 'major_heal',
-			shambala: true
-		}, {
-			id:119,
-			name: 'Persistent Malice',
-			description: 'Reduces the chance of your attacks being evaded by %d%.',
-			cooldown: '0',
-			quality: {
-				epic: 9,
-				superior: 6,
-				standard: 3
-				},
-			icon: 'major_dps',
-			shambala: true
-		}, {
-			id:120,
-			name: 'the Death Curse',
-			description: 'Whenever your health drops below 10% you are unable to activate abilities and unable to be defeated for 3 seconds. When this effect expires, you are defeated and you deal %d physical damage to enemies near you.',
-			cooldown: '0',
-			quality: {
-				epic: 3000,
-				superior: 2000,
-				standard: 1000
-				},
-			icon: 'major_dps',
-			shambala: true
-		}
+            id:112,
+            name: 'Coup De Gr\u00E2ce',
+            description: 'Whenever you hit a target who is below 35% health, you have a 33% chance to deal an additional %s physical damage to that target. Damage dealt increases the closer the target gets to death.',
+            cooldown: '0',
+            rarity: {
+                epic: '450 - 900',
+                superior: '300 - 600',
+                standard: '150 - 300'
+                },
+            icon: 'major_dps',
+            shambala: true
+        }, {
+            id:113,
+            name: 'Agony Shared',
+            description: 'Whenever you receive 300 or more damage in a single hit, you deal %d physical damage to enemies near you.',
+            cooldown: '0',
+                rarity: {
+                epic: 300,
+                superior: 200,
+                standard: 100
+                },
+            icon: 'major_tank',
+            shambala: true
+        }, {
+            id:114,
+            name: 'Nergal\'s Ire',
+            description: 'Whenever you are hit, you have a %d% chance to apply one stack of Corrupt, Debilitated, or Exposed to your attacker. If the attack was blocked, evaded, or if it glanced you, there is an additional %d% chance to apply one stack of Corrupt, Debilitated, or Exposed to your attacker.',
+            cooldown: '0',
+            rarity: {
+                epic: 15,
+                superior: 10,
+                standard: 5
+                },
+            icon: 'major_tank',
+            shambala: true
+            }, { /*!!*/
+            id:115, name: 'Protector\'s Wrath',
+            description: 'Whenever you heal an ally, you have a %d% chance to also deal %d damage to enemies within 5 metres of that ally. The damage dealt increases with your Heal Rating.',
+            cooldown: '0',
+            rarity: {
+                epic: 21,
+                superior: 14,
+                standard: 7
+                },
+            icon: 'major_heal',
+            shambala: true
+        }, {
+            id:116, name: 'Hermes\' Feet',
+            description: 'Whenever you activate a movement ability, your movement speed is increased by %d% for 5 seconds.',
+            cooldown: '0',
+            rarity: {
+                epic: 15,
+                superior: 10,
+                standard: 5
+                },
+            icon: 'major_dps',
+            shambala: true
+        }, {
+            id:117,
+            name: 'Renewed Vigil',
+            description: 'Whenever your barrier effects expire for any reason, you gain a beneficial effect which increases the strength of the next barrier you apply by %d%.',
+            cooldown: '0',
+            rarity: {
+                epic: 15,
+                superior: 10,
+                standard: 5
+                },
+            icon: 'major_heal',
+            shambala: true
+        }, { /*!!*/
+            id:118,
+            name: 'Martyr\'s Miracle',
+            description: 'Whenever you die, you create a healing area near where you died which lasts 10 seconds. Allies standing in the area are healed for %d every second. The amount healed increases with your heal rating.',
+            cooldown: '0',
+            rarity: {
+                epic: 96,
+                superior: 64,
+                standard: 32
+                },
+            icon: 'major_heal',
+            shambala: true
+        }, {
+            id:119,
+            name: 'Persistent Malice',
+            description: 'Reduces the chance of your attacks being evaded by %d%.',
+            cooldown: '0',
+            rarity: {
+                epic: 9,
+                superior: 6,
+                standard: 3
+                },
+            icon: 'major_dps',
+            shambala: true
+        }, {
+            id:120,
+            name: 'the Death Curse',
+            description: 'Whenever your health drops below 10% you are unable to activate abilities and unable to be defeated for 3 seconds. When this effect expires, you are defeated and you deal %d physical damage to enemies near you.',
+            cooldown: '0',
+            rarity: {
+                epic: 3000,
+                superior: 2000,
+                standard: 1000
+                },
+            icon: 'major_dps',
+            shambala: true
+        }
     ],
     'neck': [{
             id: 56,
             name: 'Chernobog',
             description: 'Your attack rating is increased by %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 117
             },
             stat: 'attack-rating',
@@ -1030,7 +1030,7 @@ swlcalc.data.signet_data = {
             name: 'Veles',
             description: 'Your health is increased by %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 410
             },
             stat: 'hitpoints',
@@ -1041,7 +1041,7 @@ swlcalc.data.signet_data = {
             name: 'Belobog',
             description: 'Your Heal rating is increased by %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 117
             },
             stat: 'heal-rating',
@@ -1054,7 +1054,7 @@ swlcalc.data.signet_data = {
             name: 'Venice',
             description: 'Increases damage dealt by %d%.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 1.5
             },
             icon: 'minor_dps',
@@ -1064,7 +1064,7 @@ swlcalc.data.signet_data = {
             name: 'Undying Roar',
             description: 'Increases evade chance by %d%.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 1.5
             },
             icon: 'minor_tank',
@@ -1074,7 +1074,7 @@ swlcalc.data.signet_data = {
             name: 'Saint Mark',
             description: 'Increases the effectiveness of your barrier, leech and healing abilities by %d%.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 1.5
             },
             icon: 'minor_heal',
@@ -1086,7 +1086,7 @@ swlcalc.data.signet_data = {
             name: 'Howling Oni',
             description: 'Your attack rating is increased by %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 117
             },
             stat: 'attack-rating',
@@ -1097,7 +1097,7 @@ swlcalc.data.signet_data = {
             name: 'Laughing Shisa',
             description: 'Your health is increased by %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 410
             },
             stat: 'hitpoints',
@@ -1108,7 +1108,7 @@ swlcalc.data.signet_data = {
             name: 'Singing Tengu',
             description: 'Your Heal rating is increased by %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 117
             },
             stat: 'heal-rating',
@@ -1121,7 +1121,7 @@ swlcalc.data.signet_data = {
             name: 'Set',
             description: 'Increases damage dealt by %d%.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 1.5
             },
             icon: 'minor_dps',
@@ -1131,7 +1131,7 @@ swlcalc.data.signet_data = {
             name: 'Horus',
             description: 'Increases the chance that attacks against you will glance by %d%.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 1.5
             },
             icon: 'minor_tank',
@@ -1141,7 +1141,7 @@ swlcalc.data.signet_data = {
             name: 'Sekhmet',
             description: 'Increases the effectiveness of your barrier, leech and healing abilities by %d%.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 1.5
             },
             icon: 'minor_heal',
@@ -1153,7 +1153,7 @@ swlcalc.data.signet_data = {
             name: 'Nure-onna\'s Coils',
             description: 'Increases damage dealt by %d%.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 1.5
             },
             icon: 'minor_dps',
@@ -1163,7 +1163,7 @@ swlcalc.data.signet_data = {
             name: 'Sarutahiko\'s Mettle',
             description: 'Increases block chance by %d%.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 1.5
             },
             icon: 'minor_tank',
@@ -1173,7 +1173,7 @@ swlcalc.data.signet_data = {
             name: 'Yakushi\'s Balm',
             description: 'Increases the effectiveness of your barrier, leech and healing abilities by %d%.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 1.5
             },
             icon: 'minor_heal',
@@ -1185,7 +1185,7 @@ swlcalc.data.signet_data = {
             name: 'Repulsor Technology',
             description: 'Your attack rating is increased by %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 117
             },
             stat: 'attack-rating',
@@ -1196,7 +1196,7 @@ swlcalc.data.signet_data = {
             name: 'Personal Shielding',
             description: 'Your health is increased by %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 410
             },
             stat: 'hitpoints',
@@ -1207,14 +1207,14 @@ swlcalc.data.signet_data = {
             name: 'Biotechnology',
             description: 'Your Heal rating is increased by %d.',
             cooldown: '0',
-            quality: {
+            rarity: {
                 epic: 117
             },
             stat: 'heal-rating',
             icon: 'major_heal',
             requires: 'issue-11'
         }
-		]
+        ]
     //last item-id in this file: 195
     //last item-id in swlcalc-data-items.js: 192
     //update these item-ids when adding new items/signets either place to avoid conflicts

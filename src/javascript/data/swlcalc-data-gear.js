@@ -3,560 +3,1020 @@ swlcalc.data = swlcalc.data || {};
 
 // OLD STRUCTURE
 // 'weapon': {
-// 		'10.X': {
-// 			weapon_power: 666
-// 		}
+//         '10.X': {
+//             weapon_power: 666
+//         }
 // },
 // 'head': {
-// 		heal_dps: {
-// 			'ql10.X': {
-// 				rating: 666
-// 			}
-// 		}
+//         heal_dps: {
+//             'ql10.X': {
+//                 rating: 666
+//             }
+//         }
 // }
 
 //TODO : to complete with missing values
 swlcalc.data.custom_gear_data = {
-	slot: {
-		// WEAPON ------------------------------------------------
-		'weapon': {
-			quality : {
-				'standard': {
-					'crude': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'superior': {
-					'crude': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'epic': {
-					'crude': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'mythic': {
-					'crude': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'legendary': {
-					'crude': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						weapon_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				}
-			}
-		},
-		// HEAD TALISMAN -----------------------------------------
-		'head': {
-			quality : {
-				'standard': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'superior': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'epic': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'mythic': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'legendary': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				}
-			}
-		},
-		// MAJOR TALISMANS ---------------------------------------
-		'major': {
-			quality : {
-				'standard': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'superior': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'epic': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'mythic': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'legendary': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				}
-			}
-		},
-		// MINOR TALISMANS ---------------------------------------
-		'minor': {
-			quality : {
-				'standard': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'superior': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'epic': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'mythic': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				},
-				'legendary': {
-					'crude': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'simple': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					},
-					'intricate': {
-						item_power: {
-							//TODO : placeholder values for the moment
-							1: 111,
-							2: 222,
-							3: 333
-						}
-					}
-				}
-			}
-		}
-	}
+    slot: {
+        // WEAPON --------------------------------------------------------
+        'weapon': {
+            rarity: {
+                'standard': {
+                    quality: {
+                        'mkI': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'mkII': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'mkIII': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'superior': {
+                    quality: {
+                        'mkI': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'mkII': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'mkIII': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'epic': {
+                    quality: {
+                        'mkI': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'mkII': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'mkIII': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'mythic': {
+                    quality: {
+                        'mkI': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'mkII': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'mkIII': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'legendary': {
+                    quality: {
+                        'mkI': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'mkII': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'mkIII': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        // HEAD TALISMAN -------------------------------------------------
+        'head': {
+            rarity : {
+                'standard': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'superior': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'epic': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'mythic': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'legendary': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        // MAJOR TALISMANS -----------------------------------------------
+        'major': {
+            rarity : {
+                'standard': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'superior': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'epic': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'mythic': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'legendary': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        // MINOR TALISMANS -----------------------------------------------
+        'minor': {
+            rarity : {
+                'standard': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'superior': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'epic': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'mythic': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                },
+                'legendary': {
+                    quality: {
+                        'faded': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'luminous': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        },
+                        'radiant': {
+                            level : {
+                                //TODO : placeholder values for the moment
+                                1: 111,
+                                2: 222,
+                                3: 333,
+                                4: 444,
+                                5: 555,
+                                6: 666,
+                                7: 777,
+                                8: 888,
+                                9: 999,
+                                10: 1010
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 };

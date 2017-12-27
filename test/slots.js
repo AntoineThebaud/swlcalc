@@ -29,22 +29,22 @@ test('should get talisman role', 1, function() {
     equal(swlcalc.slots.head.item().role, 'tank');
 });
 
-test('should get talisman ql', 1, function() {
-    equal(swlcalc.slots.head.ql(), '10.4');
+test('should get talisman rarity', 1, function() {
+    equal(swlcalc.slots.head.rarity(), '10.4');
 });
 
-test('should set talisman ql', 1, function() {
-    swlcalc.slots.head.ql('10.1');
-    equal(swlcalc.slots.head.ql(), '10.1');
+test('should set talisman rarity', 1, function() {
+    swlcalc.slots.head.rarity('10.1');
+    equal(swlcalc.slots.head.rarity(), '10.1');
 });
 
-test('should get talisman glyph ql', 1, function() {
-    equal(swlcalc.slots.head.glyphQl(), '10.5');
+test('should get talisman glyph rarity', 1, function() {
+    equal(swlcalc.slots.head.glyphRarity(), '10.5');
 });
 
-test('should set talisman glyph ql', 1, function() {
-    swlcalc.slots.head.glyphQl('10.1');
-    equal(swlcalc.slots.head.glyphQl(), '10.1');
+test('should set talisman glyph rarity', 1, function() {
+    swlcalc.slots.head.glyphRarity('10.1');
+    equal(swlcalc.slots.head.glyphRarity(), '10.1');
 });
 
 test('should get talisman glyphs', 2, function() {
@@ -86,17 +86,17 @@ test('should update talisman glyph values', 2, function() {
     deepEqual(swlcalc.slots.head.el.secondaryGlyphValue.html(), '+182');
 });
 
-test('should get talisman signet id and quality', 2, function() {
+test('should get talisman signet id and rarity', 2, function() {
     equal(swlcalc.slots.head.signetId(), '18');
-    equal(swlcalc.slots.head.signetQuality(), 'epic');
+    equal(swlcalc.slots.head.signetRarity(), 'epic');
 });
 
-test('should set talisman signet id and quality', 2, function() {
+test('should set talisman signet id and rarity', 2, function() {
     swlcalc.slots.head.signetId('16');
-    swlcalc.slots.head.signetQuality('superior');
+    swlcalc.slots.head.signetRarity('superior');
 
     equal(swlcalc.slots.head.signetId(), '16');
-    equal(swlcalc.slots.head.signetQuality(), 'superior');
+    equal(swlcalc.slots.head.signetRarity(), 'superior');
 });
 
 test('should get talisman signet object', 1, function() {
@@ -107,7 +107,7 @@ test('should update signet icon and border', 2, function() {
     swlcalc.slots.head.updateSignetIcon();
 
     equal($('#head-signet-img-icon').attr('src'), 'assets/images/icons/head_tank.png');
-    equal($('#head-signet-img-quality').attr('src'), 'assets/images/icons/epic.png');
+    equal($('#head-signet-img-rarity').attr('src'), 'assets/images/icons/epic.png');
 });
 
 test('should update signet icon from name', 1, function() {
@@ -122,7 +122,7 @@ test('should get signet description for single value replace', 1, function() {
 
 test('should get signet description for multiple value replace', 1, function() {
     swlcalc.slots.occult.signetId('47');
-    swlcalc.slots.occult.signetQuality('epic');
+    swlcalc.slots.occult.signetRarity('epic');
 
     equal(swlcalc.slots.occult.signetDescription(), 'When your health is below 50% you are healed for 150 and affected by a heal over time effect healing you for 57 every 2 seconds for 8 seconds. 12 seconds cooldown.');
 });
@@ -133,10 +133,10 @@ test('should update signet description', 1, function() {
     equal($('#head-signet-description').html(), 'When you block you gain 45% block chance for 4 seconds. 10 seconds cooldown.');
 });
 
-test('should get single signet value based on quality', 1, function() {
+test('should get single signet value based on rarity', 1, function() {
     var signet = swlcalc.slots.head.signet();
 
-    deepEqual(swlcalc.slots.head.determineSignetQualityValue(signet), 45);
+    deepEqual(swlcalc.slots.head.determineSignetRarityValue(signet), 45);
 });
 
 // COST FEATURE DISABLED. NEED REVAMP
@@ -154,13 +154,13 @@ test('should get single signet value based on quality', 1, function() {
 //    deepEqual(swlcalc.slots.head.criterionUpgradeCost(), 0);
 // });
 
-test('should get indexed signet value based on quality', 2, function() {
+test('should get indexed signet value based on rarity', 2, function() {
     swlcalc.slots.occult.signetId('47');
-    swlcalc.slots.occult.signetQuality('epic');
+    swlcalc.slots.occult.signetRarity('epic');
     var signet = swlcalc.slots.occult.signet();
 
-    deepEqual(swlcalc.slots.occult.determineSignetQualityValue(signet, 0), 150);
-    deepEqual(swlcalc.slots.occult.determineSignetQualityValue(signet, 1), 57);
+    deepEqual(swlcalc.slots.occult.determineSignetRarityValue(signet, 0), 150);
+    deepEqual(swlcalc.slots.occult.determineSignetRarityValue(signet, 1), 57);
 });
 
 test('slots should have length of 9', 1, function() {
@@ -170,9 +170,9 @@ test('slots should have length of 9', 1, function() {
 test('should reset slot state', 7, function() {
     swlcalc.slots.head.reset();
 
-    equal(swlcalc.slots.head.ql(), '10.0');
+    equal(swlcalc.slots.head.rarity(), '10.0');
     equal(swlcalc.slots.head.item().role, 'dps');
-    equal(swlcalc.slots.head.glyphQl(), '10.0');
+    equal(swlcalc.slots.head.glyphRarity(), '10.0');
     equal(swlcalc.slots.head.primaryGlyph(), 'none');
     equal(swlcalc.slots.head.secondaryGlyph(), 'none');
     ok(swlcalc.slots.head.el.btn.primary[4].hasClass('active'));
@@ -182,73 +182,73 @@ test('should reset slot state', 7, function() {
 test('should collect current slot state', 9, function() {
     var slotState = swlcalc.slots.head.state();
 
-    deepEqual(slotState.ql, '10.4');
+    deepEqual(slotState.rarity, '10.4');
     deepEqual(slotState.role, 'tank');
-    deepEqual(slotState.glyph_ql, '10.5');
+    deepEqual(slotState.glyph_rarity, '10.5');
     deepEqual(slotState.primary_glyph, 'block-rating');
     deepEqual(slotState.secondary_glyph, 'none');
     deepEqual(slotState.primary_dist, '4');
     deepEqual(slotState.secondary_dist, '0');
-    deepEqual(slotState.signet_quality, 'epic');
+    deepEqual(slotState.signet_rarity, 'epic');
     deepEqual(slotState.signet_id, '18');
 });
 
 test('should collect current mapped slot state', 9, function() {
     var slotState = swlcalc.slots.head.mappedState();
 
-    deepEqual(slotState.ql, '4');
+    deepEqual(slotState.rarity, '4');
     deepEqual(slotState.role, 'tank');
-    deepEqual(slotState.glyph_ql, '5');
+    deepEqual(slotState.glyph_rarity, '5');
     deepEqual(slotState.primary_glyph, 5);
     deepEqual(slotState.secondary_glyph, 0);
     deepEqual(slotState.primary_dist, '4');
     deepEqual(slotState.secondary_dist, '0');
-    deepEqual(slotState.signet_quality, 3);
+    deepEqual(slotState.signet_rarity, 3);
     deepEqual(slotState.signet_id, '18');
 });
 
 test('should collect all slot states', 17, function() {
     var slotStates = swlcalc.slots.state();
 
-    deepEqual(slotStates.weapon.ql, '10.5');
-    deepEqual(slotStates.weapon.glyph_ql, '10.4');
+    deepEqual(slotStates.weapon.rarity, '10.5');
+    deepEqual(slotStates.weapon.glyph_rarity, '10.4');
     deepEqual(slotStates.weapon.primary_glyph, 'hit-rating');
     deepEqual(slotStates.weapon.secondary_glyph, 'none');
     deepEqual(slotStates.weapon.primary_dist, '4');
     deepEqual(slotStates.weapon.secondary_dist, '0');
-    deepEqual(slotStates.weapon.signet_quality, 'superior');
+    deepEqual(slotStates.weapon.signet_rarity, 'superior');
     deepEqual(slotStates.weapon.signet_id, '5');
 
-    deepEqual(slotStates.head.ql, '10.4');
+    deepEqual(slotStates.head.rarity, '10.4');
     deepEqual(slotStates.head.role, 'tank');
-    deepEqual(slotStates.head.glyph_ql, '10.5');
+    deepEqual(slotStates.head.glyph_rarity, '10.5');
     deepEqual(slotStates.head.primary_glyph, 'block-rating');
     deepEqual(slotStates.head.secondary_glyph, 'none');
     deepEqual(slotStates.head.primary_dist, '4');
     deepEqual(slotStates.head.secondary_dist, '0');
-    deepEqual(slotStates.head.signet_quality, 'epic');
+    deepEqual(slotStates.head.signet_rarity, 'epic');
     deepEqual(slotStates.head.signet_id, '18');
 });
 
 test('should collect all mapped slot states', 17, function() {
     var slotStates = swlcalc.slots.mappedState();
 
-    deepEqual(slotStates.weapon.ql, '5');
-    deepEqual(slotStates.weapon.glyph_ql, '4');
+    deepEqual(slotStates.weapon.rarity, '5');
+    deepEqual(slotStates.weapon.glyph_rarity, '4');
     deepEqual(slotStates.weapon.primary_glyph, 4);
     deepEqual(slotStates.weapon.secondary_glyph, 0);
     deepEqual(slotStates.weapon.primary_dist, '4');
     deepEqual(slotStates.weapon.secondary_dist, '0');
-    deepEqual(slotStates.weapon.signet_quality, 2);
+    deepEqual(slotStates.weapon.signet_rarity, 2);
     deepEqual(slotStates.weapon.signet_id, '5');
 
-    deepEqual(slotStates.head.ql, '4');
+    deepEqual(slotStates.head.rarity, '4');
     deepEqual(slotStates.head.role, 'tank');
-    deepEqual(slotStates.head.glyph_ql, '5');
+    deepEqual(slotStates.head.glyph_rarity, '5');
     deepEqual(slotStates.head.primary_glyph, 5);
     deepEqual(slotStates.head.secondary_glyph, 0);
     deepEqual(slotStates.head.primary_dist, '4');
     deepEqual(slotStates.head.secondary_dist, '0');
-    deepEqual(slotStates.head.signet_quality, 3);
+    deepEqual(slotStates.head.signet_rarity, 3);
     deepEqual(slotStates.head.signet_id, '18');
 });

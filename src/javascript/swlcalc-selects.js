@@ -17,12 +17,18 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         } else {
             slotObj.el.itemId.change(this.itemChange);
         }
-        slotObj.el.ql.change(this.qlChange);
-        slotObj.el.glyphQl.change(this.glyphChange);
-        slotObj.el.primaryGlyph.change(this.glyphChange);
-        slotObj.el.secondaryGlyph.change(this.glyphChange);
+        slotObj.el.rarity.change(this.rarityChange);
+        slotObj.el.quality.change(this.glyphChange); //TODO refactor name because "glyphChange" is not clear
+        slotObj.el.level.change(this.glyphChange);  //TODO refactor name because "glyphChange" is not clear
+
+        slotObj.el.glyph.change(this.glyphChange);
+        slotObj.el.glyphRarity.change(this.glyphChange);
+        slotObj.el.glyphQuality.change(this.glyphChange);
+        slotObj.el.glyphLevel.change(this.glyphChange);
+
         slotObj.el.signetId.change(this.signetChange);
-        slotObj.el.signetQuality.change(this.signetChange);
+        slotObj.el.signetRarity.change(this.signetChange);
+        slotObj.el.signetLevel.change(this.glyphChange); //TODO refactor name because "glyphChange" is not clear
     };
 
     this.addItemsToSelect = function() {
@@ -71,9 +77,9 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     this.updateToDefaultSignet = function() {
         var signet_icon_url = 'assets/images/icons/' + slot.group + '_dps.png';
-        var signet_quality_url = 'assets/images/icons/standard.png';
+        var signet_rarity_url = 'assets/images/icons/standard.png';
         $('#' + slot.id_prefix + '-signet-img-icon').attr('src', signet_icon_url);
-        $('#' + slot.id_prefix + '-signet-img-quality').attr('src', signet_quality_url);
+        $('#' + slot.id_prefix + '-signet-img-rarity').attr('src', signet_rarity_url);
     };
 
     this.getSignetsForHead = function(group) {
@@ -99,15 +105,15 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             if (cadoroItem !== undefined && cadoroItem.name !== '') {
                 slotObj.name(': ' + cadoroItem.name);
             }
-            slotObj.signetQuality('epic');
-            slotObj.el.signetQuality.attr('disabled', 'disabled');
+            slotObj.signetRarity('epic');
+            slotObj.el.signetRarity.attr('disabled', 'disabled');
             slotObj.el.nameWarning.tooltip({
                 title: cadoro.warning_text,
                 placement: 'top'
             });
             slotObj.el.nameWarning.show();
         } else if(!slotObj.item().signet) {
-            slotObj.el.signetQuality.removeAttr('disabled');
+            slotObj.el.signetRarity.removeAttr('disabled');
             slotObj.el.nameWarning.hide();
         }
         slotObj.updateSignet();
@@ -130,92 +136,46 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         }
     };
 
-	this.qlChange = function(event) {
-		swlcalc.summary.updateAllStats();
-		self.updateColor(event.target);
-	};
+    //TODO : level select must be updated when rarity is changed (max 20 for standard, max 70 for legendary etc.. )
+    this.rarityChange = function(event) {
+        swlcalc.summary.updateAllStats();
+        self.updateColor(event.target);
+    };
 
     this.glyphChange = function(id_suffix) {
-        self.updateGlyphDistributionButtons();
         swlcalc.summary.updateAllStats();
-    };
-
-    this.updateGlyphDistributionButtons = function() {
-        if(slotObj.el.glyphQl.val() === "11.0") {
-            this.updateGlyphDistributionButton(slotObj.el.btn.primary[1], false, 'top');
-            this.updateGlyphDistributionButton(slotObj.el.btn.primary[3], false, 'top');
-            this.updateGlyphDistributionButton(slotObj.el.btn.secondary[1], false, 'bottom');
-            this.updateGlyphDistributionButton(slotObj.el.btn.secondary[3], false, 'bottom');
-
-            if(slotObj.primaryDist() == 1 || slotObj.primaryDist() == 3) {
-                slotObj.el.btn.primary[4].trigger('click');
-                slotObj.el.btn.secondary[0].trigger('click');
-            }
-        } else {
-            this.updateGlyphDistributionButton(slotObj.el.btn.primary[1], true, 'top');
-            this.updateGlyphDistributionButton(slotObj.el.btn.primary[3], true, 'top');
-            this.updateGlyphDistributionButton(slotObj.el.btn.secondary[1], true, 'bottom');
-            this.updateGlyphDistributionButton(slotObj.el.btn.secondary[3], true, 'bottom');
-        }
-    };
-
-    this.updateGlyphDistributionButton = function(button, enable, tooltipPlacement) {
-        if(enable) {
-            button.removeAttr('disabled');
-            button.next('div').remove();
-        } else {
-            button.attr('disabled', 'disabled');
-            button.after(function (e) {
-                d = $("<div>");
-                d.css({
-                    height: button.outerHeight(),
-                    width: button.outerWidth(),
-                    position: 'absolute',
-                })
-                d.css(button.position());
-                d.attr('title', 'QL11 glyphs do not support 1/3 splits.');
-                d.tooltip({placement: tooltipPlacement});
-                return d;
-            });
-        }
     };
 
     this.updateControlsForItem = function() {
         var item = slotObj.item();
         slotObj.name(': ' + item.name);
-        if(item.ql) {
-            if(Array.isArray(item.ql)) {
-                slotObj.el.ql.find('option').each(function(idx, qlOption) {
-                    if(item.ql.indexOf(qlOption.value) == -1) {
-                        if(slotObj.ql() == qlOption.value) {
-                            slotObj.ql(item.ql[0]);
+        if(item.rarity) {
+            if(Array.isArray(item.rarity)) {
+                slotObj.el.rarity.find('option').each(function(idx, qlOption) {
+                    if(item.rarity.indexOf(qlOption.value) == -1) {
+                        if(slotObj.rarity() == qlOption.value) {
+                            slotObj.rarity(item.rarity[0]);
                         }
                         $(this).attr('disabled', 'disabled');
                     }
                 });
             } else {
-                slotObj.ql(item.ql);
-                slotObj.el.ql.attr('disabled', 'disabled');
+                slotObj.rarity(item.rarity);
+                slotObj.el.rarity.attr('disabled', 'disabled');
             }
         }
         if(item.glyph) {
-            slotObj.glyphQl(item.glyph.ql);
-            slotObj.primaryGlyph(item.glyph.primary.stat);
-            slotObj.secondaryGlyph(item.glyph.secondary.stat);
-            slotObj.el.btn.primary[item.glyph.primary.dist].trigger('click');
-            slotObj.el.btn.secondary[item.glyph.secondary.dist].trigger('click');
-            slotObj.el.ql.attr('disabled', 'disabled');
-            slotObj.el.glyphQl.attr('disabled', 'disabled');
-            slotObj.el.primaryGlyph.attr('disabled', 'disabled');
-            slotObj.el.secondaryGlyph.attr('disabled', 'disabled');
-            self.disableAllGlyphDistButtonsExcept(slotObj.el.btn.primary, item.glyph.primary.dist);
-            self.disableAllGlyphDistButtonsExcept(slotObj.el.btn.secondary, item.glyph.secondary.dist);
+            slotObj.glyphRarity(item.glyph.rarity);
+            slotObj.glyph(item.glyph.stat);
+            slotObj.el.rarity.attr('disabled', 'disabled');
+            slotObj.el.glyphRarity.attr('disabled', 'disabled');
+            slotObj.el.glyph.attr('disabled', 'disabled');
         }
         if(item.signet) {
             slotObj.updateSignet();
-            slotObj.signetQuality(item.signet.quality);
+            slotObj.signetRarity(item.signet.rarity);
             slotObj.el.signetId.attr('disabled', 'disabled');
-            slotObj.el.signetQuality.attr('disabled', 'disabled');
+            slotObj.el.signetRarity.attr('disabled', 'disabled');
 
             slotObj.el.signetId.append($('<option>', {
                 value: 999,
@@ -226,41 +186,23 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.signetId.change();
     };
 
-    this.disableAllGlyphDistButtonsExcept = function(glyphtype, dist) {
-        for (var i = 0; i <= 4; i++) {
-            if(i !== dist) {
-                glyphtype[i].attr('disabled', 'disabled');
-            }
-        }
-    };
-
-    this.enableAllGlyphDistButtons = function(glyphtype) {
-        for (var i = 0; i <= 4; i++) {
-            glyphtype[i].removeAttr('disabled');
-        }
-    };
-
     this.enableControls = function() {
-        self.enableAllGlyphDistButtons(slotObj.el.btn.primary);
-        self.enableAllGlyphDistButtons(slotObj.el.btn.secondary);
-        slotObj.el.glyphQl.removeAttr('disabled');
-        slotObj.el.primaryGlyph.removeAttr('disabled');
-        slotObj.el.secondaryGlyph.removeAttr('disabled');
-        slotObj.el.ql.removeAttr('disabled');
-        slotObj.el.ql.find('option[disabled]').removeAttr('disabled');
+        slotObj.el.glyph.removeAttr('disabled');
+        slotObj.el.glyphRarity.removeAttr('disabled');
+        slotObj.el.rarity.removeAttr('disabled');
+        slotObj.el.rarity.find('option[disabled]').removeAttr('disabled');
         slotObj.el.signetId.removeAttr('disabled');
-        if(slotObj.signetQuality() === 'mythic') {
-            slotObj.signetQuality('none');
+        if(slotObj.signetRarity() === 'mythic') {
+            slotObj.signetRarity('none'); //TODO : to change ?
         }
-        slotObj.el.signetQuality.removeAttr('disabled');
+        slotObj.el.signetRarity.removeAttr('disabled');
         slotObj.el.signetId.find('option[value=999]').remove();
         slotObj.updateSignet();
         slotObj.el.signetId.change();
         swlcalc.summary.updateAllStats();
     };
 
-	this.updateColor = function(select) {
-        console.log(select);
-		$(select).attr("class", select.selectedOptions[0].className);
+    this.updateColor = function(select) {
+        $(select).attr("class", select.selectedOptions[0].className);
     };
 };

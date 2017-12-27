@@ -345,11 +345,11 @@ test('combat power above 5200 check', 3, function() {
     deepEqual(allSums.primary, expectedPrimaryStats);
 
     //Add epic violences
-    $('#ring-signet-quality').val('epic');
+    $('#ring-signet-rarity').val('epic');
     $('#ring-pick-signet').val('21');
-    $('#neck-signet-quality').val('epic');
+    $('#neck-signet-rarity').val('epic');
     $('#neck-pick-signet').val('21');
-    $('#wrist-signet-quality').val('epic');
+    $('#wrist-signet-rarity').val('epic');
     $('#wrist-pick-signet').val('21');
 
     expectedPrimaryStats = {
@@ -365,7 +365,7 @@ test('combat power above 5200 check', 3, function() {
     deepEqual(allSums.primary, expectedPrimaryStats);
 
     //Now with a 10.5 weapon
-    $('#weapon-ql').val('10.5');
+    $('#weapon-rarity').val('10.5');
 
     expectedPrimaryStats = {
         'combat-power': 874,

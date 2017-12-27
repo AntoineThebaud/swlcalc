@@ -46,33 +46,33 @@ test('should set role on all slots to dps', 7, function() {
 });
 
 // TODO : TEST TO UPDATE (tsw values)
-// test('should set ql and glyph ql on all slots to 10.5 with the exception of ql on raid items', 16, function() {
+// test('should set rarity and glyph rarity on all slots to 10.5 with the exception of rarity on raid items', 16, function() {
 //     swlcalc.buttonBar.setQlOnAllSlots({
 //         target: {
 //             id: '#btn-all-10-5'
 //         }
 //     });
 //
-//     equal(swlcalc.slots.weapon.ql(), '10.5');
-//     equal(swlcalc.slots.weapon.glyphQl(), '10.5');
-//     equal(swlcalc.slots.head.ql(), '10.5');
-//     equal(swlcalc.slots.head.glyphQl(), '10.5');
-//     equal(swlcalc.slots.ring.ql(), '10.5');
-//     equal(swlcalc.slots.ring.glyphQl(), '10.5');
-//     equal(swlcalc.slots.neck.ql(), '10.5');
-//     equal(swlcalc.slots.neck.glyphQl(), '10.5');
-//     equal(swlcalc.slots.wrist.ql(), '10.4');
-//     equal(swlcalc.slots.wrist.glyphQl(), '10.5');
-//     equal(swlcalc.slots.luck.ql(), '10.5');
-//     equal(swlcalc.slots.luck.glyphQl(), '10.5');
-//     equal(swlcalc.slots.waist.ql(), '10.4');
-//     equal(swlcalc.slots.waist.glyphQl(), '10.5');
-//     equal(swlcalc.slots.occult.ql(), '10.5');
-//     equal(swlcalc.slots.occult.glyphQl(), '10.5');
+//     equal(swlcalc.slots.weapon.rarity(), '10.5');
+//     equal(swlcalc.slots.weapon.glyphRarity(), '10.5');
+//     equal(swlcalc.slots.head.rarity(), '10.5');
+//     equal(swlcalc.slots.head.glyphRarity(), '10.5');
+//     equal(swlcalc.slots.ring.rarity(), '10.5');
+//     equal(swlcalc.slots.ring.glyphRarity(), '10.5');
+//     equal(swlcalc.slots.neck.rarity(), '10.5');
+//     equal(swlcalc.slots.neck.glyphRarity(), '10.5');
+//     equal(swlcalc.slots.wrist.rarity(), '10.4');
+//     equal(swlcalc.slots.wrist.glyphRarity(), '10.5');
+//     equal(swlcalc.slots.luck.rarity(), '10.5');
+//     equal(swlcalc.slots.luck.glyphRarity(), '10.5');
+//     equal(swlcalc.slots.waist.rarity(), '10.4');
+//     equal(swlcalc.slots.waist.glyphRarity(), '10.5');
+//     equal(swlcalc.slots.occult.rarity(), '10.5');
+//     equal(swlcalc.slots.occult.glyphRarity(), '10.5');
 // });
 
 // TODO : TEST TO UPDATE (tsw values)
-// test('should set ql and glyph ql on all slots to 10.4 with the exception of ql on raid items after changing QL then changing role', 23, function() {
+// test('should set rarity and glyph rarity on all slots to 10.4 with the exception of rarity on raid items after changing QL then changing role', 23, function() {
 //     swlcalc.buttonBar.setQlOnAllSlots({
 //         target: {
 //             id: '#btn-all-10-4'
@@ -84,22 +84,22 @@ test('should set role on all slots to dps', 7, function() {
 //         }
 //     });
 //
-//     equal(swlcalc.slots.weapon.ql(), '10.4');
-//     equal(swlcalc.slots.weapon.glyphQl(), '10.4');
-//     equal(swlcalc.slots.head.ql(), '10.4');
-//     equal(swlcalc.slots.head.glyphQl(), '10.4');
-//     equal(swlcalc.slots.ring.ql(), '10.4');
-//     equal(swlcalc.slots.ring.glyphQl(), '10.4');
-//     equal(swlcalc.slots.neck.ql(), '10.4');
-//     equal(swlcalc.slots.neck.glyphQl(), '10.4');
-//     equal(swlcalc.slots.wrist.ql(), '10.4');
-//     equal(swlcalc.slots.wrist.glyphQl(), '10.4');
-//     equal(swlcalc.slots.luck.ql(), '10.4');
-//     equal(swlcalc.slots.luck.glyphQl(), '10.4');
-//     equal(swlcalc.slots.waist.ql(), '10.4');
-//     equal(swlcalc.slots.waist.glyphQl(), '10.4');
-//     equal(swlcalc.slots.occult.ql(), '10.4');
-//     equal(swlcalc.slots.occult.glyphQl(), '10.4');
+//     equal(swlcalc.slots.weapon.rarity(), '10.4');
+//     equal(swlcalc.slots.weapon.glyphRarity(), '10.4');
+//     equal(swlcalc.slots.head.rarity(), '10.4');
+//     equal(swlcalc.slots.head.glyphRarity(), '10.4');
+//     equal(swlcalc.slots.ring.rarity(), '10.4');
+//     equal(swlcalc.slots.ring.glyphRarity(), '10.4');
+//     equal(swlcalc.slots.neck.rarity(), '10.4');
+//     equal(swlcalc.slots.neck.glyphRarity(), '10.4');
+//     equal(swlcalc.slots.wrist.rarity(), '10.4');
+//     equal(swlcalc.slots.wrist.glyphRarity(), '10.4');
+//     equal(swlcalc.slots.luck.rarity(), '10.4');
+//     equal(swlcalc.slots.luck.glyphRarity(), '10.4');
+//     equal(swlcalc.slots.waist.rarity(), '10.4');
+//     equal(swlcalc.slots.waist.glyphRarity(), '10.4');
+//     equal(swlcalc.slots.occult.rarity(), '10.4');
+//     equal(swlcalc.slots.occult.glyphRarity(), '10.4');
 //     equal(swlcalc.slots.head.item().role, 'tank');
 //     equal(swlcalc.slots.ring.item().role, 'tank');
 //     equal(swlcalc.slots.neck.item().role, 'tank');
@@ -124,12 +124,12 @@ test('should reset all slots', 72, function() {
 
 function assertReset(slot) {
     equal(slot.item().role, 'dps');
-    equal(slot.ql(), '10.0');
-    equal(slot.glyphQl(), '10.0');
+    equal(slot.rarity(), '10.0');
+    equal(slot.glyphRarity(), '10.0');
     equal(slot.primaryGlyph(), 'none');
     equal(slot.secondaryGlyph(), 'none');
     ok(slot.el.btn.primary[4].hasClass('active'));
     ok(slot.el.btn.secondary[0].hasClass('active'));
     equal(slot.signetId(), 'none');
-    equal(slot.signetQuality(), 'none');
+    equal(slot.signetRarity(), 'none');
 }

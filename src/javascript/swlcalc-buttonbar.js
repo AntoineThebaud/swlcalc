@@ -5,7 +5,7 @@ swlcalc.buttonBar = function() {
     var el = {};
     var elInit = function() {
         return {
-			//TODO : QLs TO UPDATE
+            //TODO : QLs TO UPDATE
             btn_all_dps: $('#btn-all-3'),
             btn_all_healer: $('#btn-all-2'),
             btn_all_tank: $('#btn-all-1'),
@@ -22,7 +22,7 @@ swlcalc.buttonBar = function() {
         bindEvents();
     };
 
-	//TODO : QLs TO UPDATE
+    //TODO : QLs TO UPDATE
     var bindEvents = function() {
         el.btn_all_dps.on('click', setRoleOnAllSlots);
         el.btn_all_healer.on('click', setRoleOnAllSlots);
@@ -34,7 +34,7 @@ swlcalc.buttonBar = function() {
         el.btn_reset.on('click', resetAllSlots);
     };
 
-	//TODO : potentially needed update
+    //TODO : potentially needed update
     var setRoleOnAllSlots = function(event) {
         var newItem = extractRole(event);
         for (var slotId in swlcalc.slots) {
@@ -47,7 +47,7 @@ swlcalc.buttonBar = function() {
         swlcalc.summary.updateAllStats();
     };
 
-	//TODO : potentially needed update
+    //TODO : potentially needed update
     var setQlOnAllSlots = function (event) {
         var newItemQl = extractItemQl(event);
         var newGlyphQl = extractGlyphQl(event);
@@ -55,12 +55,12 @@ swlcalc.buttonBar = function() {
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
                 var slot = swlcalc.slots[slotId];
-                if(!slot.item().ql) {
-                    slot.ql(newItemQl);
+                if(!slot.item().rarity) {
+                    slot.rarity(newItemQl);
                 }
                 if(!slot.item().glyph) {
-                    slot.glyphQl(newGlyphQl);
-                    slot.el.glyphQl.change();
+                    slot.glyphRarity(newGlyphQl);
+                    slot.el.glyphRarity.change();
                 }
             }
         }

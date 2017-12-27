@@ -1,109 +1,109 @@
 function createTankBuild() {
     $('#weapon-wtype').val('blade');
-    $('#weapon-ql').val('standard');
-    $('#weapon-glyph-ql').val('standard');
+    $('#weapon-rarity').val('standard');
+    $('#weapon-glyph-rarity').val('standard');
     $('#weapon-primary-glyph').val('hit-rating');
     $('#weapon-secondary-glyph').val('none');
     $('#weapon-primary-glyph-dist-btn4').trigger('click');
     $('#weapon-secondary-glyph-dist-btn0').trigger('click');
-    $('#weapon-signet-quality').val('superior');
+    $('#weapon-signet-rarity').val('superior');
     $('#weapon-pick-signet').val('5');
 
     $('#weapon2-wtype').val('hammer');
-    $('#weapon2-ql').val('standard');
-    $('#weapon2-glyph-ql').val('standard');
+    $('#weapon2-rarity').val('standard');
+    $('#weapon2-glyph-rarity').val('standard');
     $('#weapon2-primary-glyph').val('hit-rating');
     $('#weapon2-secondary-glyph').val('none');
     $('#weapon2-primary-glyph-dist-btn4').trigger('click');
     $('#weapon2-secondary-glyph-dist-btn0').trigger('click');
-    $('#weapon2-signet-quality').val('superior');
+    $('#weapon2-signet-rarity').val('superior');
     $('#weapon2-pick-signet').val('6');
 
-    $('#head-ql').val('standard');
+    $('#head-rarity').val('standard');
     $('#head-itemId').val('1');
     $('#head-itemId').change();
-    $('#head-glyph-ql').val('standard');
+    $('#head-glyph-rarity').val('standard');
     $('#head-primary-glyph').val('defense-rating');
     $('#head-secondary-glyph').val('none');
     $('#head-primary-glyph-dist-btn4').trigger('click');
     $('#head-secondary-glyph-dist-btn0').trigger('click');
-    $('#head-signet-quality').val('epic');
+    $('#head-signet-rarity').val('epic');
     $('#head-pick-signet').val('18');
 
-    $('#ring-ql').val('standard');
+    $('#ring-rarity').val('standard');
     $('#ring-itemId').val('3');
     $('#ring-itemId').change();
-    $('#ring-glyph-ql').val('standard');
+    $('#ring-glyph-rarity').val('standard');
     $('#ring-primary-glyph').val('defense-rating');
     $('#ring-secondary-glyph').val('none');
     $('#ring-primary-glyph-dist-btn4').trigger('click');
     $('#ring-secondary-glyph-dist-btn0').trigger('click');
-    $('#ring-signet-quality').val('superior');
+    $('#ring-signet-rarity').val('superior');
     $('#ring-pick-signet').val('22');
 
-    $('#neck-ql').val('standard');
+    $('#neck-rarity').val('standard');
     $('#neck-itemId').val('1');
     $('#neck-itemId').change();
-    $('#neck-glyph-ql').val('standard');
+    $('#neck-glyph-rarity').val('standard');
     $('#neck-primary-glyph').val('evade-rating');
     $('#neck-secondary-glyph').val('none');
     $('#neck-primary-glyph-dist-btn4').trigger('click');
     $('#neck-secondary-glyph-dist-btn0').trigger('click');
-    $('#neck-signet-quality').val('normal');
+    $('#neck-signet-rarity').val('normal');
     $('#neck-pick-signet').val('21');
 
     $('#wrist-itemId').val('85');
     $('#wrist-itemId').change();
-    $('#wrist-glyph-ql').val('standard');
+    $('#wrist-glyph-rarity').val('standard');
     $('#wrist-primary-glyph').val('defense-rating');
     $('#wrist-secondary-glyph').val('none');
     $('#wrist-primary-glyph-dist-btn4').trigger('click');
     $('#wrist-secondary-glyph-dist-btn0').trigger('click');
 
-    $('#luck-ql').val('standard');
+    $('#luck-rarity').val('standard');
     $('#luck-itemId').val('3');
     $('#luck-itemId').change();
-    $('#luck-glyph-ql').val('standard');
+    $('#luck-glyph-rarity').val('standard');
     $('#luck-primary-glyph').val('evade-rating');
     $('#luck-secondary-glyph').val('none');
     $('#luck-primary-glyph-dist-btn4').trigger('click');
     $('#luck-secondary-glyph-dist-btn0').trigger('click');
-    $('#luck-signet-quality').val('epic');
+    $('#luck-signet-rarity').val('epic');
     $('#luck-pick-signet').val('39');
 
     $('#waist-itemId').val('87');
     $('#waist-itemId').change();
-    $('#waist-glyph-ql').val('standard');
+    $('#waist-glyph-rarity').val('standard');
     $('#waist-primary-glyph').val('evade-rating');
     $('#waist-secondary-glyph').val('none');
     $('#waist-primary-glyph-dist-btn4').trigger('click');
     $('#waist-secondary-glyph-dist-btn0').trigger('click');
 
-    $('#occult-ql').val('standard');
+    $('#occult-rarity').val('standard');
     $('#occult-itemId').val('3');
     $('#occult-itemId').change();
-    $('#occult-glyph-ql').val('standard');
+    $('#occult-glyph-rarity').val('standard');
     $('#occult-primary-glyph').val('hit-rating');
     $('#occult-secondary-glyph').val('none');
     $('#occult-primary-glyph-dist-btn4').trigger('click');
     $('#occult-secondary-glyph-dist-btn0').trigger('click');
-    $('#occult-signet-quality').val('epic');
+    $('#occult-signet-rarity').val('epic');
     $('#occult-pick-signet').val('41');
 }
 
 function createDPSNYRaidBuild() {
-    $('#weapon-ql').val('standard');
-    $('#weapon-glyph-ql').val('standard');
+    $('#weapon-rarity').val('standard');
+    $('#weapon-glyph-rarity').val('standard');
     $('#weapon-primary-glyph').val('hit-rating');
     $('#weapon-secondary-glyph').val('none');
     $('#weapon-primary-glyph-dist-btn4').trigger('click');
     $('#weapon-secondary-glyph-dist-btn0').trigger('click');
-    $('#weapon-signet-quality').val('superior');
+    $('#weapon-signet-rarity').val('superior');
     $('#weapon-pick-signet').val('5');
 
     $('#head-itemId').val('82');
     $('#head-itemId').change();
-    $('#head-glyph-ql').val('standard');
+    $('#head-glyph-rarity').val('standard');
     $('#head-primary-glyph').val('hit-rating');
     $('#head-secondary-glyph').val('none');
     $('#head-primary-glyph-dist-btn4').trigger('click');
@@ -111,7 +111,7 @@ function createDPSNYRaidBuild() {
 
     $('#ring-itemId').val('83');
     $('#ring-itemId').change();
-    $('#ring-glyph-ql').val('standard');
+    $('#ring-glyph-rarity').val('standard');
     $('#ring-primary-glyph').val('hit-rating');
     $('#ring-secondary-glyph').val('none');
     $('#ring-primary-glyph-dist-btn4').trigger('click');
@@ -119,7 +119,7 @@ function createDPSNYRaidBuild() {
 
     $('#neck-itemId').val('84');
     $('#neck-itemId').change();
-    $('#neck-glyph-ql').val('standard');
+    $('#neck-glyph-rarity').val('standard');
     $('#neck-primary-glyph').val('critical-rating');
     $('#neck-secondary-glyph').val('none');
     $('#neck-primary-glyph-dist-btn4').trigger('click');
@@ -127,117 +127,117 @@ function createDPSNYRaidBuild() {
 
     $('#wrist-itemId').val('85');
     $('#wrist-itemId').change();
-    $('#wrist-glyph-ql').val('standard');
+    $('#wrist-glyph-rarity').val('standard');
     $('#wrist-primary-glyph').val('defense-rating');
     $('#wrist-secondary-glyph').val('none');
     $('#wrist-primary-glyph-dist-btn4').trigger('click');
     $('#wrist-secondary-glyph-dist-btn0').trigger('click');
 
-    $('#luck-ql').val('standard');
+    $('#luck-rarity').val('standard');
     $('#luck-itemId').val('3');
     $('#luck-itemId').change();
-    $('#luck-glyph-ql').val('standard');
+    $('#luck-glyph-rarity').val('standard');
     $('#luck-primary-glyph').val('critical-power');
     $('#luck-secondary-glyph').val('none');
     $('#luck-primary-glyph-dist-btn4').trigger('click');
     $('#luck-secondary-glyph-dist-btn0').trigger('click');
-    $('#luck-signet-quality').val('epic');
+    $('#luck-signet-rarity').val('epic');
     $('#luck-pick-signet').val('39');
 
     $('#waist-itemId').val('87');
     $('#waist-itemId').change();
-    $('#waist-glyph-ql').val('standard');
+    $('#waist-glyph-rarity').val('standard');
     $('#waist-primary-glyph').val('critical-power');
     $('#waist-secondary-glyph').val('none');
     $('#waist-primary-glyph-dist-btn4').trigger('click');
     $('#waist-secondary-glyph-dist-btn0').trigger('click');
 
-    $('#occult-ql').val('standard');
+    $('#occult-rarity').val('standard');
     $('#occult-itemId').val('3');
     $('#occult-itemId').change();
-    $('#occult-glyph-ql').val('standard');
+    $('#occult-glyph-rarity').val('standard');
     $('#occult-primary-glyph').val('hit-rating');
     $('#occult-secondary-glyph').val('none');
     $('#occult-primary-glyph-dist-btn4').trigger('click');
     $('#occult-secondary-glyph-dist-btn0').trigger('click');
-    $('#occult-signet-quality').val('epic');
+    $('#occult-signet-rarity').val('epic');
     $('#occult-pick-signet').val('41');
 }
 
 function create10_6To10_9MixBuild() {
-    $('#weapon-ql').val('10.9');
-    $('#weapon2-ql').val('10.6');
+    $('#weapon-rarity').val('10.9');
+    $('#weapon2-rarity').val('10.6');
 
-    $('#head-ql').val('10.9');
+    $('#head-rarity').val('10.9');
     $('#head-itemId').val('3');
 
-    $('#ring-ql').val('10.6');
+    $('#ring-rarity').val('10.6');
     $('#ring-itemId').val('3');
 
-    $('#neck-ql').val('10.8');
+    $('#neck-rarity').val('10.8');
     $('#neck-itemId').val('1');
 
-    $('#wrist-ql').val('10.9');
+    $('#wrist-rarity').val('10.9');
     $('#wrist-itemId').val('2');
 
-    $('#luck-ql').val('10.7');
+    $('#luck-rarity').val('10.7');
     $('#luck-itemId').val('1');
 
-    $('#waist-ql').val('10.7');
+    $('#waist-rarity').val('10.7');
     $('#waist-itemId').val('2');
 
-    $('#occult-ql').val('10.9');
+    $('#occult-rarity').val('10.9');
     $('#occult-itemId').val('3');
 }
 
 function create10_9DPSBuild() {
-    $('#weapon-ql').val('10.9');
-    $('#weapon2-ql').val('10.9');
+    $('#weapon-rarity').val('10.9');
+    $('#weapon2-rarity').val('10.9');
 
-    $('#head-ql').val('10.9');
+    $('#head-rarity').val('10.9');
     $('#head-itemId').val('3');
 
-    $('#ring-ql').val('10.9');
+    $('#ring-rarity').val('10.9');
     $('#ring-itemId').val('3');
 
-    $('#neck-ql').val('10.9');
+    $('#neck-rarity').val('10.9');
     $('#neck-itemId').val('3');
 
-    $('#wrist-ql').val('10.9');
+    $('#wrist-rarity').val('10.9');
     $('#wrist-itemId').val('3');
 
-    $('#luck-ql').val('10.9');
+    $('#luck-rarity').val('10.9');
     $('#luck-itemId').val('3');
 
-    $('#waist-ql').val('10.9');
+    $('#waist-rarity').val('10.9');
     $('#waist-itemId').val('3');
 
-    $('#occult-ql').val('10.9');
+    $('#occult-rarity').val('10.9');
     $('#occult-itemId').val('3');
 }
 
 function create11_0MixBuild() {
-    $('#weapon-ql').val('11.0');
-    $('#weapon2-ql').val('11.0');
+    $('#weapon-rarity').val('11.0');
+    $('#weapon2-rarity').val('11.0');
 
-    $('#head-ql').val('11.0');
+    $('#head-rarity').val('11.0');
     $('#head-itemId').val('3');
 
-    $('#ring-ql').val('11.0');
+    $('#ring-rarity').val('11.0');
     $('#ring-itemId').val('1');
 
-    $('#neck-ql').val('11.0');
+    $('#neck-rarity').val('11.0');
     $('#neck-itemId').val('2');
 
-    $('#wrist-ql').val('11.0');
+    $('#wrist-rarity').val('11.0');
     $('#wrist-itemId').val('3');
 
-    $('#luck-ql').val('11.0');
+    $('#luck-rarity').val('11.0');
     $('#luck-itemId').val('1');
 
-    $('#waist-ql').val('11.0');
+    $('#waist-rarity').val('11.0');
     $('#waist-itemId').val('3');
 
-    $('#occult-ql').val('11.0');
+    $('#occult-rarity').val('11.0');
     $('#occult-itemId').val('2');
 }

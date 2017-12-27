@@ -3,7 +3,7 @@ var swlcalc = swlcalc || {};
 swlcalc.summary = function() {
 
     var el = {};
-	// COST FEATURE DISABLED. NEED REVAMP
+    // COST FEATURE DISABLED. NEED REVAMP
     var elInit = function() {
         return {
             black_bullion_cost: $('#bb-cost'),
@@ -32,7 +32,7 @@ swlcalc.summary = function() {
     };
 
     var updateAllStats = function() {
-        // updateCosts();
+        // // updateCosts();
         updatePrimaryStats();
         updateOffensiveDefensiveStats();
         updateGlyphValues();
@@ -50,7 +50,7 @@ swlcalc.summary = function() {
         };
     };
 
-	// COST FEATURE DISABLED. NEED REVAMP
+    // COST FEATURE DISABLED. NEED REVAMP
     // var updateCosts = function() {
     //     var blackBullions = 0;
     //     var pantheons = 0;
@@ -112,30 +112,26 @@ swlcalc.summary = function() {
                 if(slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
                 }
-                var ql = slot.ql();//.toLowerCase();
+                var rarity = slot.rarity();//.toLowerCase();
                 if (slot.group == 'major') {
                     var signet = slot.signet();
                     if (signet.id !== 0 && signet.id < 80) {
-                        sums[signet.stat] += slot.determineSignetQualityValue(signet);
+                        sums[signet.stat] += slot.determineSignetRarityValue(signet);
                     }
                 }
-                // //TODO: refactor
-				// console.log("[swlcalc-summary] slot.group == " + slot.group);
-				// console.log("[swlcalc-summary] ql == " + ql);
                 if (slot.isWeapon()) {
-                    //sums['weapon-power'] = swlcalc.data.custom_gear_data[slot.group][ql].weapon_power;
-					sums['weapon-power'] = swlcalc.data.custom_gear_data.slot[slot.group].quality['standard']['crude'].weapon_power[1]; //TODO : remove fixed value
+                    sums['weapon-power'] = swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
                 }
                 else {
                     switch (slot.item().role) {
                         case 'dps':
-                            sums['attack-rating'] += 1;// TODO : swlcalc.data.custom_gear_data[slot.group].heal_dps['ql' + (ql)].rating;
+                            sums['attack-rating'] += swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
                             break;
                         case 'healer':
-                            sums['heal-rating'] += 1;// TODO : swlcalc.data.custom_gear_data[slot.group].heal_dps['ql' + (ql)].rating;
+                            sums['heal-rating'] += swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
                             break;
                         case 'tank':
-                            sums['hitpoints'] += 1;// TODO : swlcalc.data.custom_gear_data[slot.group].tank['ql' + (ql)].hitpoints;
+                            sums['hitpoints'] += swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
                             break;
                         default:
                             console.log('Illegal role value when collecting primary stats');
@@ -174,7 +170,7 @@ swlcalc.summary = function() {
             'critical-power-percentage': 0,
             'hit-rating': 0,
             'defense-rating': 0,
-			'glance-chance': 0,
+            'glance-chance': 0,
             'evade-rating': 0,
             'evade-chance': 0,
             'physical-protection': 300,
@@ -186,8 +182,7 @@ swlcalc.summary = function() {
                 if(slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
                 }
-                sums[slot.primaryGlyph()] += slot.primaryGlyphValue();
-                sums[slot.secondaryGlyph()] += slot.secondaryGlyphValue();
+                sums[slot.glyph()] += slot.glyphValue();
             }
         }
 
@@ -214,7 +209,7 @@ swlcalc.summary = function() {
         }
         sums['critical-chance'] = calculateCriticalChance(sums['critical-rating']);
         sums['evade-chance'] = calculateEvadeChance(sums['evade-rating']);
-		
+
         sums['critical-rating'] = parseInt(sums['critical-rating'].toFixed(0), 10);
         sums['critical-chance'] = sums['critical-chance'].toFixed(1);
         sums['critical-power-percentage'] = sums['critical-power-percentage'].toFixed(2);
@@ -228,7 +223,7 @@ swlcalc.summary = function() {
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
                 var slot = swlcalc.slots[slotId];
-                slot.updateGlyphValues();
+                slot.updateGlyphValue();
             }
         }
     };

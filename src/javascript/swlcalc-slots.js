@@ -81,37 +81,21 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         name: $('#' + this.id + '-name'),
         itemId: $('#' + this.id + '-itemId'),
         wtype: $('#' + this.id + '-wtype'),
-        ql: $('#' + this.id + '-ql'),
-        glyphQl: $('#' + this.id + '-glyph-ql'),
-        primaryGlyph: $('#' + this.id + '-primary-glyph'),
-        secondaryGlyph: $('#' + this.id + '-secondary-glyph'),
-        primaryDist: '#' + this.id + '-primary-glyph-dist > button.btn.active',
-        secondaryDist: '#' + this.id + '-secondary-glyph-dist > button.btn.active',
-        primaryGlyphValue: $('#' + this.id + '-primary-glyph-value'),
-        secondaryGlyphValue: $('#' + this.id + '-secondary-glyph-value'),
+        rarity: $('#' + this.id + '-rarity'),
+        quality: $('#' + this.id + '-quality'),
+        level: $('#' + this.id + '-level'),
+        glyph: $('#' + this.id + '-glyph'),
+        glyphRarity: $('#' + this.id + '-glyph-rarity'),
+        glyphQuality: $('#' + this.id + '-glyph-quality'),
+        glyphLevel: $('#' + this.id + '-glyph-level'),
+        glyphValue: $('#' + this.id + '-glyph-value'),
         signetId: $('#' + this.id + '-pick-signet'),
-        signetQuality: $('#' + this.id + '-signet-quality'),
+        signetRarity: $('#' + this.id + '-signet-rarity'),
+        signetLevel: $('#' + this.id + '-signet-level'),
         signetIconImg: $('#' + this.id + '-signet-img-icon'),
-        signetIconBorderImg: $('#' + this.id + '-signet-img-quality'),
+        signetIconBorderImg: $('#' + this.id + '-signet-img-rarity'),
         signetDescription: $('#' + this.id + '-signet-description'),
         nameWarning: $('#' + this.id + '-name-warning'),
-        btn: {
-            primary: {
-                0: $('#' + this.id + '-primary-glyph-dist-btn0'),
-                1: $('#' + this.id + '-primary-glyph-dist-btn1'),
-                2: $('#' + this.id + '-primary-glyph-dist-btn2'),
-                3: $('#' + this.id + '-primary-glyph-dist-btn3'),
-                4: $('#' + this.id + '-primary-glyph-dist-btn4')
-            },
-            secondary: {
-                0: $('#' + this.id + '-secondary-glyph-dist-btn0'),
-                1: $('#' + this.id + '-secondary-glyph-dist-btn1'),
-                2: $('#' + this.id + '-secondary-glyph-dist-btn2'),
-                3: $('#' + this.id + '-secondary-glyph-dist-btn3'),
-                4: $('#' + this.id + '-secondary-glyph-dist-btn4')
-            },
-            itemSelect: $('#' + this.id + 'item-select')
-        }
     };
 
     this.name = function() {
@@ -153,68 +137,84 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
-    this.ql = function() {
+    this.rarity = function() {
         if (arguments.length == 1) {
-			var formatData = arguments[0];
-            this.el.ql.val(formatData);
+            var formatData = arguments[0];
+            this.el.rarity.val(formatData);
         } else {
-			var formatData = this.el.ql.val();
+            var formatData = this.el.rarity.val();
             return formatData;
         }
     };
 
-    this.glyphQl = function() {
+    this.quality = function() {
         if (arguments.length == 1) {
-            this.el.glyphQl.val(arguments[0]);
+            var formatData = arguments[0];
+            this.el.quality.val(formatData);
         } else {
-            return this.el.glyphQl.val();
+            var formatData = this.el.quality.val();
+            return formatData;
         }
     };
 
-    this.primaryGlyph = function() {
+    this.level = function() {
         if (arguments.length == 1) {
-            this.el.primaryGlyph.val(arguments[0]);
+            var formatData = arguments[0];
+            this.el.level.val(formatData);
         } else {
-            return this.el.primaryGlyph.val();
+            var formatData = this.el.level.val();
+            return formatData;
         }
     };
 
-    this.secondaryGlyph = function() {
+    this.glyph = function() {
         if (arguments.length == 1) {
-            this.el.secondaryGlyph.val(arguments[0]);
+            this.el.glyph.val(arguments[0]);
         } else {
-            return this.el.secondaryGlyph.val();
+            return this.el.glyph.val();
         }
     };
 
-    this.primaryGlyphValue = function() {
-        if (this.primaryGlyph() == 'none') {
-            return 0;
+    this.glyphRarity = function() {
+        if (arguments.length == 1) {
+            this.el.glyphRarity.val(arguments[0]);
+        } else {
+            return this.el.glyphRarity.val();
         }
-		//TODO : fixed value to change
-		//console.log("DEBUG - swlcalc.data.glyph_data.stat["+this.primaryGlyph()+"].quality["+this.glyphQl()+"]['crude'].value["+this.primaryDist()+"] == ");
-		//console.log("DEBUG - " + swlcalc.data.glyph_data.stat[this.primaryGlyph()].quality[this.glyphQl()]['crude'].value[this.primaryDist()]);
-		return swlcalc.data.glyph_data.stat[this.primaryGlyph()].quality[this.glyphQl()]['crude'].value[this.primaryDist()];
-		//return swlcalc.data.glyph_data.stat[this.primaryGlyph()].ql[this.glyphQl()]['crude'].slot[this.group].dist[this.primaryDist()];
     };
 
-    this.secondaryGlyphValue = function() {
-        if (this.secondaryGlyph() == 'none') {
-            return 0;
+    this.glyphQuality = function() {
+        if (arguments.length == 1) {
+            this.el.glyphQuality.val(arguments[0]);
+        } else {
+            return this.el.glyphQuality.val();
         }
-		//TODO : fixed value to change
-		//console.log("DEBUG - swlcalc.data.glyph_data.stat["+this.secondaryGlyph()+"].quality["+this.glyphQl()+"]['crude'].value["+this.secondaryDist()+"] == ");
-		//console.log("DEBUG - " + swlcalc.data.glyph_data.stat[this.secondaryGlyph()].quality[this.glyphQl()]['crude'].value[this.secondaryDist()]);
-		return swlcalc.data.glyph_data.stat[this.secondaryGlyph()].quality[this.glyphQl()]['crude'].value[this.secondaryDist()];
-        //return swlcalc.data.glyph_data.stat[this.secondaryGlyph()].ql[this.glyphQl()].slot[this.group].dist[this.secondaryDist()];
     };
 
-    this.primaryDist = function() {
-        return $(this.el.primaryDist)[0].innerHTML;
+    this.glyphLevel = function() {
+        if (arguments.length == 1) {
+            this.el.glyphLevel.val(arguments[0]);
+        } else {
+            return this.el.glyphLevel.val();
+        }
     };
 
-    this.secondaryDist = function() {
-        return $(this.el.secondaryDist)[0].innerHTML;
+    this.glyphValue = function() {
+        //TODO : None value temporary disabled
+        // if (this.glyph() == 'none') {
+        //     return 0;
+        // }
+        // console.log("============================================");
+        // console.log("this.glyph() == ");console.log(this.glyph());
+        // console.log(swlcalc.data.glyph_data.stat[this.glyph()]);
+        // console.log("this.glyphRarity() == ");console.log(this.glyphRarity());
+        // console.log(swlcalc.data.glyph_data.stat[this.glyph()].rarity[this.glyphRarity()]);
+        // console.log("this.glyphQuality() == ");console.log(this.glyphQuality());
+        // console.log(swlcalc.data.glyph_data.stat[this.glyph()].rarity[this.glyphRarity()].quality[this.glyphQuality()]);
+        // console.log("this.glyphLevel() == ");console.log(this.glyphLevel());
+        // console.log(swlcalc.data.glyph_data.stat[this.glyph()].rarity[this.glyphRarity()].quality[this.glyphQuality()].level[this.glyphLevel()]);
+        // console.log("============================================");
+        return swlcalc.data.glyph_data.stat[this.glyph()].rarity[this.glyphRarity()].quality[this.glyphQuality()].level[this.glyphLevel()];
     };
 
     this.sheathWeapon = function() {
@@ -231,7 +231,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
-	// COST FEATURE DISABLED. NEED REVAMP
+    // COST FEATURE DISABLED. NEED REVAMP
     // this.itemCost = function () {
     //     // non-custom items do not cost bullion/pantheon
     //     if(this.item().id > 3) {
@@ -240,7 +240,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     //             pantheon: 0
     //         };
     //     }
-    //     return swlcalc.data.costs[this.isWeapon() ? 'weapon' : 'talisman'][this.ql()];
+    //     return swlcalc.data.costs[this.isWeapon() ? 'weapon' : 'talisman'][this.rarity()];
     // };
     //
     // this.glyphCost = function () {
@@ -251,7 +251,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     //             pantheon: 0
     //         };
     //     }
-    //     return swlcalc.data.costs['glyph'][this.glyphQl()];
+    //     return swlcalc.data.costs['glyph'][this.glyphRarity()];
     // }
     //
     // this.blackBullionCost = function() {
@@ -289,14 +289,19 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
-    this.signetQuality = function() {
+    this.signetRarity = function() {
         if (arguments.length == 1) {
-            this.el.signetQuality.val(arguments[0]);
+            this.el.signetRarity.val(arguments[0]);
         } else {
-             if(this.el.signetQuality.val() === null) {
-                return "mythic";
-            }
-            return this.el.signetQuality.val();
+            return this.el.signetRarity.val();
+        }
+    };
+
+    this.signetLevel = function() {
+        if (arguments.length == 1) {
+            this.el.signetLevel.val(arguments[0]);
+        } else {
+            return this.el.signetLevel.val();
         }
     };
 
@@ -304,7 +309,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         if(this.item() && this.item().signet) {
             return this.item().signet;
         }
-
         foundSignet = swlcalc.data.signet_data.find(this.group, this.signetId());
         if (foundSignet.id == 0 && swlcalc.data.signet_data[this.id] !== undefined) {
             return foundSignet = swlcalc.data.signet_data.find(this.id, this.signetId());
@@ -318,12 +322,12 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return '';
         }
         var description = signet.description;
-        if(signet.quality) {
-            description = description.replace('%s', this.determineSignetQualityValue(signet));
-            description = description.replace('%d', this.determineSignetQualityValue(signet));
-            if (Object.prototype.toString.call(signet.quality) === '[object Array]') {
-                description = description.replace('%0', this.determineSignetQualityValue(signet, 0));
-                description = description.replace('%1', this.determineSignetQualityValue(signet, 1));
+        if(signet.rarity) {
+            description = description.replace('%s', this.determineSignetRarityValue(signet));
+            description = description.replace('%d', this.determineSignetRarityValue(signet));
+            if (Object.prototype.toString.call(signet.rarity) === '[object Array]') {
+                description = description.replace('%0', this.determineSignetRarityValue(signet, 0));
+                description = description.replace('%1', this.determineSignetRarityValue(signet, 1));
             }
         }
         if (signet.cooldown && signet.cooldown != '0') {
@@ -333,38 +337,29 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         return description;
     };
 
-    this.determineSignetQualityValue = function(signet, quality_index) {
+    this.determineSignetRarityValue = function(signet, quality_index) {
         quality_index = typeof quality_index !== 'undefined' ? quality_index : -1;
-        var quality = this.signetQuality();
-        switch (quality) {
+        var rarity = this.signetRarity();
+        switch (rarity) {
             case 'none':
                 return 0;
             case 'standard':
-                return quality_index == -1 ? signet.quality.normal : signet.quality[quality_index].normal;
+                return quality_index == -1 ? signet.rarity.normal : signet.rarity[quality_index].normal;
             case 'superior':
-                return quality_index == -1 ? signet.quality.superior : signet.quality[quality_index].superior;
+                return quality_index == -1 ? signet.rarity.superior : signet.rarity[quality_index].superior;
             case 'epic':
-                return quality_index == -1 ? signet.quality.epic : signet.quality[quality_index].epic;
+                return quality_index == -1 ? signet.rarity.epic : signet.rarity[quality_index].epic;
             case 'mythic':
-                return quality_index == -1 ? signet.quality.mythic : signet.quality[quality_index].mythic;
-			case 'legendary':
-                return quality_index == -1 ? signet.quality.mythic : signet.quality[quality_index].legendary;
+                return quality_index == -1 ? signet.rarity.mythic : signet.rarity[quality_index].mythic;
+            case 'legendary':
+                return quality_index == -1 ? signet.rarity.mythic : signet.rarity[quality_index].legendary;
             default:
                 return 0;
         }
     };
 
-    this.updateGlyphValues = function() {
-        this.updatePrimaryGlyphValue();
-        this.updateSecondaryGlyphValue();
-    };
-
-    this.updatePrimaryGlyphValue = function() {
-        this.el.primaryGlyphValue.html(this.primaryGlyphValue() !== 0 ? '+' + this.primaryGlyphValue() : 0);
-    };
-
-    this.updateSecondaryGlyphValue = function() {
-        this.el.secondaryGlyphValue.html(this.secondaryGlyphValue() !== 0 ? '+' + this.secondaryGlyphValue() : 0);
+    this.updateGlyphValue = function() {
+        this.el.glyphValue.html(this.glyphValue() !== 0 ? '+' + this.glyphValue() : 0);
     };
 
     this.updateSignet = function() {
@@ -374,14 +369,14 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
 
     this.updateSignetIcon = function() {
         var signet = this.signet();
-        var signetQuality = this.signetQuality();
-        if (signet.id !== 0 && signetQuality != 'none') {
-            this.updateSignetIconBorder(signetQuality);
+        var signetRarity = this.signetRarity();
+        if (signet.id !== 0 && signetRarity != 'none') {
+            this.updateSignetIconBorder(signetRarity);
             this.updateSignetIconImage(signet);
-        } else if (signet.id !== 0 && signetQuality == 'none') {
-            this.signetQuality('normal');
-        } else if (signetQuality != 'none' && signet.id === 0) {
-            this.updateSignetIconBorder(signetQuality);
+        } else if (signet.id !== 0 && signetRarity == 'none') {
+            this.signetRarity('normal');
+        } else if (signetRarity != 'none' && signet.id === 0) {
+            this.updateSignetIconBorder(signetRarity);
             this.updateSignetIconImageFromName(this.group + '_dps');
         } else {
             this.updateSignetIconBorder('normal');
@@ -389,9 +384,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
-    this.updateSignetIconBorder = function(signetQuality) {
-        var signet_quality_url = 'assets/images/icons/' + signetQuality + '.png';
-        this.el.signetIconBorderImg.attr('src', signet_quality_url);
+    this.updateSignetIconBorder = function(signetRarity) {
+        var signet_rarity_url = 'assets/images/icons/' + signetRarity + '.png';
+        this.el.signetIconBorderImg.attr('src', signet_rarity_url);
     };
 
     this.updateSignetIconImage = function(signet) {
@@ -409,69 +404,64 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
 
     this.reset = function() {
         this.wtype('none');
-        this.ql('standard');
+        this.rarity('standard');
         this.itemId('3');
         this.el.itemId.change();
-        this.glyphQl('standard');
-        this.primaryGlyph('none');
-        this.secondaryGlyph('none');
+        this.glyph('none');
+        this.glyphRarity('standard');
+        this.glyphQuality('crude');
+        this.glyphLevel(1);
         this.signetId('none');
-        this.signetQuality('none');
+        this.signetRarity('none');
         this.updateSignet();
-        this.el.btn.primary[4].trigger('click');
-        this.el.btn.secondary[0].trigger('click');
-        this.el.glyphQl.change();
+        this.el.glyphRarity.change();
     };
 
     this.state = function() {
         return {
-            ql: this.ql(),
             role: this.item().role,
-            glyph_ql: this.glyphQl(),
-            primary_glyph: this.primaryGlyph(),
-            secondary_glyph: this.secondaryGlyph(),
-            primary_dist: this.primaryDist(),
-            secondary_dist: this.secondaryDist(),
-            signet_quality: this.signetQuality(),
-            signet_id: this.signetId()
+            rarity: this.rarity(),
+            quality: this.quality(),
+            level: this.level(),
+            glyph: this.glyph(),
+            glyph_rarity: this.glyphRarity(),
+            glyph_quality: this.glyphQuality(),
+            glyph_level: this.glyphLevel(),
+            signet_id: this.signetId(),
+            signet_rarity: this.signetRarity(),
+            signet_level: this.signetLevel(),
         };
     };
 
     this.mappedState = function() {
+        var wmap = swlcalc.data.wtype_mapping.to_num;
+        var gmap = swlcalc.data.glyph_stat_mapping.to_num;
+        var rmap = swlcalc.data.rarity_mapping.to_num;
+        var wqmap = swlcalc.data.weapon_quality_mapping.to_num;
+        var gqmap = swlcalc.data.glyph_quality_mapping.to_num;
+        var tqmap = swlcalc.data.talisman_quality_mapping.to_num;
         return {
             itemId: this.item().id,
-            wtype: this.stripContent(this.wtype()),
-            role: this.isWeapon() ? '' : this.stripContent(this.item().role),
-            ql: this.stripContent(this.ql()),
-            glyph_ql: this.stripContent(this.glyphQl()),
-            primary_glyph: this.stripContent(this.primaryGlyph()),
-            secondary_glyph: this.stripContent(this.secondaryGlyph()),
-            primary_dist: this.primaryDist(),
-            secondary_dist: this.secondaryDist(),
-            signet_quality: this.stripContent(this.signetQuality()),
-            signet_id: this.stripContent(this.signetId())
+            wtype: this.stripContent(this.wtype(), wmap),
+            //role: this.isWeapon() ? '' : this.stripContent(this.item().role), TODO
+            rarity: this.stripContent(this.rarity(), rmap),
+            quality: this.isWeapon() ? this.stripContent(this.quality(), wqmap) : this.stripContent(this.quality(), tqmap),
+            level: this.level(),
+            glyph: this.stripContent(this.glyph(), gmap),
+            glyph_rarity: this.stripContent(this.glyphRarity(), rmap),
+            glyph_quality: this.stripContent(this.glyphQuality(), gqmap),
+            glyph_level: this.glyphLevel(),
+            signet_id: this.signetId(),
+            signet_rarity: this.stripContent(this.signetRarity(), rmap),
+            signet_level: this.signetLevel()
         };
     };
 
-    this.stripContent = function(val) {
+    this.stripContent = function(val, mapping) {
         if (val == null || val == 'none') {
-            val = 0;
-        }
-
-        var qlpattern = /\d+\.\d/;
-        if (val != 0 && val.match(qlpattern)) {
-            if (val.match(/11\./)) {
-                return '11';
-            }
-            return val.split('.')[1];
-        } else if ($.inArray(val, Object.keys(swlcalc.data.wtype_mapping.to_num)) != -1) {
-            return swlcalc.data.wtype_mapping.to_num[val];
-        } else if ($.inArray(val, Object.keys(swlcalc.data.glyph_stat_mapping.to_num)) != -1) {
-            return swlcalc.data.glyph_stat_mapping.to_num[val];
-        } else if ($.inArray(val, Object.keys(swlcalc.data.signet_quality_mapping.to_num)) != -1) {
-            return swlcalc.data.signet_quality_mapping.to_num[val];
+            return 0;
         } else {
-            return val;
+            return mapping[val];
         }
     };
 };

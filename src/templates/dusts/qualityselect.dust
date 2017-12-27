@@ -1,7 +1,5 @@
-<select id="{id_prefix}{id_suffix}-ql" class="color-standard" title="Please select quality"><!--TODO : dynamic class, should not be mentioned here"--> 
-	<option value="standard" class="color-standard">Standard</option>
-	<option value="superior" class="color-superior">Superior</option>
-	<option value="epic" class="color-epic">Epic</option>
-	<option value="mythic" class="color-mythic">Mythic</option>
-	<option value="legendary" class="color-legendary">Legendary</option>
+<select id="{id_prefix}{id_suffix}-quality" title="Please select quality"><!--TODO : dynamic class, should not be mentioned here"-->
+    <option value="{pip1_v}" class="pips">{pip1_n}</option>
+    <option value="{pip2_v}" class="pips">{pip2_n}</option>
+    <option value="{pip3_v}" class="pips">{pip3_n}</option>
 </select>
