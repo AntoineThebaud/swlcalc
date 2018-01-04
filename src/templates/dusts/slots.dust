@@ -29,8 +29,8 @@
                 </select>
                 {/is_weapon}
             </td>
-            <td class="item-stat-label"><strong>Rarity :</strong></td>
-            <td>{>rarityselect id_suffix=""/}</td>
+            <td class="rarity-label"><strong>Rarity :</strong></td>
+            <td class="rarity-select">{>rarityselect id_suffix=""/}</td>
             {?is_weapon}
             <td rowspan="3">
                 <a id="{id_prefix}-swap-weapon" class="btn btn-info swap-weapon" href="#">
@@ -41,16 +41,18 @@
             <td class="filler" rowspan="3"></td>
         </tr>
         <tr>
-            <td class="item-stat-label"><strong>Quality :</strong></td>
-            {?is_weapon}
-            <td>{>qualityselect id_suffix="" pip1_v="mkI" pip1_n="MK I" pip2_v="mkII" pip2_n="MK II" pip3_v="mkIII" pip3_n="MK III"/}</td>
-            {:else}
-            <td>{>qualityselect id_suffix="" pip1_v="faded" pip1_n="Faded" pip2_v="luminous" pip2_n="Luminous" pip3_v="radiant" pip3_n="Radiant"/}</td>
-            {/is_weapon}
+            <td class="quality-label"><strong>Quality :</strong></td>
+            <td class="quality-select">
+              {?is_weapon}
+              {>qualityselect id_suffix="" pip1_v="mkI" pip1_n="MK I" pip2_v="mkII" pip2_n="MK II" pip3_v="mkIII" pip3_n="MK III"/}
+              {:else}
+              {>qualityselect id_suffix="" pip1_v="faded" pip1_n="Faded" pip2_v="luminous" pip2_n="Luminous" pip3_v="radiant" pip3_n="Radiant"/}
+              {/is_weapon}
+            </td>
         </tr>
         <tr>
-            <td class="item-stat-label"><strong>Level :</strong></td>
-            <td>{>levelselect id_suffix=""/}</td>
+            <td class="level-label"><strong>Level :</strong></td>
+            <td class="level-select">{>levelselect id_suffix=""/}</td>
         </tr>
     </table>
     <div>
@@ -72,17 +74,17 @@
                         <option value="evade-rating">Evade Rating</option>
                     </select>
                 </td>
-                <td class="item-stat-label"><strong>Rarity :</strong></td>
-                <td>{>rarityselect id_suffix="-glyph"/}</td>
-                <td id="{id_prefix}-glyph-value" class="statvalue" rowspan="3">0</td>
+                <td class="rarity-label"><strong>Rarity :</strong></td>
+                <td class="rarity-select">{>rarityselect id_suffix="-glyph"/}</td>
+                <td id="{id_prefix}-glyph-value" class="stat-value" rowspan="3">0</td>
             </tr>
             <tr>
-                <td class="item-stat-label"><strong>Quality :</strong></td>
-                <td>{>qualityselect id_suffix="-glyph" pip1_v="crude" pip1_n="Crude" pip2_v="simple" pip2_n="Simple" pip3_v="intricate" pip3_n="Intricate"/}</td>
+                <td class="quality-label"><strong>Quality :</strong></td>
+                <td class="quality-select">{>qualityselect id_suffix="-glyph" pip1_v="crude" pip1_n="Crude" pip2_v="simple" pip2_n="Simple" pip3_v="intricate" pip3_n="Intricate"/}</td>
             </tr>
             <tr>
-                <td class="item-stat-label"><strong>Level :</strong></td>
-                <td>{>levelselect id_suffix="-glyph"/}</td>
+                <td class="level-label"><strong>Level :</strong></td>
+                <td class="level-select">{>levelselect id_suffix="-glyph"/}</td>
             </tr>
         </table>
     </div>
@@ -99,14 +101,14 @@
                     <select id="{id_prefix}-pick-signet" title="Please select signet">
                     </select>
                 </td>
-                <td class="item-stat-label"><strong>Rarity :</strong></td>
-                <td>{>rarityselect id_suffix="-signet"/}</td>
+                <td class="rarity-label"><strong>Rarity :</strong></td>
+                <td class="rarity-select">{>rarityselect id_suffix="-signet"/}</td>
                 <td id="{id_prefix}-signet-description" class="item-description" rowspan="2">
                 </td>
             </tr>
             <tr>
-                <td class="item-stat-label"><strong>Level :</strong></td>
-                <td>{>levelselect id_suffix="-signet"/}</td>
+                <td class="level-label"><strong>Level :</strong></td>
+                <td class="level-select">{>levelselect id_suffix="-signet"/}</td>
             </tr>
         </table>
     </div>

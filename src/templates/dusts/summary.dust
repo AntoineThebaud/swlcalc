@@ -22,12 +22,12 @@
                 <th>Value</th>
             </thead>
             <tbody>
-                <tr><td class="statname">Power Rating</td><td id="stat-power-rating" class="statvalue">0</td></tr>
-                <tr><td class="statname">Attack Rating</td><td id="stat-attack-rating" class="statvalue">0</td></tr>
-                <tr><td class="statname">Heal Rating</td><td id="stat-heal-rating" class="statvalue">0</td></tr>
-                <tr><td class="statname">Hitpoints</td><td id="stat-hitpoints" class="statvalue">1970</td></tr>
-                <tr><td class="statname">Combat Power</td><td id="stat-combat-power" class="statvalue">0</td></tr>
-                <tr><td class="statname">Weapon Power</td><td id="stat-weapon-power" class="statvalue">0</td></tr>
+                <tr><td class="statname">Power Rating</td><td id="stat-power-rating" class="stat-value">0</td></tr>
+                <tr><td class="statname">Attack Rating</td><td id="stat-attack-rating" class="stat-value">0</td></tr>
+                <tr><td class="statname">Heal Rating</td><td id="stat-heal-rating" class="stat-value">0</td></tr>
+                <tr><td class="statname">Hitpoints</td><td id="stat-hitpoints" class="stat-value">1970</td></tr>
+                <tr><td class="statname">Combat Power</td><td id="stat-combat-power" class="stat-value">0</td></tr>
+                <tr><td class="statname">Weapon Power</td><td id="stat-weapon-power" class="stat-value">0</td></tr>
             </tbody>
         </table>
     </div>
@@ -38,12 +38,12 @@
                 <th>Value</th>
             </thead>
             <tbody>
-                <tr><td class="statname">Critical Rating</td><td id="stat-critical-rating" class="statvalue">0 %</td></tr>
-                <tr><td class="statname">Critical Chance %</td><td id="stat-critical-chance" class="statvalue">0</td></tr>
-                <tr><td class="statname">Critical Power Rating</td><td id="stat-critical-power" class="statvalue">0</td></tr>
-                <tr><td class="statname">Critical Power</td><td id="stat-critical-power-percentage" class="statvalue">0 %</td></tr>
-                <tr><td class="statname">Hit Rating</td><td id="stat-hit-rating" class="statvalue">0</td></tr>
-                <tr><td class="statname">Glance Reduction %</td><td id="stat-hit-chance" class="statvalue">0 %</td></tr>
+                <tr><td class="statname">Critical Rating</td><td id="stat-critical-rating" class="stat-value">0 %</td></tr>
+                <tr><td class="statname">Critical Chance %</td><td id="stat-critical-chance" class="stat-value">0</td></tr>
+                <tr><td class="statname">Critical Power Rating</td><td id="stat-critical-power" class="stat-value">0</td></tr>
+                <tr><td class="statname">Critical Power</td><td id="stat-critical-power-percentage" class="stat-value">0 %</td></tr>
+                <tr><td class="statname">Hit Rating</td><td id="stat-hit-rating" class="stat-value">0</td></tr>
+                <tr><td class="statname">Glance Reduction %</td><td id="stat-hit-chance" class="stat-value">0 %</td></tr>
             </tbody>
         </table>
     </div>
@@ -54,12 +54,12 @@
                 <th>Value</th>
             </thead>
             <tbody>
-                <tr><td class="statname">Defense Rating</td><td id="stat-defense-rating" class="statvalue">0</td></tr>
-                <tr><td class="statname">Glance Chance %</td><td id="stat-defense-chance" class="statvalue">0 %</td></tr>
-                <tr><td class="statname">Evade Rating</td><td id="stat-evade-rating" class="statvalue">0</td></tr>
-                <tr><td class="statname">Evade Chance %</td><td id="stat-evade-chance" class="statvalue">0 %</td></tr>
-                <tr><td class="statname">Physical Protection</td><td id="stat-physical-protection" class="statvalue">249</td></tr>
-                <tr><td class="statname">Magical Protection</td><td id="stat-magical-protection" class="statvalue">249</td></tr>
+                <tr><td class="statname">Defense Rating</td><td id="stat-defense-rating" class="stat-value">0</td></tr>
+                <tr><td class="statname">Glance Chance %</td><td id="stat-defense-chance" class="stat-value">0 %</td></tr>
+                <tr><td class="statname">Evade Rating</td><td id="stat-evade-rating" class="stat-value">0</td></tr>
+                <tr><td class="statname">Evade Chance %</td><td id="stat-evade-chance" class="stat-value">0 %</td></tr>
+                <tr><td class="statname">Physical Protection</td><td id="stat-physical-protection" class="stat-value">249</td></tr>
+                <tr><td class="statname">Magical Protection</td><td id="stat-magical-protection" class="stat-value">249</td></tr>
             </tbody>
         </table>
     </div>

@@ -22,12 +22,12 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.level.change(this.glyphChange);  //TODO refactor name because "glyphChange" is not clear
 
         slotObj.el.glyph.change(this.glyphChange);
-        slotObj.el.glyphRarity.change(this.glyphChange);
+        slotObj.el.glyphRarity.change(this.rarityChange);
         slotObj.el.glyphQuality.change(this.glyphChange);
         slotObj.el.glyphLevel.change(this.glyphChange);
 
         slotObj.el.signetId.change(this.signetChange);
-        slotObj.el.signetRarity.change(this.signetChange);
+        slotObj.el.signetRarity.change(this.rarityChange);
         slotObj.el.signetLevel.change(this.glyphChange); //TODO refactor name because "glyphChange" is not clear
     };
 
