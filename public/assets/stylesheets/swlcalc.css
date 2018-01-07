@@ -1,61 +1,62 @@
 body {
-     padding-top: 10px;
+    padding-top: 10px;
     padding-bottom: 20px;
+}
+
+select {
+    font-size: 12px;
+    width: auto;
+    height: 32px;
 }
 
 .logo {
     font-size: 50px;
 }
+.slogan {
+    font-size: 12px;
+}
+
 
 .illuminati {
     color: #435682;
 }
-
 .templar {
     color: #7e2d2f;
 }
-
 .dragon {
     color: #436329;
 }
+
 
 .lightgrey {
     color: #717171;
     font-weight: normal;
 }
-
 .darkgrey {
     color: #3f3f3f;
 }
 
+
 .color-standard {
     color: #05B114;
 }
-
 .color-superior {
     color: #039BD9;
 }
-
 .color-epic {
     color: #AE58FF;
 }
-
 .color-mythic {
     color: #E2A002;
 }
-
 .color-legendary {
     color: #E62C38;
 }
 
-.slogan {
-    font-size: 12px;
-}
 
 .table {
     margin-bottom: 10px;
 }
-
 .table td {
     min-width: 32px;
     min-height: 32px;
@@ -63,17 +64,62 @@ body {
     padding: 0px;
     vertical-align: middle;
 }
+.table-slots {
+    border-top: 1px solid #ddd;
+}
+.table-slots td {
+    border: none;
+}
+.table-stats td {
+    font-size: 12px;
+    padding: 0px;
+}
+.table-stats th {
+    padding: 5px 5px 5px 0px;
+}
+#table-primary label {
+   margin: 10px 0px 10px 0px;
+}
+#table-primary .tooltip.left{
+    margin-left: -12px
+}
 
-td.item-label {
-    width: 34px;
+
+/* slot > item */
+td.item-title {
+    font-size: 15px;
+    color: #A7A7A7;
+    font-style: italic;
     padding-top: 10px;
+    padding-left: 15px;
+    font-weight: bold;
+}
+td.item-img {
+    width: 34px;
+}
+img.item-icon {
+    background-image:url('../images/icons/item_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 32px;
+    height:32px;
+    z-index: 0;
+}
+img.item-icon-border {
+    width: 32px;
+    height:32px;
+    position: absolute;
+    z-index: 1;
 }
 td.item-select {
     width: 150px;
-    padding-top: 10px;
+}
+td.item-select select {
+    margin-bottom: 0px;
 }
 
 
+/* slot > rarity */
 td.rarity-label {
     width: 50px;
     padding-top: 10px;
@@ -87,41 +133,39 @@ td.rarity-select select {
 }
 
 
+/* slot > quality */
 td.quality-label {
     width: 50px;
-    border-top: none;
 }
 td.quality-select {
-    border-top: none;
 }
 td.quality-select select {
     width: 100px;
-    margin-top: 0px;
     margin-bottom: 0px;
 }
 
 
+/* slot > level */
 td.level-label {
     width: 50px;
-    border-top: none;
 }
 td.level-select {
-    border-top: none;
 }
 td.level-select select {
     width: 100px;
-    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 td.filler {
     width: auto;
 }
+
 td.item-description {
     padding-top: 10px;
-    padding-left: 5px;
+    padding-left: 10px;
 }
+
 td.stat-value {
-    padding-top: 10px;
     font-weight: bold;
     color: green;
     min-width: 50px;
@@ -136,49 +180,11 @@ img.consumable {
     z-index: 0;
 }
 
-img.item {
-    background-image:url('../images/icons/item_background.png  ');
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 32px;
-    height:32px;
-    z-index: 0;
-}
-
-img.item-border {
-    width: 32px;
-    height:32px;
-    position: absolute;
-    z-index: 1;
-}
-
 .statname {
     width: 200px;
 }
 
-.table-stats td {
-    font-size: 12px;
-    padding: 0px;
-}
-
-.table-stats th {
-    padding: 5px 5px 5px 0px;
-}
-
-select {
-    font-size: 12px;
-    width: auto;
-    height:auto;
-    margin-top: 3px;
-    margin-bottom: 3px;
-}
-
 .qlbuttons {
-    margin-left: 5px;
-    padding: 2px;
-}
-
-.glyphbuttons {
     margin-left: 5px;
     padding: 2px;
 }
@@ -207,14 +213,6 @@ div .slot {
     font-size: 14px;
     padding: 5px 5px 5px 0px;
     margin: 0px;
-}
-
-#table-primary label {
-   margin: 10px 0px 10px 0px;
-}
-
-#table-primary .tooltip.left{
-    margin-left: -12px
 }
 
 option:disabled {

@@ -1,21 +1,26 @@
-
 {#slots}
 <div id="{id_prefix}-slot" class="slot">
     <h4 class="slot">{name}</h4> <h4 id="{id_prefix}-name" class="slot-name"></h4> <span id="{id_prefix}-name-warning" class="label label-important"><a class="slot-warning" href="#" data-toggle="tooltip"><i class="icon-warning-sign icon-white"></i></a></span>
     <table class="table table-slots">
         <tr>
-            <td class="item-label" rowspan="3">
+            <td class="item-title" colspan="2">Item</td>
+            <td class="rarity-label"><strong>Rarity :</strong></td>
+            <td class="rarity-select">{>rarityselect id_suffix=""/}</td>
+            <td class="filler"></td>
+        </tr>
+        <tr>
+            <td class="item-img">
                 <a href="#" data-toggle="tooltip" title="Item for the {name} slot. Choose which QL and stats it will have in your build.">
-                    <img id="{id_prefix}-img-rarity" class="item-border" src="assets/images/icons/standard.png"/>
-                    <img id="{id_prefix}-img-icon" class="item" src="assets/images/icons/minor_dps.png" alt="Glyph"/>
+                    <img id="{id_prefix}-img-rarity" class="item-icon-border" src="assets/images/icons/standard.png"/>
+                    <img id="{id_prefix}-img-icon" class="item-icon" src="assets/images/icons/minor_dps.png" alt="Glyph"/>
                 </a>
             </td>
-            <td class="item-select" rowspan="3">
+            <td class="item-select">
                 {^is_weapon}
                 <select id="{id_prefix}-itemId" title="Please select item">
                 </select>
                 {:else}
-                <select id="{id_prefix}-wtype" class="select-wtype" title="Please select weapon type">
+                <select id="{id_prefix}-wtype" title="Please select weapon type">
                     <!-- <option value="none" selected="true">None</option> TODO : None value temporary disabled-->
                     <option value="blade" selected="true">Blade</option>
                     <option value="hammer">Hammer</option>
@@ -29,18 +34,6 @@
                 </select>
                 {/is_weapon}
             </td>
-            <td class="rarity-label"><strong>Rarity :</strong></td>
-            <td class="rarity-select">{>rarityselect id_suffix=""/}</td>
-            {?is_weapon}
-            <td rowspan="3">
-                <a id="{id_prefix}-swap-weapon" class="btn btn-info swap-weapon" href="#">
-                    <i class="icon-retweet icon-white icon-align-left"></i>    Swap weapon
-                </a>
-            </td>
-            {/is_weapon}
-            <td class="filler" rowspan="3"></td>
-        </tr>
-        <tr>
             <td class="quality-label"><strong>Quality :</strong></td>
             <td class="quality-select">
               {?is_weapon}
@@ -49,69 +42,82 @@
               {>qualityselect id_suffix="" pip1_v="faded" pip1_n="Faded" pip2_v="luminous" pip2_n="Luminous" pip3_v="radiant" pip3_n="Radiant"/}
               {/is_weapon}
             </td>
+            {?is_weapon}
+            <td>
+                <a id="{id_prefix}-swap-weapon" class="btn btn-info swap-weapon" href="#">
+                    <i class="icon-retweet icon-white icon-align-left"></i>    Swap weapon
+                </a>
+            </td>
+            {:else}
+            <td class="filler"></td>
+            {/is_weapon}
         </tr>
         <tr>
+            <td class="filler"></td>
+            <td class="filler"></td>
             <td class="level-label"><strong>Level :</strong></td>
             <td class="level-select">{>levelselect id_suffix=""/}</td>
+            <td class="filler"></td>
         </tr>
     </table>
-    <div>
-        <table id="{id_prefix}-glyphs" class="table table-items">
-            <tr>
-                <td class="item-label" rowspan="3">
-                    <a href="#" class="glyph-tooltip" data-toggle="tooltip" title="Glyph for the {name} slot. Choose which QL and stats it will have in your build.">
-                        <img id="{id_prefix}-glyph-img-rarity" class="item-border" src="assets/images/icons/standard.png"/>
-                        <img id="{id_prefix}-glyph-img-icon" class="item" src="assets/images/icons/minor_dps.png" alt="Glyph"/>
-                    </a>
-                </td>
-                <td class="item-select" rowspan="3">
-                    <select id="{id_prefix}-glyph" title="Please select stat">
-                        <!-- <option value="none" selected="true">None</option> TODO : None value temporary disabled-->
-                        <option value="critical-rating">Critical Rating</option>
-                        <option value="critical-power">Critical Power</option>
-                        <option value="hit-rating">Hit Rating</option>
-                        <option value="defense-rating">Defense Rating</option>
-                        <option value="evade-rating">Evade Rating</option>
-                    </select>
-                </td>
-                <td class="rarity-label"><strong>Rarity :</strong></td>
-                <td class="rarity-select">{>rarityselect id_suffix="-glyph"/}</td>
-                <td id="{id_prefix}-glyph-value" class="stat-value" rowspan="3">0</td>
-            </tr>
-            <tr>
-                <td class="quality-label"><strong>Quality :</strong></td>
-                <td class="quality-select">{>qualityselect id_suffix="-glyph" pip1_v="crude" pip1_n="Crude" pip2_v="simple" pip2_n="Simple" pip3_v="intricate" pip3_n="Intricate"/}</td>
-            </tr>
-            <tr>
-                <td class="level-label"><strong>Level :</strong></td>
-                <td class="level-select">{>levelselect id_suffix="-glyph"/}</td>
-            </tr>
-        </table>
-    </div>
-    <div>
-        <table id="{id_prefix}-signets" class="table table-items">
-            <tr>
-                <td class="item-label" rowspan="2">
-                    <a href="#" class="signet-tooltip" data-toggle="tooltip" title="Signet for the {name} slot. Choose the rarity and type of signet.">
-                        <img id="{id_prefix}-signet-img-rarity" class="item-border" src="assets/images/icons/standard.png"/>
-                        <img id="{id_prefix}-signet-img-icon" class="item" src="assets/images/icons/minor_dps.png"/>
-                    </a>
-                </td>
-                <td class="item-select" rowspan="2">
-                    <select id="{id_prefix}-pick-signet" title="Please select signet">
-                    </select>
-                </td>
-                <td class="rarity-label"><strong>Rarity :</strong></td>
-                <td class="rarity-select">{>rarityselect id_suffix="-signet"/}</td>
-                <td id="{id_prefix}-signet-description" class="item-description" rowspan="2">
-                </td>
-            </tr>
-            <tr>
-                <td class="level-label"><strong>Level :</strong></td>
-                <td class="level-select">{>levelselect id_suffix="-signet"/}</td>
-            </tr>
-        </table>
-    </div>
+    <table id="{id_prefix}-glyphs" class="table table-slots">
+        <tr>
+            <td class="item-title" colspan="2">Glyph</td>
+            <td class="rarity-label"><strong>Rarity :</strong></td>
+            <td class="rarity-select">{>rarityselect id_suffix="-glyph"/}</td>
+            <td class="filler"></td>
+        </tr>
+        <tr>
+            <td class="item-img">
+                <a href="#" class="glyph-tooltip" data-toggle="tooltip" title="Glyph for the {name} slot. Choose which QL and stats it will have in your build.">
+                    <img id="{id_prefix}-glyph-img-rarity" class="item-icon-border" src="assets/images/icons/standard.png"/>
+                    <img id="{id_prefix}-glyph-img-icon" class="item-icon" src="assets/images/icons/minor_dps.png" alt="Glyph"/>
+                </a>
+            </td>
+            <td class="item-select">
+                <select id="{id_prefix}-glyph" title="Please select stat">
+                    <!-- <option value="none" selected="true">None</option> TODO : None value temporary disabled-->
+                    <option value="critical-rating">Critical Rating</option>
+                    <option value="critical-power">Critical Power</option>
+                    <option value="hit-rating">Hit Rating</option>
+                    <option value="defense-rating">Defense Rating</option>
+                    <option value="evade-rating">Evade Rating</option>
+                </select>
+            </td>
+            <td class="quality-label"><strong>Quality :</strong></td>
+            <td class="quality-select">{>qualityselect id_suffix="-glyph" pip1_v="crude" pip1_n="Crude" pip2_v="simple" pip2_n="Simple" pip3_v="intricate" pip3_n="Intricate"/}</td>
+            <td id="{id_prefix}-glyph-value" class="stat-value">0</td>
+        </tr>
+        <tr>
+            <td class="filler"></td>
+            <td class="filler"></td>
+            <td class="level-label"><strong>Level :</strong></td>
+            <td class="level-select">{>levelselect id_suffix="-glyph"/}</td>
+            <td class="filler"></td>
+        </tr>
+    </table>
+    <table id="{id_prefix}-signets" class="table table-slots">
+        <tr>
+            <td class="item-title" colspan="2">Signet</td>
+            <td class="rarity-label"><strong>Rarity :</strong></td>
+            <td class="rarity-select">{>rarityselect id_suffix="-signet"/}</td>
+            <td id="{id_prefix}-signet-description" class="item-description" rowspan="2">
+        </tr>
+        <tr>
+            <td class="item-img">
+                <a href="#" class="signet-tooltip" data-toggle="tooltip" title="Signet for the {name} slot. Choose the rarity and type of signet.">
+                    <img id="{id_prefix}-signet-img-rarity" class="item-icon-border" src="assets/images/icons/standard.png"/>
+                    <img id="{id_prefix}-signet-img-icon" class="item-icon" src="assets/images/icons/minor_dps.png"/>
+                </a>
+            </td>
+            <td class="item-select">
+                <select id="{id_prefix}-pick-signet" title="Please select signet">
+                </select>
+            </td>
+            <td class="level-label"><strong>Level :</strong></td>
+            <td class="level-select">{>levelselect id_suffix="-signet"/}</td>
+        </tr>
+    </table>
 </div>
 {:else}
 <p>No slots found (Bug)!</p>

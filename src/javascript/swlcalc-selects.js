@@ -22,12 +22,12 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.level.change(this.glyphChange);  //TODO refactor name because "glyphChange" is not clear
 
         slotObj.el.glyph.change(this.glyphChange);
-        slotObj.el.glyphRarity.change(this.rarityChange);
+        slotObj.el.glyphRarity.change(this.glyphRarityChange);
         slotObj.el.glyphQuality.change(this.glyphChange);
         slotObj.el.glyphLevel.change(this.glyphChange);
 
         slotObj.el.signetId.change(this.signetChange);
-        slotObj.el.signetRarity.change(this.rarityChange);
+        slotObj.el.signetRarity.change(this.signetRarityChange);
         slotObj.el.signetLevel.change(this.glyphChange); //TODO refactor name because "glyphChange" is not clear
     };
 
@@ -96,30 +96,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         return [];
     };
 
-    this.signetChange = function(event) {
-        var signet = slotObj.signet();
-
-        if (typeof signet.requires !== 'undefined') {
-            var cadoro = swlcalc.data.cadoro_items[signet.requires];
-            var cadoroItem = cadoro[slot.id_prefix][slotObj.item().role];
-            if (cadoroItem !== undefined && cadoroItem.name !== '') {
-                slotObj.name(': ' + cadoroItem.name);
-            }
-            slotObj.signetRarity('epic');
-            slotObj.el.signetRarity.attr('disabled', 'disabled');
-            slotObj.el.nameWarning.tooltip({
-                title: cadoro.warning_text,
-                placement: 'top'
-            });
-            slotObj.el.nameWarning.show();
-        } else if(!slotObj.item().signet) {
-            slotObj.el.signetRarity.removeAttr('disabled');
-            slotObj.el.nameWarning.hide();
-        }
-        slotObj.updateSignet();
-        swlcalc.summary.updateAllStats();
-    };
-
     this.itemChange = function(event) {
         self.enableControls();
         self.updateControlsForItem();
@@ -138,12 +114,32 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     //TODO : level select must be updated when rarity is changed (max 20 for standard, max 70 for legendary etc.. )
     this.rarityChange = function(event) {
-        swlcalc.summary.updateAllStats();
         self.updateColor(event.target);
+        slotObj.updateIconBorder(event.target.selectedOptions[0].value); //TODO : abstract layer ?
+        swlcalc.summary.updateAllStats();
     };
 
     this.glyphChange = function(id_suffix) {
         swlcalc.summary.updateAllStats();
+    };
+
+    //TODO : level select must be updated when rarity is changed (max 20 for standard, max 70 for legendary etc.. )
+    this.glyphRarityChange = function(event) {
+        self.updateColor(event.target);
+        slotObj.updateGlyphIconBorder(event.target.selectedOptions[0].value); //TODO : abstract layer ?
+        swlcalc.summary.updateAllStats();
+    };
+
+    this.signetChange = function(event) {
+        var signet = slotObj.signet();
+        slotObj.updateSignet();
+        swlcalc.summary.updateAllStats();
+    };
+
+    //TODO : level select must be updated when rarity is changed (max 20 for standard, max 70 for legendary etc.. )
+    this.signetRarityChange = function(event) {
+        self.updateColor(event.target);
+        self.signetChange(event);
     };
 
     this.updateControlsForItem = function() {

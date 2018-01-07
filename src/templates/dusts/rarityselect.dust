@@ -1,4 +1,4 @@
-<select id="{id_prefix}{id_suffix}-rarity" class="color-standard" title="Please select rarity"><!--TODO : dynamic class, should not be mentioned here"-->
+<select id="{id_prefix}{id_suffix}-rarity" title="Please select rarity"><!--TODO : dynamic class, should not be mentioned here"-->
 	<option value="standard" class="color-standard">Standard</option>
 	<option value="superior" class="color-superior">Superior</option>
 	<option value="epic" class="color-epic">Epic</option>

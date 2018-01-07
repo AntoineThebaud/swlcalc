@@ -84,11 +84,13 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         rarity: $('#' + this.id + '-rarity'),
         quality: $('#' + this.id + '-quality'),
         level: $('#' + this.id + '-level'),
+        iconBorderImg: $('#' + this.id + '-img-rarity'),
         glyph: $('#' + this.id + '-glyph'),
         glyphRarity: $('#' + this.id + '-glyph-rarity'),
         glyphQuality: $('#' + this.id + '-glyph-quality'),
         glyphLevel: $('#' + this.id + '-glyph-level'),
         glyphValue: $('#' + this.id + '-glyph-value'),
+        glyphIconBorderImg: $('#' + this.id + '-glyph-img-rarity'),
         signetId: $('#' + this.id + '-pick-signet'),
         signetRarity: $('#' + this.id + '-signet-rarity'),
         signetLevel: $('#' + this.id + '-signet-level'),
@@ -106,9 +108,41 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
+    /**
+     * Weapon functions |
+     *                  V
+     */
+
     this.isWeapon = function() {
         return this.group == 'weapon';
     };
+
+    this.sheathWeapon = function() {
+        if(this.isWeapon()) {
+            this.weaponDrawn = false;
+            this.el.div.hide();
+        }
+    };
+
+    this.drawWeapon = function() {
+        if(this.isWeapon()) {
+            this.weaponDrawn = true;
+            this.el.div.show();
+        }
+    };
+
+    this.wtype = function() {
+        if (arguments.length == 1) {
+            this.el.wtype.val(arguments[0]);
+        } else {
+            return this.group == 'weapon' ? this.el.wtype.val() : 'none';
+        }
+    };
+
+    /**
+     * Item functions |
+     *                V
+     */
 
     this.item = function(){
         var itemId = this.itemId()
@@ -126,14 +160,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             this.el.itemId.val(arguments[0]);
         } else {
             return this.group != 'weapon' ? this.el.itemId.val() : 'none';
-        }
-    };
-
-    this.wtype = function() {
-        if (arguments.length == 1) {
-            this.el.wtype.val(arguments[0]);
-        } else {
-            return this.group == 'weapon' ? this.el.wtype.val() : 'none';
         }
     };
 
@@ -166,6 +192,16 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return formatData;
         }
     };
+
+    this.updateIconBorder = function(rarity) {
+        var rarity_url = 'assets/images/icons/' + rarity + '.png';
+        this.el.iconBorderImg.attr('src', rarity_url);
+    };
+
+    /**
+     * Glyph functions |
+     *                 V
+     */
 
     this.glyph = function() {
         if (arguments.length == 1) {
@@ -217,18 +253,13 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         return swlcalc.data.glyph_data.stat[this.glyph()].rarity[this.glyphRarity()].quality[this.glyphQuality()].level[this.glyphLevel()];
     };
 
-    this.sheathWeapon = function() {
-        if(this.isWeapon()) {
-            this.weaponDrawn = false;
-            this.el.div.hide();
-        }
+    this.updateGlyphValue = function() {
+        this.el.glyphValue.html(this.glyphValue() !== 0 ? '+' + this.glyphValue() : 0);
     };
 
-    this.drawWeapon = function() {
-        if(this.isWeapon()) {
-            this.weaponDrawn = true;
-            this.el.div.show();
-        }
+    this.updateGlyphIconBorder = function(rarity) {
+        var rarity_url = 'assets/images/icons/' + rarity + '.png';
+        this.el.glyphIconBorderImg.attr('src', rarity_url);
     };
 
     // COST FEATURE DISABLED. NEED REVAMP
@@ -280,6 +311,11 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     // this.eleventhHourCost = function () {
     //     return this.glyphCost().eleventh_hour_kit ? 1 : 0;
     // };
+
+    /**
+     * Signet functions |
+     *                  V
+     */
 
     this.signetId = function() {
         if (arguments.length == 1) {
@@ -358,10 +394,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
-    this.updateGlyphValue = function() {
-        this.el.glyphValue.html(this.glyphValue() !== 0 ? '+' + this.glyphValue() : 0);
-    };
-
     this.updateSignet = function() {
         this.updateSignetIcon();
         this.updateSignetDescription();
@@ -401,6 +433,11 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     this.updateSignetDescription = function() {
         this.el.signetDescription.html(this.signetDescription());
     };
+
+    /**
+     * Other functions |
+     *                 V
+     */
 
     this.reset = function() {
         this.wtype('none');

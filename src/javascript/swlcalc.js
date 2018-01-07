@@ -7,8 +7,8 @@ var swlcalc = swlcalc || {};
 swlcalc = function() {
 
     /**
-    * Init function. Triggered when document is ready.
-    */
+     * Init function. Triggered when document is ready.
+     */
     var init = function() {
         renderContainer(swlcalc.data.template_data);
         addHash();
@@ -23,15 +23,15 @@ swlcalc = function() {
     };
 
     /**
-    * Trigger "Reset" button.
-    */
+     * Trigger "Reset" button.
+     */
     var triggerReset = function() {
         $('#btn-reset').trigger('click');
     };
 
     /**
-    * Add tooltips for images (signets, glyphs, currencies..)
-    */
+     * Add tooltips for images (signets, glyphs, currencies..)
+     */
     var activateToolTips = function() {
         $('.glyph-tooltip, .signet-tooltip, .consumable-tooltip').tooltip({
             placement: 'left'
@@ -62,8 +62,8 @@ swlcalc = function() {
     };
 
     /**
-    * Generate html code in the container, based on .dust template files
-    */
+     * Generate html code in the container, based on .dust template files
+     */
     var renderContainer = function(data) {
         dust.render('container', {
             slots: swlcalc.data.template_data.slots,
@@ -79,8 +79,8 @@ swlcalc = function() {
     };
 
     /**
-    * Check if parameters are present in the URL.
-    */
+     * Check if parameters are present in the URL.
+     */
     var checkIfExported = function() {
         var vars = $.getUrlVars();
         // length == 8 is pre 1.3 links
@@ -93,8 +93,8 @@ swlcalc = function() {
     };
 
     /**
-    * Initialize all sub modules (slots, buttonbar, summary...)
-    */
+     * Initialize all sub modules (slots, buttonbar, summary...)
+     */
     var startSubModules = function() {
         swlcalc.slots.init();
         swlcalc.miscslot.init();
@@ -108,9 +108,9 @@ swlcalc = function() {
     };
 
     /**
-    * Add an empty hash if current is null
-    * TODO : check if still accurate ?
-    */
+     * Add an empty hash if current is null
+     * TODO : check if still accurate ?
+     */
     var addHash = function() {
         if (location.hash == '') {
             location.hash = ' ';
@@ -118,8 +118,8 @@ swlcalc = function() {
     };
 
     /**
-    * TODO : description missing.
-    */
+     * TODO : description missing.
+     */
     var startSelectHandler = function(slot) {
         swlcalc.select[slot.id_prefix] = new swlcalc.select.SelectHandler(slot);
         swlcalc.select[slot.id_prefix].initiate();

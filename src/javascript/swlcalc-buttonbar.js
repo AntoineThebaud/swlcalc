@@ -5,14 +5,14 @@ swlcalc.buttonBar = function() {
     var el = {};
     var elInit = function() {
         return {
-            //TODO : QLs TO UPDATE
             btn_all_dps: $('#btn-all-3'),
             btn_all_healer: $('#btn-all-2'),
             btn_all_tank: $('#btn-all-1'),
-            btn_all_10_4: $('#btn-all-10-4'),
-            btn_all_10_5: $('#btn-all-10-5'),
-            btn_all_10_9: $('#btn-all-10-9'),
-            btn_all_11_0: $('#btn-all-11-0'),
+            btn_all_standard: $('#btn-all-standard'),
+            btn_all_superior: $('#btn-all-superior'),
+            btn_all_epic: $('#btn-all-epic'),
+            btn_all_mythic: $('#btn-all-mythic'),
+            btn_all_legendary: $('#btn-all-legendary'),
             btn_reset: $('#btn-reset')
         };
     };
@@ -22,19 +22,18 @@ swlcalc.buttonBar = function() {
         bindEvents();
     };
 
-    //TODO : QLs TO UPDATE
     var bindEvents = function() {
         el.btn_all_dps.on('click', setRoleOnAllSlots);
         el.btn_all_healer.on('click', setRoleOnAllSlots);
         el.btn_all_tank.on('click', setRoleOnAllSlots);
-        // el.btn_all_10_4.on('click', setQlOnAllSlots); //TODO : TO UPDATE
-        // el.btn_all_10_5.on('click', setQlOnAllSlots); //TODO : TO UPDATE
-        // el.btn_all_10_9.on('click', setQlOnAllSlots); //TODO : TO UPDATE
-        // el.btn_all_11_0.on('click', setQlOnAllSlots); //TODO : TO UPDATE
+        el.btn_all_standard.on('click', setRarityOnAllSlots);
+        el.btn_all_superior.on('click', setRarityOnAllSlots);
+        el.btn_all_epic.on('click', setRarityOnAllSlots);
+        el.btn_all_mythic.on('click', setRarityOnAllSlots);
+        el.btn_all_legendary.on('click', setRarityOnAllSlots);
         el.btn_reset.on('click', resetAllSlots);
     };
 
-    //TODO : potentially needed update
     var setRoleOnAllSlots = function(event) {
         var newItem = extractRole(event);
         for (var slotId in swlcalc.slots) {
@@ -47,21 +46,21 @@ swlcalc.buttonBar = function() {
         swlcalc.summary.updateAllStats();
     };
 
-    //TODO : potentially needed update
-    var setQlOnAllSlots = function (event) {
-        var newItemQl = extractItemQl(event);
-        var newGlyphQl = extractGlyphQl(event);
-
+    var setRarityOnAllSlots = function(event) {
+        var newRarity = extractRarity(event);
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
                 var slot = swlcalc.slots[slotId];
-                if(!slot.item().rarity) {
-                    slot.rarity(newItemQl);
-                }
-                if(!slot.item().glyph) {
-                    slot.glyphRarity(newGlyphQl);
-                    slot.el.glyphRarity.change();
-                }
+                //if(!slot.item().rarity) {
+                slot.rarity(newRarity);
+                slot.el.rarity.change();
+                //}
+                //if(!slot.item().glyph) {
+                slot.glyphRarity(newRarity);
+                slot.el.glyphRarity.change();
+                //}
+                slot.signetRarity(newRarity);
+                slot.el.signetRarity.change();
             }
         }
         swlcalc.summary.updateAllStats();
@@ -72,17 +71,8 @@ swlcalc.buttonBar = function() {
         swlcalc.summary.updateAllStats();
     };
 
-    var extractItemQl = function (event) {
-        return event.target.id.split('-')[2] + '.' + event.target.id.split('-')[3];
-    };
-
-    var extractGlyphQl = function (event) {
-        var majorLevel = parseInt(event.target.id.split('-')[2]);
-        var minorLevel = parseInt(event.target.id.split('-')[3]);
-        if (majorLevel === 10 && minorLevel > 5) {
-            return 'epic'; //TODO : tsw value '10.5' replaced arbitrary by 'epic'
-        }
-        return majorLevel + '.' + minorLevel;
+    var extractRarity = function (event) {
+        return event.target.id.split('-')[2];
     };
 
     var extractRole = function(event) {
@@ -93,7 +83,7 @@ swlcalc.buttonBar = function() {
         el: el,
         init: init,
         setRoleOnAllSlots: setRoleOnAllSlots,
-        setQlOnAllSlots: setQlOnAllSlots,
+        setRarityOnAllSlots: setRarityOnAllSlots,
         resetAllSlots: resetAllSlots
     };
 
