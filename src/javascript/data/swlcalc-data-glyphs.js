@@ -1,7 +1,6 @@
 var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
-//TODO : complete with real values
 swlcalc.data.glyph_data = {
     stat: {
         'critical-rating': {
@@ -10,77 +9,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 1,
-                                2: 2,
-                                3: 3,
-                                4: 4,
-                                5: 5,
-                                6: 6,
-                                7: 7,
-                                8: 8,
-                                9: 9,
-                                10: 10,
-                                11: 11,
-                                12: 12,
-                                13: 13,
-                                14: 14,
-                                15: 15,
-                                16: 16,
-                                17: 17,
-                                18: 18,
-                                19: 19,
-                                20: 20
+                                1: 12,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 67
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 21,
-                                2: 22,
-                                3: 23,
-                                4: 24,
-                                5: 25,
-                                6: 26,
-                                7: 27,
-                                8: 28,
-                                9: 29,
-                                10: 30,
-                                11: 31,
-                                12: 32,
-                                13: 33,
-                                14: 34,
-                                15: 35,
-                                16: 36,
-                                17: 37,
-                                18: 38,
-                                19: 39,
-                                20: 40
+                                1: 14,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 76
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 41,
-                                2: 42,
-                                3: 43,
-                                4: 44,
-                                5: 45,
-                                6: 46,
-                                7: 47,
-                                8: 48,
-                                9: 49,
-                                10: 50,
-                                11: 51,
-                                12: 52,
-                                13: 53,
-                                14: 54,
-                                15: 55,
-                                16: 56,
-                                17: 57,
-                                18: 58,
-                                19: 59,
-                                20: 60
+                                1: 15,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 84
                             }
                         }
                     }
@@ -89,77 +85,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 61,
-                                2: 62,
-                                3: 63,
-                                4: 64,
-                                5: 65,
-                                6: 66,
-                                7: 67,
-                                8: 68,
-                                9: 69,
-                                10: 70,
-                                11: 71,
-                                12: 72,
-                                13: 73,
-                                14: 74,
-                                15: 75,
-                                16: 76,
-                                17: 77,
-                                18: 78,
-                                19: 79,
-                                20: 80
+                                1: 85,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 185
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 81,
-                                2: 82,
-                                3: 83,
-                                4: 84,
-                                5: 85,
-                                6: 86,
-                                7: 87,
-                                8: 88,
-                                9: 89,
-                                10: 90,
-                                11: 91,
-                                12: 92,
-                                13: 93,
-                                14: 94,
-                                15: 95,
-                                16: 96,
-                                17: 97,
-                                18: 98,
-                                19: 99,
-                                20: 100
+                                1: 95,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 208
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 101,
-                                2: 102,
-                                3: 103,
-                                4: 104,
-                                5: 105,
-                                6: 106,
-                                7: 107,
-                                8: 108,
-                                9: 109,
-                                10: 110,
-                                11: 111,
-                                12: 112,
-                                13: 113,
-                                14: 114,
-                                15: 115,
-                                16: 116,
-                                17: 117,
-                                18: 118,
-                                19: 119,
-                                20: 120
+                                1: 106,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 231
                             }
                         }
                     }
@@ -168,77 +161,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 121,
-                                2: 122,
-                                3: 123,
-                                4: 124,
-                                5: 125,
-                                6: 126,
-                                7: 127,
-                                8: 128,
-                                9: 129,
-                                10: 130,
-                                11: 131,
-                                12: 132,
-                                13: 133,
-                                14: 134,
-                                15: 135,
-                                16: 136,
-                                17: 137,
-                                18: 138,
-                                19: 139,
-                                20: 130
+                                1: 215,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 339
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 131,
-                                2: 132,
-                                3: 133,
-                                4: 134,
-                                5: 135,
-                                6: 136,
-                                7: 137,
-                                8: 138,
-                                9: 139,
-                                10: 140,
-                                11: 141,
-                                12: 142,
-                                13: 143,
-                                14: 144,
-                                15: 145,
-                                16: 146,
-                                17: 147,
-                                18: 148,
-                                19: 149,
-                                20: 150
+                                1: 241,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 381
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 151,
-                                2: 152,
-                                3: 153,
-                                4: 154,
-                                5: 155,
-                                6: 156,
-                                7: 157,
-                                8: 158,
-                                9: 159,
-                                10: 160,
-                                11: 161,
-                                12: 162,
-                                13: 163,
-                                14: 164,
-                                15: 165,
-                                16: 166,
-                                17: 167,
-                                18: 168,
-                                19: 169,
-                                20: 170
+                                1: 268,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 424
                             }
                         }
                     }
@@ -247,77 +237,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 171,
-                                2: 172,
-                                3: 173,
-                                4: 174,
-                                5: 175,
-                                6: 176,
-                                7: 177,
-                                8: 178,
-                                9: 179,
-                                10: 180,
-                                11: 181,
-                                12: 182,
-                                13: 183,
-                                14: 184,
-                                15: 185,
-                                16: 186,
-                                17: 187,
-                                18: 188,
-                                19: 189,
-                                20: 190
+                                1: 390,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 546 // uncertain!
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 191,
-                                2: 192,
-                                3: 193,
-                                4: 194,
-                                5: 195,
-                                6: 196,
-                                7: 197,
-                                8: 198,
-                                9: 199,
-                                10: 200,
-                                11: 201,
-                                12: 202,
-                                13: 203,
-                                14: 204,
-                                15: 205,
-                                16: 206,
-                                17: 207,
-                                18: 208,
-                                19: 209,
-                                20: 210
+                                1: 439,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 615
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 211,
-                                2: 212,
-                                3: 213,
-                                4: 214,
-                                5: 215,
-                                6: 216,
-                                7: 217,
-                                8: 218,
-                                9: 219,
-                                10: 220,
-                                11: 221,
-                                12: 222,
-                                13: 223,
-                                14: 224,
-                                15: 225,
-                                16: 226,
-                                17: 227,
-                                18: 228,
-                                19: 229,
-                                20: 230
+                                1: 488,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 683
                             }
                         }
                     }
@@ -326,77 +313,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 231,
-                                2: 232,
-                                3: 233,
-                                4: 234,
-                                5: 235,
-                                6: 236,
-                                7: 237,
-                                8: 238,
-                                9: 239,
-                                10: 240,
-                                11: 241,
-                                12: 242,
-                                13: 243,
-                                14: 244,
-                                15: 245,
-                                16: 246,
-                                17: 247,
-                                18: 248,
-                                19: 249,
-                                20: 250
+                                1: 610, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 925 // uncertain!
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 251,
-                                2: 252,
-                                3: 253,
-                                4: 254,
-                                5: 255,
-                                6: 256,
-                                7: 257,
-                                8: 258,
-                                9: 259,
-                                10: 260,
-                                11: 261,
-                                12: 262,
-                                13: 263,
-                                14: 264,
-                                15: 265,
-                                16: 266,
-                                17: 267,
-                                18: 268,
-                                19: 269,
-                                20: 270
+                                1: 686, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 1040 // uncertain!
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 271,
-                                2: 272,
-                                3: 273,
-                                4: 274,
-                                5: 275,
-                                6: 276,
-                                7: 277,
-                                8: 278,
-                                9: 279,
-                                10: 280,
-                                11: 281,
-                                12: 282,
-                                13: 283,
-                                14: 284,
-                                15: 285,
-                                16: 286,
-                                17: 287,
-                                18: 288,
-                                19: 289,
-                                20: 290
+                                1: 762, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 1156 // uncertain!
                             }
                         }
                     }
@@ -409,77 +393,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 1,
-                                2: 2,
-                                3: 3,
-                                4: 4,
-                                5: 5,
-                                6: 6,
-                                7: 7,
-                                8: 8,
-                                9: 9,
-                                10: 10,
-                                11: 11,
-                                12: 12,
-                                13: 13,
-                                14: 14,
-                                15: 15,
-                                16: 16,
-                                17: 17,
-                                18: 18,
-                                19: 19,
-                                20: 20
+                                1: 12,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 67
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 21,
-                                2: 22,
-                                3: 23,
-                                4: 24,
-                                5: 25,
-                                6: 26,
-                                7: 27,
-                                8: 28,
-                                9: 29,
-                                10: 30,
-                                11: 31,
-                                12: 32,
-                                13: 33,
-                                14: 34,
-                                15: 35,
-                                16: 36,
-                                17: 37,
-                                18: 38,
-                                19: 39,
-                                20: 40
+                                1: 14,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 76
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 41,
-                                2: 42,
-                                3: 43,
-                                4: 44,
-                                5: 45,
-                                6: 46,
-                                7: 47,
-                                8: 48,
-                                9: 49,
-                                10: 50,
-                                11: 51,
-                                12: 52,
-                                13: 53,
-                                14: 54,
-                                15: 55,
-                                16: 56,
-                                17: 57,
-                                18: 58,
-                                19: 59,
-                                20: 60
+                                1: 15,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 84
                             }
                         }
                     }
@@ -488,77 +469,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 61,
-                                2: 62,
-                                3: 63,
-                                4: 64,
-                                5: 65,
-                                6: 66,
-                                7: 67,
-                                8: 68,
-                                9: 69,
-                                10: 70,
-                                11: 71,
-                                12: 72,
-                                13: 73,
-                                14: 74,
-                                15: 75,
-                                16: 76,
-                                17: 77,
-                                18: 78,
-                                19: 79,
-                                20: 80
+                                1: 85,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 185
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 81,
-                                2: 82,
-                                3: 83,
-                                4: 84,
-                                5: 85,
-                                6: 86,
-                                7: 87,
-                                8: 88,
-                                9: 89,
-                                10: 90,
-                                11: 91,
-                                12: 92,
-                                13: 93,
-                                14: 94,
-                                15: 95,
-                                16: 96,
-                                17: 97,
-                                18: 98,
-                                19: 99,
-                                20: 100
+                                1: 95,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 208
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 101,
-                                2: 102,
-                                3: 103,
-                                4: 104,
-                                5: 105,
-                                6: 106,
-                                7: 107,
-                                8: 108,
-                                9: 109,
-                                10: 110,
-                                11: 111,
-                                12: 112,
-                                13: 113,
-                                14: 114,
-                                15: 115,
-                                16: 116,
-                                17: 117,
-                                18: 118,
-                                19: 119,
-                                20: 120
+                                1: 106,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 231
                             }
                         }
                     }
@@ -567,77 +545,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 121,
-                                2: 122,
-                                3: 123,
-                                4: 124,
-                                5: 125,
-                                6: 126,
-                                7: 127,
-                                8: 128,
-                                9: 129,
-                                10: 130,
-                                11: 131,
-                                12: 132,
-                                13: 133,
-                                14: 134,
-                                15: 135,
-                                16: 136,
-                                17: 137,
-                                18: 138,
-                                19: 139,
-                                20: 130
+                                1: 215,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 339
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 131,
-                                2: 132,
-                                3: 133,
-                                4: 134,
-                                5: 135,
-                                6: 136,
-                                7: 137,
-                                8: 138,
-                                9: 139,
-                                10: 140,
-                                11: 141,
-                                12: 142,
-                                13: 143,
-                                14: 144,
-                                15: 145,
-                                16: 146,
-                                17: 147,
-                                18: 148,
-                                19: 149,
-                                20: 150
+                                1: 241,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 381
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 151,
-                                2: 152,
-                                3: 153,
-                                4: 154,
-                                5: 155,
-                                6: 156,
-                                7: 157,
-                                8: 158,
-                                9: 159,
-                                10: 160,
-                                11: 161,
-                                12: 162,
-                                13: 163,
-                                14: 164,
-                                15: 165,
-                                16: 166,
-                                17: 167,
-                                18: 168,
-                                19: 169,
-                                20: 170
+                                1: 268,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 424
                             }
                         }
                     }
@@ -646,77 +621,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 171,
-                                2: 172,
-                                3: 173,
-                                4: 174,
-                                5: 175,
-                                6: 176,
-                                7: 177,
-                                8: 178,
-                                9: 179,
-                                10: 180,
-                                11: 181,
-                                12: 182,
-                                13: 183,
-                                14: 184,
-                                15: 185,
-                                16: 186,
-                                17: 187,
-                                18: 188,
-                                19: 189,
-                                20: 190
+                                1: 390,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 546 // uncertain!
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 191,
-                                2: 192,
-                                3: 193,
-                                4: 194,
-                                5: 195,
-                                6: 196,
-                                7: 197,
-                                8: 198,
-                                9: 199,
-                                10: 200,
-                                11: 201,
-                                12: 202,
-                                13: 203,
-                                14: 204,
-                                15: 205,
-                                16: 206,
-                                17: 207,
-                                18: 208,
-                                19: 209,
-                                20: 210
+                                1: 439,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 615
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 211,
-                                2: 212,
-                                3: 213,
-                                4: 214,
-                                5: 215,
-                                6: 216,
-                                7: 217,
-                                8: 218,
-                                9: 219,
-                                10: 220,
-                                11: 221,
-                                12: 222,
-                                13: 223,
-                                14: 224,
-                                15: 225,
-                                16: 226,
-                                17: 227,
-                                18: 228,
-                                19: 229,
-                                20: 230
+                                1: 488,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 683
                             }
                         }
                     }
@@ -725,77 +697,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 231,
-                                2: 232,
-                                3: 233,
-                                4: 234,
-                                5: 235,
-                                6: 236,
-                                7: 237,
-                                8: 238,
-                                9: 239,
-                                10: 240,
-                                11: 241,
-                                12: 242,
-                                13: 243,
-                                14: 244,
-                                15: 245,
-                                16: 246,
-                                17: 247,
-                                18: 248,
-                                19: 249,
-                                20: 250
+                                1: 610, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 925 // uncertain!
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 251,
-                                2: 252,
-                                3: 253,
-                                4: 254,
-                                5: 255,
-                                6: 256,
-                                7: 257,
-                                8: 258,
-                                9: 259,
-                                10: 260,
-                                11: 261,
-                                12: 262,
-                                13: 263,
-                                14: 264,
-                                15: 265,
-                                16: 266,
-                                17: 267,
-                                18: 268,
-                                19: 269,
-                                20: 270
+                                1: 686, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 1040 // uncertain!
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 271,
-                                2: 272,
-                                3: 273,
-                                4: 274,
-                                5: 275,
-                                6: 276,
-                                7: 277,
-                                8: 278,
-                                9: 279,
-                                10: 280,
-                                11: 281,
-                                12: 282,
-                                13: 283,
-                                14: 284,
-                                15: 285,
-                                16: 286,
-                                17: 287,
-                                18: 288,
-                                19: 289,
-                                20: 290
+                                1: 762, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 1156 // uncertain!
                             }
                         }
                     }
@@ -808,77 +777,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 1,
-                                2: 2,
-                                3: 3,
-                                4: 4,
-                                5: 5,
-                                6: 6,
-                                7: 7,
-                                8: 8,
-                                9: 9,
-                                10: 10,
-                                11: 11,
-                                12: 12,
-                                13: 13,
-                                14: 14,
-                                15: 15,
-                                16: 16,
-                                17: 17,
-                                18: 18,
-                                19: 19,
-                                20: 20
+                                1: 12,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 67
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 21,
-                                2: 22,
-                                3: 23,
-                                4: 24,
-                                5: 25,
-                                6: 26,
-                                7: 27,
-                                8: 28,
-                                9: 29,
-                                10: 30,
-                                11: 31,
-                                12: 32,
-                                13: 33,
-                                14: 34,
-                                15: 35,
-                                16: 36,
-                                17: 37,
-                                18: 38,
-                                19: 39,
-                                20: 40
+                                1: 14,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 76
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 41,
-                                2: 42,
-                                3: 43,
-                                4: 44,
-                                5: 45,
-                                6: 46,
-                                7: 47,
-                                8: 48,
-                                9: 49,
-                                10: 50,
-                                11: 51,
-                                12: 52,
-                                13: 53,
-                                14: 54,
-                                15: 55,
-                                16: 56,
-                                17: 57,
-                                18: 58,
-                                19: 59,
-                                20: 60
+                                1: 15,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 84
                             }
                         }
                     }
@@ -887,77 +853,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 61,
-                                2: 62,
-                                3: 63,
-                                4: 64,
-                                5: 65,
-                                6: 66,
-                                7: 67,
-                                8: 68,
-                                9: 69,
-                                10: 70,
-                                11: 71,
-                                12: 72,
-                                13: 73,
-                                14: 74,
-                                15: 75,
-                                16: 76,
-                                17: 77,
-                                18: 78,
-                                19: 79,
-                                20: 80
+                                1: 85,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 185
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 81,
-                                2: 82,
-                                3: 83,
-                                4: 84,
-                                5: 85,
-                                6: 86,
-                                7: 87,
-                                8: 88,
-                                9: 89,
-                                10: 90,
-                                11: 91,
-                                12: 92,
-                                13: 93,
-                                14: 94,
-                                15: 95,
-                                16: 96,
-                                17: 97,
-                                18: 98,
-                                19: 99,
-                                20: 100
+                                1: 95,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 208
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 101,
-                                2: 102,
-                                3: 103,
-                                4: 104,
-                                5: 105,
-                                6: 106,
-                                7: 107,
-                                8: 108,
-                                9: 109,
-                                10: 110,
-                                11: 111,
-                                12: 112,
-                                13: 113,
-                                14: 114,
-                                15: 115,
-                                16: 116,
-                                17: 117,
-                                18: 118,
-                                19: 119,
-                                20: 120
+                                1: 106,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 231
                             }
                         }
                     }
@@ -966,77 +929,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 121,
-                                2: 122,
-                                3: 123,
-                                4: 124,
-                                5: 125,
-                                6: 126,
-                                7: 127,
-                                8: 128,
-                                9: 129,
-                                10: 130,
-                                11: 131,
-                                12: 132,
-                                13: 133,
-                                14: 134,
-                                15: 135,
-                                16: 136,
-                                17: 137,
-                                18: 138,
-                                19: 139,
-                                20: 130
+                                1: 215,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 339
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 131,
-                                2: 132,
-                                3: 133,
-                                4: 134,
-                                5: 135,
-                                6: 136,
-                                7: 137,
-                                8: 138,
-                                9: 139,
-                                10: 140,
-                                11: 141,
-                                12: 142,
-                                13: 143,
-                                14: 144,
-                                15: 145,
-                                16: 146,
-                                17: 147,
-                                18: 148,
-                                19: 149,
-                                20: 150
+                                1: 241,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 381
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 151,
-                                2: 152,
-                                3: 153,
-                                4: 154,
-                                5: 155,
-                                6: 156,
-                                7: 157,
-                                8: 158,
-                                9: 159,
-                                10: 160,
-                                11: 161,
-                                12: 162,
-                                13: 163,
-                                14: 164,
-                                15: 165,
-                                16: 166,
-                                17: 167,
-                                18: 168,
-                                19: 169,
-                                20: 170
+                                1: 268,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 424
                             }
                         }
                     }
@@ -1045,77 +1005,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 171,
-                                2: 172,
-                                3: 173,
-                                4: 174,
-                                5: 175,
-                                6: 176,
-                                7: 177,
-                                8: 178,
-                                9: 179,
-                                10: 180,
-                                11: 181,
-                                12: 182,
-                                13: 183,
-                                14: 184,
-                                15: 185,
-                                16: 186,
-                                17: 187,
-                                18: 188,
-                                19: 189,
-                                20: 190
+                                1: 390,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 546 // uncertain!
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 191,
-                                2: 192,
-                                3: 193,
-                                4: 194,
-                                5: 195,
-                                6: 196,
-                                7: 197,
-                                8: 198,
-                                9: 199,
-                                10: 200,
-                                11: 201,
-                                12: 202,
-                                13: 203,
-                                14: 204,
-                                15: 205,
-                                16: 206,
-                                17: 207,
-                                18: 208,
-                                19: 209,
-                                20: 210
+                                1: 439,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 615
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 211,
-                                2: 212,
-                                3: 213,
-                                4: 214,
-                                5: 215,
-                                6: 216,
-                                7: 217,
-                                8: 218,
-                                9: 219,
-                                10: 220,
-                                11: 221,
-                                12: 222,
-                                13: 223,
-                                14: 224,
-                                15: 225,
-                                16: 226,
-                                17: 227,
-                                18: 228,
-                                19: 229,
-                                20: 230
+                                1: 488,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 683
                             }
                         }
                     }
@@ -1124,77 +1081,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 231,
-                                2: 232,
-                                3: 233,
-                                4: 234,
-                                5: 235,
-                                6: 236,
-                                7: 237,
-                                8: 238,
-                                9: 239,
-                                10: 240,
-                                11: 241,
-                                12: 242,
-                                13: 243,
-                                14: 244,
-                                15: 245,
-                                16: 246,
-                                17: 247,
-                                18: 248,
-                                19: 249,
-                                20: 250
+                                1: 610, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 925 // uncertain!
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 251,
-                                2: 252,
-                                3: 253,
-                                4: 254,
-                                5: 255,
-                                6: 256,
-                                7: 257,
-                                8: 258,
-                                9: 259,
-                                10: 260,
-                                11: 261,
-                                12: 262,
-                                13: 263,
-                                14: 264,
-                                15: 265,
-                                16: 266,
-                                17: 267,
-                                18: 268,
-                                19: 269,
-                                20: 270
+                                1: 686, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 1040 // uncertain!
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 271,
-                                2: 272,
-                                3: 273,
-                                4: 274,
-                                5: 275,
-                                6: 276,
-                                7: 277,
-                                8: 278,
-                                9: 279,
-                                10: 280,
-                                11: 281,
-                                12: 282,
-                                13: 283,
-                                14: 284,
-                                15: 285,
-                                16: 286,
-                                17: 287,
-                                18: 288,
-                                19: 289,
-                                20: 290
+                                1: 762, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 1156 // uncertain!
                             }
                         }
                     }
@@ -1207,77 +1161,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 1,
-                                2: 2,
-                                3: 3,
-                                4: 4,
-                                5: 5,
-                                6: 6,
-                                7: 7,
-                                8: 8,
-                                9: 9,
-                                10: 10,
-                                11: 11,
-                                12: 12,
-                                13: 13,
-                                14: 14,
-                                15: 15,
-                                16: 16,
-                                17: 17,
-                                18: 18,
-                                19: 19,
-                                20: 20
+                                1: 12,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 67
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 21,
-                                2: 22,
-                                3: 23,
-                                4: 24,
-                                5: 25,
-                                6: 26,
-                                7: 27,
-                                8: 28,
-                                9: 29,
-                                10: 30,
-                                11: 31,
-                                12: 32,
-                                13: 33,
-                                14: 34,
-                                15: 35,
-                                16: 36,
-                                17: 37,
-                                18: 38,
-                                19: 39,
-                                20: 40
+                                1: 14,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 76
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 41,
-                                2: 42,
-                                3: 43,
-                                4: 44,
-                                5: 45,
-                                6: 46,
-                                7: 47,
-                                8: 48,
-                                9: 49,
-                                10: 50,
-                                11: 51,
-                                12: 52,
-                                13: 53,
-                                14: 54,
-                                15: 55,
-                                16: 56,
-                                17: 57,
-                                18: 58,
-                                19: 59,
-                                20: 60
+                                1: 15,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 84
                             }
                         }
                     }
@@ -1286,77 +1237,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 61,
-                                2: 62,
-                                3: 63,
-                                4: 64,
-                                5: 65,
-                                6: 66,
-                                7: 67,
-                                8: 68,
-                                9: 69,
-                                10: 70,
-                                11: 71,
-                                12: 72,
-                                13: 73,
-                                14: 74,
-                                15: 75,
-                                16: 76,
-                                17: 77,
-                                18: 78,
-                                19: 79,
-                                20: 80
+                                1: 85,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 185
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 81,
-                                2: 82,
-                                3: 83,
-                                4: 84,
-                                5: 85,
-                                6: 86,
-                                7: 87,
-                                8: 88,
-                                9: 89,
-                                10: 90,
-                                11: 91,
-                                12: 92,
-                                13: 93,
-                                14: 94,
-                                15: 95,
-                                16: 96,
-                                17: 97,
-                                18: 98,
-                                19: 99,
-                                20: 100
+                                1: 95,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 208
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 101,
-                                2: 102,
-                                3: 103,
-                                4: 104,
-                                5: 105,
-                                6: 106,
-                                7: 107,
-                                8: 108,
-                                9: 109,
-                                10: 110,
-                                11: 111,
-                                12: 112,
-                                13: 113,
-                                14: 114,
-                                15: 115,
-                                16: 116,
-                                17: 117,
-                                18: 118,
-                                19: 119,
-                                20: 120
+                                1: 106,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 231
                             }
                         }
                     }
@@ -1365,77 +1313,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 121,
-                                2: 122,
-                                3: 123,
-                                4: 124,
-                                5: 125,
-                                6: 126,
-                                7: 127,
-                                8: 128,
-                                9: 129,
-                                10: 130,
-                                11: 131,
-                                12: 132,
-                                13: 133,
-                                14: 134,
-                                15: 135,
-                                16: 136,
-                                17: 137,
-                                18: 138,
-                                19: 139,
-                                20: 130
+                                1: 215,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 339
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 131,
-                                2: 132,
-                                3: 133,
-                                4: 134,
-                                5: 135,
-                                6: 136,
-                                7: 137,
-                                8: 138,
-                                9: 139,
-                                10: 140,
-                                11: 141,
-                                12: 142,
-                                13: 143,
-                                14: 144,
-                                15: 145,
-                                16: 146,
-                                17: 147,
-                                18: 148,
-                                19: 149,
-                                20: 150
+                                1: 241,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 381
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 151,
-                                2: 152,
-                                3: 153,
-                                4: 154,
-                                5: 155,
-                                6: 156,
-                                7: 157,
-                                8: 158,
-                                9: 159,
-                                10: 160,
-                                11: 161,
-                                12: 162,
-                                13: 163,
-                                14: 164,
-                                15: 165,
-                                16: 166,
-                                17: 167,
-                                18: 168,
-                                19: 169,
-                                20: 170
+                                1: 268,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 424
                             }
                         }
                     }
@@ -1444,77 +1389,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 171,
-                                2: 172,
-                                3: 173,
-                                4: 174,
-                                5: 175,
-                                6: 176,
-                                7: 177,
-                                8: 178,
-                                9: 179,
-                                10: 180,
-                                11: 181,
-                                12: 182,
-                                13: 183,
-                                14: 184,
-                                15: 185,
-                                16: 186,
-                                17: 187,
-                                18: 188,
-                                19: 189,
-                                20: 190
+                                1: 390,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 546 // uncertain!
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 191,
-                                2: 192,
-                                3: 193,
-                                4: 194,
-                                5: 195,
-                                6: 196,
-                                7: 197,
-                                8: 198,
-                                9: 199,
-                                10: 200,
-                                11: 201,
-                                12: 202,
-                                13: 203,
-                                14: 204,
-                                15: 205,
-                                16: 206,
-                                17: 207,
-                                18: 208,
-                                19: 209,
-                                20: 210
+                                1: 439,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 615
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 211,
-                                2: 212,
-                                3: 213,
-                                4: 214,
-                                5: 215,
-                                6: 216,
-                                7: 217,
-                                8: 218,
-                                9: 219,
-                                10: 220,
-                                11: 221,
-                                12: 222,
-                                13: 223,
-                                14: 224,
-                                15: 225,
-                                16: 226,
-                                17: 227,
-                                18: 228,
-                                19: 229,
-                                20: 230
+                                1: 488,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 683
                             }
                         }
                     }
@@ -1523,77 +1465,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 231,
-                                2: 232,
-                                3: 233,
-                                4: 234,
-                                5: 235,
-                                6: 236,
-                                7: 237,
-                                8: 238,
-                                9: 239,
-                                10: 240,
-                                11: 241,
-                                12: 242,
-                                13: 243,
-                                14: 244,
-                                15: 245,
-                                16: 246,
-                                17: 247,
-                                18: 248,
-                                19: 249,
-                                20: 250
+                                1: 610, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 925 // uncertain!
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 251,
-                                2: 252,
-                                3: 253,
-                                4: 254,
-                                5: 255,
-                                6: 256,
-                                7: 257,
-                                8: 258,
-                                9: 259,
-                                10: 260,
-                                11: 261,
-                                12: 262,
-                                13: 263,
-                                14: 264,
-                                15: 265,
-                                16: 266,
-                                17: 267,
-                                18: 268,
-                                19: 269,
-                                20: 270
+                                1: 686, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 1040 // uncertain!
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 271,
-                                2: 272,
-                                3: 273,
-                                4: 274,
-                                5: 275,
-                                6: 276,
-                                7: 277,
-                                8: 278,
-                                9: 279,
-                                10: 280,
-                                11: 281,
-                                12: 282,
-                                13: 283,
-                                14: 284,
-                                15: 285,
-                                16: 286,
-                                17: 287,
-                                18: 288,
-                                19: 289,
-                                20: 290
+                                1: 762, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 1156 // uncertain!
                             }
                         }
                     }
@@ -1606,77 +1545,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 1,
-                                2: 2,
-                                3: 3,
-                                4: 4,
-                                5: 5,
-                                6: 6,
-                                7: 7,
-                                8: 8,
-                                9: 9,
-                                10: 10,
-                                11: 11,
-                                12: 12,
-                                13: 13,
-                                14: 14,
-                                15: 15,
-                                16: 16,
-                                17: 17,
-                                18: 18,
-                                19: 19,
-                                20: 20
+                                1: 12,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 67
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 21,
-                                2: 22,
-                                3: 23,
-                                4: 24,
-                                5: 25,
-                                6: 26,
-                                7: 27,
-                                8: 28,
-                                9: 29,
-                                10: 30,
-                                11: 31,
-                                12: 32,
-                                13: 33,
-                                14: 34,
-                                15: 35,
-                                16: 36,
-                                17: 37,
-                                18: 38,
-                                19: 39,
-                                20: 40
+                                1: 14,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 76
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 41,
-                                2: 42,
-                                3: 43,
-                                4: 44,
-                                5: 45,
-                                6: 46,
-                                7: 47,
-                                8: 48,
-                                9: 49,
-                                10: 50,
-                                11: 51,
-                                12: 52,
-                                13: 53,
-                                14: 54,
-                                15: 55,
-                                16: 56,
-                                17: 57,
-                                18: 58,
-                                19: 59,
-                                20: 60
+                                1: 15,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 84
                             }
                         }
                     }
@@ -1685,77 +1621,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 61,
-                                2: 62,
-                                3: 63,
-                                4: 64,
-                                5: 65,
-                                6: 66,
-                                7: 67,
-                                8: 68,
-                                9: 69,
-                                10: 70,
-                                11: 71,
-                                12: 72,
-                                13: 73,
-                                14: 74,
-                                15: 75,
-                                16: 76,
-                                17: 77,
-                                18: 78,
-                                19: 79,
-                                20: 80
+                                1: 85,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 185
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 81,
-                                2: 82,
-                                3: 83,
-                                4: 84,
-                                5: 85,
-                                6: 86,
-                                7: 87,
-                                8: 88,
-                                9: 89,
-                                10: 90,
-                                11: 91,
-                                12: 92,
-                                13: 93,
-                                14: 94,
-                                15: 95,
-                                16: 96,
-                                17: 97,
-                                18: 98,
-                                19: 99,
-                                20: 100
+                                1: 95,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 208
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 101,
-                                2: 102,
-                                3: 103,
-                                4: 104,
-                                5: 105,
-                                6: 106,
-                                7: 107,
-                                8: 108,
-                                9: 109,
-                                10: 110,
-                                11: 111,
-                                12: 112,
-                                13: 113,
-                                14: 114,
-                                15: 115,
-                                16: 116,
-                                17: 117,
-                                18: 118,
-                                19: 119,
-                                20: 120
+                                1: 106,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 231
                             }
                         }
                     }
@@ -1764,77 +1697,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 121,
-                                2: 122,
-                                3: 123,
-                                4: 124,
-                                5: 125,
-                                6: 126,
-                                7: 127,
-                                8: 128,
-                                9: 129,
-                                10: 130,
-                                11: 131,
-                                12: 132,
-                                13: 133,
-                                14: 134,
-                                15: 135,
-                                16: 136,
-                                17: 137,
-                                18: 138,
-                                19: 139,
-                                20: 130
+                                1: 215,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 339
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 131,
-                                2: 132,
-                                3: 133,
-                                4: 134,
-                                5: 135,
-                                6: 136,
-                                7: 137,
-                                8: 138,
-                                9: 139,
-                                10: 140,
-                                11: 141,
-                                12: 142,
-                                13: 143,
-                                14: 144,
-                                15: 145,
-                                16: 146,
-                                17: 147,
-                                18: 148,
-                                19: 149,
-                                20: 150
+                                1: 241,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 381
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 151,
-                                2: 152,
-                                3: 153,
-                                4: 154,
-                                5: 155,
-                                6: 156,
-                                7: 157,
-                                8: 158,
-                                9: 159,
-                                10: 160,
-                                11: 161,
-                                12: 162,
-                                13: 163,
-                                14: 164,
-                                15: 165,
-                                16: 166,
-                                17: 167,
-                                18: 168,
-                                19: 169,
-                                20: 170
+                                1: 268,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 424
                             }
                         }
                     }
@@ -1843,77 +1773,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 171,
-                                2: 172,
-                                3: 173,
-                                4: 174,
-                                5: 175,
-                                6: 176,
-                                7: 177,
-                                8: 178,
-                                9: 179,
-                                10: 180,
-                                11: 181,
-                                12: 182,
-                                13: 183,
-                                14: 184,
-                                15: 185,
-                                16: 186,
-                                17: 187,
-                                18: 188,
-                                19: 189,
-                                20: 190
+                                1: 390,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 546 // uncertain!
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 191,
-                                2: 192,
-                                3: 193,
-                                4: 194,
-                                5: 195,
-                                6: 196,
-                                7: 197,
-                                8: 198,
-                                9: 199,
-                                10: 200,
-                                11: 201,
-                                12: 202,
-                                13: 203,
-                                14: 204,
-                                15: 205,
-                                16: 206,
-                                17: 207,
-                                18: 208,
-                                19: 209,
-                                20: 210
+                                1: 439,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 615
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 211,
-                                2: 212,
-                                3: 213,
-                                4: 214,
-                                5: 215,
-                                6: 216,
-                                7: 217,
-                                8: 218,
-                                9: 219,
-                                10: 220,
-                                11: 221,
-                                12: 222,
-                                13: 223,
-                                14: 224,
-                                15: 225,
-                                16: 226,
-                                17: 227,
-                                18: 228,
-                                19: 229,
-                                20: 230
+                                1: 488,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 683
                             }
                         }
                     }
@@ -1922,77 +1849,74 @@ swlcalc.data.glyph_data = {
                     quality: {
                         'crude': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 231,
-                                2: 232,
-                                3: 233,
-                                4: 234,
-                                5: 235,
-                                6: 236,
-                                7: 237,
-                                8: 238,
-                                9: 239,
-                                10: 240,
-                                11: 241,
-                                12: 242,
-                                13: 243,
-                                14: 244,
-                                15: 245,
-                                16: 246,
-                                17: 247,
-                                18: 248,
-                                19: 249,
-                                20: 250
+                                1: 610, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 925 // uncertain!
                             }
                         },
                         'simple': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 251,
-                                2: 252,
-                                3: 253,
-                                4: 254,
-                                5: 255,
-                                6: 256,
-                                7: 257,
-                                8: 258,
-                                9: 259,
-                                10: 260,
-                                11: 261,
-                                12: 262,
-                                13: 263,
-                                14: 264,
-                                15: 265,
-                                16: 266,
-                                17: 267,
-                                18: 268,
-                                19: 269,
-                                20: 270
+                                1: 686, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 1040 // uncertain!
                             }
                         },
                         'intricate': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 271,
-                                2: 272,
-                                3: 273,
-                                4: 274,
-                                5: 275,
-                                6: 276,
-                                7: 277,
-                                8: 278,
-                                9: 279,
-                                10: 280,
-                                11: 281,
-                                12: 282,
-                                13: 283,
-                                14: 284,
-                                15: 285,
-                                16: 286,
-                                17: 287,
-                                18: 288,
-                                19: 289,
-                                20: 290
+                                1: 762, // uncertain!
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 1156 // uncertain!
                             }
                         }
                     }

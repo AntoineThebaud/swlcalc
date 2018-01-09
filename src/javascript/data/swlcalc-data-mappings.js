@@ -44,6 +44,14 @@ swlcalc.data.rarity_mapping = {
         'epic': 'purple',
         'mythic': 'yellow',
         'legendary': 'red'
+    },
+    to_max_level: {
+        'none': 0,
+        'standard': 20,
+        'superior': 25,
+        'epic': 30,
+        'mythic': 35,
+        'legendary': 70
     }
 };
 

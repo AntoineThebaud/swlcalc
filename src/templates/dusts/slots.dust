@@ -21,7 +21,7 @@
                 </select>
                 {:else}
                 <select id="{id_prefix}-wtype" title="Please select weapon type">
-                    <!-- <option value="none" selected="true">None</option> TODO : None value temporary disabled-->
+                    <option value="none" selected="true">None</option>
                     <option value="blade" selected="true">Blade</option>
                     <option value="hammer">Hammer</option>
                     <option value="fist">Fist</option>
@@ -76,7 +76,7 @@
             </td>
             <td class="item-select">
                 <select id="{id_prefix}-glyph" title="Please select stat">
-                    <!-- <option value="none" selected="true">None</option> TODO : None value temporary disabled-->
+                    <option value="none" selected="true">None</option>
                     <option value="critical-rating">Critical Rating</option>
                     <option value="critical-power">Critical Power</option>
                     <option value="hit-rating">Hit Rating</option>

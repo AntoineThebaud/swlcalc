@@ -1,71 +1,82 @@
 var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
-// OLD STRUCTURE
-// 'weapon': {
-//         '10.X': {
-//             weapon_power: 666
-//         }
-// },
-// 'head': {
-//         heal_dps: {
-//             'ql10.X': {
-//                 rating: 666
-//             }
-//         }
-// }
-
-//TODO : to complete with missing values
 swlcalc.data.custom_gear_data = {
     slot: {
-        // WEAPON --------------------------------------------------------
         'weapon': {
             rarity: {
                 'standard': {
                     quality: {
                         'mkI': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0 //TODO : placeholder value for the moment
                             }
                         },
                         'mkII': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0 //TODO : placeholder value for the moment
                             }
                         },
                         'mkIII': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0 //TODO : placeholder value for the moment
                             }
                         }
                     }
@@ -74,47 +85,89 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'mkI': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0 //TODO : placeholder value for the moment
                             }
                         },
                         'mkII': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0 //TODO : placeholder value for the moment
                             }
                         },
                         'mkIII': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0 //TODO : placeholder value for the moment
                             }
                         }
                     }
@@ -123,47 +176,104 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'mkI': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0 //TODO : placeholder value for the moment
                             }
                         },
                         'mkII': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0 //TODO : placeholder value for the moment
                             }
                         },
                         'mkIII': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0 //TODO : placeholder value for the moment
                             }
                         }
                     }
@@ -172,47 +282,119 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'mkI': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0 //TODO : placeholder value for the moment
                             }
                         },
                         'mkII': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0 //TODO : placeholder value for the moment
                             }
                         },
                         'mkIII': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0 //TODO : placeholder value for the moment
                             }
                         }
                     }
@@ -221,101 +403,304 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'mkI': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0, //TODO : placeholder value for the moment
+                                36: 0, //TODO : placeholder value for the moment
+                                37: 0, //TODO : placeholder value for the moment
+                                38: 0, //TODO : placeholder value for the moment
+                                39: 0, //TODO : placeholder value for the moment
+                                40: 0, //TODO : placeholder value for the moment
+                                41: 0, //TODO : placeholder value for the moment
+                                42: 0, //TODO : placeholder value for the moment
+                                43: 0, //TODO : placeholder value for the moment
+                                44: 0, //TODO : placeholder value for the moment
+                                45: 0, //TODO : placeholder value for the moment
+                                46: 0, //TODO : placeholder value for the moment
+                                47: 0, //TODO : placeholder value for the moment
+                                48: 0, //TODO : placeholder value for the moment
+                                49: 0, //TODO : placeholder value for the moment
+                                50: 0, //TODO : placeholder value for the moment
+                                51: 0, //TODO : placeholder value for the moment
+                                52: 0, //TODO : placeholder value for the moment
+                                53: 0, //TODO : placeholder value for the moment
+                                54: 0, //TODO : placeholder value for the moment
+                                55: 0, //TODO : placeholder value for the moment
+                                56: 0, //TODO : placeholder value for the moment
+                                57: 0, //TODO : placeholder value for the moment
+                                58: 0, //TODO : placeholder value for the moment
+                                59: 0, //TODO : placeholder value for the moment
+                                60: 0, //TODO : placeholder value for the moment
+                                61: 0, //TODO : placeholder value for the moment
+                                62: 0, //TODO : placeholder value for the moment
+                                63: 0, //TODO : placeholder value for the moment
+                                64: 0, //TODO : placeholder value for the moment
+                                65: 0, //TODO : placeholder value for the moment
+                                66: 0, //TODO : placeholder value for the moment
+                                67: 0, //TODO : placeholder value for the moment
+                                68: 0, //TODO : placeholder value for the moment
+                                69: 0, //TODO : placeholder value for the moment
+                                70: 0 //TODO : placeholder value for the moment
                             }
                         },
                         'mkII': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0, //TODO : placeholder value for the moment
+                                36: 0, //TODO : placeholder value for the moment
+                                37: 0, //TODO : placeholder value for the moment
+                                38: 0, //TODO : placeholder value for the moment
+                                39: 0, //TODO : placeholder value for the moment
+                                40: 0, //TODO : placeholder value for the moment
+                                41: 0, //TODO : placeholder value for the moment
+                                42: 0, //TODO : placeholder value for the moment
+                                43: 0, //TODO : placeholder value for the moment
+                                44: 0, //TODO : placeholder value for the moment
+                                45: 0, //TODO : placeholder value for the moment
+                                46: 0, //TODO : placeholder value for the moment
+                                47: 0, //TODO : placeholder value for the moment
+                                48: 0, //TODO : placeholder value for the moment
+                                49: 0, //TODO : placeholder value for the moment
+                                50: 0, //TODO : placeholder value for the moment
+                                51: 0, //TODO : placeholder value for the moment
+                                52: 0, //TODO : placeholder value for the moment
+                                53: 0, //TODO : placeholder value for the moment
+                                54: 0, //TODO : placeholder value for the moment
+                                55: 0, //TODO : placeholder value for the moment
+                                56: 0, //TODO : placeholder value for the moment
+                                57: 0, //TODO : placeholder value for the moment
+                                58: 0, //TODO : placeholder value for the moment
+                                59: 0, //TODO : placeholder value for the moment
+                                60: 0, //TODO : placeholder value for the moment
+                                61: 0, //TODO : placeholder value for the moment
+                                62: 0, //TODO : placeholder value for the moment
+                                63: 0, //TODO : placeholder value for the moment
+                                64: 0, //TODO : placeholder value for the moment
+                                65: 0, //TODO : placeholder value for the moment
+                                66: 0, //TODO : placeholder value for the moment
+                                67: 0, //TODO : placeholder value for the moment
+                                68: 0, //TODO : placeholder value for the moment
+                                69: 0, //TODO : placeholder value for the moment
+                                70: 0 //TODO : placeholder value for the moment
                             }
                         },
                         'mkIII': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 0, //TODO : placeholder value for the moment
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0, //TODO : placeholder value for the moment
+                                36: 0, //TODO : placeholder value for the moment
+                                37: 0, //TODO : placeholder value for the moment
+                                38: 0, //TODO : placeholder value for the moment
+                                39: 0, //TODO : placeholder value for the moment
+                                40: 0, //TODO : placeholder value for the moment
+                                41: 0, //TODO : placeholder value for the moment
+                                42: 0, //TODO : placeholder value for the moment
+                                43: 0, //TODO : placeholder value for the moment
+                                44: 0, //TODO : placeholder value for the moment
+                                45: 0, //TODO : placeholder value for the moment
+                                46: 0, //TODO : placeholder value for the moment
+                                47: 0, //TODO : placeholder value for the moment
+                                48: 0, //TODO : placeholder value for the moment
+                                49: 0, //TODO : placeholder value for the moment
+                                50: 0, //TODO : placeholder value for the moment
+                                51: 0, //TODO : placeholder value for the moment
+                                52: 0, //TODO : placeholder value for the moment
+                                53: 0, //TODO : placeholder value for the moment
+                                54: 0, //TODO : placeholder value for the moment
+                                55: 0, //TODO : placeholder value for the moment
+                                56: 0, //TODO : placeholder value for the moment
+                                57: 0, //TODO : placeholder value for the moment
+                                58: 0, //TODO : placeholder value for the moment
+                                59: 0, //TODO : placeholder value for the moment
+                                60: 0, //TODO : placeholder value for the moment
+                                61: 0, //TODO : placeholder value for the moment
+                                62: 0, //TODO : placeholder value for the moment
+                                63: 0, //TODO : placeholder value for the moment
+                                64: 0, //TODO : placeholder value for the moment
+                                65: 0, //TODO : placeholder value for the moment
+                                66: 0, //TODO : placeholder value for the moment
+                                67: 0, //TODO : placeholder value for the moment
+                                68: 0, //TODO : placeholder value for the moment
+                                69: 0, //TODO : placeholder value for the moment
+                                70: 0 //TODO : placeholder value for the moment
                             }
                         }
                     }
                 }
             }
         },
-        // HEAD TALISMAN -------------------------------------------------
         'head': {
             rarity : {
                 'standard': {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 42,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 232
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 47,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 263
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 53,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 293
                             }
                         }
                     }
@@ -324,47 +709,89 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 293,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 584
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 329,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 657
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 366,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 730
                             }
                         }
                     }
@@ -373,47 +800,104 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 677,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 1070
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 762,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 1204
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 847,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 1337
                             }
                         }
                     }
@@ -422,47 +906,119 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 1232,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 1725
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 1386,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 1941
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 1540,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 2156
                             }
                         }
                     }
@@ -471,101 +1027,304 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 1923,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0, //TODO : placeholder value for the moment
+                                36: 0, //TODO : placeholder value for the moment
+                                37: 0, //TODO : placeholder value for the moment
+                                38: 0, //TODO : placeholder value for the moment
+                                39: 0, //TODO : placeholder value for the moment
+                                40: 0, //TODO : placeholder value for the moment
+                                41: 0, //TODO : placeholder value for the moment
+                                42: 0, //TODO : placeholder value for the moment
+                                43: 0, //TODO : placeholder value for the moment
+                                44: 0, //TODO : placeholder value for the moment
+                                45: 0, //TODO : placeholder value for the moment
+                                46: 0, //TODO : placeholder value for the moment
+                                47: 0, //TODO : placeholder value for the moment
+                                48: 0, //TODO : placeholder value for the moment
+                                49: 0, //TODO : placeholder value for the moment
+                                50: 0, //TODO : placeholder value for the moment
+                                51: 0, //TODO : placeholder value for the moment
+                                52: 0, //TODO : placeholder value for the moment
+                                53: 0, //TODO : placeholder value for the moment
+                                54: 0, //TODO : placeholder value for the moment
+                                55: 0, //TODO : placeholder value for the moment
+                                56: 0, //TODO : placeholder value for the moment
+                                57: 0, //TODO : placeholder value for the moment
+                                58: 0, //TODO : placeholder value for the moment
+                                59: 0, //TODO : placeholder value for the moment
+                                60: 0, //TODO : placeholder value for the moment
+                                61: 0, //TODO : placeholder value for the moment
+                                62: 0, //TODO : placeholder value for the moment
+                                63: 0, //TODO : placeholder value for the moment
+                                64: 0, //TODO : placeholder value for the moment
+                                65: 0, //TODO : placeholder value for the moment
+                                66: 0, //TODO : placeholder value for the moment
+                                67: 0, //TODO : placeholder value for the moment
+                                68: 0, //TODO : placeholder value for the moment
+                                69: 0, //TODO : placeholder value for the moment
+                                70: 2920
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 2164,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0, //TODO : placeholder value for the moment
+                                36: 0, //TODO : placeholder value for the moment
+                                37: 0, //TODO : placeholder value for the moment
+                                38: 0, //TODO : placeholder value for the moment
+                                39: 0, //TODO : placeholder value for the moment
+                                40: 0, //TODO : placeholder value for the moment
+                                41: 0, //TODO : placeholder value for the moment
+                                42: 0, //TODO : placeholder value for the moment
+                                43: 0, //TODO : placeholder value for the moment
+                                44: 0, //TODO : placeholder value for the moment
+                                45: 0, //TODO : placeholder value for the moment
+                                46: 0, //TODO : placeholder value for the moment
+                                47: 0, //TODO : placeholder value for the moment
+                                48: 0, //TODO : placeholder value for the moment
+                                49: 0, //TODO : placeholder value for the moment
+                                50: 0, //TODO : placeholder value for the moment
+                                51: 0, //TODO : placeholder value for the moment
+                                52: 0, //TODO : placeholder value for the moment
+                                53: 0, //TODO : placeholder value for the moment
+                                54: 0, //TODO : placeholder value for the moment
+                                55: 0, //TODO : placeholder value for the moment
+                                56: 0, //TODO : placeholder value for the moment
+                                57: 0, //TODO : placeholder value for the moment
+                                58: 0, //TODO : placeholder value for the moment
+                                59: 0, //TODO : placeholder value for the moment
+                                60: 0, //TODO : placeholder value for the moment
+                                61: 0, //TODO : placeholder value for the moment
+                                62: 0, //TODO : placeholder value for the moment
+                                63: 0, //TODO : placeholder value for the moment
+                                64: 0, //TODO : placeholder value for the moment
+                                65: 0, //TODO : placeholder value for the moment
+                                66: 0, //TODO : placeholder value for the moment
+                                67: 0, //TODO : placeholder value for the moment
+                                68: 0, //TODO : placeholder value for the moment
+                                69: 0, //TODO : placeholder value for the moment
+                                70: 3285
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 2404,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0, //TODO : placeholder value for the moment
+                                36: 0, //TODO : placeholder value for the moment
+                                37: 0, //TODO : placeholder value for the moment
+                                38: 0, //TODO : placeholder value for the moment
+                                39: 0, //TODO : placeholder value for the moment
+                                40: 0, //TODO : placeholder value for the moment
+                                41: 0, //TODO : placeholder value for the moment
+                                42: 0, //TODO : placeholder value for the moment
+                                43: 0, //TODO : placeholder value for the moment
+                                44: 0, //TODO : placeholder value for the moment
+                                45: 0, //TODO : placeholder value for the moment
+                                46: 0, //TODO : placeholder value for the moment
+                                47: 0, //TODO : placeholder value for the moment
+                                48: 0, //TODO : placeholder value for the moment
+                                49: 0, //TODO : placeholder value for the moment
+                                50: 0, //TODO : placeholder value for the moment
+                                51: 0, //TODO : placeholder value for the moment
+                                52: 0, //TODO : placeholder value for the moment
+                                53: 0, //TODO : placeholder value for the moment
+                                54: 0, //TODO : placeholder value for the moment
+                                55: 0, //TODO : placeholder value for the moment
+                                56: 0, //TODO : placeholder value for the moment
+                                57: 0, //TODO : placeholder value for the moment
+                                58: 0, //TODO : placeholder value for the moment
+                                59: 0, //TODO : placeholder value for the moment
+                                60: 0, //TODO : placeholder value for the moment
+                                61: 0, //TODO : placeholder value for the moment
+                                62: 0, //TODO : placeholder value for the moment
+                                63: 0, //TODO : placeholder value for the moment
+                                64: 0, //TODO : placeholder value for the moment
+                                65: 0, //TODO : placeholder value for the moment
+                                66: 0, //TODO : placeholder value for the moment
+                                67: 0, //TODO : placeholder value for the moment
+                                68: 0, //TODO : placeholder value for the moment
+                                69: 0, //TODO : placeholder value for the moment
+                                70: 3650
                             }
                         }
                     }
                 }
             }
         },
-        // MAJOR TALISMANS -----------------------------------------------
         'major': {
             rarity : {
                 'standard': {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 25,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 140
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 28,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 158
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 32,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 176
                             }
                         }
                     }
@@ -574,47 +1333,89 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 176,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 350
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 198,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 394
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 220,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 438
                             }
                         }
                     }
@@ -623,47 +1424,104 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 406,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 642
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 457,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 722
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 508,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 802
                             }
                         }
                     }
@@ -672,47 +1530,119 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 739,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 1035
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 832,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 1164
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 924,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 1294
                             }
                         }
                     }
@@ -721,101 +1651,304 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 1154,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0, //TODO : placeholder value for the moment
+                                36: 0, //TODO : placeholder value for the moment
+                                37: 0, //TODO : placeholder value for the moment
+                                38: 0, //TODO : placeholder value for the moment
+                                39: 0, //TODO : placeholder value for the moment
+                                40: 0, //TODO : placeholder value for the moment
+                                41: 0, //TODO : placeholder value for the moment
+                                42: 0, //TODO : placeholder value for the moment
+                                43: 0, //TODO : placeholder value for the moment
+                                44: 0, //TODO : placeholder value for the moment
+                                45: 0, //TODO : placeholder value for the moment
+                                46: 0, //TODO : placeholder value for the moment
+                                47: 0, //TODO : placeholder value for the moment
+                                48: 0, //TODO : placeholder value for the moment
+                                49: 0, //TODO : placeholder value for the moment
+                                50: 0, //TODO : placeholder value for the moment
+                                51: 0, //TODO : placeholder value for the moment
+                                52: 0, //TODO : placeholder value for the moment
+                                53: 0, //TODO : placeholder value for the moment
+                                54: 0, //TODO : placeholder value for the moment
+                                55: 0, //TODO : placeholder value for the moment
+                                56: 0, //TODO : placeholder value for the moment
+                                57: 0, //TODO : placeholder value for the moment
+                                58: 0, //TODO : placeholder value for the moment
+                                59: 0, //TODO : placeholder value for the moment
+                                60: 0, //TODO : placeholder value for the moment
+                                61: 0, //TODO : placeholder value for the moment
+                                62: 0, //TODO : placeholder value for the moment
+                                63: 0, //TODO : placeholder value for the moment
+                                64: 0, //TODO : placeholder value for the moment
+                                65: 0, //TODO : placeholder value for the moment
+                                66: 0, //TODO : placeholder value for the moment
+                                67: 0, //TODO : placeholder value for the moment
+                                68: 0, //TODO : placeholder value for the moment
+                                69: 0, //TODO : placeholder value for the moment
+                                70: 1752
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 1298,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0, //TODO : placeholder value for the moment
+                                36: 0, //TODO : placeholder value for the moment
+                                37: 0, //TODO : placeholder value for the moment
+                                38: 0, //TODO : placeholder value for the moment
+                                39: 0, //TODO : placeholder value for the moment
+                                40: 0, //TODO : placeholder value for the moment
+                                41: 0, //TODO : placeholder value for the moment
+                                42: 0, //TODO : placeholder value for the moment
+                                43: 0, //TODO : placeholder value for the moment
+                                44: 0, //TODO : placeholder value for the moment
+                                45: 0, //TODO : placeholder value for the moment
+                                46: 0, //TODO : placeholder value for the moment
+                                47: 0, //TODO : placeholder value for the moment
+                                48: 0, //TODO : placeholder value for the moment
+                                49: 0, //TODO : placeholder value for the moment
+                                50: 0, //TODO : placeholder value for the moment
+                                51: 0, //TODO : placeholder value for the moment
+                                52: 0, //TODO : placeholder value for the moment
+                                53: 0, //TODO : placeholder value for the moment
+                                54: 0, //TODO : placeholder value for the moment
+                                55: 0, //TODO : placeholder value for the moment
+                                56: 0, //TODO : placeholder value for the moment
+                                57: 0, //TODO : placeholder value for the moment
+                                58: 0, //TODO : placeholder value for the moment
+                                59: 0, //TODO : placeholder value for the moment
+                                60: 0, //TODO : placeholder value for the moment
+                                61: 0, //TODO : placeholder value for the moment
+                                62: 0, //TODO : placeholder value for the moment
+                                63: 0, //TODO : placeholder value for the moment
+                                64: 0, //TODO : placeholder value for the moment
+                                65: 0, //TODO : placeholder value for the moment
+                                66: 0, //TODO : placeholder value for the moment
+                                67: 0, //TODO : placeholder value for the moment
+                                68: 0, //TODO : placeholder value for the moment
+                                69: 0, //TODO : placeholder value for the moment
+                                70: 1971
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 1442,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0, //TODO : placeholder value for the moment
+                                36: 0, //TODO : placeholder value for the moment
+                                37: 0, //TODO : placeholder value for the moment
+                                38: 0, //TODO : placeholder value for the moment
+                                39: 0, //TODO : placeholder value for the moment
+                                40: 0, //TODO : placeholder value for the moment
+                                41: 0, //TODO : placeholder value for the moment
+                                42: 0, //TODO : placeholder value for the moment
+                                43: 0, //TODO : placeholder value for the moment
+                                44: 0, //TODO : placeholder value for the moment
+                                45: 0, //TODO : placeholder value for the moment
+                                46: 0, //TODO : placeholder value for the moment
+                                47: 0, //TODO : placeholder value for the moment
+                                48: 0, //TODO : placeholder value for the moment
+                                49: 0, //TODO : placeholder value for the moment
+                                50: 0, //TODO : placeholder value for the moment
+                                51: 0, //TODO : placeholder value for the moment
+                                52: 0, //TODO : placeholder value for the moment
+                                53: 0, //TODO : placeholder value for the moment
+                                54: 0, //TODO : placeholder value for the moment
+                                55: 0, //TODO : placeholder value for the moment
+                                56: 0, //TODO : placeholder value for the moment
+                                57: 0, //TODO : placeholder value for the moment
+                                58: 0, //TODO : placeholder value for the moment
+                                59: 0, //TODO : placeholder value for the moment
+                                60: 0, //TODO : placeholder value for the moment
+                                61: 0, //TODO : placeholder value for the moment
+                                62: 0, //TODO : placeholder value for the moment
+                                63: 0, //TODO : placeholder value for the moment
+                                64: 0, //TODO : placeholder value for the moment
+                                65: 0, //TODO : placeholder value for the moment
+                                66: 0, //TODO : placeholder value for the moment
+                                67: 0, //TODO : placeholder value for the moment
+                                68: 0, //TODO : placeholder value for the moment
+                                69: 0, //TODO : placeholder value for the moment
+                                70: 2190
                             }
                         }
                     }
                 }
             }
         },
-        // MINOR TALISMANS -----------------------------------------------
         'minor': {
             rarity : {
                 'standard': {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 17,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 94
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 19,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 105
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 21,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 117
                             }
                         }
                     }
@@ -824,47 +1957,89 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 117,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 234
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 132,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 263
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 146,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 292
                             }
                         }
                     }
@@ -873,47 +2048,104 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 271,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 428
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 305,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 481
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 339,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 535
                             }
                         }
                     }
@@ -922,47 +2154,119 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 493,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 690
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 554,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 776
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 616,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 862
                             }
                         }
                     }
@@ -971,47 +2275,224 @@ swlcalc.data.custom_gear_data = {
                     quality: {
                         'faded': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 769,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0, //TODO : placeholder value for the moment
+                                36: 0, //TODO : placeholder value for the moment
+                                37: 0, //TODO : placeholder value for the moment
+                                38: 0, //TODO : placeholder value for the moment
+                                39: 0, //TODO : placeholder value for the moment
+                                40: 0, //TODO : placeholder value for the moment
+                                41: 0, //TODO : placeholder value for the moment
+                                42: 0, //TODO : placeholder value for the moment
+                                43: 0, //TODO : placeholder value for the moment
+                                44: 0, //TODO : placeholder value for the moment
+                                45: 0, //TODO : placeholder value for the moment
+                                46: 0, //TODO : placeholder value for the moment
+                                47: 0, //TODO : placeholder value for the moment
+                                48: 0, //TODO : placeholder value for the moment
+                                49: 0, //TODO : placeholder value for the moment
+                                50: 0, //TODO : placeholder value for the moment
+                                51: 0, //TODO : placeholder value for the moment
+                                52: 0, //TODO : placeholder value for the moment
+                                53: 0, //TODO : placeholder value for the moment
+                                54: 0, //TODO : placeholder value for the moment
+                                55: 0, //TODO : placeholder value for the moment
+                                56: 0, //TODO : placeholder value for the moment
+                                57: 0, //TODO : placeholder value for the moment
+                                58: 0, //TODO : placeholder value for the moment
+                                59: 0, //TODO : placeholder value for the moment
+                                60: 0, //TODO : placeholder value for the moment
+                                61: 0, //TODO : placeholder value for the moment
+                                62: 0, //TODO : placeholder value for the moment
+                                63: 0, //TODO : placeholder value for the moment
+                                64: 0, //TODO : placeholder value for the moment
+                                65: 0, //TODO : placeholder value for the moment
+                                66: 0, //TODO : placeholder value for the moment
+                                67: 0, //TODO : placeholder value for the moment
+                                68: 0, //TODO : placeholder value for the moment
+                                69: 0, //TODO : placeholder value for the moment
+                                70: 1168
                             }
                         },
                         'luminous': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 865,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0, //TODO : placeholder value for the moment
+                                36: 0, //TODO : placeholder value for the moment
+                                37: 0, //TODO : placeholder value for the moment
+                                38: 0, //TODO : placeholder value for the moment
+                                39: 0, //TODO : placeholder value for the moment
+                                40: 0, //TODO : placeholder value for the moment
+                                41: 0, //TODO : placeholder value for the moment
+                                42: 0, //TODO : placeholder value for the moment
+                                43: 0, //TODO : placeholder value for the moment
+                                44: 0, //TODO : placeholder value for the moment
+                                45: 0, //TODO : placeholder value for the moment
+                                46: 0, //TODO : placeholder value for the moment
+                                47: 0, //TODO : placeholder value for the moment
+                                48: 0, //TODO : placeholder value for the moment
+                                49: 0, //TODO : placeholder value for the moment
+                                50: 0, //TODO : placeholder value for the moment
+                                51: 0, //TODO : placeholder value for the moment
+                                52: 0, //TODO : placeholder value for the moment
+                                53: 0, //TODO : placeholder value for the moment
+                                54: 0, //TODO : placeholder value for the moment
+                                55: 0, //TODO : placeholder value for the moment
+                                56: 0, //TODO : placeholder value for the moment
+                                57: 0, //TODO : placeholder value for the moment
+                                58: 0, //TODO : placeholder value for the moment
+                                59: 0, //TODO : placeholder value for the moment
+                                60: 0, //TODO : placeholder value for the moment
+                                61: 0, //TODO : placeholder value for the moment
+                                62: 0, //TODO : placeholder value for the moment
+                                63: 0, //TODO : placeholder value for the moment
+                                64: 0, //TODO : placeholder value for the moment
+                                65: 0, //TODO : placeholder value for the moment
+                                66: 0, //TODO : placeholder value for the moment
+                                67: 0, //TODO : placeholder value for the moment
+                                68: 0, //TODO : placeholder value for the moment
+                                69: 0, //TODO : placeholder value for the moment
+                                70: 1314
                             }
                         },
                         'radiant': {
                             level : {
-                                //TODO : placeholder values for the moment
-                                1: 111,
-                                2: 222,
-                                3: 333,
-                                4: 444,
-                                5: 555,
-                                6: 666,
-                                7: 777,
-                                8: 888,
-                                9: 999,
-                                10: 1010
+                                1: 962,
+                                2: 0, //TODO : placeholder value for the moment
+                                3: 0, //TODO : placeholder value for the moment
+                                4: 0, //TODO : placeholder value for the moment
+                                5: 0, //TODO : placeholder value for the moment
+                                6: 0, //TODO : placeholder value for the moment
+                                7: 0, //TODO : placeholder value for the moment
+                                8: 0, //TODO : placeholder value for the moment
+                                9: 0, //TODO : placeholder value for the moment
+                                10: 0, //TODO : placeholder value for the moment
+                                11: 0, //TODO : placeholder value for the moment
+                                12: 0, //TODO : placeholder value for the moment
+                                13: 0, //TODO : placeholder value for the moment
+                                14: 0, //TODO : placeholder value for the moment
+                                15: 0, //TODO : placeholder value for the moment
+                                16: 0, //TODO : placeholder value for the moment
+                                17: 0, //TODO : placeholder value for the moment
+                                18: 0, //TODO : placeholder value for the moment
+                                19: 0, //TODO : placeholder value for the moment
+                                20: 0, //TODO : placeholder value for the moment
+                                21: 0, //TODO : placeholder value for the moment
+                                22: 0, //TODO : placeholder value for the moment
+                                23: 0, //TODO : placeholder value for the moment
+                                24: 0, //TODO : placeholder value for the moment
+                                25: 0, //TODO : placeholder value for the moment
+                                26: 0, //TODO : placeholder value for the moment
+                                27: 0, //TODO : placeholder value for the moment
+                                28: 0, //TODO : placeholder value for the moment
+                                29: 0, //TODO : placeholder value for the moment
+                                30: 0, //TODO : placeholder value for the moment
+                                31: 0, //TODO : placeholder value for the moment
+                                32: 0, //TODO : placeholder value for the moment
+                                33: 0, //TODO : placeholder value for the moment
+                                34: 0, //TODO : placeholder value for the moment
+                                35: 0, //TODO : placeholder value for the moment
+                                36: 0, //TODO : placeholder value for the moment
+                                37: 0, //TODO : placeholder value for the moment
+                                38: 0, //TODO : placeholder value for the moment
+                                39: 0, //TODO : placeholder value for the moment
+                                40: 0, //TODO : placeholder value for the moment
+                                41: 0, //TODO : placeholder value for the moment
+                                42: 0, //TODO : placeholder value for the moment
+                                43: 0, //TODO : placeholder value for the moment
+                                44: 0, //TODO : placeholder value for the moment
+                                45: 0, //TODO : placeholder value for the moment
+                                46: 0, //TODO : placeholder value for the moment
+                                47: 0, //TODO : placeholder value for the moment
+                                48: 0, //TODO : placeholder value for the moment
+                                49: 0, //TODO : placeholder value for the moment
+                                50: 0, //TODO : placeholder value for the moment
+                                51: 0, //TODO : placeholder value for the moment
+                                52: 0, //TODO : placeholder value for the moment
+                                53: 0, //TODO : placeholder value for the moment
+                                54: 0, //TODO : placeholder value for the moment
+                                55: 0, //TODO : placeholder value for the moment
+                                56: 0, //TODO : placeholder value for the moment
+                                57: 0, //TODO : placeholder value for the moment
+                                58: 0, //TODO : placeholder value for the moment
+                                59: 0, //TODO : placeholder value for the moment
+                                60: 0, //TODO : placeholder value for the moment
+                                61: 0, //TODO : placeholder value for the moment
+                                62: 0, //TODO : placeholder value for the moment
+                                63: 0, //TODO : placeholder value for the moment
+                                64: 0, //TODO : placeholder value for the moment
+                                65: 0, //TODO : placeholder value for the moment
+                                66: 0, //TODO : placeholder value for the moment
+                                67: 0, //TODO : placeholder value for the moment
+                                68: 0, //TODO : placeholder value for the moment
+                                69: 0, //TODO : placeholder value for the moment
+                                70: 1460
                             }
                         }
                     }

@@ -112,10 +112,33 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         }
     };
 
-    //TODO : level select must be updated when rarity is changed (max 20 for standard, max 70 for legendary etc.. )
+    /**
+     * Triggered when the value of a rarity select is changed.
+     * Triggers color change for the rarity select that sent the event.
+     * Triggers color change for the related item image border.
+     * Triggers choices list update for the select level of the same slot.
+     */
     this.rarityChange = function(event) {
+        var newRarity = event.target.selectedOptions[0].value;
+
         self.updateColor(event.target);
-        slotObj.updateIconBorder(event.target.selectedOptions[0].value); //TODO : abstract layer ?
+        slotObj.updateIconBorder(newRarity); //TODO : abstract layer ?
+
+        slotObj.el.level.empty();
+
+        var minLvl = 1;
+        var maxLvl = swlcalc.data.rarity_mapping.to_max_level[newRarity];
+        // TODO : the for loop to generate all the values between min(1) & max(20/25/30/35/70) is disabled
+        // as long as intermediary values are not referenced. Thus only min & max are displayed for the moment
+        /*
+        for (i = maxLvl; i >= minLvl ; i--) {
+          slotObj.el.level.append($('<option>', {
+              value: i,
+              text: i
+          }));
+        }*/
+        slotObj.el.level.append($('<option>', {value: maxLvl, text: maxLvl}));
+        slotObj.el.level.append($('<option>', {value: minLvl, text: minLvl}));
         swlcalc.summary.updateAllStats();
     };
 
@@ -123,7 +146,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         swlcalc.summary.updateAllStats();
     };
 
-    //TODO : level select must be updated when rarity is changed (max 20 for standard, max 70 for legendary etc.. )
     this.glyphRarityChange = function(event) {
         self.updateColor(event.target);
         slotObj.updateGlyphIconBorder(event.target.selectedOptions[0].value); //TODO : abstract layer ?
@@ -136,7 +158,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         swlcalc.summary.updateAllStats();
     };
 
-    //TODO : level select must be updated when rarity is changed (max 20 for standard, max 70 for legendary etc.. )
     this.signetRarityChange = function(event) {
         self.updateColor(event.target);
         self.signetChange(event);

@@ -83,8 +83,8 @@ swlcalc = function() {
      */
     var checkIfExported = function() {
         var vars = $.getUrlVars();
-        // length == 8 is pre 1.3 links
-        // length == 9 is post 1.3 links (secondary weapon added)
+        // length == 8 is pre 1.3 links => TODO : not up to date
+        // length == 9 is post 1.3 links (secondary weapon added) => TODO : not up to date
         if (!$.isEmptyObject(vars) && Object.keys(vars).length == 8 || Object.keys(vars).length == 9) {
             swlcalc.import.start(vars);
             return true;

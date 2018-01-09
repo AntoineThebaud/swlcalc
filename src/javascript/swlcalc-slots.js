@@ -165,31 +165,25 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
 
     this.rarity = function() {
         if (arguments.length == 1) {
-            var formatData = arguments[0];
-            this.el.rarity.val(formatData);
+            this.el.rarity.val(arguments[0]);
         } else {
-            var formatData = this.el.rarity.val();
-            return formatData;
+            return this.el.rarity.val();
         }
     };
 
     this.quality = function() {
         if (arguments.length == 1) {
-            var formatData = arguments[0];
-            this.el.quality.val(formatData);
+            this.el.quality.val(arguments[0]);
         } else {
-            var formatData = this.el.quality.val();
-            return formatData;
+            return this.el.quality.val();
         }
     };
 
     this.level = function() {
         if (arguments.length == 1) {
-            var formatData = arguments[0];
-            this.el.level.val(formatData);
+            this.el.level.val(arguments[0]);
         } else {
-            var formatData = this.el.level.val();
-            return formatData;
+            return this.el.level.val();
         }
     };
 
@@ -237,9 +231,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
 
     this.glyphValue = function() {
         //TODO : None value temporary disabled
-        // if (this.glyph() == 'none') {
-        //     return 0;
-        // }
+        if (this.glyph() == 'none') {
+            return 0;
+        }
         // console.log("============================================");
         // console.log("this.glyph() == ");console.log(this.glyph());
         // console.log(swlcalc.data.glyph_data.stat[this.glyph()]);
@@ -439,19 +433,30 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      *                 V
      */
 
+    /**
+     * Reset slot by setting default values for each select
+     */
     this.reset = function() {
-        this.wtype('none');
-        this.rarity('standard');
-        this.itemId('3');
+        this.el.wtype.prop("selectedIndex", 0);
+        this.el.itemId.prop("selectedIndex", 0);
+        this.el.rarity.prop("selectedIndex", 0);
+        this.el.quality.prop("selectedIndex", 0);
         this.el.itemId.change();
-        this.glyph('none');
-        this.glyphRarity('standard');
-        this.glyphQuality('crude');
-        this.glyphLevel(1);
-        this.signetId('none');
-        this.signetRarity('none');
-        this.updateSignet();
+
+        this.el.glyph.prop("selectedIndex", 0);
+        this.el.glyphRarity.prop("selectedIndex", 0);
+        this.el.glyphQuality.prop("selectedIndex", 0);
+        this.el.glyphLevel.prop("selectedIndex", 0);
+
+        this.el.signetId.prop("selectedIndex", 0);
+        this.el.signetRarity.prop("selectedIndex", 0);
+        this.el.signetLevel.prop("selectedIndex", 0);
+
+        this.el.itemId.change();
+        this.el.rarity.change();
         this.el.glyphRarity.change();
+        this.el.signetRarity.change();
+        this.updateSignet();
     };
 
     this.state = function() {
