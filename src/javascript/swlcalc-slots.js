@@ -90,6 +90,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         glyphQuality: $('#' + this.id + '-glyph-quality'),
         glyphLevel: $('#' + this.id + '-glyph-level'),
         glyphValue: $('#' + this.id + '-glyph-value'),
+        glyphStat: $('#' + this.id + '-glyph-stat'),
         glyphIconBorderImg: $('#' + this.id + '-glyph-img-rarity'),
         signetId: $('#' + this.id + '-pick-signet'),
         signetRarity: $('#' + this.id + '-signet-rarity'),
@@ -248,62 +249,16 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
 
     this.updateGlyphValue = function() {
         this.el.glyphValue.html(this.glyphValue() !== 0 ? '+' + this.glyphValue() : 0);
+    };$
+
+    this.updateGlyphStatLabel = function(newStat) {
+        this.el.glyphStat.html(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newStat]);
     };
 
     this.updateGlyphIconBorder = function(rarity) {
         var rarity_url = 'assets/images/icons/' + rarity + '.png';
         this.el.glyphIconBorderImg.attr('src', rarity_url);
     };
-
-    // COST FEATURE DISABLED. NEED REVAMP
-    // this.itemCost = function () {
-    //     // non-custom items do not cost bullion/pantheon
-    //     if(this.item().id > 3) {
-    //         return {
-    //             bullion: 0,
-    //             pantheon: 0
-    //         };
-    //     }
-    //     return swlcalc.data.costs[this.isWeapon() ? 'weapon' : 'talisman'][this.rarity()];
-    // };
-    //
-    // this.glyphCost = function () {
-    //     // items with built in glyphs do not cost bullion/pantheon
-    //     if(this.item().glyph) {
-    //         return {
-    //             bullion: 0,
-    //             pantheon: 0
-    //         };
-    //     }
-    //     return swlcalc.data.costs['glyph'][this.glyphRarity()];
-    // }
-    //
-    // this.blackBullionCost = function() {
-    //     var blackBullions = 0;
-    //     blackBullions += this.glyphCost().bullion;
-    //     blackBullions += this.itemCost().bullion;
-    //     return blackBullions;
-    // };
-    //
-    // this.markOfThePantheonCost = function () {
-    //     return this.itemCost().pantheon || 0;
-    // };
-    //
-    // this.astralFuseCost = function() {
-    //     return this.glyphCost().astral_fuse ? 1 : 0;
-    // };
-    //
-    // this.criterionUpgradeCost = function () {
-    //     return this.itemCost().criterion_upgrade ? 1 : 0;
-    // };
-    //
-    // this.supernalUpgradeCost = function () {
-    //     return this.itemCost().supernal_upgrade ? 1 : 0;
-    // };
-    //
-    // this.eleventhHourCost = function () {
-    //     return this.glyphCost().eleventh_hour_kit ? 1 : 0;
-    // };
 
     /**
      * Signet functions |
@@ -507,4 +462,54 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return val;
         }
     };
+
+    // COST FEATURE DISABLED. NEED REVAMP
+    // this.itemCost = function () {
+    //     // non-custom items do not cost bullion/pantheon
+    //     if(this.item().id > 3) {
+    //         return {
+    //             bullion: 0,
+    //             pantheon: 0
+    //         };
+    //     }
+    //     return swlcalc.data.costs[this.isWeapon() ? 'weapon' : 'talisman'][this.rarity()];
+    // };
+    //
+    // this.glyphCost = function () {
+    //     // items with built in glyphs do not cost bullion/pantheon
+    //     if(this.item().glyph) {
+    //         return {
+    //             bullion: 0,
+    //             pantheon: 0
+    //         };
+    //     }
+    //     return swlcalc.data.costs['glyph'][this.glyphRarity()];
+    // }
+    //
+    // this.blackBullionCost = function() {
+    //     var blackBullions = 0;
+    //     blackBullions += this.glyphCost().bullion;
+    //     blackBullions += this.itemCost().bullion;
+    //     return blackBullions;
+    // };
+    //
+    // this.markOfThePantheonCost = function () {
+    //     return this.itemCost().pantheon || 0;
+    // };
+    //
+    // this.astralFuseCost = function() {
+    //     return this.glyphCost().astral_fuse ? 1 : 0;
+    // };
+    //
+    // this.criterionUpgradeCost = function () {
+    //     return this.itemCost().criterion_upgrade ? 1 : 0;
+    // };
+    //
+    // this.supernalUpgradeCost = function () {
+    //     return this.itemCost().supernal_upgrade ? 1 : 0;
+    // };
+    //
+    // this.eleventhHourCost = function () {
+    //     return this.glyphCost().eleventh_hour_kit ? 1 : 0;
+    // };
 };

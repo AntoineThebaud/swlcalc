@@ -63,7 +63,7 @@ swlcalc.import = function() {
         slotObj.glyphRarity(swlcalc.data.rarity_mapping.to_name[values[4]]);
         slotObj.el.glyphRarity.change();
         // values[5] == Glyph's Stat
-        slotObj.glyph(swlcalc.data.glyph_stat_mapping.to_name[values[5]]);
+        slotObj.glyph(swlcalc.data.glyph_stat_mapping.to_stat[values[5]]);
         slotObj.el.glyph.change();
         // values[6] == Glyph's Quality
         slotObj.glyphQuality(swlcalc.data.glyph_quality_mapping.to_name[values[6]]);

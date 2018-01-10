@@ -77,16 +77,19 @@
             <td class="item-select">
                 <select id="{id_prefix}-glyph" title="Please select stat">
                     <option value="none" selected="true">None</option>
-                    <option value="critical-rating">Critical Rating</option>
-                    <option value="critical-power">Critical Power</option>
-                    <option value="hit-rating">Hit Rating</option>
-                    <option value="defense-rating">Defense Rating</option>
-                    <option value="evade-rating">Evade Rating</option>
+                    <option value="hit-rating">Accurate</option>
+                    <option value="critical-rating">Fierce</option>
+                    <option value="critical-power">Devastating</option>
+                    <option value="evade-rating">Elusive</option>
+                    <option value="defense-rating">Stalwart</option>
                 </select>
             </td>
             <td class="quality-label"><strong>Quality :</strong></td>
             <td class="quality-select">{>qualityselect id_suffix="-glyph" pip1_v="crude" pip1_n="Crude" pip2_v="simple" pip2_n="Simple" pip3_v="intricate" pip3_n="Intricate"/}</td>
-            <td id="{id_prefix}-glyph-value" class="stat-value">0</td>
+            <td class="stat-value">
+              <span id="{id_prefix}-glyph-value">0</span>
+              <span id="{id_prefix}-glyph-stat"></span>
+            </td>
         </tr>
         <tr>
             <td class="filler"></td>

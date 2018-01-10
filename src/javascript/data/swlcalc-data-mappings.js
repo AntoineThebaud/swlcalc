@@ -4,19 +4,27 @@ swlcalc.data = swlcalc.data || {};
 swlcalc.data.glyph_stat_mapping = {
     to_num: {
         'none': 0,
-        'critical-rating': 1,
-        'critical-power': 2,
-        'hit-rating': 3,
-        'defense-rating': 4,
-        'evade-rating': 5,
+        'hit-rating': 1,
+        'critical-rating': 2,
+        'critical-power': 3,
+        'evade-rating': 4,
+        'defense-rating': 5,
     },
-    to_name: {
+    to_stat: {
         0: 'none',
-        1: 'critical-rating',
-        2: 'critical-power',
-        3: 'hit-rating',
-        4: 'defense-rating',
-        5: 'evade-rating',
+        1: 'hit-rating',
+        2: 'critical-rating',
+        3: 'critical-power',
+        4: 'evade-rating',
+        5: 'defense-rating',
+    },
+    to_stat_GUIformat: {
+        'none': '',
+        'hit-rating': 'Hit Rating',
+        'critical-rating': 'Critical Rating',
+        'critical-power': 'Critical Power',
+        'evade-rating': 'Evade Rating',
+        'defense-rating': 'Defense Rating',
     }
 };
 

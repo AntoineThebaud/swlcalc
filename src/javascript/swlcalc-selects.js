@@ -18,17 +18,17 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             slotObj.el.itemId.change(this.itemChange);
         }
         slotObj.el.rarity.change(this.rarityChange);
-        slotObj.el.quality.change(this.glyphChange); //TODO refactor name because "glyphChange" is not clear
-        slotObj.el.level.change(this.glyphChange);  //TODO refactor name because "glyphChange" is not clear
+        slotObj.el.quality.change(swlcalc.summary.updateAllStats);
+        slotObj.el.level.change(swlcalc.summary.updateAllStats);
 
         slotObj.el.glyph.change(this.glyphChange);
         slotObj.el.glyphRarity.change(this.glyphRarityChange);
-        slotObj.el.glyphQuality.change(this.glyphChange);
-        slotObj.el.glyphLevel.change(this.glyphChange);
+        slotObj.el.glyphQuality.change(swlcalc.summary.updateAllStats);
+        slotObj.el.glyphLevel.change(swlcalc.summary.updateAllStats);
 
         slotObj.el.signetId.change(this.signetChange);
         slotObj.el.signetRarity.change(this.signetRarityChange);
-        slotObj.el.signetLevel.change(this.glyphChange); //TODO refactor name because "glyphChange" is not clear
+        slotObj.el.signetLevel.change(swlcalc.summary.updateAllStats);
     };
 
     this.addItemsToSelect = function() {
@@ -142,7 +142,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         swlcalc.summary.updateAllStats();
     };
 
-    this.glyphChange = function(id_suffix) {
+    this.glyphChange = function(event) {
+        slotObj.updateGlyphStatLabel(event.target.selectedOptions[0].value); //TODO : abstract layer ?
         swlcalc.summary.updateAllStats();
     };
 
