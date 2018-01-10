@@ -230,7 +230,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     this.glyphValue = function() {
-        //TODO : None value temporary disabled
         if (this.glyph() == 'none') {
             return 0;
         }
@@ -483,9 +482,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         var gqmap = swlcalc.data.glyph_quality_mapping.to_num;
         var tqmap = swlcalc.data.talisman_quality_mapping.to_num;
         return {
-            itemId: this.item().id,
+            itemId: this.stripContent(this.item().id),
             wtype: this.stripContent(this.wtype(), wmap),
-            //role: this.isWeapon() ? '' : this.stripContent(this.item().role), TODO
+            //role: this.isWeapon() ? '' : this.stripContent(this.item().role), TODO!
             rarity: this.stripContent(this.rarity(), rmap),
             quality: this.isWeapon() ? this.stripContent(this.quality(), wqmap) : this.stripContent(this.quality(), tqmap),
             level: this.level(),
@@ -493,7 +492,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             glyph_rarity: this.stripContent(this.glyphRarity(), rmap),
             glyph_quality: this.stripContent(this.glyphQuality(), gqmap),
             glyph_level: this.glyphLevel(),
-            signet_id: this.signetId(),
+            signet_id: this.stripContent(this.signetId()),
             signet_rarity: this.stripContent(this.signetRarity(), rmap),
             signet_level: this.signetLevel()
         };
@@ -502,8 +501,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     this.stripContent = function(val, mapping) {
         if (val == null || val == 'none') {
             return 0;
-        } else {
+        } else if (mapping !== undefined) {
             return mapping[val];
+        } else {
+            return val;
         }
     };
 };

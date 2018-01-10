@@ -85,11 +85,15 @@ swlcalc.export = function() {
             + state.glyph_quality + ','
             + state.glyph_level;
 
-        if(state.signet_id !== 0 && state.signet_id !== '999') {
+        //TODO : this if allows the url to be smaller when no signet is set
+        // it is temporary disabled for visual issue (select color not updating)
+        // in the future, should be reenabled + same behavior for glyphs and even complete slot ?
+        // that could allow to see the stats for only one item (but is it usefull ?)
+        /* if(state.signet_id !== 0 && state.signet_id !== '999') { */
             slotUrl += ',' + state.signet_rarity
                     + ',' + state.signet_id
                     + ',' + state.signet_level;
-        }
+        /* }*/
 
         return slotUrl;
     };

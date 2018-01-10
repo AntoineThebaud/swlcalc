@@ -10,7 +10,7 @@ swlcalc.data.glyph_stat_mapping = {
         'defense-rating': 4,
         'evade-rating': 5,
     },
-    to_stat: {
+    to_name: {
         0: 'none',
         1: 'critical-rating',
         2: 'critical-power',

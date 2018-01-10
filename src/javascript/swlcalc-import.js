@@ -1,22 +1,22 @@
-/*==================================================================================================
+/*========================================================================================
  *                                        SWLCALC HASH STRUCTURE :
- *=============================================================|====================================
- *                            Element                          |               Values
- *-------------------------------------------------------------|------------------------------------
- *                  ____________ Item's Rarity                 [1,2,3,4,5]
- *                 / ___________ Item's Type (ID)              [0,1,2,3] + items with passives => TODO : to correct
- *                / / __________ Item's Quality                [1,2,3]
- *               / / / _________ Item's Level                  [1->20/25/30/35/70]
- *              / / / / ________ Glyph's Rarity                [1,2,3,4,5]
- *             / / / / / _______ Glyph's Stat                  [0,1,2,3,4,5]
- *            / / / / / / ______ Glyph's Quality               [1,2,3]
- *           / / / / / / / _____ Glyph's Level                 [1->20]
- *          / / / / / / / /  ___ (Optional) Signet's Rarity    [1,2,3,4,5]
- *         / / / / / / / /  / __ (Optional) Signet's Type (ID) [refer to swlcalc-data-signets.js]
- *        / / / / / / / /  / / _ (Optional) Signet's Level     [1->20]
+ *===================================================|====================================
+ *                      Element                      |               Values
+ *---------------------------------------------------|------------------------------------
+ *                  ____________ Item's Rarity        [1,2,3,4,5]
+ *                 / ___________ Item's Type (ID)     [0,1,2,3] + items with passives => TODO : to correct
+ *                / / __________ Item's Quality       [1,2,3]
+ *               / / / _________ Item's Level         [1->20/25/30/35/70]
+ *              / / / / ________ Glyph's Rarity       [1,2,3,4,5]
+ *             / / / / / _______ Glyph's Stat         [0,1,2,3,4,5]
+ *            / / / / / / ______ Glyph's Quality      [1,2,3]
+ *           / / / / / / / _____ Glyph's Level        [1->20]
+ *          / / / / / / / /  ___ Signet's Rarity      [1,2,3,4,5]
+ *         / / / / / / / /  / __ Signet's Type (ID)   [refer to swlcalc-data-signets.js]
+ *        / / / / / / / /  / / _ Signet's Level       [1->20]
  *       v v v v v v v v  v v v
  * wrist=4,1,4,3,4,4,0,3,5,85,3
- *==============================================================|===================================*/
+ *===================================================|====================================*/
 
 var swlcalc = swlcalc || {};
 
@@ -34,11 +34,13 @@ swlcalc.import = function() {
 
     /**
     * load the slot informations from the hash and update GUI with it
+    * TODO : maybe there is a better way to update GUI than simulating change() ?
     */
     var loadSlot = function(slotId, values) {
         var slotObj = swlcalc.slots[slotId];
         // values[0] == Item's Rarity
         slotObj.rarity(swlcalc.data.rarity_mapping.to_name[values[0]]);
+        slotObj.el.rarity.change();
         // values[1] == Item's Type (ID)
         if(slotObj.isWeapon()) {
             slotObj.wtype(swlcalc.data.wtype_mapping.to_name[values[1]]);
@@ -53,16 +55,22 @@ swlcalc.import = function() {
         } else {
             slotObj.quality(swlcalc.data.talisman_quality_mapping.to_name[values[2]]);
         }
+        slotObj.el.quality.change();
         // values[3] == Item's Level
         slotObj.level(values[3]);
+        slotObj.el.level.change();
         // values[4] == Glyph's Rarity
-        slotObj.glyphRarity(swlcalc.data.glyph_stat_mapping.to_stat[values[4]]);
+        slotObj.glyphRarity(swlcalc.data.rarity_mapping.to_name[values[4]]);
+        slotObj.el.glyphRarity.change();
         // values[5] == Glyph's Stat
-        slotObj.glyph(swlcalc.data.glyph_stat_mapping.to_stat[values[5]]);
+        slotObj.glyph(swlcalc.data.glyph_stat_mapping.to_name[values[5]]);
+        slotObj.el.glyph.change();
         // values[6] == Glyph's Quality
         slotObj.glyphQuality(swlcalc.data.glyph_quality_mapping.to_name[values[6]]);
+        slotObj.el.glyphQuality.change();
         // values[7] == Glyph's Level
-        slotObj.glyphLevel([7]);
+        slotObj.glyphLevel(values[7]);
+        slotObj.el.glyphLevel.change();
         // support signets (values [8], [9] & [10])
         if (typeof values[8] !== 'undefined'
         && typeof values[9] !== 'undefined' && values[9] !== "999"
@@ -83,6 +91,7 @@ swlcalc.import = function() {
         slotObj.signetId(id);
         slotObj.signetLevel(level);
         slotObj.el.signetId.change();
+        slotObj.el.signetRarity.change();
     };
 
     var oPublic = {
