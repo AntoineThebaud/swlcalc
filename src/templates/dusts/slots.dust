@@ -6,7 +6,15 @@
             <td class="item-title" colspan="2">Item</td>
             <td class="rarity-label"><strong>Rarity :</strong></td>
             <td class="rarity-select">{>rarityselect id_suffix=""/}</td>
+            {?is_weapon}
+            <td>
+                <a id="{id_prefix}-swap-weapon" class="btn btn-info swap-weapon" href="#">
+                    <i class="icon-retweet icon-white icon-align-left"></i>    Swap weapon
+                </a>
+            </td>
+            {:else}
             <td class="filler"></td>
+            {/is_weapon}
         </tr>
         <tr>
             <td class="item-img">
@@ -42,15 +50,7 @@
               {>qualityselect id_suffix="" pip1_v="faded" pip1_n="Faded" pip2_v="luminous" pip2_n="Luminous" pip3_v="radiant" pip3_n="Radiant"/}
               {/is_weapon}
             </td>
-            {?is_weapon}
-            <td>
-                <a id="{id_prefix}-swap-weapon" class="btn btn-info swap-weapon" href="#">
-                    <i class="icon-retweet icon-white icon-align-left"></i>    Swap weapon
-                </a>
-            </td>
-            {:else}
             <td class="filler"></td>
-            {/is_weapon}
         </tr>
         <tr>
             <td class="filler"></td>

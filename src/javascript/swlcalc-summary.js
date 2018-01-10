@@ -100,7 +100,7 @@ swlcalc.summary = function() {
     var collectPrimaryStats = function() {
         var sums = {
             'combat-power': 0,
-            'weapon-power': 75,
+            'weapon-power': 0,
             'hitpoints': 2070,
             'attack-rating': 0,
             'heal-rating': 0
@@ -120,7 +120,7 @@ swlcalc.summary = function() {
                     }
                 }
                 if (slot.isWeapon()) {
-                    sums['weapon-power'] = swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
+                    sums['weapon-power'] = swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].level[slot.level()];
                 }
                 else {
                     switch (slot.item().role) {
