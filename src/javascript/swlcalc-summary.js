@@ -32,10 +32,11 @@ swlcalc.summary = function() {
     };
 
     var updateAllStats = function() {
-        // // updateCosts();
+        // updateCosts();
         updatePrimaryStats();
         updateOffensiveDefensiveStats();
         updateGlyphValues();
+        updatePowerValues();
         updateURL();
     };
 
@@ -148,6 +149,7 @@ swlcalc.summary = function() {
         return sums;
     };
 
+    //TODO : review needed
     var calculateCombatPower = function(attack_rating, weapon_power) {
         if (attack_rating < 5200){
             return Math.round((375 - (600 / (Math.pow(Math.E, (attack_rating / 1400)) + 1))) * (1 + (weapon_power / 375)));
@@ -219,6 +221,7 @@ swlcalc.summary = function() {
         return sums;
     };
 
+    //TODO :  if (swlcalc.slots.hasSlot) is weird, find a better solution
     var updateGlyphValues = function() {
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
@@ -228,14 +231,27 @@ swlcalc.summary = function() {
         }
     };
 
+    //TODO :  if (swlcalc.slots.hasSlot) is weird, find a better solution
+    var updatePowerValues = function() {
+        for (var slotId in swlcalc.slots) {
+            if (swlcalc.slots.hasSlot(slotId)) {
+                var slot = swlcalc.slots[slotId];
+                slot.updatePowerValue();
+            }
+        }
+    }
+
+    //TODO : review needed
     var calculateCriticalChance = function(critical_rating) {
         return 55.14 - (100.3 / (Math.pow(Math.E, (critical_rating / 790.3)) + 1));
     };
 
+    //TODO : review needed
     var calculateCriticalPowerPercentage = function(critical_power) {
         return Math.sqrt(5 * critical_power + 625);
     };
 
+    //TODO : review needed
     var calculateEvadeChance = function(evade_rating) {
         return 30.10 - (50.14 / (Math.pow(Math.E, (evade_rating / 704.70)) + 1));
     };

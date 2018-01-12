@@ -50,7 +50,14 @@
               {>qualityselect id_suffix="" pip1_v="faded" pip1_n="Faded" pip2_v="luminous" pip2_n="Luminous" pip3_v="radiant" pip3_n="Radiant"/}
               {/is_weapon}
             </td>
-            <td class="filler"></td>
+            <td class="stat-value">
+              <span id="{id_prefix}-power-value">0</span>
+              {?is_weapon}
+              <span> Weapon Power</span>
+              {:else}
+              <span> Power Rating</span>
+              {/is_weapon}
+            </td>
         </tr>
         <tr>
             <td class="filler"></td>

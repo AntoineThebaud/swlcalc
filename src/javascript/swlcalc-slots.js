@@ -84,6 +84,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         rarity: $('#' + this.id + '-rarity'),
         quality: $('#' + this.id + '-quality'),
         level: $('#' + this.id + '-level'),
+        powerValue: $('#' + this.id + '-power-value'),
         iconBorderImg: $('#' + this.id + '-img-rarity'),
         glyph: $('#' + this.id + '-glyph'),
         glyphRarity: $('#' + this.id + '-glyph-rarity'),
@@ -193,6 +194,27 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.el.iconBorderImg.attr('src', rarity_url);
     };
 
+    //TODO : it doesn't refresh when changing item ID
+    this.powerValue = function() {
+        if (this.isWeapon()) {
+            if (this.wtype() == 'none') {
+                return 0;
+            } else {
+                return swlcalc.data.custom_gear_data.slot[this.group].rarity[this.rarity()].level[this.level()];
+            }
+        } else {
+            if (this.itemId() == 'none') {
+                return 0;
+            } else {
+                return swlcalc.data.custom_gear_data.slot[this.group].rarity[this.rarity()].quality[this.quality()].level[this.level()];
+            }
+        }
+    };
+
+    this.updatePowerValue = function() {
+        this.el.powerValue.html(this.powerValue() !== 0 ? '+' + this.powerValue() : 0);
+    };
+
     /**
      * Glyph functions |
      *                 V
@@ -249,7 +271,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
 
     this.updateGlyphValue = function() {
         this.el.glyphValue.html(this.glyphValue() !== 0 ? '+' + this.glyphValue() : 0);
-    };$
+    };
 
     this.updateGlyphStatLabel = function(newStat) {
         this.el.glyphStat.html(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newStat]);

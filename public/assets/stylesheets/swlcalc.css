@@ -125,6 +125,7 @@ td.rarity-label {
     padding-top: 10px;
 }
 td.rarity-select {
+    width: 170px;
     padding-top: 10px;
 }
 td.rarity-select select {
@@ -138,6 +139,7 @@ td.quality-label {
     width: 50px;
 }
 td.quality-select {
+    width: 170px;
 }
 td.quality-select select {
     width: 100px;
@@ -150,11 +152,13 @@ td.level-label {
     width: 50px;
 }
 td.level-select {
+    width: 170px;
 }
 td.level-select select {
     width: 100px;
     margin-bottom: 0px;
 }
+
 
 td.filler {
     width: auto;

@@ -164,6 +164,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         self.signetChange(event);
     };
 
+    //TODO : review needed
     this.updateControlsForItem = function() {
         var item = slotObj.item();
         slotObj.name(': ' + item.name);
@@ -204,6 +205,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.signetId.change();
     };
 
+    //TODO : review needed
     this.enableControls = function() {
         slotObj.el.glyph.removeAttr('disabled');
         slotObj.el.glyphRarity.removeAttr('disabled');
@@ -211,7 +213,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.rarity.find('option[disabled]').removeAttr('disabled');
         slotObj.el.signetId.removeAttr('disabled');
         if(slotObj.signetRarity() === 'mythic') {
-            slotObj.signetRarity('none'); //TODO : to change ?
+            slotObj.signetRarity('none');
         }
         slotObj.el.signetRarity.removeAttr('disabled');
         slotObj.el.signetId.find('option[value=999]').remove();
