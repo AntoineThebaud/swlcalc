@@ -125,7 +125,7 @@ td.rarity-label {
     padding-top: 10px;
 }
 td.rarity-select {
-    width: 170px;
+    /* width: 170px; */
     padding-top: 10px;
 }
 td.rarity-select select {
@@ -152,7 +152,7 @@ td.level-label {
     width: 50px;
 }
 td.level-select {
-    width: 170px;
+    /* width: 170px; */
 }
 td.level-select select {
     width: 100px;
@@ -211,12 +211,6 @@ div .slot {
 
 #export-textarea {
   resize: none;
-}
-
-#raid-stats h5 {
-    font-size: 14px;
-    padding: 5px 5px 5px 0px;
-    margin: 0px;
 }
 
 option:disabled {

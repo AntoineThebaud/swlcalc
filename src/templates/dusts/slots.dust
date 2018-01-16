@@ -24,10 +24,7 @@
                 </a>
             </td>
             <td class="item-select">
-                {^is_weapon}
-                <select id="{id_prefix}-itemId" title="Please select item">
-                </select>
-                {:else}
+                {?is_weapon}
                 <select id="{id_prefix}-wtype" title="Please select weapon type">
                     <option value="none" selected="true">None</option>
                     <option value="blade" selected="true">Blade</option>
@@ -40,23 +37,26 @@
                     <option value="pistol">Pistol</option>
                     <option value="assault-rifle">Assault-Rifle</option>
                 </select>
+                {:else}
+                <select id="{id_prefix}-itemId" title="Please select item">
+                </select>
                 {/is_weapon}
             </td>
             <td class="quality-label"><strong>Quality :</strong></td>
             <td class="quality-select">
-              {?is_weapon}
-              {>qualityselect id_suffix="" pip1_v="mkI" pip1_n="MK I" pip2_v="mkII" pip2_n="MK II" pip3_v="mkIII" pip3_n="MK III"/}
-              {:else}
-              {>qualityselect id_suffix="" pip1_v="faded" pip1_n="Faded" pip2_v="luminous" pip2_n="Luminous" pip3_v="radiant" pip3_n="Radiant"/}
-              {/is_weapon}
+                {?is_weapon}
+                {>qualityselect id_suffix="" pip1_v="mkI" pip1_n="MK I" pip2_v="mkII" pip2_n="MK II" pip3_v="mkIII" pip3_n="MK III"/}
+                {:else}
+                {>qualityselect id_suffix="" pip1_v="faded" pip1_n="Faded" pip2_v="luminous" pip2_n="Luminous" pip3_v="radiant" pip3_n="Radiant"/}
+                {/is_weapon}
             </td>
             <td class="stat-value">
-              <span id="{id_prefix}-power-value">0</span>
-              {?is_weapon}
-              <span> Weapon Power</span>
-              {:else}
-              <span> Power Rating</span>
-              {/is_weapon}
+                <span id="{id_prefix}-power-value">0</span>
+                {?is_weapon}
+                <span> Weapon Power</span>
+                {:else}
+                <span> Power Rating</span>
+                {/is_weapon}
             </td>
         </tr>
         <tr>

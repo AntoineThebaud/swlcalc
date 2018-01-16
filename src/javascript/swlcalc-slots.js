@@ -146,7 +146,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      *                V
      */
 
-    this.item = function(){
+    this.item = function() {
         var itemId = this.itemId()
         var item = swlcalc.data.items.find(function(item) {
             return item.id == itemId;
@@ -154,7 +154,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         if (item) {
             return item;
         }
-        return swlcalc.data.items[0];
     }
 
     this.itemId = function() {
@@ -312,9 +311,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     this.signet = function() {
-        if(this.item() && this.item().signet) {
-            return this.item().signet;
-        }
         foundSignet = swlcalc.data.signet_data.find(this.group, this.signetId());
         if (foundSignet.id == 0 && swlcalc.data.signet_data[this.id] !== undefined) {
             return foundSignet = swlcalc.data.signet_data.find(this.id, this.signetId());
@@ -437,7 +433,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
 
     this.state = function() {
         return {
-            role: this.item().role,
             rarity: this.rarity(),
             quality: this.quality(),
             level: this.level(),
@@ -459,7 +454,8 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         var gqmap = swlcalc.data.glyph_quality_mapping.to_num;
         var tqmap = swlcalc.data.talisman_quality_mapping.to_num;
         return {
-            itemId: this.stripContent(this.item().id),
+            //itemId: this.stripContent(this.item().id),
+            itemId: this.stripContent(this.itemId()),
             wtype: this.stripContent(this.wtype(), wmap),
             //role: this.isWeapon() ? '' : this.stripContent(this.item().role), TODO!
             rarity: this.stripContent(this.rarity(), rmap),

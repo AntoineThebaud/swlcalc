@@ -32,6 +32,12 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     this.addItemsToSelect = function() {
+        slotObj.el.itemId.append($('<option>', {
+            value: "none",
+            text: "None",
+            selected: "true"
+        }));
+
         var items = swlcalc.data.findItems(slot.group);
         if(slot.id_prefix != 'head'){
             items = items.concat(swlcalc.data.findItems(slot.id_prefix));
@@ -96,9 +102,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         return [];
     };
 
+    //TODO : refactor
     this.itemChange = function(event) {
-        self.enableControls();
-        self.updateControlsForItem();
         swlcalc.summary.updateAllStats();
     };
 
@@ -110,6 +115,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         } else {
             slotObj.name('');
         }
+        swlcalc.summary.updateAllStats();
     };
 
     /**
@@ -162,64 +168,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.signetRarityChange = function(event) {
         self.updateColor(event.target);
         self.signetChange(event);
-    };
-
-    //TODO : review needed
-    this.updateControlsForItem = function() {
-        var item = slotObj.item();
-        slotObj.name(': ' + item.name);
-        if(item.rarity) {
-            if(Array.isArray(item.rarity)) {
-                slotObj.el.rarity.find('option').each(function(idx, qlOption) {
-                    if(item.rarity.indexOf(qlOption.value) == -1) {
-                        if(slotObj.rarity() == qlOption.value) {
-                            slotObj.rarity(item.rarity[0]);
-                        }
-                        $(this).attr('disabled', 'disabled');
-                    }
-                });
-            } else {
-                slotObj.rarity(item.rarity);
-                slotObj.el.rarity.attr('disabled', 'disabled');
-            }
-        }
-        if(item.glyph) {
-            slotObj.glyphRarity(item.glyph.rarity);
-            slotObj.glyph(item.glyph.stat);
-            slotObj.el.rarity.attr('disabled', 'disabled');
-            slotObj.el.glyphRarity.attr('disabled', 'disabled');
-            slotObj.el.glyph.attr('disabled', 'disabled');
-        }
-        if(item.signet) {
-            slotObj.updateSignet();
-            slotObj.signetRarity(item.signet.rarity);
-            slotObj.el.signetId.attr('disabled', 'disabled');
-            slotObj.el.signetRarity.attr('disabled', 'disabled');
-
-            slotObj.el.signetId.append($('<option>', {
-                value: 999,
-                text: item.signet.name,
-                selected: true
-            }));
-        }
-        slotObj.el.signetId.change();
-    };
-
-    //TODO : review needed
-    this.enableControls = function() {
-        slotObj.el.glyph.removeAttr('disabled');
-        slotObj.el.glyphRarity.removeAttr('disabled');
-        slotObj.el.rarity.removeAttr('disabled');
-        slotObj.el.rarity.find('option[disabled]').removeAttr('disabled');
-        slotObj.el.signetId.removeAttr('disabled');
-        if(slotObj.signetRarity() === 'mythic') {
-            slotObj.signetRarity('none');
-        }
-        slotObj.el.signetRarity.removeAttr('disabled');
-        slotObj.el.signetId.find('option[value=999]').remove();
-        slotObj.updateSignet();
-        slotObj.el.signetId.change();
-        swlcalc.summary.updateAllStats();
     };
 
     this.updateColor = function(select) {

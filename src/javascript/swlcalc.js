@@ -50,9 +50,6 @@ swlcalc = function() {
         $('#table-primary > label').tooltip({
             placement: 'left'
         });
-        $('#raid-stats > label').tooltip({
-            placement: 'bottom'
-        });
         // COST FEATURE DISABLED. NEED REVAMP
         // $('.cost-tooltip, .glyph-tooltip, .signet-tooltip, .slot-warning, .swap-weapon, .consumable-tooltip').on('click', function(event) {
         //     event.preventDefault();

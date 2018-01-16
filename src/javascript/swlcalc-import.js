@@ -46,7 +46,7 @@ swlcalc.import = function() {
             slotObj.wtype(swlcalc.data.wtype_mapping.to_name[values[1]]);
             slotObj.el.wtype.change();
         } else {
-            slotObj.itemId(values[1]);
+            slotObj.itemId(values[1] == '0' ? 'none' : values[1]);
             slotObj.el.itemId.change();
         }
         // values[2] == Item's Quality

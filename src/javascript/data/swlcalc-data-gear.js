@@ -38,7 +38,7 @@ swlcalc.data.custom_gear_data = {
                         5: 0, //TODO : placeholder value for the moment
                         6: 0, //TODO : placeholder value for the moment
                         7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
+                        8: 645,
                         9: 0, //TODO : placeholder value for the moment
                         10: 0, //TODO : placeholder value for the moment
                         11: 0, //TODO : placeholder value for the moment
@@ -53,7 +53,7 @@ swlcalc.data.custom_gear_data = {
                         20: 0, //TODO : placeholder value for the moment
                         21: 0, //TODO : placeholder value for the moment
                         22: 0, //TODO : placeholder value for the moment
-                        23: 0, //TODO : placeholder value for the moment
+                        23: 958,
                         24: 0, //TODO : placeholder value for the moment
                         25: 1000
                     }
@@ -65,7 +65,7 @@ swlcalc.data.custom_gear_data = {
                         3: 0, //TODO : placeholder value for the moment
                         4: 0, //TODO : placeholder value for the moment
                         5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
+                        6: 1275,
                         7: 0, //TODO : placeholder value for the moment
                         8: 0, //TODO : placeholder value for the moment
                         9: 0, //TODO : placeholder value for the moment
@@ -433,14 +433,14 @@ swlcalc.data.custom_gear_data = {
                                 17: 0, //TODO : placeholder value for the moment
                                 18: 0, //TODO : placeholder value for the moment
                                 19: 0, //TODO : placeholder value for the moment
-                                20: 0, //TODO : placeholder value for the moment
+                                20: 1051,
                                 21: 0, //TODO : placeholder value for the moment
                                 22: 0, //TODO : placeholder value for the moment
                                 23: 0, //TODO : placeholder value for the moment
                                 24: 0, //TODO : placeholder value for the moment
                                 25: 0, //TODO : placeholder value for the moment
                                 26: 0, //TODO : placeholder value for the moment
-                                27: 0, //TODO : placeholder value for the moment
+                                27: 1158,
                                 28: 0, //TODO : placeholder value for the moment
                                 29: 0, //TODO : placeholder value for the moment
                                 30: 1204
@@ -972,7 +972,7 @@ swlcalc.data.custom_gear_data = {
                         'radiant': {
                             level : {
                                 1: 220,
-                                2: 0, //TODO : placeholder value for the moment
+                                2: 229,
                                 3: 0, //TODO : placeholder value for the moment
                                 4: 0, //TODO : placeholder value for the moment
                                 5: 0, //TODO : placeholder value for the moment
@@ -1052,7 +1052,7 @@ swlcalc.data.custom_gear_data = {
                                 12: 0, //TODO : placeholder value for the moment
                                 13: 0, //TODO : placeholder value for the moment
                                 14: 0, //TODO : placeholder value for the moment
-                                15: 0, //TODO : placeholder value for the moment
+                                15: 584,
                                 16: 0, //TODO : placeholder value for the moment
                                 17: 0, //TODO : placeholder value for the moment
                                 18: 0, //TODO : placeholder value for the moment
@@ -1567,7 +1567,7 @@ swlcalc.data.custom_gear_data = {
                         'luminous': {
                             level : {
                                 1: 132,
-                                2: 0, //TODO : placeholder value for the moment
+                                2: 137,
                                 3: 0, //TODO : placeholder value for the moment
                                 4: 0, //TODO : placeholder value for the moment
                                 5: 0, //TODO : placeholder value for the moment

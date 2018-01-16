@@ -12,7 +12,6 @@ swlcalc.summary = function() {
             astral_fuse_cost: $('#af-cost'),
             supernal_upgrade_cost: $('#su-cost'),
             eleventh_hour_cost: $('#11th-cost'),
-            activateRaid: $('#summary-activate-raid'),
             includeItemCosts: $('#summary-include-item-costs')
         };
     };
@@ -23,12 +22,7 @@ swlcalc.summary = function() {
     };
 
     var bindEvents = function() {
-        el.activateRaid.on('change', activateRaidItems);
         el.includeItemCosts.on('change', updateAllStats);
-    };
-
-    var activateRaidItems = function(event) {
-        updateAllStats();
     };
 
     var updateAllStats = function() {
@@ -102,9 +96,10 @@ swlcalc.summary = function() {
         var sums = {
             'combat-power': 0,
             'weapon-power': 0,
-            'hitpoints': 2070,
+            'hitpoints': 3300, // base HP calculation = 300 (HP at lvl 1) + 49 * 60 (49 level ups) + 60 (/!\ don't know where this 60 comes from)
             'attack-rating': 0,
-            'heal-rating': 0
+            'heal-rating': 0,
+            'power-rating': 0
         };
 
         for (var slotId in swlcalc.slots) {
@@ -113,32 +108,13 @@ swlcalc.summary = function() {
                 if(slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
                 }
-                var rarity = slot.rarity();//.toLowerCase();
-                if (slot.group == 'major') {
-                    var signet = slot.signet();
-                    if (signet.id !== 0 && signet.id < 80) {
-                        sums[signet.stat] += slot.determineSignetRarityValue(signet);
-                    }
-                }
-                if (slot.isWeapon()) {
+                if (slot.isWeapon() && slot.wtype() != 'none') {
                     sums['weapon-power'] = swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].level[slot.level()];
                 }
-                else {
-                    switch (slot.item().role) {
-                        case 'dps':
-                            sums['attack-rating'] += swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
-                            break;
-                        case 'healer':
-                            sums['heal-rating'] += swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
-                            break;
-                        case 'tank':
-                            sums['hitpoints'] += swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
-                            break;
-                        default:
-                            console.log('Illegal role value when collecting primary stats');
-                            break;
-                    }
+                else if (!slot.isWeapon() && slot.itemId() != 'none') {
+                    sums['power-rating'] += swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
                 }
+                //TODO : add conversion to AR/HR/HP based on ratio selected
             }
         }
         var pureAnima = swlcalc.miscslot.pureAnima();
@@ -192,23 +168,6 @@ swlcalc.summary = function() {
         sums[anima.bonus.stat] += anima.bonus.add;
         sums['critical-power-percentage'] = calculateCriticalPowerPercentage(sums['critical-power']);
 
-        //TODO: refactor
-        if (el.activateRaid.is(':checked')) {
-            for (var slotId in swlcalc.slots) {
-                if (swlcalc.slots.hasSlot(slotId)) {
-                    var signet = swlcalc.slots[slotId].signet();
-                    if (signet.bonus !== undefined) {
-                        for (var statIdx = 0; statIdx < signet.bonus.stat.length; statIdx++) {
-                            if (signet.bonus.add !== undefined) {
-                                sums[signet.bonus.stat[statIdx]] += signet.bonus.add;
-                            } else if (signet.bonus.multiply !== undefined) {
-                                sums[signet.bonus.stat[statIdx]] = signet.bonus.multiply * sums[signet.bonus.stat[statIdx]];
-                            }
-                        }
-                    }
-                }
-            }
-        }
         sums['critical-chance'] = calculateCriticalChance(sums['critical-rating']);
         sums['evade-chance'] = calculateEvadeChance(sums['evade-rating']);
 
@@ -272,11 +231,6 @@ swlcalc.summary = function() {
         return statName == 'critical-power-percentage' || statName == 'critical-chance' || statName == 'evade-chance';
     };
 
-    var checkActivateRaid = function() {
-        el.activateRaid.prop('checked', true);
-        el.activateRaid.change();
-    };
-
     // var checkIncludeItemCosts = function() {
     //     el.includeItemCosts.prop('checked', true);
     //     el.includeItemCosts.change();
@@ -291,8 +245,7 @@ swlcalc.summary = function() {
         collectPrimaryStats: collectPrimaryStats,
         collectOffensiveDefensiveStats: collectOffensiveDefensiveStats,
         collectAllStats: collectAllStats,
-        updateAllStats: updateAllStats,
-        checkActivateRaid: checkActivateRaid,
+        updateAllStats: updateAllStats
         // checkIncludeItemCosts : checkIncludeItemCosts
     };
 

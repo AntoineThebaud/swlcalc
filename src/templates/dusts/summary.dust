@@ -25,8 +25,9 @@
                 <tr><td class="statname">Power Rating</td><td id="stat-power-rating" class="stat-value">0</td></tr>
                 <tr><td class="statname">Attack Rating</td><td id="stat-attack-rating" class="stat-value">0</td></tr>
                 <tr><td class="statname">Heal Rating</td><td id="stat-heal-rating" class="stat-value">0</td></tr>
-                <tr><td class="statname">Hitpoints</td><td id="stat-hitpoints" class="stat-value">1970</td></tr>
+                <tr><td class="statname">Hitpoints</td><td id="stat-hitpoints" class="stat-value">3300</td></tr>
                 <tr><td class="statname">Combat Power</td><td id="stat-combat-power" class="stat-value">0</td></tr>
+                <tr><td class="statname">Heal Power</td><td id="stat-heal-power" class="stat-value">0</td></tr>
                 <tr><td class="statname">Weapon Power</td><td id="stat-weapon-power" class="stat-value">0</td></tr>
             </tbody>
         </table>
@@ -62,9 +63,5 @@
                 <tr><td class="statname">Magical Protection</td><td id="stat-magical-protection" class="stat-value">249</td></tr>
             </tbody>
         </table>
-    </div>
-    <div id="raid-stats">
-        <h5>Raid items</h5>
-        <label class="checkbox inline" data-toggle="tooltip" title="Activate bonuses from NY raid items, if they have a bonus applicable to the summary sheet. The bonus counts as you had procced all NY Raid items simultaneously or instantly got 10 stacks of the effect."><input type="checkbox" id="summary-activate-raid">Activate NY Raid items</label>
     </div>
 </div>
