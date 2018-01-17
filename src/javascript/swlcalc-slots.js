@@ -93,7 +93,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         glyphValue: $('#' + this.id + '-glyph-value'),
         glyphStat: $('#' + this.id + '-glyph-stat'),
         glyphIconBorderImg: $('#' + this.id + '-glyph-img-rarity'),
-        signetId: $('#' + this.id + '-pick-signet'),
+        signetId: $('#' + this.id + '-signet'),
         signetRarity: $('#' + this.id + '-signet-rarity'),
         signetLevel: $('#' + this.id + '-signet-level'),
         signetIconImg: $('#' + this.id + '-signet-img-icon'),

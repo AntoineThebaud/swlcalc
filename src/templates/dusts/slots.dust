@@ -121,7 +121,7 @@
                 </a>
             </td>
             <td class="item-select">
-                <select id="{id_prefix}-pick-signet" title="Please select signet">
+                <select id="{id_prefix}-signet" title="Please select signet">
                 </select>
             </td>
             <td class="level-label"><strong>Level :</strong></td>
