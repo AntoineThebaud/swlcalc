@@ -12,9 +12,9 @@
 </div>
 <!-- [ 100% DPS ][ 100% Healer ][ 100% Tank ] -->
 <div class="btn-group">
-    <button id="btn-all-3" class="btn">100% DPS</button>
-    <button id="btn-all-2" class="btn">100% Healer</button>
-    <button id="btn-all-1" class="btn">100% Tank</button>
+    <button id="btn-all-3" class="btn" disabled>100% DPS</button>
+    <button id="btn-all-2" class="btn" disabled>100% Healer</button>
+    <button id="btn-all-1" class="btn" disabled>100% Tank</button>
 </div>
 <!-- [ Export ] -->
 <div class="btn-group">

@@ -29,21 +29,22 @@ module('buttonbar-integration-tests', {
     }
 });
 
-test('should set role on all slots to dps', 7, function() {
-    swlcalc.buttonBar.setRoleOnAllSlots({
-        target: {
-            id: '#btn-all-dps'
-        }
-    });
-
-    equal(swlcalc.slots.head.item().role, 'dps');
-    equal(swlcalc.slots.ring.item().role, 'dps');
-    equal(swlcalc.slots.neck.item().role, 'dps');
-    equal(swlcalc.slots.wrist.item().role, 'dps');
-    equal(swlcalc.slots.luck.item().role, 'dps');
-    equal(swlcalc.slots.waist.item().role, 'dps');
-    equal(swlcalc.slots.occult.item().role, 'dps');
-});
+// TODO : refactor
+// test('should set role on all slots to dps', 7, function() {
+//     swlcalc.buttonBar.setRoleOnAllSlots({
+//         target: {
+//             id: '#btn-all-3'
+//         }
+//     });
+//
+//     equal(swlcalc.slots.head.item().role, 'dps');
+//     equal(swlcalc.slots.ring.item().role, 'dps');
+//     equal(swlcalc.slots.neck.item().role, 'dps');
+//     equal(swlcalc.slots.wrist.item().role, 'dps');
+//     equal(swlcalc.slots.luck.item().role, 'dps');
+//     equal(swlcalc.slots.waist.item().role, 'dps');
+//     equal(swlcalc.slots.occult.item().role, 'dps');
+// });
 
 // TODO : TEST TO UPDATE (tsw values)
 // test('should set rarity and glyph rarity on all slots to 10.5 with the exception of rarity on raid items', 16, function() {
@@ -109,9 +110,9 @@ test('should set role on all slots to dps', 7, function() {
 //     equal(swlcalc.slots.occult.item().role, 'tank');
 // });
 
-test('should reset all slots', 72, function() {
+//TODO : reset should logically set lvl 1 to items
+test('should reset all slots', 88, function() {
     swlcalc.buttonBar.resetAllSlots();
-
     assertReset(swlcalc.slots.weapon);
     assertReset(swlcalc.slots.head);
     assertReset(swlcalc.slots.ring);
@@ -123,13 +124,20 @@ test('should reset all slots', 72, function() {
 });
 
 function assertReset(slot) {
-    equal(slot.item().role, 'dps');
-    equal(slot.rarity(), '10.0');
-    equal(slot.glyphRarity(), '10.0');
-    equal(slot.primaryGlyph(), 'none');
-    equal(slot.secondaryGlyph(), 'none');
-    ok(slot.el.btn.primary[4].hasClass('active'));
-    ok(slot.el.btn.secondary[0].hasClass('active'));
+    if(slot.isWeapon()) {
+        equal(slot.wtype(), 'none');
+        equal(slot.quality(), 'mkI');
+    } else {
+        equal(slot.itemId(), 'none');
+        equal(slot.quality(), 'faded');
+    }
+    equal(slot.rarity(), 'standard');
+    equal(slot.level(), '20');
+    equal(slot.glyph(), 'none');
+    equal(slot.glyphRarity(), 'standard');
+    equal(slot.glyphQuality(), 'crude');
+    equal(slot.glyphLevel(), '20');
     equal(slot.signetId(), 'none');
-    equal(slot.signetRarity(), 'none');
+    equal(slot.signetRarity(), 'standard');
+    equal(slot.signetLevel(), '20');
 }

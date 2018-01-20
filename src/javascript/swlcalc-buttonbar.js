@@ -23,10 +23,6 @@ swlcalc.buttonBar = function() {
     };
 
     var bindEvents = function() {
-        //TODO : refactor
-//      el.btn_all_dps.on('click', setRoleOnAllSlots);
-//      el.btn_all_healer.on('click', setRoleOnAllSlots);
-//      el.btn_all_tank.on('click', setRoleOnAllSlots);
         el.btn_all_standard.on('click', setRarityOnAllSlots);
         el.btn_all_superior.on('click', setRarityOnAllSlots);
         el.btn_all_epic.on('click', setRarityOnAllSlots);
