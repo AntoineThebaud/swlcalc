@@ -10,381 +10,158 @@ module('import-integration-tests', {
     }
 });
 
-test('should import URL and set summary and slots for 0.4.0 links', 92, function() {
+// TODO : test to complete/enhance
+// - commented fields
+// - formulas to update
+// - add real signets
+test('should import URL and set summary and slots', 116, function() {
     var vars = {
-        head: '4,1,5,5,0,4,0',
-        luck: '4,3,4,4,0,4,0',
-        neck: '4,1,5,5,0,4,0',
-        occult: '4,3,4,4,0,4,0',
-        ring: '4,3,4,3,0,4,0',
-        waist: '4,1,4,2,0,4,0,3,2',//TODO : test to enhance, last number previously was 87
-        weapon: '5,0,4,4,0,4,0',
-        wrist: '4,1,4,5,0,4,0,3,1' //TODO : test to enhance, last number previously was 87
+        head: '3,1,1,30,4,1,3,1,1,0,20',
+        luck: '3,1,1,1,3,4,2,20,1,0,20',
+        neck: '3,1,1,30,3,5,2,20,1,0,20',
+        occult: '3,1,1,1,3,4,2,20,1,0,20',
+        ring: '3,1,1,30,3,5,2,20,1,0,20',
+        waist: '3,1,1,30,3,4,2,20,1,0,20',
+        weapon: '3,1,1,30,2,2,1,1,1,0,20',
+        weapon2: '3,2,3,30,2,2,1,1,1,0,20',
+        wrist: '3,1,1,1,3,5,2,20,1,0,20'
     };
 
     swlcalc.import.start(vars);
 
     // Summary
-    equal($('#stat-hitpoints').html(), '10458');
-    equal($('#stat-combat-power').html(), '496');
-    equal($('#stat-attack-rating').html(), '1518');
-    equal($('#stat-weapon-power').html(), '457');
-    equal($('#stat-heal-rating').html(), '0');
-    equal($('#stat-critical-rating').html(), '0');
-    equal($('#stat-critical-chance').html(), '5.0 %');
+    equal($('#stat-power-rating').html(), '3730');
+    // TODO equal($('#stat-hitpoints').html(), '10458');
+    // TODO equal($('#stat-combat-power').html(), '496');
+    // TODO equal($('#stat-attack-rating').html(), '1518');
+    equal($('#stat-weapon-power').html(), '1832');
+    // TODO equal($('#stat-heal-rating').html(), '0');
+    equal($('#stat-critical-rating').html(), '+85');
+    // TODO equal($('#stat-critical-chance').html(), '5.0 %');
     equal($('#stat-critical-power').html(), '0');
     equal($('#stat-critical-power-percentage').html(), '25.0 %');
-    equal($('#stat-hit-rating').html(), '+504');
-    equal($('#stat-defense-rating').html(), '+576');
-    equal($('#stat-evade-rating').html(), '0');
-    equal($('#stat-physical-protection').html(), '+660');
-    equal($('#stat-magical-protection').html(), '+300');
+    equal($('#stat-hit-rating').html(), '+488');
+    equal($('#stat-defense-rating').html(), '+1143');
+    equal($('#stat-evade-rating').html(), '+1143');
+    // TODO equal($('#stat-physical-protection').html(), '+660');
+    // TODO equal($('#stat-magical-protection').html(), '+300');
 
-    equal($('#weapon-rarity').val(), '10.5');
-    equal($('#weapon-glyph-rarity').val(), '10.4');
-    equal($('#weapon-primary-glyph').val(), 'hit-rating');
-    equal($('#weapon-secondary-glyph').val(), 'none');
-    ok($('#weapon-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#weapon-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#weapon-signet-rarity').val(), 'none');
-    equal($('#weapon-pick-signet').val(), 'none');
+    equal($('#weapon-rarity').val(), 'epic');
+    equal($('#weapon-quality').val(), 'mkI');
+    equal($('#weapon-level').val(), '30');
+    equal($('#weapon-power-value').html(), '+1832');
+    equal($('#weapon-glyph').val(), 'critical-rating');
+    equal($('#weapon-glyph-rarity').val(), 'superior');
+    equal($('#weapon-glyph-quality').val(), 'crude');
+    equal($('#weapon-glyph-level').val(), '1');
+    equal($('#weapon-glyph-value').html(), '+85');
+    equal($('#weapon-signet').val(), 'none');
+    equal($('#weapon-signet-rarity').val(), 'standard');
+    equal($('#weapon-signet-level').val(), '20');
 
-    equal($('#head-rarity').val(), '10.4');
-    equal($('#head-itemId').val(), '1');
-    equal($('#head-glyph-rarity').val(), '10.5');
-    equal($('#head-primary-glyph').val(), 'block-rating');
-    equal($('#head-secondary-glyph').val(), 'none');
-    ok($('#head-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#head-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#head-signet-rarity').val(), 'none');
-    equal($('#head-pick-signet').val(), 'none');
+    equal($('#weapon2-rarity').val(), 'epic');
+    equal($('#weapon2-quality').val(), 'mkIII');
+    equal($('#weapon2-level').val(), '30');
+    equal($('#weapon2-power-value').html(), '+1832');
+    equal($('#weapon2-glyph').val(), 'critical-rating');
+    equal($('#weapon2-glyph-rarity').val(), 'superior');
+    equal($('#weapon2-glyph-quality').val(), 'crude');
+    equal($('#weapon2-glyph-level').val(), '1');
+    equal($('#weapon2-glyph-value').html(), '+85');
+    equal($('#weapon2-signet').val(), 'none');
+    equal($('#weapon2-signet-rarity').val(), 'standard');
+    equal($('#weapon2-signet-level').val(), '20');
 
-    equal($('#ring-rarity').val(), '10.4');
-    equal($('#ring-itemId').val(), '3');
-    equal($('#ring-glyph-rarity').val(), '10.4');
-    equal($('#ring-primary-glyph').val(), 'defense-rating');
-    equal($('#ring-secondary-glyph').val(), 'none');
-    ok($('#ring-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#ring-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#ring-signet-rarity').val(), 'none');
-    equal($('#ring-pick-signet').val(), 'none');
+    equal($('#head-rarity').val(), 'epic');
+    equal($('#head-quality').val(), 'faded');
+    equal($('#head-level').val(), '30');
+    equal($('#head-power-value').html(), '+1070');
+    equal($('#head-glyph').val(), 'hit-rating');
+    equal($('#head-glyph-rarity').val(), 'mythic');
+    equal($('#head-glyph-quality').val(), 'intricate');
+    equal($('#head-glyph-level').val(), '1');
+    equal($('#head-glyph-value').html(), '+488');
+    equal($('#head-signet').val(), 'none');
+    equal($('#head-signet-rarity').val(), 'standard');
+    equal($('#head-signet-level').val(), '20');
 
-    equal($('#neck-rarity').val(), '10.4');
-    equal($('#neck-itemId').val(), '1');
-    equal($('#neck-glyph-rarity').val(), '10.5');
-    equal($('#neck-primary-glyph').val(), 'block-rating');
-    equal($('#neck-secondary-glyph').val(), 'none');
-    ok($('#neck-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#neck-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#neck-signet-rarity').val(), 'none');
-    equal($('#neck-pick-signet').val(), 'none');
+    equal($('#ring-rarity').val(), 'epic');
+    equal($('#ring-quality').val(), 'faded');
+    equal($('#ring-level').val(), '30');
+    equal($('#ring-power-value').html(), '+642');
+    equal($('#ring-glyph').val(), 'defense-rating');
+    equal($('#ring-glyph-rarity').val(), 'epic');
+    equal($('#ring-glyph-quality').val(), 'simple');
+    equal($('#ring-glyph-level').val(), '20');
+    equal($('#ring-glyph-value').html(), '+381');
+    equal($('#ring-signet').val(), 'none');
+    equal($('#ring-signet-rarity').val(), 'standard');
+    equal($('#ring-signet-level').val(), '20');
 
-    //Brooklyn Bracer
-    equal($('#wrist-rarity').val(), '10.4');
-    equal($('#wrist-itemId').val(), '85');
-    equal($('#wrist-glyph-rarity').val(), '10.4');
-    equal($('#wrist-primary-glyph').val(), 'defense-rating');
-    equal($('#wrist-secondary-glyph').val(), 'none');
-    ok($('#wrist-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#wrist-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#wrist-signet-rarity').val(), 'epic');
-    ok($('#wrist-signet-rarity').attr('disabled'));
-    ok($('#wrist-pick-signet').attr('disabled'));
-    ok($('#wrist-rarity').attr('disabled'));
+    equal($('#neck-rarity').val(), 'epic');
+    equal($('#neck-quality').val(), 'faded');
+    equal($('#neck-level').val(), '30');
+    equal($('#neck-power-value').html(), '+642');
+    equal($('#neck-glyph').val(), 'defense-rating');
+    equal($('#neck-glyph-rarity').val(), 'epic');
+    equal($('#neck-glyph-quality').val(), 'simple');
+    equal($('#neck-glyph-level').val(), '20');
+    equal($('#neck-glyph-value').html(), '+381');
+    equal($('#neck-signet').val(), 'none');
+    equal($('#neck-signet-rarity').val(), 'standard');
+    equal($('#neck-signet-level').val(), '20');
 
-    equal($('#luck-rarity').val(), '10.4');
-    equal($('#luck-itemId').val(), '3');
-    equal($('#luck-glyph-rarity').val(), '10.4');
-    equal($('#luck-primary-glyph').val(), 'physical-protection');
-    equal($('#luck-secondary-glyph').val(), 'none');
-    ok($('#luck-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#luck-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#luck-signet-rarity').val(), 'none');
-    equal($('#luck-pick-signet').val(), 'none');
+    equal($('#wrist-rarity').val(), 'epic');
+    equal($('#wrist-quality').val(), 'faded');
+    equal($('#wrist-level').val(), '1');
+    equal($('#wrist-power-value').html(), '+406');
+    equal($('#wrist-glyph').val(), 'defense-rating');
+    equal($('#wrist-glyph-rarity').val(), 'epic');
+    equal($('#wrist-glyph-quality').val(), 'simple');
+    equal($('#wrist-glyph-level').val(), '20');
+    equal($('#wrist-glyph-value').html(), '+381');
+    equal($('#wrist-signet').val(), 'none');
+    equal($('#wrist-signet-rarity').val(), 'standard');
+    equal($('#wrist-signet-level').val(), '20');
 
-    //NY Buckle
-    equal($('#waist-rarity').val(), '10.4');
-    equal($('#waist-itemId').val(), '87');
-    equal($('#waist-glyph-rarity').val(), '10.4');
-    equal($('#waist-primary-glyph').val(), 'physical-protection');
-    equal($('#waist-secondary-glyph').val(), 'none');
-    ok($('#waist-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#waist-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#waist-signet-rarity').val(), 'epic');
-    ok($('#waist-signet-rarity').attr('disabled'));
-    ok($('#waist-pick-signet').attr('disabled'));
-    ok($('#waist-rarity option[value="10.1"]').attr('disabled'));
-    ok($('#waist-rarity option[value="10.7"]').attr('disabled'));
-    ok(!$('#waist-rarity option[value="10.4"]').attr('disabled'));
-    ok(!$('#waist-rarity option[value="10.9"]').attr('disabled'));
+    equal($('#luck-rarity').val(), 'epic');
+    equal($('#luck-quality').val(), 'faded');
+    equal($('#luck-level').val(), '1');
+    equal($('#luck-power-value').html(), '+271');
+    equal($('#luck-glyph').val(), 'evade-rating');
+    equal($('#luck-glyph-rarity').val(), 'epic');
+    equal($('#luck-glyph-quality').val(), 'simple');
+    equal($('#luck-glyph-level').val(), '20');
+    equal($('#luck-glyph-value').html(), '+381');
+    equal($('#luck-signet').val(), 'none');
+    equal($('#luck-signet-rarity').val(), 'standard');
+    equal($('#luck-signet-level').val(), '20');
 
-    equal($('#occult-rarity').val(), '10.4');
-    equal($('#occult-itemId').val(), '3');
-    equal($('#occult-glyph-rarity').val(), '10.4');
-    equal($('#occult-primary-glyph').val(), 'hit-rating');
-    equal($('#occult-secondary-glyph').val(), 'none');
-    ok($('#occult-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#occult-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#occult-signet-rarity').val(), 'none');
-    equal($('#occult-pick-signet').val(), 'none');
+    equal($('#waist-rarity').val(), 'epic');
+    equal($('#waist-quality').val(), 'faded');
+    equal($('#waist-level').val(), '30');
+    equal($('#waist-power-value').html(), '+428');
+    equal($('#waist-glyph').val(), 'evade-rating');
+    equal($('#waist-glyph-rarity').val(), 'epic');
+    equal($('#waist-glyph-quality').val(), 'simple');
+    equal($('#waist-glyph-level').val(), '20');
+    equal($('#waist-glyph-value').html(), '+381');
+    equal($('#waist-signet').val(), 'none');
+    equal($('#waist-signet-rarity').val(), 'standard');
+    equal($('#waist-signet-level').val(), '20');
+
+    equal($('#occult-rarity').val(), 'epic');
+    equal($('#occult-quality').val(), 'faded');
+    equal($('#occult-level').val(), '1');
+    equal($('#occult-power-value').html(), '+271');
+    equal($('#occult-glyph').val(), 'evade-rating');
+    equal($('#occult-glyph-rarity').val(), 'epic');
+    equal($('#occult-glyph-quality').val(), 'simple');
+    equal($('#occult-glyph-level').val(), '20');
+    equal($('#occult-glyph-value').html(), '+381');
+    equal($('#occult-signet').val(), 'none');
+    equal($('#occult-signet-rarity').val(), 'standard');
+    equal($('#occult-signet-level').val(), '20');
 });
 
-test('should import URL and set summary and slots for pre-1.3 links', 96, function() {
-    var vars = {
-        head: '4,1,5,5,0,4,0,3,1',//TODO : test to enhance, last number previously 18
-        luck: '4,3,4,5,0,4,0,3,2',//TODO : test to enhance, last number previously 39
-        neck: '4,1,5,5,0,4,0,1,3',//TODO : test to enhance, last number previously 21
-        occult: '4,3,4,4,0,4,0,3,1',//TODO : test to enhance, last number previously 21
-        ring: '4,3,4,4,0,4,0,2,2',//TODO : test to enhance, last number previously 22
-        waist: '4,1,4,3,0,4,0,3,3',//TODO : test to enhance, last number previously 87
-        weapon: '5,1,4,4,0,4,0,2,1',//TODO : test to enhance, last number previously 5
-        wrist: '4,1,4,2,0,4,0,3,2'//TODO : test to enhance, last number previously 85
-    };
-
-    swlcalc.import.start(vars);
-
-    // Summary
-    equal($('#stat-hitpoints').html(), '10788');
-    equal($('#stat-combat-power').html(), '504');
-    equal($('#stat-attack-rating').html(), '1565');
-    equal($('#stat-weapon-power').html(), '457');
-    equal($('#stat-heal-rating').html(), '0');
-    equal($('#stat-critical-rating').html(), '0');
-    equal($('#stat-critical-chance').html(), '5.0 %');
-    equal($('#stat-critical-power').html(), '0');
-    equal($('#stat-critical-power-percentage').html(), '25.0 %');
-    equal($('#stat-hit-rating').html(), '+504');
-    equal($('#stat-defense-rating').html(), '+576');
-    equal($('#stat-evade-rating').html(), '0');
-    equal($('#stat-physical-protection').html(), '+660');
-    equal($('#stat-magical-protection').html(), '+300');
-
-    equal($('#weapon-name').html(), ': Blade');
-    equal($('#weapon-wtype').val(), 'blade');
-    equal($('#weapon-rarity').val(), '10.5');
-    equal($('#weapon-glyph-rarity').val(), '10.4');
-    equal($('#weapon-primary-glyph').val(), 'hit-rating');
-    equal($('#weapon-secondary-glyph').val(), 'none');
-    ok($('#weapon-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#weapon-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#weapon-signet-rarity').val(), 'superior');
-    equal($('#weapon-pick-signet').val(), '5');
-
-    equal($('#head-rarity').val(), '10.4');
-    equal($('#head-itemId').val(), '1');
-    equal($('#head-glyph-rarity').val(), '10.5');
-    equal($('#head-primary-glyph').val(), 'block-rating');
-    equal($('#head-secondary-glyph').val(), 'none');
-    ok($('#head-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#head-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#head-signet-rarity').val(), 'epic');
-    equal($('#head-pick-signet').val(), '18');
-
-    equal($('#ring-rarity').val(), '10.4');
-    equal($('#ring-itemId').val(), '3');
-    equal($('#ring-glyph-rarity').val(), '10.4');
-    equal($('#ring-primary-glyph').val(), 'defense-rating');
-    equal($('#ring-secondary-glyph').val(), 'none');
-    ok($('#ring-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#ring-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#ring-signet-rarity').val(), 'superior');
-    equal($('#ring-pick-signet').val(), '22');
-
-    equal($('#neck-rarity').val(), '10.4');
-    equal($('#neck-itemId').val(), '1');
-    equal($('#neck-glyph-rarity').val(), '10.5');
-    equal($('#neck-primary-glyph').val(), 'block-rating');
-    equal($('#neck-secondary-glyph').val(), 'none');
-    ok($('#neck-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#neck-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#neck-signet-rarity').val(), 'normal');
-    equal($('#neck-pick-signet').val(), '21');
-
-    //Brooklyn Bracer
-    equal($('#wrist-name').html(), ': Brooklyn Bracer');
-    equal($('#wrist-rarity').val(), '10.4');
-    equal($('#wrist-itemId').val(), '85');
-    equal($('#wrist-glyph-rarity').val(), '10.4');
-    equal($('#wrist-primary-glyph').val(), 'defense-rating');
-    equal($('#wrist-secondary-glyph').val(), 'none');
-    ok($('#wrist-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#wrist-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#wrist-signet-rarity').val(), 'epic');
-    ok($('#wrist-signet-rarity').attr('disabled'));
-    ok($('#wrist-pick-signet').attr('disabled'));
-    ok($('#wrist-rarity').attr('disabled'));
-
-    equal($('#luck-rarity').val(), '10.4');
-    equal($('#luck-itemId').val(), '3');
-    equal($('#luck-glyph-rarity').val(), '10.4');
-    equal($('#luck-primary-glyph').val(), 'physical-protection');
-    equal($('#luck-secondary-glyph').val(), 'none');
-    ok($('#luck-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#luck-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#luck-signet-rarity').val(), 'epic');
-    equal($('#luck-pick-signet').val(), '39');
-
-    //NY Buckle
-    equal($('#waist-name').html(), ': NY Buckle');
-    equal($('#waist-rarity').val(), '10.4');
-    equal($('#waist-itemId').val(), '87');
-    equal($('#waist-glyph-rarity').val(), '10.4');
-    equal($('#waist-primary-glyph').val(), 'physical-protection');
-    equal($('#waist-secondary-glyph').val(), 'none');
-    ok($('#waist-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#waist-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#waist-signet-rarity').val(), 'epic');
-    ok($('#waist-signet-rarity').attr('disabled'));
-    ok($('#waist-pick-signet').attr('disabled'));
-    ok($('#waist-rarity option[value="10.1"]').attr('disabled'));
-    ok($('#waist-rarity option[value="10.7"]').attr('disabled'));
-    ok(!$('#waist-rarity option[value="10.4"]').attr('disabled'));
-    ok(!$('#waist-rarity option[value="10.9"]').attr('disabled'));
-
-    equal($('#occult-rarity').val(), '10.4');
-    equal($('#occult-itemId').val(), '3');
-    equal($('#occult-glyph-rarity').val(), '10.4');
-    equal($('#occult-primary-glyph').val(), 'hit-rating');
-    equal($('#occult-secondary-glyph').val(), 'none');
-    ok($('#occult-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#occult-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#occult-signet-rarity').val(), 'epic');
-    equal($('#occult-pick-signet').val(), '41');
-});
-
-test('should import URL and set summary and slots for 1.3 links (secondary weapon added)', 108, function() {
-    var vars = {
-        head: '4,1,5,5,0,4,0,3,1',//TODO : test to enhance, last number previously 18
-        luck: '4,3,4,4,0,4,0,3,2',//TODO : test to enhance, last number previously 39
-        neck: '4,1,5,5,0,4,0,1,3',//TODO : test to enhance, last number previously 21
-        occult: '4,3,4,4,0,4,0,3,1',//TODO : test to enhance, last number previously 41
-        ring: '4,3,4,3,0,4,0,2,2',//TODO : test to enhance, last number previously 22
-        waist: '9,1,4,2,0,4,0,3,3',//TODO : test to enhance, last number previously 87
-        weapon: '5,1,4,4,0,4,0,2,1',//TODO : test to enhance, last number previously 5
-        weapon2: '5,2,4,4,0,4,0,2,2',//TODO : test to enhance, last number previously 6
-        wrist: '4,1,4,1,0,4,0,3,3'//TODO : test to enhance, last number previously 85
-    };
-
-    swlcalc.import.start(vars);
-
-    // Summary
-    equal($('#stat-hitpoints').html(), '11104');
-    equal($('#stat-combat-power').html(), '504');
-    equal($('#stat-attack-rating').html(), '1565');
-    equal($('#stat-weapon-power').html(), '457');
-    equal($('#stat-heal-rating').html(), '0');
-    equal($('#stat-critical-rating').html(), '0');
-    equal($('#stat-critical-chance').html(), '5.0 %');
-    equal($('#stat-critical-power').html(), '0');
-    equal($('#stat-critical-power-percentage').html(), '25.0 %');
-    equal($('#stat-hit-rating').html(), '+504');
-    equal($('#stat-defense-rating').html(), '+576');
-    equal($('#stat-evade-rating').html(), '0');
-    equal($('#stat-physical-protection').html(), '+660');
-    equal($('#stat-magical-protection').html(), '+300');
-
-    ok($('#weapon-slot').is(':visible'));
-    equal($('#weapon-name').html(), ': Blade');
-    equal($('#weapon-wtype').val(), 'blade');
-    equal($('#weapon-rarity').val(), '10.5');
-    equal($('#weapon-glyph-rarity').val(), '10.4');
-    equal($('#weapon-primary-glyph').val(), 'hit-rating');
-    equal($('#weapon-secondary-glyph').val(), 'none');
-    ok($('#weapon-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#weapon-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#weapon-signet-rarity').val(), 'superior');
-    equal($('#weapon-pick-signet').val(), '5');
-
-    ok(!$('#weapon2-slot').is(':visible'));
-    equal($('#weapon2-name').html(), ': Hammer');
-    equal($('#weapon2-wtype').val(), 'hammer');
-    equal($('#weapon2-rarity').val(), '10.5');
-    equal($('#weapon2-glyph-rarity').val(), '10.4');
-    equal($('#weapon2-primary-glyph').val(), 'hit-rating');
-    equal($('#weapon2-secondary-glyph').val(), 'none');
-    ok($('#weapon2-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#weapon2-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#weapon2-signet-rarity').val(), 'superior');
-    equal($('#weapon2-pick-signet').val(), '6');
-
-    equal($('#head-rarity').val(), '10.4');
-    equal($('#head-itemId').val(), '1');
-    equal($('#head-glyph-rarity').val(), '10.5');
-    equal($('#head-primary-glyph').val(), 'block-rating');
-    equal($('#head-secondary-glyph').val(), 'none');
-    ok($('#head-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#head-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#head-signet-rarity').val(), 'epic');
-    equal($('#head-pick-signet').val(), '18');
-
-    equal($('#ring-rarity').val(), '10.4');
-    equal($('#ring-itemId').val(), '3');
-    equal($('#ring-glyph-rarity').val(), '10.4');
-    equal($('#ring-primary-glyph').val(), 'defense-rating');
-    equal($('#ring-secondary-glyph').val(), 'none');
-    ok($('#ring-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#ring-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#ring-signet-rarity').val(), 'superior');
-    equal($('#ring-pick-signet').val(), '22');
-
-    equal($('#neck-rarity').val(), '10.4');
-    equal($('#neck-itemId').val(), '1');
-    equal($('#neck-glyph-rarity').val(), '10.5');
-    equal($('#neck-primary-glyph').val(), 'block-rating');
-    equal($('#neck-secondary-glyph').val(), 'none');
-    ok($('#neck-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#neck-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#neck-signet-rarity').val(), 'normal');
-    equal($('#neck-pick-signet').val(), '21');
-
-    //Brooklyn Bracer
-    equal($('#wrist-name').html(), ': Brooklyn Bracer');
-    equal($('#wrist-rarity').val(), '10.4');
-    equal($('#wrist-itemId').val(), '85');
-    equal($('#wrist-glyph-rarity').val(), '10.4');
-    equal($('#wrist-primary-glyph').val(), 'defense-rating');
-    equal($('#wrist-secondary-glyph').val(), 'none');
-    ok($('#wrist-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#wrist-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#wrist-signet-rarity').val(), 'epic');
-    ok($('#wrist-signet-rarity').attr('disabled'));
-    ok($('#wrist-pick-signet').attr('disabled'));
-    ok($('#wrist-rarity').attr('disabled'));
-
-    equal($('#luck-rarity').val(), '10.4');
-    equal($('#luck-itemId').val(), '3');
-    equal($('#luck-glyph-rarity').val(), '10.4');
-    equal($('#luck-primary-glyph').val(), 'physical-protection');
-    equal($('#luck-secondary-glyph').val(), 'none');
-    ok($('#luck-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#luck-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#luck-signet-rarity').val(), 'epic');
-    equal($('#luck-pick-signet').val(), '39');
-
-    //NY Buckle
-    equal($('#waist-name').html(), ': NY Buckle');
-    equal($('#waist-rarity').val(), '10.9');
-    equal($('#waist-itemId').val(), '87');
-    equal($('#waist-glyph-rarity').val(), '10.4');
-    equal($('#waist-primary-glyph').val(), 'physical-protection');
-    equal($('#waist-secondary-glyph').val(), 'none');
-    ok($('#waist-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#waist-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#waist-signet-rarity').val(), 'epic');
-    ok($('#waist-signet-rarity').attr('disabled'));
-    ok($('#waist-pick-signet').attr('disabled'));
-    ok($('#waist-rarity option[value="10.1"]').attr('disabled'));
-    ok($('#waist-rarity option[value="10.7"]').attr('disabled'));
-    ok(!$('#waist-rarity option[value="10.4"]').attr('disabled'));
-    ok(!$('#waist-rarity option[value="10.9"]').attr('disabled'));
-
-    equal($('#occult-rarity').val(), '10.4');
-    equal($('#occult-itemId').val(), '3');
-    equal($('#occult-glyph-rarity').val(), '10.4');
-    equal($('#occult-primary-glyph').val(), 'hit-rating');
-    equal($('#occult-secondary-glyph').val(), 'none');
-    ok($('#occult-primary-glyph-dist-btn4').hasClass('active'));
-    ok($('#occult-secondary-glyph-dist-btn0').hasClass('active'));
-    equal($('#occult-signet-rarity').val(), 'epic');
-    equal($('#occult-pick-signet').val(), '41');
-});
+//TODO : add more tests ?

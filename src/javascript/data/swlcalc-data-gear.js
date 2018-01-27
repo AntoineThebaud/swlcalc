@@ -66,7 +66,7 @@ swlcalc.data.custom_gear_data = {
                         4: 0, //TODO : placeholder value for the moment
                         5: 0, //TODO : placeholder value for the moment
                         6: 1275,
-                        7: 0, //TODO : placeholder value for the moment
+                        7: 1299,
                         8: 0, //TODO : placeholder value for the moment
                         9: 0, //TODO : placeholder value for the moment
                         10: 0, //TODO : placeholder value for the moment
