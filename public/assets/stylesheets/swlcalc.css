@@ -83,7 +83,9 @@ select {
 #table-primary .tooltip.left{
     margin-left: -12px
 }
-
+.table-title {
+    width: 100%;
+}
 
 /* slot > item */
 td.item-title {
@@ -215,4 +217,21 @@ div .slot {
 
 option:disabled {
     display:none;
+}
+
+td.slot-item-power {
+    color: #A7A7A7;
+    font-size: 12px;
+    padding: 0px;
+    text-align: right;
+    font-weight: bold;
+}
+
+td.item-power {
+    color: #A7A7A7;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 0px;
+    text-align: right;
+    vertical-align: bottom;
 }

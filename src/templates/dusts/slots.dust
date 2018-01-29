@@ -1,9 +1,30 @@
 {#slots}
 <div id="{id_prefix}-slot" class="slot">
-    <h4 class="slot">{name}</h4> <h4 id="{id_prefix}-name" class="slot-name"></h4> <span id="{id_prefix}-name-warning" class="label label-important"><a class="slot-warning" href="#" data-toggle="tooltip"><i class="icon-warning-sign icon-white"></i></a></span>
+     <table class="table-title">
+        <tr>
+            <td>
+                <span>
+                    <h4 class="slot">{name}</h4>
+                    <h4 id="{id_prefix}-name" class="slot-name"></h4>
+                    <span id="{id_prefix}-name-warning" class="label label-important">
+                        <a class="slot-warning" href="#" data-toggle="tooltip">
+                            <i class="icon-warning-sign icon-white"></i>
+                        </a>
+                    </span>
+                </span>
+            </td>
+            <td class="slot-item-power">
+                iLvL : <span id="{id_prefix}-total-item-power">0</span>
+            </td>
+        </tr>
+    </table>
     <table class="table table-slots">
         <tr>
-            <td class="item-title" colspan="2">Item</td>
+            {?is_weapon}
+            <td class="item-title" colspan="2">Weapon</td>
+            {:else}
+            <td class="item-title" colspan="2">Talisman</td>
+            {/is_weapon}
             <td class="rarity-label"><strong>Rarity :</strong></td>
             <td class="rarity-select">{>rarityselect id_suffix=""/}</td>
             {?is_weapon}
@@ -64,7 +85,10 @@
             <td class="filler"></td>
             <td class="level-label"><strong>Level :</strong></td>
             <td class="level-select">{>levelselect id_suffix=""/}</td>
-            <td class="filler"></td>
+            <td class="item-power">
+                <span>iLvL : </span>
+                <span id="{id_prefix}-item-power">0</span>
+            </td>
         </tr>
     </table>
     <table id="{id_prefix}-glyphs" class="table table-slots">
@@ -103,7 +127,10 @@
             <td class="filler"></td>
             <td class="level-label"><strong>Level :</strong></td>
             <td class="level-select">{>levelselect id_suffix="-glyph"/}</td>
-            <td class="filler"></td>
+            <td class="item-power">
+                <span>iLvL : </span>
+                <span id="{id_prefix}-glyph-item-power">0</span>
+            </td>
         </tr>
     </table>
     <table id="{id_prefix}-signets" class="table table-slots">
@@ -111,7 +138,7 @@
             <td class="item-title" colspan="2">Signet</td>
             <td class="rarity-label"><strong>Rarity :</strong></td>
             <td class="rarity-select">{>rarityselect id_suffix="-signet"/}</td>
-            <td id="{id_prefix}-signet-description" class="item-description" rowspan="2">
+            <td id="{id_prefix}-signet-description" class="item-description"> <!-- rowspan="2"> -->
         </tr>
         <tr>
             <td class="item-img">
@@ -126,6 +153,10 @@
             </td>
             <td class="level-label"><strong>Level :</strong></td>
             <td class="level-select">{>levelselect id_suffix="-signet"/}</td>
+            <td class="item-power">
+                <span>iLvL : </span>
+                <span id="{id_prefix}-signet-item-power">0</span>
+            </td>
         </tr>
     </table>
 </div>

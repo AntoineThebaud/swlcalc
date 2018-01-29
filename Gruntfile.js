@@ -62,7 +62,8 @@ module.exports = function(grunt) {
             '<%= dirs.src %>/data/<%= pkg.name %>-data-glyphs.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-cadoro.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-consumables.js',
-            '<%= dirs.src %>/data/<%= pkg.name %>-data-items.js'
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-items.js',
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-upgrading.js'
         ],
         dest: '<%= dirs.build %>/assets/javascripts/<%= pkg.name %>-data.js'
       }

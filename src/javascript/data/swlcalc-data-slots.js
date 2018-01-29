@@ -25,8 +25,7 @@ swlcalc.data.template_data = {
         }, {
             id_prefix: 'neck',
             name: 'Neck Talisman',
-            group: 'major',
-            is_neck: true
+            group: 'major'
         }, {
             id_prefix: 'wrist',
             name: 'Wrist Talisman',
