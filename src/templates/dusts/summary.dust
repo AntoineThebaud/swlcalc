@@ -22,6 +22,7 @@
                 <th>Value</th>
             </thead>
             <tbody>
+                <tr><td class="statname">Item Power</td><td id="stat-item-power" class="stat-value">0</td></tr>
                 <tr><td class="statname">Power Rating</td><td id="stat-power-rating" class="stat-value">0</td></tr>
                 <tr><td class="statname">Attack Rating</td><td id="stat-attack-rating" class="stat-value">0</td></tr>
                 <tr><td class="statname">Heal Rating</td><td id="stat-heal-rating" class="stat-value">0</td></tr>

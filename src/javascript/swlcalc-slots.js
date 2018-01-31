@@ -114,6 +114,15 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
+    this.itemPower = function() {
+        if (arguments.length == 1) {
+            this.el.totalItemPower.html(arguments[0]);
+        } else {
+            return parseInt(this.el.totalItemPower.html());
+        }
+    };
+
+
     /**
      * Calculate item power for the whole slot (talisman/weapon + glyph + signet)
      */

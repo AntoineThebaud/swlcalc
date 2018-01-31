@@ -99,22 +99,22 @@ swlcalc.summary = function() {
             'hitpoints': 3300, // base HP calculation = 300 (HP at lvl 1) + 49 * 60 (49 level ups) + 60 (/!\ don't know where this 60 comes from)
             'attack-rating': 0,
             'heal-rating': 0,
-            'power-rating': 0
+            'power-rating': 0,
+            'item-power': 0
         };
 
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
                 var slot = swlcalc.slots[slotId];
-                if(slot.isWeapon() && !slot.weaponDrawn) {
+                if (slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
-                }
-                if (slot.isWeapon() && slot.wtype() != 'none') {
+                } else if (slot.isWeapon() && slot.wtype() != 'none') {
                     sums['weapon-power'] = swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].level[slot.level()];
-                }
-                else if (!slot.isWeapon() && slot.itemId() != 'none') {
+                } else if (!slot.isWeapon() && slot.itemId() != 'none') {
                     sums['power-rating'] += swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
                 }
                 //TODO : add conversion to AR/HR/HP based on ratio selected
+                sums['item-power'] += slot.itemPower();
             }
         }
         var pureAnima = swlcalc.miscslot.pureAnima();
@@ -122,6 +122,8 @@ swlcalc.summary = function() {
             sums[bonus.stat] += bonus.add;
         });
         sums['combat-power'] = calculateCombatPower(sums['attack-rating'], sums['weapon-power']);
+        //TODO : refactor (it's weird)
+        sums['item-power'] = calculateAverageItemPower(sums['item-power']);
         return sums;
     };
 
@@ -180,7 +182,8 @@ swlcalc.summary = function() {
         return sums;
     };
 
-    //TODO :  if (swlcalc.slots.hasSlot) is weird, find a better solution
+    //TODO : if (swlcalc.slots.hasSlot) is weird, find a better solution
+    //TODO : refactor : should be updated independently for each slot in swlcalc-slots.js
     var updateGlyphValues = function() {
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
@@ -191,6 +194,7 @@ swlcalc.summary = function() {
     };
 
     //TODO :  if (swlcalc.slots.hasSlot) is weird, find a better solution
+    //TODO : refactor : should be updated independently for each slot in swlcalc-slots.js
     var updatePowerValues = function() {
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
@@ -214,6 +218,10 @@ swlcalc.summary = function() {
     var calculateEvadeChance = function(evade_rating) {
         return 30.10 - (50.14 / (Math.pow(Math.E, (evade_rating / 704.70)) + 1));
     };
+
+    var calculateAverageItemPower = function(sum_item_power) {
+        return Math.round(sum_item_power / 8); //TODO : set to 9 when gadget will be implemented
+    }
 
     var updateStats = function(sums) {
         for (var stat in sums) {

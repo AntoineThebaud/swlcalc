@@ -14,7 +14,7 @@
                 </span>
             </td>
             <td class="slot-item-power">
-                iLvL : <span id="{id_prefix}-total-item-power">0</span>
+                Item Power : <span id="{id_prefix}-total-item-power">0</span>
             </td>
         </tr>
     </table>
@@ -86,7 +86,6 @@
             <td class="level-label"><strong>Level :</strong></td>
             <td class="level-select">{>levelselect id_suffix=""/}</td>
             <td class="item-power">
-                <span>iLvL : </span>
                 <span id="{id_prefix}-item-power">0</span>
             </td>
         </tr>
@@ -128,7 +127,6 @@
             <td class="level-label"><strong>Level :</strong></td>
             <td class="level-select">{>levelselect id_suffix="-glyph"/}</td>
             <td class="item-power">
-                <span>iLvL : </span>
                 <span id="{id_prefix}-glyph-item-power">0</span>
             </td>
         </tr>
@@ -154,7 +152,6 @@
             <td class="level-label"><strong>Level :</strong></td>
             <td class="level-select">{>levelselect id_suffix="-signet"/}</td>
             <td class="item-power">
-                <span>iLvL : </span>
                 <span id="{id_prefix}-signet-item-power">0</span>
             </td>
         </tr>
