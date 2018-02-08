@@ -1,21 +1,26 @@
 swlcalc
 =======
 
-swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by Funcom. It can be used to plan how to spend your [TO UPDATE : still tsw content] Black Bullions, Criterion Upgrades and Astral Fuses. In addition to share and show others what gear you use to tackle encounters in PvE or PvP. 
-swlcalc is a fork of [tswcalc](http://joakibj.github.io/tswcalc), a gear planner designed for The Secret World (TSW).
+swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by Funcom. It can be used, to plan your gear progression, to visualize which stats you will reach at a given level and also to share and show others what gear you use to tackle encounters in PvE or PvP.
 
-swlcalc features: [TO UPDATE : still tsw content]
-* All custom gear from QL 10.0 to 11.0.
-* All glyphs from QL 10.0 to 10.5.
-* Custom gear able to be attached with all signets in normal, elite and epic variations.
-* Issue 6, 7, 8, 9, 10, 11 and 14 signets.
-* Issue 12 currency calculation.
-* NY Raid items.
-* Woodcutter's talismans.
+*This project is still on early phase of development. No release is available yet.*
 
-swlcalc can be found at: https://github.com/AntoineThebaud/swlcalc
+**swlcalc features:**
+* All custom gear from level 1 Standard to level 70 Legendary. [TODO : add gear with passive effects]
+* All glyphs from level 1 Standard to level 20 Legendary.
+* Item Power calculation.
+* Total stats calculation [TODO : phys & mag prot]
 
-**Note:** all active development of swlcalc takes place in the [`develop`](https://github.com/joakibj/tswcalc/tree/develop) branch. The tip of [`master`](https://github.com/joakibj/tswcalc/tree/master) always points to the latest, stable release. All releases are tagged. The latest release is deployed to the [`gh-pages`](https://github.com/joakibj/tswcalc/tree/gh-pages) branch.
+**Coming features:**
+* All signets from level 1 Standard to level 20 Legendary. [TODO : add swl signets]
+* All gadgets. [TODO : Nothing done]
+* Stats ratio calculation. [TODO : formulas to update]
+* Anima allocation. [TODO : Nothing done]
+* Gear cost calculation (XP, MoF, Shards) [TODO : Nothing done]
+
+Once released, swlcalc will be hosted at http://AntoineThebaud.github.io/swlcalc.
+
+**Notes:** swlcalc was created from [tswcalc](https://github.com/joakibj/tswcalc), a gear planner designed for The Secret World (TSW). All active development of swlcalc takes place in the [`develop`](https://github.com/AntoineThebaud/swlcalc/tree/develop) branch. The tip of [`master`](https://github.com/AntoineThebaud/swlcalc/tree/master) always points to the latest, stable release. All releases are tagged. The latest release is deployed to the [`gh-pages`](https://github.com/joakibj/tswcalc/tree/gh-pages) branch.
 
 Prerequisites
 --------
@@ -85,7 +90,7 @@ Contributing
 ------------
 Pull requests are welcome! They should be done against the `develop` branch.
 
-There are many things to do. Some suggestions can be found in [issues](https://github.com/joakibj/tswcalc/issues). Otherwise, things like refactoring, decoupling and better tests to make tswcalc easier to maintain is also welcome.
+There are many things to do. Some suggestions can be found in [issues](https://github.com/AntoineThebaud/swlcalc/issues). Otherwise, things like refactoring, decoupling and better tests to make swlcalc easier to maintain is also welcome.
 
 Contributions can also be bug reports, feature requests and other feedback.
 
