@@ -1,7 +1,7 @@
 function renderSlots() {
     renderTemplate('slots', {
         slots: swlcalc.data.template_data.slots,
-        signets: swlcalc.data.signet_data
+        signets: swlcalc.data.signets
     });
     swlcalc.slots.init();
     renderMiscSlot();

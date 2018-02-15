@@ -1,28 +1,54 @@
 var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
-swlcalc.data.findItems = function (slot) {
-    var slotItems = swlcalc.data.items.filter(function (item) {
-        return item.slots.indexOf(slot) != -1;
-    });
-    return slotItems;
-}
-
-//TODO : to complete
-swlcalc.data.items = [
-    {
-        id: '1',
-        name: 'Tank',
-        slots: ['head', 'major', 'minor']
-    },
-    {
-        id: '2',
-        name: 'Healer',
-        slots: ['head', 'major', 'minor']
-    },
-    {
-        id: '3',
-        name: 'DPS',
-        slots: ['head', 'major', 'minor']
+//TODO : add the missing items
+swlcalc.data.items = {
+    slot: {
+        'head': [
+            {
+                id: 1,
+                name: 'Ashes'
+            },
+            {
+                id: 2,
+                name: 'Pigment'
+            }
+        ],
+        'ring': [ //TODO : rename in "finger"
+            {
+                id: 1,
+                name: 'Ring'
+            },
+        ],
+        'neck': [
+            {
+                id: 1,
+                name: 'Medallion'
+            },
+        ],
+        'wrist': [
+            {
+                id: 1,
+                name: 'Bracelet'
+            }
+        ],
+        'luck': [
+            {
+                id: 1,
+                name: 'Dice'
+            }
+        ],
+        'waist': [
+            {
+                id: 1,
+                name: 'Chain'
+            }
+        ],
+        'occult': [
+            {
+                id: 1,
+                name: 'Effigy'
+            }
+        ]
     }
-];
+}

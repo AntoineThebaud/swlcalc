@@ -36,26 +36,9 @@ swlcalc = function() {
         $('.glyph-tooltip, .signet-tooltip, .consumable-tooltip').tooltip({
             placement: 'left'
         });
-        // COST FEATURE DISABLED. NEED REVAMP
-        // $('.cost-tooltip').tooltip({
-        //     placement: function(context, source) {
-        //         var position = $(source).position();
-        //         if (position.top < 50) {
-        //             return 'bottom';
-        //         } else {
-        //             return 'top';
-        //         }
-        //     }
-        // });
         $('#table-primary > label').tooltip({
             placement: 'left'
         });
-        // COST FEATURE DISABLED. NEED REVAMP
-        // $('.cost-tooltip, .glyph-tooltip, .signet-tooltip, .slot-warning, .swap-weapon, .consumable-tooltip').on('click', function(event) {
-        //     event.preventDefault();
-        //     event.stopPropagation();
-        // });
-
     };
 
     /**
@@ -64,7 +47,7 @@ swlcalc = function() {
     var renderContainer = function(data) {
         dust.render('container', {
             slots: swlcalc.data.template_data.slots,
-            signets: swlcalc.data.signet_data
+            signets: swlcalc.data.signets
         },
 
         function(err, out) {

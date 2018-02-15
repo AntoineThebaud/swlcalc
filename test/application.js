@@ -12,8 +12,9 @@ test('should initate swlcalc submodules', 8, function() {
     ok(swlcalc.import);
 });
 
+//TODO : improve test with signets
 test('should import from hash', 120, function() {
-    location.hash = 'weapon=3,7,1,30,4,3,2,20,5,15,20&weapon2=3,0,1,30,3,0,1,20,3,0,20&head=1,1,3,20,5,3,2,20,4,0,1&ring=5,3,1,70,3,5,2,1,2,0,20&neck=3,2,1,30,1,5,1,1,3,0,20&wrist=5,1,1,70,4,1,2,20,5,0,1&luck=3,1,1,30,4,1,1,20,1,40,1&waist=3,3,3,1,3,2,2,1,5,45,20&occult=2,1,1,1,4,3,1,20,2,49,20'
+    location.hash = 'weapon=3,7,1,30,4,3,2,20,5,0,20&weapon2=3,0,1,30,3,0,1,20,3,0,20&head=1,1,3,20,5,3,2,20,4,0,1&ring=5,3,1,70,3,5,2,1,2,0,20&neck=3,2,1,30,1,5,1,1,3,0,20&wrist=5,1,1,70,4,1,2,20,5,0,1&luck=3,1,1,30,4,1,1,20,1,0,1&waist=3,3,3,1,3,2,2,1,5,0,20&occult=2,1,1,1,4,3,1,20,2,0,20'
     swlcalc.init();
 
     // Summary
@@ -44,7 +45,7 @@ test('should import from hash', 120, function() {
     equal($('#weapon-glyph-quality').val(), 'simple');
     equal($('#weapon-glyph-level').val(), '20');
     equal($('#weapon-glyph-value').html(), '+615');
-    equal($('#weapon-signet').val(), '15');
+    equal($('#weapon-signet').val(), 'none');
     equal($('#weapon-signet-rarity').val(), 'legendary');
     equal($('#weapon-signet-level').val(), '20');
 
@@ -130,7 +131,7 @@ test('should import from hash', 120, function() {
     equal($('#luck-glyph-quality').val(), 'crude');
     equal($('#luck-glyph-level').val(), '20');
     equal($('#luck-glyph-value').html(), '+546');
-    equal($('#luck-signet').val(), '40');
+    equal($('#luck-signet').val(), 'none');
     equal($('#luck-signet-rarity').val(), 'standard');
     equal($('#luck-signet-level').val(), '1');
 
@@ -144,7 +145,7 @@ test('should import from hash', 120, function() {
     equal($('#waist-glyph-quality').val(), 'simple');
     equal($('#waist-glyph-level').val(), '1');
     equal($('#waist-glyph-value').html(), '+241');
-    equal($('#waist-signet').val(), '45');
+    equal($('#waist-signet').val(), 'none');
     equal($('#waist-signet-rarity').val(), 'legendary');
     equal($('#waist-signet-level').val(), '20');
 
@@ -158,7 +159,7 @@ test('should import from hash', 120, function() {
     equal($('#occult-glyph-quality').val(), 'crude');
     equal($('#occult-glyph-level').val(), '20');
     equal($('#occult-glyph-value').html(), '+546');
-    equal($('#occult-signet').val(), '49');
+    equal($('#occult-signet').val(), 'none');
     equal($('#occult-signet-rarity').val(), 'superior');
     equal($('#occult-signet-level').val(), '20');
 });

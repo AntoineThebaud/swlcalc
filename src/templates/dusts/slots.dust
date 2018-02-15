@@ -55,7 +55,7 @@
                     <option value="chaos">Chaos</option>
                     <option value="elementalism">Elementalism</option>
                     <option value="shotgun">Shotgun</option>
-                    <option value="pistol">Pistol</option>
+                    <option value="pistol">Pistols</option>
                     <option value="assault-rifle">Assault-Rifle</option>
                 </select>
                 {:else}

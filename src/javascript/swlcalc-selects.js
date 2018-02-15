@@ -32,16 +32,19 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     this.addItemsToSelect = function() {
+
+        //TODO : shall be done in a better way
+        //skip this function for the weapons (their dropdown is already filled)
+        if (slot.group == 'weapon') return;
+
         slotObj.el.itemId.append($('<option>', {
             value: "none",
             text: "None",
             selected: "true"
         }));
 
-        var items = swlcalc.data.findItems(slot.group);
-        if(slot.id_prefix != 'head'){
-            items = items.concat(swlcalc.data.findItems(slot.id_prefix));
-        }
+        //TODO : possible confusion between slot.group (major, minor..) and slot.id_prefix (ring, neck..)
+        var items = swlcalc.data.items.slot[slot.id_prefix];
 
         items.forEach(function(item) {
             slotObj.el.itemId.append($('<option>', {
@@ -52,19 +55,19 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     this.addSignetsToSelect = function() {
+
+        //TODO : shall be done in a better way
+        //skip this function for the weapons (no signets)
+        //if (slot.group == 'weapon') return;
+
         slotObj.el.signetId.append($('<option>', {
             value: "none",
             text: "None",
             selected: "true"
         }));
-
         this.updateToDefaultSignet();
 
-        var signetsInSlotGroup = $.merge([], swlcalc.data.signet_data[slot.group]);
-        // weapon signets can also be slotted in head
-        $.merge(signetsInSlotGroup, this.getSignetsForHead(slot.group));
-        // merge in non-head and non-weapon signets in this slot
-        $.merge(signetsInSlotGroup, this.getSignetsForSlot());
+        var signetsInSlotGroup = swlcalc.data.signets.slot[slot.id_prefix];
 
         signetsInSlotGroup.sort(function(a, b) {
             if (a.name.toLowerCase() > b.name.toLowerCase()) {
@@ -86,20 +89,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         var signet_rarity_url = 'assets/images/icons/standard.png';
         $('#' + slot.id_prefix + '-signet-img-icon').attr('src', signet_icon_url);
         $('#' + slot.id_prefix + '-signet-img-rarity').attr('src', signet_rarity_url);
-    };
-
-    this.getSignetsForHead = function(group) {
-        if (group == 'head') {
-            return swlcalc.data.signet_data['weapon'];
-        }
-        return [];
-    };
-
-    this.getSignetsForSlot = function() {
-        if (slot.id_prefix !== 'head' && slot.id_prefix !== 'weapon' && typeof swlcalc.data.signet_data[slot.id_prefix] !== 'undefined') {
-            return swlcalc.data.signet_data[slot.id_prefix];
-        }
-        return [];
     };
 
     /**
@@ -185,7 +174,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     }
 
     this.handleSignetChange = function(event) {
-        var signet = slotObj.signet();
         slotObj.updateSignet();
         slotObj.updateSignetItemPower();
         slotObj.updateTotalItemPower();
