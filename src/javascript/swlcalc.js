@@ -76,7 +76,6 @@ swlcalc = function() {
      */
     var startSubModules = function() {
         swlcalc.slots.init();
-        swlcalc.miscslot.init();
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             startSelectHandler(swlcalc.data.template_data.slots[i]);
         }

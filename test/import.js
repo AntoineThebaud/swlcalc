@@ -36,13 +36,13 @@ test('should import URL and set summary and slots', 116, function() {
     // TODO equal($('#stat-attack-rating').html(), '1518');
     equal($('#stat-weapon-power').html(), '1832');
     // TODO equal($('#stat-heal-rating').html(), '0');
-    equal($('#stat-critical-rating').html(), '+85');
+    equal($('#stat-critical-rating').html(), '+841');
     // TODO equal($('#stat-critical-chance').html(), '5.0 %');
-    equal($('#stat-critical-power').html(), '0');
-    equal($('#stat-critical-power-percentage').html(), '25.0 %');
-    equal($('#stat-hit-rating').html(), '+488');
-    equal($('#stat-defense-rating').html(), '+1143');
-    equal($('#stat-evade-rating').html(), '+1143');
+    equal($('#stat-critical-power').html(), '+1008');
+    equal($('#stat-critical-power-percentage').html(), '90.60 %');
+    equal($('#stat-hit-rating').html(), '+1244');
+    equal($('#stat-defense-rating').html(), '+1896');
+    equal($('#stat-evade-rating').html(), '+1896');
     // TODO equal($('#stat-physical-protection').html(), '+660');
     // TODO equal($('#stat-magical-protection').html(), '+300');
 

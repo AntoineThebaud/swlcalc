@@ -46,8 +46,7 @@ module.exports = function(grunt) {
             '<%= dirs.src %>/<%= pkg.name %>-export.js',
             '<%= dirs.src %>/<%= pkg.name %>-import.js',
             '<%= dirs.src %>/<%= pkg.name %>-util.js',
-            '<%= dirs.src %>/<%= pkg.name %>-slots.js',
-            '<%= dirs.src %>/<%= pkg.name %>-miscslot.js'
+            '<%= dirs.src %>/<%= pkg.name %>-slots.js'
         ],
         dest: '<%= dirs.build %>/assets/javascripts/<%= pkg.name %>.js'
       },
@@ -55,13 +54,10 @@ module.exports = function(grunt) {
         src: [
             '<%= dirs.src %>/data/<%= pkg.name %>-data-slots.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-gear.js',
-            // COST FEATURE DISABLED. NEED REVAMP
-            //'<%= dirs.src %>/data/<%= pkg.name %>-data-costs.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-mappings.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-signets.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-glyphs.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-cadoro.js',
-            '<%= dirs.src %>/data/<%= pkg.name %>-data-consumables.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-items.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-upgrading.js'
         ],

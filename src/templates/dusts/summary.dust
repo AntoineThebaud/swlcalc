@@ -9,15 +9,13 @@
             <tbody>
                 <tr><td class="statname">Item Power</td><td id="stat-item-power" class="stat-value">0</td></tr>
                 <tr><td class="statname">Power Rating</td><td id="stat-power-rating" class="stat-value">0</td></tr>
-                <!--hidden because not functionnal yet-->
-                <tr hidden><td class="statname">Attack Rating</td><td id="stat-attack-rating" class="stat-value">0</td></tr>
-                <!--hidden because not functionnal yet-->
-                <tr hidden><td class="statname">Heal Rating</td><td id="stat-heal-rating" class="stat-value">0</td></tr>
-                <!--hidden because not functionnal yet-->
-                <tr hidden><td class="statname">Hitpoints</td><td id="stat-hitpoints" class="stat-value">3300</td></tr>
                 <tr><td class="statname">Weapon Power</td><td id="stat-weapon-power" class="stat-value">0</td></tr>
-                <tr><td class="statname">Combat Power</td><td id="stat-combat-power" class="stat-value">0</td></tr>
-                <tr><td class="statname">Heal Power</td><td id="stat-heal-power" class="stat-value">0</td></tr>
+                <!--below stats are not functionnal yet-->
+                <tr><td class="statname not-functionnal">Attack Rating</td><td id="stat-attack-rating" class="stat-value not-functionnal">0</td></tr>
+                <tr><td class="statname not-functionnal">Heal Rating</td><td id="stat-heal-rating" class="stat-value not-functionnal">0</td></tr>
+                <tr><td class="statname not-functionnal">Hitpoints</td><td id="stat-hitpoints" class="stat-value not-functionnal">3300</td></tr>
+                <tr><td class="statname not-functionnal">Combat Power</td><td id="stat-combat-power" class="stat-value not-functionnal">0</td></tr>
+                <tr><td class="statname not-functionnal">Heal Power</td><td id="stat-heal-power" class="stat-value not-functionnal">0</td></tr>
             </tbody>
         </table>
     </div>
@@ -33,8 +31,7 @@
                 <tr><td class="statname">Critical Power Rating</td><td id="stat-critical-power" class="stat-value">0</td></tr>
                 <tr><td class="statname">Critical Power</td><td id="stat-critical-power-percentage" class="stat-value">0 %</td></tr>
                 <tr><td class="statname">Hit Rating</td><td id="stat-hit-rating" class="stat-value">0</td></tr>
-                <!--hidden because not functionnal yet-->
-                <tr hidden><td class="statname">Glance Reduction %</td><td id="stat-hit-chance" class="stat-value">0 %</td></tr>
+                <tr><td class="statname">Glance Reduction %</td><td id="stat-glance-reduction" class="stat-value">0 %</td></tr>
             </tbody>
         </table>
     </div>
@@ -46,13 +43,12 @@
             </thead>
             <tbody>
                 <tr><td class="statname">Defense Rating</td><td id="stat-defense-rating" class="stat-value">0</td></tr>
-                <tr><td class="statname">Glance Chance %</td><td id="stat-defense-chance" class="stat-value">0 %</td></tr>
+                <tr><td class="statname">Glance Chance %</td><td id="stat-glance-chance" class="stat-value">0 %</td></tr>
                 <tr><td class="statname">Evade Rating</td><td id="stat-evade-rating" class="stat-value">0</td></tr>
                 <tr><td class="statname">Evade Chance %</td><td id="stat-evade-chance" class="stat-value">0 %</td></tr>
-                <!--hidden because not functionnal yet-->
-                <tr hidden><td class="statname">Physical Protection</td><td id="stat-physical-protection" class="stat-value">249</td></tr>
-                <!--hidden because not functionnal yet-->
-                <tr hidden><td class="statname">Magical Protection</td><td id="stat-magical-protection" class="stat-value">249</td></tr>
+                <!--below stats are not functionnal yet-->
+                <tr><td class="statname not-functionnal">Physical Protection</td><td id="stat-physical-protection" class="stat-value not-functionnal">249</td></tr>
+                <tr><td class="statname not-functionnal">Magical Protection</td><td id="stat-magical-protection" class="stat-value not-functionnal">249</td></tr>
             </tbody>
         </table>
     </div>

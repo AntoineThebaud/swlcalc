@@ -126,21 +126,6 @@ test('should update signet icon and border', 1, function() {
 //     deepEqual(swlcalc.slots.head.determineSignetRarityValue(signet), 45);
 // });
 
-// COST FEATURE DISABLED. NEED REVAMP
-// test('should get black bullion cost for head slot (10.4/10.5)', 1, function() {
-//     deepEqual(swlcalc.slots.head.blackBullionCost(), 2100);
-// });
-//
-// test('should get astral fuse cost for slot', 2, function() {
-//    deepEqual(swlcalc.slots.head.astralFuseCost(), 1);
-//    deepEqual(swlcalc.slots.weapon.astralFuseCost(), 0);
-// });
-//
-// test('should get criterion upgrade cost for slot', 2, function() {
-//    deepEqual(swlcalc.slots.weapon.criterionUpgradeCost(), 1);
-//    deepEqual(swlcalc.slots.head.criterionUpgradeCost(), 0);
-// });
-
 // TODO : tswcalc test. swlcalc equivalent needed
 // test('should get indexed signet value based on rarity', 2, function() {
 //     swlcalc.slots.occult.signetId('47');

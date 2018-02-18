@@ -95,13 +95,13 @@ module('summary-integration-tests', {
 test('should collect offensive and defensive stats for initial state', 5, function() {
     var sums = swlcalc.summary.collectOffensiveDefensiveStats();
 
-    equal(sums['critical-rating'], 0);
+    equal(sums['critical-rating'], 756 );
     // TODO equal(sums['critical-chance'], 5.0);
-    equal(sums['critical-power'], 0);
+    equal(sums['critical-power'], 1008);
     // TODO equal(sums['critical-power-percentage'], 25);
-    equal(sums['hit-rating'], 0);
-    equal(sums['defense-rating'], 0);
-    equal(sums['evade-rating'], 0);
+    equal(sums['hit-rating'], 756);
+    equal(sums['defense-rating'], 753);
+    equal(sums['evade-rating'], 753);
     // TODO equal(sums['evade-chance'], 5.0);
     // TODO equal(sums['physical-protection'], 300);
     // TODO equal(sums['magical-protection'], 300);
@@ -112,13 +112,13 @@ test('should collect offensive and defensive stats for tank build', 5, function(
 
     var sums = swlcalc.summary.collectOffensiveDefensiveStats();
 
-    equal(sums['critical-rating'], 85);
+    equal(sums['critical-rating'], 841);
     // TODO equal(sums['critical-chance'], 5.0);
-    equal(sums['critical-power'], 0);
+    equal(sums['critical-power'], 1008);
     // TODO equal(sums['critical-power-percentage'], 25);
-    equal(sums['hit-rating'], 488);
-    equal(sums['defense-rating'], 1143);
-    equal(sums['evade-rating'], 1143);
+    equal(sums['hit-rating'], 1244);
+    equal(sums['defense-rating'], 1896);
+    equal(sums['evade-rating'], 1896);
     // TODO equal(sums['evade-chance'], 5.0);
     // TODO equal(sums['physical-protection'], 660);
     // TODO equal(sums['magical-protection'], 300);
@@ -168,73 +168,14 @@ test('should update all stats', 6, function() {
     // TODO equal($('#stat-hitpoints').html(), '10788');
     // TODO equal($('#stat-attack-rating').html(), '1565');
     // TODO equal($('#stat-heal-rating').html(), '0');
-    equal($('#stat-critical-rating').html(), '+85');
+    equal($('#stat-critical-rating').html(), '+841');
     // TODO equal($('#stat-critical-chance').html(), '5.0 %');
-    equal($('#stat-critical-power').html(), '0');
+    equal($('#stat-critical-power').html(), '+1008');
     // TODO equal($('#stat-critical-power-percentage').html(), '25.0 %');
-    equal($('#stat-hit-rating').html(), '+488');
-    equal($('#stat-defense-rating').html(), '+1143');
-    equal($('#stat-evade-rating').html(), '+1143');
+    equal($('#stat-hit-rating').html(), '+1244');
+    equal($('#stat-defense-rating').html(), '+1896');
+    equal($('#stat-evade-rating').html(), '+1896');
     // TODO equal($('#stat-evade-chance').html(), '5.0 %');
     // TODO equal($('#stat-physical-protection').html(), '+660');
     // TODO equal($('#stat-magical-protection').html(), '+300');
 });
-
-// COST FEATURE DISABLED. NEED REVAMP
-// test('should have initial costs at 10.0 price, including secondary weapon', 4, function() {
-//     swlcalc.summary.updateAllStats();
-//
-//     equal($('#bb-cost').html(), '2700');
-//     equal($('#pantheon-cost').html(), '0');
-//     equal($('#cu-cost').html(), '0');
-//     equal($('#af-cost').html(), '0');
-// });
-
-// COST FEATURE DISABLED. NEED REVAMP
-// test('should update costs for tank build, including secondary weapon', 4, function() {
-//     createTankBuild();
-//
-//     swlcalc.summary.updateAllStats();
-//
-//     equal($('#bb-cost').html(), '17700');
-//     equal($('#pantheon-cost').html(), '0');
-//     equal($('#cu-cost').html(), '2');
-//     equal($('#af-cost').html(), '2');
-// });
-
-// test('should calculate costs for 10.6+ QL build', 5, function() {
-//     create10_6To10_9MixBuild();
-//
-//     swlcalc.summary.updateAllStats();
-//
-//     equal($('#bb-cost').html(), '19600');
-//     equal($('#pantheon-cost').html(), '1930');
-//     equal($('#cu-cost').html(), '9');
-//     equal($('#af-cost').html(), '0');
-//     equal($('#su-cost').html(), '0');
-// });
-
-// test('should include currency costs when includeItemCosts checked', 5, function() {
-//     create10_6To10_9MixBuild();
-//
-//     swlcalc.summary.updateAllStats();
-//     swlcalc.summary.checkIncludeItemCosts();
-//
-//     equal($('#bb-cost').html(), '21850');
-//     equal($('#pantheon-cost').html(), '2290');
-//     equal($('#cu-cost').html(), '9');
-//     equal($('#af-cost').html(), '0');
-//     equal($('#su-cost').html(), '0');
-// });
-
-// test('should calculate costs for 11.0 QL build', 5, function() {
-//     create11_0MixBuild();
-//
-//     swlcalc.summary.updateAllStats();
-//
-//     equal($('#bb-cost').html(), '25400');
-//     equal($('#pantheon-cost').html(), '3640');
-//     equal($('#cu-cost').html(), '9');
-//     equal($('#af-cost').html(), '0');
-//     equal($('#su-cost').html(), '9');
-// });

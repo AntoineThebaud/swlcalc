@@ -238,3 +238,7 @@ td.item-power {
     text-align: right;
     vertical-align: bottom;
 }
+
+.not-functionnal {
+    color: lightgray !important;
+}

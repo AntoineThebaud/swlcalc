@@ -23,13 +23,13 @@ test('should import from hash', 120, function() {
     // TODO equal($('#stat-attack-rating').html(), '474');
     equal($('#stat-weapon-power').html(), '1832');
     // TODO equal($('#stat-heal-rating').html(), '1091');
-    equal($('#stat-critical-rating').html(), '+241');
+    equal($('#stat-critical-rating').html(), '+997');
     // TODO equal($('#stat-critical-chance').html(), '19.2 %');
-    equal($('#stat-critical-power').html(), '+2201');
+    equal($('#stat-critical-power').html(), '+3209');
     // TODO equal($('#stat-critical-power-percentage').html(), '25.0 %');
-    equal($('#stat-hit-rating').html(), '+1161');
-    equal($('#stat-defense-rating').html(), '+253');
-    equal($('#stat-evade-rating').html(), '0');
+    equal($('#stat-hit-rating').html(), '+1917');
+    equal($('#stat-defense-rating').html(), '+1006');
+    equal($('#stat-evade-rating').html(), '+753');
     // TODO equal($('#stat-physical-protection').html(), '+660');
     // TODO equal($('#stat-magical-protection').html(), '+300');
 

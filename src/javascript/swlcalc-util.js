@@ -12,9 +12,15 @@ swlcalc.util = function() {
         return arg;
     };
 
+    var precisionRound = function(number, precision) {
+        var factor = Math.pow(10, precision);
+        return Math.round(number * factor) / factor;
+    }
+
     var oPublic = {
         capitalise: capitalise,
-        blankIfNone: blankIfNone
+        blankIfNone: blankIfNone,
+        precisionRound: precisionRound
     }
     return oPublic;
 }();

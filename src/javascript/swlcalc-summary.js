@@ -2,31 +2,10 @@ var swlcalc = swlcalc || {};
 
 swlcalc.summary = function() {
 
-    var el = {};
-    // COST FEATURE DISABLED. NEED REVAMP
-    var elInit = function() {
-        return {
-            black_bullion_cost: $('#bb-cost'),
-            pantheon_cost: $('#pantheon-cost'),
-            criterion_upgrade_cost: $('#cu-cost'),
-            astral_fuse_cost: $('#af-cost'),
-            supernal_upgrade_cost: $('#su-cost'),
-            eleventh_hour_cost: $('#11th-cost'),
-            includeItemCosts: $('#summary-include-item-costs')
-        };
-    };
-
-    var init = function() {
-        el = elInit();
-        bindEvents();
-    };
-
-    var bindEvents = function() {
-        el.includeItemCosts.on('change', updateAllStats);
-    };
+    //TODO : remove ? currently needed for compatibility
+    var init = function() {};
 
     var updateAllStats = function() {
-        // updateCosts();
         updatePrimaryStats();
         updateOffensiveDefensiveStats();
         updateGlyphValues();
@@ -44,39 +23,6 @@ swlcalc.summary = function() {
             offensive_defensive: collectOffensiveDefensiveStats()
         };
     };
-
-    // COST FEATURE DISABLED. NEED REVAMP
-    // var updateCosts = function() {
-    //     var blackBullions = 0;
-    //     var pantheons = 0;
-    //     var criterionUpgrades = 0;
-    //     var supernalUpgrades = 0;
-    //     var astralFuses = 0;
-    //     var eleventhHourKits = 0;
-    //     for (var slotId in swlcalc.slots) {
-    //         if (swlcalc.slots.hasSlot(slotId)) {
-    //             var slot = swlcalc.slots[slotId];
-    //             blackBullions += slot.blackBullionCost();
-    //             pantheons += slot.markOfThePantheonCost();
-    //             criterionUpgrades += slot.criterionUpgradeCost();
-    //             supernalUpgrades += slot.supernalUpgradeCost();
-    //             astralFuses += slot.astralFuseCost();
-    //             eleventhHourKits += slot.eleventhHourCost();
-    //         }
-    //     }
-    //     if(el.includeItemCosts.is(':checked')) {
-    //         blackBullions += swlcalc.data.costs.item.criterion.bullion * criterionUpgrades;
-    //         pantheons += swlcalc.data.costs.item.criterion.pantheon * criterionUpgrades;
-    //         blackBullions += swlcalc.data.costs.item.astral.bullion * astralFuses;
-    //         pantheons += swlcalc.data.costs.item.astral.pantheon * astralFuses;
-    //     }
-    //     el.black_bullion_cost.html(blackBullions);
-    //     el.pantheon_cost.html(pantheons);
-    //     el.criterion_upgrade_cost.html(criterionUpgrades);
-    //     el.supernal_upgrade_cost.html(supernalUpgrades);
-    //     el.astral_fuse_cost.html(astralFuses);
-    //     el.eleventh_hour_cost.html(eleventhHourKits);
-    // };
 
     var updatePrimaryStats = function() {
         var sums = collectPrimaryStats();
@@ -96,9 +42,10 @@ swlcalc.summary = function() {
         var sums = {
             'combat-power': 0,
             'weapon-power': 0,
-            'hitpoints': 3300, // base HP calculation = 300 (HP at lvl 1) + 49 * 60 (49 level ups) + 60 (/!\ don't know where this 60 comes from)
-            'attack-rating': 0,
-            'heal-rating': 0,
+            // TODO : HP, AR & HR disabled for the moment (as long as power rating conversion is not implemented)
+            // 'hitpoints': 7512,     // = 3300 (base stat at lvl 50) + 2997 (amount brought by passives skills) + 1215 (capstone points)
+            // 'attack-rating': 4322, // = 2000 (base stat at lvl 50) + 1512 (amount brought by passives skills) + 810 (capstone points)
+            // 'heal-rating': 4310,   // = 2000 (base stat at lvl 50) + 1500 (amount brought by passives skills) + 810 (capstone points)
             'power-rating': 0,
             'item-power': 0
         };
@@ -117,17 +64,13 @@ swlcalc.summary = function() {
                 sums['item-power'] += slot.itemPower();
             }
         }
-        var pureAnima = swlcalc.miscslot.pureAnima();
-        pureAnima.bonus.forEach(function(bonus){
-            sums[bonus.stat] += bonus.add;
-        });
         sums['combat-power'] = calculateCombatPower(sums['attack-rating'], sums['weapon-power']);
         //TODO : refactor (it's weird)
         sums['item-power'] = calculateAverageItemPower(sums['item-power']);
         return sums;
     };
 
-    //TODO : review needed
+    //TODO : still tsw formula
     var calculateCombatPower = function(attack_rating, weapon_power) {
         if (attack_rating < 5200){
             return Math.round((375 - (600 / (Math.pow(Math.E, (attack_rating / 1400)) + 1))) * (1 + (weapon_power / 375)));
@@ -144,17 +87,19 @@ swlcalc.summary = function() {
 
     var collectOffensiveDefensiveStats = function() {
         var sums = {
-            'critical-rating': 0,
-            'critical-chance': 0,
-            'critical-power': 0,
-            'critical-power-percentage': 0,
-            'hit-rating': 0,
-            'defense-rating': 0,
+            'critical-rating': 756,           // amount brought by passives skills
+            'critical-chance': 1,             // base percentage
+            'critical-power': 1008,           // amount brought by passives skills
+            'critical-power-percentage': 25,  // base percentage
+            'hit-rating': 756,                // amount brought by passives skills
+            'glance-reduction': 0,
+            'defense-rating': 753,            // amount brought by passives skills
             'glance-chance': 0,
-            'evade-rating': 0,
-            'evade-chance': 0,
-            'physical-protection': 300,
-            'magical-protection': 300
+            'evade-rating': 753,              // amount brought by passives skills
+            'evade-chance': 0,                // base percentage
+            // TODO : prot stats are not functionnal yet
+            // 'physical-protection': 2259,   // amount brought by passives skills
+            // 'magical-protection': 2259     // amount brought by passives skills
         };
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
@@ -166,19 +111,21 @@ swlcalc.summary = function() {
             }
         }
 
-        var anima = swlcalc.miscslot.anima();
-        sums[anima.bonus.stat] += anima.bonus.add;
-        sums['critical-power-percentage'] = calculateCriticalPowerPercentage(sums['critical-power']);
-
-        sums['critical-chance'] = calculateCriticalChance(sums['critical-rating']);
+        sums['critical-chance'] += calculateCriticalChance(sums['critical-rating']);
+        sums['critical-power-percentage'] += calculateCriticalPowerPercentage(sums['critical-power']);
+        sums['glance-reduction'] = calculateGlanceReduction(sums['hit-rating']);
+        sums['glance-chance'] = calculateGlanceChance(sums['defense-rating']);
         sums['evade-chance'] = calculateEvadeChance(sums['evade-rating']);
 
+        //TODO : test if toFixed() calls are still useful
         sums['critical-rating'] = parseInt(sums['critical-rating'].toFixed(0), 10);
         sums['critical-chance'] = sums['critical-chance'].toFixed(1);
         sums['critical-power-percentage'] = sums['critical-power-percentage'].toFixed(2);
         sums['evade-chance'] = sums['evade-chance'].toFixed(1);
-        sums['magical-protection'] = parseInt(sums['magical-protection'].toFixed(0), 10);
-        sums['physical-protection'] = parseInt(sums['physical-protection'].toFixed(0), 10);
+
+        // TODO : prot stats are not functionnal yet
+        // sums['magical-protection'] = parseInt(sums['magical-protection'].toFixed(0), 10);
+        // sums['physical-protection'] = parseInt(sums['physical-protection'].toFixed(0), 10);
         return sums;
     };
 
@@ -204,19 +151,91 @@ swlcalc.summary = function() {
         }
     }
 
-    //TODO : review needed
+    /**
+     * Calculates the critical chance given by the whole gear
+     * SWL formula for critical chances is like :
+     * -> Up to 6536 rating => 1% Critical Chance every 157.49 Rating
+     * -> After 6536 rating => 1% Critical Chance every 683.00 Rating
+     * The calculation includes weapon expertise
+     */
     var calculateCriticalChance = function(critical_rating) {
-        return 55.14 - (100.3 / (Math.pow(Math.E, (critical_rating / 790.3)) + 1));
+        var hardCap = 6536;
+        var softCapRatio = 157.49;
+        var hardCapRatio = 683.00;
+        var expertise = 7.5;
+
+        if (critical_rating < hardCap) {
+            return expertise + swlcalc.util.precisionRound(critical_rating / softCapRatio, 1);
+        } else {
+            return expertise + swlcalc.util.precisionRound(hardCap / softCapRatio + (critical_rating - hardCap) / hardCapRatio, 1);
+        }
     };
 
-    //TODO : review needed
+    /**
+     * Calculates the % critical power given by the whole gear
+     * SWL formula for % critical power is like :
+     * -> Up to 3258 rating => 1% Critical Power every 28.31 Rating
+     * -> After 3258 rating => 1% Critical Power every 136.00 Rating
+     * The calculation includes weapon expertise
+     */
     var calculateCriticalPowerPercentage = function(critical_power) {
-        return Math.sqrt(5 * critical_power + 625);
+        var hardCap = 3258;
+        var softCapRatio = 28.31;
+        var hardCapRatio = 136.00;
+        var expertise = 30;
+
+        if (critical_power < hardCap) {
+            return expertise + swlcalc.util.precisionRound(critical_power / softCapRatio, 1);
+        } else {
+            return expertise + swlcalc.util.precisionRound(hardCap / softCapRatio + (critical_power - hardCap) / hardCapRatio, 1);
+        }
     };
 
-    //TODO : review needed
+    /**
+     * Calculates the % evade chance given by the whole gear
+     * SWL formula for % evade chance is like :
+     * -> Up to 4221 rating => 1% Evade Chance every 145.55 Rating
+     * -> After 4221 rating => 1% Evade Chance every 977.40 Rating
+     */
     var calculateEvadeChance = function(evade_rating) {
-        return 30.10 - (50.14 / (Math.pow(Math.E, (evade_rating / 704.70)) + 1));
+        var hardCap = 4221;
+        var softCapRatio = 145.55;
+        var hardCapRatio = 977.40;
+
+        if (evade_rating < hardCap) {
+            return swlcalc.util.precisionRound(evade_rating / softCapRatio, 1);
+        } else {
+            return swlcalc.util.precisionRound(hardCap / softCapRatio + (evade_rating - hardCap) / hardCapRatio, 1);
+        }
+    };
+
+    /**
+     * Calculates the % glance chance given by the whole gear
+     * SWL formula for % glance chance is like :
+     * -> Up to 4221 rating => 1% Evade Chance every 101.71 Rating
+     * -> After 4221 rating => 1% Evade Chance every 683.00 Rating
+     */
+    var calculateGlanceChance = function(defense_rating) {
+        var hardCap = 4221;
+        var softCapRatio = 101.71;
+        var hardCapRatio = 683.00;
+
+        if (defense_rating < hardCap) {
+            return swlcalc.util.precisionRound(defense_rating / softCapRatio, 1);
+        } else {
+            return swlcalc.util.precisionRound(hardCap / softCapRatio + (defense_rating - hardCap) / hardCapRatio, 1);
+        }
+    };
+
+    /**
+     * Calculates the % glance reduction given by the whole gear
+     * SWL formula for % glance reduction is like :
+     * -> 1% Evade Chance every 50.85 Rating (no hard cap)
+     */
+    var calculateGlanceReduction = function(hit_rating) {
+        var ratio = 50.85;
+
+        return swlcalc.util.precisionRound(hit_rating / ratio, 1);
     };
 
     var calculateAverageItemPower = function(sum_item_power) {
@@ -227,7 +246,7 @@ swlcalc.summary = function() {
         for (var stat in sums) {
             if (sums.hasOwnProperty(stat)) {
                 if (sums[stat] > 0) {
-                    $('#stat-' + stat).html(isStatPercentageBased(stat) ? sums[stat].toString().substring(0, 4) + " %" : '+' + sums[stat]);
+                    $('#stat-' + stat).html(isStatPercentageBased(stat) ? sums[stat].toString() + " %" : '+' + sums[stat]);
                 } else {
                     $('#stat-' + stat).html(isStatPercentageBased(stat) ? "0 %" : "0");
                 }
@@ -236,13 +255,12 @@ swlcalc.summary = function() {
     };
 
     var isStatPercentageBased = function(statName) {
-        return statName == 'critical-power-percentage' || statName == 'critical-chance' || statName == 'evade-chance';
+        return statName == 'critical-power-percentage'
+            || statName == 'critical-chance'
+            || statName == 'glance-reduction'
+            || statName == 'evade-chance'
+            || statName == 'glance-chance';
     };
-
-    // var checkIncludeItemCosts = function() {
-    //     el.includeItemCosts.prop('checked', true);
-    //     el.includeItemCosts.change();
-    // };
 
     var oPublic = {
         init: init,
@@ -254,7 +272,6 @@ swlcalc.summary = function() {
         collectOffensiveDefensiveStats: collectOffensiveDefensiveStats,
         collectAllStats: collectAllStats,
         updateAllStats: updateAllStats
-        // checkIncludeItemCosts : checkIncludeItemCosts
     };
 
     return oPublic;

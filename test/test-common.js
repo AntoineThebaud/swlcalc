@@ -4,12 +4,6 @@ function renderSlots() {
         signets: swlcalc.data.signets
     });
     swlcalc.slots.init();
-    renderMiscSlot();
-}
-
-function renderMiscSlot() {
-    renderTemplate('miscslot', {});
-    swlcalc.miscslot.init();
 }
 
 function renderSummary() {

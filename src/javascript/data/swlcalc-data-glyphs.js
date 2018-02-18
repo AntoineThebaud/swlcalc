@@ -2,6 +2,7 @@ var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
 swlcalc.data.glyph_data = {
+    //TODO : remove stat layer in the structure  (as every stat increase at the same amount) /!\ except crit power that givse 97.3% of the value of other glyphs
     stat: {
         'critical-rating': {
             rarity: {
