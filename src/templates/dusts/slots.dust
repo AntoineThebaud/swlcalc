@@ -29,7 +29,7 @@
             <td class="rarity-select">{>rarityselect id_suffix=""/}</td>
             {?is_weapon}
             <td>
-                <a id="{id_prefix}-swap-weapon" class="btn btn-info swap-weapon" href="#">
+                <a id="{id_prefix}-swap-weapon" class="btn btn-info swap-weapon">
                     <i class="icon-retweet icon-white icon-align-left"></i>    Swap weapon
                 </a>
             </td>
