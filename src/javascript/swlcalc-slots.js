@@ -295,21 +295,17 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         if (this.glyph() == 'none') {
             return 0;
         }
-        // console.log("============================================");
-        // console.log("this.glyph() == ");console.log(this.glyph());
-        // console.log(swlcalc.data.glyph_data.stat[this.glyph()]);
-        // console.log("this.glyphRarity() == ");console.log(this.glyphRarity());
-        // console.log(swlcalc.data.glyph_data.stat[this.glyph()].rarity[this.glyphRarity()]);
-        // console.log("this.glyphQuality() == ");console.log(this.glyphQuality());
-        // console.log(swlcalc.data.glyph_data.stat[this.glyph()].rarity[this.glyphRarity()].quality[this.glyphQuality()]);
-        // console.log("this.glyphLevel() == ");console.log(this.glyphLevel());
-        // console.log(swlcalc.data.glyph_data.stat[this.glyph()].rarity[this.glyphRarity()].quality[this.glyphQuality()].level[this.glyphLevel()]);
-        // console.log("============================================");
-        return swlcalc.data.glyph_data.stat[this.glyph()].rarity[this.glyphRarity()].quality[this.glyphQuality()].level[this.glyphLevel()];
+        // Glyph value depends on the rarity-quality-level trio, neither the slot nor the stat are taken into account (while they were in TSW).
+        // /!\ exception for crit power glyphs that give 97.3% of the value of other glyphs)
+        var glyphValue = swlcalc.data.glyph_data.rarity[this.glyphRarity()].quality[this.glyphQuality()].level[this.glyphLevel()];
+        if (this.glyph() == 'critical-power') {
+            glyphValue = 0.973 * glyphValue;
+        }
+        return glyphValue;
     };
 
     this.updateGlyphValue = function() {
-        this.el.glyphValue.html(this.glyphValue() !== 0 ? '+' + this.glyphValue() : 0);
+        this.el.glyphValue.html(this.glyphValue() !== 0 ? '+' + this.glyphValue().toFixed(0) : 0);
     };
 
     this.updateGlyphStatLabel = function(newStat) {

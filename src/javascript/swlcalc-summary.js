@@ -101,6 +101,7 @@ swlcalc.summary = function() {
             // 'physical-protection': 2259,   // amount brought by passives skills
             // 'magical-protection': 2259     // amount brought by passives skills
         };
+        // get flat stats
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
                 var slot = swlcalc.slots[slotId];
@@ -110,19 +111,18 @@ swlcalc.summary = function() {
                 sums[slot.glyph()] += slot.glyphValue();
             }
         }
-
+        // get ratio stats
         sums['critical-chance'] += calculateCriticalChance(sums['critical-rating']);
         sums['critical-power-percentage'] += calculateCriticalPowerPercentage(sums['critical-power']);
         sums['glance-reduction'] = calculateGlanceReduction(sums['hit-rating']);
         sums['glance-chance'] = calculateGlanceChance(sums['defense-rating']);
         sums['evade-chance'] = calculateEvadeChance(sums['evade-rating']);
-
-        //TODO : test if toFixed() calls are still useful
-        sums['critical-rating'] = parseInt(sums['critical-rating'].toFixed(0), 10);
+        // round values for display purpose
+        sums['critical-rating'] = sums['critical-rating'].toFixed(0);
         sums['critical-chance'] = sums['critical-chance'].toFixed(1);
-        sums['critical-power-percentage'] = sums['critical-power-percentage'].toFixed(2);
+        sums['critical-power'] = sums['critical-power'].toFixed(0);
+        sums['critical-power-percentage'] = sums['critical-power-percentage'].toFixed(1);
         sums['evade-chance'] = sums['evade-chance'].toFixed(1);
-
         // TODO : prot stats are not functionnal yet
         // sums['magical-protection'] = parseInt(sums['magical-protection'].toFixed(0), 10);
         // sums['physical-protection'] = parseInt(sums['physical-protection'].toFixed(0), 10);
@@ -140,7 +140,7 @@ swlcalc.summary = function() {
         }
     };
 
-    //TODO :  if (swlcalc.slots.hasSlot) is weird, find a better solution
+    //TODO : if (swlcalc.slots.hasSlot) is weird, find a better solution
     //TODO : refactor : should be updated independently for each slot in swlcalc-slots.js
     var updatePowerValues = function() {
         for (var slotId in swlcalc.slots) {

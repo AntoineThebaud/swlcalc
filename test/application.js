@@ -25,7 +25,7 @@ test('should import from hash', 120, function() {
     // TODO equal($('#stat-heal-rating').html(), '1091');
     equal($('#stat-critical-rating').html(), '+997');
     // TODO equal($('#stat-critical-chance').html(), '19.2 %');
-    equal($('#stat-critical-power').html(), '+3209');
+    equal($('#stat-critical-power').html(), '+3150');
     // TODO equal($('#stat-critical-power-percentage').html(), '25.0 %');
     equal($('#stat-hit-rating').html(), '+1917');
     equal($('#stat-defense-rating').html(), '+1006');
@@ -44,7 +44,7 @@ test('should import from hash', 120, function() {
     equal($('#weapon-glyph-rarity').val(), 'mythic');
     equal($('#weapon-glyph-quality').val(), 'simple');
     equal($('#weapon-glyph-level').val(), '20');
-    equal($('#weapon-glyph-value').html(), '+615');
+    equal($('#weapon-glyph-value').html(), '+598');
     equal($('#weapon-signet').val(), 'none');
     equal($('#weapon-signet-rarity').val(), 'legendary');
     equal($('#weapon-signet-level').val(), '20');
@@ -74,7 +74,7 @@ test('should import from hash', 120, function() {
     equal($('#head-glyph-rarity').val(), 'legendary');
     equal($('#head-glyph-quality').val(), 'simple');
     equal($('#head-glyph-level').val(), '20');
-    equal($('#head-glyph-value').html(), '+1040');
+    equal($('#head-glyph-value').html(), '+1012');
     equal($('#head-signet').val(), 'none');
     equal($('#head-signet-rarity').val(), 'mythic');
     equal($('#head-signet-level').val(), '1');
@@ -158,7 +158,7 @@ test('should import from hash', 120, function() {
     equal($('#occult-glyph-rarity').val(), 'mythic');
     equal($('#occult-glyph-quality').val(), 'crude');
     equal($('#occult-glyph-level').val(), '20');
-    equal($('#occult-glyph-value').html(), '+546');
+    equal($('#occult-glyph-value').html(), '+531');
     equal($('#occult-signet').val(), 'none');
     equal($('#occult-signet-rarity').val(), 'superior');
     equal($('#occult-signet-level').val(), '20');
