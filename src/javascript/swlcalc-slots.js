@@ -94,7 +94,8 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         glyphLevel: $('#' + this.id + '-glyph-level'),
         glyphValue: $('#' + this.id + '-glyph-value'),
         glyphStat: $('#' + this.id + '-glyph-stat'),
-        glyphIconBorderImg: $('#' + this.id + '-glyph-img-rarity'),
+        glyphImgIcon: $('#' + this.id + '-glyph-img-icon'),
+        glyphImgBorder: $('#' + this.id + '-glyph-img-rarity'),
         glyphItemPower: $('#' + this.id + '-glyph-item-power'),
         signetId: $('#' + this.id + '-signet'),
         signetRarity: $('#' + this.id + '-signet-rarity'),
@@ -218,7 +219,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     this.updateIconBorder = function(rarity) {
-        var rarity_url = 'assets/images/icons/' + rarity + '.png';
+        var rarity_url = 'assets/images/icons/rarity/' + rarity + '-42x42.png';
         this.el.iconBorderImg.attr('src', rarity_url);
     };
 
@@ -312,9 +313,14 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.el.glyphStat.html(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newStat]);
     };
 
+    this.updateGlyphIcon = function(newStat) {
+        var rarity_url = 'assets/images/icons/glyph/' + newStat + '.png';
+        this.el.glyphImgIcon.attr('src', rarity_url);
+    };
+
     this.updateGlyphIconBorder = function(rarity) {
-        var rarity_url = 'assets/images/icons/' + rarity + '.png';
-        this.el.glyphIconBorderImg.attr('src', rarity_url);
+        var rarity_url = 'assets/images/icons/rarity/' + rarity + '-42x42.png';
+        this.el.glyphImgBorder.attr('src', rarity_url);
     };
 
     /**
@@ -433,7 +439,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     this.updateSignetIconBorder = function(signetRarity) {
-        var signet_rarity_url = 'assets/images/icons/' + signetRarity + '.png';
+        var signet_rarity_url = 'assets/images/icons/rarity/' + signetRarity + '-42x42.png';
         this.el.signetIconBorderImg.attr('src', signet_rarity_url);
     };
 
@@ -442,7 +448,8 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     this.updateSignetIconImageFromName = function(name) {
-        var signet_icon_url = 'assets/images/icons/' + name + '.png';
+        name = "none"; //TODO temporaire
+        var signet_icon_url = 'assets/images/icons/signet/' + name + '.png';
         this.el.signetIconImg.attr('src', signet_icon_url);
     };
 

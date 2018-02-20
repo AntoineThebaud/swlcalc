@@ -85,15 +85,15 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     this.updateToDefaultSignet = function() {
-        var signet_icon_url = 'assets/images/icons/' + slot.group + '_dps.png';
-        var signet_rarity_url = 'assets/images/icons/standard.png';
+        var signet_icon_url = 'assets/images/icons/signet/none.png';
+        var signet_rarity_url = 'assets/images/icons/rarity/none-42x42.png';
         $('#' + slot.id_prefix + '-signet-img-icon').attr('src', signet_icon_url);
         $('#' + slot.id_prefix + '-signet-img-rarity').attr('src', signet_rarity_url);
     };
 
     /**
-     * Event handlers |
-     *                V
+     * Event handlers : Item |
+     *                       V
      */
 
     //TODO : refactor
@@ -150,14 +150,20 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         swlcalc.summary.updateAllStats();
     };
 
+    /**
+     * Event handlers : Glyph |
+     *                        V
+     */
+
     this.handleGlyphChange = function(event) {
-        slotObj.updateGlyphStatLabel(event.target.selectedOptions[0].value); //TODO : abstract layer ?
+        slotObj.updateGlyphStatLabel(event.target.selectedOptions[0].value);
+        slotObj.updateGlyphIcon(event.target.selectedOptions[0].value);
         swlcalc.summary.updateAllStats();
     };
 
     this.handleGlyphRarityChange = function(event) {
         self.updateTextColor(event.target);
-        slotObj.updateGlyphIconBorder(event.target.selectedOptions[0].value); //TODO : abstract layer ?
+        slotObj.updateGlyphIconBorder(event.target.selectedOptions[0].value);
         slotObj.updateGlyphItemPower();
         slotObj.updateTotalItemPower();
         swlcalc.summary.updateAllStats();
@@ -172,6 +178,11 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateTotalItemPower();
         swlcalc.summary.updateAllStats();
     }
+
+    /**
+     * Event handlers : Signet |
+     *                         V
+     */
 
     this.handleSignetChange = function(event) {
         slotObj.updateSignet();

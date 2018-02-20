@@ -29,86 +29,9 @@ module('buttonbar-integration-tests', {
     }
 });
 
-// TODO : refactor
-// test('should set role on all slots to dps', 7, function() {
-//     swlcalc.buttonBar.setRoleOnAllSlots({
-//         target: {
-//             id: '#btn-all-3'
-//         }
-//     });
-//
-//     equal(swlcalc.slots.head.item().role, 'dps');
-//     equal(swlcalc.slots.ring.item().role, 'dps');
-//     equal(swlcalc.slots.neck.item().role, 'dps');
-//     equal(swlcalc.slots.wrist.item().role, 'dps');
-//     equal(swlcalc.slots.luck.item().role, 'dps');
-//     equal(swlcalc.slots.waist.item().role, 'dps');
-//     equal(swlcalc.slots.occult.item().role, 'dps');
-// });
+// TODO : test('should set rarity and glyph rarity on all slots to x', 16, function() {});
 
-// TODO : TEST TO UPDATE (tsw values)
-// test('should set rarity and glyph rarity on all slots to 10.5 with the exception of rarity on raid items', 16, function() {
-//     swlcalc.buttonBar.setQlOnAllSlots({
-//         target: {
-//             id: '#btn-all-10-5'
-//         }
-//     });
-//
-//     equal(swlcalc.slots.weapon.rarity(), '10.5');
-//     equal(swlcalc.slots.weapon.glyphRarity(), '10.5');
-//     equal(swlcalc.slots.head.rarity(), '10.5');
-//     equal(swlcalc.slots.head.glyphRarity(), '10.5');
-//     equal(swlcalc.slots.ring.rarity(), '10.5');
-//     equal(swlcalc.slots.ring.glyphRarity(), '10.5');
-//     equal(swlcalc.slots.neck.rarity(), '10.5');
-//     equal(swlcalc.slots.neck.glyphRarity(), '10.5');
-//     equal(swlcalc.slots.wrist.rarity(), '10.4');
-//     equal(swlcalc.slots.wrist.glyphRarity(), '10.5');
-//     equal(swlcalc.slots.luck.rarity(), '10.5');
-//     equal(swlcalc.slots.luck.glyphRarity(), '10.5');
-//     equal(swlcalc.slots.waist.rarity(), '10.4');
-//     equal(swlcalc.slots.waist.glyphRarity(), '10.5');
-//     equal(swlcalc.slots.occult.rarity(), '10.5');
-//     equal(swlcalc.slots.occult.glyphRarity(), '10.5');
-// });
-
-// TODO : TEST TO UPDATE (tsw values)
-// test('should set rarity and glyph rarity on all slots to 10.4 with the exception of rarity on raid items after changing QL then changing role', 23, function() {
-//     swlcalc.buttonBar.setQlOnAllSlots({
-//         target: {
-//             id: '#btn-all-10-4'
-//         }
-//     });
-//     swlcalc.buttonBar.setRoleOnAllSlots({
-//         target: {
-//             id: '#btn-all-1'
-//         }
-//     });
-//
-//     equal(swlcalc.slots.weapon.rarity(), '10.4');
-//     equal(swlcalc.slots.weapon.glyphRarity(), '10.4');
-//     equal(swlcalc.slots.head.rarity(), '10.4');
-//     equal(swlcalc.slots.head.glyphRarity(), '10.4');
-//     equal(swlcalc.slots.ring.rarity(), '10.4');
-//     equal(swlcalc.slots.ring.glyphRarity(), '10.4');
-//     equal(swlcalc.slots.neck.rarity(), '10.4');
-//     equal(swlcalc.slots.neck.glyphRarity(), '10.4');
-//     equal(swlcalc.slots.wrist.rarity(), '10.4');
-//     equal(swlcalc.slots.wrist.glyphRarity(), '10.4');
-//     equal(swlcalc.slots.luck.rarity(), '10.4');
-//     equal(swlcalc.slots.luck.glyphRarity(), '10.4');
-//     equal(swlcalc.slots.waist.rarity(), '10.4');
-//     equal(swlcalc.slots.waist.glyphRarity(), '10.4');
-//     equal(swlcalc.slots.occult.rarity(), '10.4');
-//     equal(swlcalc.slots.occult.glyphRarity(), '10.4');
-//     equal(swlcalc.slots.head.item().role, 'tank');
-//     equal(swlcalc.slots.ring.item().role, 'tank');
-//     equal(swlcalc.slots.neck.item().role, 'tank');
-//     equal(swlcalc.slots.wrist.item().role, 'tank');
-//     equal(swlcalc.slots.luck.item().role, 'tank');
-//     equal(swlcalc.slots.waist.item().role, 'tank');
-//     equal(swlcalc.slots.occult.item().role, 'tank');
-// });
+// TODO : test('should set rarity and glyph rarity on all slots to x after changing rarity then changing role', 23, function() {});
 
 //TODO : reset should logically set lvl 1 to items
 test('should reset all slots', 88, function() {

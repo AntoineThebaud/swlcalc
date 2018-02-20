@@ -100,9 +100,9 @@ td.item-img {
     width: 34px;
 }
 img.item-icon {
-    background-image:url('../images/icons/item_background.png');
+    /*background-image:url('../images/icons/item_background.png');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     width: 32px;
     height:32px;
     z-index: 0;
@@ -191,11 +191,6 @@ img.consumable {
 
 .statname {
     width: 200px;
-}
-
-.qlbuttons {
-    margin-left: 5px;
-    padding: 2px;
 }
 
 div .slot {

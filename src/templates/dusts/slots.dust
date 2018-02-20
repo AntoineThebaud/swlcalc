@@ -39,9 +39,9 @@
         </tr>
         <tr>
             <td class="item-img">
-                <a href="#" data-toggle="tooltip" title="Item for the {name} slot. Choose which QL and stats it will have in your build.">
-                    <img id="{id_prefix}-img-rarity" class="item-icon-border" src="assets/images/icons/standard.png"/>
-                    <img id="{id_prefix}-img-icon" class="item-icon" src="assets/images/icons/minor_dps.png" alt="Glyph"/>
+                <a href="#" data-toggle="tooltip" title="Item for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
+                    <img id="{id_prefix}-img-rarity" class="item-icon-border" src="assets/images/icons/rarity/none-64x64.png"/>
+                    <img id="{id_prefix}-img-icon" class="item-icon" src="assets/images/icons/item/none.png" alt="Glyph"/>
                 </a>
             </td>
             <td class="item-select">
@@ -99,9 +99,9 @@
         </tr>
         <tr>
             <td class="item-img">
-                <a href="#" class="glyph-tooltip" data-toggle="tooltip" title="Glyph for the {name} slot. Choose which QL and stats it will have in your build.">
-                    <img id="{id_prefix}-glyph-img-rarity" class="item-icon-border" src="assets/images/icons/standard.png"/>
-                    <img id="{id_prefix}-glyph-img-icon" class="item-icon" src="assets/images/icons/minor_dps.png" alt="Glyph"/>
+                <a href="#" class="glyph-tooltip" data-toggle="tooltip" title="Glyph for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
+                    <img id="{id_prefix}-glyph-img-rarity" class="item-icon-border" src="assets/images/icons/rarity/none-42x42.png"/>
+                    <img id="{id_prefix}-glyph-img-icon" class="item-icon" src="assets/images/icons/glyph/none.png" alt="Glyph"/>
                 </a>
             </td>
             <td class="item-select">
@@ -141,8 +141,8 @@
         <tr>
             <td class="item-img">
                 <a href="#" class="signet-tooltip" data-toggle="tooltip" title="Signet for the {name} slot. Choose the rarity and type of signet.">
-                    <img id="{id_prefix}-signet-img-rarity" class="item-icon-border" src="assets/images/icons/standard.png"/>
-                    <img id="{id_prefix}-signet-img-icon" class="item-icon" src="assets/images/icons/minor_dps.png"/>
+                    <img id="{id_prefix}-signet-img-rarity" class="item-icon-border" src="assets/images/icons/rarity/none-42x42.png"/>
+                    <img id="{id_prefix}-signet-img-icon" class="item-icon" src="assets/images/icons/signet/none.png"/>
                 </a>
             </td>
             <td class="item-select">

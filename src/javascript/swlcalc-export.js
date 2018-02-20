@@ -39,11 +39,8 @@ swlcalc.export = function() {
     };
 
     var startExport = function() {
-        if (exportType == 'url') {
-            startExportUrl();
-    //  } else if (exportType == 'bbcode') {
-    //      startExportBBCode();
-        }
+        //TODO : put back bbcode export feature ?
+        startExportUrl();
     };
 
     var startExportUrl = function() {
