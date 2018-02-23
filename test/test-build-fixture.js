@@ -39,19 +39,19 @@ function createTankBuild() {
     $('#head-signet-rarity').val('standard');
     $('#head-signet-level').val('20');
 
-    $('#ring-itemId').val('1');
-    $('#ring-itemId').change(); //TODO : indentify if change needed and when it should be triggered
-    $('#ring-rarity').val('epic');
-    $('#ring-rarity').change(); //required because triggers update of #ring-level
-    $('#ring-quality').val('faded');
-    $('#ring-level').val('30');
-    $('#ring-glyph').val('defense-rating');
-    $('#ring-glyph-rarity').val('epic');
-    $('#ring-glyph-quality').val('simple');
-    $('#ring-glyph-level').val('20');
-    $('#ring-signet').val('none');//TODO
-    $('#ring-signet-rarity').val('standard');
-    $('#ring-signet-level').val('20');
+    $('#finger-itemId').val('1');
+    $('#finger-itemId').change(); //TODO : indentify if change needed and when it should be triggered
+    $('#finger-rarity').val('epic');
+    $('#finger-rarity').change(); //required because triggers update of #finger-level
+    $('#finger-quality').val('faded');
+    $('#finger-level').val('30');
+    $('#finger-glyph').val('defense-rating');
+    $('#finger-glyph-rarity').val('epic');
+    $('#finger-glyph-quality').val('simple');
+    $('#finger-glyph-level').val('20');
+    $('#finger-signet').val('none');//TODO
+    $('#finger-signet-rarity').val('standard');
+    $('#finger-signet-level').val('20');
 
     $('#neck-itemId').val('1');
     $('#neck-itemId').change(); //TODO : indentify if change needed and when it should be triggered

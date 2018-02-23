@@ -132,11 +132,22 @@
         </tr>
     </table>
     <table id="{id_prefix}-signets" class="table table-slots">
+        {?is_weapon}
+        <tr>
+            <td class="item-title" colspan="2">Suffixe</td>
+            <td id="{id_prefix}-signet-description" class="item-description" colspan="3" rowspan="2"></td>
+        <tr>
+            <td class="item-select" colspan="2">
+                <select id="{id_prefix}-signet" title="Please select signet">
+                </select>
+            </td>
+        </tr>
+        {:else}
         <tr>
             <td class="item-title" colspan="2">Signet</td>
             <td class="rarity-label"><strong>Rarity :</strong></td>
             <td class="rarity-select">{>rarityselect id_suffix="-signet"/}</td>
-            <td id="{id_prefix}-signet-description" class="item-description"> <!-- rowspan="2"> -->
+            <td id="{id_prefix}-signet-description" class="item-description"></td>
         </tr>
         <tr>
             <td class="item-img">
@@ -155,6 +166,7 @@
                 <span id="{id_prefix}-signet-item-power">0</span>
             </td>
         </tr>
+        {/is_weapon}
     </table>
 </div>
 {:else}

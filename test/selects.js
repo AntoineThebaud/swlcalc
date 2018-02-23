@@ -5,7 +5,7 @@ module('selects-dom', {
     }
 });
 
-test('should have required selects in the DOM', 97, function() {
+test('should have required selects in the DOM', 93, function() {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var slotId = swlcalc.data.template_data.slots[i].id_prefix;
         if (slotId != 'weapon' && slotId != 'weapon2') {
@@ -19,8 +19,10 @@ test('should have required selects in the DOM', 97, function() {
         ok($('#' + slotId + '-glyph-quality').length !== 0, slotId + '-glyph-quality exists');
         ok($('#' + slotId + '-glyph-level').length !== 0, slotId + '-glyph-level exists');
         ok($('#' + slotId + '-signet').length !== 0, slotId + '-signet exists');
-        ok($('#' + slotId + '-signet-rarity').length !== 0, slotId + '-signet-rarity exists');
-        ok($('#' + slotId + '-signet-level').length !== 0, slotId + '-signet-level exists');
+        if (slotId != 'weapon' && slotId != 'weapon2') {
+            ok($('#' + slotId + '-signet-rarity').length !== 0, slotId + '-signet-rarity exists');
+            ok($('#' + slotId + '-signet-level').length !== 0, slotId + '-signet-level exists');
+        }
     }
 });
 
@@ -31,7 +33,7 @@ module('selects-events', {
     }
 });
 
-test('should have required event listeners for change on selects in the DOM', 97, function() {
+test('should have required event listeners for change on selects in the DOM', 93, function() {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var slotId = swlcalc.data.template_data.slots[i].id_prefix;
         ok($._data($('#' + slotId + '-rarity').get(0), 'events').change instanceof Array);
@@ -45,8 +47,10 @@ test('should have required event listeners for change on selects in the DOM', 97
         ok($._data($('#' + slotId + '-glyph-quality').get(0), 'events').change instanceof Array);
         ok($._data($('#' + slotId + '-glyph-level').get(0), 'events').change instanceof Array);
         ok($._data($('#' + slotId + '-signet').get(0), 'events').change instanceof Array);
-        ok($._data($('#' + slotId + '-signet-rarity').get(0), 'events').change instanceof Array);
-        ok($._data($('#' + slotId + '-signet-level').get(0), 'events').change instanceof Array);
+        if (slotId != 'weapon' && slotId != 'weapon2') {
+            ok($._data($('#' + slotId + '-signet-rarity').get(0), 'events').change instanceof Array);
+            ok($._data($('#' + slotId + '-signet-level').get(0), 'events').change instanceof Array);
+        }
     }
 });
 

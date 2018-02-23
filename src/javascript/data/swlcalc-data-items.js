@@ -14,7 +14,7 @@ swlcalc.data.items = {
                 name: 'Pigment'
             }
         ],
-        'ring': [ //TODO : rename in "finger"
+        'finger': [ //TODO : rename in "finger"
             {
                 id: 1,
                 name: 'Ring'

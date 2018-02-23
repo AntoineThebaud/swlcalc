@@ -134,3 +134,26 @@ swlcalc.data.wtype_mapping = {
         9: 'assault-rifle'
     }
 };
+
+swlcalc.data.suffixe_mapping = {
+    to_num: {
+        'alacrity': 1,
+        'destruction': 2,
+        'energy': 3,
+        'efficiency': 4,
+        'havoc': 5,
+        'restoration': 6,
+        'recovery': 7,
+        'warding': 8
+    },
+    to_name: {
+        1: 'alacrity',
+        2: 'destruction',
+        3: 'energy',
+        4: 'efficiency',
+        5: 'havoc',
+        6: 'restoration',
+        7: 'recovery',
+        8: 'warding'
+    }
+};

@@ -4,7 +4,7 @@
  *                      Element                      |               Values
  *---------------------------------------------------|------------------------------------
  *                  ____________ Item's Rarity        [1,2,3,4,5]
- *                 / ___________ Item's Type (ID)     [0,1,2,3] + items with passives => TODO : to correct
+ *                 / ___________ Item's Type (ID)     [0,1] + items with passives => TODO : to correct
  *                / / __________ Item's Quality       [1,2,3]
  *               / / / _________ Item's Level         [1->20/25/30/35/70]
  *              / / / / ________ Glyph's Rarity       [1,2,3,4,5]

@@ -89,7 +89,7 @@ test('should update signet icon and border', 1, function() {
 
     // TODO : tswcalc test. swlcalc equivalent needed
     // equal($('#head-signet-img-icon').attr('src'), 'assets/images/icons/head_tank.png');
-    equal($('#head-signet-img-rarity').attr('src'), 'assets/images/icons/superior.png');
+    equal($('#head-signet-img-rarity').attr('src'), 'assets/images/icons/rarity/superior-42x42.png');
 });
 
 // TODO : tswcalc test. swlcalc equivalent needed

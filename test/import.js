@@ -20,7 +20,7 @@ test('should import URL and set summary and slots', 116, function() {
         luck: '3,1,1,1,3,4,2,20,1,0,20',
         neck: '3,1,1,30,3,5,2,20,1,0,20',
         occult: '3,1,1,1,3,4,2,20,1,0,20',
-        ring: '3,1,1,30,3,5,2,20,1,0,20',
+        finger: '3,1,1,30,3,5,2,20,1,0,20',
         waist: '3,1,1,30,3,4,2,20,1,0,20',
         weapon: '3,1,1,30,2,2,1,1,1,0,20',
         weapon2: '3,2,3,30,2,2,1,1,1,0,20',
@@ -56,8 +56,8 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#weapon-glyph-level').val(), '1');
     equal($('#weapon-glyph-value').html(), '+85');
     equal($('#weapon-signet').val(), 'none');
-    equal($('#weapon-signet-rarity').val(), 'standard');
-    equal($('#weapon-signet-level').val(), '20');
+    equal($('#weapon-signet-rarity').val(), undefined);
+    equal($('#weapon-signet-level').val(), undefined);
 
     equal($('#weapon2-rarity').val(), 'epic');
     equal($('#weapon2-quality').val(), 'mkIII');
@@ -69,8 +69,8 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#weapon2-glyph-level').val(), '1');
     equal($('#weapon2-glyph-value').html(), '+85');
     equal($('#weapon2-signet').val(), 'none');
-    equal($('#weapon2-signet-rarity').val(), 'standard');
-    equal($('#weapon2-signet-level').val(), '20');
+    equal($('#weapon2-signet-rarity').val(), undefined);
+    equal($('#weapon2-signet-level').val(), undefined);
 
     equal($('#head-rarity').val(), 'epic');
     equal($('#head-quality').val(), 'faded');
@@ -85,18 +85,18 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#head-signet-rarity').val(), 'standard');
     equal($('#head-signet-level').val(), '20');
 
-    equal($('#ring-rarity').val(), 'epic');
-    equal($('#ring-quality').val(), 'faded');
-    equal($('#ring-level').val(), '30');
-    equal($('#ring-power-value').html(), '+642');
-    equal($('#ring-glyph').val(), 'defense-rating');
-    equal($('#ring-glyph-rarity').val(), 'epic');
-    equal($('#ring-glyph-quality').val(), 'simple');
-    equal($('#ring-glyph-level').val(), '20');
-    equal($('#ring-glyph-value').html(), '+381');
-    equal($('#ring-signet').val(), 'none');
-    equal($('#ring-signet-rarity').val(), 'standard');
-    equal($('#ring-signet-level').val(), '20');
+    equal($('#finger-rarity').val(), 'epic');
+    equal($('#finger-quality').val(), 'faded');
+    equal($('#finger-level').val(), '30');
+    equal($('#finger-power-value').html(), '+642');
+    equal($('#finger-glyph').val(), 'defense-rating');
+    equal($('#finger-glyph-rarity').val(), 'epic');
+    equal($('#finger-glyph-quality').val(), 'simple');
+    equal($('#finger-glyph-level').val(), '20');
+    equal($('#finger-glyph-value').html(), '+381');
+    equal($('#finger-signet').val(), 'none');
+    equal($('#finger-signet-rarity').val(), 'standard');
+    equal($('#finger-signet-level').val(), '20');
 
     equal($('#neck-rarity').val(), 'epic');
     equal($('#neck-quality').val(), 'faded');

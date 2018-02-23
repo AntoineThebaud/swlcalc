@@ -1,20 +1,20 @@
 module('swlcalc');
 
-test('should initate swlcalc submodules', 8, function() {
-    swlcalc.init();
-    ok(swlcalc);
-    ok(swlcalc.data);
-    ok(swlcalc.button);
-    ok(swlcalc.select);
-    ok(swlcalc.buttonBar);
-    ok(swlcalc.summary);
-    ok(swlcalc.export);
-    ok(swlcalc.import);
-});
+// test('should initate swlcalc submodules', 8, function() {
+//     swlcalc.init();
+//     ok(swlcalc);
+//     ok(swlcalc.data);
+//     ok(swlcalc.button);
+//     ok(swlcalc.select);
+//     ok(swlcalc.buttonBar);
+//     ok(swlcalc.summary);
+//     ok(swlcalc.export);
+//     ok(swlcalc.import);
+// });
 
 //TODO : improve test with signets
-test('should import from hash', 120, function() {
-    location.hash = 'weapon=3,7,1,30,4,3,2,20,5,0,20&weapon2=3,0,1,30,3,0,1,20,3,0,20&head=1,1,3,20,5,3,2,20,4,0,1&ring=5,3,1,70,3,5,2,1,2,0,20&neck=3,2,1,30,1,5,1,1,3,0,20&wrist=5,1,1,70,4,1,2,20,5,0,1&luck=3,1,1,30,4,1,1,20,1,0,1&waist=3,3,3,1,3,2,2,1,5,0,20&occult=2,1,1,1,4,3,1,20,2,0,20'
+test('should import from hash', 127, function() {
+    location.hash = 'weapon=3,7,1,30,4,3,2,20,5,0,20&weapon2=3,0,1,30,3,0,1,20,3,0,20&head=1,1,3,20,5,3,2,20,4,0,1&finger=5,1,1,70,3,5,2,1,2,0,20&neck=3,1,1,30,1,5,1,1,3,0,20&wrist=5,1,1,70,4,1,2,20,5,0,1&luck=3,1,1,30,4,1,1,20,1,0,1&waist=3,1,3,1,3,2,2,1,5,0,20&occult=2,1,1,1,4,3,1,20,2,0,20'
     swlcalc.init();
 
     // Summary
@@ -46,8 +46,8 @@ test('should import from hash', 120, function() {
     equal($('#weapon-glyph-level').val(), '20');
     equal($('#weapon-glyph-value').html(), '+598');
     equal($('#weapon-signet').val(), 'none');
-    equal($('#weapon-signet-rarity').val(), 'legendary');
-    equal($('#weapon-signet-level').val(), '20');
+    equal($('#weapon-signet-rarity').val(), undefined);
+    equal($('#weapon-signet-level').val(), undefined);
 
     ok(!$('#weapon2-slot').is(':visible'));
     equal($('#weapon2-name').html(), '');
@@ -62,10 +62,10 @@ test('should import from hash', 120, function() {
     equal($('#weapon2-glyph-level').val(), '20');
     equal($('#weapon2-glyph-value').html(), '0');
     equal($('#weapon2-signet').val(), 'none');
-    equal($('#weapon2-signet-rarity').val(), 'epic');
-    equal($('#weapon2-signet-level').val(), '20');
+    equal($('#weapon2-signet-rarity').val(), undefined);
+    equal($('#weapon2-signet-level').val(), undefined);
 
-    // TODO equal($('#head-itemId').val(), '1');
+    equal($('#head-itemId').val(), '1');
     equal($('#head-rarity').val(), 'standard');
     equal($('#head-quality').val(), 'radiant');
     equal($('#head-level').val(), '20');
@@ -79,21 +79,21 @@ test('should import from hash', 120, function() {
     equal($('#head-signet-rarity').val(), 'mythic');
     equal($('#head-signet-level').val(), '1');
 
-    // TODO equal($('#ring-itemId').val(), '83');
-    equal($('#ring-rarity').val(), 'legendary');
-    equal($('#ring-quality').val(), 'faded');
-    equal($('#ring-level').val(), '70');
-    equal($('#ring-power-value').html(), '+1752');
-    equal($('#ring-glyph').val(), 'defense-rating');
-    equal($('#ring-glyph-rarity').val(), 'epic');
-    equal($('#ring-glyph-quality').val(), 'simple');
-    equal($('#ring-glyph-level').val(), '1');
-    equal($('#ring-glyph-value').html(), '+241');
-    equal($('#ring-signet').val(), 'none');
-    equal($('#ring-signet-rarity').val(), 'superior');
-    equal($('#ring-signet-level').val(), '20');
+    equal($('#finger-itemId').val(), '1');
+    equal($('#finger-rarity').val(), 'legendary');
+    equal($('#finger-quality').val(), 'faded');
+    equal($('#finger-level').val(), '70');
+    equal($('#finger-power-value').html(), '+1752');
+    equal($('#finger-glyph').val(), 'defense-rating');
+    equal($('#finger-glyph-rarity').val(), 'epic');
+    equal($('#finger-glyph-quality').val(), 'simple');
+    equal($('#finger-glyph-level').val(), '1');
+    equal($('#finger-glyph-value').html(), '+241');
+    equal($('#finger-signet').val(), 'none');
+    equal($('#finger-signet-rarity').val(), 'superior');
+    equal($('#finger-signet-level').val(), '20');
 
-    // TODO equal($('#neck-itemId').val(), '83');
+    equal($('#neck-itemId').val(), '1');
     equal($('#neck-rarity').val(), 'epic');
     equal($('#neck-quality').val(), 'faded');
     equal($('#neck-level').val(), '30');
@@ -107,7 +107,7 @@ test('should import from hash', 120, function() {
     equal($('#neck-signet-rarity').val(), 'epic');
     equal($('#neck-signet-level').val(), '20');
 
-    // TODO equal($('#wrist-itemId').val(), '83');
+    equal($('#wrist-itemId').val(), '1');
     equal($('#wrist-rarity').val(), 'legendary');
     equal($('#wrist-quality').val(), 'faded');
     equal($('#wrist-level').val(), '70');
@@ -121,7 +121,7 @@ test('should import from hash', 120, function() {
     equal($('#wrist-signet-rarity').val(), 'legendary');
     equal($('#wrist-signet-level').val(), '1');
 
-    // TODO equal($('#luck-itemId').val(), '83');
+    equal($('#luck-itemId').val(), '1');
     equal($('#luck-rarity').val(), 'epic');
     equal($('#luck-quality').val(), 'faded');
     equal($('#luck-level').val(), '30');
@@ -135,7 +135,7 @@ test('should import from hash', 120, function() {
     equal($('#luck-signet-rarity').val(), 'standard');
     equal($('#luck-signet-level').val(), '1');
 
-    // TODO equal($('#waist-itemId').val(), '83');
+    equal($('#waist-itemId').val(), '1');
     equal($('#waist-rarity').val(), 'epic');
     equal($('#waist-quality').val(), 'radiant');
     equal($('#waist-level').val(), '1');
@@ -149,7 +149,7 @@ test('should import from hash', 120, function() {
     equal($('#waist-signet-rarity').val(), 'legendary');
     equal($('#waist-signet-level').val(), '20');
 
-    // TODO equal($('#occult-itemId').val(), '83');
+    equal($('#occult-itemId').val(), '1');
     equal($('#occult-rarity').val(), 'superior');
     equal($('#occult-quality').val(), 'faded');
     equal($('#occult-level').val(), '1');
@@ -165,7 +165,7 @@ test('should import from hash', 120, function() {
 });
 
 // test('should import post-1.3 build from hash', 0, function() { //TODO : temp '0' instead of 117
-//     location.hash = 'weapon=5,5,4,4,0,4,0,2,5&weapon2=5,3,4,1,2,2,2,3,15&head=4,1,5,5,0,4,0,3,18&ring=4,2,4,1,0,4,0,3,83&neck=4,1,5,5,0,4,0,1,21&wrist=4,1,4,2,0,4,0,3,85&luck=4,3,4,4,0,4,0,3,39&waist=4,1,4,3,0,4,0,3,87&occult=4,2,4,1,0,4,0,3,88';
+//     location.hash = 'weapon=5,5,4,4,0,4,0,2,5&weapon2=5,3,4,1,2,2,2,3,15&head=4,1,5,5,0,4,0,3,18&finger=4,2,4,1,0,4,0,3,83&neck=4,1,5,5,0,4,0,1,21&wrist=4,1,4,2,0,4,0,3,85&luck=4,3,4,4,0,4,0,3,39&waist=4,1,4,3,0,4,0,3,87&occult=4,2,4,1,0,4,0,3,88';
 //     swlcalc.init();
 
     // Summary

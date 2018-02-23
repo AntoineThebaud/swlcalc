@@ -38,7 +38,7 @@ test('should reset all slots', 88, function() {
     swlcalc.buttonBar.resetAllSlots();
     assertReset(swlcalc.slots.weapon);
     assertReset(swlcalc.slots.head);
-    assertReset(swlcalc.slots.ring);
+    assertReset(swlcalc.slots.finger);
     assertReset(swlcalc.slots.neck);
     assertReset(swlcalc.slots.wrist);
     assertReset(swlcalc.slots.luck);
@@ -61,6 +61,11 @@ function assertReset(slot) {
     equal(slot.glyphQuality(), 'crude');
     equal(slot.glyphLevel(), '20');
     equal(slot.signetId(), 'none');
-    equal(slot.signetRarity(), 'standard');
-    equal(slot.signetLevel(), '20');
+    if(slot.isWeapon()) {
+        equal(slot.signetRarity(), undefined);
+        equal(slot.signetLevel(), undefined);
+    } else {
+        equal(slot.signetRarity(), 'standard');
+        equal(slot.signetLevel(), '20');
+    }
 }

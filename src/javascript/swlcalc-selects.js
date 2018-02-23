@@ -32,7 +32,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     this.addItemsToSelect = function() {
-
         //TODO : shall be done in a better way
         //skip this function for the weapons (their dropdown is already filled)
         if (slot.group == 'weapon') return;
@@ -56,18 +55,16 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     this.addSignetsToSelect = function() {
 
-        //TODO : shall be done in a better way
-        //skip this function for the weapons (no signets)
-        //if (slot.group == 'weapon') return;
-
         slotObj.el.signetId.append($('<option>', {
             value: "none",
             text: "None",
             selected: "true"
         }));
         this.updateToDefaultSignet();
-
-        var signetsInSlotGroup = swlcalc.data.signets.slot[slot.id_prefix];
+        
+        //TODO : to improve
+        var idToUse = (slot.id_prefix == 'weapon2' ? 'weapon' : slot.id_prefix);
+        var signetsInSlotGroup = swlcalc.data.signets.slot[idToUse];
 
         signetsInSlotGroup.sort(function(a, b) {
             if (a.name.toLowerCase() > b.name.toLowerCase()) {
@@ -90,25 +87,25 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         $('#' + slot.id_prefix + '-signet-img-icon').attr('src', signet_icon_url);
         $('#' + slot.id_prefix + '-signet-img-rarity').attr('src', signet_rarity_url);
     };
-
+  
     /**
      * Event handlers : Item |
      *                       V
      */
 
-    //TODO : refactor
     this.handleItemChange = function(event) {
+        slotObj.updateImgIcon(event.target.selectedOptions[0].innerHTML);
         swlcalc.summary.updateAllStats();
     };
 
     this.handleWtypeChange = function(event) {
         var wtype = $(this).val();
-
         if(wtype != 'none') {
             slotObj.name(': ' + swlcalc.util.capitalise(wtype));
         } else {
             slotObj.name('');
         }
+        slotObj.updateImgIcon(event.target.selectedOptions[0].innerHTML);
         swlcalc.summary.updateAllStats();
     };
 
@@ -122,7 +119,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         var newRarity = event.target.selectedOptions[0].value;
 
         self.updateTextColor(event.target);
-        slotObj.updateIconBorder(newRarity); //TODO : abstract layer ?
+        slotObj.updateImgBorder(newRarity);
 
         slotObj.el.level.empty();
 
@@ -157,13 +154,13 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     this.handleGlyphChange = function(event) {
         slotObj.updateGlyphStatLabel(event.target.selectedOptions[0].value);
-        slotObj.updateGlyphIcon(event.target.selectedOptions[0].value);
+        slotObj.updateGlyphImgIcon(event.target.selectedOptions[0].value);
         swlcalc.summary.updateAllStats();
     };
 
     this.handleGlyphRarityChange = function(event) {
         self.updateTextColor(event.target);
-        slotObj.updateGlyphIconBorder(event.target.selectedOptions[0].value);
+        slotObj.updateGlyphImgBorder(event.target.selectedOptions[0].value);
         slotObj.updateGlyphItemPower();
         slotObj.updateTotalItemPower();
         swlcalc.summary.updateAllStats();
@@ -186,8 +183,11 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     this.handleSignetChange = function(event) {
         slotObj.updateSignet();
-        slotObj.updateSignetItemPower();
-        slotObj.updateTotalItemPower();
+        //weapon don't have signet item power
+        if (!slotObj.isWeapon()) {
+            slotObj.updateSignetItemPower();
+            slotObj.updateTotalItemPower();
+        }
         swlcalc.summary.updateAllStats();
     };
 

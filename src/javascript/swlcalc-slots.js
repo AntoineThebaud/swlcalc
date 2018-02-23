@@ -21,7 +21,7 @@ swlcalc.slots = function() {
     };
 
     var indices = function() {
-        return ['head', 'weapon', 'weapon2', 'ring', 'neck', 'wrist', 'luck', 'waist', 'occult'];
+        return ['head', 'weapon', 'weapon2', 'finger', 'neck', 'wrist', 'luck', 'waist', 'occult'];
     };
 
     var hasSlot = function(slot) {
@@ -87,7 +87,8 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         level: $('#' + this.id + '-level'),
         powerValue: $('#' + this.id + '-power-value'),
         itemPower: $('#' + this.id + '-item-power'),
-        iconBorderImg: $('#' + this.id + '-img-rarity'),
+        imgIcon: $('#' + this.id + '-img-icon'),
+        imgBorder: $('#' + this.id + '-img-rarity'),
         glyph: $('#' + this.id + '-glyph'),
         glyphRarity: $('#' + this.id + '-glyph-rarity'),
         glyphQuality: $('#' + this.id + '-glyph-quality'),
@@ -100,8 +101,8 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         signetId: $('#' + this.id + '-signet'),
         signetRarity: $('#' + this.id + '-signet-rarity'),
         signetLevel: $('#' + this.id + '-signet-level'),
-        signetIconImg: $('#' + this.id + '-signet-img-icon'),
-        signetIconBorderImg: $('#' + this.id + '-signet-img-rarity'),
+        signetImgIcon: $('#' + this.id + '-signet-img-icon'),
+        signetImgBorder: $('#' + this.id + '-signet-img-rarity'),
         signetDescription: $('#' + this.id + '-signet-description'),
         signetItemPower: $('#' + this.id + '-signet-item-power'),
         nameWarning: $('#' + this.id + '-name-warning'),
@@ -134,10 +135,14 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         var glyphItemPower = this.calculateItemPower(swlcalc.data.upgrading_data.gear['glyph'].rarity[this.glyphRarity()].item_power_init,
                                                      swlcalc.data.upgrading_data.gear['glyph'].rarity[this.glyphRarity()].item_power_per_level,
                                                      (this.glyphLevel() - 1));
-        var signetItemPower = this.calculateItemPower(swlcalc.data.upgrading_data.gear['signet'].rarity[this.signetRarity()].item_power_init,
-                                                      swlcalc.data.upgrading_data.gear['signet'].rarity[this.signetRarity()].item_power_per_level,
-                                                      (this.signetLevel() - 1));
-        this.el.totalItemPower.html(Math.round(itemPower + glyphItemPower + signetItemPower));
+        //weapons dont have signetItemPower
+        var signetItemPower = 0;
+        if (!this.isWeapon()) {
+            var signetItemPower = this.calculateItemPower(swlcalc.data.upgrading_data.gear['signet'].rarity[this.signetRarity()].item_power_init,
+                                                          swlcalc.data.upgrading_data.gear['signet'].rarity[this.signetRarity()].item_power_per_level,
+                                                          (this.signetLevel() - 1));
+        }
+        this.itemPower(Math.round(itemPower + glyphItemPower + signetItemPower));
     };
 
     /**
@@ -167,7 +172,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         if (arguments.length == 1) {
             this.el.wtype.val(arguments[0]);
         } else {
-            return this.group == 'weapon' ? this.el.wtype.val() : 'none';
+            return this.isWeapon() ? this.el.wtype.val() : 'none';
         }
     };
 
@@ -217,10 +222,16 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.level.val();
         }
     };
+  
+    this.updateImgIcon = function(itemName) {
+        var type = this.isWeapon() ? 'weapon' : 'talisman';        
+        var item_url = 'assets/images/icons/' + type + '/' + itemName + '.png';
+        this.el.imgIcon.attr('src', item_url);
+    };
 
-    this.updateIconBorder = function(rarity) {
+    this.updateImgBorder = function(rarity) {
         var rarity_url = 'assets/images/icons/rarity/' + rarity + '-42x42.png';
-        this.el.iconBorderImg.attr('src', rarity_url);
+        this.el.imgBorder.attr('src', rarity_url);
     };
 
     //TODO : it doesn't refresh when changing item ID
@@ -241,7 +252,11 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     this.updatePowerValue = function() {
-        this.el.powerValue.html(this.powerValue() !== 0 ? '+' + this.powerValue() : 0);
+        var powerValueDisplay = this.powerValue();
+        if (this.powerValue() !== 0) {
+            powerValueDisplay = '+' + powerValueDisplay;
+        }
+        this.el.powerValue.html(powerValueDisplay);
     };
 
     /**
@@ -313,12 +328,12 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.el.glyphStat.html(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newStat]);
     };
 
-    this.updateGlyphIcon = function(newStat) {
+    this.updateGlyphImgIcon = function(newStat) {
         var rarity_url = 'assets/images/icons/glyph/' + newStat + '.png';
         this.el.glyphImgIcon.attr('src', rarity_url);
     };
 
-    this.updateGlyphIconBorder = function(rarity) {
+    this.updateGlyphImgBorder = function(rarity) {
         var rarity_url = 'assets/images/icons/rarity/' + rarity + '-42x42.png';
         this.el.glyphImgBorder.attr('src', rarity_url);
     };
@@ -424,33 +439,19 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     this.updateSignetIcon = function() {
         var signet = this.signet();
         var signetRarity = this.signetRarity();
-        if (signet.id !== 0 && signetRarity != 'none') {
-            this.updateSignetIconBorder(signetRarity);
-            this.updateSignetIconImage(signet);
-        } else if (signet.id !== 0 && signetRarity == 'none') {
-            this.signetRarity('normal');
-        } else if (signetRarity != 'none' && signet.id === 0) {
-            this.updateSignetIconBorder(signetRarity);
-            this.updateSignetIconImageFromName(this.group + '_dps');
-        } else {
-            this.updateSignetIconBorder('normal');
-            this.updateSignetIconImageFromName(this.group + '_dps');
-        }
+        this.updateSignetIconImage(signet);
+        this.updateSignetIconBorder(signetRarity);
     };
 
     this.updateSignetIconBorder = function(signetRarity) {
         var signet_rarity_url = 'assets/images/icons/rarity/' + signetRarity + '-42x42.png';
-        this.el.signetIconBorderImg.attr('src', signet_rarity_url);
+        this.el.signetImgBorder.attr('src', signet_rarity_url);
     };
 
     this.updateSignetIconImage = function(signet) {
-        this.updateSignetIconImageFromName(signet.icon);
-    };
-
-    this.updateSignetIconImageFromName = function(name) {
-        name = "none"; //TODO temporaire
-        var signet_icon_url = 'assets/images/icons/signet/' + name + '.png';
-        this.el.signetIconImg.attr('src', signet_icon_url);
+        var pngName = (signet == swlcalc.data.signets.noneSignet ? 'none' : this.id) 
+        var signet_icon_url = 'assets/images/icons/signet/' + pngName + '.png';
+        this.el.signetImgIcon.attr('src', signet_icon_url);
     };
 
     this.updateSignetDescription = function() {
@@ -533,12 +534,12 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             glyph_level: this.glyphLevel(),
             signet_id: this.stripContent(this.signetId()),
             signet_rarity: this.stripContent(this.signetRarity(), rmap),
-            signet_level: this.signetLevel()
+            signet_level: this.stripContent(this.signetLevel())
         };
     };
 
     this.stripContent = function(val, mapping) {
-        if (val == null || val == 'none') {
+        if (val == null || val == 'none' || val === undefined) {
             return 0;
         } else if (mapping !== undefined) {
             return mapping[val];
