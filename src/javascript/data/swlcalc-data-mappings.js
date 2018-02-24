@@ -113,24 +113,24 @@ swlcalc.data.wtype_mapping = {
         'none': 0,
         'blade': 1,
         'hammer': 2,
-        'fist': 3,
+        'fists': 3,
         'blood': 4,
         'chaos': 5,
         'elementalism': 6,
         'shotgun': 7,
-        'pistol': 8,
+        'pistols': 8,
         'assault-rifle': 9
     },
     to_name: {
         0: 'none',
         1: 'blade',
         2: 'hammer',
-        3: 'fist',
+        3: 'fists',
         4: 'blood',
         5: 'chaos',
         6: 'elementalism',
         7: 'shotgun',
-        8: 'pistol',
+        8: 'pistols',
         9: 'assault-rifle'
     }
 };

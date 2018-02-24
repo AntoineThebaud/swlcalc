@@ -15,7 +15,7 @@ swlcalc.data.signets = {
             {
                 id: 1,
                 name: 'Alacrity',
-                description: 'Increased movement speed by %d% in combat.',//TODO : retrieve IG description
+                description: 'Increased your move speed by %d% while in combat.',
                 quality: {
                     'mkI': 10,
                     'mkII': 15,
@@ -25,7 +25,7 @@ swlcalc.data.signets = {
             {
                 id: 2,
                 name: 'Destruction',
-                description: '%d damage to enemies under 35% health on hit.',//TODO : retrieve IG description
+                description: 'This weapon deals %d additional damage to enemies that are below 35% health.',
                 quality: {
                     'mkI': 0.15,
                     'mkII': 0.30,
@@ -45,7 +45,7 @@ swlcalc.data.signets = {
             {
                 id: 4,
                 name: 'Efficiency',
-                description: 'A 50% chance to reduce elite skill cooldowns by %d% seconds on attack.',//TODO : retrieve IG description
+                description: 'Your attacks and heals with this weapon have a 50% chance to reduce the remaining cooldown time on your Elite Ability by %d%.',
                 quality: {
                     'mkI': 2,
                     'mkII': 3,
@@ -65,7 +65,7 @@ swlcalc.data.signets = {
             {
                 id: 6,
                 name: 'Restoration',
-                description: 'A 50% chance of healing %d% of your max hp on hit.',//TODO : retrieve IG description
+                description: 'When you hit or heal a target with this weapon you have a 50% chance to restore %d% of your health.',
                 quality: {
                     'mkI': 0.75,
                     'mkII': 1.5,
@@ -75,7 +75,7 @@ swlcalc.data.signets = {
             {
                 id: 7,
                 name: 'Recovery',
-                description: '%d% increased incoming healing.',//TODO : retrieve IG description
+                description: 'You receive %d% more health from incoming heals.',
                 quality: {
                     'mkI': 1,
                     'mkII': 2,
@@ -85,7 +85,7 @@ swlcalc.data.signets = {
             {
                 id: 8,
                 name: 'Warding',
-                description: '%d increased protection while wielded', //TODO : retrieve IG description
+                description: 'Increases Protection by %d while wielded',
                 quality: {
                     'mkI': 150,
                     'mkII': 300,
