@@ -40,8 +40,8 @@
         <tr>
             <td class="item-img">
                 <a href="#" data-toggle="tooltip" title="Item for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
-                    <img id="{id_prefix}-img-rarity" class="item-icon-border" src="assets/images/icons/rarity/none-64x64.png"/>
-                    <img id="{id_prefix}-img-icon" class="item-icon" src="assets/images/icons/item/none.png" alt="Glyph"/>
+                    <img id="{id_prefix}-img-rarity" class="item-icon-border" src=""/>
+                    <img id="{id_prefix}-img-icon" class="item-icon" src="" alt="Item"/>
                 </a>
             </td>
             <td class="item-select">
@@ -153,7 +153,7 @@
             <td class="item-img">
                 <a href="#" class="signet-tooltip" data-toggle="tooltip" title="Signet for the {name} slot. Choose the rarity and type of signet.">
                     <img id="{id_prefix}-signet-img-rarity" class="item-icon-border" src="assets/images/icons/rarity/none-42x42.png"/>
-                    <img id="{id_prefix}-signet-img-icon" class="item-icon" src="assets/images/icons/signet/none.png"/>
+                    <img id="{id_prefix}-signet-img-icon" class="item-icon" src="assets/images/icons/signet/none.png" alt="Signet"/>
                 </a>
             </td>
             <td class="item-select">

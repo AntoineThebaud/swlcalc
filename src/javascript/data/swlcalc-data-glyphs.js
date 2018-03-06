@@ -8,10 +8,10 @@ swlcalc.data.glyph_data = {
                 'crude': {
                     level : {
                         1: 12,
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
+                        2: 14,
+                        3: 17,
+                        4: 20,
+                        5: 23,
                         6: 0, //TODO : placeholder value for the moment
                         7: 0, //TODO : placeholder value for the moment
                         8: 0, //TODO : placeholder value for the moment
@@ -143,7 +143,7 @@ swlcalc.data.glyph_data = {
                         10: 0, //TODO : placeholder value for the moment
                         11: 0, //TODO : placeholder value for the moment
                         12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
+                        13: 184,
                         14: 0, //TODO : placeholder value for the moment
                         15: 0, //TODO : placeholder value for the moment
                         16: 0, //TODO : placeholder value for the moment

@@ -482,7 +482,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.el.itemId.prop("selectedIndex", 0);
         this.el.rarity.prop("selectedIndex", 0);
         this.el.quality.prop("selectedIndex", 0);
-        this.el.itemId.change();
+        //this.el.itemId.change();
 
         this.el.glyph.prop("selectedIndex", 0);
         this.el.glyphRarity.prop("selectedIndex", 0);
@@ -494,8 +494,11 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.el.signetLevel.prop("selectedIndex", 0);
 
         this.el.itemId.change();
+        this.el.wtype.change();
         this.el.rarity.change();
+        this.el.glyph.change();
         this.el.glyphRarity.change();
+        this.el.signetId.change();
         this.el.signetRarity.change();
         this.updateSignet();
     };

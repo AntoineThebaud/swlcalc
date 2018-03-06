@@ -68,8 +68,8 @@ swlcalc.data.custom_gear_data = {
                         6: 1275,
                         7: 1299,
                         8: 1322,
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
+                        9: 1345,
+                        10: 1368, //TODO : placeholder value for the moment
                         11: 0, //TODO : placeholder value for the moment
                         12: 0, //TODO : placeholder value for the moment
                         13: 0, //TODO : placeholder value for the moment
@@ -435,8 +435,8 @@ swlcalc.data.custom_gear_data = {
                                 19: 0, //TODO : placeholder value for the moment
                                 20: 1051,
                                 21: 1066,
-                                22: 0, //TODO : placeholder value for the moment
-                                23: 0, //TODO : placeholder value for the moment
+                                22: 1082,
+                                23: 1097,
                                 24: 0, //TODO : placeholder value for the moment
                                 25: 0, //TODO : placeholder value for the moment
                                 26: 0, //TODO : placeholder value for the moment
