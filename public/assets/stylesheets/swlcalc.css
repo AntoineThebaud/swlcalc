@@ -86,7 +86,7 @@ select {
     width: 100%;
 }
 
-/* slot > item */
+/* slot > item : talisman/weapon */
 td.item-title {
     font-size: 15px;
     color: #A7A7A7;
@@ -98,19 +98,17 @@ td.item-title {
     padding-top: 13px;
 }
 td.item-img {
-    width: 34px;
+    width: 48px;
+    padding-right: 4px;
 }
 img.item-icon {
-    /*background-image:url('../images/icons/item_background.png');
-    background-size: cover;
-    background-repeat: no-repeat;*/
-    width: 32px;
-    height:32px;
+    width: 48px;
+    height:48px;
     z-index: 0;
 }
 img.item-icon-border {
-    width: 32px;
-    height:32px;
+    width: 48px;
+    height:48px;
     position: absolute;
     z-index: 1;
 }
@@ -120,6 +118,77 @@ td.item-select {
 td.item-select select {
     margin-bottom: 0px;
     max-width: 140px;
+}
+.tr-with-icon {
+    height: 48px;
+}
+
+/* slot > item : glyph */
+td.glyph-title {
+    font-size: 15px;
+    color: #A7A7A7;
+    font-style: italic;
+    font-weight: bold;
+    vertical-align: bottom;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-top: 13px;
+}
+td.glyph-img {
+    width: 38px;
+    padding-right: 4px;
+}
+img.glyph-icon {
+    width: 38px;
+    height:38px;
+    z-index: 0;
+}
+img.glyph-icon-border {
+    width: 38px;
+    height:38px;
+    position: absolute;
+    z-index: 1;
+}
+td.glyph-select {
+    width: 160px;
+}
+td.glyph-select select {
+    margin-bottom: 0px;
+    max-width: 150px;
+}
+
+/* slot > item : signet */
+td.signet-title {
+    font-size: 15px;
+    color: #A7A7A7;
+    font-style: italic;
+    font-weight: bold;
+    vertical-align: bottom;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-top: 13px;
+}
+td.signet-img {
+    width: 38px;
+    padding-right: 4px;
+}
+img.signet-icon {
+    width: 38px;
+    height:38px;
+    z-index: 0;
+}
+img.signet-icon-border {
+    width: 38px;
+    height:38px;
+    position: absolute;
+    z-index: 1;
+}
+td.signet-select {
+    width: 160px;
+}
+td.signet-select select {
+    margin-bottom: 0px;
+    max-width: 150px;
 }
 
 

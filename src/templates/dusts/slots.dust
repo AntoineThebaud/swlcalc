@@ -37,7 +37,7 @@
             <td class="filler"></td>
             {/is_weapon}
         </tr>
-        <tr>
+        <tr class="tr-with-icon">
             <td class="item-img">
                 <a href="#" data-toggle="tooltip" title="Item for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
                     <img id="{id_prefix}-img-rarity" class="item-icon-border" src=""/>
@@ -50,13 +50,13 @@
                     <option value="none" selected="true">None</option>
                     <option value="blade" selected="true">Blade</option>
                     <option value="hammer">Hammer</option>
-                    <option value="fists">Fists</option>
-                    <option value="blood">Blood</option>
-                    <option value="chaos">Chaos</option>
-                    <option value="elementalism">Elementalism</option>
+                    <option value="fist">Fist Weapon</option>
+                    <option value="blood">Blood Magic Focus</option>
+                    <option value="chaos">Chaos Focus</option>
+                    <option value="elementalism">Elementalism Focus</option>
                     <option value="shotgun">Shotgun</option>
                     <option value="pistols">Pistols</option>
-                    <option value="assault-rifle">Assault-Rifle</option>
+                    <option value="assault-rifle">Assault Rifle</option>
                 </select>
                 {:else}
                 <select id="{id_prefix}-itemId" title="Please select item">
@@ -92,19 +92,19 @@
     </table>
     <table id="{id_prefix}-glyphs" class="table table-slots">
         <tr>
-            <td class="item-title" colspan="2">Glyph</td>
+            <td class="glyph-title" colspan="2">Glyph</td>
             <td class="rarity-label"><strong>Rarity :</strong></td>
             <td class="rarity-select">{>rarityselect id_suffix="-glyph"/}</td>
             <td class="filler"></td>
         </tr>
-        <tr>
-            <td class="item-img">
+        <tr class="tr-with-icon">
+            <td class="glyph-img">
                 <a href="#" class="glyph-tooltip" data-toggle="tooltip" title="Glyph for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
-                    <img id="{id_prefix}-glyph-img-rarity" class="item-icon-border" src="assets/images/icons/rarity/none-42x42.png"/>
-                    <img id="{id_prefix}-glyph-img-icon" class="item-icon" src="assets/images/icons/glyph/none.png" alt="Glyph"/>
+                    <img id="{id_prefix}-glyph-img-rarity" class="glyph-icon-border" src="assets/images/icons/rarity/none-42x42.png"/>
+                    <img id="{id_prefix}-glyph-img-icon" class="glyph-icon" src="assets/images/icons/glyph/none.png" alt="Glyph"/>
                 </a>
             </td>
-            <td class="item-select">
+            <td class="glyph-select">
                 <select id="{id_prefix}-glyph" title="Please select stat">
                     <option value="none" selected="true">None</option>
                     <option value="hit-rating">Accurate</option>
@@ -144,19 +144,19 @@
         </tr>
         {:else}
         <tr>
-            <td class="item-title" colspan="2">Signet</td>
+            <td class="signet-title" colspan="2">Signet</td>
             <td class="rarity-label"><strong>Rarity :</strong></td>
             <td class="rarity-select">{>rarityselect id_suffix="-signet"/}</td>
             <td id="{id_prefix}-signet-description" class="item-description"></td>
         </tr>
-        <tr>
-            <td class="item-img">
+        <tr class="tr-with-icon">
+            <td class="signet-img">
                 <a href="#" class="signet-tooltip" data-toggle="tooltip" title="Signet for the {name} slot. Choose the rarity and type of signet.">
-                    <img id="{id_prefix}-signet-img-rarity" class="item-icon-border" src="assets/images/icons/rarity/none-42x42.png"/>
-                    <img id="{id_prefix}-signet-img-icon" class="item-icon" src="assets/images/icons/signet/none.png" alt="Signet"/>
+                    <img id="{id_prefix}-signet-img-rarity" class="signet-icon-border" src="assets/images/icons/rarity/none-42x42.png"/>
+                    <img id="{id_prefix}-signet-img-icon" class="signet-icon" src="assets/images/icons/signet/none.png" alt="Signet"/>
                 </a>
             </td>
-            <td class="item-select">
+            <td class="signet-select">
                 <select id="{id_prefix}-signet" title="Please select signet">
                 </select>
             </td>
