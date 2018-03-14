@@ -1,26 +1,24 @@
 swlcalc
 =======
 
-swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by Funcom. It can be used, to plan your gear progression, to visualize which stats you will reach at a given level and also to share and show others what gear you use to tackle encounters in PvE or PvP.
+swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by Funcom. It can be used to plan your gear progression, to visualize the item power you will reach with a given gear, and also to share and show others what gear you use to tackle encounters in PvE or PvP.
 
 *This project is still on early phase of development. No release is available yet.*
 
 **swlcalc features:**
-* All custom gear from level 1 Standard to level 70 Legendary. [TODO : add gear with passive effects]
-* All glyphs from level 1 Standard to level 20 Legendary.
-* Item Power calculation.
-* Total stats calculation [TODO : phys & mag prot]
+* All the gear slots (weapons and talismans) and their bound item/glyph/signet are customizable.
+* Item Power is calculated and displayed for each slot.
+* The total value that you gear give for each secondary stat (critical rating, critical chances, evade rating..) is displayed in the summary
+* The average Item Power of you gear is displayed in the summary.
+* Any gear simulation done with swlcalc can be shared with others.
 
-**Coming features:**
-* All signets from level 1 Standard to level 20 Legendary. [TODO : add swl signets]
-* All gadgets. [TODO : Nothing done]
-* Stats ratio calculation. [TODO : formulas to update]
-* Anima allocation. [TODO : Nothing done]
-* Gear cost calculation (XP, MoF, Shards) [TODO : Nothing done]
+**future features:**
+* Some features to be released can be found in the [swlcalc features board](https://github.com/AntoineThebaud/swlcalc/projects/1).
+* Otherwise, feel free to suggest new features in the [issues](https://github.com/AntoineThebaud/swlcalc/issues) !
 
 Once released, swlcalc will be hosted at http://AntoineThebaud.github.io/swlcalc.
 
-**Notes:** swlcalc was created from [tswcalc](https://github.com/joakibj/tswcalc), a gear planner designed for The Secret World (TSW). All active development of swlcalc takes place in the [`develop`](https://github.com/AntoineThebaud/swlcalc/tree/develop) branch. The tip of [`master`](https://github.com/AntoineThebaud/swlcalc/tree/master) always points to the latest, stable release. All releases are tagged. The latest release is deployed to the [`gh-pages`](https://github.com/joakibj/tswcalc/tree/gh-pages) branch.
+**Notes :** swlcalc was built from [tswcalc](https://github.com/joakibj/tswcalc), a gear planner designed for The Secret World (TSW). All active development of swlcalc takes place in the [`develop`](https://github.com/AntoineThebaud/swlcalc/tree/develop) branch. The tip of [`master`](https://github.com/AntoineThebaud/swlcalc/tree/master) always points to the latest, stable release. All releases are tagged. The latest release is deployed to the [`gh-pages`](https://github.com/joakibj/tswcalc/tree/gh-pages) branch.
 
 Prerequisites
 --------
@@ -62,6 +60,7 @@ Build swlcalc by running:
     grunt
 
 Run tests:
+
     grunt test
 
 Tests can be found in the `test` folder. Open the html file to run tests in the browser. Open the js file to view the test logic.
@@ -90,7 +89,7 @@ Contributing
 ------------
 Pull requests are welcome! They should be done against the `develop` branch.
 
-There are many things to do. Some suggestions can be found in [issues](https://github.com/AntoineThebaud/swlcalc/issues). Otherwise, things like refactoring, decoupling and better tests to make swlcalc easier to maintain is also welcome.
+There are many things to do. Some suggestions can be found in the [swlcalc boards](https://github.com/AntoineThebaud/swlcalc/projects). 
 
 Contributions can also be bug reports, feature requests and other feedback.
 
@@ -98,4 +97,4 @@ License
 -------
 MIT License for the source code. Please see the LICENSE file.
 
-All art assets included in `public/assets/images/icons/` folder are taken from [The Secret World™ Chronicle](http://chronicle.thesecretworld.com/) [TO UPDATE : dead link]. The artwork should be considered property of Funcom GmBH unless otherwise noted. A small sample of signet, glyph and item icons are redistributed under fair use.
+All art assets included in `public/assets/images/icons/` should be considered property of Funcom GmBH unless otherwise noted. A small sample of signet, glyph and item icons are redistributed under fair use.
