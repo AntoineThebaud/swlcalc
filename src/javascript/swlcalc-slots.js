@@ -222,9 +222,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.level.val();
         }
     };
-  
+
     this.updateImgIcon = function(itemName) {
-        var type = this.isWeapon() ? 'weapon' : 'talisman';        
+        var type = this.isWeapon() ? 'weapon' : 'talisman';
         var item_url = 'assets/images/icons/' + type + '/' + itemName + '.png';
         this.el.imgIcon.attr('src', item_url);
     };
@@ -234,7 +234,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.el.imgBorder.attr('src', rarity_url);
     };
 
-    //TODO : it doesn't refresh when changing item ID
     this.powerValue = function() {
         if (this.isWeapon()) {
             if (this.wtype() == 'none') {
@@ -378,7 +377,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
-    //TODO : refactor (move code and delete this function ?)
+    //TODO/REFACTOR : move code and delete this function ?
     this.signet = function() {
         if (this.signetId() == 'none' || this.signetId() == undefined || this.signetId() == null) {
             return swlcalc.data.signets.noneSignet;
@@ -449,7 +448,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     this.updateSignetIconImage = function(signet) {
-        var pngName = (signet == swlcalc.data.signets.noneSignet ? 'none' : this.id) 
+        var pngName = (signet == swlcalc.data.signets.noneSignet ? 'none' : this.id)
         var signet_icon_url = 'assets/images/icons/signet/' + pngName + '.png';
         this.el.signetImgIcon.attr('src', signet_icon_url);
     };

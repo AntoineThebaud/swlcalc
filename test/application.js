@@ -12,26 +12,26 @@ module('swlcalc');
 //     ok(swlcalc.import);
 // });
 
-//TODO : improve test with signets
+//TODO/TEST improve test with signets
 test('should import from hash', 127, function() {
     location.hash = 'weapon=3,7,1,30,4,3,2,20,5,0,20&weapon2=3,0,1,30,3,0,1,20,3,0,20&head=1,1,3,20,5,3,2,20,4,0,1&finger=5,1,1,70,3,5,2,1,2,0,20&neck=3,1,1,30,1,5,1,1,3,0,20&wrist=5,1,1,70,4,1,2,20,5,0,1&luck=3,1,1,30,4,1,1,20,1,0,1&waist=3,1,3,1,3,2,2,1,5,0,20&occult=2,1,1,1,4,3,1,20,2,0,20'
     swlcalc.init();
 
     // Summary
-    // TODO equal($('#stat-hitpoints').html(), '10458');
-    // TODO equal($('#stat-combat-power').html(), '278');
-    // TODO equal($('#stat-attack-rating').html(), '474');
+    //TODO/TEST equal($('#stat-hitpoints').html(), '10458');
+    //TODO/TEST equal($('#stat-combat-power').html(), '278');
+    //TODO/TEST equal($('#stat-attack-rating').html(), '474');
     equal($('#stat-weapon-power').html(), '1832');
-    // TODO equal($('#stat-heal-rating').html(), '1091');
+    //TODO/TEST equal($('#stat-heal-rating').html(), '1091');
     equal($('#stat-critical-rating').html(), '+997');
-    // TODO equal($('#stat-critical-chance').html(), '19.2 %');
+    //TODO/TEST equal($('#stat-critical-chance').html(), '19.2 %');
     equal($('#stat-critical-power').html(), '+3150');
-    // TODO equal($('#stat-critical-power-percentage').html(), '25.0 %');
+    //TODO/TEST equal($('#stat-critical-power-percentage').html(), '25.0 %');
     equal($('#stat-hit-rating').html(), '+1917');
     equal($('#stat-defense-rating').html(), '+1006');
     equal($('#stat-evade-rating').html(), '+753');
-    // TODO equal($('#stat-physical-protection').html(), '+660');
-    // TODO equal($('#stat-magical-protection').html(), '+300');
+    //TODO/TEST equal($('#stat-physical-protection').html(), '+660');
+    //TODO/TEST equal($('#stat-magical-protection').html(), '+300');
 
     ok($('#weapon-slot').is(':visible'));
     equal($('#weapon-name').html(), ': Shotgun');
@@ -164,12 +164,13 @@ test('should import from hash', 127, function() {
     equal($('#occult-signet-level').val(), '20');
 });
 
-// test('should import post-1.3 build from hash', 0, function() { //TODO : temp '0' instead of 117
+//TODO/TEST test to reenable
+// test('should import post-1.3 build from hash', 117, function() {
 //     location.hash = 'weapon=5,5,4,4,0,4,0,2,5&weapon2=5,3,4,1,2,2,2,3,15&head=4,1,5,5,0,4,0,3,18&finger=4,2,4,1,0,4,0,3,83&neck=4,1,5,5,0,4,0,1,21&wrist=4,1,4,2,0,4,0,3,85&luck=4,3,4,4,0,4,0,3,39&waist=4,1,4,3,0,4,0,3,87&occult=4,2,4,1,0,4,0,3,88';
 //     swlcalc.init();
 
     // Summary
-    // TODO : TESTS TO UPDATE (tsw values)
+    // TODO/TEST : To update (still tsw values)
     // equal($('#stat-hitpoints').html(), '10458');
     // equal($('#stat-combat-power').html(), '278');
     // equal($('#stat-attack-rating').html(), '474');

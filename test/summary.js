@@ -31,25 +31,25 @@ module('summary-unit-tests', {
     }
 });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should calculate critical chance', 2, function() {
 //     equal(swlcalc.summary.calculateCriticalChance(0), 4.990000000000002);
 //     equal(swlcalc.summary.calculateCriticalChance(309), 14.671074609766634);
 // });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should calculate critical power', 2, function() {
 //     equal(swlcalc.summary.calculateCriticalPowerPercentage(0), 25);
 //     equal(swlcalc.summary.calculateCriticalPowerPercentage(238), 42.60281680828159);
 // });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should calculate combat power', 2, function() {
 //     equal(swlcalc.summary.calculateCombatPower(0, 0), 75);
 //     equal(swlcalc.summary.calculateCombatPower(3049, 398), 647);
 // });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should calculate evade chance', 2, function() {
 //     equal(swlcalc.summary.calculateEvadeChance(0), 5.030000000000001);
 //     equal(swlcalc.summary.calculateEvadeChance(2174), 27.90736684449651);
@@ -68,7 +68,7 @@ module('summary-integration-tests', {
     }
 });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should collect primary stats at initial state', 5, function() {
 //     var sums = swlcalc.summary.collectPrimaryStats();
 
@@ -79,7 +79,7 @@ module('summary-integration-tests', {
 //     equal(sums['heal-rating'], 0);
 // });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should collect primary stats for tank build', 5, function() {
 //     createTankBuild();
 
@@ -96,15 +96,15 @@ test('should collect offensive and defensive stats for initial state', 5, functi
     var sums = swlcalc.summary.collectOffensiveDefensiveStats();
 
     equal(sums['critical-rating'], 756 );
-    // TODO equal(sums['critical-chance'], 5.0);
+    //TODO/TEST equal(sums['critical-chance'], 5.0);
     equal(sums['critical-power'], 1008);
-    // TODO equal(sums['critical-power-percentage'], 25);
+    //TODO/TEST equal(sums['critical-power-percentage'], 25);
     equal(sums['hit-rating'], 756);
     equal(sums['defense-rating'], 753);
     equal(sums['evade-rating'], 753);
-    // TODO equal(sums['evade-chance'], 5.0);
-    // TODO equal(sums['physical-protection'], 300);
-    // TODO equal(sums['magical-protection'], 300);
+    //TODO/TEST equal(sums['evade-chance'], 5.0);
+    //TODO/TEST equal(sums['physical-protection'], 300);
+    //TODO/TEST equal(sums['magical-protection'], 300);
 });
 
 test('should collect offensive and defensive stats for tank build', 5, function() {
@@ -113,18 +113,18 @@ test('should collect offensive and defensive stats for tank build', 5, function(
     var sums = swlcalc.summary.collectOffensiveDefensiveStats();
 
     equal(sums['critical-rating'], 841);
-    // TODO equal(sums['critical-chance'], 5.0);
+    //TODO/TEST equal(sums['critical-chance'], 5.0);
     equal(sums['critical-power'], 1008);
-    // TODO equal(sums['critical-power-percentage'], 25);
+    //TODO/TEST equal(sums['critical-power-percentage'], 25);
     equal(sums['hit-rating'], 1244);
     equal(sums['defense-rating'], 1896);
     equal(sums['evade-rating'], 1896);
-    // TODO equal(sums['evade-chance'], 5.0);
-    // TODO equal(sums['physical-protection'], 660);
-    // TODO equal(sums['magical-protection'], 300);
+    //TODO/TEST equal(sums['evade-chance'], 5.0);
+    //TODO/TEST equal(sums['physical-protection'], 660);
+    //TODO/TEST equal(sums['magical-protection'], 300);
 });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should collect all stats and return two objects', 2, function() {
 //     createTankBuild();
 //     var expectedPrimaryStats = {
@@ -162,20 +162,20 @@ test('should update all stats', 6, function() {
     swlcalc.summary.updateAllStats();
 
     equal($('#stat-power-rating').html(), '3730');
-    // TODO equal($('#stat-weapon-power').html(), '457');
-    // TODO equal($('#stat-combat-power').html(), '504');
-    // TODO equal($('#stat-heal-power').html(), '504');
-    // TODO equal($('#stat-hitpoints').html(), '10788');
-    // TODO equal($('#stat-attack-rating').html(), '1565');
-    // TODO equal($('#stat-heal-rating').html(), '0');
+    //TODO/TEST equal($('#stat-weapon-power').html(), '457');
+    //TODO/TEST equal($('#stat-combat-power').html(), '504');
+    //TODO/TEST equal($('#stat-heal-power').html(), '504');
+    //TODO/TEST equal($('#stat-hitpoints').html(), '10788');
+    //TODO/TEST equal($('#stat-attack-rating').html(), '1565');
+    //TODO/TEST equal($('#stat-heal-rating').html(), '0');
     equal($('#stat-critical-rating').html(), '+841');
-    // TODO equal($('#stat-critical-chance').html(), '5.0 %');
+    //TODO/TEST equal($('#stat-critical-chance').html(), '5.0 %');
     equal($('#stat-critical-power').html(), '+1008');
-    // TODO equal($('#stat-critical-power-percentage').html(), '25.0 %');
+    //TODO/TEST equal($('#stat-critical-power-percentage').html(), '25.0 %');
     equal($('#stat-hit-rating').html(), '+1244');
     equal($('#stat-defense-rating').html(), '+1896');
     equal($('#stat-evade-rating').html(), '+1896');
-    // TODO equal($('#stat-evade-chance').html(), '5.0 %');
-    // TODO equal($('#stat-physical-protection').html(), '+660');
-    // TODO equal($('#stat-magical-protection').html(), '+300');
+    //TODO/TEST equal($('#stat-evade-chance').html(), '5.0 %');
+    //TODO/TEST equal($('#stat-physical-protection').html(), '+660');
+    //TODO/TEST equal($('#stat-magical-protection').html(), '+300');
 });

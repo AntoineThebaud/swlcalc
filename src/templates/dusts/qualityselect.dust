@@ -1,4 +1,4 @@
-<select id="{id_prefix}{id_suffix}-quality" title="Please select quality"><!--TODO : dynamic class, should not be mentioned here"-->
+<select id="{id_prefix}{id_suffix}-quality" title="Please select quality">
     <option value="{pip1_v}" class="pips">{pip1_n}</option>
     <option value="{pip2_v}" class="pips">{pip2_n}</option>
     <option value="{pip3_v}" class="pips">{pip3_n}</option>

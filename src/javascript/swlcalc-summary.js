@@ -2,7 +2,7 @@ var swlcalc = swlcalc || {};
 
 swlcalc.summary = function() {
 
-    //TODO : remove ? currently needed for compatibility
+    //TODO/REFACTOR : remove ? currently needed for compatibility
     var init = function() {};
 
     var updateAllStats = function() {
@@ -42,7 +42,7 @@ swlcalc.summary = function() {
         var sums = {
             'combat-power': 0,
             'weapon-power': 0,
-            // TODO : HP, AR & HR disabled for the moment (as long as power rating conversion is not implemented)
+            //TODO/FEATURE : HP, AR & HR disabled for the moment (as long as power rating conversion is not implemented)
             // 'hitpoints': 7512,     // = 3300 (base stat at lvl 50) + 2997 (amount brought by passives skills) + 1215 (capstone points)
             // 'attack-rating': 4322, // = 2000 (base stat at lvl 50) + 1512 (amount brought by passives skills) + 810 (capstone points)
             // 'heal-rating': 4310,   // = 2000 (base stat at lvl 50) + 1500 (amount brought by passives skills) + 810 (capstone points)
@@ -60,17 +60,17 @@ swlcalc.summary = function() {
                 } else if (!slot.isWeapon() && slot.itemId() != 'none') {
                     sums['power-rating'] += swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
                 }
-                //TODO : add conversion to AR/HR/HP based on ratio selected
+                //TODO/FEATURE : add conversion to AR/HR/HP based on ratio selected
                 sums['item-power'] += slot.itemPower();
             }
         }
         sums['combat-power'] = calculateCombatPower(sums['attack-rating'], sums['weapon-power']);
-        //TODO : refactor (it's weird)
+        //TODO/REFACTOR : refactor (it's weird)
         sums['item-power'] = calculateAverageItemPower(sums['item-power']);
         return sums;
     };
 
-    //TODO : still tsw formula
+    //TODO/FEATURE : to implement, still tsw formula
     var calculateCombatPower = function(attack_rating, weapon_power) {
         if (attack_rating < 5200){
             return Math.round((375 - (600 / (Math.pow(Math.E, (attack_rating / 1400)) + 1))) * (1 + (weapon_power / 375)));
@@ -97,7 +97,7 @@ swlcalc.summary = function() {
             'glance-chance': 0,
             'evade-rating': 753,              // amount brought by passives skills
             'evade-chance': 0,                // base percentage
-            // TODO : prot stats are not functionnal yet
+            //TODO/FEATURE : prot stats are not functionnal yet
             // 'physical-protection': 2259,   // amount brought by passives skills
             // 'magical-protection': 2259     // amount brought by passives skills
         };
@@ -123,14 +123,14 @@ swlcalc.summary = function() {
         sums['critical-power'] = sums['critical-power'].toFixed(0);
         sums['critical-power-percentage'] = sums['critical-power-percentage'].toFixed(1);
         sums['evade-chance'] = sums['evade-chance'].toFixed(1);
-        // TODO : prot stats are not functionnal yet
+        //TODO/FEATURE : prot stats are not functionnal yet
         // sums['magical-protection'] = parseInt(sums['magical-protection'].toFixed(0), 10);
         // sums['physical-protection'] = parseInt(sums['physical-protection'].toFixed(0), 10);
         return sums;
     };
 
-    //TODO : if (swlcalc.slots.hasSlot) is weird, find a better solution
-    //TODO : refactor : should be updated independently for each slot in swlcalc-slots.js
+    //TODO/REFACTOR if (swlcalc.slots.hasSlot) is weird, find a better solution
+    //TODO/REFACTOR should be updated independently for each slot in swlcalc-slots.js
     var updateGlyphValues = function() {
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
@@ -140,8 +140,8 @@ swlcalc.summary = function() {
         }
     };
 
-    //TODO : if (swlcalc.slots.hasSlot) is weird, find a better solution
-    //TODO : refactor : should be updated independently for each slot in swlcalc-slots.js
+    //TODO/REFACTOR if (swlcalc.slots.hasSlot) is weird, find a better solution
+    //TODO/REFACTOR refactor : should be updated independently for each slot in swlcalc-slots.js
     var updatePowerValues = function() {
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
@@ -239,7 +239,7 @@ swlcalc.summary = function() {
     };
 
     var calculateAverageItemPower = function(sum_item_power) {
-        return Math.round(sum_item_power / 8); //TODO : set to 9 when gadget will be implemented
+        return Math.round(sum_item_power / 8);
     }
 
     var updateStats = function(sums) {

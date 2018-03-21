@@ -4,7 +4,7 @@
  *                      Element                      |               Values
  *---------------------------------------------------|------------------------------------
  *                  ____________ Item's Rarity        [1,2,3,4,5]
- *                 / ___________ Item's Type (ID)     [0,1] + items with passives => TODO : to correct
+ *                 / ___________ Item's Type (ID)     [refer to swlcalc-data-items.js]
  *                / / __________ Item's Quality       [1,2,3]
  *               / / / _________ Item's Level         [1->20/25/30/35/70]
  *              / / / / ________ Glyph's Rarity       [1,2,3,4,5]
@@ -34,7 +34,7 @@ swlcalc.import = function() {
 
     /**
     * load the slot informations from the hash and update GUI with it
-    * TODO : maybe there is a better way to update GUI than simulating change() ?
+    * TODO/REFACTOR maybe there is a better way to update GUI than simulating change() ?
     */
     var loadSlot = function(slotId, values) {
         var slotObj = swlcalc.slots[slotId];

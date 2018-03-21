@@ -63,7 +63,7 @@ swlcalc = function() {
      */
     var checkIfExported = function() {
         var vars = $.getUrlVars();
-        // TODO : check if parameters for each slot are correct !
+        // TODO/REFACTOR : check if parameters for each slot are correct !
         if (!$.isEmptyObject(vars) && Object.keys(vars).length == 9) {
             swlcalc.import.start(vars);
             return true;
@@ -87,7 +87,7 @@ swlcalc = function() {
 
     /**
      * Add an empty hash if current is null
-     * TODO : check if still accurate ?
+     * TODO/REFACTOR : check if still accurate ?
      */
     var addHash = function() {
         if (location.hash == '') {
@@ -96,7 +96,7 @@ swlcalc = function() {
     };
 
     /**
-     * TODO : description missing.
+     * TODO/REFACTOR : description missing.
      */
     var startSelectHandler = function(slot) {
         swlcalc.select[slot.id_prefix] = new swlcalc.select.SelectHandler(slot);

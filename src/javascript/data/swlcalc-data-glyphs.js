@@ -12,68 +12,68 @@ swlcalc.data.glyph_data = {
                         3: 17,
                         4: 20,
                         5: 23,
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TOD0/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
                         20: 67
                     }
                 },
                 'simple': {
                     level : {
                         1: 14,
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
                         20: 76
                     }
                 },
                 'intricate': {
                     level : {
                         1: 15,
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
                         20: 84
                     }
                 }
@@ -84,72 +84,72 @@ swlcalc.data.glyph_data = {
                 'crude': {
                     level : {
                         1: 85,
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
                         20: 185
                     }
                 },
                 'simple': {
                     level : {
                         1: 95,
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
                         20: 208
                     }
                 },
                 'intricate': {
                     level : {
                         1: 106,
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
                         13: 184,
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
                         20: 231
                     }
                 }
@@ -160,72 +160,72 @@ swlcalc.data.glyph_data = {
                 'crude': {
                     level : {
                         1: 215,
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
                         20: 339
                     }
                 },
                 'simple': {
                     level : {
                         1: 241,
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
                         20: 381
                     }
                 },
                 'intricate': {
                     level : {
                         1: 268,
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
                         20: 424
                     }
                 }
@@ -236,72 +236,72 @@ swlcalc.data.glyph_data = {
                 'crude': {
                     level : {
                         1: 390,
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
                         20: 546 // uncertain!
                     }
                 },
                 'simple': {
                     level : {
                         1: 439,
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
                         20: 615
                     }
                 },
                 'intricate': {
                     level : {
                         1: 488,
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
                         20: 683
                     }
                 }
@@ -311,74 +311,74 @@ swlcalc.data.glyph_data = {
             quality: {
                 'crude': {
                     level : {
-                        1: 610, // uncertain!
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
-                        20: 925 // uncertain!
+                        1: 610, //TODO/BUG : uncertain value !
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
+                        20: 925 //TODO/BUG : uncertain value !
                     }
                 },
                 'simple': {
                     level : {
-                        1: 686, // uncertain!
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
-                        20: 1040 // uncertain!
+                        1: 686, //TODO/BUG : uncertain value !
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
+                        20: 1040 //TODO/BUG : uncertain value !
                     }
                 },
                 'intricate': {
                     level : {
-                        1: 762, // uncertain!
-                        2: 0, //TODO : placeholder value for the moment
-                        3: 0, //TODO : placeholder value for the moment
-                        4: 0, //TODO : placeholder value for the moment
-                        5: 0, //TODO : placeholder value for the moment
-                        6: 0, //TODO : placeholder value for the moment
-                        7: 0, //TODO : placeholder value for the moment
-                        8: 0, //TODO : placeholder value for the moment
-                        9: 0, //TODO : placeholder value for the moment
-                        10: 0, //TODO : placeholder value for the moment
-                        11: 0, //TODO : placeholder value for the moment
-                        12: 0, //TODO : placeholder value for the moment
-                        13: 0, //TODO : placeholder value for the moment
-                        14: 0, //TODO : placeholder value for the moment
-                        15: 0, //TODO : placeholder value for the moment
-                        16: 0, //TODO : placeholder value for the moment
-                        17: 0, //TODO : placeholder value for the moment
-                        18: 0, //TODO : placeholder value for the moment
-                        19: 0, //TODO : placeholder value for the moment
-                        20: 1156 // uncertain!
+                        1: 762, //TODO/BUG : uncertain value !
+                        2: 0, //TODO/FEATURE : placeholder value for the moment
+                        3: 0, //TODO/FEATURE : placeholder value for the moment
+                        4: 0, //TODO/FEATURE : placeholder value for the moment
+                        5: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 0, //TODO/FEATURE : placeholder value for the moment
+                        7: 0, //TODO/FEATURE : placeholder value for the moment
+                        8: 0, //TODO/FEATURE : placeholder value for the moment
+                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        10: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        12: 0, //TODO/FEATURE : placeholder value for the moment
+                        13: 0, //TODO/FEATURE : placeholder value for the moment
+                        14: 0, //TODO/FEATURE : placeholder value for the moment
+                        15: 0, //TODO/FEATURE : placeholder value for the moment
+                        16: 0, //TODO/FEATURE : placeholder value for the moment
+                        17: 0, //TODO/FEATURE : placeholder value for the moment
+                        18: 0, //TODO/FEATURE : placeholder value for the moment
+                        19: 0, //TODO/FEATURE : placeholder value for the moment
+                        20: 1156
                     }
                 }
             }

@@ -1,7 +1,7 @@
 var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
-//TODO : add the missing items
+//TODO/FEATURE : add missing signets
 swlcalc.data.signets = {
     noneSignet: {
         id: 0,
@@ -98,7 +98,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: '[Hammer] Signet of Shattering',
                 description: 'Increases the damage and healing of Hammer Elite Abilities by %TODO%.',
-                cooldown: '0', //TODO : cooldown decrease with gear power
+                cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ],
         'finger': [
@@ -106,7 +106,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: '[Hammer] Signet of Bludgeoning',
                 description: 'Increases the damage and healing of Hammer Basic Abilities by %TODO%.',
-                cooldown: '0', //TODO : cooldown decrease with gear power
+                cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ],
         'neck': [
@@ -114,7 +114,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: '[Hammer] Signet of Crushing',
                 description: 'Increases the damage and healing of Hammer Power Abilities by %TODO%.',
-                cooldown: '0', //TODO : cooldown decrease with gear power
+                cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ],
         'wrist': [
@@ -122,7 +122,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of Condensed Anima',
                 description: 'Increases the rate at which your Ultimate Abilities recharge on ability activation by %TODO%.',
-                cooldown: '0', //TODO : cooldown decrease with gear power
+                cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ],
         'luck': [
@@ -130,7 +130,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of Laceration',
                 description: 'When you critically hit or heal, you gain a beneficial effect that grants you a %TODO% bonus to critical damage for 5 seconds. This ability can only occur once every 15 seconds.',
-                cooldown: '0', //TODO : cooldown decrease with gear power
+                cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ],
         'waist': [
@@ -138,7 +138,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of Matter Creation',
                 description: 'Increases the damage of Gadgets by %TODO%.',
-                cooldown: '0', //TODO : cooldown decrease with gear power
+                cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ],
         'occult': [
@@ -146,7 +146,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of Acrobatics',
                 description: 'Reduces the cooldown of Active Dodge by %TODO%.',
-                cooldown: '0', //TODO : cooldown decrease with gear power
+                cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ]
     }

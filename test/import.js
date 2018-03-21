@@ -10,7 +10,7 @@ module('import-integration-tests', {
     }
 });
 
-// TODO : test to complete/enhance
+//TODO/TEST : test to complete/enhance
 // - commented fields
 // - formulas to update
 // - add real signets
@@ -31,20 +31,20 @@ test('should import URL and set summary and slots', 116, function() {
 
     // Summary
     equal($('#stat-power-rating').html(), '3730');
-    // TODO equal($('#stat-hitpoints').html(), '10458');
-    // TODO equal($('#stat-combat-power').html(), '496');
-    // TODO equal($('#stat-attack-rating').html(), '1518');
+    //TODO/TEST equal($('#stat-hitpoints').html(), '10458');
+    //TODO/TEST equal($('#stat-combat-power').html(), '496');
+    //TODO/TEST equal($('#stat-attack-rating').html(), '1518');
     equal($('#stat-weapon-power').html(), '1832');
-    // TODO equal($('#stat-heal-rating').html(), '0');
+    //TODO/TEST equal($('#stat-heal-rating').html(), '0');
     equal($('#stat-critical-rating').html(), '+841');
-    // TODO equal($('#stat-critical-chance').html(), '5.0 %');
+    //TODO/TEST equal($('#stat-critical-chance').html(), '5.0 %');
     equal($('#stat-critical-power').html(), '+1008');
     equal($('#stat-critical-power-percentage').html(), '90.6 %');
     equal($('#stat-hit-rating').html(), '+1244');
     equal($('#stat-defense-rating').html(), '+1896');
     equal($('#stat-evade-rating').html(), '+1896');
-    // TODO equal($('#stat-physical-protection').html(), '+660');
-    // TODO equal($('#stat-magical-protection').html(), '+300');
+    //TODO/TEST equal($('#stat-physical-protection').html(), '+660');
+    //TODO/TEST equal($('#stat-magical-protection').html(), '+300');
 
     equal($('#weapon-rarity').val(), 'epic');
     equal($('#weapon-quality').val(), 'mkI');
@@ -164,4 +164,4 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#occult-signet-level').val(), '20');
 });
 
-//TODO : add more tests ?
+//TODO/TEST : add more tests ?

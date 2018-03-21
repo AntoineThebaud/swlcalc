@@ -39,7 +39,7 @@ swlcalc.export = function() {
     };
 
     var startExport = function() {
-        //TODO : put back bbcode export feature ?
+        //TODO/FEATURE : put back bbcode export feature ?
         startExportUrl();
     };
 
@@ -82,7 +82,7 @@ swlcalc.export = function() {
             + state.glyph_quality + ','
             + state.glyph_level;
 
-            //TODO : this commented if{} allows the url to be smaller when no signet is set
+            //TODO/REFACTOR : this commented if{} allows the url to be smaller when no signet is set
             // it is temporary disabled for visual issue (select color not updating)
             // in the future, should be reenabled + same behavior for glyphs and even complete slot ?
             // that could allow to see the stats for only one item (but is it usefull ?)

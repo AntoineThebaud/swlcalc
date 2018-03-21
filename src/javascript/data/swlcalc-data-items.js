@@ -1,7 +1,7 @@
 var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
-//TODO : add the missing items
+//TODO/FEATURE : add missing items
 swlcalc.data.items = {
     slot: {
         'head': [

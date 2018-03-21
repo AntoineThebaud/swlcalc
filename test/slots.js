@@ -15,7 +15,7 @@ test('should tell whether this slot is a weapon', 2, function() {
     equal(swlcalc.slots.head.isWeapon(), false);
 });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should set and get talisman name', 1, function() {
 //     swlcalc.slots.head.name('Mark of the starspawn');
 //     equal(swlcalc.slots.head.name(), 'Mark of the starspawn');
@@ -78,7 +78,7 @@ test('should set talisman signet id, rarity and level', 3, function() {
     equal(swlcalc.slots.head.signetLevel(), '20');
 });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should get talisman signet object', 1, function() {
 //     deepEqual(swlcalc.slots.head.signet(), swlcalc.data.signet_data.find('head', '18'));
 // });
@@ -87,24 +87,24 @@ test('should update signet icon and border', 1, function() {
     swlcalc.slots.head.signetRarity('superior');
     swlcalc.slots.head.updateSignetIcon();
 
-    // TODO : tswcalc test. swlcalc equivalent needed
+    //TODO/TEST tswcalc test. swlcalc equivalent needed
     // equal($('#head-signet-img-icon').attr('src'), 'assets/images/icons/head_tank.png');
     equal($('#head-signet-img-rarity').attr('src'), 'assets/images/icons/rarity/superior-42x42.png');
 });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should update signet icon from name', 1, function() {
 //     swlcalc.slots.head.updateSignetIconImageFromName('minor_dps');
 
 //     equal($('#head-signet-img-icon').attr('src'), 'assets/images/icons/minor_dps.png');
 // });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should get signet description for single value replace', 1, function() {
 //     equal(swlcalc.slots.head.signetDescription(), 'When you block you gain 45% block chance for 4 seconds. 10 seconds cooldown.');
 // });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should get signet description for multiple value replace', 1, function() {
 //     swlcalc.slots.occult.signetId('47');
 //     swlcalc.slots.occult.signetRarity('epic');
@@ -112,21 +112,21 @@ test('should update signet icon and border', 1, function() {
 //     equal(swlcalc.slots.occult.signetDescription(), 'When your health is below 50% you are healed for 150 and affected by a heal over time effect healing you for 57 every 2 seconds for 8 seconds. 12 seconds cooldown.');
 // });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should update signet description', 1, function() {
 //     swlcalc.slots.head.updateSignetDescription();
 
 //     equal($('#head-signet-description').html(), 'When you block you gain 45% block chance for 4 seconds. 10 seconds cooldown.');
 // });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should get single signet value based on rarity', 1, function() {
 //     var signet = swlcalc.slots.head.signet();
 
 //     deepEqual(swlcalc.slots.head.determineSignetRarityValue(signet), 45);
 // });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should get indexed signet value based on rarity', 2, function() {
 //     swlcalc.slots.occult.signetId('47');
 //     swlcalc.slots.occult.signetRarity('epic');
@@ -187,7 +187,7 @@ test('should collect current mapped slot state', 11, function() {
     deepEqual(slotState.signet_level, '20');
 });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // + to complete
 // test('should collect all slot states', 17, function() {
 //     var slotStates = swlcalc.slots.state();
@@ -212,7 +212,7 @@ test('should collect current mapped slot state', 11, function() {
 //     deepEqual(slotStates.head.signet_id, '18');
 // });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // + to complete
 // test('should collect all mapped slot states', 17, function() {
 //     var slotStates = swlcalc.slots.mappedState();

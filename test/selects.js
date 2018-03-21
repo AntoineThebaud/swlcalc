@@ -63,7 +63,7 @@ module('selects-unit-tests', {
     }
 });
 
-// TODO : tswcalc test. swlcalc equivalent needed
+//TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should have added signets to correct group', 8, function() {
 //     // None option must be taken into account
 //     equal($('#weapon-pick-signet option').size(), 23);
@@ -76,7 +76,7 @@ module('selects-unit-tests', {
 //     equal($('#occult-pick-signet option').size(), 41);
 // });
 
-// TODO : to reenabled
+//TODO/TEST to reenabled
 // test('should get signets for head', 1, function() {
 //     equal(swlcalc.select['head'].getSignetsForHead('head').length, 22);
 // });
@@ -123,4 +123,4 @@ test('should enable changing of weapon2 type to none and set the slot name to bl
     deepEqual(swlcalc.slots['weapon2'].name(), '');
 });
 
-// TODO : add test for level-selects dynamic updates
+//TODO/TEST add test for level-selects dynamic updates

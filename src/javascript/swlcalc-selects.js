@@ -32,7 +32,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     this.addItemsToSelect = function() {
-        //TODO : shall be done in a better way
+        //TODO/REFACTOR : shall be done in a better way
         //skip this function for the weapons (their dropdown is already filled)
         if (slot.group == 'weapon') return;
 
@@ -42,7 +42,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             selected: "true"
         }));
 
-        //TODO : possible confusion between slot.group (major, minor..) and slot.id_prefix (ring, neck..)
+        //TODO/REFACTOR : possible confusion between slot.group (major, minor..) and slot.id_prefix (ring, neck..)
         var items = swlcalc.data.items.slot[slot.id_prefix];
 
         items.forEach(function(item) {
@@ -61,8 +61,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             selected: "true"
         }));
         this.updateToDefaultSignet();
-        
-        //TODO : to improve
+
+        //TODO/REFACTOR : to improve
         var idToUse = (slot.id_prefix == 'weapon2' ? 'weapon' : slot.id_prefix);
         var signetsInSlotGroup = swlcalc.data.signets.slot[idToUse];
 
@@ -87,7 +87,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         $('#' + slot.id_prefix + '-signet-img-icon').attr('src', signet_icon_url);
         $('#' + slot.id_prefix + '-signet-img-rarity').attr('src', signet_rarity_url);
     };
-  
+
     /**
      * Event handlers : Item |
      *                       V
@@ -125,7 +125,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
         var minLvl = 1;
         var maxLvl = swlcalc.data.rarity_mapping.to_max_level[newRarity];
-        // TODO : the for loop to generate all the values between min(1) & max(20/25/30/35/70) is disabled
+        // TODO/FEATURE : the for loop to generate all the values between min(1) & max(20/25/30/35/70) is disabled
         // as long as intermediary values are not referenced. Thus only min & max are displayed for the moment
         // for (i = maxLvl; i >= minLvl ; i--) {
         //    slotObj.el.level.append($('<option>', {

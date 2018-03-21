@@ -29,11 +29,11 @@ module('buttonbar-integration-tests', {
     }
 });
 
-// TODO : test('should set rarity and glyph rarity on all slots to x', 16, function() {});
+//TODO/TEST test('should set rarity and glyph rarity on all slots to x', 16, function() {});
 
-// TODO : test('should set rarity and glyph rarity on all slots to x after changing rarity then changing role', 23, function() {});
+//TODO/TEST test('should set rarity and glyph rarity on all slots to x after changing rarity then changing role', 23, function() {});
 
-//TODO : reset should logically set lvl 1 to items
+//TODO/TEST reset should logically set lvl 1 to items
 test('should reset all slots', 88, function() {
     swlcalc.buttonBar.resetAllSlots();
     assertReset(swlcalc.slots.weapon);
