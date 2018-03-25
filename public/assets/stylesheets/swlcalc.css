@@ -8,11 +8,23 @@ select {
     height: 32px;
 }
 
-.logo {
-    font-size: 50px;
+
+.masthead {
+    margin-top: 10px;
 }
-.slogan {
+.div-logo {
+    display: inline-block;
+    position: relative;
+}
+.logo-img {
+    width: 175px;
+}
+.logo-slogan {
     font-size: 12px;
+    margin-left: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 200px;
 }
 
 

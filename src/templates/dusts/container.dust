@@ -3,7 +3,10 @@
         <li class="active"><a href="#">Calculator</a></li>
         <li><a href="https://github.com/AntoineThebaud/swlcalc" target="_blank">Github</a></li>
     </ul>
-    <h2 class="logo lightgrey"><span class="templar">s</span><span class="illuminati">w</span><span class="dragon">l</span><span class="darkgrey">calc</span> <span class="slogan">Make your builds come true.</span></h2>
+    <div class="div-logo">
+        <img class="logo-img" src="assets/images/logos/swlcalc.png"/>
+        <span class="logo-slogan lightgrey">Make your builds come true.</span>
+    </div>
 </div>
 <hr>
 <div class="row-fluid">
