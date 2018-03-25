@@ -5,19 +5,23 @@ module('summary-dom', {
     }
 });
 
-test('should have required summary in DOM', 17, function() {
-    ok($('#stat-power-rating').length !== 0, 'stat-weapon-power exists');
+test('should have required summary in DOM', 18, function() {
+    // check all Primary stats exist
+    ok($('#stat-power-rating').length !== 0, 'stat-power-rating exists');
     ok($('#stat-weapon-power').length !== 0, 'stat-weapon-power exists');
     ok($('#stat-combat-power').length !== 0, 'stat-combat-power exists');
-    ok($('#stat-heal-power').length !== 0, 'stat-weapon-power exists');
+    ok($('#stat-healing-power').length !== 0, 'stat-healing-power exists');
     ok($('#stat-hitpoints').length !== 0, 'stat-hitpoints exists');
     ok($('#stat-attack-rating').length !== 0, 'stat-attack-rating exists');
     ok($('#stat-heal-rating').length !== 0, 'stat-heal-rating exists');
+    // check all Offensive stats exist
     ok($('#stat-critical-rating').length !== 0, 'stat-critical-rating exists');
     ok($('#stat-critical-chance').length !== 0, 'stat-critical-chance exists');
     ok($('#stat-critical-power').length !== 0, 'stat-critical-power exists');
     ok($('#stat-critical-power-percentage').length !== 0, 'stat-critical-power-percentage exists');
     ok($('#stat-hit-rating').length !== 0, 'stat-hit-rating exists');
+    ok($('#stat-glance-reduction').length !== 0, 'stat-glance-reduction');
+    // check all Defensive stats exist
     ok($('#stat-defense-rating').length !== 0, 'stat-defense-rating exists');
     ok($('#stat-evade-rating').length !== 0, 'stat-evade-rating exists');
     ok($('#stat-evade-chance').length !== 0, 'stat-evade-chance exists');
