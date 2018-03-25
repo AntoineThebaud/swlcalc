@@ -41,9 +41,10 @@ swlcalc.summary = function() {
     var collectPrimaryStats = function() {
         var sums = {
             'combat-power': 0,
-            'weapon-power': 0,
+            'healing-power': 0,
+            'weapon-power': 0, //TODO/REFACTOR : weapon power in the summary is the same as weapon power shown in the weapon slot
             //TODO/FEATURE : HP, AR & HR disabled for the moment (as long as power rating conversion is not implemented)
-            // 'hitpoints': 7512,     // = 3300 (base stat at lvl 50) + 2997 (amount brought by passives skills) + 1215 (capstone points)
+            // 'hitpoints': 7512,     // = 3300 (base HP at lvl 50) + 2997 (amount brought by passives skills) + 1215 (capstone points)
             // 'attack-rating': 4322, // = 2000 (base stat at lvl 50) + 1512 (amount brought by passives skills) + 810 (capstone points)
             // 'heal-rating': 4310,   // = 2000 (base stat at lvl 50) + 1500 (amount brought by passives skills) + 810 (capstone points)
             'power-rating': 0,
@@ -65,19 +66,34 @@ swlcalc.summary = function() {
             }
         }
         sums['combat-power'] = calculateCombatPower(sums['attack-rating'], sums['weapon-power']);
+        sums['healing-power'] = calculateHealingPower(sums['heal-rating'], sums['weapon-power']);
         //TODO/REFACTOR : refactor (it's weird)
         sums['item-power'] = calculateAverageItemPower(sums['item-power']);
         return sums;
     };
 
-    //TODO/FEATURE : to implement, still tsw formula
+    /**
+     * Calculates the Combat Power for the given Attack Rating and Weapon Power values
+     * SWL formula for Combat Power is like :
+     * -> +1 Combat Power every 13.33 Attack Rating
+     * -> +1 Combat Power every 13.33 Weapon Power
+     */
     var calculateCombatPower = function(attack_rating, weapon_power) {
-        if (attack_rating < 5200){
-            return Math.round((375 - (600 / (Math.pow(Math.E, (attack_rating / 1400)) + 1))) * (1 + (weapon_power / 375)));
-        } else {
-            var arMultiplier = .00008 * weapon_power + .0301;
-            return Math.round(204.38 + .5471 * weapon_power + arMultiplier * attack_rating);
-        }
+        var ratio = 13 + 1/3;
+
+        return Math.round((attack_rating + weapon_power) / ratio);
+    };
+
+    /**
+     * Calculates the Healing Power for the given Heal Rating and Weapon Power values
+     * SWL formula for Combat Power is like :
+     * -> +1 Healing Power every 13.33 Heal Rating
+     * -> +1 Healing Power every 13.33 Weapon Power
+     */
+    var calculateHealingPower = function(heal_rating, weapon_power) {
+        var ratio = 13 + 1/3;
+
+        return Math.round((heal_rating + weapon_power) / ratio);
     };
 
     var updateOffensiveDefensiveStats = function() {
@@ -97,7 +113,7 @@ swlcalc.summary = function() {
             'glance-chance': 0,
             'evade-rating': 753,              // amount brought by passives skills
             'evade-chance': 0,                // base percentage
-            //TODO/FEATURE : prot stats are not functionnal yet
+            //TODO/FEATURE : protection stats are not functionnal yet
             // 'physical-protection': 2259,   // amount brought by passives skills
             // 'magical-protection': 2259     // amount brought by passives skills
         };

@@ -3,7 +3,7 @@
         <h4>Gear stats</h4>
         <table class="table table-stats">
             <thead>
-                <th>Primary Stat</th>
+                <th>Primary Stats</th>
                 <th>Value</th>
             </thead>
             <tbody>
@@ -15,21 +15,21 @@
                 <tr><td class="statname not-functionnal">Heal Rating</td><td id="stat-heal-rating" class="stat-value not-functionnal">0</td></tr>
                 <tr><td class="statname not-functionnal">Hitpoints</td><td id="stat-hitpoints" class="stat-value not-functionnal">3300</td></tr>
                 <tr><td class="statname not-functionnal">Combat Power</td><td id="stat-combat-power" class="stat-value not-functionnal">0</td></tr>
-                <tr><td class="statname not-functionnal">Heal Power</td><td id="stat-heal-power" class="stat-value not-functionnal">0</td></tr>
+                <tr><td class="statname not-functionnal">Healing Power</td><td id="stat-healing-power" class="stat-value not-functionnal">0</td></tr>
             </tbody>
         </table>
     </div>
     <div id="table-offensive">
         <table class="table table-stats">
             <thead>
-                <th>Offensive Stat</th>
+                <th>Offensive Stats</th>
                 <th>Value</th>
             </thead>
             <tbody>
                 <tr><td class="statname">Critical Rating</td><td id="stat-critical-rating" class="stat-value">0 %</td></tr>
                 <tr><td class="statname">Critical Chance %</td><td id="stat-critical-chance" class="stat-value">0</td></tr>
                 <tr><td class="statname">Critical Power Rating</td><td id="stat-critical-power" class="stat-value">0</td></tr>
-                <tr><td class="statname">Critical Power</td><td id="stat-critical-power-percentage" class="stat-value">0 %</td></tr>
+                <tr><td class="statname">Critical Power %</td><td id="stat-critical-power-percentage" class="stat-value">0 %</td></tr>
                 <tr><td class="statname">Hit Rating</td><td id="stat-hit-rating" class="stat-value">0</td></tr>
                 <tr><td class="statname">Glance Reduction %</td><td id="stat-glance-reduction" class="stat-value">0 %</td></tr>
             </tbody>
@@ -38,7 +38,7 @@
     <div id="table-defensive">
         <table class="table table-stats">
             <thead>
-                <th>Defensive Stat</th>
+                <th>Defensive Stats</th>
                 <th>Value</th>
             </thead>
             <tbody>
