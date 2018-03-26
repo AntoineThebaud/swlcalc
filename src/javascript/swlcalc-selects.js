@@ -94,7 +94,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
 
     this.handleItemChange = function(event) {
-        slotObj.updateImgIcon(event.target.selectedOptions[0].innerHTML);
+        slotObj.updateTalismanImgIcon();
         swlcalc.summary.updateAllStats();
     };
 
@@ -105,7 +105,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         } else {
             slotObj.name('');
         }
-        slotObj.updateImgIcon(event.target.selectedOptions[0].innerHTML);
+        slotObj.updateWeaponImgIcon();
         swlcalc.summary.updateAllStats();
     };
 
@@ -115,14 +115,17 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Triggers color change for the related item image border.
      * Triggers choices list update for the select level of the same slot.
      */
+    //TODO/REFACTOR : review the way it uses slotObj.id
     this.handleRarityChange = function(event) {
-        var newRarity = event.target.selectedOptions[0].value;
+        var newRarity = $("#" + slotObj.id + "-rarity option:selected").val();
 
-        self.updateTextColor(event.target);
-        slotObj.updateImgBorder(newRarity);
+        //self.updateTextColor(event.target);
+        //TODO/REFACTOR : to reuse updateTextColor
+        $(event.target).attr("class", $("#" + slotObj.id + "-rarity option:selected").attr('class'));
+
+        slotObj.updateImgBorder();
 
         slotObj.el.level.empty();
-
         var minLvl = 1;
         var maxLvl = swlcalc.data.rarity_mapping.to_max_level[newRarity];
         // TODO/FEATURE : the for loop to generate all the values between min(1) & max(20/25/30/35/70) is disabled
@@ -153,14 +156,16 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
 
     this.handleGlyphChange = function(event) {
-        slotObj.updateGlyphStatLabel(event.target.selectedOptions[0].value);
-        slotObj.updateGlyphImgIcon(event.target.selectedOptions[0].value);
+        slotObj.updateGlyphStatLabel();
+        slotObj.updateGlyphImgIcon();
         swlcalc.summary.updateAllStats();
     };
 
     this.handleGlyphRarityChange = function(event) {
-        self.updateTextColor(event.target);
-        slotObj.updateGlyphImgBorder(event.target.selectedOptions[0].value);
+        //self.updateTextColor(event.target);
+        //TODO/REFACTOR : to reuse updateTextColor
+        $(event.target).attr("class", $("#" + slotObj.id + "-glyph-rarity option:selected").attr('class'));
+        slotObj.updateGlyphImgBorder();
         slotObj.updateGlyphItemPower();
         slotObj.updateTotalItemPower();
         swlcalc.summary.updateAllStats();
@@ -192,7 +197,9 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     this.handleSignetRarityChange = function(event) {
-        self.updateTextColor(event.target);
+        //self.updateTextColor(event.target);
+        //TODO/REFACTOR : to reuse updateTextColor
+        $(event.target).attr("class", $("#" + slotObj.id + "-signet-rarity option:selected").attr('class'));
         self.handleSignetChange(event);
     };
 
@@ -202,7 +209,12 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         swlcalc.summary.updateAllStats();
     };
 
-    this.updateTextColor = function(select) {
-        $(select).attr("class", select.selectedOptions[0].className);
-    };
+    //TODO/REFACTOR : to reimplement
+    // this.updateTextColor = function(select) {
+    //     console.log("select = ");
+    //     console.log(select);
+    //     var newClass = $("#" + select.attr('id') + " option:selected").attr('class');
+    //     console.log("newClass = " + newClass);
+    //     $(select).attr("class", newClass);
+    // };
 };

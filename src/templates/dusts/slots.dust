@@ -39,7 +39,7 @@
         </tr>
         <tr class="tr-with-icon">
             <td class="item-img">
-                <a href="#" data-toggle="tooltip" title="Item for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
+                <a href="#" class="item-tooltip" data-toggle="tooltip" title="Item for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
                     <img id="{id_prefix}-img-rarity" class="item-icon-border" src=""/>
                     <img id="{id_prefix}-img-icon" class="item-icon" src="" alt="Item"/>
                 </a>

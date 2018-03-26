@@ -236,14 +236,21 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
-    this.updateImgIcon = function(itemName) {
-        var type = this.isWeapon() ? 'weapon' : 'talisman';
-        var item_url = 'assets/images/icons/' + type + '/' + itemName + '.png';
+    //TODO/REFACTOR : review the way it uses this.id
+    this.updateTalismanImgIcon = function() {
+        var item_url = 'assets/images/icons/talisman/' + $("#" + this.id + "-itemId option:selected").text() + '.png';
         this.el.imgIcon.attr('src', item_url);
     };
 
-    this.updateImgBorder = function(rarity) {
-        var rarity_url = 'assets/images/icons/rarity/' + rarity + '-42x42.png';
+    //TODO/REFACTOR : review the way it uses this.id
+    this.updateWeaponImgIcon = function() {
+        var item_url = 'assets/images/icons/weapon/' + $("#" + this.id + "-wtype option:selected").text() + '.png';
+        this.el.imgIcon.attr('src', item_url);
+    };
+
+    //TODO/REFACTOR : review the way it uses this.id
+    this.updateImgBorder = function() {
+        var rarity_url = 'assets/images/icons/rarity/' + $("#" + this.id + "-rarity option:selected").text() + '-42x42.png';
         this.el.imgBorder.attr('src', rarity_url);
     };
 
@@ -342,17 +349,20 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.el.glyphValue.html(this.glyphValue() !== 0 ? '+' + this.glyphValue().toFixed(0) : 0);
     };
 
-    this.updateGlyphStatLabel = function(newStat) {
+    this.updateGlyphStatLabel = function() {
+        var newStat = $("#" + this.id + "-glyph option:selected").val();
         this.el.glyphStat.html(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newStat]);
     };
 
-    this.updateGlyphImgIcon = function(newStat) {
-        var rarity_url = 'assets/images/icons/glyph/' + newStat + '.png';
+    //TODO/REFACTOR : review the way it uses this.id
+    this.updateGlyphImgIcon = function() {
+        var rarity_url = 'assets/images/icons/glyph/' + $("#" + this.id + "-glyph option:selected").val() + '.png';
         this.el.glyphImgIcon.attr('src', rarity_url);
     };
 
-    this.updateGlyphImgBorder = function(rarity) {
-        var rarity_url = 'assets/images/icons/rarity/' + rarity + '-42x42.png';
+    //TODO/REFACTOR : review the way it uses this.id
+    this.updateGlyphImgBorder = function() {
+        var rarity_url = 'assets/images/icons/rarity/' + $("#" + this.id + "-glyph-rarity option:selected").val() + '-42x42.png';
         this.el.glyphImgBorder.attr('src', rarity_url);
     };
 
