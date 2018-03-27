@@ -250,7 +250,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
 
     //TODO/REFACTOR : review the way it uses this.id
     this.updateImgBorder = function() {
-        var rarity_url = 'assets/images/icons/rarity/' + $("#" + this.id + "-rarity option:selected").text() + '-42x42.png';
+        var rarity_url = 'assets/images/icons/rarity/' + $("#" + this.id + "-rarity option:selected").val() + '-42x42.png';
         this.el.imgBorder.attr('src', rarity_url);
     };
 
