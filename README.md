@@ -16,7 +16,7 @@ swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by F
 * Some features to be released can be found in the [swlcalc features board](https://github.com/AntoineThebaud/swlcalc/projects/1).
 * Otherwise, feel free to suggest new features in the [issues](https://github.com/AntoineThebaud/swlcalc/issues) !
 
-TOCHANGE : Once released, swlcalc will be hosted at http://AntoineThebaud.github.io/swlcalc.
+swlcalc can be found at: http://AntoineThebaud.github.io/swlcalc
 
 **Notes :** All active development of swlcalc takes place in the [`develop`](https://github.com/AntoineThebaud/swlcalc/tree/develop) branch. The tip of [`master`](https://github.com/AntoineThebaud/swlcalc/tree/master) always points to the latest, stable release. All releases are tagged. The latest release is deployed to the [`gh-pages`](https://github.com/joakibj/tswcalc/tree/gh-pages) branch.
 
