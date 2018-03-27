@@ -12,10 +12,10 @@ swlcalc.data.glyph_data = {
                         3: 17,
                         4: 20,
                         5: 23,
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 26,
+                        7: 29,
+                        8: 32,
+                        9: 35,
                         10: 0, //TODO/FEATURE : placeholder value for the moment
                         11: 0, //TODO/FEATURE : placeholder value for the moment
                         12: 0, //TODO/FEATURE : placeholder value for the moment
