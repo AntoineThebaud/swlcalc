@@ -1,9 +1,9 @@
-swlcalc
+![swlcalc](/public/assets/images/logos/swlcalc_w200.png)
 =======
 
 swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by Funcom. It can be used to plan your gear progression, to visualize the stats you will reach with a given gear and also to share and show others what gear you use to tackle encounters in PvE or PvP.
 
-*This project is still on early phase of development. No release is available yet.*
+*TOCHANGE : This project is still on early phase of development. No release is available yet.*
 
 **swlcalc features :**
 * All the gear slots (weapons and talismans) and their bound item/glyph/signet are customizable.
@@ -16,7 +16,7 @@ swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by F
 * Some features to be released can be found in the [swlcalc features board](https://github.com/AntoineThebaud/swlcalc/projects/1).
 * Otherwise, feel free to suggest new features in the [issues](https://github.com/AntoineThebaud/swlcalc/issues) !
 
-Once released, swlcalc will be hosted at http://AntoineThebaud.github.io/swlcalc.
+TOCHANGE : Once released, swlcalc will be hosted at http://AntoineThebaud.github.io/swlcalc.
 
 **Notes :** All active development of swlcalc takes place in the [`develop`](https://github.com/AntoineThebaud/swlcalc/tree/develop) branch. The tip of [`master`](https://github.com/AntoineThebaud/swlcalc/tree/master) always points to the latest, stable release. All releases are tagged. The latest release is deployed to the [`gh-pages`](https://github.com/joakibj/tswcalc/tree/gh-pages) branch.
 
