@@ -27,6 +27,10 @@ select {
     width: 200px;
 }
 
+.dg-img {
+    width: 34px;
+    margin-bottom: 5px;
+}
 
 .illuminati {
     color: #435682;

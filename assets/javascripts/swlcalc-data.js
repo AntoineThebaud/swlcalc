@@ -126,7 +126,7 @@ swlcalc.data.custom_gear_data = {
                         8: 1322,
                         9: 1345,
                         10: 1368,
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
+                        11: 1391,
                         12: 0, //TODO/FEATURE : placeholder value for the moment
                         13: 0, //TODO/FEATURE : placeholder value for the moment
                         14: 0, //TODO/FEATURE : placeholder value for the moment
@@ -493,7 +493,7 @@ swlcalc.data.custom_gear_data = {
                                 21: 1066,
                                 22: 1082,
                                 23: 1097,
-                                24: 0, //TODO/FEATURE : placeholder value for the moment
+                                24: 1112,
                                 25: 0, //TODO/FEATURE : placeholder value for the moment
                                 26: 0, //TODO/FEATURE : placeholder value for the moment
                                 27: 1158,
@@ -2463,10 +2463,10 @@ swlcalc.data.glyph_data = {
                         3: 17,
                         4: 20,
                         5: 23,
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
+                        6: 26,
+                        7: 29,
+                        8: 32,
+                        9: 35,
                         10: 0, //TODO/FEATURE : placeholder value for the moment
                         11: 0, //TODO/FEATURE : placeholder value for the moment
                         12: 0, //TODO/FEATURE : placeholder value for the moment
