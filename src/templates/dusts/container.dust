@@ -1,29 +1,35 @@
 <div class="masthead">
-    <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="#">Calculator</a></li>
-        <li><a href="https://github.com/AntoineThebaud/swlcalc" target="_blank">Github</a></li>
-    </ul>
-    <div class="div-logo">
-        <img class="logo-img" src="assets/images/logos/swlcalc.png"/>
-        <span class="logo-slogan lightgrey">Make your builds come true.</span>
-    </div>
+<!--   <div class="btn-group pull-right">
+    <button class="btn btn-info"><a href="https://github.com/AntoineThebaud/swlcalc" target="_blank" style="color: white;">Github</a></button>
+    <button class="btn"><a href="https://forums.funcom.com/c/secret-world-legends/orochi-labs" target="_blank">forum post</a></button>
+    <a href="http://dgamers.guildi.com/" target="_blank"><img class="dg-img" src="assets/images/logos/DG.png"/></a>
+  </div> -->
+  <div class="btn-group pull-right">
+    <a class="btn btn-info" href="https://github.com/AntoineThebaud/swlcalc" target="_blank" style="color: white;">Github</a>
+    <a class="btn" href="https://forums.funcom.com/c/secret-world-legends/orochi-labs" target="_blank">forum post</a>
+    <a href="http://dgamers.guildi.com/" target="_blank"><img class="dg-img" src="assets/images/logos/DG.png"/></a>
+  </div>
+  <div class="div-logo">
+    <img class="logo-img" src="assets/images/logos/swlcalc.png" />
+    <span class="logo-slogan lightgrey">A gear planner for [SWL Logo].</span>
+  </div>
 </div>
 <hr>
 <div class="row-fluid">
-    <div class="span12">
-        {>buttonbar/}
-    </div>
+  <div class="span12">
+    {>buttonbar/}
+  </div>
 </div>
 <hr/>
 <div class="row-fluid">
-    <div class="span8">
-        {>slots/}
-    </div>
-    <div class="span4">
-        {>summary/}
-    </div>
+  <div class="span8">
+    {>slots/}
+  </div>
+  <div class="span4">
+    {>summary/}
+  </div>
 </div>
 <hr>
 <div class="footer">
-    <p>swlcalc &copy; 2017-2018 Antoine THEBAUD. Version <a href="https://github.com/AntoineThebaud/swlcalc/tree/@@version" target="_new">@@version</a>. Hosted on Github Pages.</p>
+  <p>swlcalc &copy; 2017-2018 Antoine THEBAUD. Version <a href="https://github.com/AntoineThebaud/swlcalc/tree/@@version" target="_new">@@version</a>. Hosted on Github Pages.</p>
 </div>

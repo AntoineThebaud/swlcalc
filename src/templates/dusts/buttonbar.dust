@@ -18,9 +18,8 @@
 </div>
 <!-- [ Export ] -->
 <div class="btn-group">
-    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
-        Export
-        <span class="caret"></span>
+    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+        Export <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
         <li><a class="export" href="#open-export-modal" data="url" data-toggle="modal">URL</a></li>
