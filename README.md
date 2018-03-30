@@ -3,8 +3,6 @@
 
 swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by Funcom. It can be used to plan your gear progression, to visualize the stats you will reach with a given gear and also to share and show others what gear you use to tackle encounters in PvE or PvP.
 
-*TOCHANGE : This project is still on early phase of development. No release is available yet.*
-
 **swlcalc features :**
 * All the gear slots (weapons and talismans) and their bound item/glyph/signet are customizable.
 * Item Power is calculated and displayed for each slot.
