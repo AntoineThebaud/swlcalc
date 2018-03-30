@@ -12,11 +12,13 @@ select {
 .masthead {
     margin-top: 10px;
 }
+
+
 .div-logo {
     display: inline-block;
     position: relative;
 }
-.logo-img {
+.logo-swlcalc {
     width: 175px;
 }
 .logo-slogan {
@@ -26,11 +28,17 @@ select {
     bottom: 0;
     width: 200px;
 }
-
-.dg-img {
+.logo-dg {
     width: 34px;
     margin-bottom: 5px;
 }
+.logo-swl {
+    width: 180px;
+    position: absolute;
+    bottom: 2px;
+    left: 285px;
+}
+
 
 .illuminati {
     color: #435682;
