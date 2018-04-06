@@ -32,7 +32,7 @@ swlcalc.buttonBar = function() {
     };
 
     var setRarityOnAllSlots = function(event) {
-        var newRarity = extractRarity(event);
+        var newRarity = event.currentTarget.id.split('-')[2];
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
                 var slot = swlcalc.slots[slotId];
@@ -52,14 +52,6 @@ swlcalc.buttonBar = function() {
     var resetAllSlots = function(event) {
         swlcalc.slots.reset();
         swlcalc.summary.updateAllStats();
-    };
-
-    var extractRarity = function (event) {
-        return event.target.id.split('-')[2];
-    };
-
-    var extractRole = function(event) {
-        return event.target.id.split('-')[2];
     };
 
     var oPublic = {

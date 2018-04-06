@@ -419,7 +419,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
 //         } else if (this.id == 'weapon' || this.id == 'weapon2') {
 //             return swlcalc.data.suffixes.slot[this.signetId()];
         } else {
-            return swlcalc.data.signets.slot[this.id][this.signetId() - 1];
+            //TODO/REFACTOR : patch to improve
+            var idToUse = (this.id == 'weapon2' ? 'weapon' : this.id);
+            return swlcalc.data.signets.slot[idToUse][this.signetId() - 1];
         }
     };
 
