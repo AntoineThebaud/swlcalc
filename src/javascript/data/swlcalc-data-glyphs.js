@@ -1,387 +1,75 @@
 var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
-swlcalc.data.glyph_data = {
-    rarity: {
-        'standard': {
-            quality: {
-                'crude': {
-                    level : {
-                        1: 12,
-                        2: 14,
-                        3: 17,
-                        4: 20,
-                        5: 23,
-                        6: 26,
-                        7: 29,
-                        8: 32,
-                        9: 35,
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TOD0/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 67
-                    }
-                },
-                'simple': {
-                    level : {
-                        1: 14,
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 76
-                    }
-                },
-                'intricate': {
-                    level : {
-                        1: 15,
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 84
-                    }
-                }
-            }
+swlcalc.data.glyph = {
+    'standard': {
+        'crude': {
+            rating_init: 12,
+            rating_per_level: 55/19 // == (67 - 12) / (20 - 1)
         },
-        'superior': {
-            quality: {
-                'crude': {
-                    level : {
-                        1: 85,
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 185
-                    }
-                },
-                'simple': {
-                    level : {
-                        1: 95,
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 208
-                    }
-                },
-                'intricate': {
-                    level : {
-                        1: 106,
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 184,
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 231
-                    }
-                }
-            }
+        'simple': {
+            rating_init: 14,
+            rating_per_level: 62/19 // == (76 - 14) / (20 - 1)
         },
-        'epic': {
-            quality: {
-                'crude': {
-                    level : {
-                        1: 215,
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 339
-                    }
-                },
-                'simple': {
-                    level : {
-                        1: 241,
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 381
-                    }
-                },
-                'intricate': {
-                    level : {
-                        1: 268,
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 424
-                    }
-                }
-            }
+        'intricate': {
+            rating_init: 15,
+            rating_per_level: 69/19 // == (84 - 15) / (20 - 1)
+        }
+    },
+    'superior': {
+        'crude': {
+            rating_init: 85,
+            rating_per_level: 100/19 // == (185 - 85) / (20 - 1)
         },
-        'mythic': {
-            quality: {
-                'crude': {
-                    level : {
-                        1: 390,
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 546 // uncertain!
-                    }
-                },
-                'simple': {
-                    level : {
-                        1: 439,
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 615
-                    }
-                },
-                'intricate': {
-                    level : {
-                        1: 488,
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 683
-                    }
-                }
-            }
+        'simple': {
+            rating_init: 95,
+            rating_per_level: 113/19 // == (208 - 95) / (20 - 1)
         },
-        'legendary': {
-            quality: {
-                'crude': {
-                    level : {
-                        1: 610, //TODO/BUG : uncertain value !
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 925 //TODO/BUG : uncertain value !
-                    }
-                },
-                'simple': {
-                    level : {
-                        1: 686, //TODO/BUG : uncertain value !
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 1040 //TODO/BUG : uncertain value !
-                    }
-                },
-                'intricate': {
-                    level : {
-                        1: 762, //TODO/BUG : uncertain value !
-                        2: 0, //TODO/FEATURE : placeholder value for the moment
-                        3: 0, //TODO/FEATURE : placeholder value for the moment
-                        4: 0, //TODO/FEATURE : placeholder value for the moment
-                        5: 0, //TODO/FEATURE : placeholder value for the moment
-                        6: 0, //TODO/FEATURE : placeholder value for the moment
-                        7: 0, //TODO/FEATURE : placeholder value for the moment
-                        8: 0, //TODO/FEATURE : placeholder value for the moment
-                        9: 0, //TODO/FEATURE : placeholder value for the moment
-                        10: 0, //TODO/FEATURE : placeholder value for the moment
-                        11: 0, //TODO/FEATURE : placeholder value for the moment
-                        12: 0, //TODO/FEATURE : placeholder value for the moment
-                        13: 0, //TODO/FEATURE : placeholder value for the moment
-                        14: 0, //TODO/FEATURE : placeholder value for the moment
-                        15: 0, //TODO/FEATURE : placeholder value for the moment
-                        16: 0, //TODO/FEATURE : placeholder value for the moment
-                        17: 0, //TODO/FEATURE : placeholder value for the moment
-                        18: 0, //TODO/FEATURE : placeholder value for the moment
-                        19: 0, //TODO/FEATURE : placeholder value for the moment
-                        20: 1156
-                    }
-                }
-            }
+        'intricate': {
+            rating_init: 106,
+            rating_per_level: 125/19 // == (231 - 106) / (20 - 1)
+        }
+    },
+    'epic': {
+        'crude': {
+            rating_init: 215,
+            rating_per_level: 124/19 // == (339 - 215) / (20 - 1)
+        },
+        'simple': {
+            rating_init: 241,
+            rating_per_level: 140/19 // == (381 - 241) / (20 - 1)
+        },
+        'intricate': {
+            rating_init: 268,
+            rating_per_level: 156/19 // == (424 - 268) / (20 - 1)
+        }
+    },
+    'mythic': {
+        'crude': {
+            rating_init: 390,
+            rating_per_level: 156/19 // == (546 - 390) / (20 - 1)
+        },
+        'simple': {
+            rating_init: 439,
+            rating_per_level: 176/19 // == (615 - 439) / (20 - 1)
+        },
+        'intricate': {
+            rating_init: 488,
+            rating_per_level: 195/19 // == (683 - 488) / (20 - 1)
+        }
+    },
+    'legendary': {
+        'crude': {
+            rating_init: 610,
+            rating_per_level: 315/19 // == (925 - 610) / (20 - 1)
+        },
+        'simple': {
+            rating_init: 686,
+            rating_per_level: 354/19 // == (1040 - 686) / (20 - 1)
+        },
+        'intricate': {
+            rating_init: 762,
+            rating_per_level: 394/19 // == (1156 - 762) / (20 - 1)
         }
     }
 };

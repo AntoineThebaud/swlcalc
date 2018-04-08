@@ -54,15 +54,17 @@ swlcalc.summary = function() {
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
                 var slot = swlcalc.slots[slotId];
+                //TODO/FEATURE : add conversion to AR/HR/HP based on ratio selected
+                sums['item-power'] += slot.itemPower();
                 if (slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
                 } else if (slot.isWeapon() && slot.wtype() != 'none') {
-                    sums['weapon-power'] = swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].level[slot.level()];
+                    sums['weapon-power'] = slot.calculateWeaponPower(slot.rarity(), slot.level());
+                    //sums['weapon-power'] = swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].level[slot.level()];
                 } else if (!slot.isWeapon() && slot.itemId() != 'none') {
-                    sums['power-rating'] += swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
+                    sums['power-rating'] += slot.calculatePowerRating(slot.group, slot.rarity(), slot.quality(), slot.level());
+                    //sums['power-rating'] += swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
                 }
-                //TODO/FEATURE : add conversion to AR/HR/HP based on ratio selected
-                sums['item-power'] += slot.itemPower();
             }
         }
         sums['combat-power'] = calculateCombatPower(sums['attack-rating'], sums['weapon-power']);
@@ -254,8 +256,12 @@ swlcalc.summary = function() {
         return swlcalc.util.precisionRound(hit_rating / ratio, 1);
     };
 
+    /**
+     * Calculates the average Item Power given by the whole gear
+     * 9 = number of slots to take into account (2 weapons + 7 talismans)
+     */
     var calculateAverageItemPower = function(sum_item_power) {
-        return Math.round(sum_item_power / 8);
+        return Math.round(sum_item_power / 9);
     }
 
     var updateStats = function(sums) {

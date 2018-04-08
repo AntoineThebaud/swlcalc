@@ -103,7 +103,7 @@ swlcalc.data.talisman_quality_mapping = {
     to_name: {
         0: 'none',
         1: 'faded',
-        2: 'lumninous',
+        2: 'luminous',
         3: 'radiant',
     }
 };

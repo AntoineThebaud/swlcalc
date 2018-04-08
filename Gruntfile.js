@@ -57,9 +57,8 @@ module.exports = function(grunt) {
             '<%= dirs.src %>/data/<%= pkg.name %>-data-mappings.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-signets.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-glyphs.js',
-            '<%= dirs.src %>/data/<%= pkg.name %>-data-cadoro.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-items.js',
-            '<%= dirs.src %>/data/<%= pkg.name %>-data-upgrading.js'
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-item-power.js'
         ],
         dest: '<%= dirs.build %>/assets/javascripts/<%= pkg.name %>-data.js'
       }

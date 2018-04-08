@@ -128,16 +128,12 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.level.empty();
         var minLvl = 1;
         var maxLvl = swlcalc.data.rarity_mapping.to_max_level[newRarity];
-        // TODO/FEATURE : the for loop to generate all the values between min(1) & max(20/25/30/35/70) is disabled
-        // as long as intermediary values are not referenced. Thus only min & max are displayed for the moment
-        // for (i = maxLvl; i >= minLvl ; i--) {
-        //    slotObj.el.level.append($('<option>', {
-        //        value: i,
-        //        text: i
-        //    }));
-        // }
-        slotObj.el.level.append($('<option>', {value: maxLvl, text: maxLvl}));
-        slotObj.el.level.append($('<option>', {value: minLvl, text: minLvl}));
+        for (i = maxLvl; i >= minLvl ; i--) {
+           slotObj.el.level.append($('<option>', {
+               value: i,
+               text: i
+           }));
+        }
 
         slotObj.updateItemPower();
         slotObj.updateTotalItemPower();
