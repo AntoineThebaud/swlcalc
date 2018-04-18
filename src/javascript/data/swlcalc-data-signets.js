@@ -35,7 +35,7 @@ swlcalc.data.signets = {
             {
                 id: 3,
                 name: 'Energy',
-                description: 'When you use a Power Ability with this weapon you have %d% of consuming one less Energy.',
+                description: 'Your attacks and heals with this weapon have a 50% chance to reduce the remaining cooldown time on your Elite Ability by %d%.',
                 quality: {
                     'mkI': 11,
                     'mkII': 22,
@@ -45,7 +45,7 @@ swlcalc.data.signets = {
             {
                 id: 4,
                 name: 'Efficiency',
-                description: 'Your attacks and heals with this weapon have a 50% chance to reduce the remaining cooldown time on your Elite Ability by %d%.',
+                description: 'When you use a Power Ability with this weapon you have %d% of consuming one less Energy.',
                 quality: {
                     'mkI': 2,
                     'mkII': 3,
@@ -97,7 +97,7 @@ swlcalc.data.signets = {
             {
                 id: 1,
                 name: '[Hammer] Signet of Shattering',
-                description: 'Increases the damage and healing of Hammer Elite Abilities by %TODO%.',
+                description: 'Increases the damage and healing of Hammer Elite Abilities by %d%.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ],
@@ -105,7 +105,7 @@ swlcalc.data.signets = {
             {
                 id: 1,
                 name: '[Hammer] Signet of Bludgeoning',
-                description: 'Increases the damage and healing of Hammer Basic Abilities by %TODO%.',
+                description: 'Increases the damage and healing of Hammer Basic Abilities by %d%.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ],
@@ -113,7 +113,7 @@ swlcalc.data.signets = {
             {
                 id: 1,
                 name: '[Hammer] Signet of Crushing',
-                description: 'Increases the damage and healing of Hammer Power Abilities by %TODO%.',
+                description: 'Increases the damage and healing of Hammer Power Abilities by %d%.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ],
@@ -121,7 +121,7 @@ swlcalc.data.signets = {
             {
                 id: 1,
                 name: 'Signet of Condensed Anima',
-                description: 'Increases the rate at which your Ultimate Abilities recharge on ability activation by %TODO%.',
+                description: 'Increases the rate at which your Ultimate Abilities recharge on ability activation by %d%.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ],
@@ -129,7 +129,7 @@ swlcalc.data.signets = {
             {
                 id: 1,
                 name: 'Signet of Laceration',
-                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a %TODO% bonus to critical damage for 5 seconds. This ability can only occur once every 15 seconds.',
+                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a %d% bonus to critical damage for 5 seconds. This ability can only occur once every 15 seconds.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ],
@@ -137,7 +137,7 @@ swlcalc.data.signets = {
             {
                 id: 1,
                 name: 'Signet of Matter Creation',
-                description: 'Increases the damage of Gadgets by %TODO%.',
+                description: 'Increases the damage of Gadgets by %d%.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ],
@@ -145,7 +145,7 @@ swlcalc.data.signets = {
             {
                 id: 1,
                 name: 'Signet of Acrobatics',
-                description: 'Reduces the cooldown of Active Dodge by %TODO%.',
+                description: 'Reduces the cooldown of Active Dodge by %d%.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
             }
         ]
