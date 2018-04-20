@@ -33,7 +33,6 @@ test('should create slot url for weapon with type', 1, function() {
 
 test('should create export url', 1, function() {
     createTankBuild();
-    swlcalc.export.collectAllSlotStates();
     var url = swlcalc.export.createExportUrl();
 
     deepEqual(url, 'weapon=3,1,1,30,2,2,1,1,0,0,0&weapon2=3,2,3,30,2,2,1,1,0,0,0&head=3,1,1,30,4,1,3,1,1,0,20&finger=3,1,1,30,3,5,2,20,1,0,20&neck=3,1,1,30,3,5,2,20,1,0,20&wrist=3,1,1,1,3,5,2,20,1,0,20&luck=3,1,1,1,3,4,2,20,1,0,20&waist=3,1,1,30,3,4,2,20,1,0,20&occult=3,1,1,1,3,4,2,20,1,0,20');

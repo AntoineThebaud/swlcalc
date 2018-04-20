@@ -96,13 +96,16 @@ swlcalc = function() {
     };
 
     /**
-     * TODO/REFACTOR : description missing.
+     * Create select handler for a slot.
      */
     var startSelectHandler = function(slot) {
         swlcalc.select[slot.id_prefix] = new swlcalc.select.SelectHandler(slot);
         swlcalc.select[slot.id_prefix].initiate();
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     var oPublic = {
         init: init
     };

@@ -3,8 +3,12 @@ var swlcalc = swlcalc || {};
 swlcalc.summary = function() {
 
     //TODO/REFACTOR : remove ? currently needed for compatibility
-    var init = function() {};
-
+    var init = function() {
+    };
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     var updateAllStats = function() {
         updatePrimaryStats();
         updateOffensiveDefensiveStats();
@@ -13,10 +17,17 @@ swlcalc.summary = function() {
         updateURL();
     };
 
-   var updateURL = function(event) {
+    /**
+     * update URL field of the browser
+     */
+    var updateURL = function(event) {
         window.location.hash = swlcalc.export.createExportUrl();
     };
 
+    /**
+     * Collect all stats
+     * => forwards to sub functions
+     */
     var collectAllStats = function() {
         return {
             primary: collectPrimaryStats(),
@@ -24,6 +35,16 @@ swlcalc.summary = function() {
         };
     };
 
+    /**
+     * Update the chosen primary stat in the summary
+     */
+    var updateOnePrimaryStat = function(stat, value) {
+        $('#stat-' + stat).text(value);
+    };
+  
+    /**
+     * Update all primary stats in the summary
+     */
     var updatePrimaryStats = function() {
         var sums = collectPrimaryStats();
 
@@ -34,15 +55,14 @@ swlcalc.summary = function() {
         }
     };
 
-    var updateOnePrimaryStat = function(stat, value) {
-        $('#stat-' + stat).text(value);
-    };
-
+    /**
+     * Collect primary stats by going through the whole gear
+     */
     var collectPrimaryStats = function() {
         var sums = {
             'combat-power': 0,
             'healing-power': 0,
-            'weapon-power': 0, //TODO/REFACTOR : weapon power in the summary is the same as weapon power shown in the weapon slot
+            'weapon-power': 0, //TODO/REFACTOR : duplication : weapon power in the summary is the same as weapon power shown in the weapon slot
             //TODO/FEATURE : HP, AR & HR disabled for the moment (as long as power rating conversion is not implemented)
             // 'hitpoints': 7512,     // = 3300 (base HP at lvl 50) + 2997 (amount brought by passives skills) + 1215 (capstone points)
             // 'attack-rating': 4322, // = 2000 (base stat at lvl 50) + 1512 (amount brought by passives skills) + 810 (capstone points)
@@ -60,17 +80,14 @@ swlcalc.summary = function() {
                     continue;
                 } else if (slot.isWeapon() && slot.wtype() != 'none') {
                     sums['weapon-power'] = slot.calculateWeaponPower(slot.rarity(), slot.level());
-                    //sums['weapon-power'] = swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].level[slot.level()];
                 } else if (!slot.isWeapon() && slot.itemId() != 'none') {
                     sums['power-rating'] += slot.calculatePowerRating(slot.group, slot.rarity(), slot.quality(), slot.level());
-                    //sums['power-rating'] += swlcalc.data.custom_gear_data.slot[slot.group].rarity[slot.rarity()].quality[slot.quality()].level[slot.level()];
                 }
             }
         }
         sums['combat-power'] = calculateCombatPower(sums['attack-rating'], sums['weapon-power']);
         sums['healing-power'] = calculateHealingPower(sums['heal-rating'], sums['weapon-power']);
-        //TODO/REFACTOR : refactor (it's weird)
-        sums['item-power'] = calculateAverageItemPower(sums['item-power']);
+        sums['item-power'] = calculateAverageItemPower(sums['item-power']); //TODO/REFACTOR : refactor (it's weird)
         return sums;
     };
 
@@ -97,12 +114,18 @@ swlcalc.summary = function() {
 
         return Math.round((heal_rating + weapon_power) / ratio);
     };
-
+  
+    /**
+     * Update glyph stats in the summary
+     */
     var updateOffensiveDefensiveStats = function() {
         var sums = collectOffensiveDefensiveStats();
         updateStats(sums);
     };
 
+    /**
+     * Collect glyph stats by going through the whole gear
+     */
     var collectOffensiveDefensiveStats = function() {
         var sums = {
             'critical-rating': 756,           // amount brought by passives skills
@@ -114,7 +137,7 @@ swlcalc.summary = function() {
             'defense-rating': 753,            // amount brought by passives skills
             'glance-chance': 0,
             'evade-rating': 753,              // amount brought by passives skills
-            'evade-chance': 0,                // base percentage
+            'evade-chance': 0,
             //TODO/FEATURE : protection stats are not functionnal yet
             // 'physical-protection': 2259,   // amount brought by passives skills
             // 'magical-protection': 2259     // amount brought by passives skills
@@ -147,6 +170,9 @@ swlcalc.summary = function() {
         return sums;
     };
 
+    /**
+     * Update #slot-glyph-value for each slot
+     */
     //TODO/REFACTOR if (swlcalc.slots.hasSlot) is weird, find a better solution
     //TODO/REFACTOR should be updated independently for each slot in swlcalc-slots.js
     var updateGlyphValues = function() {
@@ -158,6 +184,9 @@ swlcalc.summary = function() {
         }
     };
 
+    /**
+     * Update #slot-power-value for each slot
+     */
     //TODO/REFACTOR if (swlcalc.slots.hasSlot) is weird, find a better solution
     //TODO/REFACTOR refactor : should be updated independently for each slot in swlcalc-slots.js
     var updatePowerValues = function() {
@@ -264,6 +293,9 @@ swlcalc.summary = function() {
         return Math.round(sum_item_power / 9);
     }
 
+    /**
+     * Update values (stats) displayed in the summary
+     */
     var updateStats = function(sums) {
         for (var stat in sums) {
             if (sums.hasOwnProperty(stat)) {
@@ -275,7 +307,10 @@ swlcalc.summary = function() {
             }
         }
     };
-
+  
+    /**
+     * Boolean function. Determines whether a stat is percentage-based or not
+     */
     var isStatPercentageBased = function(statName) {
         return statName == 'critical-power-percentage'
             || statName == 'critical-chance'

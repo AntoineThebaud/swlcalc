@@ -22,6 +22,9 @@ var swlcalc = swlcalc || {};
 
 swlcalc.import = function() {
 
+    /**
+     * Imports a (compatible) URL into swlcalc
+     */
     var start = function(vars) {
         for (var slotId in vars) {
             if (vars.hasOwnProperty(slotId)) {
@@ -33,9 +36,9 @@ swlcalc.import = function() {
     };
 
     /**
-    * load the slot informations from the hash and update GUI with it
-    * TODO/REFACTOR maybe there is a better way to update GUI than simulating change() ?
-    */
+     * Loads the slot informations from the hash and update GUI with it.
+     */
+    //TODO/REFACTOR maybe there is a better way to update GUI than simulating change() ?
     var loadSlot = function(slotId, values) {
         var slotObj = swlcalc.slots[slotId];
         // values[0] == Item's Rarity
@@ -85,6 +88,10 @@ swlcalc.import = function() {
         }
     };
 
+    /**
+     * Loads informations about a signet into swlcalc.
+     */
+    //TODO/REFACTOR maybe there is a better way to update GUI than simulating change() ?
     var changeSignet = function(slotId, rarity, id, level) {
         var slotObj = swlcalc.slots[slotId];
         slotObj.signetRarity(rarity);

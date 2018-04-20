@@ -21,7 +21,10 @@ swlcalc.buttonBar = function() {
         el = elInit();
         bindEvents();
     };
-
+    
+    /**
+     * Associates the right process to each trigger.
+     */
     var bindEvents = function() {
         el.btn_all_standard.on('click', setRarityOnAllSlots);
         el.btn_all_superior.on('click', setRarityOnAllSlots);
@@ -31,6 +34,10 @@ swlcalc.buttonBar = function() {
         el.btn_reset.on('click', resetAllSlots);
     };
 
+    /**
+     * Set the same chosen rarity to all items+glyphs+signets.
+     */
+    //TODO/REFACTOR : to define if "slot" is the right term here
     var setRarityOnAllSlots = function(event) {
         var newRarity = event.currentTarget.id.split('-')[2];
         for (var slotId in swlcalc.slots) {
@@ -49,6 +56,10 @@ swlcalc.buttonBar = function() {
         swlcalc.summary.updateAllStats();
     };
 
+    /**
+     * Set all slots to 'none'
+     */
+    //TODO/REFACTOR : to define if "slot" is the right term here
     var resetAllSlots = function(event) {
         swlcalc.slots.reset();
         swlcalc.summary.updateAllStats();

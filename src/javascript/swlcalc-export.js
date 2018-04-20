@@ -1,9 +1,6 @@
 var swlcalc = swlcalc || {};
 
 swlcalc.export = function() {
-    var exportType = 0;
-    var slotState = {};
-
     var el = {};
     var elInit = function() {
         return {
@@ -18,10 +15,12 @@ swlcalc.export = function() {
         bindEvents();
     };
 
+    /**
+     * Associates the right process to each trigger.
+     */
     var bindEvents = function() {
         el.export_btn.on('click', function(event) {
-            exportType = $(event.target).attr('data');
-            startExport();
+            startExportUrl();
         });
 
         el.open_export_modal.on('shown', function() {
@@ -37,19 +36,20 @@ swlcalc.export = function() {
             });
         });
     };
-
-    var startExport = function() {
-        //TODO/FEATURE : put back bbcode export feature ?
-        startExportUrl();
-    };
-
+  
+    /**
+     * Starts URL export : collect stats then forwards to createExportUrl .
+     */
+    //TODO/REFACTOR : remove or change name ?
     var startExportUrl = function() {
-        collectAllSlotStates();
         var url = createExportUrl();
         el.export_textarea.attr('rows', '1');
         el.export_textarea.html(location.origin + location.pathname + '#' + url);
     };
-
+  
+    /**
+     * Builds the URL containing all the informations entered in swlcalc
+     */
     var createExportUrl = function() {
         var url = '';
         var i = 0;
@@ -66,6 +66,9 @@ swlcalc.export = function() {
         return url;
     };
 
+    /**
+     * Builds the subpart of the export URL for the submitted slot
+     */
     var createSlotUrl = function(slot, state) {
         var idOrWtype = state.itemId;
         if(slot.isWeapon()) {
@@ -95,15 +98,10 @@ swlcalc.export = function() {
         return slotUrl;
     };
 
-    var collectAllSlotStates = function() {
-        slotState = swlcalc.slots.mappedState();
-    };
-
     var oPublic = {
         init: init,
         createSlotUrl: createSlotUrl,
         createExportUrl: createExportUrl,
-        collectAllSlotStates: collectAllSlotStates,
         startExportUrl: startExportUrl,
     };
 

@@ -10,24 +10,39 @@ swlcalc.slots = function() {
         }
         drawPrimaryWeapon();
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     var drawPrimaryWeapon = function() {
         swlcalc.slots.weapon2.sheathWeapon();
         swlcalc.slots.weapon.weaponDrawn = true;
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     var length = function() {
         return swlcalc.data.template_data.slots.length;
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     var indices = function() {
         return ['head', 'weapon', 'weapon2', 'finger', 'neck', 'wrist', 'luck', 'waist', 'occult'];
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     var hasSlot = function(slot) {
         return this.hasOwnProperty(slot) && $.inArray(slot, indices()) != -1;
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     var reset = function() {
         for (var slotId in this) {
             if (this.hasSlot(slotId)) {
@@ -35,7 +50,10 @@ swlcalc.slots = function() {
             }
         }
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     var state = function() {
         var slotStates = {};
         for (var slotId in this) {
@@ -45,7 +63,10 @@ swlcalc.slots = function() {
         }
         return slotStates;
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     var mappedState = function() {
         var mappedSlotStates = {};
         for (var slotId in this) {
@@ -107,7 +128,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         signetItemPower: $('#' + this.id + '-signet-item-power'),
         nameWarning: $('#' + this.id + '-name-warning'),
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     this.name = function() {
         if (arguments.length == 1) {
             this.el.name.html(arguments[0]);
@@ -115,7 +139,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.name.html();
         }
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     this.itemPower = function() {
         if (arguments.length == 1) {
             this.el.totalItemPower.html(arguments[0]);
@@ -123,7 +150,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return parseInt(this.el.totalItemPower.html());
         }
     };
-
 
     /**
      * Calculate item power for the whole slot (talisman/weapon + glyph + signet) and updates GUI with it
@@ -158,22 +184,31 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.itemPower(Math.round(itemPower + glyphItemPower + signetItemPower));
     };
 
-    /**
+    /**********************************************************************************
      * Weapon functions |
      *                  V
+     **********************************************************************************/
+    
+    /**
+     * TODO/REFACTOR : to define a heading comment
      */
-
     this.isWeapon = function() {
         return this.group == 'weapon';
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     this.sheathWeapon = function() {
         if(this.isWeapon()) {
             this.weaponDrawn = false;
             this.el.div.hide();
         }
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     this.drawWeapon = function() {
         if(this.isWeapon()) {
             this.weaponDrawn = true;
@@ -181,6 +216,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
+    /**
+     * Getter/Setter for #slot-wtype
+     */
     this.wtype = function() {
         if (arguments.length == 1) {
             this.el.wtype.val(arguments[0]);
@@ -189,11 +227,15 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
-    /**
+    /**********************************************************************************
      * Item functions |
      *                V
+     **********************************************************************************/
+    
+    /**
+     * TODO/REFACTOR : to define a heading comment
      */
-
+    //TODO/REFACTOR : identify how to remove this ?
     this.item = function() {
         var itemId = this.itemId()
         var item = swlcalc.data.items.find(function(item) {
@@ -204,6 +246,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     }
 
+    /**
+     * Getter/Setter for #slot-itemId
+     */
     this.itemId = function() {
         if (arguments.length == 1) {
             this.el.itemId.val(arguments[0]);
@@ -212,6 +257,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
+    /**
+     * Getter/Setter for #slot-rarity
+     */
     this.rarity = function() {
         if (arguments.length == 1) {
             this.el.rarity.val(arguments[0]);
@@ -220,6 +268,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
+    /**
+     * Getter/Setter for #slot-quality
+     */
     this.quality = function() {
         if (arguments.length == 1) {
             this.el.quality.val(arguments[0]);
@@ -227,7 +278,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.quality.val();
         }
     };
-
+  
+    /**
+     * Getter/Setter for #slot-level
+     */
     this.level = function() {
         if (arguments.length == 1) {
             this.el.level.val(arguments[0]);
@@ -236,24 +290,40 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
+    /**
+     * Setter for #slot-img-icon (talisman)
+     */
     //TODO/REFACTOR : review the way it uses this.id
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateTalismanImgIcon = function() {
         var item_url = 'assets/images/icons/talisman/' + $("#" + this.id + "-itemId option:selected").text() + '.png';
         this.el.imgIcon.attr('src', item_url);
     };
 
+    /**
+     * Setter for #slot-img-icon (weapon)
+     */
     //TODO/REFACTOR : review the way it uses this.id
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateWeaponImgIcon = function() {
         var item_url = 'assets/images/icons/weapon/' + $("#" + this.id + "-wtype option:selected").text() + '.png';
         this.el.imgIcon.attr('src', item_url);
     };
 
+    /**
+     * Setter for #slot-img-rarity
+     */
     //TODO/REFACTOR : review the way it uses this.id
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateImgBorder = function() {
         var rarity_url = 'assets/images/icons/rarity/' + $("#" + this.id + "-rarity option:selected").val() + '-42x42.png';
         this.el.imgBorder.attr('src', rarity_url);
     };
 
+    /**
+     * Calculates the power value of the slot (= weapon power for weapons, power rating for talismans)
+     */
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.powerValue = function() {
         if (this.isWeapon()) {
             if (this.wtype() == 'none') {
@@ -269,7 +339,11 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             }
         }
     };
-
+  
+    /**
+     * Setter for #slot-power-value
+     */
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updatePowerValue = function() {
         var powerValueDisplay = this.powerValue();
         if (this.powerValue() !== 0) {
@@ -279,10 +353,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Calculate item power for the slot's item (talisman or weapon) and updates GUI with it
+     * Calculates item power for the slot's item (talisman or weapon) and updates GUI with it
      * => calls calculateItemPower() function with item parameters
-     * TODO/REFACTOR : rename function ?
      */
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateItemPower = function() {
         var calculatedItemPower = this.calculateItemPower(swlcalc.data.item_power.gear['talisman-or-weapon'].rarity[this.rarity()].item_power_init,
                                                           swlcalc.data.item_power.gear['talisman-or-weapon'].rarity[this.rarity()].item_power_per_level,
@@ -295,11 +369,14 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.el.itemPower.html(Math.round(calculatedItemPower));
     };
 
-    /**
+    /**********************************************************************************
      * Glyph functions |
      *                 V
+     **********************************************************************************/
+  
+    /**
+     * Getter/Setter for #slot-glyph
      */
-
     this.glyph = function() {
         if (arguments.length == 1) {
             this.el.glyph.val(arguments[0]);
@@ -307,7 +384,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.glyph.val();
         }
     };
-
+  
+    /**
+     * Getter/Setter for #slot-glyph-rarity
+     */
     this.glyphRarity = function() {
         if (arguments.length == 1) {
             this.el.glyphRarity.val(arguments[0]);
@@ -315,7 +395,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.glyphRarity.val();
         }
     };
-
+  
+    /**
+     * Getter/Setter for #slot-glyph-quality
+     */
     this.glyphQuality = function() {
         if (arguments.length == 1) {
             this.el.glyphQuality.val(arguments[0]);
@@ -323,7 +406,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.glyphQuality.val();
         }
     };
-
+  
+    /**
+     * Getter/Setter for #slot-glyph-level
+     */
     this.glyphLevel = function() {
         if (arguments.length == 1) {
             this.el.glyphLevel.val(arguments[0]);
@@ -331,36 +417,52 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.glyphLevel.val();
         }
     };
-
+  
+    /**
+     * Calculates glyph value 
+     */
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
+    //TODO/REFACTOR : just call calculateGlyphRating => merge the  2 functions ?
     this.glyphValue = function() {
         if (this.glyph() == 'none') {
             return 0;
         }
-        // Glyph value depends on the rarity-quality-level trio, neither the slot nor the stat are taken into account (while they were in TSW).
-        // /!\ exception for crit power glyphs that give 97.3% of the value of other glyphs)
         var glyphValue = this.calculateGlyphRating(this.glyphRarity(), this.glyphQuality(), this.glyphLevel());
-        //var glyphValue = swlcalc.data.glyph_data.rarity[this.glyphRarity()].quality[this.glyphQuality()].level[this.glyphLevel()];
-        if (this.glyph() == 'critical-power') {
-            glyphValue = 0.973 * glyphValue;
-        }
         return glyphValue;
     };
 
+    /**
+     * Setter for #slot-glyph-value 
+     */
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateGlyphValue = function() {
         this.el.glyphValue.html(this.glyphValue() !== 0 ? '+' + this.glyphValue().toFixed(0) : 0);
     };
-
+  
+    /**
+     * Setter for #slot-glyph-stat 
+     */
+    //TODO/REFACTOR : review the way it uses this.id
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateGlyphStatLabel = function() {
         var newStat = $("#" + this.id + "-glyph option:selected").val();
         this.el.glyphStat.html(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newStat]);
     };
-
+  
+    /**
+     * Setter for #slot-glyph-img-icon 
+     */
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     //TODO/REFACTOR : review the way it uses this.id
     this.updateGlyphImgIcon = function() {
         var rarity_url = 'assets/images/icons/glyph/' + $("#" + this.id + "-glyph option:selected").val() + '.png';
         this.el.glyphImgIcon.attr('src', rarity_url);
     };
-
+  
+    /**
+     * Setter for #slot-glyph-img-border 
+     */
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     //TODO/REFACTOR : review the way it uses this.id
     this.updateGlyphImgBorder = function() {
         var rarity_url = 'assets/images/icons/rarity/' + $("#" + this.id + "-glyph-rarity option:selected").val() + '-42x42.png';
@@ -368,10 +470,11 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
+     * Setter for #slot-glyph-item-power
      * Calculate item power for the slot's glyph and updates GUI with it
      * => calls calculateItemPower() function with glyph parameters
-     * TODO/REFACTOR : rename function ?
      */
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateGlyphItemPower = function() {
         var calculatedItemPower = this.calculateItemPower(swlcalc.data.item_power.gear['glyph'].rarity[this.glyphRarity()].item_power_init,
                                                           swlcalc.data.item_power.gear['glyph'].rarity[this.glyphRarity()].item_power_per_level,
@@ -384,11 +487,30 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.el.glyphItemPower.html(Math.round(calculatedItemPower));
     };
 
-    /**
+    /**********************************************************************************
      * Signet functions |
      *                  V
+     **********************************************************************************/
+    
+    /**
+     * TODO/REFACTOR : missing heading comment
      */
-
+    //TODO/REFACTOR : move code and delete this function ?
+    this.signet = function() {
+        if (this.signetId() == 'none' || this.signetId() == undefined || this.signetId() == null) {
+            return swlcalc.data.signets.noneSignet;
+     // } else if (this.id == 'weapon' || this.id == 'weapon2') {
+     //     return swlcalc.data.suffixes.slot[this.signetId()];
+        } else {
+            //TODO/REFACTOR : patch to improve
+            var idToUse = (this.id == 'weapon2' ? 'weapon' : this.id);
+            return swlcalc.data.signets.slot[idToUse][this.signetId() - 1];
+        }
+    };
+  
+    /**
+     * Getter/Setter for #slot-signet
+     */
     this.signetId = function() {
         if (arguments.length == 1) {
             this.el.signetId.val(arguments[0]);
@@ -397,6 +519,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
+    /**
+     * Getter/Setter for #slot-signet-rarity
+     */
     this.signetRarity = function() {
         if (arguments.length == 1) {
             this.el.signetRarity.val(arguments[0]);
@@ -404,7 +529,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.signetRarity.val();
         }
     };
-
+  
+    /**
+     * Getter/Setter for #slot-signet-level
+     */
     this.signetLevel = function() {
         if (arguments.length == 1) {
             this.el.signetLevel.val(arguments[0]);
@@ -413,19 +541,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
-    //TODO/REFACTOR : move code and delete this function ?
-    this.signet = function() {
-        if (this.signetId() == 'none' || this.signetId() == undefined || this.signetId() == null) {
-            return swlcalc.data.signets.noneSignet;
-//         } else if (this.id == 'weapon' || this.id == 'weapon2') {
-//             return swlcalc.data.suffixes.slot[this.signetId()];
-        } else {
-            //TODO/REFACTOR : patch to improve
-            var idToUse = (this.id == 'weapon2' ? 'weapon' : this.id);
-            return swlcalc.data.signets.slot[idToUse][this.signetId() - 1];
-        }
-    };
-
+    /**
+     * Builds (calculates) signet description
+     */
     //TODO/FEATURE : to use for signets like in tswcalc
     this.signetDescription = function() {
         var signet = this.signet();
@@ -447,7 +565,12 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
 
         return description;
     };
-
+  
+    /**
+     * TODO/REFACTOR : missing heading comment
+     */
+    //TODO/FEATURE : to use for signets like in tswcalc
+    //TODO/REFACTOR : is it still accurate in swlcalc ?
     this.determineSignetRarityValue = function(signet, quality_index) {
         quality_index = typeof quality_index !== 'undefined' ? quality_index : -1;
         var rarity = this.signetRarity();
@@ -469,11 +592,17 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
     };
 
+    /**
+     * TODO/REFACTOR : missing heading comment
+     */
     this.updateSignet = function() {
         this.updateSignetIcon();
         this.updateSignetDescription();
     };
-
+  
+    /**
+     * TODO/REFACTOR : missing heading comment
+     */
     this.updateSignetIcon = function() {
         var signet = this.signet();
         var signetRarity = this.signetRarity();
@@ -481,25 +610,34 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.updateSignetIconBorder(signetRarity);
     };
 
-    this.updateSignetIconBorder = function(signetRarity) {
-        var signet_rarity_url = 'assets/images/icons/rarity/' + signetRarity + '-42x42.png';
-        this.el.signetImgBorder.attr('src', signet_rarity_url);
-    };
-
+    /**
+     * Getter/Setter for #slot-signet-img-icon
+     */
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateSignetIconImage = function(signet) {
         var pngName = (signet == swlcalc.data.signets.noneSignet ? 'none' : this.id)
         var signet_icon_url = 'assets/images/icons/signet/' + pngName + '.png';
         this.el.signetImgIcon.attr('src', signet_icon_url);
     };
-
+  
+    /**
+     * Getter/Setter for #slot-signet-img-border
+     */
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
+    this.updateSignetIconBorder = function(signetRarity) {
+        var signet_rarity_url = 'assets/images/icons/rarity/' + signetRarity + '-42x42.png';
+        this.el.signetImgBorder.attr('src', signet_rarity_url);
+    };
     this.updateSignetDescription = function() {
         this.el.signetDescription.html(this.signetDescription());
     };
 
     /**
+     * Setter for #slot-glyph-item-power
      * Calculate item power for the slot's signet and updates GUI with it
      * => calls calculateItemPower() function with signet parameters
      */
+    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateSignetItemPower = function() {
         var calculatedItemPower = this.calculateItemPower(swlcalc.data.item_power.gear['signet'].rarity[this.signetRarity()].item_power_init,
                                                           swlcalc.data.item_power.gear['signet'].rarity[this.signetRarity()].item_power_per_level,
@@ -507,11 +645,11 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.el.signetItemPower.html(Math.round(calculatedItemPower));
     };
 
-    /**
+    /**********************************************************************************
      * Other functions |
      *                 V
-     */
-
+     **********************************************************************************/
+  
     /**
      * Reset slot by setting default values for each select
      */
@@ -541,6 +679,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.updateSignet();
     };
 
+    /**
+     * Mapping function for import/export feature
+     */
     this.state = function() {
         return {
             rarity: this.rarity(),
@@ -555,7 +696,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             signet_level: this.signetLevel(),
         };
     };
-
+  
+    /**
+     * Mapping function for import/export feature
+     */
     this.mappedState = function() {
         var wmap = swlcalc.data.wtype_mapping.to_num;
         var gmap = swlcalc.data.glyph_stat_mapping.to_num;
@@ -578,7 +722,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             signet_level: this.stripContent(this.signetLevel())
         };
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     this.stripContent = function(val, mapping) {
         if (val == null || val == 'none' || val === undefined) {
             return 0;
@@ -615,11 +762,18 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     }
 
     /**
-     * Calculate glyph rating for the given glyph rarity + glyph quality + glyph level
+     * Calculates glyph rating for the given glyph rarity + glyph quality + glyph level
+     *   INFO : in SWL a glyph value depends on its rarity-quality-level, neither the slot (head/major/minor) nor
+     *   the glyph stat impact the calculation (whereas it was the case in TSW) => /!\ exception for crit power
+     *   glyphs that give 97.3% of the value of other glyphs)
      */
     this.calculateGlyphRating = function(rarity, quality, level) {
-        var base_value = swlcalc.data.glyph[rarity][quality].rating_init;
-        var bonus_value = swlcalc.data.glyph[rarity][quality].rating_per_level * (level - 1);
-        return base_value + Math.round(bonus_value);
+        var baseValue = swlcalc.data.glyph[rarity][quality].rating_init;
+        var bonusValue = swlcalc.data.glyph[rarity][quality].rating_per_level * (level - 1);
+        var glyphValue = baseValue + Math.round(bonusValue);
+        if (this.glyph() == 'critical-power') {
+            glyphValue = 0.973 * glyphValue;
+        }
+        return glyphValue;
     }
 };

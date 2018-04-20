@@ -4,13 +4,17 @@ swlcalc.select = swlcalc.select || {};
 swlcalc.select.SelectHandler = function SelectHandler(slot) {
     var self = this;
     var slotObj = swlcalc.slots[slot.id_prefix];
-
+    
+    //TODO/REFACTOR : to rename as "init"
     this.initiate = function() {
         this.bindEvents();
         this.addSignetsToSelect();
         this.addItemsToSelect();
     };
 
+    /**
+     * Associates the right process to each trigger.
+     */
     this.bindEvents = function() {
         if (slotObj.isWeapon()) {
             slotObj.el.wtype.change(this.handleWtypeChange);
@@ -18,7 +22,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             slotObj.el.itemId.change(this.handleItemChange);
         }
         slotObj.el.rarity.change(this.handleRarityChange);
-        slotObj.el.quality.change(swlcalc.summary.updateAllStats);
+        slotObj.el.quality.change(this.handleQualityChange);
         slotObj.el.level.change(this.handleLevelChange);
 
         slotObj.el.glyph.change(this.handleGlyphChange);
@@ -30,7 +34,10 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.signetRarity.change(this.handleSignetRarityChange);
         slotObj.el.signetLevel.change(this.handleSignetLevelChange);
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     this.addItemsToSelect = function() {
         //TODO/REFACTOR : shall be done in a better way
         //skip this function for the weapons (their dropdown is already filled)
@@ -52,9 +59,11 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             }));
         });
     };
-
+  
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     this.addSignetsToSelect = function() {
-
         slotObj.el.signetId.append($('<option>', {
             value: "none",
             text: "None",
@@ -81,6 +90,9 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         });
     };
 
+    /**
+     * TODO/REFACTOR : to define a heading comment
+     */
     this.updateToDefaultSignet = function() {
         var signet_icon_url = 'assets/images/icons/signet/none.png';
         var signet_rarity_url = 'assets/images/icons/rarity/none-42x42.png';
@@ -88,16 +100,24 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         $('#' + slot.id_prefix + '-signet-img-rarity').attr('src', signet_rarity_url);
     };
 
-    /**
+    /**********************************************************************************
      * Event handlers : Item |
      *                       V
+     **********************************************************************************/
+    
+    /**
+     * Handler for #slot-itemId
+     * -> triggers image update for the slot.
      */
-
     this.handleItemChange = function(event) {
         slotObj.updateTalismanImgIcon();
         swlcalc.summary.updateAllStats();
     };
-
+  
+    /**
+     * Handler for #slot-wtype
+     * -> triggers an image update.
+     */
     this.handleWtypeChange = function(event) {
         var wtype = $(this).val();
         if(wtype != 'none') {
@@ -110,10 +130,10 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     /**
-     * Triggered when the value of a rarity select is changed.
-     * Triggers color change for the rarity select that sent the event.
-     * Triggers color change for the related item image border.
-     * Triggers choices list update for the select level of the same slot.
+     * Handler for #slot-rarity
+     * -> triggers a text color update.
+     * -> triggers an image update.
+     * -> triggers a dropdown options refresh.
      */
     //TODO/REFACTOR : review the way it uses slotObj.id
     this.handleRarityChange = function(event) {
@@ -139,24 +159,47 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateTotalItemPower();
         swlcalc.summary.updateAllStats();
     };
-
+  
+    /**
+     * Handler for #slot-quality
+     */
+    this.handleQualityChange = function(event) {
+        swlcalc.summary.updateAllStats();
+    };
+  
+    /**
+     * Handler for #slot-level
+     * -> triggers item power updates.
+     */
     this.handleLevelChange = function(event) {
         slotObj.updateItemPower();
         slotObj.updateTotalItemPower();
         swlcalc.summary.updateAllStats();
     };
 
-    /**
+    /**********************************************************************************
      * Event handlers : Glyph |
      *                        V
+     **********************************************************************************/
+    
+    /**
+     * Handler for #slot-glyph
+     * -> triggers a label update.
+     * -> triggers an image update.
      */
-
     this.handleGlyphChange = function(event) {
         slotObj.updateGlyphStatLabel();
         slotObj.updateGlyphImgIcon();
         swlcalc.summary.updateAllStats();
     };
-
+  
+    /**
+     * Handler for #slot-glyph-rarity
+     * -> triggers a label update.
+     * -> triggers an image update.
+     * -> triggers item power updates.
+     * -> triggers a text color update.
+     */
     this.handleGlyphRarityChange = function(event) {
         //self.updateTextColor(event.target);
         //TODO/REFACTOR : to reuse updateTextColor
@@ -166,22 +209,34 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateTotalItemPower();
         swlcalc.summary.updateAllStats();
     };
-
+  
+    /**
+     * Handler for #slot-glyph-quality
+     */
     this.handleGlyphQualityChange = function(event) {
         swlcalc.summary.updateAllStats();
     };
-
+  
+    /**
+     * Handler for #slot-glyph-level
+     * -> triggers item power updates.
+     */
     this.handleGlyphLevelChange = function(event) {
         slotObj.updateGlyphItemPower();
         slotObj.updateTotalItemPower();
         swlcalc.summary.updateAllStats();
     }
 
-    /**
+    /**********************************************************************************
      * Event handlers : Signet |
      *                         V
-     */
+     **********************************************************************************/
 
+    /**
+     * Handler for #slot-signet
+     * -> triggers signet update. //TODO : review slotObj.updateSignet()
+     * -> triggers item power updates.
+     */
     this.handleSignetChange = function(event) {
         slotObj.updateSignet();
         //weapon don't have signet item power
@@ -191,7 +246,12 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         }
         swlcalc.summary.updateAllStats();
     };
-
+  
+    /**
+     * Handler for #slot-signet-rarity
+     * -> triggers text color update.
+     */
+    //TODO : forwards the call to handleSignetChange => to review
     this.handleSignetRarityChange = function(event) {
         //self.updateTextColor(event.target);
         //TODO/REFACTOR : to reuse updateTextColor
@@ -199,6 +259,10 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         self.handleSignetChange(event);
     };
 
+    /**
+     * Handler for #slot-signet-level
+     * -> triggers item power updates.
+     */
     this.handleSignetLevelChange = function(event) {
         slotObj.updateSignetItemPower();
         slotObj.updateTotalItemPower();

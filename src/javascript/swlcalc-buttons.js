@@ -1,5 +1,10 @@
 var swlcalc = swlcalc || {};
 
+/**
+ * Defines the not-in-buttonbar buttons of swlcalc
+ */
+//TODO/REFACTOR : merge swlcalc.button and swlcalc.button.SwapWeaponButton ? (since glyph
+//distribution doesn't exist in SWL, the only remaining button here is the weapom-swap one)
 swlcalc.button = function() {
     var weaponSwap = {};
     var init = function() {
@@ -19,6 +24,9 @@ swlcalc.button = function() {
     return oPublic;
 }();
 
+/**
+ * Defines the weapon swap button
+ */
 swlcalc.button.SwapWeaponButton = function SwapWeaponButton(slotId) {
     var self = this;
 
