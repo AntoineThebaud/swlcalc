@@ -101,6 +101,9 @@ swlcalc.import = function() {
         slotObj.el.signetRarity.change();
     };
 
+    /**
+     * Public exposition of the functions that are called remotely
+     */
     var oPublic = {
         start: start
     };

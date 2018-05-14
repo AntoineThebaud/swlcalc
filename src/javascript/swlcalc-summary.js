@@ -7,7 +7,7 @@ swlcalc.summary = function() {
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Updates all stats
      */
     var updateAllStats = function() {
         updatePrimaryStats();
@@ -18,14 +18,14 @@ swlcalc.summary = function() {
     };
 
     /**
-     * update URL field of the browser
+     * Updates URL field of the browser
      */
     var updateURL = function(event) {
         window.location.hash = swlcalc.export.createExportUrl();
     };
 
     /**
-     * Collect all stats
+     * Collects all stats
      * => forwards to sub functions
      */
     var collectAllStats = function() {
@@ -36,14 +36,14 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Update the chosen primary stat in the summary
+     * Updates the chosen primary stat in the summary
      */
     var updateOnePrimaryStat = function(stat, value) {
         $('#stat-' + stat).text(value);
     };
   
     /**
-     * Update all primary stats in the summary
+     * Updates all primary stats in the summary
      */
     var updatePrimaryStats = function() {
         var sums = collectPrimaryStats();
@@ -56,7 +56,7 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Collect primary stats by going through the whole gear
+     * Collects primary stats by going through the whole gear
      */
     var collectPrimaryStats = function() {
         var sums = {
@@ -116,7 +116,7 @@ swlcalc.summary = function() {
     };
   
     /**
-     * Update glyph stats in the summary
+     * Updates glyph stats in the summary
      */
     var updateOffensiveDefensiveStats = function() {
         var sums = collectOffensiveDefensiveStats();
@@ -124,7 +124,7 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Collect glyph stats by going through the whole gear
+     * Collects glyph stats by going through the whole gear
      */
     var collectOffensiveDefensiveStats = function() {
         var sums = {
@@ -171,7 +171,7 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Update #slot-glyph-value for each slot
+     * Updates #slot-glyph-value for each slot
      */
     //TODO/REFACTOR if (swlcalc.slots.hasSlot) is weird, find a better solution
     //TODO/REFACTOR should be updated independently for each slot in swlcalc-slots.js
@@ -185,7 +185,7 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Update #slot-power-value for each slot
+     * Updates #slot-power-value for each slot
      */
     //TODO/REFACTOR if (swlcalc.slots.hasSlot) is weird, find a better solution
     //TODO/REFACTOR refactor : should be updated independently for each slot in swlcalc-slots.js
@@ -294,7 +294,7 @@ swlcalc.summary = function() {
     }
 
     /**
-     * Update values (stats) displayed in the summary
+     * Updates values (stats) displayed in the summary
      */
     var updateStats = function(sums) {
         for (var stat in sums) {
@@ -319,6 +319,9 @@ swlcalc.summary = function() {
             || statName == 'glance-chance';
     };
 
+    /**
+     * Public exposition of the functions that are called remotely
+     */
     var oPublic = {
         init: init,
         calculateCriticalChance: calculateCriticalChance,

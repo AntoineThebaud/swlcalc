@@ -104,7 +104,7 @@ swlcalc = function() {
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Public exposition of the functions that are called remotely
      */
     var oPublic = {
         init: init

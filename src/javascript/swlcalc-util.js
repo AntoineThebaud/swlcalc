@@ -1,7 +1,7 @@
 var swlcalc = swlcalc || {};
 
 /**
- * TODO/REFACTOR : to define a heading comment
+ * Utility functions
  */
 swlcalc.util = function() {
     var capitalise = function(string) {
@@ -19,7 +19,10 @@ swlcalc.util = function() {
         var factor = Math.pow(10, precision);
         return Math.round(number * factor) / factor;
     }
-
+    
+    /**
+     * Public exposition of the functions that are called remotely
+     */
     var oPublic = {
         capitalise: capitalise,
         blankIfNone: blankIfNone,

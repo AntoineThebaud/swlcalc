@@ -12,7 +12,7 @@ swlcalc.slots = function() {
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Draw primary weapon (-> hide secondary weapon)
      */
     var drawPrimaryWeapon = function() {
         swlcalc.slots.weapon2.sheathWeapon();
@@ -20,29 +20,32 @@ swlcalc.slots = function() {
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Returns the number of slots of a gear (= 9 as of now)
      */
     var length = function() {
         return swlcalc.data.template_data.slots.length;
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Defines the list of slots names
      */
+    //TODO/REFACTOR : to change : redundancy with swlcalc-data-slots.js
     var indices = function() {
         return ['head', 'weapon', 'weapon2', 'finger', 'neck', 'wrist', 'luck', 'waist', 'occult'];
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Returns true if a slot of the name <parameter> exists
      */
+    //TODO/REFACTOR : to find a solution to remove hasSlot
     var hasSlot = function(slot) {
         return this.hasOwnProperty(slot) && $.inArray(slot, indices()) != -1;
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Resets all slots
      */
+    //TODO/REFACTOR : to find a solution to avoid the call to hasSlot
     var reset = function() {
         for (var slotId in this) {
             if (this.hasSlot(slotId)) {
@@ -52,8 +55,9 @@ swlcalc.slots = function() {
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Returns the list of slots states
      */
+    //TODO/REFACTOR : to find a solution to avoid the call to hasSlot
     var state = function() {
         var slotStates = {};
         for (var slotId in this) {
@@ -65,8 +69,9 @@ swlcalc.slots = function() {
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Returns the list of slots states (mapped version)
      */
+    //TODO/REFACTOR : to find a solution to avoid the call to hasSlot
     var mappedState = function() {
         var mappedSlotStates = {};
         for (var slotId in this) {
@@ -77,6 +82,9 @@ swlcalc.slots = function() {
         return mappedSlotStates;
     };
 
+    /**
+     * Public exposition of the functions that are called remotely
+     */
     var oPublic = {
         init: init,
         length: length,
@@ -101,7 +109,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         div: $('#' + this.id + '-slot'),
         name: $('#' + this.id + '-name'),
         totalItemPower: $('#' + this.id + '-total-item-power'),
-        itemId: $('#' + this.id + '-itemId'),
+        itemId: $('#' + this.id + '-itemId'), //TODO/refactor : remove "Id" ?
         wtype: $('#' + this.id + '-wtype'),
         rarity: $('#' + this.id + '-rarity'),
         quality: $('#' + this.id + '-quality'),
@@ -130,7 +138,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Getter/Setter for #slot-name
      */
     this.name = function() {
         if (arguments.length == 1) {
@@ -141,7 +149,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Getter/Setter for #slot-total-item-power
      */
     this.itemPower = function() {
         if (arguments.length == 1) {
@@ -152,9 +160,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Calculate item power for the whole slot (talisman/weapon + glyph + signet) and updates GUI with it
-     * TODO/REFACTOR : code duplication with updateItemPower, updateGlyphItemPower and updateSignetItemPower : should reuse these individual item power calculations
+     * Calculates item power for the whole slot (talisman/weapon + glyph + signet) and updates GUI with it
      */
+    //TODO/REFACTOR : code duplication with updateItemPower, updateGlyphItemPower and updateSignetItemPower : should reuse these individual item power calculations
     this.updateTotalItemPower = function() {
         var itemPower = this.calculateItemPower(swlcalc.data.item_power.gear['talisman-or-weapon'].rarity[this.rarity()].item_power_init,
                                                 swlcalc.data.item_power.gear['talisman-or-weapon'].rarity[this.rarity()].item_power_per_level,
@@ -190,14 +198,14 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      **********************************************************************************/
     
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Returns true if the slot belongs to the weapon group
      */
     this.isWeapon = function() {
         return this.group == 'weapon';
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Hides the current slot (for weapons only)
      */
     this.sheathWeapon = function() {
         if(this.isWeapon()) {
@@ -207,7 +215,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Displays the current slot (for weapons only)
      */
     this.drawWeapon = function() {
         if(this.isWeapon()) {
@@ -233,9 +241,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      **********************************************************************************/
     
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Big mess here
      */
-    //TODO/REFACTOR : identify how to remove this ?
+    //TODO/REFACTOR : remove this (how ?)
     this.item = function() {
         var itemId = this.itemId()
         var item = swlcalc.data.items.find(function(item) {
@@ -493,7 +501,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      **********************************************************************************/
     
     /**
-     * TODO/REFACTOR : missing heading comment
+     * Big mess here
      */
     //TODO/REFACTOR : move code and delete this function ?
     this.signet = function() {
@@ -567,7 +575,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
-     * TODO/REFACTOR : missing heading comment
+     * Determines signet rarity value
      */
     //TODO/FEATURE : to use for signets like in tswcalc
     //TODO/REFACTOR : is it still accurate in swlcalc ?
@@ -593,7 +601,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * TODO/REFACTOR : missing heading comment
+     * Updates signet
      */
     this.updateSignet = function() {
         this.updateSignetIcon();
@@ -601,7 +609,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
-     * TODO/REFACTOR : missing heading comment
+     * Updates signet icon
      */
     this.updateSignetIcon = function() {
         var signet = this.signet();
@@ -724,8 +732,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Strips submitted content (= used by mappedState)
      */
+    //TODO/REFACTOR : to change ? not clear
     this.stripContent = function(val, mapping) {
         if (val == null || val == 'none' || val === undefined) {
             return 0;

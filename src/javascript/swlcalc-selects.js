@@ -36,7 +36,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Loads items (swlcalc-data-items) as options list in the #slot-itemId select
      */
     this.addItemsToSelect = function() {
         //TODO/REFACTOR : shall be done in a better way
@@ -61,7 +61,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
   
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Loads signets (swlcalc-data-signets) as options list in the #slot-signet select
      */
     this.addSignetsToSelect = function() {
         slotObj.el.signetId.append($('<option>', {
@@ -91,7 +91,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     /**
-     * TODO/REFACTOR : to define a heading comment
+     * Resets this signet field to the default value ("none" value, white border...)
      */
     this.updateToDefaultSignet = function() {
         var signet_icon_url = 'assets/images/icons/signet/none.png';

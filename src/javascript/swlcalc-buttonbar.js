@@ -64,7 +64,10 @@ swlcalc.buttonBar = function() {
         swlcalc.slots.reset();
         swlcalc.summary.updateAllStats();
     };
-
+  
+    /**
+     * Public exposition of the functions that are called remotely
+     */
     var oPublic = {
         el: el,
         init: init,
