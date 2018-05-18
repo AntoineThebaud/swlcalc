@@ -13,8 +13,8 @@
                     </span>
                 </span>
             </td>
-            <td class="slot-item-power">
-                Item Power : <span id="{id_prefix}-total-item-power">0</span>
+            <td class="slot-ilvl">
+                Item Power : <span id="{id_prefix}-total-ilvl">0</span>
             </td>
         </tr>
     </table>
@@ -85,8 +85,8 @@
             <td class="filler"></td>
             <td class="level-label"><strong>Level :</strong></td>
             <td class="level-select">{>levelselect id_suffix=""/}</td>
-            <td class="item-power">
-                <span id="{id_prefix}-item-power">0</span>
+            <td class="ilvl">
+                <span id="{id_prefix}-ilvl">0</span>
             </td>
         </tr>
     </table>
@@ -126,8 +126,8 @@
             <td class="filler"></td>
             <td class="level-label"><strong>Level :</strong></td>
             <td class="level-select">{>levelselect id_suffix="-glyph"/}</td>
-            <td class="item-power">
-                <span id="{id_prefix}-glyph-item-power">0</span>
+            <td class="ilvl">
+                <span id="{id_prefix}-glyph-ilvl">0</span>
             </td>
         </tr>
     </table>
@@ -162,8 +162,8 @@
             </td>
             <td class="level-label"><strong>Level :</strong></td>
             <td class="level-select">{>levelselect id_suffix="-signet"/}</td>
-            <td class="item-power">
-                <span id="{id_prefix}-signet-item-power">0</span>
+            <td class="ilvl">
+                <span id="{id_prefix}-signet-ilvl">0</span>
             </td>
         </tr>
         {/is_weapon}

@@ -7,7 +7,7 @@
                 <th>Value</th>
             </thead>
             <tbody>
-                <tr><td class="statname">Item Power</td><td id="stat-item-power" class="stat-value">0</td></tr>
+                <tr><td class="statname">Item Power</td><td id="stat-ilvl" class="stat-value">0</td></tr>
                 <tr><td class="statname">Power Rating</td><td id="stat-power-rating" class="stat-value">0</td></tr>
                 <tr><td class="statname">Weapon Power</td><td id="stat-weapon-power" class="stat-value">0</td></tr>
                 <!--below stats are not functionnal yet-->

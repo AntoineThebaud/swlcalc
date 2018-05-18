@@ -68,14 +68,14 @@ swlcalc.summary = function() {
             // 'attack-rating': 4322, // = 2000 (base stat at lvl 50) + 1512 (amount brought by passives skills) + 810 (capstone points)
             // 'heal-rating': 4310,   // = 2000 (base stat at lvl 50) + 1500 (amount brought by passives skills) + 810 (capstone points)
             'power-rating': 0,
-            'item-power': 0
+            'ilvl': 0
         };
 
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
                 var slot = swlcalc.slots[slotId];
                 //TODO/FEATURE : add conversion to AR/HR/HP based on ratio selected
-                sums['item-power'] += slot.itemPower();
+                sums['ilvl'] += slot.iLvl();
                 if (slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
                 } else if (slot.isWeapon() && slot.wtype() != 'none') {
@@ -87,7 +87,7 @@ swlcalc.summary = function() {
         }
         sums['combat-power'] = calculateCombatPower(sums['attack-rating'], sums['weapon-power']);
         sums['healing-power'] = calculateHealingPower(sums['heal-rating'], sums['weapon-power']);
-        sums['item-power'] = calculateAverageItemPower(sums['item-power']); //TODO/REFACTOR : refactor (it's weird)
+        sums['ilvl'] = calculateAverageILvl(sums['ilvl']); //TODO/REFACTOR : refactor (it's weird)
         return sums;
     };
 
@@ -289,8 +289,8 @@ swlcalc.summary = function() {
      * Calculates the average Item Power given by the whole gear
      * 9 = number of slots to take into account (2 weapons + 7 talismans)
      */
-    var calculateAverageItemPower = function(sum_item_power) {
-        return Math.round(sum_item_power / 9);
+    var calculateAverageILvl = function(sum_ilvl) {
+        return Math.round(sum_ilvl / 9);
     }
 
     /**

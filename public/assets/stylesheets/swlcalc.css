@@ -311,7 +311,7 @@ option:disabled {
     display:none;
 }
 
-td.slot-item-power {
+td.slot-ilvl {
     color: #A7A7A7;
     font-size: 12px;
     padding: 0px;
@@ -319,7 +319,7 @@ td.slot-item-power {
     font-weight: bold;
 }
 
-td.item-power {
+td.ilvl {
     color: #A7A7A7;
     font-size: 10px;
     font-weight: bold;

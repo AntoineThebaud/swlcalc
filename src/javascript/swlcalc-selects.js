@@ -155,8 +155,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
            }));
         }
 
-        slotObj.updateItemPower();
-        slotObj.updateTotalItemPower();
+        slotObj.updateILvl();
+        slotObj.updateTotalILvl();
         swlcalc.summary.updateAllStats();
     };
   
@@ -172,8 +172,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * -> triggers item power updates.
      */
     this.handleLevelChange = function(event) {
-        slotObj.updateItemPower();
-        slotObj.updateTotalItemPower();
+        slotObj.updateILvl();
+        slotObj.updateTotalILvl();
         swlcalc.summary.updateAllStats();
     };
 
@@ -205,8 +205,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         //TODO/REFACTOR : to reuse updateTextColor
         $(event.target).attr("class", $("#" + slotObj.id + "-glyph-rarity option:selected").attr('class'));
         slotObj.updateGlyphImgBorder();
-        slotObj.updateGlyphItemPower();
-        slotObj.updateTotalItemPower();
+        slotObj.updateGlyphILvl();
+        slotObj.updateTotalILvl();
         swlcalc.summary.updateAllStats();
     };
   
@@ -222,8 +222,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * -> triggers item power updates.
      */
     this.handleGlyphLevelChange = function(event) {
-        slotObj.updateGlyphItemPower();
-        slotObj.updateTotalItemPower();
+        slotObj.updateGlyphILvl();
+        slotObj.updateTotalILvl();
         swlcalc.summary.updateAllStats();
     }
 
@@ -241,8 +241,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateSignet();
         //weapon don't have signet item power
         if (!slotObj.isWeapon()) {
-            slotObj.updateSignetItemPower();
-            slotObj.updateTotalItemPower();
+            slotObj.updateSignetILvl();
+            slotObj.updateTotalILvl();
         }
         swlcalc.summary.updateAllStats();
     };
@@ -264,8 +264,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * -> triggers item power updates.
      */
     this.handleSignetLevelChange = function(event) {
-        slotObj.updateSignetItemPower();
-        slotObj.updateTotalItemPower();
+        slotObj.updateSignetILvl();
+        slotObj.updateTotalILvl();
         swlcalc.summary.updateAllStats();
     };
 
