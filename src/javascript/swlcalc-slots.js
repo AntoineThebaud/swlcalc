@@ -114,7 +114,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         rarity: $('#' + this.id + '-rarity'),
         quality: $('#' + this.id + '-quality'),
         level: $('#' + this.id + '-level'),
-        powerValue: $('#' + this.id + '-power-value'),
+        powerRating: $('#' + this.id + '-power-rating'),
         iLvl: $('#' + this.id + '-ilvl'),
         imgIcon: $('#' + this.id + '-img-icon'),
         imgBorder: $('#' + this.id + '-img-rarity'),
@@ -329,35 +329,39 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Calculates the power value of the slot (= weapon power for weapons, power rating for talismans)
+     * Gets the power rating of the slot (= "weapon power" for weapons)
      */
     //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
-    this.powerValue = function() {
+    this.getPowerRating = function() {
+        var base_value = 0;
+        var bonus_value = 0;
+        // calculation rule for weapons
         if (this.isWeapon()) {
-            if (this.wtype() == 'none') {
-                return 0;
-            } else {
-                return this.calculateWeaponPower(this.rarity(), this.level());
-            }
-        } else {
-            if (this.itemId() == 'none') {
-                return 0;
-            } else {
-                return this.calculatePowerRating(this.group, this.rarity(), this.quality(), this.level());
+            if (this.wtype() != 'none') {
+                base_value = swlcalc.data.power_rating['weapon'][this.rarity()].weapon_power_init;
+                bonus_value = swlcalc.data.power_rating['weapon'][this.rarity()].weapon_power_per_level * (this.level() - 1);
             }
         }
+        // calculation rule for talismans
+        else {
+            if (this.itemId() != 'none') {
+                base_value = swlcalc.data.power_rating[this.group][this.rarity()][this.quality()].power_rating_init;
+                bonus_value = swlcalc.data.power_rating[this.group][this.rarity()][this.quality()].power_rating_per_level * (this.level() - 1);
+            }
+        }
+        return base_value + Math.round(bonus_value);
     };
   
     /**
-     * Setter for #slot-power-value
+     * Setter for #slot-power-rating
      */
     //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
-    this.updatePowerValue = function() {
-        var powerValueDisplay = this.powerValue();
-        if (this.powerValue() !== 0) {
-            powerValueDisplay = '+' + powerValueDisplay;
+    this.updatePowerRating = function() {
+        var powerRatingDisplay = this.getPowerRating();
+        if (powerRatingDisplay !== 0) {
+            powerRatingDisplay = '+' + powerRatingDisplay;
         }
-        this.el.powerValue.html(powerValueDisplay);
+        this.el.powerRating.html(powerRatingDisplay);
     };
 
     /**
@@ -750,24 +754,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      */
     this.calculateILvl = function(iLvlInit, iLvlPerLevel, levelMultiplier) {
         return iLvlInit + iLvlPerLevel * levelMultiplier;
-    }
-
-    /**
-     * Calculate weapon power for the given rarity + level
-     */
-    this.calculateWeaponPower = function(rarity, level) {
-        var base_value = swlcalc.data.power_rating['weapon'][rarity].weapon_power_init;
-        var bonus_value = swlcalc.data.power_rating['weapon'][rarity].weapon_power_per_level * (level - 1);
-        return base_value + Math.round(bonus_value);
-    }
-
-    /**
-     * Calculate power rating for the given group + rarity + quality + level
-     */
-    this.calculatePowerRating = function(group, rarity, quality, level) {
-        var base_value = swlcalc.data.power_rating[group][rarity][quality].power_rating_init;
-        var bonus_value = swlcalc.data.power_rating[group][rarity][quality].power_rating_per_level * (level - 1);
-        return base_value + Math.round(bonus_value);
     }
 
     /**

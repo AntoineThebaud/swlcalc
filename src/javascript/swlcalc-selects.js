@@ -111,6 +111,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleItemChange = function(event) {
         slotObj.updateTalismanImgIcon();
+        slotObj.updatePowerRating();
         swlcalc.summary.updateAllStats();
     };
   
@@ -126,6 +127,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             slotObj.name('');
         }
         slotObj.updateWeaponImgIcon();
+        slotObj.updatePowerRating();
         swlcalc.summary.updateAllStats();
     };
 
@@ -157,6 +159,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
         slotObj.updateILvl();
         slotObj.updateTotalILvl();
+        slotObj.updatePowerRating();
         swlcalc.summary.updateAllStats();
     };
   
@@ -164,6 +167,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-quality
      */
     this.handleQualityChange = function(event) {
+        slotObj.updatePowerRating();
         swlcalc.summary.updateAllStats();
     };
   
@@ -174,6 +178,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.handleLevelChange = function(event) {
         slotObj.updateILvl();
         slotObj.updateTotalILvl();
+        slotObj.updatePowerRating();
         swlcalc.summary.updateAllStats();
     };
 

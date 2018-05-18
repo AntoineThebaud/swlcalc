@@ -72,7 +72,7 @@
                 {/is_weapon}
             </td>
             <td class="stat-value">
-                <span id="{id_prefix}-power-value">0</span>
+                <span id="{id_prefix}-power-rating">0</span>
                 {?is_weapon}
                 <span> Weapon Power</span>
                 {:else}

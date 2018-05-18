@@ -47,7 +47,7 @@ test('should import from hash', 170, function() {
     equal($('#weapon-rarity').val(), 'epic');
     equal($('#weapon-quality').val(), 'mkIII');
     equal($('#weapon-level').val(), '19');
-    equal($('#weapon-power-value').html(), '+1577');
+    equal($('#weapon-power-rating').html(), '+1577');
     equal($('#weapon-ilvl').html(), '264');
     equal($('#weapon-glyph').val(), 'critical-rating');
     equal($('#weapon-glyph-rarity').val(), 'epic');
@@ -67,7 +67,7 @@ test('should import from hash', 170, function() {
     equal($('#weapon2-rarity').val(), 'epic');
     equal($('#weapon2-quality').val(), 'mkII');
     equal($('#weapon2-level').val(), '29');
-    equal($('#weapon2-power-value').html(), '+1809');
+    equal($('#weapon2-power-rating').html(), '+1809');
     equal($('#weapon2-ilvl').html(), '315');
     equal($('#weapon2-glyph').val(), 'critical-power');
     equal($('#weapon2-glyph-rarity').val(), 'mythic');
@@ -85,7 +85,7 @@ test('should import from hash', 170, function() {
     equal($('#head-rarity').val(), 'epic');
     equal($('#head-quality').val(), 'luminous');
     equal($('#head-level').val(), '24');
-    equal($('#head-power-value').html(), '+1113');
+    equal($('#head-power-rating').html(), '+1113');
     equal($('#head-ilvl').html(), '252');
     equal($('#head-glyph').val(), 'critical-power');
     equal($('#head-glyph-rarity').val(), 'mythic');
@@ -103,7 +103,7 @@ test('should import from hash', 170, function() {
     equal($('#finger-rarity').val(), 'superior');
     equal($('#finger-quality').val(), 'faded');
     equal($('#finger-level').val(), '20');
-    equal($('#finger-power-value').html(), '+314');
+    equal($('#finger-power-rating').html(), '+314');
     equal($('#finger-ilvl').html(), '113');
     equal($('#finger-glyph').val(), 'evade-rating');
     equal($('#finger-glyph-rarity').val(), 'legendary');
@@ -121,7 +121,7 @@ test('should import from hash', 170, function() {
     equal($('#neck-rarity').val(), 'standard');
     equal($('#neck-quality').val(), 'radiant');
     equal($('#neck-level').val(), '6');
-    equal($('#neck-power-value').html(), '+70');
+    equal($('#neck-power-rating').html(), '+70');
     equal($('#neck-ilvl').html(), '13');
     equal($('#neck-glyph').val(), 'critical-rating');
     equal($('#neck-glyph-rarity').val(), 'epic');
@@ -139,7 +139,7 @@ test('should import from hash', 170, function() {
     equal($('#wrist-rarity').val(), 'legendary');
     equal($('#wrist-quality').val(), 'luminous');
     equal($('#wrist-level').val(), '68');
-    equal($('#wrist-power-value').html(), '+1951');
+    equal($('#wrist-power-rating').html(), '+1951');
     equal($('#wrist-ilvl').html(), '1026');
     equal($('#wrist-glyph').val(), 'critical-power');
     equal($('#wrist-glyph-rarity').val(), 'epic');
@@ -157,7 +157,7 @@ test('should import from hash', 170, function() {
     equal($('#luck-rarity').val(), 'standard');
     equal($('#luck-quality').val(), 'faded');
     equal($('#luck-level').val(), '10');
-    equal($('#luck-power-value').html(), '+53');
+    equal($('#luck-power-rating').html(), '+53');
     equal($('#luck-ilvl').html(), '22');
     equal($('#luck-glyph').val(), 'critical-rating');
     equal($('#luck-glyph-rarity').val(), 'superior');
@@ -175,7 +175,7 @@ test('should import from hash', 170, function() {
     equal($('#waist-rarity').val(), 'legendary');
     equal($('#waist-quality').val(), 'faded');
     equal($('#waist-level').val(), '2');
-    equal($('#waist-power-value').html(), '+775');
+    equal($('#waist-power-rating').html(), '+775');
     equal($('#waist-ilvl').html(), '591');
     equal($('#waist-glyph').val(), 'defense-rating');
     equal($('#waist-glyph-rarity').val(), 'mythic');
@@ -193,7 +193,7 @@ test('should import from hash', 170, function() {
     equal($('#occult-rarity').val(), 'standard');
     equal($('#occult-quality').val(), 'radiant');
     equal($('#occult-level').val(), '19');
-    equal($('#occult-power-value').html(), '+112');
+    equal($('#occult-power-rating').html(), '+112');
     equal($('#occult-ilvl').html(), '42');
     equal($('#occult-glyph').val(), 'hit-rating');
     equal($('#occult-glyph-rarity').val(), 'legendary');

@@ -13,7 +13,6 @@ swlcalc.summary = function() {
         updatePrimaryStats();
         updateOffensiveDefensiveStats();
         updateGlyphValues();
-        updatePowerValues();
         updateURL();
     };
 
@@ -79,9 +78,9 @@ swlcalc.summary = function() {
                 if (slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
                 } else if (slot.isWeapon() && slot.wtype() != 'none') {
-                    sums['weapon-power'] = slot.calculateWeaponPower(slot.rarity(), slot.level());
+                    sums['weapon-power'] = slot.getPowerRating();
                 } else if (!slot.isWeapon() && slot.itemId() != 'none') {
-                    sums['power-rating'] += slot.calculatePowerRating(slot.group, slot.rarity(), slot.quality(), slot.level());
+                    sums['power-rating'] += slot.getPowerRating();
                 }
             }
         }
@@ -183,20 +182,6 @@ swlcalc.summary = function() {
             }
         }
     };
-
-    /**
-     * Updates #slot-power-value for each slot
-     */
-    //TODO/REFACTOR if (swlcalc.slots.hasSlot) is weird, find a better solution
-    //TODO/REFACTOR refactor : should be updated independently for each slot in swlcalc-slots.js
-    var updatePowerValues = function() {
-        for (var slotId in swlcalc.slots) {
-            if (swlcalc.slots.hasSlot(slotId)) {
-                var slot = swlcalc.slots[slotId];
-                slot.updatePowerValue();
-            }
-        }
-    }
 
     /**
      * Calculates the critical chance given by the whole gear

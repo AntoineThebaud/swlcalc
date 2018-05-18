@@ -14,6 +14,7 @@ module('import-integration-tests', {
 // - commented fields
 // - formulas to update
 // - add real signets
+// - add test for ilvl fields
 test('should import URL and set summary and slots', 116, function() {
     var vars = {
         head: '3,1,1,30,4,1,3,1,1,0,20',
@@ -49,7 +50,7 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#weapon-rarity').val(), 'epic');
     equal($('#weapon-quality').val(), 'mkI');
     equal($('#weapon-level').val(), '30');
-    equal($('#weapon-power-value').html(), '+1832');
+    equal($('#weapon-power-rating').html(), '+1832');
     equal($('#weapon-glyph').val(), 'critical-rating');
     equal($('#weapon-glyph-rarity').val(), 'superior');
     equal($('#weapon-glyph-quality').val(), 'crude');
@@ -62,7 +63,7 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#weapon2-rarity').val(), 'epic');
     equal($('#weapon2-quality').val(), 'mkIII');
     equal($('#weapon2-level').val(), '30');
-    equal($('#weapon2-power-value').html(), '+1832');
+    equal($('#weapon2-power-rating').html(), '+1832');
     equal($('#weapon2-glyph').val(), 'critical-rating');
     equal($('#weapon2-glyph-rarity').val(), 'superior');
     equal($('#weapon2-glyph-quality').val(), 'crude');
@@ -75,7 +76,7 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#head-rarity').val(), 'epic');
     equal($('#head-quality').val(), 'faded');
     equal($('#head-level').val(), '30');
-    equal($('#head-power-value').html(), '+1070');
+    equal($('#head-power-rating').html(), '+1070');
     equal($('#head-glyph').val(), 'hit-rating');
     equal($('#head-glyph-rarity').val(), 'mythic');
     equal($('#head-glyph-quality').val(), 'intricate');
@@ -88,7 +89,7 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#finger-rarity').val(), 'epic');
     equal($('#finger-quality').val(), 'faded');
     equal($('#finger-level').val(), '30');
-    equal($('#finger-power-value').html(), '+642');
+    equal($('#finger-power-rating').html(), '+642');
     equal($('#finger-glyph').val(), 'defense-rating');
     equal($('#finger-glyph-rarity').val(), 'epic');
     equal($('#finger-glyph-quality').val(), 'simple');
@@ -101,7 +102,7 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#neck-rarity').val(), 'epic');
     equal($('#neck-quality').val(), 'faded');
     equal($('#neck-level').val(), '30');
-    equal($('#neck-power-value').html(), '+642');
+    equal($('#neck-power-rating').html(), '+642');
     equal($('#neck-glyph').val(), 'defense-rating');
     equal($('#neck-glyph-rarity').val(), 'epic');
     equal($('#neck-glyph-quality').val(), 'simple');
@@ -114,7 +115,7 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#wrist-rarity').val(), 'epic');
     equal($('#wrist-quality').val(), 'faded');
     equal($('#wrist-level').val(), '1');
-    equal($('#wrist-power-value').html(), '+406');
+    equal($('#wrist-power-rating').html(), '+406');
     equal($('#wrist-glyph').val(), 'defense-rating');
     equal($('#wrist-glyph-rarity').val(), 'epic');
     equal($('#wrist-glyph-quality').val(), 'simple');
@@ -127,7 +128,7 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#luck-rarity').val(), 'epic');
     equal($('#luck-quality').val(), 'faded');
     equal($('#luck-level').val(), '1');
-    equal($('#luck-power-value').html(), '+271');
+    equal($('#luck-power-rating').html(), '+271');
     equal($('#luck-glyph').val(), 'evade-rating');
     equal($('#luck-glyph-rarity').val(), 'epic');
     equal($('#luck-glyph-quality').val(), 'simple');
@@ -140,7 +141,7 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#waist-rarity').val(), 'epic');
     equal($('#waist-quality').val(), 'faded');
     equal($('#waist-level').val(), '30');
-    equal($('#waist-power-value').html(), '+428');
+    equal($('#waist-power-rating').html(), '+428');
     equal($('#waist-glyph').val(), 'evade-rating');
     equal($('#waist-glyph-rarity').val(), 'epic');
     equal($('#waist-glyph-quality').val(), 'simple');
@@ -153,7 +154,7 @@ test('should import URL and set summary and slots', 116, function() {
     equal($('#occult-rarity').val(), 'epic');
     equal($('#occult-quality').val(), 'faded');
     equal($('#occult-level').val(), '1');
-    equal($('#occult-power-value').html(), '+271');
+    equal($('#occult-power-rating').html(), '+271');
     equal($('#occult-glyph').val(), 'evade-rating');
     equal($('#occult-glyph-rarity').val(), 'epic');
     equal($('#occult-glyph-quality').val(), 'simple');
