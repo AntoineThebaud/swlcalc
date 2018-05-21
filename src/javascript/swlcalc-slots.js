@@ -310,7 +310,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
-     * Updates #slot-power-rating on each change
+     * Updates #slot-power-rating (calculatations with stats data)
      */
     this.updatePowerRating = function() {
         var base_value = 0;
@@ -434,25 +434,39 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
-     * Calculates glyph value 
+     * Getter/Setter for #slot-glyph-value 
      */
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
-    //TODO/REFACTOR : just call calculateGlyphRating => merge the  2 functions ?
-    //TODO/REFACTOR : to avoid double calcul (here we do the calculation for the slot + for the summary) => refer to power-rating code
     this.glyphValue = function() {
-        if (this.glyph() == 'none') {
-            return 0;
+        if (arguments.length == 1) {
+            this.el.glyphValue.html(arguments[0]);
+        } else {
+            return parseInt(this.el.glyphValue.html());
         }
-        var glyphValue = this.calculateGlyphRating(this.glyphRarity(), this.glyphQuality(), this.glyphLevel());
-        return glyphValue;
     };
 
     /**
-     * Setter for #slot-glyph-value 
+     * Updates #slot-glyph-value (calculatations with stats data)
+     *   INFO : in SWL a glyph value depends on its rarity-quality-level, neither the slot (head/major/minor) nor
+     *   the glyph stat impact the calculation (whereas it was the case in TSW) => /!\ exception for crit power
+     *   glyphs that give 97.3% of the value of other glyphs)
      */
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateGlyphValue = function() {
-        this.el.glyphValue.html(this.glyphValue() !== 0 ? '+' + this.glyphValue().toFixed(0) : 0);
+        var newValue = 0;
+        if (this.glyph() != 'none') {
+            var baseValue = swlcalc.data.glyph[this.glyphRarity()][this.glyphQuality()].rating_init;
+            var bonusValue = swlcalc.data.glyph[this.glyphRarity()][this.glyphQuality()].rating_per_level * (this.glyphLevel() - 1);
+            newValue = baseValue + Math.round(bonusValue);
+            if (this.glyph() == 'critical-power') {
+                newValue = 0.973 * newValue;
+            }
+            // remove decimals for display
+            newValue = newValue.toFixed(0);
+            // add '+' for display
+            if (newValue !== 0) {
+                newValue = '+' + newValue;
+            }
+        }
+        this.glyphValue(newValue);
     };
   
     /**
@@ -758,21 +772,5 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      */
     this.calculateILvl = function(iLvlInit, iLvlPerLevel, levelMultiplier) {
         return iLvlInit + iLvlPerLevel * levelMultiplier;
-    }
-
-    /**
-     * Calculates glyph rating for the given glyph rarity + glyph quality + glyph level
-     *   INFO : in SWL a glyph value depends on its rarity-quality-level, neither the slot (head/major/minor) nor
-     *   the glyph stat impact the calculation (whereas it was the case in TSW) => /!\ exception for crit power
-     *   glyphs that give 97.3% of the value of other glyphs)
-     */
-    this.calculateGlyphRating = function(rarity, quality, level) {
-        var baseValue = swlcalc.data.glyph[rarity][quality].rating_init;
-        var bonusValue = swlcalc.data.glyph[rarity][quality].rating_per_level * (level - 1);
-        var glyphValue = baseValue + Math.round(bonusValue);
-        if (this.glyph() == 'critical-power') {
-            glyphValue = 0.973 * glyphValue;
-        }
-        return glyphValue;
     }
 };

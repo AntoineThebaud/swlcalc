@@ -12,7 +12,6 @@ swlcalc.summary = function() {
     var updateAllStats = function() {
         updatePrimaryStats();
         updateOffensiveDefensiveStats();
-        updateGlyphValues();
         updateURL();
     };
 
@@ -167,20 +166,6 @@ swlcalc.summary = function() {
         // sums['magical-protection'] = parseInt(sums['magical-protection'].toFixed(0), 10);
         // sums['physical-protection'] = parseInt(sums['physical-protection'].toFixed(0), 10);
         return sums;
-    };
-
-    /**
-     * Updates #slot-glyph-value for each slot
-     */
-    //TODO/REFACTOR if (swlcalc.slots.hasSlot) is weird, find a better solution
-    //TODO/REFACTOR should be updated independently for each slot in swlcalc-slots.js
-    var updateGlyphValues = function() {
-        for (var slotId in swlcalc.slots) {
-            if (swlcalc.slots.hasSlot(slotId)) {
-                var slot = swlcalc.slots[slotId];
-                slot.updateGlyphValue();
-            }
-        }
     };
 
     /**

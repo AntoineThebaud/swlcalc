@@ -195,6 +195,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.handleGlyphChange = function(event) {
         slotObj.updateGlyphStatLabel();
         slotObj.updateGlyphImgIcon();
+        slotObj.updateGlyphValue();
         swlcalc.summary.updateAllStats();
     };
   
@@ -212,6 +213,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateGlyphImgBorder();
         slotObj.updateGlyphILvl();
         slotObj.updateTotalILvl();
+        slotObj.updateGlyphValue();
         swlcalc.summary.updateAllStats();
     };
   
@@ -219,6 +221,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-glyph-quality
      */
     this.handleGlyphQualityChange = function(event) {
+        slotObj.updateGlyphValue();
         swlcalc.summary.updateAllStats();
     };
   
@@ -229,6 +232,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.handleGlyphLevelChange = function(event) {
         slotObj.updateGlyphILvl();
         slotObj.updateTotalILvl();
+        slotObj.updateGlyphValue();
         swlcalc.summary.updateAllStats();
     }
 
@@ -244,7 +248,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleSignetChange = function(event) {
         slotObj.updateSignet();
-        //weapon don't have signet item power
+        //weapon signets (= suffixes) don't have item power attribute
         if (!slotObj.isWeapon()) {
             slotObj.updateSignetILvl();
             slotObj.updateTotalILvl();

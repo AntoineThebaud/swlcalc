@@ -48,11 +48,13 @@ test('should set talisman glyphs', 1, function() {
     equal(swlcalc.slots.head.glyph(), 'evade-rating');
 });
 
-test('should get talisman glyph values from lookup tables', 1, function() {
+test('should get talisman glyph value from lookup tables', 1, function() {
     swlcalc.slots.head.glyph('hit-rating');
     swlcalc.slots.head.glyphRarity('superior');
     swlcalc.slots.head.glyphQuality('intricate');
     swlcalc.slots.head.glyphLevel('20');
+  
+    swlcalc.slots.head.updateGlyphValue();
 
     equal(swlcalc.slots.head.glyphValue(), 231);
 });
@@ -62,7 +64,7 @@ test('should update talisman glyph values', 1, function() {
     swlcalc.slots.head.glyphRarity('superior');
     swlcalc.slots.head.glyphQuality('intricate');
     swlcalc.slots.head.glyphLevel('20');
-
+  
     swlcalc.slots.head.updateGlyphValue();
 
     deepEqual(swlcalc.slots.head.el.glyphValue.html(), '+231');
