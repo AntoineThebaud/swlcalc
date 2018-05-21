@@ -4,26 +4,24 @@ function createTankBuild() {
     $('#weapon-rarity').change(); //required because triggers update of #weapon-level
     $('#weapon-quality').val('mkI');
     $('#weapon-level').val('30');
+    $('#weapon-level').change(); //required because triggers update of #weapon-power-rating
     $('#weapon-glyph').val('critical-rating');
     $('#weapon-glyph-rarity').val('superior');
     $('#weapon-glyph-quality').val('crude');
     $('#weapon-glyph-level').val('1');
-    $('#weapon-signet').val('none');//TODO/TEST add a true signet
-    $('#weapon-signet-rarity').val('standard');
-    $('#weapon-signet-level').val('20');
+    $('#weapon-signet').val('none');//TODO/TEST add a true suffixe
 
     $('#weapon2-wtype').val('hammer');
     $('#weapon2-rarity').val('epic');
     $('#weapon2-rarity').change(); //required because triggers update of #weapon2-level
     $('#weapon2-quality').val('mkIII');
     $('#weapon2-level').val('30');
+    $('#weapon2-level').change(); //required because triggers update of #weapon2-power-rating
     $('#weapon2-glyph').val('critical-rating');
     $('#weapon2-glyph-rarity').val('superior');
     $('#weapon2-glyph-quality').val('crude');
     $('#weapon2-glyph-level').val('1');
-    $('#weapon2-signet').val('none');
-    $('#weapon2-signet-rarity').val('standard');
-    $('#weapon2-signet-level').val('20');
+    $('#weapon2-signet').val('none');//TODO/TEST add a true suffixe
 
     $('#head-itemId').val('1');
     $('#head-itemId').change(); //TODO/TEST indentify if change needed and when it should be triggered
@@ -31,6 +29,7 @@ function createTankBuild() {
     $('#head-rarity').change(); //required because triggers update of #head-level
     $('#head-quality').val('faded');
     $('#head-level').val('30');
+    $('#head-level').change(); //required because triggers update of #head-power-rating
     $('#head-glyph').val('hit-rating');
     $('#head-glyph-rarity').val('mythic');
     $('#head-glyph-quality').val('intricate');
@@ -45,6 +44,7 @@ function createTankBuild() {
     $('#finger-rarity').change(); //required because triggers update of #finger-level
     $('#finger-quality').val('faded');
     $('#finger-level').val('30');
+    $('#finger-level').change(); //required because triggers update of #finger-power-rating
     $('#finger-glyph').val('defense-rating');
     $('#finger-glyph-rarity').val('epic');
     $('#finger-glyph-quality').val('simple');
@@ -59,6 +59,7 @@ function createTankBuild() {
     $('#neck-rarity').change(); //required because triggers update of #neck-level
     $('#neck-quality').val('faded');
     $('#neck-level').val('30');
+    $('#neck-level').change(); //required because triggers update of #neck-power-rating
     $('#neck-glyph').val('defense-rating');
     $('#neck-glyph-rarity').val('epic');
     $('#neck-glyph-quality').val('simple');
@@ -73,6 +74,7 @@ function createTankBuild() {
     $('#wrist-rarity').change(); //required because triggers update of #wrist-level
     $('#wrist-quality').val('faded');
     $('#wrist-level').val('1');
+    $('#wrist-level').change(); //required because triggers update of #wrist-power-rating
     $('#wrist-glyph').val('defense-rating');
     $('#wrist-glyph-rarity').val('epic');
     $('#wrist-glyph-quality').val('simple');
@@ -87,6 +89,7 @@ function createTankBuild() {
     $('#luck-rarity').change(); //required because triggers update of #luck-level
     $('#luck-quality').val('faded');
     $('#luck-level').val('1');
+    $('#luck-level').change(); //required because triggers update of #luck-power-rating
     $('#luck-glyph').val('evade-rating');
     $('#luck-glyph-rarity').val('epic');
     $('#luck-glyph-quality').val('simple');
@@ -101,6 +104,7 @@ function createTankBuild() {
     $('#waist-rarity').change(); //required because triggers update of #waist-level
     $('#waist-quality').val('faded');
     $('#waist-level').val('30');
+    $('#waist-level').change(); //required because triggers update of #waist-power-rating
     $('#waist-glyph').val('evade-rating');
     $('#waist-glyph-rarity').val('epic');
     $('#waist-glyph-quality').val('simple');
@@ -115,6 +119,7 @@ function createTankBuild() {
     $('#occult-rarity').change(); //required because triggers update of #occult-level
     $('#occult-quality').val('faded');
     $('#occult-level').val('1');
+    $('#occult-level').change(); //required because triggers update of #occult-power-rating
     $('#occult-glyph').val('evade-rating');
     $('#occult-glyph-rarity').val('epic');
     $('#occult-glyph-quality').val('simple');

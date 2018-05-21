@@ -160,13 +160,13 @@ test('should collect offensive and defensive stats for tank build', 5, function(
 //     deepEqual(allSums.offensive_defensive, expectedOffensiveDefensiveStats);
 // });
 
-test('should update all stats', 6, function() {
+test('should update all stats', 7, function() {
     createTankBuild();
 
     swlcalc.summary.updateAllStats();
 
     equal($('#stat-power-rating').html(), '3730');
-    //TODO/TEST equal($('#stat-weapon-power').html(), '457');
+    equal($('#stat-weapon-power').html(), '1832');
     //TODO/TEST equal($('#stat-combat-power').html(), '504');
     //TODO/TEST equal($('#stat-heal-power').html(), '504');
     //TODO/TEST equal($('#stat-hitpoints').html(), '10788');

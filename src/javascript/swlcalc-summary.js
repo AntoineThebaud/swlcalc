@@ -78,9 +78,9 @@ swlcalc.summary = function() {
                 if (slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
                 } else if (slot.isWeapon() && slot.wtype() != 'none') {
-                    sums['weapon-power'] = slot.getPowerRating();
+                    sums['weapon-power'] = slot.powerRating();
                 } else if (!slot.isWeapon() && slot.itemId() != 'none') {
-                    sums['power-rating'] += slot.getPowerRating();
+                    sums['power-rating'] += slot.powerRating();
                 }
             }
         }

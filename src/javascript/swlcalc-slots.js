@@ -299,6 +299,45 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
+     * Getter/Setter for #slot-power-rating
+     */
+    this.powerRating = function() {
+        if (arguments.length == 1) {
+            this.el.powerRating.html(arguments[0]);
+        } else {
+            return parseInt(this.el.powerRating.html());
+        }
+    };
+  
+    /**
+     * Updates #slot-power-rating on each change
+     */
+    this.updatePowerRating = function() {
+        var base_value = 0;
+        var bonus_value = 0;
+        // calculation rule for weapons
+        if (this.isWeapon()) {
+            if (this.wtype() != 'none') {
+                base_value = swlcalc.data.power_rating['weapon'][this.rarity()].weapon_power_init;
+                bonus_value = swlcalc.data.power_rating['weapon'][this.rarity()].weapon_power_per_level * (this.level() - 1);
+            }
+        }
+        // calculation rule for talismans
+        else {
+            if (this.itemId() != 'none') {
+                base_value = swlcalc.data.power_rating[this.group][this.rarity()][this.quality()].power_rating_init;
+                bonus_value = swlcalc.data.power_rating[this.group][this.rarity()][this.quality()].power_rating_per_level * (this.level() - 1);
+            }
+        }
+        var newValue = base_value + Math.round(bonus_value);
+        // add '+' for display
+        if (newValue !== 0) {
+            newValue = '+' + newValue;
+        }
+        this.powerRating(newValue);
+    };
+
+    /**
      * Setter for #slot-img-icon (talisman)
      */
     //TODO/REFACTOR : review the way it uses this.id
@@ -326,42 +365,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     this.updateImgBorder = function() {
         var rarity_url = 'assets/images/icons/rarity/' + $("#" + this.id + "-rarity option:selected").val() + '-42x42.png';
         this.el.imgBorder.attr('src', rarity_url);
-    };
-
-    /**
-     * Gets the power rating of the slot (= "weapon power" for weapons)
-     */
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
-    this.getPowerRating = function() {
-        var base_value = 0;
-        var bonus_value = 0;
-        // calculation rule for weapons
-        if (this.isWeapon()) {
-            if (this.wtype() != 'none') {
-                base_value = swlcalc.data.power_rating['weapon'][this.rarity()].weapon_power_init;
-                bonus_value = swlcalc.data.power_rating['weapon'][this.rarity()].weapon_power_per_level * (this.level() - 1);
-            }
-        }
-        // calculation rule for talismans
-        else {
-            if (this.itemId() != 'none') {
-                base_value = swlcalc.data.power_rating[this.group][this.rarity()][this.quality()].power_rating_init;
-                bonus_value = swlcalc.data.power_rating[this.group][this.rarity()][this.quality()].power_rating_per_level * (this.level() - 1);
-            }
-        }
-        return base_value + Math.round(bonus_value);
-    };
-  
-    /**
-     * Setter for #slot-power-rating
-     */
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
-    this.updatePowerRating = function() {
-        var powerRatingDisplay = this.getPowerRating();
-        if (powerRatingDisplay !== 0) {
-            powerRatingDisplay = '+' + powerRatingDisplay;
-        }
-        this.el.powerRating.html(powerRatingDisplay);
     };
 
     /**
@@ -435,6 +438,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      */
     //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     //TODO/REFACTOR : just call calculateGlyphRating => merge the  2 functions ?
+    //TODO/REFACTOR : to avoid double calcul (here we do the calculation for the slot + for the summary) => refer to power-rating code
     this.glyphValue = function() {
         if (this.glyph() == 'none') {
             return 0;
