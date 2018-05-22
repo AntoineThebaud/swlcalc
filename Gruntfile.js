@@ -53,7 +53,7 @@ module.exports = function(grunt) {
       build_data: {
         src: [
             '<%= dirs.src %>/data/<%= pkg.name %>-data-slots.js',
-            '<%= dirs.src %>/data/<%= pkg.name %>-data-gear.js',
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-power.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-mappings.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-signets.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-glyphs.js',
