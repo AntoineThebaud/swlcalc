@@ -7,8 +7,10 @@ swlcalc.summary = function() {
     };
   
     /**
-     * Updates all stats
+     * Refreshes all values in the summary
+     * -> triggered after any change that affects a stat
      */
+    //TODO/REFACTOR : to avoid useless refreshes ?
     var updateAllStats = function() {
         updatePrimaryStats();
         updateOffensiveDefensiveStats();
@@ -60,7 +62,7 @@ swlcalc.summary = function() {
         var sums = {
             'combat-power': 0,
             'healing-power': 0,
-            'weapon-power': 0, //TODO/REFACTOR : duplication : weapon power in the summary is the same as weapon power shown in the weapon slot
+            'weapon-power': 0,
             //TODO/FEATURE : HP, AR & HR disabled for the moment (as long as power rating conversion is not implemented)
             // 'hitpoints': 7512,     // = 3300 (base HP at lvl 50) + 2997 (amount brought by passives skills) + 1215 (capstone points)
             // 'attack-rating': 4322, // = 2000 (base stat at lvl 50) + 1512 (amount brought by passives skills) + 810 (capstone points)
@@ -73,7 +75,7 @@ swlcalc.summary = function() {
             if (swlcalc.slots.hasSlot(slotId)) {
                 var slot = swlcalc.slots[slotId];
                 //TODO/FEATURE : add conversion to AR/HR/HP based on ratio selected
-                sums['ilvl'] += slot.iLvl();
+                sums['ilvl'] += slot.totalILvl();
                 if (slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
                 } else if (slot.isWeapon() && slot.wtype() != 'none') {

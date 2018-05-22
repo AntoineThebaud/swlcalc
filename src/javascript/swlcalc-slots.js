@@ -104,7 +104,12 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     this.name = name;
     this.group = group;
     this.weaponDrawn = false;
-
+  
+    // for calculations precision issues;
+    this.rawILvl = 0.0;
+    this.rawGlyphILvl = 0.0;
+    this.rawSignetILvl = 0.0;
+  
     this.el = {
         div: $('#' + this.id + '-slot'),
         name: $('#' + this.id + '-name'),
@@ -151,7 +156,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     /**
      * Getter/Setter for #slot-total-ilvl
      */
-    this.iLvl = function() {
+    this.totalILvl = function() {
         if (arguments.length == 1) {
             this.el.totalILvl.html(arguments[0]);
         } else {
@@ -160,36 +165,11 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Calculates item power for the whole slot (talisman/weapon + glyph + signet) and updates GUI with it
+     * Updates #slot-total-ilvl
+     * -> Calculates total ilvl of the slot (talisman or weapon + glyph + signet) by reusing the "raw" values previously registered
      */
-    //TODO/REFACTOR : code duplication with updateILvl, updateGlyphILvl and updateSignetILvl : should reuse these individual item power calculations
-    this.updateTotalILvl = function() {
-        var iLvl = this.calculateILvl(swlcalc.data.ilvl.gear['talisman-or-weapon'].rarity[this.rarity()].ilvl_init,
-                                                swlcalc.data.ilvl.gear['talisman-or-weapon'].rarity[this.rarity()].ilvl_per_level,
-                                                (this.level() - 1));
-        // Weapons are worth ~15% more Item Power than talismans
-        // TODO/REFACTOR : could be done in  a better way
-        if (this.isWeapon()) {
-            iLvl = iLvl * 1.15;
-        }
-
-        var glyphILvl = this.calculateILvl(swlcalc.data.ilvl.gear['glyph'].rarity[this.glyphRarity()].ilvl_init,
-                                                     swlcalc.data.ilvl.gear['glyph'].rarity[this.glyphRarity()].ilvl_per_level,
-                                                     (this.glyphLevel() - 1));
-        // Glyphs in weapons are worth ~22.5% more Item Power than glyphs in talismans
-        // TODO/REFACTOR : could be done in  a better way
-        if (this.isWeapon()) {
-            glyphILvl = glyphILvl * 1.225;
-        }
-
-        //weapons dont have signetILvl
-        var signetILvl = 0;
-        if (!this.isWeapon()) {
-            var signetILvl = this.calculateILvl(swlcalc.data.ilvl.gear['signet'].rarity[this.signetRarity()].ilvl_init,
-                                                          swlcalc.data.ilvl.gear['signet'].rarity[this.signetRarity()].ilvl_per_level,
-                                                          (this.signetLevel() - 1));
-        }
-        this.iLvl(Math.round(iLvl + glyphILvl + signetILvl));
+    this.refreshTotalILvl = function() {
+        this.totalILvl(Math.round(this.rawILvl + this.rawGlyphILvl + this.rawSignetILvl));
     };
 
     /**********************************************************************************
@@ -310,6 +290,17 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
+     * Getter/Setter for #slot-iLvl
+     */
+    this.iLvl = function() {
+        if (arguments.length == 1) {
+            this.el.iLvl.html(arguments[0]);
+        } else {
+            return parseInt(this.el.iLvl.html());
+        }
+    };
+  
+    /**
      * Updates #slot-power-rating (calculatations with stats data)
      */
     this.updatePowerRating = function() {
@@ -368,20 +359,21 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Calculates item power for the slot's item (talisman or weapon) and updates GUI with it
-     * => calls calculateILvl() function with item parameters
+     * Updates #slot-ilvl
+     * -> Calculates item power for the slot's talisman (or weapon) and updates GUI with it
      */
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateILvl = function() {
-        var calculatedILvl = this.calculateILvl(swlcalc.data.ilvl.gear['talisman-or-weapon'].rarity[this.rarity()].ilvl_init,
-                                                          swlcalc.data.ilvl.gear['talisman-or-weapon'].rarity[this.rarity()].ilvl_per_level,
-                                                          (this.level() - 1));
+        var calculatedILvl = this.calculateILvl('talisman-or-weapon', this.rarity(), this.level());
         // Weapons are worth ~15% more Item Power than talismans
         // TODO/REFACTOR : could be done in  a better way
         if (this.isWeapon()) {
             calculatedILvl = calculatedILvl * 1.15;
         }
-        this.el.iLvl.html(Math.round(calculatedILvl));
+        //register value before it is rounded (used for #slot-total-ilvl)
+        this.rawILvl = calculatedILvl;
+      
+        this.iLvl(Math.round(calculatedILvl));
+        this.refreshTotalILvl();
     };
 
     /**********************************************************************************
@@ -443,7 +435,18 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return parseInt(this.el.glyphRating.html());
         }
     };
-
+  
+    /**
+     * Getter/Setter for #slot-glyph-iLvl
+     */
+    this.glyphILvl = function() {
+        if (arguments.length == 1) {
+            this.el.glyphILvl.html(arguments[0]);
+        } else {
+            return parseInt(this.el.glyphILvl.html());
+        }
+    };
+  
     /**
      * Updates #slot-glyph-rating (calculatations with stats data)
      *   INFO : in SWL a glyph rating value depends on its rarity-quality-level, neither the slot (head/major/minor) nor
@@ -500,21 +503,21 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Setter for #slot-glyph-ilvl
-     * Calculate item power for the slot's glyph and updates GUI with it
-     * => calls calculateILvl() function with glyph parameters
+     * Updates #slot-glyph-ilvl
+     * -> Calculates item power for the slot's glyph and updates GUI with it
      */
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateGlyphILvl = function() {
-        var calculatedILvl = this.calculateILvl(swlcalc.data.ilvl.gear['glyph'].rarity[this.glyphRarity()].ilvl_init,
-                                                          swlcalc.data.ilvl.gear['glyph'].rarity[this.glyphRarity()].ilvl_per_level,
-                                                          (this.glyphLevel() - 1));
+        var calculatedILvl = this.calculateILvl('glyph', this.glyphRarity(), this.glyphLevel());
         // Glyphs in weapons are worth ~22.5% more Item Power than glyphs in talismans
         // TODO/REFACTOR : could be done in  a better way
         if (this.isWeapon()) {
             calculatedILvl = calculatedILvl * 1.225;
         }
-        this.el.glyphILvl.html(Math.round(calculatedILvl));
+        //register value before it is rounded (used for #slot-total-ilvl)
+        this.rawGlyphILvl = calculatedILvl;
+      
+        this.glyphILvl(Math.round(calculatedILvl));
+        this.refreshTotalILvl();
     };
 
     /**********************************************************************************
@@ -570,7 +573,18 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.signetLevel.val();
         }
     };
-
+  
+    /**
+     * Getter/Setter for #slot-signet-ilvl
+     */
+    this.signetILvl = function() {
+        if (arguments.length == 1) {
+            this.el.signetILvl.html(arguments[0]);
+        } else {
+            return (this.isWeapon() ? 0 : parseInt(this.el.signetILvl.html()));
+        }
+    };
+  
     /**
      * Builds (calculates) signet description
      */
@@ -641,7 +655,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Getter/Setter for #slot-signet-img-icon
+     * Updates #slot-signet-img-icon
      */
     //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateSignetIconImage = function(signet) {
@@ -658,21 +672,25 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         var signet_rarity_url = 'assets/images/icons/rarity/' + signetRarity + '-42x42.png';
         this.el.signetImgBorder.attr('src', signet_rarity_url);
     };
+  
+    /**
+     * Setter for #slot-signet-description
+     */
     this.updateSignetDescription = function() {
         this.el.signetDescription.html(this.signetDescription());
     };
 
     /**
-     * Setter for #slot-glyph-ilvl
-     * Calculate item power for the slot's signet and updates GUI with it
-     * => calls calculateILvl() function with signet parameters
+     * Updates #slot-signet-ilvl
+     * -> Calculates item power for the slot's signet and updates GUI with it
      */
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateSignetILvl = function() {
-        var calculatedILvl = this.calculateILvl(swlcalc.data.ilvl.gear['signet'].rarity[this.signetRarity()].ilvl_init,
-                                                          swlcalc.data.ilvl.gear['signet'].rarity[this.signetRarity()].ilvl_per_level,
-                                                          (this.signetLevel() - 1));
-        this.el.signetILvl.html(Math.round(calculatedILvl));
+        var calculatedILvl = this.calculateILvl('signet', this.signetRarity(), this.signetLevel());
+        //register value before it is rounded (used for #slot-total-ilvl)
+        this.rawSignetILvl = calculatedILvl;
+      
+        this.signetILvl(Math.round(calculatedILvl));
+        this.refreshTotalILvl();
     };
 
     /**********************************************************************************
@@ -768,9 +786,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Calculate item power for the given item (talisman, weapon, glyph or signet)
+     * Calculates item power for the given item (talisman, weapon, glyph or signet)
      */
-    this.calculateILvl = function(iLvlInit, iLvlPerLevel, levelMultiplier) {
-        return iLvlInit + iLvlPerLevel * levelMultiplier;
+    this.calculateILvl = function(element, rarity, level) {
+        var dataToUse = swlcalc.data.ilvl.gear[element].rarity[rarity];
+        return dataToUse.ilvl_init + dataToUse.ilvl_per_level * (level - 1);
     }
 };

@@ -5,6 +5,8 @@ module('summary-dom', {
     }
 });
 
+//TODO/TEST : to add a new test to check the accuracy of average ilvl of the gear
+
 test('should have required summary in DOM', 18, function() {
     // check all Primary stats exist
     ok($('#stat-power-rating').length !== 0, 'stat-power-rating exists');

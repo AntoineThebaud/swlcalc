@@ -108,6 +108,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     /**
      * Handler for #slot-itemId
      * -> triggers image update for the slot.
+     * -> triggers power rating update for the slot.
      */
     this.handleItemChange = function(event) {
         slotObj.updateTalismanImgIcon();
@@ -117,7 +118,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
   
     /**
      * Handler for #slot-wtype
-     * -> triggers an image update.
+     * -> triggers image update for the weapon.
+     * -> triggers power rating update for the slot.
      */
     this.handleWtypeChange = function(event) {
         var wtype = $(this).val();
@@ -133,9 +135,12 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     /**
      * Handler for #slot-rarity
-     * -> triggers a text color update.
-     * -> triggers an image update.
-     * -> triggers a dropdown options refresh.
+     * -> triggers rarity's text color update for the slot.
+     * -> triggers border image update for the slot.
+     * -> triggers image update for the slot.
+     * -> triggers available levels refresh for the slot.
+     * -> triggers power rating update for the slot.
+     * -> triggers ilvl update for the slot.
      */
     //TODO/REFACTOR : review the way it uses slotObj.id
     this.handleRarityChange = function(event) {
@@ -147,6 +152,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
         slotObj.updateImgBorder();
 
+        //refresh the list of available levels
         slotObj.el.level.empty();
         var minLvl = 1;
         var maxLvl = swlcalc.data.rarity_mapping.to_max_level[newRarity];
@@ -157,14 +163,14 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
            }));
         }
 
-        slotObj.updateILvl();
-        slotObj.updateTotalILvl();
         slotObj.updatePowerRating();
+        slotObj.updateILvl();
         swlcalc.summary.updateAllStats();
     };
   
     /**
      * Handler for #slot-quality
+     * -> triggers power rating update for the slot.
      */
     this.handleQualityChange = function(event) {
         slotObj.updatePowerRating();
@@ -173,11 +179,11 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
   
     /**
      * Handler for #slot-level
-     * -> triggers item power updates.
+     * -> triggers power rating update for the slot.
+     * -> triggers ilvl update for the slot.
      */
     this.handleLevelChange = function(event) {
         slotObj.updateILvl();
-        slotObj.updateTotalILvl();
         slotObj.updatePowerRating();
         swlcalc.summary.updateAllStats();
     };
@@ -189,8 +195,9 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     
     /**
      * Handler for #slot-glyph
-     * -> triggers a label update.
-     * -> triggers an image update.
+     * -> triggers label update for the glyph.
+     * -> triggers image update for the glyph.
+     * -> triggers rating update for the glyph.
      */
     this.handleGlyphChange = function(event) {
         slotObj.updateGlyphStatLabel();
@@ -201,10 +208,10 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
   
     /**
      * Handler for #slot-glyph-rarity
-     * -> triggers a label update.
-     * -> triggers an image update.
-     * -> triggers item power updates.
-     * -> triggers a text color update.
+     * -> triggers rarity's text color update for the glyph.
+     * -> triggers border image update for the glyph.
+     * -> triggers ilvl update for the glyph.
+     * -> triggers rating update for the glyph.
      */
     this.handleGlyphRarityChange = function(event) {
         //self.updateTextColor(event.target);
@@ -212,13 +219,13 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         $(event.target).attr("class", $("#" + slotObj.id + "-glyph-rarity option:selected").attr('class'));
         slotObj.updateGlyphImgBorder();
         slotObj.updateGlyphILvl();
-        slotObj.updateTotalILvl();
         slotObj.updateGlyphRating();
         swlcalc.summary.updateAllStats();
     };
   
     /**
      * Handler for #slot-glyph-quality
+     * -> triggers rating update for the glyph.
      */
     this.handleGlyphQualityChange = function(event) {
         slotObj.updateGlyphRating();
@@ -227,12 +234,12 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
   
     /**
      * Handler for #slot-glyph-level
-     * -> triggers item power updates.
+     * -> triggers rating update for the glyph.
+     * -> triggers ilvl update for the glyph.
      */
     this.handleGlyphLevelChange = function(event) {
-        slotObj.updateGlyphILvl();
-        slotObj.updateTotalILvl();
         slotObj.updateGlyphRating();
+        slotObj.updateGlyphILvl();
         swlcalc.summary.updateAllStats();
     }
 
@@ -243,38 +250,43 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     /**
      * Handler for #slot-signet
-     * -> triggers signet update. //TODO : review slotObj.updateSignet()
-     * -> triggers item power updates.
+     * -> triggers signet update for the signet. //TODO : review slotObj.updateSignet()
+     * -> triggers ilvl update for the signet.
      */
     this.handleSignetChange = function(event) {
         slotObj.updateSignet();
         //weapon signets (= suffixes) don't have item power attribute
         if (!slotObj.isWeapon()) {
             slotObj.updateSignetILvl();
-            slotObj.updateTotalILvl();
         }
         swlcalc.summary.updateAllStats();
     };
   
     /**
      * Handler for #slot-signet-rarity
-     * -> triggers text color update.
+     * -> triggers rarity's text color update for the signet.
+     * -> triggers signet update for the signet. //TODO : review slotObj.updateSignet()
+     * -> triggers ilvl update for the signet.
      */
-    //TODO : forwards the call to handleSignetChange => to review
+    //TODO/REFACTOR : code duplication with handleSignetChange()
     this.handleSignetRarityChange = function(event) {
         //self.updateTextColor(event.target);
         //TODO/REFACTOR : to reuse updateTextColor
         $(event.target).attr("class", $("#" + slotObj.id + "-signet-rarity option:selected").attr('class'));
-        self.handleSignetChange(event);
+        slotObj.updateSignet();
+        //weapon signets (= suffixes) don't have item power attribute
+        if (!slotObj.isWeapon()) {
+            slotObj.updateSignetILvl();
+        }
+        swlcalc.summary.updateAllStats();
     };
 
     /**
      * Handler for #slot-signet-level
-     * -> triggers item power updates.
+     * -> triggers ilvl update for the signet.
      */
     this.handleSignetLevelChange = function(event) {
         slotObj.updateSignetILvl();
-        slotObj.updateTotalILvl();
         swlcalc.summary.updateAllStats();
     };
 
