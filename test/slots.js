@@ -54,9 +54,9 @@ test('should get talisman glyph value from lookup tables', 1, function() {
     swlcalc.slots.head.glyphQuality('intricate');
     swlcalc.slots.head.glyphLevel('20');
   
-    swlcalc.slots.head.updateGlyphValue();
+    swlcalc.slots.head.updateGlyphRating();
 
-    equal(swlcalc.slots.head.glyphValue(), 231);
+    equal(swlcalc.slots.head.glyphRating(), 231);
 });
 
 test('should update talisman glyph values', 1, function() {
@@ -65,9 +65,9 @@ test('should update talisman glyph values', 1, function() {
     swlcalc.slots.head.glyphQuality('intricate');
     swlcalc.slots.head.glyphLevel('20');
   
-    swlcalc.slots.head.updateGlyphValue();
+    swlcalc.slots.head.updateGlyphRating();
 
-    deepEqual(swlcalc.slots.head.el.glyphValue.html(), '+231');
+    deepEqual(swlcalc.slots.head.el.glyphRating.html(), '+231');
 });
 
 test('should set talisman signet id, rarity and level', 3, function() {

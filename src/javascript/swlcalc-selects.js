@@ -195,7 +195,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.handleGlyphChange = function(event) {
         slotObj.updateGlyphStatLabel();
         slotObj.updateGlyphImgIcon();
-        slotObj.updateGlyphValue();
+        slotObj.updateGlyphRating();
         swlcalc.summary.updateAllStats();
     };
   
@@ -213,7 +213,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateGlyphImgBorder();
         slotObj.updateGlyphILvl();
         slotObj.updateTotalILvl();
-        slotObj.updateGlyphValue();
+        slotObj.updateGlyphRating();
         swlcalc.summary.updateAllStats();
     };
   
@@ -221,7 +221,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-glyph-quality
      */
     this.handleGlyphQualityChange = function(event) {
-        slotObj.updateGlyphValue();
+        slotObj.updateGlyphRating();
         swlcalc.summary.updateAllStats();
     };
   
@@ -232,7 +232,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.handleGlyphLevelChange = function(event) {
         slotObj.updateGlyphILvl();
         slotObj.updateTotalILvl();
-        slotObj.updateGlyphValue();
+        slotObj.updateGlyphRating();
         swlcalc.summary.updateAllStats();
     }
 

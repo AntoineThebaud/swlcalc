@@ -122,7 +122,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         glyphRarity: $('#' + this.id + '-glyph-rarity'),
         glyphQuality: $('#' + this.id + '-glyph-quality'),
         glyphLevel: $('#' + this.id + '-glyph-level'),
-        glyphValue: $('#' + this.id + '-glyph-value'),
+        glyphRating: $('#' + this.id + '-glyph-rating'),
         glyphStat: $('#' + this.id + '-glyph-stat'),
         glyphImgIcon: $('#' + this.id + '-glyph-img-icon'),
         glyphImgBorder: $('#' + this.id + '-glyph-img-rarity'),
@@ -434,23 +434,23 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
-     * Getter/Setter for #slot-glyph-value 
+     * Getter/Setter for #slot-glyph-rating 
      */
-    this.glyphValue = function() {
+    this.glyphRating = function() {
         if (arguments.length == 1) {
-            this.el.glyphValue.html(arguments[0]);
+            this.el.glyphRating.html(arguments[0]);
         } else {
-            return parseInt(this.el.glyphValue.html());
+            return parseInt(this.el.glyphRating.html());
         }
     };
 
     /**
-     * Updates #slot-glyph-value (calculatations with stats data)
-     *   INFO : in SWL a glyph value depends on its rarity-quality-level, neither the slot (head/major/minor) nor
+     * Updates #slot-glyph-rating (calculatations with stats data)
+     *   INFO : in SWL a glyph rating value depends on its rarity-quality-level, neither the slot (head/major/minor) nor
      *   the glyph stat impact the calculation (whereas it was the case in TSW) => /!\ exception for crit power
      *   glyphs that give 97.3% of the value of other glyphs)
      */
-    this.updateGlyphValue = function() {
+    this.updateGlyphRating = function() {
         var newValue = 0;
         if (this.glyph() != 'none') {
             var baseValue = swlcalc.data.glyph[this.glyphRarity()][this.glyphQuality()].rating_init;
@@ -466,7 +466,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
                 newValue = '+' + newValue;
             }
         }
-        this.glyphValue(newValue);
+        this.glyphRating(newValue);
     };
   
     /**

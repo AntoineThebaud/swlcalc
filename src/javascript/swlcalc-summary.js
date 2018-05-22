@@ -147,7 +147,7 @@ swlcalc.summary = function() {
                 if(slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
                 }
-                sums[slot.glyph()] += slot.glyphValue();
+                sums[slot.glyph()] += slot.glyphRating();
             }
         }
         // get ratio stats

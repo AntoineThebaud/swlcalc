@@ -117,7 +117,7 @@
             <td class="quality-label"><strong>Quality :</strong></td>
             <td class="quality-select">{>qualityselect id_suffix="-glyph" pip1_v="crude" pip1_n="Crude" pip2_v="simple" pip2_n="Simple" pip3_v="intricate" pip3_n="Intricate"/}</td>
             <td class="stat-value">
-              <span id="{id_prefix}-glyph-value">0</span>
+              <span id="{id_prefix}-glyph-rating">0</span>
               <span id="{id_prefix}-glyph-stat"></span>
             </td>
         </tr>

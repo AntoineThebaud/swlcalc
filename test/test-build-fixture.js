@@ -9,7 +9,7 @@ function createTankBuild() {
     $('#weapon-glyph-rarity').val('superior');
     $('#weapon-glyph-quality').val('crude');
     $('#weapon-glyph-level').val('1');
-    $('#weapon-glyph').change(); //required because triggers update of #weapon-glyph-value
+    $('#weapon-glyph').change(); //required because triggers update of #weapon-glyph-rating
     $('#weapon-signet').val('none');//TODO/TEST add a true suffixe
 
     $('#weapon2-wtype').val('hammer');
@@ -22,7 +22,7 @@ function createTankBuild() {
     $('#weapon2-glyph-rarity').val('superior');
     $('#weapon2-glyph-quality').val('crude');
     $('#weapon2-glyph-level').val('1');
-    $('#weapon2-glyph').change(); //required because triggers update of #weapon2-glyph-value
+    $('#weapon2-glyph').change(); //required because triggers update of #weapon2-glyph-rating
     $('#weapon2-signet').val('none');//TODO/TEST add a true suffixe
 
     $('#head-itemId').val('1');
@@ -36,7 +36,7 @@ function createTankBuild() {
     $('#head-glyph-rarity').val('mythic');
     $('#head-glyph-quality').val('intricate');
     $('#head-glyph-level').val('1');
-    $('#head-glyph').change(); //required because triggers update of #head-glyph-value
+    $('#head-glyph').change(); //required because triggers update of #head-glyph-rating
     $('#head-signet').val('none');//TODO/TEST add a true signet
     $('#head-signet-rarity').val('standard');
     $('#head-signet-level').val('20');
@@ -52,7 +52,7 @@ function createTankBuild() {
     $('#finger-glyph-rarity').val('epic');
     $('#finger-glyph-quality').val('simple');
     $('#finger-glyph-level').val('20');
-    $('#finger-glyph').change(); //required because triggers update of #finger-glyph-value
+    $('#finger-glyph').change(); //required because triggers update of #finger-glyph-rating
     $('#finger-signet').val('none');//TODO/TEST add a true signet
     $('#finger-signet-rarity').val('standard');
     $('#finger-signet-level').val('20');
@@ -68,7 +68,7 @@ function createTankBuild() {
     $('#neck-glyph-rarity').val('epic');
     $('#neck-glyph-quality').val('simple');
     $('#neck-glyph-level').val('20');
-    $('#neck-glyph').change(); //required because triggers update of #neck-glyph-value
+    $('#neck-glyph').change(); //required because triggers update of #neck-glyph-rating
     $('#neck-signet').val('none');//TODO/TEST add a true signet
     $('#neck-signet-rarity').val('standard');
     $('#neck-signet-level').val('20');
@@ -84,7 +84,7 @@ function createTankBuild() {
     $('#wrist-glyph-rarity').val('epic');
     $('#wrist-glyph-quality').val('simple');
     $('#wrist-glyph-level').val('20');
-    $('#wrist-glyph').change(); //required because triggers update of #wrist-glyph-value
+    $('#wrist-glyph').change(); //required because triggers update of #wrist-glyph-rating
     $('#wrist-signet').val('none');//TODO/TEST add a true signet
     $('#wrist-signet-rarity').val('standard');
     $('#wrist-signet-level').val('20');
@@ -100,7 +100,7 @@ function createTankBuild() {
     $('#luck-glyph-rarity').val('epic');
     $('#luck-glyph-quality').val('simple');
     $('#luck-glyph-level').val('20');
-    $('#luck-glyph').change(); //required because triggers update of #luck-glyph-value
+    $('#luck-glyph').change(); //required because triggers update of #luck-glyph-rating
     $('#luck-signet').val('none');//TODO/TEST add a true signet
     $('#luck-signet-rarity').val('standard');
     $('#luck-signet-level').val('20');
@@ -116,7 +116,7 @@ function createTankBuild() {
     $('#waist-glyph-rarity').val('epic');
     $('#waist-glyph-quality').val('simple');
     $('#waist-glyph-level').val('20');
-    $('#waist-glyph').change(); //required because triggers update of #waist-glyph-value
+    $('#waist-glyph').change(); //required because triggers update of #waist-glyph-rating
     $('#waist-signet').val('none');//TODO/TEST add a true signet
     $('#waist-signet-rarity').val('standard');
     $('#waist-signet-level').val('20');
@@ -132,7 +132,7 @@ function createTankBuild() {
     $('#occult-glyph-rarity').val('epic');
     $('#occult-glyph-quality').val('simple');
     $('#occult-glyph-level').val('20');
-    $('#occult-glyph').change(); //required because triggers update of #occult-glyph-value
+    $('#occult-glyph').change(); //required because triggers update of #occult-glyph-rating
     $('#occult-signet').val('none');//TODO/TEST add a true signet
     $('#occult-signet-rarity').val('standard');
     $('#occult-signet-level').val('20');
