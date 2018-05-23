@@ -5,9 +5,9 @@ module('buttonbar-dom', {
 });
 
 test('should have required buttonbar buttons in DOM', 9, function() {
-    ok($('#btn-all-3').length !== 0, 'all-dps button exists');
-    ok($('#btn-all-2').length !== 0, 'all-healer button exists');
-    ok($('#btn-all-1').length !== 0, 'all-tank button exists');
+    ok($('#btn-all-dps').length !== 0, 'all-dps button exists');
+    ok($('#btn-all-heal').length !== 0, 'all-heal button exists');
+    ok($('#btn-all-tank').length !== 0, 'all-tank button exists');
     ok($('#btn-all-standard').length !== 0, 'all-standard button exists');
     ok($('#btn-all-superior').length !== 0, 'all-superior button exists');
     ok($('#btn-all-epic').length !== 0, 'all-epic button exists');

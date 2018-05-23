@@ -6,6 +6,9 @@ swlcalc.summary = function() {
     var init = function() {
     };
   
+    //TODO/REFACTOR : to be sure to use 'this' instead of 'var'
+    var animaAllocation = 'DAMAGE';
+  
     /**
      * Refreshes all values in the summary
      * -> triggered after any change that affects a stat
@@ -59,14 +62,14 @@ swlcalc.summary = function() {
      * Collects primary stats by going through the whole gear
      */
     var collectPrimaryStats = function() {
+        // initial values
         var sums = {
             'combat-power': 0,
             'healing-power': 0,
             'weapon-power': 0,
-            //TODO/FEATURE : HP, AR & HR disabled for the moment (as long as power rating conversion is not implemented)
-            // 'hitpoints': 7512,     // = 3300 (base HP at lvl 50) + 2997 (amount brought by passives skills) + 1215 (capstone points)
-            // 'attack-rating': 4322, // = 2000 (base stat at lvl 50) + 1512 (amount brought by passives skills) + 810 (capstone points)
-            // 'heal-rating': 4310,   // = 2000 (base stat at lvl 50) + 1500 (amount brought by passives skills) + 810 (capstone points)
+            'hitpoints': 7512,     // = 3300 (base HP at lvl 50) + 2997 (amount brought by passives skills) + 1215 (capstone points)
+            'attack-rating': 4322, // = 2000 (base stat at lvl 50) + 1512 (amount brought by passives skills) + 810 (capstone points)
+            'heal-rating': 4310,   // = 2000 (base stat at lvl 50) + 1500 (amount brought by passives skills) + 810 (capstone points)
             'power-rating': 0,
             'ilvl': 0
         };
@@ -74,7 +77,6 @@ swlcalc.summary = function() {
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
                 var slot = swlcalc.slots[slotId];
-                //TODO/FEATURE : add conversion to AR/HR/HP based on ratio selected
                 sums['ilvl'] += slot.totalILvl();
                 if (slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
@@ -88,6 +90,20 @@ swlcalc.summary = function() {
         sums['combat-power'] = calculateCombatPower(sums['attack-rating'], sums['weapon-power']);
         sums['healing-power'] = calculateHealingPower(sums['heal-rating'], sums['weapon-power']);
         sums['ilvl'] = calculateAverageILvl(sums['ilvl']); //TODO/REFACTOR : refactor (it's weird)
+      
+        // first basic implementation of anima allocation
+        // TODO/FEATURE : add conversion to AR/HR/HP based on a ratio
+        if (animaAllocation == 'DAMAGE') {
+            sums['attack-rating'] += sums['power-rating'];            
+        } else if (animaAllocation == 'HEALING') {
+            sums['heal-rating'] += sums['power-rating'];          
+        } else if (animaAllocation == 'SURVIVABILITY') {
+            // TODO/REFACTOR : to move to a -data file?
+            // TODO/REFACTOR : this is a "pretty precise but still approximated" value of the real IG multiplier
+            var hitPointsMultiplier = 1.427675;
+            sums['hitpoints'] += Math.round(sums['power-rating'] * hitPointsMultiplier);
+        }
+      
         return sums;
     };
 
@@ -290,6 +306,13 @@ swlcalc.summary = function() {
             || statName == 'evade-chance'
             || statName == 'glance-chance';
     };
+    
+    /**
+     * Setter for animaAllocation attribute
+     */
+    var setAnimaAllocation = function(newAllocation) {
+        animaAllocation = newAllocation;
+    }
 
     /**
      * Public exposition of the functions that are called remotely
@@ -303,7 +326,8 @@ swlcalc.summary = function() {
         collectPrimaryStats: collectPrimaryStats,
         collectOffensiveDefensiveStats: collectOffensiveDefensiveStats,
         collectAllStats: collectAllStats,
-        updateAllStats: updateAllStats
+        updateAllStats: updateAllStats,
+        setAnimaAllocation: setAnimaAllocation
     };
 
     return oPublic;

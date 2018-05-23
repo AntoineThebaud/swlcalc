@@ -5,9 +5,9 @@ swlcalc.buttonBar = function() {
     var el = {};
     var elInit = function() {
         return {
-            btn_all_dps: $('#btn-all-3'),
-            btn_all_healer: $('#btn-all-2'),
-            btn_all_tank: $('#btn-all-1'),
+            btn_all_dps: $('#btn-all-dps'),
+            btn_all_heal: $('#btn-all-heal'),
+            btn_all_tank: $('#btn-all-tank'),
             btn_all_standard: $('#btn-all-standard'),
             btn_all_superior: $('#btn-all-superior'),
             btn_all_epic: $('#btn-all-epic'),
@@ -26,6 +26,9 @@ swlcalc.buttonBar = function() {
      * Associates the right process to each trigger.
      */
     var bindEvents = function() {
+        el.btn_all_dps.on('click', setAnimaAllocation);
+        el.btn_all_heal.on('click', setAnimaAllocation);
+        el.btn_all_tank.on('click', setAnimaAllocation);
         el.btn_all_standard.on('click', setRarityOnAllSlots);
         el.btn_all_superior.on('click', setRarityOnAllSlots);
         el.btn_all_epic.on('click', setRarityOnAllSlots);
@@ -34,6 +37,27 @@ swlcalc.buttonBar = function() {
         el.btn_reset.on('click', resetAllSlots);
     };
 
+    /**
+     * Sets anima allocation ratio
+     */
+    //TODO/REFACTOR : basic implementation, everything to review
+    var setAnimaAllocation = function(event) {
+        el.btn_all_dps.removeClass('active');
+        el.btn_all_heal.removeClass('active');
+        el.btn_all_tank.removeClass('active');
+        $(event.target).addClass('active');
+                             
+        if (event.target.id == 'btn-all-dps') {
+            swlcalc.summary.setAnimaAllocation('DAMAGE');
+        } else if (event.target.id == 'btn-all-heal') {
+            swlcalc.summary.setAnimaAllocation('HEALING');
+        } else if (event.target.id == 'btn-all-tank') {
+            swlcalc.summary.setAnimaAllocation('SURVIVABILITY');          
+        }
+      
+        swlcalc.summary.updateAllStats();
+    };
+  
     /**
      * Set the same chosen rarity to all items+glyphs+signets.
      */
