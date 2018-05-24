@@ -109,10 +109,12 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-itemId
      * -> triggers image update for the slot.
      * -> triggers power rating update for the slot.
+     * -> triggers ilvl update for the slot (to cover the case when previous value was or new value is 'none').
      */
     this.handleItemChange = function(event) {
         slotObj.updateTalismanImgIcon();
         slotObj.updatePowerRating();
+        slotObj.updateILvl();
         swlcalc.summary.updateAllStats();
     };
   
@@ -120,6 +122,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-wtype
      * -> triggers image update for the weapon.
      * -> triggers power rating update for the slot.
+     * -> triggers ilvl update for the slot (to cover the case when previous value was or new value is 'none').
      */
     this.handleWtypeChange = function(event) {
         var wtype = $(this).val();
@@ -130,6 +133,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         }
         slotObj.updateWeaponImgIcon();
         slotObj.updatePowerRating();
+        slotObj.updateILvl();
         swlcalc.summary.updateAllStats();
     };
 
@@ -198,11 +202,13 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * -> triggers label update for the glyph.
      * -> triggers image update for the glyph.
      * -> triggers rating update for the glyph.
+     * -> triggers ilvl update for the glyph (to cover the case when previous value was or new value is 'none').
      */
     this.handleGlyphChange = function(event) {
         slotObj.updateGlyphStatLabel();
         slotObj.updateGlyphImgIcon();
         slotObj.updateGlyphRating();
+        slotObj.updateGlyphILvl();
         swlcalc.summary.updateAllStats();
     };
   
@@ -251,7 +257,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     /**
      * Handler for #slot-signet
      * -> triggers signet update for the signet. //TODO : review slotObj.updateSignet()
-     * -> triggers ilvl update for the signet.
+     * -> triggers ilvl update for the signet (to cover the case when previous value was or new value is 'none').
      */
     this.handleSignetChange = function(event) {
         slotObj.updateSignet();
