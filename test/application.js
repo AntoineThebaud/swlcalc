@@ -14,7 +14,7 @@ test('should initate swlcalc submodules', 8, function() {
 
 //TODO/TEST : to add assertions for primary stats when implemented
 //TODO/TEST : to add assertions for signet text when implemented
-test('should import from hash', 170, function() {
+test('should import from hash', 175, function() {
     location.hash = 'weapon=3,4,3,19,3,2,2,13,0,4,0&weapon2=3,7,2,29,4,3,1,15,0,8,0&head=3,1,2,24,4,3,2,18,1,1,16&finger=2,1,1,20,5,4,3,15,4,1,2&neck=1,1,3,6,3,2,1,20,1,1,3&wrist=5,1,2,68,3,3,2,6,5,1,8&luck=1,1,1,10,2,2,1,18,3,1,13&waist=5,1,1,2,4,5,3,8,3,1,16&occult=1,1,3,19,5,1,3,2,2,1,10'
     swlcalc.init();
 
@@ -22,11 +22,11 @@ test('should import from hash', 170, function() {
     equal($('#stat-ilvl').html(), '538');
     equal($('#stat-power-rating').html(), '4388');
     equal($('#stat-weapon-power').html(), '1577');
-    // equal($('#stat-attack-rating').html(), '474');
-    // equal($('#stat-heal-rating').html(), '1091');
-    // equal($('#stat-hitpoints').html(), '10458');
-    // equal($('#stat-combat-power').html(), '278');
-    // equal($('#stat-heal-power').html(), '1091');
+    equal($('#stat-attack-rating').html(), '8710');
+    equal($('#stat-heal-rating').html(), '4310');
+    equal($('#stat-hitpoints').html(), '7512');
+    equal($('#stat-combat-power').html(), '772');
+    equal($('#stat-healing-power').html(), '442');
     equal($('#stat-critical-rating').html(), '+1598');
     equal($('#stat-critical-chance').html(), '18.6 %');
     equal($('#stat-critical-power').html(), '+1858');
@@ -207,25 +207,28 @@ test('should import from hash', 170, function() {
     equal($('#occult-signet-ilvl').html(), '22');
 });
 
-test('should set default values with an empty hash', 170, function() {
+test('should set default values with an empty hash', 175, function() {
     location.hash = ''
     swlcalc.init();
 
     // Summary
+    // --- Primary Stats
     equal($('#stat-ilvl').html(), '0');
     equal($('#stat-power-rating').html(), '0');
     equal($('#stat-weapon-power').html(), '0');
-    // equal($('#stat-attack-rating').html(), '474');
-    // equal($('#stat-heal-rating').html(), '1091');
-    // equal($('#stat-hitpoints').html(), '10458');
-    // equal($('#stat-combat-power').html(), '278');
-    // equal($('#stat-heal-power').html(), '1091');
+    equal($('#stat-attack-rating').html(), '4322');
+    equal($('#stat-heal-rating').html(), '4310');
+    equal($('#stat-hitpoints').html(), '7512');
+    equal($('#stat-combat-power').html(), '324');
+    equal($('#stat-healing-power').html(), '323');
+    // --- Offensive Stats
     equal($('#stat-critical-rating').html(), '+756');
     equal($('#stat-critical-chance').html(), '13.3 %');
     equal($('#stat-critical-power').html(), '+1008');
     equal($('#stat-critical-power-percentage').html(), '90.6 %');
     equal($('#stat-hit-rating').html(), '+756');
     equal($('#stat-glance-reduction').html(), '14.9 %');
+    // --- Defensive Stats
     equal($('#stat-defense-rating').html(), '+753');
     equal($('#stat-glance-chance').html(), '7.4 %');
     equal($('#stat-evade-rating').html(), '+753');

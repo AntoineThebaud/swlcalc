@@ -15,7 +15,7 @@ module('import-integration-tests', {
 // - formulas to update
 // - add real signets
 // - add test for ilvl fields
-test('should import URL and set summary and slots', 116, function() {
+test('should import URL and set summary and slots', 126, function() {
     var vars = {
         head: '3,1,1,30,4,1,3,1,1,0,20',
         luck: '3,1,1,1,3,4,2,20,1,0,20',
@@ -31,19 +31,27 @@ test('should import URL and set summary and slots', 116, function() {
     swlcalc.import.start(vars);
 
     // Summary
+    // --- Primary Stats
+    equal($('#stat-ilvl').html(), '357');
     equal($('#stat-power-rating').html(), '3730');
-    //TODO/TEST equal($('#stat-hitpoints').html(), '10458');
-    //TODO/TEST equal($('#stat-combat-power').html(), '496');
-    //TODO/TEST equal($('#stat-attack-rating').html(), '1518');
     equal($('#stat-weapon-power').html(), '1832');
-    //TODO/TEST equal($('#stat-heal-rating').html(), '0');
+    equal($('#stat-attack-rating').html(), '8052');
+    equal($('#stat-heal-rating').html(), '4310');
+    equal($('#stat-hitpoints').html(), '7512');
+    equal($('#stat-combat-power').html(), '741');
+    equal($('#stat-healing-power').html(), '461');
+    // --- Offensive Stats
     equal($('#stat-critical-rating').html(), '+841');
-    //TODO/TEST equal($('#stat-critical-chance').html(), '5.0 %');
+    equal($('#stat-critical-chance').html(), '13.8 %');
     equal($('#stat-critical-power').html(), '+1008');
     equal($('#stat-critical-power-percentage').html(), '90.6 %');
     equal($('#stat-hit-rating').html(), '+1244');
+    equal($('#stat-glance-reduction').html(), '24.5 %');
+    // --- Defensive Stats
     equal($('#stat-defense-rating').html(), '+1896');
+    equal($('#stat-glance-chance').html(), '18.6 %');
     equal($('#stat-evade-rating').html(), '+1896');
+    equal($('#stat-evade-chance').html(), '13.0 %');
     //TODO/TEST equal($('#stat-physical-protection').html(), '+660');
     //TODO/TEST equal($('#stat-magical-protection').html(), '+300');
 

@@ -74,3 +74,29 @@ function assertReset(slot) {
         equal(slot.signetILvl(), '0');
     }
 }
+
+test('should set anima allocation and affect stats correctly', 20, function() {
+    equal($('#stat-combat-power').html(), '741');
+    equal($('#stat-healing-power').html(), '461');
+    equal($('#stat-attack-rating').html(), '8052');
+    equal($('#stat-heal-rating').html(), '4310');
+    equal($('#stat-hitpoints').html(), '7512');
+    $('#btn-all-heal').click();
+    equal($('#stat-combat-power').html(), '462');
+    equal($('#stat-healing-power').html(), '740');
+    equal($('#stat-attack-rating').html(), '4322');
+    equal($('#stat-heal-rating').html(), '8040');
+    equal($('#stat-hitpoints').html(), '7512');
+    $('#btn-all-tank').click();
+    equal($('#stat-combat-power').html(), '462');
+    equal($('#stat-healing-power').html(), '461');
+    equal($('#stat-attack-rating').html(), '4322');
+    equal($('#stat-heal-rating').html(), '4310');
+    equal($('#stat-hitpoints').html(), '12837');
+    $('#btn-all-dps').click();
+    equal($('#stat-combat-power').html(), '741');
+    equal($('#stat-healing-power').html(), '461');
+    equal($('#stat-attack-rating').html(), '8052');
+    equal($('#stat-heal-rating').html(), '4310');
+    equal($('#stat-hitpoints').html(), '7512');
+});
