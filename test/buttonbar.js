@@ -34,7 +34,7 @@ module('buttonbar-integration-tests', {
 //TODO/TEST test('should set rarity and glyph rarity on all slots to x after changing rarity then changing role', 23, function() {});
 
 //TODO/TEST reset should logically set lvl 1 to items
-test('should reset all slots', 88, function() {
+test('should reset all slots', 120, function() {
     swlcalc.buttonBar.resetAllSlots();
     assertReset(swlcalc.slots.weapon);
     assertReset(swlcalc.slots.head);
@@ -47,6 +47,7 @@ test('should reset all slots', 88, function() {
 });
 
 function assertReset(slot) {
+    equal(slot.totalILvl(), '0');
     if(slot.isWeapon()) {
         equal(slot.wtype(), 'none');
         equal(slot.quality(), 'mkI');
@@ -56,16 +57,20 @@ function assertReset(slot) {
     }
     equal(slot.rarity(), 'standard');
     equal(slot.level(), '20');
+    equal(slot.iLvl(), '0');
     equal(slot.glyph(), 'none');
     equal(slot.glyphRarity(), 'standard');
     equal(slot.glyphQuality(), 'crude');
     equal(slot.glyphLevel(), '20');
+    equal(slot.glyphILvl(), '0');
     equal(slot.signetId(), 'none');
     if(slot.isWeapon()) {
-        equal(slot.signetRarity(), undefined);
-        equal(slot.signetLevel(), undefined);
+        equal(slot.signetRarity(), undefined, 'expect signetRarity for weapon to be undefined');
+        equal(slot.signetLevel(), undefined, 'expect signetLevel for weapon to be undefined');
+        equal(slot.signetILvl(), undefined, 'expect signetILvl for weapon to be undefined');
     } else {
         equal(slot.signetRarity(), 'standard');
         equal(slot.signetLevel(), '20');
+        equal(slot.signetILvl(), '0');
     }
 }

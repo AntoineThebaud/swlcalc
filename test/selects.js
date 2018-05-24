@@ -123,4 +123,14 @@ test('should enable changing of weapon2 type to none and set the slot name to bl
     deepEqual(swlcalc.slots['weapon2'].name(), '');
 });
 
+test('should set a non-zero ilvl value when selecting an item and then set it back to 0 when selecting none option', 3, function() {
+    equal(swlcalc.slots['occult'].glyphILvl(), 0);
+    swlcalc.slots['occult'].glyph('critical-rating');
+    swlcalc.slots['occult'].el.glyph.change();
+    equal(swlcalc.slots['occult'].glyphILvl(), 24);
+    swlcalc.slots['occult'].glyph('none');
+    swlcalc.slots['occult'].el.glyph.change();
+    equal(swlcalc.slots['occult'].glyphILvl(), 0);
+});
+
 //TODO/TEST add test for level-selects dynamic updates

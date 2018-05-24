@@ -587,7 +587,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         if (arguments.length == 1) {
             this.el.signetILvl.html(arguments[0]);
         } else {
-            return (this.isWeapon() ? 0 : parseInt(this.el.signetILvl.html()));
+            return (this.isWeapon() ? undefined : parseInt(this.el.signetILvl.html()));
         }
     };
   
