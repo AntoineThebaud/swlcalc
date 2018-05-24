@@ -13,9 +13,8 @@
                 <tr><td class="statname">Attack Rating</td><td id="stat-attack-rating" class="stat-value">0</td></tr>
                 <tr><td class="statname">Heal Rating</td><td id="stat-heal-rating" class="stat-value">0</td></tr>
                 <tr><td class="statname">Hitpoints</td><td id="stat-hitpoints" class="stat-value">0</td></tr>
-                <!--below stats are not functionnal yet-->
-                <tr><td class="statname not-functionnal">Combat Power</td><td id="stat-combat-power" class="stat-value not-functionnal">0</td></tr>
-                <tr><td class="statname not-functionnal">Healing Power</td><td id="stat-healing-power" class="stat-value not-functionnal">0</td></tr>
+                <tr><td class="statname">Combat Power</td><td id="stat-combat-power" class="stat-value">0</td></tr>
+                <tr><td class="statname">Healing Power</td><td id="stat-healing-power" class="stat-value">0</td></tr>
             </tbody>
         </table>
     </div>

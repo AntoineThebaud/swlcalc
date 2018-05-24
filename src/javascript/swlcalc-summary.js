@@ -87,10 +87,6 @@ swlcalc.summary = function() {
                 }
             }
         }
-        sums['combat-power'] = calculateCombatPower(sums['attack-rating'], sums['weapon-power']);
-        sums['healing-power'] = calculateHealingPower(sums['heal-rating'], sums['weapon-power']);
-        sums['ilvl'] = calculateAverageILvl(sums['ilvl']); //TODO/REFACTOR : refactor (it's weird)
-      
         // first basic implementation of anima allocation
         // TODO/FEATURE : add conversion to AR/HR/HP based on a ratio
         if (animaAllocation == 'DAMAGE') {
@@ -103,7 +99,11 @@ swlcalc.summary = function() {
             var hitPointsMultiplier = 1.427675;
             sums['hitpoints'] += Math.round(sums['power-rating'] * hitPointsMultiplier);
         }
-      
+
+        sums['combat-power'] = calculateCombatPower(sums['attack-rating'], sums['weapon-power']);
+        sums['healing-power'] = calculateHealingPower(sums['heal-rating'], sums['weapon-power']);
+        sums['ilvl'] = calculateAverageILvl(sums['ilvl']); //TODO/REFACTOR : refactor (it's weird)
+
         return sums;
     };
 
