@@ -123,6 +123,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         iLvl: $('#' + this.id + '-ilvl'),
         imgIcon: $('#' + this.id + '-img-icon'),
         imgBorder: $('#' + this.id + '-img-rarity'),
+        description: $('#' + this.id + '-description'),
         glyph: $('#' + this.id + '-glyph'),
         glyphRarity: $('#' + this.id + '-glyph-rarity'),
         glyphQuality: $('#' + this.id + '-glyph-quality'),
@@ -219,20 +220,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Item functions |
      *                V
      **********************************************************************************/
-    
-    /**
-     * Big mess here
-     */
-    //TODO/REFACTOR : remove this (how ?)
-    this.item = function() {
-        var itemId = this.itemId()
-        var item = swlcalc.data.items.find(function(item) {
-            return item.id == itemId;
-        });
-        if (item) {
-            return item;
-        }
-    }
 
     /**
      * Getter/Setter for #slot-itemId
@@ -298,6 +285,47 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         } else {
             return parseInt(this.el.iLvl.html());
         }
+    };
+      
+    /**
+     * Getter/Setter for #slot-description
+     */
+    this.description = function() {
+        if (arguments.length == 1) {
+            this.el.description.html(arguments[0]);
+        } else {
+            return this.el.description.html();
+        }
+    };
+  
+    /**
+     * Getter/Setter for #slot-img-icon
+     */
+    this.imgIcon = function() {
+        if (arguments.length == 1) {
+            this.el.imgIcon.attr('src', arguments[0])
+        } else {
+            return this.el.imgIcon.attr('src');
+        }
+    };
+  
+    /**
+     * Updates #slot-image + #slot-description
+     */
+    this.updateItem = function() {
+        var newImage;
+        var newDescription;
+        if(this.itemId() != 'none') {
+            var newSelectedItem = swlcalc.data.items.slot[this.id][this.itemId() - 1];
+            newImage = 'assets/images/icons/talisman/' + newSelectedItem.name + '.png';
+            newDescription = newSelectedItem.description;
+        } else {
+            newImage = 'assets/images/icons/talisman/None.png';
+            newDescription = '';
+        }
+      
+        this.imgIcon(newImage);
+        this.description(newDescription);
     };
   
     /**

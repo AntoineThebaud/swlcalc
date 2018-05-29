@@ -2,7 +2,7 @@
 <div id="{id_prefix}-slot" class="slot">
      <table class="table-title">
         <tr>
-            <td>
+            <td class="td-title">
                 <span>
                     <h4 class="slot">{name}</h4>
                     <h4 id="{id_prefix}-name" class="slot-name"></h4>
@@ -13,6 +13,13 @@
                     </span>
                 </span>
             </td>
+            {?is_weapon}
+            <td>
+                <a id="{id_prefix}-swap-weapon" class="btn btn-success swap-weapon">
+                    <i class="icon-retweet icon-white icon-align-left"></i>    Swap weapon
+                </a>
+            </td>
+            {/is_weapon}
             <td class="slot-ilvl">
                 Item Power : <span id="{id_prefix}-total-ilvl">0</span>
             </td>
@@ -25,23 +32,22 @@
             {:else}
             <td class="item-title" colspan="2">Talisman</td>
             {/is_weapon}
-            <td class="rarity-label"><strong>Rarity :</strong></td>
-            <td class="rarity-select">{>rarityselect id_suffix=""/}</td>
-            {?is_weapon}
-            <td>
-                <a id="{id_prefix}-swap-weapon" class="btn btn-success swap-weapon">
-                    <i class="icon-retweet icon-white icon-align-left"></i>    Swap weapon
-                </a>
+            <td class="upgrade-label rarity-label"><strong>Rarity :</strong></td>
+            <td class="upgrade-select rarity-select">{>rarityselect id_suffix=""/}</td>
+            <td class="stat-value">
+                <span id="{id_prefix}-power-rating">0</span>
+                {?is_weapon}
+                <span> Weapon Power</span>
+                {:else}
+                <span> Power Rating</span>
+                {/is_weapon}
             </td>
-            {:else}
-            <td class="filler"></td>
-            {/is_weapon}
         </tr>
         <tr class="tr-with-icon">
             <td class="item-img">
                 <a href="#" class="item-tooltip" data-toggle="tooltip" title="Item for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
                     <img id="{id_prefix}-img-rarity" class="item-icon-border" src=""/>
-                    <img id="{id_prefix}-img-icon" class="item-icon" src="" alt="Item"/>
+                    <img id="{id_prefix}-img-icon" class="item-icon" src="" alt="image"/>
                 </a>
             </td>
             <td class="item-select">
@@ -63,28 +69,23 @@
                 </select>
                 {/is_weapon}
             </td>
-            <td class="quality-label"><strong>Quality :</strong></td>
-            <td class="quality-select">
+            <td class="upgrade-label quality-label"><strong>Quality :</strong></td>
+            <td class="upgrade-select quality-select">
                 {?is_weapon}
                 {>qualityselect id_suffix="" pip1_v="mkI" pip1_n="MK I" pip2_v="mkII" pip2_n="MK II" pip3_v="mkIII" pip3_n="MK III"/}
                 {:else}
                 {>qualityselect id_suffix="" pip1_v="faded" pip1_n="Faded" pip2_v="luminous" pip2_n="Luminous" pip3_v="radiant" pip3_n="Radiant"/}
                 {/is_weapon}
             </td>
-            <td class="stat-value">
-                <span id="{id_prefix}-power-rating">0</span>
-                {?is_weapon}
-                <span> Weapon Power</span>
-                {:else}
-                <span> Power Rating</span>
-                {/is_weapon}
+            <td class="item-description" rowspan="2">
+                <span id="{id_prefix}-description"></span>
             </td>
         </tr>
         <tr>
             <td class="filler"></td>
             <td class="filler"></td>
-            <td class="level-label"><strong>Level :</strong></td>
-            <td class="level-select">{>levelselect id_suffix=""/}</td>
+            <td class="upgrade-label level-label"><strong>Level :</strong></td>
+            <td class="upgrade-select level-select">{>levelselect id_suffix=""/}</td>
             <td class="ilvl">
                 <span id="{id_prefix}-ilvl">0</span>
             </td>
@@ -93,8 +94,8 @@
     <table id="{id_prefix}-glyphs" class="table table-slots">
         <tr>
             <td class="glyph-title" colspan="2">Glyph</td>
-            <td class="rarity-label"><strong>Rarity :</strong></td>
-            <td class="rarity-select">{>rarityselect id_suffix="-glyph"/}</td>
+            <td class="upgrade-label rarity-label"><strong>Rarity :</strong></td>
+            <td class="upgrade-select rarity-select">{>rarityselect id_suffix="-glyph"/}</td>
             <td class="filler"></td>
         </tr>
         <tr class="tr-with-icon">
@@ -114,8 +115,8 @@
                     <option value="defense-rating">Stalwart</option>
                 </select>
             </td>
-            <td class="quality-label"><strong>Quality :</strong></td>
-            <td class="quality-select">{>qualityselect id_suffix="-glyph" pip1_v="crude" pip1_n="Crude" pip2_v="simple" pip2_n="Simple" pip3_v="intricate" pip3_n="Intricate"/}</td>
+            <td class="upgrade-label quality-label"><strong>Quality :</strong></td>
+            <td class="upgrade-select quality-select">{>qualityselect id_suffix="-glyph" pip1_v="crude" pip1_n="Crude" pip2_v="simple" pip2_n="Simple" pip3_v="intricate" pip3_n="Intricate"/}</td>
             <td class="stat-value">
               <span id="{id_prefix}-glyph-rating">0</span>
               <span id="{id_prefix}-glyph-stat"></span>
@@ -124,8 +125,8 @@
         <tr>
             <td class="filler"></td>
             <td class="filler"></td>
-            <td class="level-label"><strong>Level :</strong></td>
-            <td class="level-select">{>levelselect id_suffix="-glyph"/}</td>
+            <td class="upgrade-label level-label"><strong>Level :</strong></td>
+            <td class="upgrade-select level-select">{>levelselect id_suffix="-glyph"/}</td>
             <td class="ilvl">
                 <span id="{id_prefix}-glyph-ilvl">0</span>
             </td>
@@ -145,8 +146,8 @@
         {:else}
         <tr>
             <td class="signet-title" colspan="2">Signet</td>
-            <td class="rarity-label"><strong>Rarity :</strong></td>
-            <td class="rarity-select">{>rarityselect id_suffix="-signet"/}</td>
+            <td class="upgrade-label rarity-label"><strong>Rarity :</strong></td>
+            <td class="upgrade-select rarity-select">{>rarityselect id_suffix="-signet"/}</td>
             <td id="{id_prefix}-signet-description" class="item-description"></td>
         </tr>
         <tr class="tr-with-icon">
@@ -160,8 +161,8 @@
                 <select id="{id_prefix}-signet" title="Please select signet">
                 </select>
             </td>
-            <td class="level-label"><strong>Level :</strong></td>
-            <td class="level-select">{>levelselect id_suffix="-signet"/}</td>
+            <td class="upgrade-label level-label"><strong>Level :</strong></td>
+            <td class="upgrade-select level-select">{>levelselect id_suffix="-signet"/}</td>
             <td class="ilvl">
                 <span id="{id_prefix}-signet-ilvl">0</span>
             </td>

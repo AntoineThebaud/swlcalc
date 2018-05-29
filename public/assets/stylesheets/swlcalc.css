@@ -110,6 +110,10 @@ select {
     width: 100%;
 }
 
+.td-title {
+    min-width: 300px;
+}
+
 /* slot > item : talisman/weapon */
 td.item-title {
     font-size: 15px;
@@ -124,6 +128,7 @@ td.item-title {
 td.item-img {
     width: 48px;
     padding-right: 4px;
+    vertical-align: top;
 }
 img.item-icon {
     width: 48px;
@@ -216,9 +221,21 @@ td.signet-select select {
 }
 
 
+/* slot/glyph/signet > rarity+quality+level */
+td.upgrade-label {
+    width: 50px;
+}
+td.upgrade-select {
+    width: 100px;
+}
+td.upgrade-select select {
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+
 /* slot > rarity */
 td.rarity-label {
-    width: 50px;
     padding-top: 10px;
     padding-bottom: 5px;
     vertical-align: bottom;
@@ -228,34 +245,24 @@ td.rarity-select {
     vertical-align: bottom;
 }
 td.rarity-select select {
-    width: 100px;
-    margin-bottom: 0px;
 }
 
 
 /* slot > quality */
 td.quality-label {
-    width: 50px;
 }
 td.quality-select {
-    width: 170px;
 }
 td.quality-select select {
-    width: 100px;
-    margin-bottom: 0px;
 }
 
 
 /* slot > level */
 td.level-label {
-    width: 50px;
 }
 td.level-select {
-    /* width: 170px; */
 }
 td.level-select select {
-    width: 100px;
-    margin-bottom: 0px;
 }
 
 
@@ -266,12 +273,14 @@ td.filler {
 td.item-description {
     padding-top: 10px;
     padding-left: 10px;
+    text-align: justify;
+    vertical-align: top;
 }
 
 td.stat-value {
     font-weight: bold;
     color: green;
-    min-width: 50px;
+    text-align: center;
 }
 
 img.consumable {
@@ -317,6 +326,7 @@ td.slot-ilvl {
     padding: 0px;
     text-align: right;
     font-weight: bold;
+    min-width: 100px;
 }
 
 td.ilvl {

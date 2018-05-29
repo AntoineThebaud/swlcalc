@@ -14,7 +14,7 @@ module('import-integration-tests', {
 // - commented fields
 // - formulas to update
 // - add real signets
-// - add test for ilvl fields
+// - add tests for ilvl fields
 test('should import URL and set summary and slots', 126, function() {
     var vars = {
         head: '3,1,1,30,4,1,3,1,1,0,20',

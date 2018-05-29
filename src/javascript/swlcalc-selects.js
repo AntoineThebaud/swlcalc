@@ -107,12 +107,12 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     
     /**
      * Handler for #slot-itemId
-     * -> triggers image update for the slot.
+     * -> triggers item update for the slot (= image + description).
      * -> triggers power rating update for the slot.
      * -> triggers ilvl update for the slot (to cover the case when previous value was or new value is 'none').
      */
     this.handleItemChange = function(event) {
-        slotObj.updateTalismanImgIcon();
+        slotObj.updateItem() // == slotObjupdateTalismanImgIcon() + slotObj.updateDescription();
         slotObj.updatePowerRating();
         slotObj.updateILvl();
         swlcalc.summary.updateAllStats();
