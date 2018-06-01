@@ -259,8 +259,11 @@ td.quality-select select {
 
 /* slot > level */
 td.level-label {
+    vertical-align: top;
+    padding-top: 5px;
 }
 td.level-select {
+    vertical-align: top;
 }
 td.level-select select {
 }
@@ -273,27 +276,24 @@ td.filler {
 td.item-description {
     padding-top: 10px;
     padding-left: 10px;
+    padding-right: 5px;
     text-align: justify;
     vertical-align: top;
 }
 
-td.stat-value {
+
+.stat-name {
+    width: 200px;
+}
+.stat-value {
     font-weight: bold;
     color: green;
+}
+td.stat-inSlot {
     text-align: center;
 }
-
-img.consumable {
-    background-image:url('../images/icons/consumable_background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 32px;
-    height:32px;
-    z-index: 0;
-}
-
-.statname {
-    width: 200px;
+td.stat-inSummary {
+    text-align: right;
 }
 
 div .slot {
@@ -336,6 +336,7 @@ td.ilvl {
     padding: 0px;
     text-align: right;
     vertical-align: bottom;
+    line-height: 12px;
 }
 
 .not-functionnal {

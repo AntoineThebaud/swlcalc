@@ -288,9 +288,9 @@ swlcalc.summary = function() {
         for (var stat in sums) {
             if (sums.hasOwnProperty(stat)) {
                 if (sums[stat] > 0) {
-                    $('#stat-' + stat).html(isStatPercentageBased(stat) ? sums[stat].toString() + " %" : '+' + sums[stat]);
+                    $('#stat-' + stat).html(isStatPercentageBased(stat) ? sums[stat].toString() + "%" : '+' + sums[stat]);
                 } else {
-                    $('#stat-' + stat).html(isStatPercentageBased(stat) ? "0 %" : "0");
+                    $('#stat-' + stat).html(isStatPercentageBased(stat) ? "0%" : "0");
                 }
             }
         }

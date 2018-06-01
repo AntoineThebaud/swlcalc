@@ -28,15 +28,15 @@ test('should import from hash', 175, function() {
     equal($('#stat-combat-power').html(), '772');
     equal($('#stat-healing-power').html(), '442');
     equal($('#stat-critical-rating').html(), '+1598');
-    equal($('#stat-critical-chance').html(), '18.6 %');
+    equal($('#stat-critical-chance').html(), '18.6%');
     equal($('#stat-critical-power').html(), '+1858');
-    equal($('#stat-critical-power-percentage').html(), '120.6 %');
+    equal($('#stat-critical-power-percentage').html(), '120.6%');
     equal($('#stat-hit-rating').html(), '+1539');
-    equal($('#stat-glance-reduction').html(), '30.3 %');
+    equal($('#stat-glance-reduction').html(), '30.3%');
     equal($('#stat-defense-rating').html(), '+1313');
-    equal($('#stat-glance-chance').html(), '12.9 %');
+    equal($('#stat-glance-chance').html(), '12.9%');
     equal($('#stat-evade-rating').html(), '+1805');
-    equal($('#stat-evade-chance').html(), '12.4 %');
+    equal($('#stat-evade-chance').html(), '12.4%');
     // equal($('#stat-physical-protection').html(), '+660');
     // equal($('#stat-magical-protection').html(), '+300');
 
@@ -223,16 +223,16 @@ test('should set default values with an empty hash', 175, function() {
     equal($('#stat-healing-power').html(), '323');
     // --- Offensive Stats
     equal($('#stat-critical-rating').html(), '+756');
-    equal($('#stat-critical-chance').html(), '13.3 %');
+    equal($('#stat-critical-chance').html(), '13.3%');
     equal($('#stat-critical-power').html(), '+1008');
-    equal($('#stat-critical-power-percentage').html(), '90.6 %');
+    equal($('#stat-critical-power-percentage').html(), '90.6%');
     equal($('#stat-hit-rating').html(), '+756');
-    equal($('#stat-glance-reduction').html(), '14.9 %');
+    equal($('#stat-glance-reduction').html(), '14.9%');
     // --- Defensive Stats
     equal($('#stat-defense-rating').html(), '+753');
-    equal($('#stat-glance-chance').html(), '7.4 %');
+    equal($('#stat-glance-chance').html(), '7.4%');
     equal($('#stat-evade-rating').html(), '+753');
-    equal($('#stat-evade-chance').html(), '5.2 %');
+    equal($('#stat-evade-chance').html(), '5.2%');
     // equal($('#stat-physical-protection').html(), '+660');
     // equal($('#stat-magical-protection').html(), '+300');
 

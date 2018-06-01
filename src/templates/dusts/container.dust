@@ -21,7 +21,7 @@
   <div class="span8">
     {>slots/}
   </div>
-  <div class="span4">
+  <div class="span3">
     {>summary/}
   </div>
 </div>

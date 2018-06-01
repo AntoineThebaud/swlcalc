@@ -42,16 +42,16 @@ test('should import URL and set summary and slots', 126, function() {
     equal($('#stat-healing-power').html(), '461');
     // --- Offensive Stats
     equal($('#stat-critical-rating').html(), '+841');
-    equal($('#stat-critical-chance').html(), '13.8 %');
+    equal($('#stat-critical-chance').html(), '13.8%');
     equal($('#stat-critical-power').html(), '+1008');
-    equal($('#stat-critical-power-percentage').html(), '90.6 %');
+    equal($('#stat-critical-power-percentage').html(), '90.6%');
     equal($('#stat-hit-rating').html(), '+1244');
-    equal($('#stat-glance-reduction').html(), '24.5 %');
+    equal($('#stat-glance-reduction').html(), '24.5%');
     // --- Defensive Stats
     equal($('#stat-defense-rating').html(), '+1896');
-    equal($('#stat-glance-chance').html(), '18.6 %');
+    equal($('#stat-glance-chance').html(), '18.6%');
     equal($('#stat-evade-rating').html(), '+1896');
-    equal($('#stat-evade-chance').html(), '13.0 %');
+    equal($('#stat-evade-chance').html(), '13.0%');
     //TODO/TEST equal($('#stat-physical-protection').html(), '+660');
     //TODO/TEST equal($('#stat-magical-protection').html(), '+300');
 

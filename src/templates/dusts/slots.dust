@@ -34,7 +34,7 @@
             {/is_weapon}
             <td class="upgrade-label rarity-label"><strong>Rarity :</strong></td>
             <td class="upgrade-select rarity-select">{>rarityselect id_suffix=""/}</td>
-            <td class="stat-value">
+            <td class="stat-value stat-inSlot">
                 <span id="{id_prefix}-power-rating">0</span>
                 {?is_weapon}
                 <span> Weapon Power</span>
@@ -77,15 +77,17 @@
                 {>qualityselect id_suffix="" pip1_v="faded" pip1_n="Faded" pip2_v="luminous" pip2_n="Luminous" pip3_v="radiant" pip3_n="Radiant"/}
                 {/is_weapon}
             </td>
-            <td class="item-description" rowspan="2">
+            <td rowspan="2" class="item-description">
                 <span id="{id_prefix}-description"></span>
             </td>
         </tr>
         <tr>
-            <td class="filler"></td>
-            <td class="filler"></td>
-            <td class="upgrade-label level-label"><strong>Level :</strong></td>
-            <td class="upgrade-select level-select">{>levelselect id_suffix=""/}</td>
+            <td rowspan="2" class="filler"></td>
+            <td rowspan="2" class="filler"></td>
+            <td rowspan="2" class="upgrade-label level-label"><strong>Level :</strong></td>
+            <td rowspan="2" class="upgrade-select level-select">{>levelselect id_suffix=""/}</td>
+        </tr>
+        <tr>
             <td class="ilvl">
                 <span id="{id_prefix}-ilvl">0</span>
             </td>
@@ -117,7 +119,7 @@
             </td>
             <td class="upgrade-label quality-label"><strong>Quality :</strong></td>
             <td class="upgrade-select quality-select">{>qualityselect id_suffix="-glyph" pip1_v="crude" pip1_n="Crude" pip2_v="simple" pip2_n="Simple" pip3_v="intricate" pip3_n="Intricate"/}</td>
-            <td class="stat-value">
+            <td class="stat-value stat-inSlot">
               <span id="{id_prefix}-glyph-rating">0</span>
               <span id="{id_prefix}-glyph-stat"></span>
             </td>
@@ -161,8 +163,8 @@
                 <select id="{id_prefix}-signet" title="Please select signet">
                 </select>
             </td>
-            <td class="upgrade-label level-label"><strong>Level :</strong></td>
-            <td class="upgrade-select level-select">{>levelselect id_suffix="-signet"/}</td>
+            <td class="upgrade-label quality-label"><strong>Level :</strong></td> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
+            <td class="upgrade-select quality-select">{>levelselect id_suffix="-signet"/}</td> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
             <td class="ilvl">
                 <span id="{id_prefix}-signet-ilvl">0</span>
             </td>
