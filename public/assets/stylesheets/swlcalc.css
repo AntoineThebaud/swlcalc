@@ -296,6 +296,21 @@ td.stat-inSummary {
     text-align: right;
 }
 
+
+.bonus-var-attack {
+    font-weight: bold;
+    color: red;
+}
+.bonus-var-heal {
+    font-weight: bold;
+    color: green;
+}
+.bonus-const {
+    font-weight: bold;
+    color: orange;
+}
+
+
 div .slot {
     margin-bottom: 20px;
     background-color: #f5f5f5;

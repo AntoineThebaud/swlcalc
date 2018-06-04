@@ -316,13 +316,13 @@ swlcalc.summary = function() {
     }
     
     /**
-     * Launch a description refresh for each item
+     * Launch a description refresh for each item in order to display the right bonus values
      */
     var updateDescriptions = function() {
         //TODO/REFACTOR : avoid using hasSlot
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
-                swlcalc.slots[slotId].refreshDescription(this.combatPower(), this.healingPower());
+                swlcalc.slots[slotId].refreshItemBonus(this.combatPower(), this.healingPower());
             }
         }
     };

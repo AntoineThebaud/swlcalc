@@ -304,7 +304,20 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.description.html();
         }
     };
-  
+       
+    /**
+     * Getter/Setter for #slot-bonus
+     */
+    this.bonus = function() {
+        if (arguments.length == 1) {
+            //this.el.bonus.html(arguments[0]);
+            $('#' + this.id + '-bonus').html(arguments[0]);
+        } else {
+            //return this.el.bonus.html();
+            return $('#' + this.id + '-bonus').html();
+        }
+    };
+    
     /**
      * Getter/Setter for #slot-img-icon
      */
@@ -328,7 +341,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         } else {
             var newSelectedItem = swlcalc.data.items.slot[this.id][this.itemId() - 1];
             newImage = 'assets/images/icons/talisman/' + newSelectedItem.name + '.png';
-            newDescription = newSelectedItem.description; //TODO/REFACTOR : useless, it is replaced just after by result of refreshDescription
+            newDescription = newSelectedItem.description;
         }
         this.imgIcon(newImage);
         this.description(newDescription);
@@ -414,19 +427,18 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
-     * Updates #slot-description
+     * Updates #slot-bonus
      */ 
-    this.refreshDescription = function(combatPower, healingPower) {
-        if (this.itemId() == 'none') return;
+    this.refreshItemBonus = function(combatPower, healingPower) {
+        if (this.bonus() === undefined) return;
         var item = this.getItem();
-        if (item.description.indexOf("%d") == -1) return;
         var statForComputation = 0;
         if (item.stat == 'Combat Power') {
             statForComputation = combatPower;
         } else if (item.stat == 'Healing Power') {
             statForComputation = healingPower;              
         }
-        this.description(item.description.replace('%d', Math.round(item.coefficient * statForComputation)));
+        this.bonus(Math.round(item.coefficient * statForComputation));
     }
 
     /**********************************************************************************
