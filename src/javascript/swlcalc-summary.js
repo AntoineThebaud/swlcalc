@@ -17,6 +17,7 @@ swlcalc.summary = function() {
     var updateAllStats = function() {
         updatePrimaryStats();
         updateOffensiveDefensiveStats();
+        updateDescriptions();
         updateURL();
     };
 
@@ -312,6 +313,32 @@ swlcalc.summary = function() {
      */
     var setAnimaAllocation = function(newAllocation) {
         animaAllocation = newAllocation;
+    }
+    
+    /**
+     * Launch a description refresh for each item
+     */
+    var updateDescriptions = function() {
+        //TODO/REFACTOR : avoid using hasSlot
+        for (var slotId in swlcalc.slots) {
+            if (swlcalc.slots.hasSlot(slotId)) {
+                swlcalc.slots[slotId].refreshDescription(this.combatPower(), this.healingPower());
+            }
+        }
+    };
+
+    /**
+     * Getter for Combat Power
+     */
+    this.combatPower = function() {
+        return parseInt($('#stat-combat-power').text());
+    }
+
+    /**
+     * Getter for Healing Power
+     */
+    this.healingPower = function() {
+        return parseInt($('#stat-healing-power').text());
     }
 
     /**

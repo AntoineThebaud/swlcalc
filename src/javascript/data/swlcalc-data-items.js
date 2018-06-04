@@ -54,7 +54,9 @@ swlcalc.data.items = {
             {
                 id: 2,
                 name: 'Bone Timepiece',
-                description: 'Whenever you heal an ally who does not have any active detrimental effects, you have a 25% chance to restore %d health to that ally.'
+                description: 'Whenever you heal an ally who does not have any active detrimental effects, you have a 25% chance to restore %d health to that ally.',
+                coefficient: 0.5,
+                stat: 'Healing Power'
             }
         ],
         'luck': [
@@ -78,7 +80,9 @@ swlcalc.data.items = {
             {
                 id: 2,
                 name: 'High Roller\'s Chain',
-                description: 'Whenever you roll a Double Blue or better set of matching chambers, your next Pistol attack deals an additional %d physical damage.'
+                description: 'Whenever you roll a Double Blue or better set of matching chambers, your next Pistol attack deals an additional %d physical damage.',
+                coefficient: 0.9,
+                stat: 'Combat Power'
             },
             {
                 id: 3,
@@ -95,7 +99,9 @@ swlcalc.data.items = {
             {
                 id: 2,
                 name: 'Sigil of Ambition',
-                description: 'Whenever you or any of your group members defeat an enemy, your next attack will deal %d physical damage.'
+                description: 'Whenever you or any of your group members defeat an enemy, your next attack will deal %d physical damage.',
+                coefficient: 0.833,
+                stat: 'Combat Power'
             }
         ]
     }

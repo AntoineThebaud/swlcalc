@@ -1,3 +1,5 @@
+//TODO/REFACTOR : use these functions for each test module setup !
+
 function renderSlots() {
     renderTemplate('slots', {
         slots: swlcalc.data.template_data.slots,

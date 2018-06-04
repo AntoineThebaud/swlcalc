@@ -105,7 +105,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     this.group = group;
     this.weaponDrawn = false;
   
-    // for calculations precision issues;
+    // for calculations precision issues
     this.rawILvl = 0.0;
     this.rawGlyphILvl = 0.0;
     this.rawSignetILvl = 0.0;
@@ -231,6 +231,13 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.group != 'weapon' ? this.el.itemId.val() : 'none';
         }
     };
+  
+    /**
+     * Getter to retrieve full item object from the data model
+     */
+    this.getItem = function() {
+        return swlcalc.data.items.slot[this.id][this.itemId() - 1];
+    };
 
     /**
      * Getter/Setter for #slot-rarity
@@ -315,15 +322,14 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     this.updateItem = function() {
         var newImage;
         var newDescription;
-        if(this.itemId() != 'none') {
-            var newSelectedItem = swlcalc.data.items.slot[this.id][this.itemId() - 1];
-            newImage = 'assets/images/icons/talisman/' + newSelectedItem.name + '.png';
-            newDescription = newSelectedItem.description;
-        } else {
+        if (this.itemId() == 'none') {
             newImage = 'assets/images/icons/talisman/None.png';
             newDescription = '';
+        } else {
+            var newSelectedItem = swlcalc.data.items.slot[this.id][this.itemId() - 1];
+            newImage = 'assets/images/icons/talisman/' + newSelectedItem.name + '.png';
+            newDescription = newSelectedItem.description; //TODO/REFACTOR : useless, it is replaced just after by result of refreshDescription
         }
-      
         this.imgIcon(newImage);
         this.description(newDescription);
     };
@@ -406,6 +412,22 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.iLvl(Math.round(calculatedILvl));
         this.refreshTotalILvl();
     };
+  
+    /**
+     * Updates #slot-description
+     */ 
+    this.refreshDescription = function(combatPower, healingPower) {
+        if (this.itemId() == 'none') return;
+        var item = this.getItem();
+        if (item.description.indexOf("%d") == -1) return;
+        var statForComputation = 0;
+        if (item.stat == 'Combat Power') {
+            statForComputation = combatPower;
+        } else if (item.stat == 'Healing Power') {
+            statForComputation = healingPower;              
+        }
+        this.description(item.description.replace('%d', Math.round(item.coefficient * statForComputation)));
+    }
 
     /**********************************************************************************
      * Glyph functions |

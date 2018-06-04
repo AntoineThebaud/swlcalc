@@ -1,9 +1,9 @@
 module('swap-button-integration-tests', {
     setup: function() {
         renderSlots();
-        swlcalc.slots.init();
-        swlcalc.button.init();
-        swlcalc.summary.init();
+        initiateButtonHandlers();
+        initiateSelectHandlers();
+        initiateSummary();
     }
 });
 
