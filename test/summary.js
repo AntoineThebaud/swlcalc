@@ -162,26 +162,60 @@ test('should collect offensive and defensive stats for tank build', 5, function(
 //     deepEqual(allSums.offensive_defensive, expectedOffensiveDefensiveStats);
 // });
 
-test('should update all stats', 7, function() {
+test('should update all stats', 15, function() {
     createTankBuild();
 
     swlcalc.summary.updateAllStats();
 
     equal($('#stat-power-rating').html(), '3730');
     equal($('#stat-weapon-power').html(), '1832');
-    //TODO/TEST equal($('#stat-combat-power').html(), '504');
-    //TODO/TEST equal($('#stat-heal-power').html(), '504');
-    //TODO/TEST equal($('#stat-hitpoints').html(), '10788');
-    //TODO/TEST equal($('#stat-attack-rating').html(), '1565');
-    //TODO/TEST equal($('#stat-heal-rating').html(), '0');
+    equal($('#stat-combat-power').html(), '741');
+    equal($('#stat-healing-power').html(), '461');
+    equal($('#stat-hitpoints').html(), '7512');
+    equal($('#stat-attack-rating').html(), '8052');
+    equal($('#stat-heal-rating').html(), '4310');
     equal($('#stat-critical-rating').html(), '+841');
-    //TODO/TEST equal($('#stat-critical-chance').html(), '5.0 %');
+    equal($('#stat-critical-chance').html(), '13.8%');
     equal($('#stat-critical-power').html(), '+1008');
-    //TODO/TEST equal($('#stat-critical-power-percentage').html(), '25.0 %');
+    equal($('#stat-critical-power-percentage').html(), '90.6%');
     equal($('#stat-hit-rating').html(), '+1244');
     equal($('#stat-defense-rating').html(), '+1896');
     equal($('#stat-evade-rating').html(), '+1896');
-    //TODO/TEST equal($('#stat-evade-chance').html(), '5.0 %');
+    equal($('#stat-evade-chance').html(), '13.0%');
     //TODO/TEST equal($('#stat-physical-protection').html(), '+660');
     //TODO/TEST equal($('#stat-magical-protection').html(), '+300');
+});
+
+module('summary-integration-tests with buttonbar', {
+    setup: function() {
+        renderSummary();
+        renderSlots();
+        renderButtonbar();
+        initiateSummary();
+        initiateButtonBar();
+        initiateSelectHandlers();
+        initiateButtonHandlers();
+    },
+    teardown: function() {
+
+    }
+});
+
+
+test('should set combat power + healing power and affect any talisman bonus correctly', 5, function() {
+    createTankBuild();
+    
+    $('#waist-itemId').val('12');
+    $('#waist-itemId').change();
+    equal(swlcalc.slots.waist.description(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 834 physical damage or your next healing Fist Weapon ability will restore an additional 519 health.');
+    $('#stat-combat-power').html('1000');
+    swlcalc.summary.updateDescriptions();
+    equal(swlcalc.slots.waist.description(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 1125 physical damage or your next healing Fist Weapon ability will restore an additional 519 health.');
+    $('#stat-healing-power').html('1000');
+    swlcalc.summary.updateDescriptions();
+    equal(swlcalc.slots.waist.description(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 1125 physical damage or your next healing Fist Weapon ability will restore an additional 1125 health.');
+    swlcalc.summary.updateAllStats();
+    equal(swlcalc.slots.waist.description(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 834 physical damage or your next healing Fist Weapon ability will restore an additional 519 health.');
+    $('#btn-all-heal').click();
+    equal(swlcalc.slots.waist.description(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 520 physical damage or your next healing Fist Weapon ability will restore an additional 833 health.');
 });

@@ -49,8 +49,15 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             selected: "true"
         }));
 
-        //TODO/REFACTOR : possible confusion between slot.group (major, minor..) and slot.id_prefix (ring, neck..)
-        var items = swlcalc.data.items.slot[slot.id_prefix];
+        var items = swlcalc.data.items.slot[slot.id_prefix].slice();
+        //sort alphabetically for a better ergonomy
+        items.sort(function(a, b) {
+            if (a.name.toLowerCase() > b.name.toLowerCase()) {
+                return 1;
+            } else {
+                return -1;
+            }
+        });
 
         items.forEach(function(item) {
             slotObj.el.itemId.append($('<option>', {
@@ -74,7 +81,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         //TODO/REFACTOR : to improve
         var idToUse = (slot.id_prefix == 'weapon2' ? 'weapon' : slot.id_prefix);
         var signetsInSlotGroup = swlcalc.data.signets.slot[idToUse];
-
+        //sort alphabetically for a better ergonomy
         signetsInSlotGroup.sort(function(a, b) {
             if (a.name.toLowerCase() > b.name.toLowerCase()) {
                 return 1;
@@ -82,6 +89,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
                 return -1;
             }
         });
+      
         $.each(signetsInSlotGroup, function(index, value) {
             slotObj.el.signetId.append($('<option>', {
                 value: value.id,

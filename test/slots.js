@@ -15,11 +15,10 @@ test('should tell whether this slot is a weapon', 2, function() {
     equal(swlcalc.slots.head.isWeapon(), false);
 });
 
-//TODO/TEST tswcalc test. swlcalc equivalent needed
-// test('should set and get talisman name', 1, function() {
-//     swlcalc.slots.head.name('Mark of the starspawn');
-//     equal(swlcalc.slots.head.name(), 'Mark of the starspawn');
-// });
+test('should set and get talisman name', 1, function() {
+    swlcalc.slots.head.name('Mark of the starspawn');
+    equal(swlcalc.slots.head.name(), 'Mark of the starspawn');
+});
 
 test('should get talisman rarity', 1, function() {
     equal(swlcalc.slots.head.rarity(), 'epic');

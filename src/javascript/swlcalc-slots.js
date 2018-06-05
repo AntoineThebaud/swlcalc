@@ -83,7 +83,7 @@ swlcalc.slots = function() {
     };
 
     /**
-     * Public exposition of the functions that are called remotely
+     * Exposition of functions that are going to be called from outside
      */
     var oPublic = {
         init: init,
@@ -301,7 +301,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         if (arguments.length == 1) {
             this.el.description.html(arguments[0]);
         } else {
-            return this.el.description.html();
+            return this.el.description.text();
         }
     };
        
@@ -317,7 +317,21 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return $('#' + this.id + '-bonus').html();
         }
     };
-    
+       
+    /**
+     * Getter/Setter for #slot-bonus2
+     */
+    // TODO/REFACTOR : to avoid code duplication with this.bonus()
+    this.bonus2 = function() {
+        if (arguments.length == 1) {
+            //this.el.bonus.html(arguments[0]);
+            $('#' + this.id + '-bonus2').html(arguments[0]);
+        } else {
+            //return this.el.bonus.html();
+            return $('#' + this.id + '-bonus2').html();
+        }
+    };
+  
     /**
      * Getter/Setter for #slot-img-icon
      */
@@ -340,7 +354,15 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             newDescription = '';
         } else {
             var newSelectedItem = swlcalc.data.items.slot[this.id][this.itemId() - 1];
+            //TODO/FEATURE :
+            /* temporary code ********************************************************************************
+             * => Will be used as long as item images are not added to the resources. The final code will be :
             newImage = 'assets/images/icons/talisman/' + newSelectedItem.name + '.png';
+             * => For now replaced by : */
+            var itemForImage = swlcalc.data.items.slot[this.id][0];
+            newImage = 'assets/images/icons/talisman/' + itemForImage.name + '.png';
+            /* temporary code ********************************************************************************/
+          
             newDescription = newSelectedItem.description;
         }
         this.imgIcon(newImage);
@@ -427,7 +449,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
-     * Updates #slot-bonus
+     * Updates #slot-bonus + #slot-bonus2
      */ 
     this.refreshItemBonus = function(combatPower, healingPower) {
         if (this.bonus() === undefined) return;
@@ -439,6 +461,19 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             statForComputation = healingPower;              
         }
         this.bonus(Math.round(item.coefficient * statForComputation));
+      
+        // particular case : items with 2 dynamic values
+        // TODO/REFACTOR : to avoid code duplication
+        if (this.bonus2() !== undefined) {
+            item = this.getItem();
+            statForComputation = 0;
+            if (item.stat2 == 'Combat Power') {
+                statForComputation = combatPower;
+            } else if (item.stat2 == 'Healing Power') {
+                statForComputation = healingPower;              
+            }
+            this.bonus2(Math.round(item.coefficient2 * statForComputation));
+        }
     }
 
     /**********************************************************************************

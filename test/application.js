@@ -12,10 +12,9 @@ test('should initate swlcalc submodules', 8, function() {
     ok(swlcalc.import);
 });
 
-//TODO/TEST : to add assertions for primary stats when implemented
 //TODO/TEST : to add assertions for signet text when implemented
-test('should import from hash', 175, function() {
-    location.hash = 'weapon=3,4,3,19,3,2,2,13,0,4,0&weapon2=3,7,2,29,4,3,1,15,0,8,0&head=3,1,2,24,4,3,2,18,1,1,16&finger=2,1,1,20,5,4,3,15,4,1,2&neck=1,1,3,6,3,2,1,20,1,1,3&wrist=5,1,2,68,3,3,2,6,5,1,8&luck=1,1,1,10,2,2,1,18,3,1,13&waist=5,1,1,2,4,5,3,8,3,1,16&occult=1,1,3,19,5,1,3,2,2,1,10'
+test('should import from hash', 182, function() {
+    location.hash = 'weapon=3,4,3,19,3,2,2,13,0,4,0&weapon2=3,7,2,29,4,3,1,15,0,8,0&head=3,4,2,24,4,3,2,18,1,1,16&finger=2,2,1,20,5,4,3,15,4,1,2&neck=1,12,3,6,3,2,1,20,1,1,3&wrist=5,2,2,68,3,3,2,6,5,1,8&luck=1,1,1,10,2,2,1,18,3,1,13&waist=5,11,1,2,4,5,3,8,3,1,16&occult=1,7,3,19,5,1,3,2,2,1,10'
     swlcalc.init();
 
     // Summary
@@ -81,12 +80,13 @@ test('should import from hash', 175, function() {
     equal($('#weapon2-signet-ilvl').html(), undefined);
 
     equal($('#head-total-ilvl').html(), '487');
-    equal($('#head-itemId').val(), '1');
+    equal($('#head-itemId').val(), '4');
     equal($('#head-rarity').val(), 'epic');
     equal($('#head-quality').val(), 'luminous');
     equal($('#head-level').val(), '24');
     equal($('#head-power-rating').html(), '+1113');
     equal($('#head-ilvl').html(), '252');
+    equal($('#head-description').html(), 'Whenever you hit the same enemy 3 times in succession, you deal <span id="head-bonus" class="bonus-var-attack">290</span> physical damage.');
     equal($('#head-glyph').val(), 'critical-power');
     equal($('#head-glyph-rarity').val(), 'mythic');
     equal($('#head-glyph-quality').val(), 'simple');
@@ -99,12 +99,13 @@ test('should import from hash', 175, function() {
     equal($('#head-signet-ilvl').html(), '10');
 
     equal($('#finger-total-ilvl').html(), '571');
-    equal($('#finger-itemId').val(), '1');
+    equal($('#finger-itemId').val(), '2');
     equal($('#finger-rarity').val(), 'superior');
     equal($('#finger-quality').val(), 'faded');
     equal($('#finger-level').val(), '20');
     equal($('#finger-power-rating').html(), '+314');
     equal($('#finger-ilvl').html(), '113');
+    equal($('#finger-description').html(), 'Whenever you purge a beneficial effect from an enemy\'s ability, your Protection is increased by <span class="bonus-const">1530</span> for 4 seconds.');  
     equal($('#finger-glyph').val(), 'evade-rating');
     equal($('#finger-glyph-rarity').val(), 'legendary');
     equal($('#finger-glyph-quality').val(), 'intricate');
@@ -117,12 +118,13 @@ test('should import from hash', 175, function() {
     equal($('#finger-signet-ilvl').html(), '89');
 
     equal($('#neck-total-ilvl').html(), '143');
-    equal($('#neck-itemId').val(), '1');
+    equal($('#neck-itemId').val(), '12');
     equal($('#neck-rarity').val(), 'standard');
     equal($('#neck-quality').val(), 'radiant');
     equal($('#neck-level').val(), '6');
     equal($('#neck-power-rating').html(), '+70');
     equal($('#neck-ilvl').html(), '13');
+    equal($('#neck-description').html(), 'This talisman gains more health when leveling up.<br>Whenever you lose health while below 50% of your maximum health, your damage is increased by 17% for 3 seconds and your next attack during this time will restore 4% of your maximum health. This effect can only occur once every 10 seconds.');
     equal($('#neck-glyph').val(), 'critical-rating');
     equal($('#neck-glyph-rarity').val(), 'epic');
     equal($('#neck-glyph-quality').val(), 'crude');
@@ -135,12 +137,13 @@ test('should import from hash', 175, function() {
     equal($('#neck-signet-ilvl').html(), '2');
 
     equal($('#wrist-total-ilvl').html(), '1292');
-    equal($('#wrist-itemId').val(), '1');
+    equal($('#wrist-itemId').val(), '2');
     equal($('#wrist-rarity').val(), 'legendary');
     equal($('#wrist-quality').val(), 'luminous');
     equal($('#wrist-level').val(), '68');
     equal($('#wrist-power-rating').html(), '+1951');
     equal($('#wrist-ilvl').html(), '1026');
+    equal($('#wrist-description').html(), 'Whenever you heal an ally who does not have any active detrimental effects, you have a 25% chance to restore <span id="wrist-bonus" class="bonus-var-heal">221</span> health to that ally.');
     equal($('#wrist-glyph').val(), 'critical-power');
     equal($('#wrist-glyph-rarity').val(), 'epic');
     equal($('#wrist-glyph-quality').val(), 'simple');
@@ -159,6 +162,7 @@ test('should import from hash', 175, function() {
     equal($('#luck-level').val(), '10');
     equal($('#luck-power-rating').html(), '+53');
     equal($('#luck-ilvl').html(), '22');
+    equal($('#luck-description').html(), '');
     equal($('#luck-glyph').val(), 'critical-rating');
     equal($('#luck-glyph-rarity').val(), 'superior');
     equal($('#luck-glyph-quality').val(), 'crude');
@@ -171,12 +175,13 @@ test('should import from hash', 175, function() {
     equal($('#luck-signet-ilvl').html(), '55');
 
     equal($('#waist-total-ilvl').html(), '846');
-    equal($('#waist-itemId').val(), '1');
+    equal($('#waist-itemId').val(), '11');
     equal($('#waist-rarity').val(), 'legendary');
     equal($('#waist-quality').val(), 'faded');
     equal($('#waist-level').val(), '2');
     equal($('#waist-power-rating').html(), '+775');
     equal($('#waist-ilvl').html(), '591');
+    equal($('#waist-description').html(), 'Whenever you spend Rage to empower an attack, you gain 7 Rage. Rage must be spent in order to trigger this effect.');
     equal($('#waist-glyph').val(), 'defense-rating');
     equal($('#waist-glyph-rarity').val(), 'mythic');
     equal($('#waist-glyph-quality').val(), 'intricate');
@@ -189,12 +194,13 @@ test('should import from hash', 175, function() {
     equal($('#waist-signet-ilvl').html(), '59');
 
     equal($('#occult-total-ilvl').html(), '386');
-    equal($('#occult-itemId').val(), '1');
+    equal($('#occult-itemId').val(), '7');
     equal($('#occult-rarity').val(), 'standard');
     equal($('#occult-quality').val(), 'radiant');
     equal($('#occult-level').val(), '19');
     equal($('#occult-power-rating').html(), '+112');
     equal($('#occult-ilvl').html(), '42');
+    equal($('#occult-description').html(), 'Whenever you or any of your group members defeat an enemy, your Protection is increased by <span class="bonus-const">2045</span> for 5 seconds.');
     equal($('#occult-glyph').val(), 'hit-rating');
     equal($('#occult-glyph-rarity').val(), 'legendary');
     equal($('#occult-glyph-quality').val(), 'intricate');

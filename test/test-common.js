@@ -53,3 +53,7 @@ function initiateSelectHandlers() {
         swlcalc.select[slot.id_prefix].initiate();
     }
 }
+
+function initiateButtonBar() {
+    swlcalc.buttonBar.init();
+}

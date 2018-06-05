@@ -322,7 +322,7 @@ swlcalc.summary = function() {
         //TODO/REFACTOR : avoid using hasSlot
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
-                swlcalc.slots[slotId].refreshItemBonus(this.combatPower(), this.healingPower());
+                swlcalc.slots[slotId].refreshItemBonus(combatPower(), healingPower());
             }
         }
     };
@@ -330,19 +330,19 @@ swlcalc.summary = function() {
     /**
      * Getter for Combat Power
      */
-    this.combatPower = function() {
+    var combatPower = function() {
         return parseInt($('#stat-combat-power').text());
     }
 
     /**
      * Getter for Healing Power
      */
-    this.healingPower = function() {
+    var healingPower = function() {
         return parseInt($('#stat-healing-power').text());
     }
 
     /**
-     * Public exposition of the functions that are called remotely
+     * Exposition of functions that are going to be called from outside
      */
     var oPublic = {
         init: init,
@@ -354,6 +354,7 @@ swlcalc.summary = function() {
         collectOffensiveDefensiveStats: collectOffensiveDefensiveStats,
         collectAllStats: collectAllStats,
         updateAllStats: updateAllStats,
+        updateDescriptions: updateDescriptions,
         setAnimaAllocation: setAnimaAllocation
     };
 

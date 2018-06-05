@@ -99,7 +99,7 @@ swlcalc.export = function() {
     };
 
     /**
-     * Public exposition of the functions that are called remotely
+     * Exposition of functions that are going to be called from outside
      */
     var oPublic = {
         init: init,
