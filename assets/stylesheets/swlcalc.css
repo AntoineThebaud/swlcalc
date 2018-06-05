@@ -110,6 +110,10 @@ select {
     width: 100%;
 }
 
+.td-title {
+    min-width: 300px;
+}
+
 /* slot > item : talisman/weapon */
 td.item-title {
     font-size: 15px;
@@ -124,6 +128,7 @@ td.item-title {
 td.item-img {
     width: 48px;
     padding-right: 4px;
+    vertical-align: top;
 }
 img.item-icon {
     width: 48px;
@@ -216,9 +221,21 @@ td.signet-select select {
 }
 
 
+/* slot/glyph/signet > rarity+quality+level */
+td.upgrade-label {
+    width: 50px;
+}
+td.upgrade-select {
+    width: 100px;
+}
+td.upgrade-select select {
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+
 /* slot > rarity */
 td.rarity-label {
-    width: 50px;
     padding-top: 10px;
     padding-bottom: 5px;
     vertical-align: bottom;
@@ -228,34 +245,27 @@ td.rarity-select {
     vertical-align: bottom;
 }
 td.rarity-select select {
-    width: 100px;
-    margin-bottom: 0px;
 }
 
 
 /* slot > quality */
 td.quality-label {
-    width: 50px;
 }
 td.quality-select {
-    width: 170px;
 }
 td.quality-select select {
-    width: 100px;
-    margin-bottom: 0px;
 }
 
 
 /* slot > level */
 td.level-label {
-    width: 50px;
+    vertical-align: top;
+    padding-top: 5px;
 }
 td.level-select {
-    /* width: 170px; */
+    vertical-align: top;
 }
 td.level-select select {
-    width: 100px;
-    margin-bottom: 0px;
 }
 
 
@@ -266,26 +276,40 @@ td.filler {
 td.item-description {
     padding-top: 10px;
     padding-left: 10px;
+    padding-right: 5px;
+    text-align: justify;
+    vertical-align: top;
 }
 
-td.stat-value {
-    font-weight: bold;
-    color: green;
-    min-width: 50px;
-}
 
-img.consumable {
-    background-image:url('../images/icons/consumable_background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 32px;
-    height:32px;
-    z-index: 0;
-}
-
-.statname {
+.stat-name {
     width: 200px;
 }
+.stat-value {
+    font-weight: bold;
+    color: green;
+}
+td.stat-inSlot {
+    text-align: center;
+}
+td.stat-inSummary {
+    text-align: right;
+}
+
+
+.bonus-var-attack {
+    font-weight: bold;
+    color: red;
+}
+.bonus-var-heal {
+    font-weight: bold;
+    color: green;
+}
+.bonus-const {
+    font-weight: bold;
+    color: orange;
+}
+
 
 div .slot {
     margin-bottom: 20px;
@@ -311,21 +335,23 @@ option:disabled {
     display:none;
 }
 
-td.slot-item-power {
+td.slot-ilvl {
     color: #A7A7A7;
     font-size: 12px;
     padding: 0px;
     text-align: right;
     font-weight: bold;
+    min-width: 100px;
 }
 
-td.item-power {
+td.ilvl {
     color: #A7A7A7;
     font-size: 10px;
     font-weight: bold;
     padding: 0px;
     text-align: right;
     vertical-align: bottom;
+    line-height: 12px;
 }
 
 .not-functionnal {
