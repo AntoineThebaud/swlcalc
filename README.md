@@ -5,9 +5,8 @@ swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by F
 
 **swlcalc features :**
 * All the gear slots (weapons and talismans) and their bound item/glyph/signet are customizable.
-* Item Power is calculated and displayed for each slot.
-* The total value given by the gear for each secondary stat (critical rating, critical chances, evade rating..) is displayed in the summary.
-* The average Item Power of you gear is displayed in the summary.
+* A global recap shows the total value given by the gear for each primary and secondary stat.
+* Item Power is calculated and displayed for each slot and the entire gear as well.
 * Any gear simulation done with swlcalc can be shared with others.
 
 **future features :**
