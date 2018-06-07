@@ -55,11 +55,11 @@ module('summary-unit-tests', {
 //     equal(swlcalc.summary.calculateCombatPower(3049, 398), 647);
 // });
 
-//TODO/TEST tswcalc test. swlcalc equivalent needed
-// test('should calculate evade chance', 2, function() {
-//     equal(swlcalc.summary.calculateEvadeChance(0), 5.030000000000001);
-//     equal(swlcalc.summary.calculateEvadeChance(2174), 27.90736684449651);
-// });
+test('should calculate evade chance', 3, function() {
+    equal(swlcalc.summary.calculateEvadeChance(0), 0);
+    equal(swlcalc.summary.calculateEvadeChance(4000), 27.5);
+    equal(swlcalc.summary.calculateEvadeChance(5000), 29.8);
+});
 
 module('summary-integration-tests', {
     setup: function() {
@@ -74,93 +74,103 @@ module('summary-integration-tests', {
     }
 });
 
-//TODO/TEST tswcalc test. swlcalc equivalent needed
-// test('should collect primary stats at initial state', 5, function() {
-//     var sums = swlcalc.summary.collectPrimaryStats();
+test('should collect primary stats at initial state', 8, function() {
+    var sums = swlcalc.summary.collectPrimaryStats();
 
-//     equal(sums['combat-power'], 647);
-//     equal(sums['weapon-power'], 398);
-//     equal(sums['hitpoints'], 2070);
-//     equal(sums['attack-rating'], 3049);
-//     equal(sums['heal-rating'], 0);
-// });
+    equal(sums['combat-power'], 324);
+    equal(sums['healing-power'], 323);
+    equal(sums['weapon-power'], 0);
+    equal(sums['attack-rating'], 4322);
+    equal(sums['heal-rating'], 4310);
+    equal(sums['hitpoints'], 7512);
+    equal(sums['power-rating'], 0);
+    equal(sums['ilvl'], 0);
+});
 
-//TODO/TEST tswcalc test. swlcalc equivalent needed
-// test('should collect primary stats for tank build', 5, function() {
-//     createTankBuild();
+test('should collect primary stats for tank build', 8, function() {
+    createTankBuild();
 
-//     var sums = swlcalc.summary.collectPrimaryStats();
+    var sums = swlcalc.summary.collectPrimaryStats();
 
-//     equal(sums['combat-power'], 504);
-//     equal(sums['weapon-power'], 457);
-//     equal(sums['hitpoints'], 10788);
-//     equal(sums['attack-rating'], 1565);
-//     equal(sums['heal-rating'], 0);
-// });
+    equal(sums['combat-power'], 741);
+    equal(sums['healing-power'], 461);
+    equal(sums['weapon-power'], 1832);
+    equal(sums['attack-rating'], 8052);
+    equal(sums['heal-rating'], 4310);
+    equal(sums['hitpoints'], 7512);
+    equal(sums['power-rating'], 3730);
+    equal(sums['ilvl'], 357);
+});
 
-test('should collect offensive and defensive stats for initial state', 5, function() {
+test('should collect offensive and defensive stats for initial state', 10, function() {
     var sums = swlcalc.summary.collectOffensiveDefensiveStats();
 
     equal(sums['critical-rating'], 756 );
-    //TODO/TEST equal(sums['critical-chance'], 5.0);
+    equal(sums['critical-chance'], 13.3);
     equal(sums['critical-power'], 1008);
-    //TODO/TEST equal(sums['critical-power-percentage'], 25);
+    equal(sums['critical-power-percentage'], 90.6);
     equal(sums['hit-rating'], 756);
+    equal(sums['glance-reduction'], 14.9);
     equal(sums['defense-rating'], 753);
+    equal(sums['glance-chance'], 7.4);
     equal(sums['evade-rating'], 753);
-    //TODO/TEST equal(sums['evade-chance'], 5.0);
+    equal(sums['evade-chance'], 5.2);
     //TODO/TEST equal(sums['physical-protection'], 300);
     //TODO/TEST equal(sums['magical-protection'], 300);
 });
 
-test('should collect offensive and defensive stats for tank build', 5, function() {
+test('should collect offensive and defensive stats for tank build', 10, function() {
     createTankBuild();
 
     var sums = swlcalc.summary.collectOffensiveDefensiveStats();
 
     equal(sums['critical-rating'], 841);
-    //TODO/TEST equal(sums['critical-chance'], 5.0);
+    equal(sums['critical-chance'], 13.8);
     equal(sums['critical-power'], 1008);
-    //TODO/TEST equal(sums['critical-power-percentage'], 25);
+    equal(sums['critical-power-percentage'], 90.6);
     equal(sums['hit-rating'], 1244);
+    equal(sums['glance-reduction'], 24.5);
+  
     equal(sums['defense-rating'], 1896);
+    equal(sums['glance-chance'], 18.6);
     equal(sums['evade-rating'], 1896);
-    //TODO/TEST equal(sums['evade-chance'], 5.0);
+    equal(sums['evade-chance'], 13.0);
     //TODO/TEST equal(sums['physical-protection'], 660);
     //TODO/TEST equal(sums['magical-protection'], 300);
 });
 
-//TODO/TEST tswcalc test. swlcalc equivalent needed
-// test('should collect all stats and return two objects', 2, function() {
-//     createTankBuild();
-//     var expectedPrimaryStats = {
-//         'combat-power': 504,
-//         'weapon-power': 457,
-//         'hitpoints': 10788,
-//         'attack-rating': 1565,
-//         'heal-rating': 0
-//     };
-//     var expectedOffensiveDefensiveStats = {
-//         'none': NaN,
-//         'critical-rating': 0,
-//         'critical-chance': '5.0',
-//         'critical-power': 0,
-//         'critical-power-percentage': '25.00',
-//         'penetration-rating': 0,
-//         'hit-rating': 504,
-//         'block-rating': 691,
-//         'defense-rating': 576,
-//         'evade-rating': 0,
-//         'evade-chance': '5.0',
-//         'physical-protection': 660,
-//         'magical-protection': 300
-//     };
+test('should collect all stats and return two objects', 2, function() {
+    createTankBuild();
+    var expectedPrimaryStats = {
+        'combat-power': 741,
+        'healing-power': 461,
+        'weapon-power': 1832,
+        'hitpoints': 7512,
+        'attack-rating': 8052,
+        'heal-rating': 4310,
+        'power-rating': 3730,
+        'ilvl': 357
+    };
+    var expectedOffensiveDefensiveStats = {
+        'critical-rating': '841',
+        'critical-chance': '13.8',
+        'critical-power': '1008',
+        'critical-power-percentage': '90.6',
+        'hit-rating': 1244,
+        'glance-reduction': 24.5,
+        'defense-rating': 1896,
+        'glance-chance': 18.6,
+        'evade-rating': 1896,
+        'evade-chance': '13.0',
+        //TODO/TEST 'physical-protection': 660,
+        //TODO/TEST 'magical-protection': 300
+    };
 
-//     var allSums = swlcalc.summary.collectAllStats();
+    var allSums = swlcalc.summary.collectAllStats();
 
-//     deepEqual(allSums.primary, expectedPrimaryStats);
-//     deepEqual(allSums.offensive_defensive, expectedOffensiveDefensiveStats);
-// });
+    deepEqual(allSums.primary, expectedPrimaryStats);
+    deepEqual(allSums.offensive_defensive, expectedOffensiveDefensiveStats);
+});
 
 test('should update all stats', 15, function() {
     createTankBuild();
