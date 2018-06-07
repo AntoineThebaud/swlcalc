@@ -189,20 +189,20 @@ swlcalc.data.items = {
             },
             {
                 id: 10,
-                name: 'Fishbone Medallion',
-                description: 'Whenever you lose health while below 50% of your maximum health, your Protection is increased by <span class="bonus-const">875</span> for 5 seconds.',
-            },
-            {
-                id: 11,
                 name: 'Medallion of Wadjet',
                 description: 'Whenever you lose health while below 50% of your maximum health, you gain a barrier which absorbs 100 of incoming damage and dissipates after absorbing <span id="neck-bonus" class="bonus-var-heal">%d</span> damage. This effect can only occur once every 10 seconds.',
                 coefficient: 1.25,
                 stat: 'Healing Power'
             },
             {
-                id: 12,
+                id: 11,
                 name: 'Lycanthropic Essence',
                 description: 'This talisman gains more health when leveling up.</br>Whenever you lose health while below 50% of your maximum health, your damage is increased by 17% for 3 seconds and your next attack during this time will restore 4% of your maximum health. This effect can only occur once every 10 seconds.'
+            },
+            {
+                id: 12,
+                name: 'Amulet',
+                description: ''
             }
         ],
         'wrist': [
@@ -246,6 +246,11 @@ swlcalc.data.items = {
                 id: 7,
                 name: 'Bracer of Horus',
                 description: 'Whenever a Debilitated enemy attacks you, you have a 25% chance to increase the duration of that enemy\'s Debilitated effect by 1 second.',
+            },
+            {
+                id: 8,
+                name: 'Wrist',
+                description: '',
             }
         ],
         'luck': [
@@ -285,18 +290,13 @@ swlcalc.data.items = {
             },
             {
                 id: 7,
-                name: 'Obsidian Flakes',
-                description: 'Whenever you evade an attack or an attack glances you, your Protection is increased by <span class="bonus-const">705</span> for 5 seconds.'
-            },
-            {
-                id: 8,
                 name: 'Golden Coin',
                 description: 'Whenever you evade an attack or an attack glances you, you deal <span id="luck-bonus" class="bonus-var-attack">%d</span> physical damage back to the attacker. This damage generate a large amount of hate.',
                 coefficient: 0.2875,
                 stat: 'Combat Power'
             },
             {
-                id: 9,
+                id: 8,
                 name: 'Laundry Tokens',
                 description: 'Whenever you evade an attack or an attack glances you, you have a 50% chance to gain 1 Energy for your currently active weapon.'
             }
@@ -413,6 +413,11 @@ swlcalc.data.items = {
                 coefficient2: 0.375,
                 stat: 'Combat Power',
                 stat2: 'Healing Power'
+            },
+            {
+                id: 19,
+                name: 'Buckle',
+                description: ''
             }
         ],
         'occult': [

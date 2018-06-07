@@ -10,7 +10,7 @@ swlcalc.slots = function() {
         }
         drawPrimaryWeapon();
     };
-  
+
     /**
      * Draw primary weapon (-> hide secondary weapon)
      */
@@ -18,14 +18,14 @@ swlcalc.slots = function() {
         swlcalc.slots.weapon2.sheathWeapon();
         swlcalc.slots.weapon.weaponDrawn = true;
     };
-  
+
     /**
      * Returns the number of slots of a gear (= 9 as of now)
      */
     var length = function() {
         return swlcalc.data.template_data.slots.length;
     };
-  
+
     /**
      * Defines the list of slots names
      */
@@ -33,7 +33,7 @@ swlcalc.slots = function() {
     var indices = function() {
         return ['head', 'weapon', 'weapon2', 'finger', 'neck', 'wrist', 'luck', 'waist', 'occult'];
     };
-  
+
     /**
      * Returns true if a slot of the name <parameter> exists
      */
@@ -41,7 +41,7 @@ swlcalc.slots = function() {
     var hasSlot = function(slot) {
         return this.hasOwnProperty(slot) && $.inArray(slot, indices()) != -1;
     };
-  
+
     /**
      * Resets all slots
      */
@@ -53,7 +53,7 @@ swlcalc.slots = function() {
             }
         }
     };
-  
+
     /**
      * Returns the list of slots states
      */
@@ -67,7 +67,7 @@ swlcalc.slots = function() {
         }
         return slotStates;
     };
-  
+
     /**
      * Returns the list of slots states (mapped version)
      */
@@ -104,12 +104,12 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     this.name = name;
     this.group = group;
     this.weaponDrawn = false;
-  
+
     // for calculations precision issues
     this.rawILvl = 0.0;
     this.rawGlyphILvl = 0.0;
     this.rawSignetILvl = 0.0;
-  
+
     this.el = {
         div: $('#' + this.id + '-slot'),
         name: $('#' + this.id + '-name'),
@@ -142,7 +142,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         signetILvl: $('#' + this.id + '-signet-ilvl'),
         nameWarning: $('#' + this.id + '-name-warning'),
     };
-  
+
     /**
      * Getter/Setter for #slot-name
      */
@@ -153,7 +153,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.name.html();
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-total-ilvl
      */
@@ -177,14 +177,14 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Weapon functions |
      *                  V
      **********************************************************************************/
-    
+
     /**
      * Returns true if the slot belongs to the weapon group
      */
     this.isWeapon = function() {
         return this.group == 'weapon';
     };
-  
+
     /**
      * Hides the current slot (for weapons only)
      */
@@ -194,7 +194,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             this.el.div.hide();
         }
     };
-  
+
     /**
      * Displays the current slot (for weapons only)
      */
@@ -231,7 +231,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.group != 'weapon' ? this.el.itemId.val() : 'none';
         }
     };
-  
+
     /**
      * Getter to retrieve full item object from the data model
      */
@@ -260,7 +260,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.quality.val();
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-level
      */
@@ -282,7 +282,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return parseInt(this.el.powerRating.html());
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-iLvl
      */
@@ -293,7 +293,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return parseInt(this.el.iLvl.html());
         }
     };
-      
+
     /**
      * Getter/Setter for #slot-description
      */
@@ -304,7 +304,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.description.text();
         }
     };
-       
+
     /**
      * Getter/Setter for #slot-bonus
      */
@@ -317,7 +317,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return $('#' + this.id + '-bonus').html();
         }
     };
-       
+
     /**
      * Getter/Setter for #slot-bonus2
      */
@@ -331,7 +331,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return $('#' + this.id + '-bonus2').html();
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-img-icon
      */
@@ -342,7 +342,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.imgIcon.attr('src');
         }
     };
-  
+
     /**
      * Updates #slot-image + #slot-description
      */
@@ -350,7 +350,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         var newImage;
         var newDescription;
         if (this.itemId() == 'none') {
-            newImage = 'assets/images/icons/talisman/None.png';
+            //To enable when all images will be present :
+            // newImage = 'assets/images/icons/talisman/None.png';
+            this.imgIcon('assets/images/icons/talisman/None.png');
             newDescription = '';
         } else {
             var newSelectedItem = swlcalc.data.items.slot[this.id][this.itemId() - 1];
@@ -359,16 +361,22 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
              * => Will be used as long as item images are not added to the resources. The final code will be :
             newImage = 'assets/images/icons/talisman/' + newSelectedItem.name + '.png';
              * => For now replaced by : */
-            var itemForImage = swlcalc.data.items.slot[this.id][0];
-            newImage = 'assets/images/icons/talisman/' + itemForImage.name + '.png';
+            var image = new Image();
+            image.onload = function() {
+                self.imgIcon('assets/images/icons/talisman/' + newSelectedItem.name + '.png');
+            }
+            image.onerror = function() {
+                self.imgIcon('assets/images/icons/talisman/' + swlcalc.data.items.slot[self.id][0].name + '.png');
+            }
+            image.src = "assets/images/icons/talisman/" + newSelectedItem.name + ".png";
             /* temporary code ********************************************************************************/
-          
             newDescription = newSelectedItem.description;
         }
-        this.imgIcon(newImage);
+        //To enable when all images will be present :
+        //this.imgIcon(newImage);
         this.description(newDescription);
     };
-  
+
     /**
      * Updates #slot-power-rating (calculatations with stats data)
      */
@@ -443,14 +451,14 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
         //register value before it is rounded (used for #slot-total-ilvl)
         this.rawILvl = calculatedILvl;
-      
+
         this.iLvl(Math.round(calculatedILvl));
         this.refreshTotalILvl();
     };
-  
+
     /**
      * Updates #slot-bonus + #slot-bonus2
-     */ 
+     */
     this.refreshItemBonus = function(combatPower, healingPower) {
         if (this.bonus() === undefined) return;
         var item = this.getItem();
@@ -458,10 +466,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         if (item.stat == 'Combat Power') {
             statForComputation = combatPower;
         } else if (item.stat == 'Healing Power') {
-            statForComputation = healingPower;              
+            statForComputation = healingPower;
         }
         this.bonus(Math.round(item.coefficient * statForComputation));
-      
+
         // particular case : items with 2 dynamic values
         // TODO/REFACTOR : to avoid code duplication
         if (this.bonus2() !== undefined) {
@@ -470,7 +478,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             if (item.stat2 == 'Combat Power') {
                 statForComputation = combatPower;
             } else if (item.stat2 == 'Healing Power') {
-                statForComputation = healingPower;              
+                statForComputation = healingPower;
             }
             this.bonus2(Math.round(item.coefficient2 * statForComputation));
         }
@@ -480,7 +488,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Glyph functions |
      *                 V
      **********************************************************************************/
-  
+
     /**
      * Getter/Setter for #slot-glyph
      */
@@ -491,7 +499,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.glyph.val();
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-glyph-rarity
      */
@@ -502,7 +510,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.glyphRarity.val();
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-glyph-quality
      */
@@ -513,7 +521,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.glyphQuality.val();
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-glyph-level
      */
@@ -524,9 +532,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.glyphLevel.val();
         }
     };
-  
+
     /**
-     * Getter/Setter for #slot-glyph-rating 
+     * Getter/Setter for #slot-glyph-rating
      */
     this.glyphRating = function() {
         if (arguments.length == 1) {
@@ -535,7 +543,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return parseInt(this.el.glyphRating.html());
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-glyph-iLvl
      */
@@ -546,7 +554,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return parseInt(this.el.glyphILvl.html());
         }
     };
-  
+
     /**
      * Updates #slot-glyph-rating (calculatations with stats data)
      *   INFO : in SWL a glyph rating value depends on its rarity-quality-level, neither the slot (head/major/minor) nor
@@ -571,9 +579,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
         this.glyphRating(newValue);
     };
-  
+
     /**
-     * Setter for #slot-glyph-stat 
+     * Setter for #slot-glyph-stat
      */
     //TODO/REFACTOR : review the way it uses this.id
     //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
@@ -581,9 +589,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         var newStat = $("#" + this.id + "-glyph option:selected").val();
         this.el.glyphStat.html(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newStat]);
     };
-  
+
     /**
-     * Setter for #slot-glyph-img-icon 
+     * Setter for #slot-glyph-img-icon
      */
     //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     //TODO/REFACTOR : review the way it uses this.id
@@ -591,9 +599,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         var rarity_url = 'assets/images/icons/glyph/' + $("#" + this.id + "-glyph option:selected").val() + '.png';
         this.el.glyphImgIcon.attr('src', rarity_url);
     };
-  
+
     /**
-     * Setter for #slot-glyph-img-border 
+     * Setter for #slot-glyph-img-border
      */
     //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     //TODO/REFACTOR : review the way it uses this.id
@@ -618,7 +626,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
         //register value before it is rounded (used for #slot-total-ilvl)
         this.rawGlyphILvl = calculatedILvl;
-      
+
         this.glyphILvl(Math.round(calculatedILvl));
         this.refreshTotalILvl();
     };
@@ -627,7 +635,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Signet functions |
      *                  V
      **********************************************************************************/
-    
+
     /**
      * Big mess here
      */
@@ -643,7 +651,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return swlcalc.data.signets.slot[idToUse][this.signetId() - 1];
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-signet
      */
@@ -665,7 +673,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.signetRarity.val();
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-signet-level
      */
@@ -676,7 +684,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.signetLevel.val();
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-signet-ilvl
      */
@@ -687,7 +695,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return (this.isWeapon() ? undefined : parseInt(this.el.signetILvl.html()));
         }
     };
-  
+
     /**
      * Builds (calculates) signet description
      */
@@ -712,7 +720,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
 
         return description;
     };
-  
+
     /**
      * Determines signet rarity value
      */
@@ -746,7 +754,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.updateSignetIcon();
         this.updateSignetDescription();
     };
-  
+
     /**
      * Updates signet icon
      */
@@ -766,7 +774,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         var signet_icon_url = 'assets/images/icons/signet/' + pngName + '.png';
         this.el.signetImgIcon.attr('src', signet_icon_url);
     };
-  
+
     /**
      * Getter/Setter for #slot-signet-img-border
      */
@@ -775,7 +783,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         var signet_rarity_url = 'assets/images/icons/rarity/' + signetRarity + '-42x42.png';
         this.el.signetImgBorder.attr('src', signet_rarity_url);
     };
-  
+
     /**
      * Setter for #slot-signet-description
      */
@@ -794,7 +802,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         }
         //register value before it is rounded (used for #slot-total-ilvl)
         this.rawSignetILvl = calculatedILvl;
-      
+
         this.signetILvl(Math.round(calculatedILvl));
         this.refreshTotalILvl();
     };
@@ -803,7 +811,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Other functions |
      *                 V
      **********************************************************************************/
-  
+
     /**
      * Reset slot by setting default values for each select
      */
@@ -850,7 +858,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             signet_level: this.signetLevel(),
         };
     };
-  
+
     /**
      * Mapping function for import/export feature
      */
@@ -876,7 +884,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             signet_level: this.stripContent(this.signetLevel())
         };
     };
-  
+
     /**
      * Strips submitted content (= used by mappedState)
      */
