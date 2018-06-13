@@ -7,8 +7,9 @@ module('summary-dom', {
 
 //TODO/TEST : to add a new test to check the accuracy of average ilvl of the gear
 
-test('should have required summary in DOM', 18, function() {
+test('should have required summary in DOM', 20, function() {
     // check all Primary stats exist
+    ok($('#stat-ilvl').length !== 0, 'stat-ilvl exists');
     ok($('#stat-power-rating').length !== 0, 'stat-power-rating exists');
     ok($('#stat-weapon-power').length !== 0, 'stat-weapon-power exists');
     ok($('#stat-combat-power').length !== 0, 'stat-combat-power exists');
@@ -25,6 +26,7 @@ test('should have required summary in DOM', 18, function() {
     ok($('#stat-glance-reduction').length !== 0, 'stat-glance-reduction');
     // check all Defensive stats exist
     ok($('#stat-defense-rating').length !== 0, 'stat-defense-rating exists');
+    ok($('#stat-glance-chance').length !== 0, 'stat-glance-chance exists');
     ok($('#stat-evade-rating').length !== 0, 'stat-evade-rating exists');
     ok($('#stat-evade-chance').length !== 0, 'stat-evade-chance exists');
     ok($('#stat-physical-protection').length !== 0, 'stat-physical-protection exists');
@@ -37,23 +39,24 @@ module('summary-unit-tests', {
     }
 });
 
-//TODO/TEST tswcalc test. swlcalc equivalent needed
-// test('should calculate critical chance', 2, function() {
-//     equal(swlcalc.summary.calculateCriticalChance(0), 4.990000000000002);
-//     equal(swlcalc.summary.calculateCriticalChance(309), 14.671074609766634);
-// });
+test('should calculate critical chance', 3, function() {
+    equal(swlcalc.summary.calculateCriticalChance(0), 7.5);
+    equal(swlcalc.summary.calculateCriticalChance(4000), 32.9);
+    equal(swlcalc.summary.calculateCriticalChance(8000), 51.1);
+});
 
-//TODO/TEST tswcalc test. swlcalc equivalent needed
-// test('should calculate critical power', 2, function() {
-//     equal(swlcalc.summary.calculateCriticalPowerPercentage(0), 25);
-//     equal(swlcalc.summary.calculateCriticalPowerPercentage(238), 42.60281680828159);
-// });
+test('should calculate critical power', 3, function() {
+    equal(swlcalc.summary.calculateCriticalPowerPercentage(0), 30);
+    equal(swlcalc.summary.calculateCriticalPowerPercentage(2500), 118.3);
+    equal(swlcalc.summary.calculateCriticalPowerPercentage(5000), 157.9);
+});
 
-//TODO/TEST tswcalc test. swlcalc equivalent needed
-// test('should calculate combat power', 2, function() {
-//     equal(swlcalc.summary.calculateCombatPower(0, 0), 75);
-//     equal(swlcalc.summary.calculateCombatPower(3049, 398), 647);
-// });
+test('should calculate combat power', 4, function() {
+    equal(swlcalc.summary.calculateCombatPower(0, 0), 0);
+    equal(swlcalc.summary.calculateCombatPower(2500, 0), 188);
+    equal(swlcalc.summary.calculateCombatPower(0, 2500), 188);
+    equal(swlcalc.summary.calculateCombatPower(3049, 398), 259);
+});
 
 test('should calculate evade chance', 3, function() {
     equal(swlcalc.summary.calculateEvadeChance(0), 0);
@@ -210,7 +213,6 @@ module('summary-integration-tests with buttonbar', {
 
     }
 });
-
 
 test('should set combat power + healing power and affect any talisman bonus correctly', 5, function() {
     createTankBuild();

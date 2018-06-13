@@ -207,15 +207,15 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     
     /**
      * Handler for #slot-glyph
-     * -> triggers label update for the glyph.
      * -> triggers image update for the glyph.
      * -> triggers rating update for the glyph.
+     * -> triggers label update for the glyph.
      * -> triggers ilvl update for the glyph (to cover the case when previous value was or new value is 'none').
      */
     this.handleGlyphChange = function(event) {
-        slotObj.updateGlyphStatLabel();
         slotObj.updateGlyphImgIcon();
         slotObj.updateGlyphRating();
+        slotObj.updateGlyphLabel();
         slotObj.updateGlyphILvl();
         swlcalc.summary.updateAllStats();
     };

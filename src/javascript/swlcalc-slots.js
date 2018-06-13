@@ -46,6 +46,7 @@ swlcalc.slots = function() {
      * Resets all slots
      */
     //TODO/REFACTOR : to find a solution to avoid the call to hasSlot
+    //TODO/FEATURE : reset should logically set level to 1
     var reset = function() {
         for (var slotId in this) {
             if (this.hasSlot(slotId)) {
@@ -129,7 +130,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         glyphQuality: $('#' + this.id + '-glyph-quality'),
         glyphLevel: $('#' + this.id + '-glyph-level'),
         glyphRating: $('#' + this.id + '-glyph-rating'),
-        glyphStat: $('#' + this.id + '-glyph-stat'),
+        glyphLabel: $('#' + this.id + '-glyph-label'),
         glyphImgIcon: $('#' + this.id + '-glyph-img-icon'),
         glyphImgBorder: $('#' + this.id + '-glyph-img-rarity'),
         glyphILvl: $('#' + this.id + '-glyph-ilvl'),
@@ -174,10 +175,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**********************************************************************************
-     * Weapon functions |
-     *                  V
+     * Item functions | (talismans + weapons)
+     *                V
      **********************************************************************************/
-
+  
     /**
      * Returns true if the slot belongs to the weapon group
      */
@@ -215,11 +216,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.isWeapon() ? this.el.wtype.val() : 'none';
         }
     };
-
-    /**********************************************************************************
-     * Item functions |
-     *                V
-     **********************************************************************************/
 
     /**
      * Getter/Setter for #slot-itemId
@@ -306,6 +302,28 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
+     * Getter/Setter for #slot-img-icon
+     */
+    this.imgIcon = function() {
+        if (arguments.length == 1) {
+            this.el.imgIcon.attr('src', arguments[0])
+        } else {
+            return this.el.imgIcon.attr('src');
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-img-rarity
+     */
+    this.imgBorder = function() {
+        if (arguments.length == 1) {
+            this.el.imgBorder.attr('src', arguments[0])
+        } else {
+            return this.el.imgBorder.attr('src');
+        }
+    };
+  
+    /**
      * Getter/Setter for #slot-bonus
      */
     this.bonus = function() {
@@ -331,18 +349,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return $('#' + this.id + '-bonus2').html();
         }
     };
-
-    /**
-     * Getter/Setter for #slot-img-icon
-     */
-    this.imgIcon = function() {
-        if (arguments.length == 1) {
-            this.el.imgIcon.attr('src', arguments[0])
-        } else {
-            return this.el.imgIcon.attr('src');
-        }
-    };
-
+  
     /**
      * Updates #slot-image + #slot-description
      */
@@ -406,33 +413,27 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Setter for #slot-img-icon (talisman)
+     * Updates #slot-img-icon (talisman)
      */
-    //TODO/REFACTOR : review the way it uses this.id
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateTalismanImgIcon = function() {
-        var item_url = 'assets/images/icons/talisman/' + $("#" + this.id + "-itemId option:selected").text() + '.png';
-        this.el.imgIcon.attr('src', item_url);
+        var img_path = 'assets/images/icons/talisman/' + this.el.itemId.find(":selected").text() + '.png';
+        this.imgIcon(img_path);
     };
 
     /**
-     * Setter for #slot-img-icon (weapon)
+     * Updates #slot-img-icon (weapon)
      */
-    //TODO/REFACTOR : review the way it uses this.id
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateWeaponImgIcon = function() {
-        var item_url = 'assets/images/icons/weapon/' + $("#" + this.id + "-wtype option:selected").text() + '.png';
-        this.el.imgIcon.attr('src', item_url);
+        var img_path = 'assets/images/icons/weapon/' + this.el.wtype.find(":selected").text() + '.png';
+        this.imgIcon(img_path);
     };
 
     /**
-     * Setter for #slot-img-rarity
+     * Updates #slot-img-rarity
      */
-    //TODO/REFACTOR : review the way it uses this.id
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
     this.updateImgBorder = function() {
-        var rarity_url = 'assets/images/icons/rarity/' + $("#" + this.id + "-rarity option:selected").val() + '-42x42.png';
-        this.el.imgBorder.attr('src', rarity_url);
+        var img_path = 'assets/images/icons/rarity/' + this.rarity() + '-42x42.png';
+        this.imgBorder(img_path);
     };
 
     /**
@@ -543,7 +544,39 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return parseInt(this.el.glyphRating.html());
         }
     };
+  
+    /**
+     * Getter/Setter for #slot-glyph-label
+     */
+    this.glyphLabel = function() {
+        if (arguments.length == 1) {
+            this.el.glyphLabel.html(arguments[0]);
+        } else {
+            return this.el.glyphLabel.html();
+        }
+    };
+    /**
+     * Getter/Setter for #slot-glyph-img-icon
+     */
+    this.glyphImgIcon = function() {
+        if (arguments.length == 1) {
+            this.el.glyphImgIcon.attr('src', arguments[0])
+        } else {
+            return this.el.glyphImgIcon.attr('src');
+        }
+    };
 
+    /**
+     * Getter/Setter for #slot-glyph-img-rarity
+     */
+    this.glyphImgBorder = function() {
+        if (arguments.length == 1) {
+            this.el.glyphImgBorder.attr('src', arguments[0])
+        } else {
+            return this.el.glyphImgBorder.attr('src');
+        }
+    };
+  
     /**
      * Getter/Setter for #slot-glyph-iLvl
      */
@@ -581,33 +614,19 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Setter for #slot-glyph-stat
+     * Updates #slot-glyph-img-icon
      */
-    //TODO/REFACTOR : review the way it uses this.id
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
-    this.updateGlyphStatLabel = function() {
-        var newStat = $("#" + this.id + "-glyph option:selected").val();
-        this.el.glyphStat.html(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newStat]);
-    };
-
-    /**
-     * Setter for #slot-glyph-img-icon
-     */
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
-    //TODO/REFACTOR : review the way it uses this.id
     this.updateGlyphImgIcon = function() {
-        var rarity_url = 'assets/images/icons/glyph/' + $("#" + this.id + "-glyph option:selected").val() + '.png';
-        this.el.glyphImgIcon.attr('src', rarity_url);
+        var img_path = 'assets/images/icons/glyph/' + this.glyph() + '.png';
+        this.glyphImgIcon(img_path);
     };
 
     /**
-     * Setter for #slot-glyph-img-border
+     * Updates #slot-glyph-img-rarity
      */
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
-    //TODO/REFACTOR : review the way it uses this.id
     this.updateGlyphImgBorder = function() {
-        var rarity_url = 'assets/images/icons/rarity/' + $("#" + this.id + "-glyph-rarity option:selected").val() + '-42x42.png';
-        this.el.glyphImgBorder.attr('src', rarity_url);
+        var img_path = 'assets/images/icons/rarity/' + this.glyphRarity() + '-42x42.png';
+        this.glyphImgBorder(img_path);
     };
 
     /**
@@ -629,6 +648,13 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
 
         this.glyphILvl(Math.round(calculatedILvl));
         this.refreshTotalILvl();
+    };
+
+    /**
+     * Updates for #slot-glyph-label
+     */
+    this.updateGlyphLabel = function() {
+        this.glyphLabel(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[this.glyph()]);
     };
 
     /**********************************************************************************

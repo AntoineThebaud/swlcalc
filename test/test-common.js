@@ -16,13 +16,6 @@ function renderButtonbar() {
     renderTemplate("buttonbar", {});
 }
 
-function renderGlyphButtons(id_prefix, id_suffix) {
-    renderTemplate('glyphbuttons', {
-        id_prefix: id_prefix,
-        id_suffix: id_suffix
-    });
-}
-
 function renderTemplate(template_name, data) {
     dust.render(template_name, data,
 

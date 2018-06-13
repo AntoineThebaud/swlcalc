@@ -29,51 +29,63 @@ module('buttonbar-integration-tests', {
     }
 });
 
-//TODO/TEST test('should set rarity and glyph rarity on all slots to x', 16, function() {});
-
-//TODO/TEST test('should set rarity and glyph rarity on all slots to x after changing rarity then changing role', 23, function() {});
-
-//TODO/TEST reset should logically set lvl 1 to items
-test('should reset all slots', 120, function() {
+test('should reset all slots', 171, function() {
     swlcalc.buttonBar.resetAllSlots();
-    assertReset(swlcalc.slots.weapon);
-    assertReset(swlcalc.slots.head);
-    assertReset(swlcalc.slots.finger);
-    assertReset(swlcalc.slots.neck);
-    assertReset(swlcalc.slots.wrist);
-    assertReset(swlcalc.slots.luck);
-    assertReset(swlcalc.slots.waist);
-    assertReset(swlcalc.slots.occult);
+    for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
+        var slotId = swlcalc.data.template_data.slots[i].id_prefix; //TODO/REFACTOR possible simplication with swlcalc.slots.indices ??
+        var slot = swlcalc.slots[slotId];
+        equal(slot.totalILvl(), '0');
+        if(slot.isWeapon()) {
+            equal(slot.wtype(), 'none');
+            equal(slot.quality(), 'mkI');
+        } else {
+            equal(slot.itemId(), 'none');
+            equal(slot.quality(), 'faded');
+        }
+        equal(slot.rarity(), 'standard');
+        equal(slot.level(), '20');
+        equal(slot.powerRating(), '0');
+        equal(slot.description(), '');
+        equal(slot.iLvl(), '0');
+        equal(slot.glyph(), 'none');
+        equal(slot.glyphRarity(), 'standard');
+        equal(slot.glyphQuality(), 'crude');
+        equal(slot.glyphLevel(), '20');
+        equal(slot.glyphRating(), '0');
+        equal(slot.glyphLabel(), ' ');
+        equal(slot.glyphILvl(), '0');
+        equal(slot.signetId(), 'none');
+        if(slot.isWeapon()) {
+            equal(slot.signetRarity(), undefined, 'expect signetRarity for weapon to be undefined');
+            equal(slot.signetLevel(), undefined, 'expect signetLevel for weapon to be undefined');
+            equal(slot.signetILvl(), undefined, 'expect signetILvl for weapon to be undefined');
+        } else {
+            equal(slot.signetRarity(), 'standard');
+            equal(slot.signetLevel(), '20');
+            equal(slot.signetILvl(), '0');
+        }
+    }
 });
 
-function assertReset(slot) {
-    equal(slot.totalILvl(), '0');
-    if(slot.isWeapon()) {
-        equal(slot.wtype(), 'none');
-        equal(slot.quality(), 'mkI');
-    } else {
-        equal(slot.itemId(), 'none');
-        equal(slot.quality(), 'faded');
+
+//TODO/TEST test('should set rarity and glyph rarity on all slots to x', 16, function() {});
+
+test('should set rarity on all slots', 125, function() {
+  
+    var mixedRarities = ['epic', 'standard', 'legendary', 'superior', 'mythic'];
+    
+    for (var r = 0; r < mixedRarities.length; r++) {
+        $('#btn-all-' + mixedRarities[r]).click();
+        for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
+            var slotId = swlcalc.data.template_data.slots[i].id_prefix;
+            equal(swlcalc.slots[slotId].rarity(), mixedRarities[r]);
+            equal(swlcalc.slots[slotId].glyphRarity(), mixedRarities[r]);
+            if (slotId != 'weapon' && slotId != 'weapon2') {
+                equal(swlcalc.slots[slotId].signetRarity(), mixedRarities[r]);
+            } 
+        }
     }
-    equal(slot.rarity(), 'standard');
-    equal(slot.level(), '20');
-    equal(slot.iLvl(), '0');
-    equal(slot.glyph(), 'none');
-    equal(slot.glyphRarity(), 'standard');
-    equal(slot.glyphQuality(), 'crude');
-    equal(slot.glyphLevel(), '20');
-    equal(slot.glyphILvl(), '0');
-    equal(slot.signetId(), 'none');
-    if(slot.isWeapon()) {
-        equal(slot.signetRarity(), undefined, 'expect signetRarity for weapon to be undefined');
-        equal(slot.signetLevel(), undefined, 'expect signetLevel for weapon to be undefined');
-        equal(slot.signetILvl(), undefined, 'expect signetILvl for weapon to be undefined');
-    } else {
-        equal(slot.signetRarity(), 'standard');
-        equal(slot.signetLevel(), '20');
-        equal(slot.signetILvl(), '0');
-    }
-}
+});
 
 test('should set anima allocation and affect stats correctly', 20, function() {
     equal($('#stat-combat-power').html(), '741');

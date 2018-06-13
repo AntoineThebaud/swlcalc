@@ -5,11 +5,13 @@ module('selects-dom', {
     }
 });
 
-test('should have required selects in the DOM', 93, function() {
+test('should have required selects in the DOM', 95, function() {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var slotId = swlcalc.data.template_data.slots[i].id_prefix;
         if (slotId != 'weapon' && slotId != 'weapon2') {
             ok($('#' + slotId + '-itemId').length !== 0, slotId + '-itemId exists');
+        } else {
+            ok($('#' + slotId + '-wtype').length !== 0, slotId + '-itemId exists');
         }
         ok($('#' + slotId + '-rarity').length !== 0, slotId + '-rarity exists');
         ok($('#' + slotId + '-quality').length !== 0, slotId + '-quality exists');
@@ -33,12 +35,14 @@ module('selects-events', {
     }
 });
 
-test('should have required event listeners for change on selects in the DOM', 93, function() {
+test('should have required event listeners for change on selects in the DOM', 95, function() {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var slotId = swlcalc.data.template_data.slots[i].id_prefix;
         ok($._data($('#' + slotId + '-rarity').get(0), 'events').change instanceof Array);
         if (slotId != 'weapon' && slotId != 'weapon2') {
             ok($._data($('#' + slotId + '-itemId').get(0), 'events').change instanceof Array);
+        } else {
+            ok($._data($('#' + slotId + '-wtype').get(0), 'events').change instanceof Array);
         }
         ok($._data($('#' + slotId + '-quality').get(0), 'events').change instanceof Array);
         ok($._data($('#' + slotId + '-level').get(0), 'events').change instanceof Array);
@@ -61,6 +65,17 @@ module('selects-unit-tests', {
         initiateSelectHandlers();
         initiateSummary();
     }
+});
+
+test('should have fill talismans lists', 7, function() {
+    // None option must be taken into account
+    equal($('#head-itemId option').size(), 15); //weapon signets also fit in the head
+    equal($('#finger-itemId option').size(), 8);
+    equal($('#neck-itemId option').size(), 13);
+    equal($('#wrist-itemId option').size(), 9);
+    equal($('#luck-itemId option').size(), 9);
+    equal($('#waist-itemId option').size(), 20);
+    equal($('#occult-itemId option').size(), 9);
 });
 
 //TODO/TEST tswcalc test. swlcalc equivalent needed
@@ -92,45 +107,65 @@ module('selects-integration-tests', {
 });
 
 test('should enable changing of weapon type and set the slot name', 1, function() {
-    swlcalc.slots['weapon'].wtype('blade');
-    swlcalc.slots['weapon'].el.wtype.change();
+    swlcalc.slots.weapon.wtype('blade');
+    swlcalc.slots.weapon.el.wtype.change();
 
-    deepEqual(swlcalc.slots['weapon'].name(), ': Blade');
+    deepEqual(swlcalc.slots.weapon.name(), ': Blade');
 });
 
 test('should enable changing of weapon2 type and set the slot name', 1, function() {
-    swlcalc.slots['weapon2'].wtype('blade');
-    swlcalc.slots['weapon2'].el.wtype.change();
+    swlcalc.slots.weapon2.wtype('blade');
+    swlcalc.slots.weapon2.el.wtype.change();
 
-    deepEqual(swlcalc.slots['weapon2'].name(), ': Blade');
+    deepEqual(swlcalc.slots.weapon2.name(), ': Blade');
 });
 
 test('should enable changing of weapon type to none and set the slot name to blank', 1, function() {
-    swlcalc.slots['weapon'].wtype('blade');
-    swlcalc.slots['weapon'].el.wtype.change();
-    swlcalc.slots['weapon'].wtype('none');
-    swlcalc.slots['weapon'].el.wtype.change();
+    swlcalc.slots.weapon.wtype('blade');
+    swlcalc.slots.weapon.el.wtype.change();
+    swlcalc.slots.weapon.wtype('none');
+    swlcalc.slots.weapon.el.wtype.change();
 
-    deepEqual(swlcalc.slots['weapon'].name(), '');
+    deepEqual(swlcalc.slots.weapon.name(), '');
 });
 
 test('should enable changing of weapon2 type to none and set the slot name to blank', 1, function() {
-    swlcalc.slots['weapon2'].wtype('blade');
-    swlcalc.slots['weapon2'].el.wtype.change();
-    swlcalc.slots['weapon2'].wtype('none');
-    swlcalc.slots['weapon2'].el.wtype.change();
+    swlcalc.slots.weapon2.wtype('blade');
+    swlcalc.slots.weapon2.el.wtype.change();
+    swlcalc.slots.weapon2.wtype('none');
+    swlcalc.slots.weapon2.el.wtype.change();
 
-    deepEqual(swlcalc.slots['weapon2'].name(), '');
+    deepEqual(swlcalc.slots.weapon2.name(), '');
 });
 
 test('should set a non-zero ilvl value when selecting an item and then set it back to 0 when selecting none option', 3, function() {
-    equal(swlcalc.slots['occult'].glyphILvl(), 0);
-    swlcalc.slots['occult'].glyph('critical-rating');
-    swlcalc.slots['occult'].el.glyph.change();
-    equal(swlcalc.slots['occult'].glyphILvl(), 24);
-    swlcalc.slots['occult'].glyph('none');
-    swlcalc.slots['occult'].el.glyph.change();
-    equal(swlcalc.slots['occult'].glyphILvl(), 0);
+    equal(swlcalc.slots.occult.glyphILvl(), 0);
+    swlcalc.slots.occult.glyph('critical-rating');
+    swlcalc.slots.occult.el.glyph.change();
+    equal(swlcalc.slots.occult.glyphILvl(), 24);
+    swlcalc.slots.occult.glyph('none');
+    swlcalc.slots.occult.el.glyph.change();
+    equal(swlcalc.slots.occult.glyphILvl(), 0);
 });
 
-//TODO/TEST add test for level-selects dynamic updates
+test('should update the #slot-level selects when their associated rarity is changed', 54, function() {
+    for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
+        var slotId = swlcalc.data.template_data.slots[i].id_prefix;
+        equal($('#' + slotId + '-level option').size(), 20, "Untouched " + slotId + "-level should have values between 1 and 20");
+        swlcalc.slots[slotId].rarity('superior');
+        swlcalc.slots[slotId].el.rarity.change();
+        equal($('#' + slotId + '-level option').size(), 25, "After " + slotId + "-rarity set to Superior, " + slotId + "-level should have values between 1 and 25");
+        swlcalc.slots[slotId].rarity('legendary');
+        swlcalc.slots[slotId].el.rarity.change();
+        equal($('#' + slotId + '-level option').size(), 70, "After " + slotId + "-rarity set to Legendary, " + slotId + "-level should have values between 1 and 70");
+        swlcalc.slots[slotId].rarity('epic');
+        swlcalc.slots[slotId].el.rarity.change();
+        equal($('#' + slotId + '-level option').size(), 30, "After " + slotId + "-rarity set to Epic, " + slotId + "-level should have values between 1 and 30");
+        swlcalc.slots[slotId].rarity('mythic');
+        swlcalc.slots[slotId].el.rarity.change();
+        equal($('#' + slotId + '-level option').size(), 35, "After " + slotId + "-rarity set to Mythic, " + slotId + "-level should have values between 1 and 35");
+        swlcalc.slots[slotId].rarity('standard');
+        swlcalc.slots[slotId].el.rarity.change();
+        equal($('#' + slotId + '-level option').size(), 20, "After " + slotId + "-rarity set back to Standard, " + slotId + "-level should have values between 1 and 20");
+    }
+});

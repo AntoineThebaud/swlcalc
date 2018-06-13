@@ -12,7 +12,7 @@ test('should initate swlcalc submodules', 8, function() {
     ok(swlcalc.import);
 });
 
-//TODO/TEST : to add assertions for signet text when implemented
+//TODO/TEST + TODO/FEATURE : to add assertions for signet text when implemented
 test('should import from hash', 182, function() {
     location.hash = 'weapon=3,4,3,19,3,2,2,13,0,4,0&weapon2=3,7,2,29,4,3,1,15,0,8,0&head=3,4,2,24,4,3,2,18,1,1,16&finger=2,2,1,20,5,4,3,15,4,1,2&neck=1,11,3,6,3,2,1,20,1,1,3&wrist=5,2,2,68,3,3,2,6,5,1,8&luck=1,1,1,10,2,2,1,18,3,1,13&waist=5,11,1,2,4,5,3,8,3,1,16&occult=1,7,3,19,5,1,3,2,2,1,10'
     swlcalc.init();

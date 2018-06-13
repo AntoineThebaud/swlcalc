@@ -7,8 +7,6 @@ module('swap-button-integration-tests', {
     }
 });
 
-//TODO/TEST add tests for event handlers ?
-
 test('should have primary weapon drawn and secondary weapon sheathed', 2, function() {
     ok(swlcalc.slots.weapon.el.div.is(':visible'), 'primary visible');
     ok(!swlcalc.slots.weapon2.el.div.is(':visible'), 'secondary hidden');

@@ -212,7 +212,7 @@ swlcalc.summary = function() {
      * SWL formula for % critical power is like :
      * -> Up to 3258 rating => 1% Critical Power every 28.31 Rating
      * -> After 3258 rating => 1% Critical Power every 136.00 Rating
-     * The calculation includes weapon expertise
+     * The calculation includes weapon expertise (= 30% at max level)
      */
     var calculateCriticalPowerPercentage = function(critical_power) {
         var hardCap = 3258;
