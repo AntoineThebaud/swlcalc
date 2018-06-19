@@ -232,7 +232,13 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Getter to retrieve full item object from the data model
      */
     this.getItem = function() {
-        return swlcalc.data.items.slot[this.id][this.itemId() - 1];
+        if (this.isWeapon()) {
+            //TODO/REFACTOR : quick and dirty way to get weapon items for secondary weapon
+            //return swlcalc.data.items.slot[this.id][this.wtype() - 1];
+            return swlcalc.data.items.slot['weapon'][this.wtype() - 1];
+        } else {
+            return swlcalc.data.items.slot[this.id][this.itemId() - 1];
+        }
     };
 
     /**
@@ -328,10 +334,8 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      */
     this.bonus = function() {
         if (arguments.length == 1) {
-            //this.el.bonus.html(arguments[0]);
             $('#' + this.id + '-bonus').html(arguments[0]);
         } else {
-            //return this.el.bonus.html();
             return $('#' + this.id + '-bonus').html();
         }
     };
@@ -339,21 +343,44 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     /**
      * Getter/Setter for #slot-bonus2
      */
-    // TODO/REFACTOR : to avoid code duplication with this.bonus()
+    // TODO/REFACTOR : quick & dirty, to avoid code duplication with this.bonus()
     this.bonus2 = function() {
         if (arguments.length == 1) {
-            //this.el.bonus.html(arguments[0]);
             $('#' + this.id + '-bonus2').html(arguments[0]);
         } else {
-            //return this.el.bonus.html();
             return $('#' + this.id + '-bonus2').html();
         }
     };
   
     /**
-     * Updates #slot-image + #slot-description
+     * Getter/Setter for #slot-bonus3
      */
-    this.updateItem = function() {
+    // TODO/REFACTOR : quick & dirty, to avoid code duplication with this.bonus()
+    this.bonus3 = function() {
+        if (arguments.length == 1) {
+            $('#' + this.id + '-bonus3').html(arguments[0]);
+        } else {
+            return $('#' + this.id + '-bonus3').html();
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-bonus4
+     */
+    // TODO/REFACTOR : quick & dirty, to avoid code duplication with this.bonus()
+    this.bonus4 = function() {
+        if (arguments.length == 1) {
+            $('#' + this.id + '-bonus4').html(arguments[0]);
+        } else {
+            return $('#' + this.id + '-bonus4').html();
+        }
+    };
+  
+    /**
+     * Updates #slot-image + #slot-description for talismans
+     */
+    //TODO/REFACTOR : to merge with updateWeapon (= to merge itemId and wtype)
+    this.updateTalisman = function() {
         var newImage;
         var newDescription;
         if (this.itemId() == 'none') {
@@ -383,7 +410,51 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         //this.imgIcon(newImage);
         this.description(newDescription);
     };
-
+  
+    /**
+     * Updates #slot-image + #slot-description for weapons
+     */
+    //TODO/REFACTOR : to merge with updateTalisman (= to merge itemId and wtype)
+    this.updateWeapon = function() {
+        var newImage;
+        var newDescription;
+        if (this.wtype() == 'none') {
+            //To enable when all images will be present :
+            // newImage = 'assets/images/icons/talisman/None.png';
+            this.imgIcon('assets/images/icons/weapon/None.png');
+            newDescription = '';
+        } else {
+            var newSelectedItem = swlcalc.data.items.slot.weapon[this.wtype() - 1];
+            //TODO/FEATURE :
+            /* temporary code ********************************************************************************
+             * => Will be used as long as item images are not added to the resources. The final code will be :
+            newImage = 'assets/images/icons/weapon/' + newSelectedItem.name + '.png';
+             * => For now replaced by : */
+            var image = new Image();
+            image.onload = function() {
+                self.imgIcon('assets/images/icons/weapon/' + newSelectedItem.name + '.png');
+            }
+            image.onerror = function() {
+                //temporary directory to retrieve the right placeholder image through the item type
+                //self.imgIcon('assets/images/icons/weapon/None.png');
+                self.imgIcon('assets/images/icons/weapon/temp/' + newSelectedItem.type + '.png');
+            }
+            image.src = "assets/images/icons/weapon/" + newSelectedItem.name + ".png";
+            /* temporary code ********************************************************************************/
+            newDescription = newSelectedItem.description;
+            //TODO/REFACTOR : quick and dirty way to have weapon-bonus working for secondary weapon
+            if (this.id == 'weapon2') {
+                newDescription = newDescription.replace('weapon-bonus', 'weapon2-bonus');
+                newDescription = newDescription.replace('weapon-bonus2', 'weapon2-bonus2');
+                newDescription = newDescription.replace('weapon-bonus3', 'weapon2-bonus3');
+                newDescription = newDescription.replace('weapon-bonus4', 'weapon2-bonus4');
+            }
+        }
+        //To enable when all images will be present :
+        //this.imgIcon(newImage);
+        this.description(newDescription);
+    };
+  
     /**
      * Updates #slot-power-rating (calculatations with stats data)
      */
@@ -410,22 +481,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             newValue = '+' + newValue;
         }
         this.powerRating(newValue);
-    };
-
-    /**
-     * Updates #slot-img-icon (talisman)
-     */
-    this.updateTalismanImgIcon = function() {
-        var img_path = 'assets/images/icons/talisman/' + this.el.itemId.find(":selected").text() + '.png';
-        this.imgIcon(img_path);
-    };
-
-    /**
-     * Updates #slot-img-icon (weapon)
-     */
-    this.updateWeaponImgIcon = function() {
-        var img_path = 'assets/images/icons/weapon/' + this.el.wtype.find(":selected").text() + '.png';
-        this.imgIcon(img_path);
     };
 
     /**
@@ -472,7 +527,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.bonus(Math.round(item.coefficient * statForComputation));
 
         // particular case : items with 2 dynamic values
-        // TODO/REFACTOR : to avoid code duplication
+        // TODO/REFACTOR : quick & dirty, to avoid code duplication
         if (this.bonus2() !== undefined) {
             item = this.getItem();
             statForComputation = 0;
@@ -482,6 +537,30 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
                 statForComputation = healingPower;
             }
             this.bonus2(Math.round(item.coefficient2 * statForComputation));
+        }
+        // particular case : items with 3 dynamic values
+        // TODO/REFACTOR : quick & dirty, to avoid code duplication
+        if (this.bonus3() !== undefined) {
+            item = this.getItem();
+            statForComputation = 0;
+            if (item.stat2 == 'Combat Power') {
+                statForComputation = combatPower;
+            } else if (item.stat2 == 'Healing Power') {
+                statForComputation = healingPower;
+            }
+            this.bonus3(Math.round(item.coefficient3 * statForComputation));
+        }
+        // particular case : items with 4 dynamic values
+        // TODO/REFACTOR : quick & dirty, to avoid code duplication
+        if (this.bonus4() !== undefined) {
+            item = this.getItem();
+            statForComputation = 0;
+            if (item.stat4 == 'Combat Power') {
+                statForComputation = combatPower;
+            } else if (item.stat4 == 'Healing Power') {
+                statForComputation = healingPower;
+            }
+            this.bonus4(Math.round(item.coefficient4 * statForComputation));
         }
     }
 
@@ -889,7 +968,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Mapping function for import/export feature
      */
     this.mappedState = function() {
-        var wmap = swlcalc.data.wtype_mapping.to_num;
         var gmap = swlcalc.data.glyph_stat_mapping.to_num;
         var rmap = swlcalc.data.rarity_mapping.to_num;
         var wqmap = swlcalc.data.weapon_quality_mapping.to_num;
@@ -897,7 +975,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         var tqmap = swlcalc.data.talisman_quality_mapping.to_num;
         return {
             itemId: this.stripContent(this.itemId()),
-            wtype: this.stripContent(this.wtype(), wmap),
+            wtype: this.stripContent(this.wtype()),
             rarity: this.stripContent(this.rarity(), rmap),
             quality: this.isWeapon() ? this.stripContent(this.quality(), wqmap) : this.stripContent(this.quality(), tqmap),
             level: this.level(),

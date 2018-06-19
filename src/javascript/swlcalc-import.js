@@ -46,7 +46,7 @@ swlcalc.import = function() {
         slotObj.el.rarity.change();
         // values[1] == Item's Type (ID)
         if(slotObj.isWeapon()) {
-            slotObj.wtype(swlcalc.data.wtype_mapping.to_name[values[1]]);
+            slotObj.wtype(values[1] == '0' ? 'none' : values[1]);
             slotObj.el.wtype.change();
         } else {
             slotObj.itemId(values[1] == '0' ? 'none' : values[1]);

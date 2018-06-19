@@ -39,30 +39,49 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Loads items (swlcalc-data-items) as options list in the #slot-itemId select
      */
     this.addItemsToSelect = function() {
-        //TODO/REFACTOR : shall be done in a better way
-        //skip this function for the weapons (their dropdown is already filled)
-        if (slot.group == 'weapon') return;
-
-        slotObj.el.itemId.append($('<option>', {
+        // makes the function compatible both for talismans and weapons
+        // TODO/REFACTOR : merge the notions of wtype and itemId ?
+        var slotToUse;
+        var itemIdOrWtype;
+        if (slot.group == 'weapon') {
+            slotToUse = 'weapon'
+            itemIdOrWtype = 'wtype';
+        } else {
+            slotToUse = slot.id_prefix
+            itemIdOrWtype = 'itemId';
+        }
+      
+        slotObj.el[itemIdOrWtype].append($('<option>', {
             value: "none",
             text: "None",
             selected: "true"
         }));
-
-        var items = swlcalc.data.items.slot[slot.id_prefix].slice();
+        var items = swlcalc.data.items.slot[slotToUse].slice();
+   
         //sort alphabetically for a better ergonomy
-        items.sort(function(a, b) {
-            if (a.name.toLowerCase() > b.name.toLowerCase()) {
-                return 1;
-            } else {
-                return -1;
-            }
-        });
-
+        //sort for weapons include weapon type as prefix => TODO/REFACTOR : code duplication
+        if (slot.group == 'weapon') {
+            items.sort(function(a, b) {
+                if (a.type + a.name.toLowerCase() > b.type + b.name.toLowerCase()) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            });
+        } else {
+            items.sort(function(a, b) {
+                if (a.name.toLowerCase() > b.name.toLowerCase()) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            });
+        }        
         items.forEach(function(item) {
-            slotObj.el.itemId.append($('<option>', {
+            slotObj.el[itemIdOrWtype].append($('<option>', {
                 value: item.id,
-                text: item.name
+                //TODO/REFACTOR : quick & dirty ; we test 3 times the weapon condition in this function
+                text: (itemIdOrWtype == 'wtype' ? '[' + item.type + '] ' + item.name : item.name)
             }));
         });
     };
@@ -120,7 +139,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * -> triggers ilvl update for the slot (to cover the case when previous value was or new value is 'none').
      */
     this.handleItemChange = function(event) {
-        slotObj.updateItem() // == slotObjupdateTalismanImgIcon() + slotObj.updateDescription();
+        slotObj.updateTalisman()
         slotObj.updatePowerRating();
         slotObj.updateILvl();
         swlcalc.summary.updateAllStats();
@@ -133,13 +152,14 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * -> triggers ilvl update for the slot (to cover the case when previous value was or new value is 'none').
      */
     this.handleWtypeChange = function(event) {
-        var wtype = $(this).val();
-        if(wtype != 'none') {
-            slotObj.name(': ' + swlcalc.util.capitalise(wtype));
-        } else {
-            slotObj.name('');
-        }
-        slotObj.updateWeaponImgIcon();
+           //TODO/FEATURE : reenable slot name display
+//         var wtype = $(this).val();
+//         if(wtype != 'none') {
+//             slotObj.name(': ' + swlcalc.util.capitalise(wtype));
+//         } else {
+//             slotObj.name('');
+//         }
+        slotObj.updateWeapon();
         slotObj.updatePowerRating();
         slotObj.updateILvl();
         swlcalc.summary.updateAllStats();
@@ -270,6 +290,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.handleSignetChange = function(event) {
         slotObj.updateSignet();
         //weapon signets (= suffixes) don't have item power attribute
+        //TODO/REFACTOR : to bind a handleSuffixChange function for weapons in order to do a "if" just on swlcalc initalization and not on each signet change like this !
         if (!slotObj.isWeapon()) {
             slotObj.updateSignetILvl();
         }

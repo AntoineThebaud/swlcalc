@@ -54,7 +54,7 @@ test('should import URL and set summary and slots', 180, function() {
     //TODO/TEST equal($('#stat-physical-protection').html(), '+660');
     //TODO/TEST equal($('#stat-magical-protection').html(), '+300');
 
-    equal($('#weapon-wtype').val(), 'blade');
+    equal($('#weapon-wtype').val(), '1');
     equal($('#weapon-total-ilvl').html(), '353');
     equal($('#weapon-rarity').val(), 'epic');
     equal($('#weapon-quality').val(), 'mkI');
@@ -73,7 +73,7 @@ test('should import URL and set summary and slots', 180, function() {
     equal($('#weapon-signet-level').val(), undefined);
     equal($('#weapon-signet-ilvl').html(), undefined);
 
-    equal($('#weapon2-wtype').val(), 'hammer');
+    equal($('#weapon2-wtype').val(), '2');
     equal($('#weapon2-total-ilvl').html(), '353');
     equal($('#weapon2-rarity').val(), 'epic');
     equal($('#weapon2-quality').val(), 'mkIII');

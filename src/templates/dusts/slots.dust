@@ -53,16 +53,6 @@
             <td class="item-select">
                 {?is_weapon}
                 <select id="{id_prefix}-wtype" title="Please select weapon type">
-                    <option value="none" selected="true">None</option>
-                    <option value="blade" selected="true">Blade</option>
-                    <option value="hammer">Hammer</option>
-                    <option value="fist">Fist Weapon</option>
-                    <option value="blood">Blood Magic Focus</option>
-                    <option value="chaos">Chaos Focus</option>
-                    <option value="elementalism">Elementalism Focus</option>
-                    <option value="shotgun">Shotgun</option>
-                    <option value="pistols">Pistols</option>
-                    <option value="assault-rifle">Assault Rifle</option>
                 </select>
                 {:else}
                 <select id="{id_prefix}-itemId" title="Please select item">
@@ -137,7 +127,7 @@
     <table id="{id_prefix}-signets" class="table table-slots">
         {?is_weapon}
         <tr>
-            <td class="item-title" colspan="2">Suffixe</td>
+            <td class="item-title" colspan="2">Suffix</td>
             <td id="{id_prefix}-signet-description" class="item-description" colspan="3" rowspan="2"></td>
         <tr>
             <td class="item-select" colspan="2">
