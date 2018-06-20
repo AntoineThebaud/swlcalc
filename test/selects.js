@@ -67,9 +67,11 @@ module('selects-unit-tests', {
     }
 });
 
-test('should have fill talismans lists', 7, function() {
+test('should have fill talismans and weapon lists', 9, function() {
     // None option must be taken into account
-    equal($('#head-itemId option').size(), 15); //weapon signets also fit in the head
+    equal($('#weapon-wtype option').size(), 145);
+    equal($('#weapon2-wtype option').size(), 145);
+    equal($('#head-itemId option').size(), 15);
     equal($('#finger-itemId option').size(), 8);
     equal($('#neck-itemId option').size(), 13);
     equal($('#wrist-itemId option').size(), 9);
