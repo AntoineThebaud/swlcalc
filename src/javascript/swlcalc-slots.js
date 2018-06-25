@@ -233,9 +233,9 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      */
     this.getItem = function() {
         if (this.isWeapon()) {
-            //TODO/REFACTOR : quick and dirty way to get weapon items for secondary weapon
+            //TODO/REFACTOR : maybe there is a better way to get weapon items for secondary weapon
             //return swlcalc.data.items.slot[this.id][this.wtype() - 1];
-            return swlcalc.data.items.slot['weapon'][this.wtype() - 1];
+            return swlcalc.data.items.slot[this.group][this.wtype() - 1];
         } else {
             return swlcalc.data.items.slot[this.id][this.itemId() - 1];
         }
@@ -330,49 +330,15 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
   
     /**
-     * Getter/Setter for #slot-bonus
+     * Getter/Setter for any #slot-bonusN element (#slot-bonus1, #slot-bonus2, #slot-bonus3 ...)
      */
-    this.bonus = function() {
-        if (arguments.length == 1) {
-            $('#' + this.id + '-bonus').html(arguments[0]);
+    this.bonusN = function() {
+        if (arguments.length == 2) {
+            $('#' + this.id + '-bonus' + arguments[0]).html(arguments[1]);
+        } else if (arguments.length == 1) {
+            return $('#' + this.id + '-bonus' + arguments[0]).html();
         } else {
-            return $('#' + this.id + '-bonus').html();
-        }
-    };
-
-    /**
-     * Getter/Setter for #slot-bonus2
-     */
-    // TODO/REFACTOR : quick & dirty, to avoid code duplication with this.bonus()
-    this.bonus2 = function() {
-        if (arguments.length == 1) {
-            $('#' + this.id + '-bonus2').html(arguments[0]);
-        } else {
-            return $('#' + this.id + '-bonus2').html();
-        }
-    };
-  
-    /**
-     * Getter/Setter for #slot-bonus3
-     */
-    // TODO/REFACTOR : quick & dirty, to avoid code duplication with this.bonus()
-    this.bonus3 = function() {
-        if (arguments.length == 1) {
-            $('#' + this.id + '-bonus3').html(arguments[0]);
-        } else {
-            return $('#' + this.id + '-bonus3').html();
-        }
-    };
-
-    /**
-     * Getter/Setter for #slot-bonus4
-     */
-    // TODO/REFACTOR : quick & dirty, to avoid code duplication with this.bonus()
-    this.bonus4 = function() {
-        if (arguments.length == 1) {
-            $('#' + this.id + '-bonus4').html(arguments[0]);
-        } else {
-            return $('#' + this.id + '-bonus4').html();
+            console.log("Error on this.bonusN() call")
         }
     };
   
@@ -441,14 +407,11 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             }
             image.src = "assets/images/icons/weapon/" + newSelectedItem.name + ".png";
             /* temporary code ********************************************************************************/
+            
             newDescription = newSelectedItem.description;
-            //TODO/REFACTOR : quick and dirty way to have weapon-bonus working for secondary weapon
-            if (this.id == 'weapon2') {
-                newDescription = newDescription.replace('weapon-bonus', 'weapon2-bonus');
-                newDescription = newDescription.replace('weapon-bonus2', 'weapon2-bonus2');
-                newDescription = newDescription.replace('weapon-bonus3', 'weapon2-bonus3');
-                newDescription = newDescription.replace('weapon-bonus4', 'weapon2-bonus4');
-            }
+            // Replaces %id% either by 'weapon' or 'weapon2' depending on the current slot 
+            // TODO/REFACTOR : maybe there's a better way to achieve this..
+            newDescription = newDescription.replace(/%id/g, this.id);
         }
         //To enable when all images will be present :
         //this.imgIcon(newImage);
@@ -513,54 +476,20 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Updates #slot-bonus + #slot-bonus2
+     * Updates every #slot-bonusN element
      */
-    this.refreshItemBonus = function(combatPower, healingPower) {
-        if (this.bonus() === undefined) return;
+    this.refreshItemBonuses = function(combatPower, healingPower) {
+        if (this.bonusN(1) === undefined) return;
         var item = this.getItem();
         var statForComputation = 0;
-        if (item.stat == 'Combat Power') {
-            statForComputation = combatPower;
-        } else if (item.stat == 'Healing Power') {
-            statForComputation = healingPower;
-        }
-        this.bonus(Math.round(item.coefficient * statForComputation));
-
-        // particular case : items with 2 dynamic values
-        // TODO/REFACTOR : quick & dirty, to avoid code duplication
-        if (this.bonus2() !== undefined) {
-            item = this.getItem();
-            statForComputation = 0;
-            if (item.stat2 == 'Combat Power') {
+      
+        for (i = 0; i < item.coefficients.length; i++) {
+            if (item.stats[i] == 'Combat Power') {
                 statForComputation = combatPower;
-            } else if (item.stat2 == 'Healing Power') {
+            } else if (item.stats[i] == 'Healing Power') {
                 statForComputation = healingPower;
             }
-            this.bonus2(Math.round(item.coefficient2 * statForComputation));
-        }
-        // particular case : items with 3 dynamic values
-        // TODO/REFACTOR : quick & dirty, to avoid code duplication
-        if (this.bonus3() !== undefined) {
-            item = this.getItem();
-            statForComputation = 0;
-            if (item.stat2 == 'Combat Power') {
-                statForComputation = combatPower;
-            } else if (item.stat2 == 'Healing Power') {
-                statForComputation = healingPower;
-            }
-            this.bonus3(Math.round(item.coefficient3 * statForComputation));
-        }
-        // particular case : items with 4 dynamic values
-        // TODO/REFACTOR : quick & dirty, to avoid code duplication
-        if (this.bonus4() !== undefined) {
-            item = this.getItem();
-            statForComputation = 0;
-            if (item.stat4 == 'Combat Power') {
-                statForComputation = combatPower;
-            } else if (item.stat4 == 'Healing Power') {
-                statForComputation = healingPower;
-            }
-            this.bonus4(Math.round(item.coefficient4 * statForComputation));
+            this.bonusN(i + 1, Math.round(item.coefficients[i] * statForComputation));
         }
     }
 

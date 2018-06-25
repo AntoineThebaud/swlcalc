@@ -86,7 +86,7 @@ test('should import from hash', 180, function() {
     equal($('#head-level').val(), '24');
     equal($('#head-power-rating').html(), '+1113');
     equal($('#head-ilvl').html(), '252');
-    equal($('#head-description').html(), 'Whenever you hit the same enemy 3 times in succession, you deal <span id="head-bonus" class="bonus-var-attack">290</span> physical damage.');
+    equal($('#head-description').html(), 'Whenever you hit the same enemy 3 times in succession, you deal <span id="head-bonus1" class="bonus-var-attack">290</span> physical damage.');
     equal($('#head-glyph').val(), 'critical-power');
     equal($('#head-glyph-rarity').val(), 'mythic');
     equal($('#head-glyph-quality').val(), 'simple');
@@ -143,7 +143,7 @@ test('should import from hash', 180, function() {
     equal($('#wrist-level').val(), '68');
     equal($('#wrist-power-rating').html(), '+1951');
     equal($('#wrist-ilvl').html(), '1026');
-    equal($('#wrist-description').html(), 'Whenever you heal an ally who does not have any active detrimental effects, you have a 25% chance to restore <span id="wrist-bonus" class="bonus-var-heal">221</span> health to that ally.');
+    equal($('#wrist-description').html(), 'Whenever you heal an ally who does not have any active detrimental effects, you have a 25% chance to restore <span id="wrist-bonus1" class="bonus-var-heal">221</span> health to that ally.');
     equal($('#wrist-glyph').val(), 'critical-power');
     equal($('#wrist-glyph-rarity').val(), 'epic');
     equal($('#wrist-glyph-quality').val(), 'simple');

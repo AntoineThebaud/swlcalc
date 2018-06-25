@@ -322,7 +322,7 @@ swlcalc.summary = function() {
         //TODO/REFACTOR : avoid using hasSlot
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
-                swlcalc.slots[slotId].refreshItemBonus(combatPower(), healingPower());
+                swlcalc.slots[slotId].refreshItemBonuses(combatPower(), healingPower());
             }
         }
     };
