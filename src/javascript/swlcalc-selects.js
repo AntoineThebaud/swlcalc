@@ -16,11 +16,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Associates the right process to each trigger.
      */
     this.bindEvents = function() {
-        if (slotObj.isWeapon()) {
-            slotObj.el.wtype.change(this.handleWtypeChange);
-        } else {
-            slotObj.el.itemId.change(this.handleItemChange);
-        }
+        slotObj.el.itemId.change(this.handleItemChange);
         slotObj.el.rarity.change(this.handleRarityChange);
         slotObj.el.quality.change(this.handleQualityChange);
         slotObj.el.level.change(this.handleLevelChange);
@@ -40,18 +36,14 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.addItemsToSelect = function() {
         // makes the function compatible both for talismans and weapons
-        // TODO/REFACTOR : merge the notions of wtype and itemId ?
         var slotToUse;
-        var itemIdOrWtype;
         if (slot.group == 'weapon') {
             slotToUse = 'weapon'
-            itemIdOrWtype = 'wtype';
         } else {
             slotToUse = slot.id_prefix
-            itemIdOrWtype = 'itemId';
         }
       
-        slotObj.el[itemIdOrWtype].append($('<option>', {
+        slotObj.el.itemId.append($('<option>', {
             value: "none",
             text: "None",
             selected: "true"
@@ -78,10 +70,10 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             });
         }        
         items.forEach(function(item) {
-            slotObj.el[itemIdOrWtype].append($('<option>', {
+            slotObj.el.itemId.append($('<option>', {
                 value: item.id,
                 //TODO/REFACTOR : quick & dirty ; we test 3 times the weapon condition in this function
-                text: (itemIdOrWtype == 'wtype' ? '[' + item.type + '] ' + item.name : item.name)
+                text: (slot.group == 'weapon' ? '[' + item.type + '] ' + item.name : item.name)
             }));
         });
     };
@@ -131,35 +123,19 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Event handlers : Item |
      *                       V
      **********************************************************************************/
-    
-    /**
-     * Handler for #slot-itemId
-     * -> triggers item update for the slot (= image + description).
-     * -> triggers power rating update for the slot.
-     * -> triggers ilvl update for the slot (to cover the case when previous value was or new value is 'none').
-     */
-    this.handleItemChange = function(event) {
-        slotObj.updateTalisman()
-        slotObj.updatePowerRating();
-        slotObj.updateILvl();
-        swlcalc.summary.updateAllStats();
-    };
   
     /**
-     * Handler for #slot-wtype
-     * -> triggers image update for the weapon.
-     * -> triggers power rating update for the slot.
-     * -> triggers ilvl update for the slot (to cover the case when previous value was or new value is 'none').
+     * Handler for #slot-itemId
      */
-    this.handleWtypeChange = function(event) {
-           //TODO/FEATURE : reenable slot name display
-//         var wtype = $(this).val();
-//         if(wtype != 'none') {
-//             slotObj.name(': ' + swlcalc.util.capitalise(wtype));
-//         } else {
-//             slotObj.name('');
-//         }
-        slotObj.updateWeapon();
+    this.handleItemChange = function(event) {
+        //TODO/FEATURE : reenable slot name display
+//      var wtype = $(this).val();
+//      if(wtype != 'none') {
+//          slotObj.name(': ' + swlcalc.util.capitalise(wtype));
+//      } else {
+//          slotObj.name('');
+//      }
+        slotObj.updateItem();
         slotObj.updatePowerRating();
         slotObj.updateILvl();
         swlcalc.summary.updateAllStats();
@@ -202,7 +178,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
   
     /**
      * Handler for #slot-quality
-     * -> triggers power rating update for the slot.
      */
     this.handleQualityChange = function(event) {
         slotObj.updatePowerRating();
@@ -211,8 +186,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
   
     /**
      * Handler for #slot-level
-     * -> triggers power rating update for the slot.
-     * -> triggers ilvl update for the slot.
      */
     this.handleLevelChange = function(event) {
         slotObj.updateILvl();
@@ -227,10 +200,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     
     /**
      * Handler for #slot-glyph
-     * -> triggers image update for the glyph.
-     * -> triggers rating update for the glyph.
-     * -> triggers label update for the glyph.
-     * -> triggers ilvl update for the glyph (to cover the case when previous value was or new value is 'none').
      */
     this.handleGlyphChange = function(event) {
         slotObj.updateGlyphImgIcon();
@@ -243,9 +212,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     /**
      * Handler for #slot-glyph-rarity
      * -> triggers rarity's text color update for the glyph.
-     * -> triggers border image update for the glyph.
-     * -> triggers ilvl update for the glyph.
-     * -> triggers rating update for the glyph.
      */
     this.handleGlyphRarityChange = function(event) {
         //self.updateTextColor(event.target);
@@ -259,7 +225,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
   
     /**
      * Handler for #slot-glyph-quality
-     * -> triggers rating update for the glyph.
      */
     this.handleGlyphQualityChange = function(event) {
         slotObj.updateGlyphRating();
@@ -268,8 +233,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
   
     /**
      * Handler for #slot-glyph-level
-     * -> triggers rating update for the glyph.
-     * -> triggers ilvl update for the glyph.
      */
     this.handleGlyphLevelChange = function(event) {
         slotObj.updateGlyphRating();
@@ -285,7 +248,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     /**
      * Handler for #slot-signet
      * -> triggers signet update for the signet. //TODO : review slotObj.updateSignet()
-     * -> triggers ilvl update for the signet (to cover the case when previous value was or new value is 'none').
+     * -> triggers ilvl update for the signet.
      */
     this.handleSignetChange = function(event) {
         slotObj.updateSignet();
@@ -301,7 +264,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-signet-rarity
      * -> triggers rarity's text color update for the signet.
      * -> triggers signet update for the signet. //TODO : review slotObj.updateSignet()
-     * -> triggers ilvl update for the signet.
      */
     //TODO/REFACTOR : code duplication with handleSignetChange()
     this.handleSignetRarityChange = function(event) {
@@ -318,7 +280,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     /**
      * Handler for #slot-signet-level
-     * -> triggers ilvl update for the signet.
      */
     this.handleSignetLevelChange = function(event) {
         slotObj.updateSignetILvl();

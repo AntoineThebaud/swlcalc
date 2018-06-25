@@ -70,14 +70,10 @@ swlcalc.export = function() {
      * Builds the subpart of the export URL for the submitted slot
      */
     var createSlotUrl = function(slot, state) {
-        var idOrWtype = state.itemId;
-        if(slot.isWeapon()) {
-            idOrWtype = state.wtype;
-        }
         // see swlcalc-import.js for the order
         var slotUrl = slot.id + '='
             + state.rarity + ','
-            + idOrWtype + ','
+            + state.itemId + ','
             + state.quality + ','
             + state.level + ','
             + state.glyph_rarity + ','

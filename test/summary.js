@@ -219,8 +219,8 @@ test('should set combat power + healing power and affect any talisman and weapon
     $('#waist-itemId').val('12');
     $('#waist-itemId').change();
     equal(swlcalc.slots.waist.description(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 834 physical damage or your next healing Fist Weapon ability will restore an additional 519 health.');
-    $('#weapon2-wtype').val('53');
-    $('#weapon2-wtype').change();
+    $('#weapon2-itemId').val('53');
+    $('#weapon2-itemId').change();
     equal(swlcalc.slots.weapon2.description(), 'This weapon gains more Weapon Power when leveling up.Whenever you hit, you have a 33% chance to hex your target and deal an additional 111-556 magical damage. The damage dealt increases each time this effect is applied, up to a maximum of 5 times. This effect is guaranteed to trigger on critical hits.When an enemy affected by this hex is defeated, nearby enemies are dealt 70-349 magical damage, based on the number of times the damaging effect has been applied.');
     
     $('#stat-combat-power').html('1000');

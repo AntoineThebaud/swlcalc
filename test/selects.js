@@ -8,11 +8,7 @@ module('selects-dom', {
 test('should have required selects in the DOM', 95, function() {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var slotId = swlcalc.data.template_data.slots[i].id_prefix;
-        if (slotId != 'weapon' && slotId != 'weapon2') {
-            ok($('#' + slotId + '-itemId').length !== 0, slotId + '-itemId exists');
-        } else {
-            ok($('#' + slotId + '-wtype').length !== 0, slotId + '-itemId exists');
-        }
+        ok($('#' + slotId + '-itemId').length !== 0, slotId + '-itemId exists');
         ok($('#' + slotId + '-rarity').length !== 0, slotId + '-rarity exists');
         ok($('#' + slotId + '-quality').length !== 0, slotId + '-quality exists');
         ok($('#' + slotId + '-level').length !== 0, slotId + '-level exists');
@@ -38,12 +34,8 @@ module('selects-events', {
 test('should have required event listeners for change on selects in the DOM', 95, function() {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var slotId = swlcalc.data.template_data.slots[i].id_prefix;
+        ok($._data($('#' + slotId + '-itemId').get(0), 'events').change instanceof Array);
         ok($._data($('#' + slotId + '-rarity').get(0), 'events').change instanceof Array);
-        if (slotId != 'weapon' && slotId != 'weapon2') {
-            ok($._data($('#' + slotId + '-itemId').get(0), 'events').change instanceof Array);
-        } else {
-            ok($._data($('#' + slotId + '-wtype').get(0), 'events').change instanceof Array);
-        }
         ok($._data($('#' + slotId + '-quality').get(0), 'events').change instanceof Array);
         ok($._data($('#' + slotId + '-level').get(0), 'events').change instanceof Array);
         ok($._data($('#' + slotId + '-glyph').get(0), 'events').change instanceof Array);
@@ -69,8 +61,8 @@ module('selects-unit-tests', {
 
 test('should have fill talismans and weapon lists', 9, function() {
     // None option must be taken into account
-    equal($('#weapon-wtype option').size(), 145);
-    equal($('#weapon2-wtype option').size(), 145);
+    equal($('#weapon-itemId option').size(), 145);
+    equal($('#weapon2-itemId option').size(), 145);
     equal($('#head-itemId option').size(), 15);
     equal($('#finger-itemId option').size(), 8);
     equal($('#neck-itemId option').size(), 13);
@@ -110,36 +102,36 @@ module('selects-integration-tests', {
 
 //TODO/FEATURE : dynamic slot name
 // test('should enable changing of weapon type and set the slot name', 1, function() {
-//     swlcalc.slots.weapon.wtype('1');
-//     swlcalc.slots.weapon.el.wtype.change();
+//     swlcalc.slots.weapon.itemId('1');
+//     swlcalc.slots.weapon.el.itemId.change();
 
 //     deepEqual(swlcalc.slots.weapon.name(), ': Blade');
 // });
 
 //TODO/FEATURE : dynamic slot name
 // test('should enable changing of weapon2 type and set the slot name', 1, function() {
-//     swlcalc.slots.weapon2.wtype('1');
-//     swlcalc.slots.weapon2.el.wtype.change();
+//     swlcalc.slots.weapon2.itemId('1');
+//     swlcalc.slots.weapon2.el.itemId.change();
 
 //     deepEqual(swlcalc.slots.weapon2.name(), ': Blade');
 // });
 
 //TODO/FEATURE : dynamic slot name
 // test('should enable changing of weapon type to none and set the slot name to blank', 1, function() {
-//     swlcalc.slots.weapon.wtype('1');
-//     swlcalc.slots.weapon.el.wtype.change();
-//     swlcalc.slots.weapon.wtype('none');
-//     swlcalc.slots.weapon.el.wtype.change();
+//     swlcalc.slots.weapon.itemId('1');
+//     swlcalc.slots.weapon.el.itemId.change();
+//     swlcalc.slots.weapon.itemId('none');
+//     swlcalc.slots.weapon.el.itemId.change();
 
 //     deepEqual(swlcalc.slots.weapon.name(), '');
 // });
 
 //TODO/FEATURE : dynamic slot name
 // test('should enable changing of weapon2 type to none and set the slot name to blank', 1, function() {
-//     swlcalc.slots.weapon2.wtype('1');
-//     swlcalc.slots.weapon2.el.wtype.change();
-//     swlcalc.slots.weapon2.wtype('none');
-//     swlcalc.slots.weapon2.el.wtype.change();
+//     swlcalc.slots.weapon2.itemId('1');
+//     swlcalc.slots.weapon2.el.itemId.change();
+//     swlcalc.slots.weapon2.itemId('none');
+//     swlcalc.slots.weapon2.el.itemId.change();
 
 //     deepEqual(swlcalc.slots.weapon2.name(), '');
 // });

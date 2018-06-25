@@ -81,7 +81,7 @@ swlcalc.summary = function() {
                 sums['ilvl'] += slot.totalILvl();
                 if (slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
-                } else if (slot.isWeapon() && slot.wtype() != 'none') {
+                } else if (slot.isWeapon() && slot.itemId() != 'none') {
                     sums['weapon-power'] = slot.powerRating();
                 } else if (!slot.isWeapon() && slot.itemId() != 'none') {
                     sums['power-rating'] += slot.powerRating();

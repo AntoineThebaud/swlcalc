@@ -5,7 +5,7 @@ swlcalc.slots = function() {
     var init = function() {
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             var slotData = swlcalc.data.template_data.slots[i];
-            this[slotData.id_prefix] = new swlcalc.slots.Slot(slotData.id_prefix, slotData.name, slotData.group);
+            this[slotData.id_prefix] = new swlcalc.slots.Slot(slotData.id_prefix, slotData.name, slotData.type, slotData.group);
             this[slotData.id_prefix].el.nameWarning.hide();
         }
         drawPrimaryWeapon();
@@ -99,10 +99,11 @@ swlcalc.slots = function() {
     return oPublic;
 }();
 
-swlcalc.slots.Slot = function Slot(id, name, group) {
+swlcalc.slots.Slot = function Slot(id, name, type, group) {
     var self = this;
     this.id = id;
     this.name = name;
+    this.type = type;
     this.group = group;
     this.weaponDrawn = false;
 
@@ -115,8 +116,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         div: $('#' + this.id + '-slot'),
         name: $('#' + this.id + '-name'),
         totalILvl: $('#' + this.id + '-total-ilvl'),
-        itemId: $('#' + this.id + '-itemId'), //TODO/refactor : remove "Id" ?
-        wtype: $('#' + this.id + '-wtype'),
+        itemId: $('#' + this.id + '-itemId'),
         rarity: $('#' + this.id + '-rarity'),
         quality: $('#' + this.id + '-quality'),
         level: $('#' + this.id + '-level'),
@@ -207,24 +207,13 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Getter/Setter for #slot-wtype
-     */
-    this.wtype = function() {
-        if (arguments.length == 1) {
-            this.el.wtype.val(arguments[0]);
-        } else {
-            return this.isWeapon() ? this.el.wtype.val() : 'none';
-        }
-    };
-
-    /**
      * Getter/Setter for #slot-itemId
      */
     this.itemId = function() {
         if (arguments.length == 1) {
             this.el.itemId.val(arguments[0]);
         } else {
-            return this.group != 'weapon' ? this.el.itemId.val() : 'none';
+            return this.el.itemId.val();
         }
     };
 
@@ -232,13 +221,12 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Getter to retrieve full item object from the data model
      */
     this.getItem = function() {
+        var slotToUse = this.id
+        //TODO/REFACTOR : maybe there is a better way to get weapon items for secondary weapon
         if (this.isWeapon()) {
-            //TODO/REFACTOR : maybe there is a better way to get weapon items for secondary weapon
-            //return swlcalc.data.items.slot[this.id][this.wtype() - 1];
-            return swlcalc.data.items.slot[this.group][this.wtype() - 1];
-        } else {
-            return swlcalc.data.items.slot[this.id][this.itemId() - 1];
+            slotToUse = 'weapon';
         }
+        return swlcalc.data.items.slot[slotToUse][this.itemId() - 1];
     };
 
     /**
@@ -341,77 +329,46 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             console.log("Error on this.bonusN() call")
         }
     };
-  
+ 
     /**
-     * Updates #slot-image + #slot-description for talismans
+     * Updates #slot-image + #slot-description
      */
-    //TODO/REFACTOR : to merge with updateWeapon (= to merge itemId and wtype)
-    this.updateTalisman = function() {
+    this.updateItem = function() {
         var newImage;
         var newDescription;
         if (this.itemId() == 'none') {
             //To enable when all images will be present :
             // newImage = 'assets/images/icons/talisman/None.png';
-            this.imgIcon('assets/images/icons/talisman/None.png');
+            this.imgIcon('assets/images/icons/' + this.type + '/None.png');
             newDescription = '';
         } else {
-            var newSelectedItem = swlcalc.data.items.slot[this.id][this.itemId() - 1];
+            var slotToUse = (this.isWeapon() ? 'weapon' : this.id);
+            var newSelectedItem = swlcalc.data.items.slot[slotToUse][this.itemId() - 1];
             //TODO/FEATURE :
             /* temporary code ********************************************************************************
              * => Will be used as long as item images are not added to the resources. The final code will be :
-            newImage = 'assets/images/icons/talisman/' + newSelectedItem.name + '.png';
+            newImage = 'assets/images/icons/' + this.type + '/' + newSelectedItem.name + '.png';
              * => For now replaced by : */
             var image = new Image();
             image.onload = function() {
-                self.imgIcon('assets/images/icons/talisman/' + newSelectedItem.name + '.png');
+                self.imgIcon('assets/images/icons/' + self.type + '/' + newSelectedItem.name + '.png');
             }
             image.onerror = function() {
-                self.imgIcon('assets/images/icons/talisman/' + swlcalc.data.items.slot[self.id][0].name + '.png');
+                if (self.isWeapon()) {
+                    self.imgIcon('assets/images/icons/' + self.type + '/temp/' + newSelectedItem.type + '.png');
+                } else {
+                    self.imgIcon('assets/images/icons/' + self.type + '/' + swlcalc.data.items.slot[self.id][0].name + '.png');
+                }
             }
-            image.src = "assets/images/icons/talisman/" + newSelectedItem.name + ".png";
+            image.src = 'assets/images/icons/' + this.type + '/' + newSelectedItem.name + '.png';
             /* temporary code ********************************************************************************/
             newDescription = newSelectedItem.description;
-        }
-        //To enable when all images will be present :
-        //this.imgIcon(newImage);
-        this.description(newDescription);
-    };
-  
-    /**
-     * Updates #slot-image + #slot-description for weapons
-     */
-    //TODO/REFACTOR : to merge with updateTalisman (= to merge itemId and wtype)
-    this.updateWeapon = function() {
-        var newImage;
-        var newDescription;
-        if (this.wtype() == 'none') {
-            //To enable when all images will be present :
-            // newImage = 'assets/images/icons/talisman/None.png';
-            this.imgIcon('assets/images/icons/weapon/None.png');
-            newDescription = '';
-        } else {
-            var newSelectedItem = swlcalc.data.items.slot.weapon[this.wtype() - 1];
-            //TODO/FEATURE :
-            /* temporary code ********************************************************************************
-             * => Will be used as long as item images are not added to the resources. The final code will be :
-            newImage = 'assets/images/icons/weapon/' + newSelectedItem.name + '.png';
-             * => For now replaced by : */
-            var image = new Image();
-            image.onload = function() {
-                self.imgIcon('assets/images/icons/weapon/' + newSelectedItem.name + '.png');
+          
+            if (this.isWeapon()) {
+                // Replaces %id% either by 'weapon' or 'weapon2' depending on the current slot 
+                // TODO/REFACTOR : maybe there's a better way to achieve this..
+                newDescription = newDescription.replace(/%id/g, this.id);
             }
-            image.onerror = function() {
-                //temporary directory to retrieve the right placeholder image through the item type
-                //self.imgIcon('assets/images/icons/weapon/None.png');
-                self.imgIcon('assets/images/icons/weapon/temp/' + newSelectedItem.type + '.png');
-            }
-            image.src = "assets/images/icons/weapon/" + newSelectedItem.name + ".png";
-            /* temporary code ********************************************************************************/
-            
-            newDescription = newSelectedItem.description;
-            // Replaces %id% either by 'weapon' or 'weapon2' depending on the current slot 
-            // TODO/REFACTOR : maybe there's a better way to achieve this..
-            newDescription = newDescription.replace(/%id/g, this.id);
         }
         //To enable when all images will be present :
         //this.imgIcon(newImage);
@@ -424,16 +381,14 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     this.updatePowerRating = function() {
         var base_value = 0;
         var bonus_value = 0;
-        // calculation rule for weapons
-        if (this.isWeapon()) {
-            if (this.wtype() != 'none') {
-                base_value = swlcalc.data.power_rating['weapon'][this.rarity()].weapon_power_init;
-                bonus_value = swlcalc.data.power_rating['weapon'][this.rarity()].weapon_power_per_level * (this.level() - 1);
+        if (this.itemId() != 'none') {
+            // calculation rule for weapons
+            if (this.isWeapon()) {
+                base_value = swlcalc.data.power_rating.weapon[this.rarity()].weapon_power_init;
+                bonus_value = swlcalc.data.power_rating.weapon[this.rarity()].weapon_power_per_level * (this.level() - 1);
             }
-        }
-        // calculation rule for talismans
-        else {
-            if (this.itemId() != 'none') {
+            // calculation rule for talismans
+            else {
                 base_value = swlcalc.data.power_rating[this.group][this.rarity()][this.quality()].power_rating_init;
                 bonus_value = swlcalc.data.power_rating[this.group][this.rarity()][this.quality()].power_rating_per_level * (this.level() - 1);
             }
@@ -460,7 +415,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      */
     this.updateILvl = function() {
         var calculatedILvl = 0;
-        if (!(this.itemId() == 'none' && this.wtype() == 'none')) {
+        if (!(this.itemId() == 'none')) {
             calculatedILvl = this.calculateILvl('talisman-or-weapon', this.rarity(), this.level());
             // Weapons are worth ~15% more Item Power than talismans
             // TODO/REFACTOR : could be done in  a better way
@@ -850,7 +805,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Reset slot by setting default values for each select
      */
     this.reset = function() {
-        this.el.wtype.prop("selectedIndex", 0);
         this.el.itemId.prop("selectedIndex", 0);
         this.el.rarity.prop("selectedIndex", 0);
         this.el.quality.prop("selectedIndex", 0);
@@ -866,7 +820,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.el.signetLevel.prop("selectedIndex", 0);
 
         this.el.itemId.change();
-        this.el.wtype.change();
         this.el.rarity.change();
         this.el.glyph.change();
         this.el.glyphRarity.change();
@@ -880,16 +833,16 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      */
     this.state = function() {
         return {
-            rarity: this.rarity(),
-            quality: this.quality(),
-            level: this.level(),
-            glyph: this.glyph(),
-            glyph_rarity: this.glyphRarity(),
+            rarity:        this.rarity(),
+            quality:       this.quality(),
+            level:         this.level(),
+            glyph:         this.glyph(),
+            glyph_rarity:  this.glyphRarity(),
             glyph_quality: this.glyphQuality(),
-            glyph_level: this.glyphLevel(),
-            signet_id: this.signetId(),
+            glyph_level:   this.glyphLevel(),
+            signet_id:     this.signetId(),
             signet_rarity: this.signetRarity(),
-            signet_level: this.signetLevel(),
+            signet_level:  this.signetLevel(),
         };
     };
 
@@ -897,24 +850,23 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Mapping function for import/export feature
      */
     this.mappedState = function() {
-        var gmap = swlcalc.data.glyph_stat_mapping.to_num;
-        var rmap = swlcalc.data.rarity_mapping.to_num;
+        var gmap  = swlcalc.data.glyph_stat_mapping.to_num;
+        var rmap  = swlcalc.data.rarity_mapping.to_num;
         var wqmap = swlcalc.data.weapon_quality_mapping.to_num;
         var gqmap = swlcalc.data.glyph_quality_mapping.to_num;
         var tqmap = swlcalc.data.talisman_quality_mapping.to_num;
         return {
-            itemId: this.stripContent(this.itemId()),
-            wtype: this.stripContent(this.wtype()),
-            rarity: this.stripContent(this.rarity(), rmap),
-            quality: this.isWeapon() ? this.stripContent(this.quality(), wqmap) : this.stripContent(this.quality(), tqmap),
-            level: this.level(),
-            glyph: this.stripContent(this.glyph(), gmap),
-            glyph_rarity: this.stripContent(this.glyphRarity(), rmap),
+            itemId:        this.stripContent(this.itemId()),
+            rarity:        this.stripContent(this.rarity(), rmap),
+            quality:       this.isWeapon() ? this.stripContent(this.quality(), wqmap) : this.stripContent(this.quality(), tqmap),
+            level:         this.level(),
+            glyph:         this.stripContent(this.glyph(), gmap),
+            glyph_rarity:  this.stripContent(this.glyphRarity(), rmap),
             glyph_quality: this.stripContent(this.glyphQuality(), gqmap),
-            glyph_level: this.glyphLevel(),
-            signet_id: this.stripContent(this.signetId()),
+            glyph_level:   this.glyphLevel(),
+            signet_id:     this.stripContent(this.signetId()),
             signet_rarity: this.stripContent(this.signetRarity(), rmap),
-            signet_level: this.stripContent(this.signetLevel())
+            signet_level:  this.stripContent(this.signetLevel())
         };
     };
 

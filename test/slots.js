@@ -113,7 +113,7 @@ test('should set talisman description', 1, function() {
 
 test('should update image and description', 1, function() {
     swlcalc.slots.head.itemId('12');
-    swlcalc.slots.head.updateTalisman();
+    swlcalc.slots.head.updateItem();
     //TODO/BUGGY not updated faster enough : equal(swlcalc.slots.head.imgIcon(), 'assets/images/icons/talisman/Ashes.png', "should have update #head-imgIcon");
     equal(swlcalc.slots.head.description(), 'Whenever you are hit 5 times in succession, you deal %d physical damage to nearby enemies. This damage generates a large amount of hate.', "should have update #head-description");
 });
@@ -397,11 +397,10 @@ test('should collect all slot states', 20, function() {
 });
 
 //TODO/REFACTOR : to have only numerical values, not strings
-test('should collect all mapped slot states', 24, function() {
+test('should collect all mapped slot states', 22, function() {
     var slotStates = swlcalc.slots.mappedState();
 
-    deepEqual(slotStates.weapon.itemId, 0);
-    deepEqual(slotStates.weapon.wtype, '1');
+    deepEqual(slotStates.weapon.itemId, '1');
     deepEqual(slotStates.weapon.rarity, 3);
     deepEqual(slotStates.weapon.quality, 1);
     deepEqual(slotStates.weapon.level, '30');
@@ -414,7 +413,6 @@ test('should collect all mapped slot states', 24, function() {
     deepEqual(slotStates.weapon.signet_level, 0);
 
     deepEqual(slotStates.head.itemId, '1');
-    deepEqual(slotStates.head.wtype, 0);
     deepEqual(slotStates.head.rarity, 3);
     deepEqual(slotStates.head.quality, 1);
     deepEqual(slotStates.head.level, '30');

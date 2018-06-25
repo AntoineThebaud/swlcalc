@@ -45,13 +45,8 @@ swlcalc.import = function() {
         slotObj.rarity(swlcalc.data.rarity_mapping.to_name[values[0]]);
         slotObj.el.rarity.change();
         // values[1] == Item's Type (ID)
-        if(slotObj.isWeapon()) {
-            slotObj.wtype(values[1] == '0' ? 'none' : values[1]);
-            slotObj.el.wtype.change();
-        } else {
-            slotObj.itemId(values[1] == '0' ? 'none' : values[1]);
-            slotObj.el.itemId.change();
-        }
+        slotObj.itemId(values[1] == '0' ? 'none' : values[1]);
+        slotObj.el.itemId.change();          
         // values[2] == Item's Quality
         if(slotObj.isWeapon()) {
             slotObj.quality(swlcalc.data.weapon_quality_mapping.to_name[values[2]]);

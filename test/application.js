@@ -42,7 +42,7 @@ test('should import from hash', 180, function() {
     ok($('#weapon-slot').is(':visible'));
     equal($('#weapon-total-ilvl').html(), '400');
     //TODO/FEATURE equal($('#weapon-name').html(), ': Blood');
-    equal($('#weapon-wtype').val(), '4');
+    equal($('#weapon-itemId').val(), '4');
     equal($('#weapon-rarity').val(), 'epic');
     equal($('#weapon-quality').val(), 'mkIII');
     equal($('#weapon-level').val(), '19');
@@ -62,7 +62,7 @@ test('should import from hash', 180, function() {
     ok(!$('#weapon2-slot').is(':visible'));
     equal($('#weapon2-total-ilvl').html(), '581');
     //TODO/FEATURE equal($('#weapon2-name').html(), ': Shotgun');
-    equal($('#weapon2-wtype').val(), '7');
+    equal($('#weapon2-itemId').val(), '7');
     equal($('#weapon2-rarity').val(), 'epic');
     equal($('#weapon2-quality').val(), 'mkII');
     equal($('#weapon2-level').val(), '29');
@@ -245,7 +245,7 @@ test('should set default values with an empty hash', 173, function() {
     ok($('#weapon-slot').is(':visible'));
     equal($('#weapon-total-ilvl').html(), '0');
     //TODO/FEATURE equal($('#weapon-name').html(), '');
-    equal($('#weapon-wtype').val(), 'none');
+    equal($('#weapon-itemId').val(), 'none');
     equal($('#weapon-rarity').val(), 'standard');
     equal($('#weapon-quality').val(), 'mkI');
     equal($('#weapon-level').val(), '20');
@@ -265,7 +265,7 @@ test('should set default values with an empty hash', 173, function() {
     ok(!$('#weapon2-slot').is(':visible'));
     equal($('#weapon2-total-ilvl').html(), '0');
     //TODO/FEATURE equal($('#weapon2-name').html(), '');
-    equal($('#weapon2-wtype').val(), 'none');
+    equal($('#weapon2-itemId').val(), 'none');
     equal($('#weapon2-rarity').val(), 'standard');
     equal($('#weapon2-quality').val(), 'mkI');
     equal($('#weapon2-level').val(), '20');

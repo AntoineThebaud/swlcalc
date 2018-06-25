@@ -3,7 +3,7 @@
  * -> equivalent to : weapon=3,1,1,30,2,2,1,1,0,0,0&weapon2=3,2,3,30,2,2,1,1,0,0,0&head=3,1,1,30,4,1,3,1,1,0,20&finger=3,1,1,30,3,5,2,20,1,0,1&neck=3,1,1,30,3,5,2,20,1,0,1&wrist=3,1,1,1,3,5,2,20,1,0,20&luck=3,1,1,1,3,4,2,20,1,0,20&waist=3,1,1,30,3,4,2,20,1,0,20&occult=3,1,1,1,3,4,2,20,1,0,20
  */
 function createTankBuild() {
-    $('#weapon-wtype').val('1');
+    $('#weapon-itemId').val('1');
     $('#weapon-rarity').val('epic');
     $('#weapon-rarity').change(); //required because triggers update of #weapon-level
     $('#weapon-quality').val('mkI');
@@ -16,7 +16,7 @@ function createTankBuild() {
     $('#weapon-glyph').change(); //required because triggers update of #weapon-glyph-rating
     $('#weapon-signet').val('none');//TODO/TEST add a true suffix
 
-    $('#weapon2-wtype').val('2');
+    $('#weapon2-itemId').val('2');
     $('#weapon2-rarity').val('epic');
     $('#weapon2-rarity').change(); //required because triggers update of #weapon2-level
     $('#weapon2-quality').val('mkIII');

@@ -52,10 +52,10 @@
             </td>
             <td class="item-select">
                 {?is_weapon}
-                <select id="{id_prefix}-wtype" title="Please select weapon type">
+                <select id="{id_prefix}-itemId" title="Please select weapon">
                 </select>
                 {:else}
-                <select id="{id_prefix}-itemId" title="Please select item">
+                <select id="{id_prefix}-itemId" title="Please select talisman">
                 </select>
                 {/is_weapon}
             </td>

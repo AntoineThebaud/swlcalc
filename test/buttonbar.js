@@ -35,11 +35,10 @@ test('should reset all slots', 171, function() {
         var slotId = swlcalc.data.template_data.slots[i].id_prefix; //TODO/REFACTOR possible simplication with swlcalc.slots.indices ??
         var slot = swlcalc.slots[slotId];
         equal(slot.totalILvl(), '0');
+        equal(slot.itemId(), 'none');
         if(slot.isWeapon()) {
-            equal(slot.wtype(), 'none');
             equal(slot.quality(), 'mkI');
         } else {
-            equal(slot.itemId(), 'none');
             equal(slot.quality(), 'faded');
         }
         equal(slot.rarity(), 'standard');
