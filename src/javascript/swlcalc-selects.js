@@ -4,7 +4,7 @@ swlcalc.select = swlcalc.select || {};
 swlcalc.select.SelectHandler = function SelectHandler(slot) {
     var self = this;
     var slotObj = swlcalc.slots[slot.id_prefix];
-    
+
     //TODO/REFACTOR : to rename as "init"
     this.initiate = function() {
         this.bindEvents();
@@ -30,7 +30,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.signetRarity.change(this.handleSignetRarityChange);
         slotObj.el.signetLevel.change(this.handleSignetLevelChange);
     };
-  
+
     /**
      * Loads items (swlcalc-data-items) as options list in the #slot-itemId select
      */
@@ -42,14 +42,14 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         } else {
             slotToUse = slot.id_prefix
         }
-      
+
         slotObj.el.itemId.append($('<option>', {
             value: "none",
             text: "None",
             selected: "true"
         }));
         var items = swlcalc.data.items.slot[slotToUse].slice();
-   
+
         //sort alphabetically for a better ergonomy
         //sort for weapons include weapon type as prefix => TODO/REFACTOR : code duplication
         if (slot.group == 'weapon') {
@@ -68,7 +68,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
                     return -1;
                 }
             });
-        }        
+        }
         items.forEach(function(item) {
             slotObj.el.itemId.append($('<option>', {
                 value: item.id,
@@ -77,7 +77,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             }));
         });
     };
-  
+
     /**
      * Loads signets (swlcalc-data-signets) as options list in the #slot-signet select
      */
@@ -91,7 +91,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
         //TODO/REFACTOR : to improve
         var idToUse = (slot.id_prefix == 'weapon2' ? 'weapon' : slot.id_prefix);
-        var signetsInSlotGroup = swlcalc.data.signets.slot[idToUse];
+        var signetsInSlotGroup = swlcalc.data.signets.slot[idToUse].slice();
         //sort alphabetically for a better ergonomy
         signetsInSlotGroup.sort(function(a, b) {
             if (a.name.toLowerCase() > b.name.toLowerCase()) {
@@ -100,7 +100,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
                 return -1;
             }
         });
-      
+
         $.each(signetsInSlotGroup, function(index, value) {
             slotObj.el.signetId.append($('<option>', {
                 value: value.id,
@@ -123,7 +123,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Event handlers : Item |
      *                       V
      **********************************************************************************/
-  
+
     /**
      * Handler for #slot-itemId
      */
@@ -175,7 +175,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateILvl();
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Handler for #slot-quality
      */
@@ -183,7 +183,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updatePowerRating();
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Handler for #slot-level
      */
@@ -197,7 +197,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Event handlers : Glyph |
      *                        V
      **********************************************************************************/
-    
+
     /**
      * Handler for #slot-glyph
      */
@@ -208,7 +208,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateGlyphILvl();
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Handler for #slot-glyph-rarity
      * -> triggers rarity's text color update for the glyph.
@@ -222,7 +222,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateGlyphRating();
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Handler for #slot-glyph-quality
      */
@@ -230,7 +230,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateGlyphRating();
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Handler for #slot-glyph-level
      */
@@ -259,7 +259,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         }
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Handler for #slot-signet-rarity
      * -> triggers rarity's text color update for the signet.
@@ -270,7 +270,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         //self.updateTextColor(event.target);
         //TODO/REFACTOR : to reuse updateTextColor
         $(event.target).attr("class", $("#" + slotObj.id + "-signet-rarity option:selected").attr('class'));
-        slotObj.updateSignet();
+        slotObj.updateSignetIcon();
         //weapon signets (= suffixes) don't have item power attribute
         if (!slotObj.isWeapon()) {
             slotObj.updateSignetILvl();

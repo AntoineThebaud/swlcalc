@@ -5,10 +5,10 @@ swlcalc.summary = function() {
     //TODO/REFACTOR : remove ? currently needed for compatibility
     var init = function() {
     };
-  
+
     //TODO/REFACTOR : to be sure to use 'this' instead of 'var'
     var animaAllocation = 'DAMAGE';
-  
+
     /**
      * Refreshes all values in the summary
      * -> triggered after any change that affects a stat
@@ -45,7 +45,7 @@ swlcalc.summary = function() {
     var updateOnePrimaryStat = function(stat, value) {
         $('#stat-' + stat).text(value);
     };
-  
+
     /**
      * Updates all primary stats in the summary
      */
@@ -91,9 +91,9 @@ swlcalc.summary = function() {
         // first basic implementation of anima allocation
         // TODO/FEATURE : add conversion to AR/HR/HP based on a ratio
         if (animaAllocation == 'DAMAGE') {
-            sums['attack-rating'] += sums['power-rating'];            
+            sums['attack-rating'] += sums['power-rating'];
         } else if (animaAllocation == 'HEALING') {
-            sums['heal-rating'] += sums['power-rating'];          
+            sums['heal-rating'] += sums['power-rating'];
         } else if (animaAllocation == 'SURVIVABILITY') {
             // TODO/REFACTOR : to move to a -data file?
             // TODO/REFACTOR : this is a "pretty precise but still approximated" value of the real IG multiplier
@@ -131,7 +131,7 @@ swlcalc.summary = function() {
 
         return Math.round((heal_rating + weapon_power) / ratio);
     };
-  
+
     /**
      * Updates glyph stats in the summary
      */
@@ -296,7 +296,7 @@ swlcalc.summary = function() {
             }
         }
     };
-  
+
     /**
      * Boolean function. Determines whether a stat is percentage-based or not
      */
@@ -307,22 +307,23 @@ swlcalc.summary = function() {
             || statName == 'evade-chance'
             || statName == 'glance-chance';
     };
-    
+
     /**
      * Setter for animaAllocation attribute
      */
     var setAnimaAllocation = function(newAllocation) {
         animaAllocation = newAllocation;
     }
-    
+
     /**
-     * Launch a description refresh for each item in order to display the right bonus values
+     * Launch a description refresh for each item (in order to display the right bonus values)
      */
     var updateDescriptions = function() {
         //TODO/REFACTOR : avoid using hasSlot
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
                 swlcalc.slots[slotId].refreshItemBonuses(combatPower(), healingPower());
+                swlcalc.slots[slotId].refreshSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
             }
         }
     };

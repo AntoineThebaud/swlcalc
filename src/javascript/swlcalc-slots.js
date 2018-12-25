@@ -178,7 +178,7 @@ swlcalc.slots.Slot = function Slot(id, name, type, group) {
      * Item functions | (talismans + weapons)
      *                V
      **********************************************************************************/
-  
+
     /**
      * Returns true if the slot belongs to the weapon group
      */
@@ -316,7 +316,7 @@ swlcalc.slots.Slot = function Slot(id, name, type, group) {
             return this.el.imgBorder.attr('src');
         }
     };
-  
+
     /**
      * Getter/Setter for any #slot-bonusN element (#slot-bonus1, #slot-bonus2, #slot-bonus3 ...)
      */
@@ -329,7 +329,7 @@ swlcalc.slots.Slot = function Slot(id, name, type, group) {
             console.log("Error on this.bonusN() call")
         }
     };
- 
+
     /**
      * Updates #slot-image + #slot-description
      */
@@ -363,9 +363,9 @@ swlcalc.slots.Slot = function Slot(id, name, type, group) {
             image.src = 'assets/images/icons/' + this.type + '/' + newSelectedItem.name + '.png';
             /* temporary code ********************************************************************************/
             newDescription = newSelectedItem.description;
-          
+
             if (this.isWeapon()) {
-                // Replaces %id% either by 'weapon' or 'weapon2' depending on the current slot 
+                // Replaces %id% either by 'weapon' or 'weapon2' depending on the current slot
                 // TODO/REFACTOR : maybe there's a better way to achieve this..
                 newDescription = newDescription.replace(/%id/g, this.id);
             }
@@ -374,7 +374,7 @@ swlcalc.slots.Slot = function Slot(id, name, type, group) {
         //this.imgIcon(newImage);
         this.description(newDescription);
     };
-  
+
     /**
      * Updates #slot-power-rating (calculatations with stats data)
      */
@@ -437,7 +437,7 @@ swlcalc.slots.Slot = function Slot(id, name, type, group) {
         if (this.bonusN(1) === undefined) return;
         var item = this.getItem();
         var statForComputation = 0;
-      
+
         for (i = 0; i < item.coefficients.length; i++) {
             if (item.stats[i] == 'Combat Power') {
                 statForComputation = combatPower;
@@ -507,7 +507,7 @@ swlcalc.slots.Slot = function Slot(id, name, type, group) {
             return parseInt(this.el.glyphRating.html());
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-glyph-label
      */
@@ -539,7 +539,7 @@ swlcalc.slots.Slot = function Slot(id, name, type, group) {
             return this.el.glyphImgBorder.attr('src');
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-glyph-iLvl
      */
@@ -634,11 +634,10 @@ swlcalc.slots.Slot = function Slot(id, name, type, group) {
             return swlcalc.data.signets.noneSignet;
      // } else if (this.id == 'weapon' || this.id == 'weapon2') {
      //     return swlcalc.data.suffixes.slot[this.signetId()];
-        } else {
-            //TODO/REFACTOR : patch to improve
-            var idToUse = (this.id == 'weapon2' ? 'weapon' : this.id);
-            return swlcalc.data.signets.slot[idToUse][this.signetId() - 1];
         }
+        //TODO/REFACTOR : patch to improve
+        var idToUse = (this.id == 'weapon2' ? 'weapon' : this.id);
+        return swlcalc.data.signets.slot[idToUse][this.signetId() - 1];
     };
 
     /**
@@ -690,24 +689,22 @@ swlcalc.slots.Slot = function Slot(id, name, type, group) {
      */
     //TODO/FEATURE : to use for signets like in tswcalc
     this.signetDescription = function() {
-        var signet = this.signet();
-        if (signet === null) {
-            return '';
+        if (arguments.length == 1) {
+            this.el.signetDescription.html(arguments[0]);
+        } else {
+            return this.el.signetDescription.text();
         }
-        var description = signet.description;
-        if(signet.rarity) {
-            description = description.replace('%s', this.determineSignetRarityValue(signet));
-            description = description.replace('%d', this.determineSignetRarityValue(signet));
-            if (Object.prototype.toString.call(signet.rarity) === '[object Array]') {
-                description = description.replace('%0', this.determineSignetRarityValue(signet, 0));
-                description = description.replace('%1', this.determineSignetRarityValue(signet, 1));
-            }
-        }
-        if (signet.cooldown && signet.cooldown != '0') {
-            description += ' ' + signet.cooldown + ' seconds cooldown.';
-        }
+    };
 
-        return description;
+    /**
+     * Getter/Setter for #id-signet-bonus
+     */
+    this.signetBonus = function() {
+        if (arguments.length == 1) {
+            $('#' + this.id + '-signet-bonus').html(arguments[0]);
+        } else {
+            return $('#' + this.id + 'signet-bonus').html();
+        }
     };
 
     /**
@@ -737,11 +734,21 @@ swlcalc.slots.Slot = function Slot(id, name, type, group) {
     };
 
     /**
-     * Updates signet
+     * Updates signet (#slot-signet-icon + #slot-signet-description)
      */
     this.updateSignet = function() {
         this.updateSignetIcon();
-        this.updateSignetDescription();
+
+        var signet = this.signet();
+        var newDescription = signet.description;
+        if (this.isWeapon()) {
+            // Replaces %id% either by 'weapon' or 'weapon2' depending on the current slot
+            // TODO/REFACTOR : maybe there's a better way to achieve this..
+            newDescription = newDescription.replace(/%id/g, this.id);
+        }
+        this.signetDescription(newDescription);
+
+        this.refreshSignetBonus();
     };
 
     /**
@@ -778,6 +785,51 @@ swlcalc.slots.Slot = function Slot(id, name, type, group) {
      */
     this.updateSignetDescription = function() {
         this.el.signetDescription.html(this.signetDescription());
+    };
+
+    /**
+     * Updates the dynamic bonus displayed in the signet's description (#slot-signet-bonus)
+     */
+    // TODO to enhance
+    this.refreshSignetBonus = function(combatPower, healingPower){
+        var newValue = 0;
+        // coefficient in case CP or HP is used in the bonus computation
+        var coef = 1
+
+        if (this.signet().id != 0) {
+            var slotToUse = (this.isWeapon() ? 'weapon' : this.id);
+            var signet = swlcalc.data.signets.slot[slotToUse][this.signetId() - 1]
+
+            if (this.isWeapon()) {
+                newValue = signet.quality[this.quality()]
+            } else if (signet.name == "Signet of Shoulder Tackle") {
+                // TODO there should be a better way to handle this particular case
+                bonus1 = signet.ratio[this.signetRarity()].init[0];
+                bonus2 = signet.ratio[this.signetRarity()].init[1]
+                           - signet.ratio[this.signetRarity()].per_level[1] * (this.signetLevel() - 1);
+                $('#' + this.id + '-signet-bonus').html(bonus1);
+                $('#' + this.id + '-signet-bonus2').html(swlcalc.util.precisionRound(bonus2, 4));
+                return;
+            } else if (signet.name == "Signet of Contortion") {
+                // TODO there should be a better way to handle this particular case
+                newValue = signet.ratio[this.signetRarity()].init
+                           - signet.ratio[this.signetRarity()].per_level * (this.signetLevel() - 1)
+            } else {
+                newValue = signet.ratio[this.signetRarity()].init
+                           + signet.ratio[this.signetRarity()].per_level * (this.signetLevel() - 1)
+            }
+
+            if (signet.stat != undefined) {
+                if (signet.stat == 'Combat Power') {
+                    coef = combatPower;
+                } else if (signet.stat == 'Healing Power') {
+                    coef = healingPower;
+                }
+            }
+        }
+        newValue *= coef
+        newValue = swlcalc.util.precisionRound(newValue, 4)
+        this.signetBonus(newValue);
     };
 
     /**
