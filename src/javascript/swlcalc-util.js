@@ -4,6 +4,7 @@ var swlcalc = swlcalc || {};
  * Utility functions
  */
 swlcalc.util = function() {
+    
     var capitalise = function(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
@@ -19,7 +20,7 @@ swlcalc.util = function() {
         var factor = Math.pow(10, precision);
         return Math.round(number * factor) / factor;
     }
-    
+
     /**
      * Exposition of functions that are going to be called from outside
      */

@@ -6,7 +6,9 @@ var swlcalc = swlcalc || {};
 //TODO/REFACTOR : merge swlcalc.button and swlcalc.button.SwapWeaponButton ? (since glyph
 //distribution doesn't exist in SWL, the only remaining button here is the weapon-swap one)
 swlcalc.button = function() {
+    
     var weaponSwap = {};
+
     var init = function() {
         initWeaponSwap('weapon');
         initWeaponSwap('weapon2');

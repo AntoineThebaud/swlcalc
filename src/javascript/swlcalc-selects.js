@@ -2,7 +2,7 @@ var swlcalc = swlcalc || {};
 swlcalc.select = swlcalc.select || {};
 
 swlcalc.select.SelectHandler = function SelectHandler(slot) {
-    var self = this;
+
     var slotObj = swlcalc.gear.slots[slot.id_prefix];
 
     //TODO/REFACTOR : to rename as "init"
@@ -54,21 +54,16 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         //sort for weapons include weapon type as prefix => TODO/REFACTOR : code duplication
         if (slot.group == 'weapon') {
             items.sort(function(a, b) {
-                if (a.type + a.name.toLowerCase() > b.type + b.name.toLowerCase()) {
-                    return 1;
-                } else {
-                    return -1;
-                }
+                if (a.type + a.name.toLowerCase() > b.type + b.name.toLowerCase()) return 1;
+                else return -1;
             });
         } else {
             items.sort(function(a, b) {
-                if (a.name.toLowerCase() > b.name.toLowerCase()) {
-                    return 1;
-                } else {
-                    return -1;
-                }
+                if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+                else return -1;
             });
         }
+
         items.forEach(function(item) {
             slotObj.el.itemId.append($('<option>', {
                 value: item.id,
@@ -89,16 +84,11 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         }));
         this.updateToDefaultSignet();
 
-        //TODO/REFACTOR : to improve
-        var idToUse = (slot.id_prefix == 'weapon2' ? 'weapon' : slot.id_prefix);
-        var signetsInSlotGroup = swlcalc.data.signets.slot[idToUse].slice();
+        var signetsInSlotGroup = swlcalc.data.signets.slot[slot.kind].slice();
         //sort alphabetically for a better ergonomy
         signetsInSlotGroup.sort(function(a, b) {
-            if (a.name.toLowerCase() > b.name.toLowerCase()) {
-                return 1;
-            } else {
-                return -1;
-            }
+            if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+            else return -1;
         });
 
         $.each(signetsInSlotGroup, function(index, value) {
@@ -107,6 +97,14 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
                 text: value.name
             }));
         });
+    };
+
+
+    /**
+     * Updates the text color of the dropdown "select" by reusing the color of the selected option.
+     */
+    var updateTextColor = function(select) {
+        $(select).attr("class", "color-" + select.value);
     };
 
     /**
@@ -143,34 +141,22 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     /**
      * Handler for #slot-rarity
-     * -> triggers rarity's text color update for the slot.
-     * -> triggers border image update for the slot.
-     * -> triggers image update for the slot.
-     * -> triggers available levels refresh for the slot.
-     * -> triggers power rating update for the slot.
-     * -> triggers ilvl update for the slot.
      */
     //TODO/REFACTOR : review the way it uses slotObj.id
     this.handleRarityChange = function(event) {
-        var newRarity = $("#" + slotObj.id + "-rarity option:selected").val();
-
-        //self.updateTextColor(event.target);
-        //TODO/REFACTOR : to reuse updateTextColor
-        $(event.target).attr("class", $("#" + slotObj.id + "-rarity option:selected").attr('class'));
-
+        updateTextColor(this);
         slotObj.updateImgBorder();
 
         //refresh the list of available levels
         slotObj.el.level.empty();
         var minLvl = 1;
-        var maxLvl = swlcalc.data.rarity_mapping.to_max_level[newRarity];
+        var maxLvl = swlcalc.data.rarity_mapping.to_max_level[this.value];
         for (i = maxLvl; i >= minLvl ; i--) {
            slotObj.el.level.append($('<option>', {
                value: i,
                text: i
            }));
         }
-
         slotObj.updatePowerRating();
         slotObj.updateILvl();
         swlcalc.summary.updateAllStats();
@@ -211,15 +197,13 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     /**
      * Handler for #slot-glyph-rarity
-     * -> triggers rarity's text color update for the glyph.
      */
     this.handleGlyphRarityChange = function(event) {
-        //self.updateTextColor(event.target);
-        //TODO/REFACTOR : to reuse updateTextColor
-        $(event.target).attr("class", $("#" + slotObj.id + "-glyph-rarity option:selected").attr('class'));
+        updateTextColor(this);
         slotObj.updateGlyphImgBorder();
         slotObj.updateGlyphILvl();
         slotObj.updateGlyphRating();
+
         swlcalc.summary.updateAllStats();
     };
 
@@ -247,8 +231,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     /**
      * Handler for #slot-signet
-     * -> triggers signet update for the signet. //TODO : review slotObj.updateSignet()
-     * -> triggers ilvl update for the signet.
      */
     this.handleSignetChange = function(event) {
         slotObj.updateSignet();
@@ -262,14 +244,10 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     /**
      * Handler for #slot-signet-rarity
-     * -> triggers rarity's text color update for the signet.
-     * -> triggers signet update for the signet. //TODO : review slotObj.updateSignet()
      */
     //TODO/REFACTOR : code duplication with handleSignetChange()
     this.handleSignetRarityChange = function(event) {
-        //self.updateTextColor(event.target);
-        //TODO/REFACTOR : to reuse updateTextColor
-        $(event.target).attr("class", $("#" + slotObj.id + "-signet-rarity option:selected").attr('class'));
+        updateTextColor(this);
         slotObj.updateSignetIcon();
         //weapon signets (= suffixes) don't have item power attribute
         if (!slotObj.isWeapon()) {
@@ -285,13 +263,4 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateSignetILvl();
         swlcalc.summary.updateAllStats();
     };
-
-    //TODO/REFACTOR : to reimplement
-    // this.updateTextColor = function(select) {
-    //     console.log("select = ");
-    //     console.log(select);
-    //     var newClass = $("#" + select.attr('id') + " option:selected").attr('class');
-    //     console.log("newClass = " + newClass);
-    //     $(select).attr("class", newClass);
-    // };
 };

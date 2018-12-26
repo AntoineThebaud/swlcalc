@@ -3,6 +3,7 @@ var swlcalc = swlcalc || {};
 swlcalc.buttonBar = function() {
 
     var el = {};
+    
     var elInit = function() {
         return {
             btn_all_dps: $('#btn-all-dps'),

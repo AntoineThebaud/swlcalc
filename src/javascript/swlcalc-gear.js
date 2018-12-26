@@ -2,6 +2,9 @@ var swlcalc = swlcalc || {};
 
 swlcalc.gear = function() {
 
+    /*
+     * Map object to store the Slot objects (see below)
+     */
     var slots = {};
 
     /**
@@ -10,7 +13,7 @@ swlcalc.gear = function() {
     var init = function() {
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             var slotData = swlcalc.data.template_data.slots[i];
-            this.slots[slotData.id_prefix] = new swlcalc.gear.Slot(slotData.id_prefix, slotData.name, slotData.type, slotData.group);
+            this.slots[slotData.id_prefix] = new swlcalc.gear.Slot(slotData);
             this.slots[slotData.id_prefix].el.nameWarning.hide();
         }
         drawPrimaryWeapon();
@@ -25,7 +28,7 @@ swlcalc.gear = function() {
     };
 
     /**
-     * Returns the number of slots of a gear (= 9 as of now)
+     * Returns the total number of slots in the gear (= 9 as of now)
      */
     var nbSlots = function() {
         return Object.keys(this.slots).length;
@@ -78,12 +81,14 @@ swlcalc.gear = function() {
     return oPublic;
 }();
 
-swlcalc.gear.Slot = function Slot(id, name, type, group) {
+swlcalc.gear.Slot = function Slot(slotData) {
+
     var self = this;
-    this.id = id;
-    this.name = name;
-    this.type = type;
-    this.group = group;
+    this.id = slotData.id_prefix;
+    this.name = slotData.name;
+    this.kind = slotData.kind;
+    this.type = slotData.type;
+    this.group = slotData.group;
     this.weaponDrawn = false;
 
     // for calculations precision issues
@@ -321,8 +326,7 @@ swlcalc.gear.Slot = function Slot(id, name, type, group) {
             this.imgIcon('assets/images/icons/' + this.type + '/None.png');
             newDescription = '';
         } else {
-            var slotToUse = (this.isWeapon() ? 'weapon' : this.id);
-            var newSelectedItem = swlcalc.data.items.slot[slotToUse][this.itemId() - 1];
+            var newSelectedItem = swlcalc.data.items.slot[this.kind][this.itemId() - 1];
             //TODO/FEATURE :
             /* temporary code ********************************************************************************
              * => Will be used as long as item images are not added to the resources. The final code will be :
@@ -614,9 +618,7 @@ swlcalc.gear.Slot = function Slot(id, name, type, group) {
      // } else if (this.id == 'weapon' || this.id == 'weapon2') {
      //     return swlcalc.data.suffixes.slot[this.signetId()];
         }
-        //TODO/REFACTOR : patch to improve
-        var idToUse = (this.id == 'weapon2' ? 'weapon' : this.id);
-        return swlcalc.data.signets.slot[idToUse][this.signetId() - 1];
+        return swlcalc.data.signets.slot[this.kind][this.signetId() - 1];
     };
 
     /**
@@ -776,8 +778,7 @@ swlcalc.gear.Slot = function Slot(id, name, type, group) {
         var coef = 1
 
         if (this.signet().id != 0) {
-            var slotToUse = (this.isWeapon() ? 'weapon' : this.id);
-            var signet = swlcalc.data.signets.slot[slotToUse][this.signetId() - 1]
+            var signet = swlcalc.data.signets.slot[this.kind][this.signetId() - 1]
 
             if (this.isWeapon()) {
                 newValue = signet.quality[this.quality()]

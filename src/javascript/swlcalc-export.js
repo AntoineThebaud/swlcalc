@@ -1,7 +1,9 @@
 var swlcalc = swlcalc || {};
 
 swlcalc.export = function() {
+    
     var el = {};
+
     var elInit = function() {
         return {
             export_btn: $('a.export'),
