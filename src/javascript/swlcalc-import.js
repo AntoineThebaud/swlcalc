@@ -40,13 +40,13 @@ swlcalc.import = function() {
      */
     //TODO/REFACTOR maybe there is a better way to update GUI than simulating change() ?
     var loadSlot = function(slotId, values) {
-        var slotObj = swlcalc.slots[slotId];
+        var slotObj = swlcalc.gear.slots[slotId];
         // values[0] == Item's Rarity
         slotObj.rarity(swlcalc.data.rarity_mapping.to_name[values[0]]);
         slotObj.el.rarity.change();
         // values[1] == Item's Type (ID)
         slotObj.itemId(values[1] == '0' ? 'none' : values[1]);
-        slotObj.el.itemId.change();          
+        slotObj.el.itemId.change();
         // values[2] == Item's Quality
         if(slotObj.isWeapon()) {
             slotObj.quality(swlcalc.data.weapon_quality_mapping.to_name[values[2]]);
@@ -88,7 +88,7 @@ swlcalc.import = function() {
      */
     //TODO/REFACTOR maybe there is a better way to update GUI than simulating change() ?
     var changeSignet = function(slotId, rarity, id, level) {
-        var slotObj = swlcalc.slots[slotId];
+        var slotObj = swlcalc.gear.slots[slotId];
         slotObj.signetRarity(rarity);
         slotObj.signetId(id);
         slotObj.signetLevel(level);

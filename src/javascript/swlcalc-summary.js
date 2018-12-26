@@ -75,17 +75,15 @@ swlcalc.summary = function() {
             'ilvl': 0
         };
 
-        for (var slotId in swlcalc.slots) {
-            if (swlcalc.slots.hasSlot(slotId)) {
-                var slot = swlcalc.slots[slotId];
-                sums['ilvl'] += slot.totalILvl();
-                if (slot.isWeapon() && !slot.weaponDrawn) {
-                    continue;
-                } else if (slot.isWeapon() && slot.itemId() != 'none') {
-                    sums['weapon-power'] = slot.powerRating();
-                } else if (!slot.isWeapon() && slot.itemId() != 'none') {
-                    sums['power-rating'] += slot.powerRating();
-                }
+        for (var id in swlcalc.gear.slots) {
+            var slot = swlcalc.gear.slots[id];
+            sums['ilvl'] += slot.totalILvl();
+            if (slot.isWeapon() && !slot.weaponDrawn) {
+                continue;
+            } else if (slot.isWeapon() && slot.itemId() != 'none') {
+                sums['weapon-power'] = slot.powerRating();
+            } else if (!slot.isWeapon() && slot.itemId() != 'none') {
+                sums['power-rating'] += slot.powerRating();
             }
         }
         // first basic implementation of anima allocation
@@ -160,14 +158,12 @@ swlcalc.summary = function() {
             // 'magical-protection': 2259     // amount brought by passives skills
         };
         // get flat stats
-        for (var slotId in swlcalc.slots) {
-            if (swlcalc.slots.hasSlot(slotId)) {
-                var slot = swlcalc.slots[slotId];
-                if(slot.isWeapon() && !slot.weaponDrawn) {
-                    continue;
-                }
-                sums[slot.glyph()] += slot.glyphRating();
+        for (var id in swlcalc.gear.slots) {
+            var slot = swlcalc.gear.slots[id];
+            if(slot.isWeapon() && !slot.weaponDrawn) {
+                continue;
             }
+            sums[slot.glyph()] += slot.glyphRating();
         }
         // get ratio stats
         sums['critical-chance'] += calculateCriticalChance(sums['critical-rating']);
@@ -319,12 +315,9 @@ swlcalc.summary = function() {
      * Launch a description refresh for each item (in order to display the right bonus values)
      */
     var updateDescriptions = function() {
-        //TODO/REFACTOR : avoid using hasSlot
-        for (var slotId in swlcalc.slots) {
-            if (swlcalc.slots.hasSlot(slotId)) {
-                swlcalc.slots[slotId].refreshItemBonuses(combatPower(), healingPower());
-                swlcalc.slots[slotId].refreshSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
-            }
+        for (var id in swlcalc.gear.slots) {
+            swlcalc.gear.slots[id].refreshItemBonuses(combatPower(), healingPower());
+            swlcalc.gear.slots[id].refreshSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
         }
     };
 

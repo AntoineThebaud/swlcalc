@@ -21,7 +21,7 @@ swlcalc.buttonBar = function() {
         el = elInit();
         bindEvents();
     };
-    
+
     /**
      * Associates the right process to each trigger.
      */
@@ -46,36 +46,34 @@ swlcalc.buttonBar = function() {
         el.btn_all_heal.removeClass('active');
         el.btn_all_tank.removeClass('active');
         $(event.target).addClass('active');
-                             
+
         if (event.target.id == 'btn-all-dps') {
             swlcalc.summary.setAnimaAllocation('DAMAGE');
         } else if (event.target.id == 'btn-all-heal') {
             swlcalc.summary.setAnimaAllocation('HEALING');
         } else if (event.target.id == 'btn-all-tank') {
-            swlcalc.summary.setAnimaAllocation('SURVIVABILITY');          
+            swlcalc.summary.setAnimaAllocation('SURVIVABILITY');
         }
-      
+
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Set the same chosen rarity to all items+glyphs+signets.
      */
     //TODO/REFACTOR : to define if "slot" is the right term here
     var setRarityOnAllSlots = function(event) {
         var newRarity = event.currentTarget.id.split('-')[2];
-        for (var slotId in swlcalc.slots) {
-            if (swlcalc.slots.hasSlot(slotId)) {
-                var slot = swlcalc.slots[slotId];
-                slot.rarity(newRarity);
-                slot.el.rarity.change();
+        for (var id in swlcalc.gear.slots) {
+            var slot = swlcalc.gear.slots[id];
+            slot.rarity(newRarity);
+            slot.el.rarity.change();
 
-                slot.glyphRarity(newRarity);
-                slot.el.glyphRarity.change();
+            slot.glyphRarity(newRarity);
+            slot.el.glyphRarity.change();
 
-                slot.signetRarity(newRarity);
-                slot.el.signetRarity.change();
-            }
+            slot.signetRarity(newRarity);
+            slot.el.signetRarity.change();
         }
         swlcalc.summary.updateAllStats();
     };
@@ -85,10 +83,10 @@ swlcalc.buttonBar = function() {
      */
     //TODO/REFACTOR : to define if "slot" is the right term here
     var resetAllSlots = function(event) {
-        swlcalc.slots.reset();
+        swlcalc.gear.reset();
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Exposition of functions that are going to be called from outside
      */

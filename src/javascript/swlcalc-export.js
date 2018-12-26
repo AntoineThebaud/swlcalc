@@ -36,7 +36,7 @@ swlcalc.export = function() {
             });
         });
     };
-  
+
     /**
      * Starts URL export : collect stats then forwards to createExportUrl .
      */
@@ -46,22 +46,20 @@ swlcalc.export = function() {
         el.export_textarea.attr('rows', '1');
         el.export_textarea.html(location.origin + location.pathname + '#' + url);
     };
-  
+
     /**
      * Builds the URL containing all the informations entered in swlcalc
      */
     var createExportUrl = function() {
         var url = '';
         var i = 0;
-        for (var slotId in swlcalc.slots) {
-            if (swlcalc.slots.hasSlot(slotId)) {
-                var slot = swlcalc.slots[slotId];
-                url += createSlotUrl(slot, slot.mappedState());
-                if (i < swlcalc.slots.length() - 1) {
-                    url += '&';
-                }
-                i++;
+        for (var id in swlcalc.gear.slots) {
+            var slot = swlcalc.gear.slots[id];
+            url += createSlotUrl(slot, slot.mappedState());
+            if (i < swlcalc.gear.nbSlots() - 1) {
+                url += '&';
             }
+            i++;
         }
         return url;
     };

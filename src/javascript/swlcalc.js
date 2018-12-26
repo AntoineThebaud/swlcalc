@@ -75,7 +75,7 @@ swlcalc = function() {
      * Initialize all sub modules (slots, buttonbar, summary...)
      */
     var startSubModules = function() {
-        swlcalc.slots.init();
+        swlcalc.gear.init();
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             startSelectHandler(swlcalc.data.template_data.slots[i]);
         }

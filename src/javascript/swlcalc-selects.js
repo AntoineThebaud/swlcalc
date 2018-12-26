@@ -3,7 +3,7 @@ swlcalc.select = swlcalc.select || {};
 
 swlcalc.select.SelectHandler = function SelectHandler(slot) {
     var self = this;
-    var slotObj = swlcalc.slots[slot.id_prefix];
+    var slotObj = swlcalc.gear.slots[slot.id_prefix];
 
     //TODO/REFACTOR : to rename as "init"
     this.initiate = function() {

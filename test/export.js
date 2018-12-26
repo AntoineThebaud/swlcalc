@@ -12,21 +12,21 @@ module('export-integration-tests', {
 
 test('should create slot url for head', 1, function() {
     createTankBuild();
-    var slotUrl = swlcalc.export.createSlotUrl(swlcalc.slots.head, swlcalc.slots.head.mappedState());
+    var slotUrl = swlcalc.export.createSlotUrl(swlcalc.gear.slots.head, swlcalc.gear.slots.head.mappedState());
 
     equal(slotUrl, 'head=3,1,1,30,4,1,3,1,1,0,20');
 });
 
 test('should create slot url for wrist', 1, function() {
     createTankBuild();
-    var slotUrl = swlcalc.export.createSlotUrl(swlcalc.slots.wrist, swlcalc.slots.wrist.mappedState());
+    var slotUrl = swlcalc.export.createSlotUrl(swlcalc.gear.slots.wrist, swlcalc.gear.slots.wrist.mappedState());
 
     equal(slotUrl, 'wrist=3,1,1,1,3,5,2,20,1,0,20');
 });
 
 test('should create slot url for weapon with type', 1, function() {
     createTankBuild();
-    var slotUrl = swlcalc.export.createSlotUrl(swlcalc.slots.weapon, swlcalc.slots.weapon.mappedState());
+    var slotUrl = swlcalc.export.createSlotUrl(swlcalc.gear.slots.weapon, swlcalc.gear.slots.weapon.mappedState());
 
     equal(slotUrl, 'weapon=3,1,1,30,2,2,1,1,0,0,0');
 });

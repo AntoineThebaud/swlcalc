@@ -31,9 +31,9 @@ module('buttonbar-integration-tests', {
 
 test('should reset all slots', 171, function() {
     swlcalc.buttonBar.resetAllSlots();
-    for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-        var slotId = swlcalc.data.template_data.slots[i].id_prefix; //TODO/REFACTOR possible simplication with swlcalc.slots.indices ??
-        var slot = swlcalc.slots[slotId];
+    for (var i = 0; i < swlcalc.gear.nbSlots(); i++) {
+        var slotId = swlcalc.data.template_data.slots[i].id_prefix;
+        var slot = swlcalc.gear.slots[slotId];
         equal(slot.totalILvl(), '0');
         equal(slot.itemId(), 'none');
         if(slot.isWeapon()) {
@@ -70,18 +70,18 @@ test('should reset all slots', 171, function() {
 //TODO/TEST test('should set rarity and glyph rarity on all slots to x', 16, function() {});
 
 test('should set rarity on all slots', 125, function() {
-  
+
     var mixedRarities = ['epic', 'standard', 'legendary', 'superior', 'mythic'];
-    
+
     for (var r = 0; r < mixedRarities.length; r++) {
         $('#btn-all-' + mixedRarities[r]).click();
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-            var slotId = swlcalc.data.template_data.slots[i].id_prefix;
-            equal(swlcalc.slots[slotId].rarity(), mixedRarities[r]);
-            equal(swlcalc.slots[slotId].glyphRarity(), mixedRarities[r]);
-            if (slotId != 'weapon' && slotId != 'weapon2') {
-                equal(swlcalc.slots[slotId].signetRarity(), mixedRarities[r]);
-            } 
+            var id = swlcalc.data.template_data.slots[i].id_prefix;
+            equal(swlcalc.gear.slots[id].rarity(), mixedRarities[r]);
+            equal(swlcalc.gear.slots[id].glyphRarity(), mixedRarities[r]);
+            if (id != 'weapon' && id != 'weapon2') {
+                equal(swlcalc.gear.slots[id].signetRarity(), mixedRarities[r]);
+            }
         }
     }
 });

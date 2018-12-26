@@ -5,7 +5,7 @@ function renderSlots() {
         slots: swlcalc.data.template_data.slots,
         signets: swlcalc.data.signets
     });
-    swlcalc.slots.init();
+    swlcalc.gear.init();
 }
 
 function renderSummary() {

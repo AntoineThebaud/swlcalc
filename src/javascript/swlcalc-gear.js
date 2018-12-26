@@ -1,12 +1,17 @@
 var swlcalc = swlcalc || {};
 
-swlcalc.slots = function() {
-    //this method can only be called after the document is ready
+swlcalc.gear = function() {
+
+    var slots = {};
+
+    /**
+     * This method can only be called after the document is ready
+     */
     var init = function() {
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             var slotData = swlcalc.data.template_data.slots[i];
-            this[slotData.id_prefix] = new swlcalc.slots.Slot(slotData.id_prefix, slotData.name, slotData.type, slotData.group);
-            this[slotData.id_prefix].el.nameWarning.hide();
+            this.slots[slotData.id_prefix] = new swlcalc.gear.Slot(slotData.id_prefix, slotData.name, slotData.type, slotData.group);
+            this.slots[slotData.id_prefix].el.nameWarning.hide();
         }
         drawPrimaryWeapon();
     };
@@ -15,56 +20,34 @@ swlcalc.slots = function() {
      * Draw primary weapon (-> hide secondary weapon)
      */
     var drawPrimaryWeapon = function() {
-        swlcalc.slots.weapon2.sheathWeapon();
-        swlcalc.slots.weapon.weaponDrawn = true;
+        swlcalc.gear.slots.weapon2.sheathWeapon();
+        swlcalc.gear.slots.weapon.weaponDrawn = true;
     };
 
     /**
      * Returns the number of slots of a gear (= 9 as of now)
      */
-    var length = function() {
-        return swlcalc.data.template_data.slots.length;
-    };
-
-    /**
-     * Defines the list of slots names
-     */
-    //TODO/REFACTOR : to change : redundancy with swlcalc-data-slots.js
-    var indices = function() {
-        return ['head', 'weapon', 'weapon2', 'finger', 'neck', 'wrist', 'luck', 'waist', 'occult'];
-    };
-
-    /**
-     * Returns true if a slot of the name <parameter> exists
-     */
-    //TODO/REFACTOR : to find a solution to remove hasSlot
-    var hasSlot = function(slot) {
-        return this.hasOwnProperty(slot) && $.inArray(slot, indices()) != -1;
+    var nbSlots = function() {
+        return Object.keys(this.slots).length;
     };
 
     /**
      * Resets all slots
      */
-    //TODO/REFACTOR : to find a solution to avoid the call to hasSlot
     //TODO/FEATURE : reset should logically set level to 1
     var reset = function() {
-        for (var slotId in this) {
-            if (this.hasSlot(slotId)) {
-                this[slotId].reset();
-            }
+        for (var id in this.slots) {
+            this.slots[id].reset();
         }
     };
 
     /**
      * Returns the list of slots states
      */
-    //TODO/REFACTOR : to find a solution to avoid the call to hasSlot
     var state = function() {
         var slotStates = {};
-        for (var slotId in this) {
-            if (this.hasSlot(slotId)) {
-                slotStates[slotId] = this[slotId].state();
-            }
+        for (var id in this.slots) {
+            slotStates[id] = this.slots[id].state();
         }
         return slotStates;
     };
@@ -72,13 +55,10 @@ swlcalc.slots = function() {
     /**
      * Returns the list of slots states (mapped version)
      */
-    //TODO/REFACTOR : to find a solution to avoid the call to hasSlot
     var mappedState = function() {
         var mappedSlotStates = {};
-        for (var slotId in this) {
-            if (this.hasSlot(slotId)) {
-                mappedSlotStates[slotId] = this[slotId].mappedState();
-            }
+        for (var id in this.slots) {
+            mappedSlotStates[id] = this.slots[id].mappedState();
         }
         return mappedSlotStates;
     };
@@ -87,10 +67,9 @@ swlcalc.slots = function() {
      * Exposition of functions that are going to be called from outside
      */
     var oPublic = {
+        slots: slots,
         init: init,
-        length: length,
-        indices: indices,
-        hasSlot: hasSlot,
+        nbSlots: nbSlots,
         reset: reset,
         state: state,
         mappedState: mappedState
@@ -99,7 +78,7 @@ swlcalc.slots = function() {
     return oPublic;
 }();
 
-swlcalc.slots.Slot = function Slot(id, name, type, group) {
+swlcalc.gear.Slot = function Slot(id, name, type, group) {
     var self = this;
     this.id = id;
     this.name = name;

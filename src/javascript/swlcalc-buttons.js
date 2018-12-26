@@ -16,7 +16,7 @@ swlcalc.button = function() {
         weaponSwap[slotId] = new swlcalc.button.SwapWeaponButton(slotId);
         weaponSwap[slotId].init();
     };
-  
+
     /**
      * Exposition of functions that are going to be called from outside
      */
@@ -42,8 +42,8 @@ swlcalc.button.SwapWeaponButton = function SwapWeaponButton(slotId) {
     };
 
     this.weaponSwap = function(event) {
-        swlcalc.slots[slotId].sheathWeapon();
-        swlcalc.slots[self.otherWeapon()].drawWeapon();
+        swlcalc.gear.slots[slotId].sheathWeapon();
+        swlcalc.gear.slots[self.otherWeapon()].drawWeapon();
         swlcalc.summary.updateAllStats();
     };
 
