@@ -1,10 +1,10 @@
 // buttonbar.dust
 (function(){dust.register("buttonbar",body_0);function body_0(chk,ctx){return chk.write("<!-- [ Reset ]--><div class=\"btn-group\"><button id=\"btn-reset\" class=\"btn btn-danger\">Reset</button></div><!-- [ All Standard ][ All Superior ][ All Epic ][ All Mythic ][ All Legendary ] --><div class=\"btn-group\"><button id=\"btn-all-standard\" class=\"btn\">All <span class=\"color-standard\">Standard</span></button><button id=\"btn-all-superior\" class=\"btn\">All <span class=\"color-superior\">Superior</span></button><button id=\"btn-all-epic\" class=\"btn\">All <span class=\"color-epic\">Epic</span></button><button id=\"btn-all-mythic\" class=\"btn\">All <span class=\"color-mythic\">Mythic</span></button><button id=\"btn-all-legendary\" class=\"btn\">All <span class=\"color-legendary\">Legendary</span></button></div><!-- [ 100% DPS ][ 100% Healer ][ 100% Tank ] --><div class=\"btn-group\"><button id=\"btn-all-dps\" class=\"btn active\">100%<br/>Damage</button><button id=\"btn-all-heal\" class=\"btn\">100%<br/>Healing</button><button id=\"btn-all-tank\" class=\"btn\">100%<br/>Survivability</button></div><!-- [ Export ] --><div class=\"btn-group\"><a class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Export <span class=\"caret\"></span></a><ul class=\"dropdown-menu\"><li><a class=\"export\" href=\"#open-export-modal\" data=\"url\" data-toggle=\"modal\">URL</a></li></ul></div><!-- Pop-up window on [ Export ] --><div id=\"open-export-modal\" class=\"modal hide fade\"><div class=\"modal-header\"><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button><h5>Export</h5></div><div class=\"modal-body\">Copy this and share:<br/><textarea id=\"export-textarea\" class=\"field span12\" wrap=\"off\" rows=\"10\"></textarea></div></div>");}return body_0;})();;// container.dust
-(function(){dust.register("container",body_0);function body_0(chk,ctx){return chk.write("<div class=\"masthead\"><div class=\"btn-group pull-right\"><a class=\"btn btn-info\" href=\"https://github.com/AntoineThebaud/swlcalc\" target=\"_blank\" style=\"color: white;\">Github</a><a class=\"btn\" href=\"https://forums.funcom.com/t/swlcalc-gear-planner-for-swl/1908\" target=\"_blank\">forum post</a><a href=\"http://dgamers.guildi.com/\" target=\"_blank\"><img class=\"logo-dg\" src=\"assets/images/logos/DG.png\"/></a></div><div class=\"div-logo\"><img class=\"logo-swlcalc\" src=\"assets/images/logos/swlcalc.png\" /><span class=\"logo-slogan lightgrey\">A gear planner for </span><img class=\"logo-swl\" src=\"assets/images/logos/swl.png\"/></div></div><hr><div class=\"row-fluid\"><div class=\"span12\">").partial("buttonbar",ctx,null).write("</div></div><hr/><div class=\"row-fluid\"><div class=\"span8\">").partial("slots",ctx,null).write("</div><div class=\"span3\">").partial("summary",ctx,null).write("</div></div><hr><div class=\"footer\"><p>swlcalc &copy; 2017-2018 Antoine THEBAUD. Version <a href=\"https://github.com/AntoineThebaud/swlcalc/tree/1.2.0\" target=\"_new\">1.2.0</a>. Hosted on Github Pages.</p></div>");}return body_0;})();;// levelselect.dust
+(function(){dust.register("container",body_0);function body_0(chk,ctx){return chk.write("<div class=\"masthead\"><div class=\"btn-group pull-right\"><a class=\"btn btn-info\" href=\"https://github.com/AntoineThebaud/swlcalc\" target=\"_blank\" style=\"color: white;\">Github</a><a class=\"btn\" href=\"https://forums.funcom.com/t/swlcalc-gear-planner-for-swl/1908\" target=\"_blank\">forum post</a><a href=\"http://dgamers.guildi.com/\" target=\"_blank\"><img class=\"logo-dg\" src=\"assets/images/logos/DG.png\"/></a></div><div class=\"div-logo\"><img class=\"logo-swlcalc\" src=\"assets/images/logos/swlcalc.png\" /><span class=\"logo-slogan lightgrey\">A gear planner for </span><img class=\"logo-swl\" src=\"assets/images/logos/swl.png\"/></div></div><hr><div class=\"row-fluid\"><div class=\"span12\">").partial("buttonbar",ctx,null).write("</div></div><hr/><div class=\"row-fluid\"><div class=\"span8\">").partial("slots",ctx,null).write("</div><div class=\"span3\">").partial("summary",ctx,null).write("</div></div><hr><div class=\"footer\"><p>swlcalc &copy; 2017-2018 Antoine THEBAUD. Version <a href=\"https://github.com/AntoineThebaud/swlcalc/tree/1.3.0\" target=\"_new\">1.3.0</a>. Hosted on Github Pages.</p></div>");}return body_0;})();;// levelselect.dust
 (function(){dust.register("levelselect",body_0);function body_0(chk,ctx){return chk.write("<select id=\"").reference(ctx.get("id_prefix"),ctx,"h").reference(ctx.get("id_suffix"),ctx,"h").write("-level\" title=\"Please select level\"><option value=\"20\">20</option><option value=\"19\">19</option><option value=\"18\">18</option><option value=\"17\">17</option><option value=\"16\">16</option><option value=\"15\">15</option><option value=\"14\">14</option><option value=\"13\">13</option><option value=\"12\">12</option><option value=\"11\">11</option><option value=\"10\">10</option><option value=\"9\">9</option><option value=\"8\">8</option><option value=\"7\">7</option><option value=\"6\">6</option><option value=\"5\">5</option><option value=\"4\">4</option><option value=\"3\">3</option><option value=\"2\">2</option><option value=\"1\">1</option></select>");}return body_0;})();;// qualityselect.dust
 (function(){dust.register("qualityselect",body_0);function body_0(chk,ctx){return chk.write("<select id=\"").reference(ctx.get("id_prefix"),ctx,"h").reference(ctx.get("id_suffix"),ctx,"h").write("-quality\" title=\"Please select quality\"><option value=\"").reference(ctx.get("pip1_v"),ctx,"h").write("\" class=\"pips\">").reference(ctx.get("pip1_n"),ctx,"h").write("</option><option value=\"").reference(ctx.get("pip2_v"),ctx,"h").write("\" class=\"pips\">").reference(ctx.get("pip2_n"),ctx,"h").write("</option><option value=\"").reference(ctx.get("pip3_v"),ctx,"h").write("\" class=\"pips\">").reference(ctx.get("pip3_n"),ctx,"h").write("</option></select>");}return body_0;})();;// rarityselect.dust
 (function(){dust.register("rarityselect",body_0);function body_0(chk,ctx){return chk.write("<select id=\"").reference(ctx.get("id_prefix"),ctx,"h").reference(ctx.get("id_suffix"),ctx,"h").write("-rarity\" title=\"Please select rarity\"><option value=\"standard\" class=\"color-standard\">Standard</option><option value=\"superior\" class=\"color-superior\">Superior</option><option value=\"epic\" class=\"color-epic\">Epic</option><option value=\"mythic\" class=\"color-mythic\">Mythic</option><option value=\"legendary\" class=\"color-legendary\">Legendary</option></select>");}return body_0;})();;// slots.dust
-(function(){dust.register("slots",body_0);function body_0(chk,ctx){return chk.section(ctx.get("slots"),ctx,{"else":body_1,"block":body_2},null);}function body_1(chk,ctx){return chk.write("<p>No slots found (Bug)!</p>");}function body_2(chk,ctx){return chk.write("<div id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-slot\" class=\"slot\"><table class=\"table-title\"><tr><td class=\"td-title\"><span><h4 class=\"slot\">").reference(ctx.get("name"),ctx,"h").write("</h4><h4 id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-name\" class=\"slot-name\"></h4><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-name-warning\" class=\"label label-important\"><a class=\"slot-warning\" href=\"#\" data-toggle=\"tooltip\"><i class=\"icon-warning-sign icon-white\"></i></a></span></span></td>").exists(ctx.get("is_weapon"),ctx,{"block":body_3},null).write("<td class=\"slot-ilvl\">Item Power : <span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-total-ilvl\">0</span></td></tr></table><table class=\"table table-slots\"><tr>").exists(ctx.get("is_weapon"),ctx,{"else":body_4,"block":body_5},null).write("<td class=\"upgrade-label rarity-label\"><strong>Rarity :</strong></td><td class=\"upgrade-select rarity-select\">").partial("rarityselect",ctx,{"id_suffix":""}).write("</td><td class=\"stat-value stat-inSlot\"><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-power-rating\">0</span>").exists(ctx.get("is_weapon"),ctx,{"else":body_6,"block":body_7},null).write("</td></tr><tr class=\"tr-with-icon\"><td class=\"item-img\"><a href=\"#\" class=\"item-tooltip\" data-toggle=\"tooltip\" title=\"Item for the ").reference(ctx.get("name"),ctx,"h").write(" slot. Choose which rarity, quality, level and stats it will have in your build.\"><img id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-img-rarity\" class=\"item-icon-border\" src=\"\"/><img id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-img-icon\" class=\"item-icon\" src=\"\" alt=\"image\"/></a></td><td class=\"item-select\">").exists(ctx.get("is_weapon"),ctx,{"else":body_8,"block":body_9},null).write("</td><td class=\"upgrade-label quality-label\"><strong>Quality :</strong></td><td class=\"upgrade-select quality-select\">").exists(ctx.get("is_weapon"),ctx,{"else":body_10,"block":body_11},null).write("</td><td rowspan=\"2\" class=\"item-description\"><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-description\"></span></td></tr><tr><td rowspan=\"2\" class=\"filler\"></td><td rowspan=\"2\" class=\"filler\"></td><td rowspan=\"2\" class=\"upgrade-label level-label\"><strong>Level :</strong></td><td rowspan=\"2\" class=\"upgrade-select level-select\">").partial("levelselect",ctx,{"id_suffix":""}).write("</td></tr><tr><td class=\"ilvl\"><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-ilvl\">0</span></td></tr></table><table id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyphs\" class=\"table table-slots\"><tr><td class=\"glyph-title\" colspan=\"2\">Glyph</td><td class=\"upgrade-label rarity-label\"><strong>Rarity :</strong></td><td class=\"upgrade-select rarity-select\">").partial("rarityselect",ctx,{"id_suffix":"-glyph"}).write("</td><td class=\"filler\"></td></tr><tr class=\"tr-with-icon\"><td class=\"glyph-img\"><a href=\"#\" class=\"glyph-tooltip\" data-toggle=\"tooltip\" title=\"Glyph for the ").reference(ctx.get("name"),ctx,"h").write(" slot. Choose which rarity, quality, level and stats it will have in your build.\"><img id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyph-img-rarity\" class=\"glyph-icon-border\" src=\"assets/images/icons/rarity/none-42x42.png\"/><img id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyph-img-icon\" class=\"glyph-icon\" src=\"assets/images/icons/glyph/none.png\" alt=\"Glyph\"/></a></td><td class=\"glyph-select\"><select id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyph\" title=\"Please select stat\"><option value=\"none\" selected=\"true\">None</option><option value=\"hit-rating\">Accurate</option><option value=\"critical-rating\">Fierce</option><option value=\"critical-power\">Devastating</option><option value=\"evade-rating\">Elusive</option><option value=\"defense-rating\">Stalwart</option></select></td><td class=\"upgrade-label quality-label\"><strong>Quality :</strong></td><td class=\"upgrade-select quality-select\">").partial("qualityselect",ctx,{"id_suffix":"-glyph","pip1_v":"crude","pip1_n":"Crude","pip2_v":"simple","pip2_n":"Simple","pip3_v":"intricate","pip3_n":"Intricate"}).write("</td><td class=\"stat-value stat-inSlot\"><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyph-rating\">0</span><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyph-label\"></span></td></tr><tr><td class=\"filler\"></td><td class=\"filler\"></td><td class=\"upgrade-label level-label\"><strong>Level :</strong></td><td class=\"upgrade-select level-select\">").partial("levelselect",ctx,{"id_suffix":"-glyph"}).write("</td><td class=\"ilvl\"><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyph-ilvl\">0</span></td></tr></table><table id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signets\" class=\"table table-slots\">").exists(ctx.get("is_weapon"),ctx,{"else":body_12,"block":body_13},null).write("</table></div>");}function body_3(chk,ctx){return chk.write("<td><a id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-swap-weapon\" class=\"btn btn-success swap-weapon\"><i class=\"icon-retweet icon-white icon-align-left\"></i>    Swap weapon</a></td>");}function body_4(chk,ctx){return chk.write("<td class=\"item-title\" colspan=\"2\">Talisman</td>");}function body_5(chk,ctx){return chk.write("<td class=\"item-title\" colspan=\"2\">Weapon</td>");}function body_6(chk,ctx){return chk.write("<span> Power Rating</span>");}function body_7(chk,ctx){return chk.write("<span> Weapon Power</span>");}function body_8(chk,ctx){return chk.write("<select id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-itemId\" title=\"Please select item\"></select>");}function body_9(chk,ctx){return chk.write("<select id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-wtype\" title=\"Please select weapon type\"></select>");}function body_10(chk,ctx){return chk.partial("qualityselect",ctx,{"id_suffix":"","pip1_v":"faded","pip1_n":"Faded","pip2_v":"luminous","pip2_n":"Luminous","pip3_v":"radiant","pip3_n":"Radiant"});}function body_11(chk,ctx){return chk.partial("qualityselect",ctx,{"id_suffix":"","pip1_v":"mkI","pip1_n":"MK I","pip2_v":"mkII","pip2_n":"MK II","pip3_v":"mkIII","pip3_n":"MK III"});}function body_12(chk,ctx){return chk.write("<tr><td class=\"signet-title\" colspan=\"2\">Signet</td><td class=\"upgrade-label rarity-label\"><strong>Rarity :</strong></td><td class=\"upgrade-select rarity-select\">").partial("rarityselect",ctx,{"id_suffix":"-signet"}).write("</td><td id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet-description\" class=\"item-description\"></td></tr><tr class=\"tr-with-icon\"><td class=\"signet-img\"><a href=\"#\" class=\"signet-tooltip\" data-toggle=\"tooltip\" title=\"Signet for the ").reference(ctx.get("name"),ctx,"h").write(" slot. Choose the rarity and type of signet.\"><img id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet-img-rarity\" class=\"signet-icon-border\" src=\"assets/images/icons/rarity/none-42x42.png\"/><img id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet-img-icon\" class=\"signet-icon\" src=\"assets/images/icons/signet/none.png\" alt=\"Signet\"/></a></td><td class=\"signet-select\"><select id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet\" title=\"Please select signet\"></select></td><td class=\"upgrade-label quality-label\"><strong>Level :</strong></td> <!-- class is \"quality..\" instead of \"level..\" because we skip quality select for signets --><td class=\"upgrade-select quality-select\">").partial("levelselect",ctx,{"id_suffix":"-signet"}).write("</td> <!-- class is \"quality..\" instead of \"level..\" because we skip quality select for signets --><td class=\"ilvl\"><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet-ilvl\">0</span></td></tr>");}function body_13(chk,ctx){return chk.write("<tr><td class=\"item-title\" colspan=\"2\">Suffix</td><td id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet-description\" class=\"item-description\" colspan=\"3\" rowspan=\"2\"></td><tr><td class=\"item-select\" colspan=\"2\"><select id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet\" title=\"Please select signet\"></select></td></tr>");}return body_0;})();;// summary.dust
+(function(){dust.register("slots",body_0);function body_0(chk,ctx){return chk.section(ctx.get("slots"),ctx,{"else":body_1,"block":body_2},null);}function body_1(chk,ctx){return chk.write("<p>No slots found (Bug)!</p>");}function body_2(chk,ctx){return chk.write("<div id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-slot\" class=\"slot\"><table class=\"table-title\"><tr><td class=\"td-title\"><span><h4 class=\"slot\">").reference(ctx.get("name"),ctx,"h").write("</h4><h4 id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-name\" class=\"slot-name\"></h4><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-name-warning\" class=\"label label-important\"><a class=\"slot-warning\" href=\"#\" data-toggle=\"tooltip\"><i class=\"icon-warning-sign icon-white\"></i></a></span></span></td>").exists(ctx.get("is_weapon"),ctx,{"block":body_3},null).write("<td class=\"slot-ilvl\">Item Power : <span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-total-ilvl\">0</span></td></tr></table><table class=\"table table-slots\"><tr>").exists(ctx.get("is_weapon"),ctx,{"else":body_4,"block":body_5},null).write("<td class=\"upgrade-label rarity-label\"><strong>Rarity :</strong></td><td class=\"upgrade-select rarity-select\">").partial("rarityselect",ctx,{"id_suffix":""}).write("</td><td class=\"stat-value stat-inSlot\"><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-power-rating\">0</span>").exists(ctx.get("is_weapon"),ctx,{"else":body_6,"block":body_7},null).write("</td></tr><tr class=\"tr-with-icon\"><td class=\"item-img\"><a href=\"#\" class=\"item-tooltip\" data-toggle=\"tooltip\" title=\"Item for the ").reference(ctx.get("name"),ctx,"h").write(" slot. Choose which rarity, quality, level and stats it will have in your build.\"><img id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-img-rarity\" class=\"item-icon-border\" src=\"\"/><img id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-img-icon\" class=\"item-icon\" src=\"\" alt=\"image\"/></a></td><td class=\"item-select\">").exists(ctx.get("is_weapon"),ctx,{"else":body_8,"block":body_9},null).write("</td><td class=\"upgrade-label quality-label\"><strong>Quality :</strong></td><td class=\"upgrade-select quality-select\">").exists(ctx.get("is_weapon"),ctx,{"else":body_10,"block":body_11},null).write("</td><td rowspan=\"2\" class=\"item-description\"><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-description\"></span></td></tr><tr><td rowspan=\"2\" class=\"filler\"></td><td rowspan=\"2\" class=\"filler\"></td><td rowspan=\"2\" class=\"upgrade-label level-label\"><strong>Level :</strong></td><td rowspan=\"2\" class=\"upgrade-select level-select\">").partial("levelselect",ctx,{"id_suffix":""}).write("</td></tr><tr><td class=\"ilvl\"><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-ilvl\">0</span></td></tr></table><table id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyphs\" class=\"table table-slots\"><tr><td class=\"glyph-title\" colspan=\"2\">Glyph</td><td class=\"upgrade-label rarity-label\"><strong>Rarity :</strong></td><td class=\"upgrade-select rarity-select\">").partial("rarityselect",ctx,{"id_suffix":"-glyph"}).write("</td><td class=\"filler\"></td></tr><tr class=\"tr-with-icon\"><td class=\"glyph-img\"><a href=\"#\" class=\"glyph-tooltip\" data-toggle=\"tooltip\" title=\"Glyph for the ").reference(ctx.get("name"),ctx,"h").write(" slot. Choose which rarity, quality, level and stats it will have in your build.\"><img id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyph-img-rarity\" class=\"glyph-icon-border\" src=\"assets/images/icons/rarity/none-42x42.png\"/><img id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyph-img-icon\" class=\"glyph-icon\" src=\"assets/images/icons/glyph/none.png\" alt=\"Glyph\"/></a></td><td class=\"glyph-select\"><select id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyph\" title=\"Please select stat\"><option value=\"none\" selected=\"true\">None</option><option value=\"hit-rating\">Accurate</option><option value=\"critical-rating\">Fierce</option><option value=\"critical-power\">Devastating</option><option value=\"evade-rating\">Elusive</option><option value=\"defense-rating\">Stalwart</option></select></td><td class=\"upgrade-label quality-label\"><strong>Quality :</strong></td><td class=\"upgrade-select quality-select\">").partial("qualityselect",ctx,{"id_suffix":"-glyph","pip1_v":"crude","pip1_n":"Crude","pip2_v":"simple","pip2_n":"Simple","pip3_v":"intricate","pip3_n":"Intricate"}).write("</td><td class=\"stat-value stat-inSlot\"><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyph-rating\">0</span><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyph-label\"></span></td></tr><tr><td class=\"filler\"></td><td class=\"filler\"></td><td class=\"upgrade-label level-label\"><strong>Level :</strong></td><td class=\"upgrade-select level-select\">").partial("levelselect",ctx,{"id_suffix":"-glyph"}).write("</td><td class=\"ilvl\"><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-glyph-ilvl\">0</span></td></tr></table><table id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signets\" class=\"table table-slots\">").exists(ctx.get("is_weapon"),ctx,{"else":body_12,"block":body_13},null).write("</table></div>");}function body_3(chk,ctx){return chk.write("<td><a id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-swap-weapon\" class=\"btn btn-success swap-weapon\"><i class=\"icon-retweet icon-white icon-align-left\"></i>    Swap weapon</a></td>");}function body_4(chk,ctx){return chk.write("<td class=\"item-title\" colspan=\"2\">Talisman</td>");}function body_5(chk,ctx){return chk.write("<td class=\"item-title\" colspan=\"2\">Weapon</td>");}function body_6(chk,ctx){return chk.write("<span> Power Rating</span>");}function body_7(chk,ctx){return chk.write("<span> Weapon Power</span>");}function body_8(chk,ctx){return chk.write("<select id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-itemId\" title=\"Please select talisman\"></select>");}function body_9(chk,ctx){return chk.write("<select id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-itemId\" title=\"Please select weapon\"></select>");}function body_10(chk,ctx){return chk.partial("qualityselect",ctx,{"id_suffix":"","pip1_v":"faded","pip1_n":"Faded","pip2_v":"luminous","pip2_n":"Luminous","pip3_v":"radiant","pip3_n":"Radiant"});}function body_11(chk,ctx){return chk.partial("qualityselect",ctx,{"id_suffix":"","pip1_v":"mkI","pip1_n":"MK I","pip2_v":"mkII","pip2_n":"MK II","pip3_v":"mkIII","pip3_n":"MK III"});}function body_12(chk,ctx){return chk.write("<tr><td class=\"signet-title\" colspan=\"2\">Signet</td><td class=\"upgrade-label rarity-label\"><strong>Rarity :</strong></td><td class=\"upgrade-select rarity-select\">").partial("rarityselect",ctx,{"id_suffix":"-signet"}).write("</td><td id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet-description\" class=\"item-description\"></td></tr><tr class=\"tr-with-icon\"><td class=\"signet-img\"><a href=\"#\" class=\"signet-tooltip\" data-toggle=\"tooltip\" title=\"Signet for the ").reference(ctx.get("name"),ctx,"h").write(" slot. Choose the rarity and type of signet.\"><img id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet-img-rarity\" class=\"signet-icon-border\" src=\"assets/images/icons/rarity/none-42x42.png\"/><img id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet-img-icon\" class=\"signet-icon\" src=\"assets/images/icons/signet/none.png\" alt=\"Signet\"/></a></td><td class=\"signet-select\"><select id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet\" title=\"Please select signet\"></select></td><td class=\"upgrade-label quality-label\"><strong>Level :</strong></td> <!-- class is \"quality..\" instead of \"level..\" because we skip quality select for signets --><td class=\"upgrade-select quality-select\">").partial("levelselect",ctx,{"id_suffix":"-signet"}).write("</td> <!-- class is \"quality..\" instead of \"level..\" because we skip quality select for signets --><td class=\"ilvl\"><span id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet-ilvl\">0</span></td></tr>");}function body_13(chk,ctx){return chk.write("<tr><td class=\"item-title\" colspan=\"2\">Suffix</td><td id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet-description\" class=\"item-description\" colspan=\"3\" rowspan=\"2\"></td><tr><td class=\"item-select\" colspan=\"2\"><select id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-signet\" title=\"Please select signet\"></select></td></tr>");}return body_0;})();;// summary.dust
 (function(){dust.register("summary",body_0);function body_0(chk,ctx){return chk.write("<div id=\"summary\"><div id=\"table-primary\"><h4>Gear stats</h4><table class=\"table table-stats\"><thead><th>Primary Stats</th><th>Value</th></thead><tbody><tr><td class=\"stat-name\">Item Power</td><td id=\"stat-ilvl\" class=\"stat-value stat-inSummary\">0</td></tr><tr><td class=\"stat-name\">Power Rating</td><td id=\"stat-power-rating\" class=\"stat-value stat-inSummary\">0</td></tr><tr><td class=\"stat-name\">Weapon Power</td><td id=\"stat-weapon-power\" class=\"stat-value stat-inSummary\">0</td></tr><tr><td class=\"stat-name\">Attack Rating</td><td id=\"stat-attack-rating\" class=\"stat-value stat-inSummary\">0</td></tr><tr><td class=\"stat-name\">Heal Rating</td><td id=\"stat-heal-rating\" class=\"stat-value stat-inSummary\">0</td></tr><tr><td class=\"stat-name\">Hitpoints</td><td id=\"stat-hitpoints\" class=\"stat-value stat-inSummary\">0</td></tr><tr><td class=\"stat-name\">Combat Power</td><td id=\"stat-combat-power\" class=\"stat-value stat-inSummary\">0</td></tr><tr><td class=\"stat-name\">Healing Power</td><td id=\"stat-healing-power\" class=\"stat-value stat-inSummary\">0</td></tr></tbody></table></div><div id=\"table-offensive\"><table class=\"table table-stats\"><thead><th>Offensive Stats</th><th>Value</th></thead><tbody><tr><td class=\"stat-name\">Critical Rating</td><td id=\"stat-critical-rating\" class=\"stat-value stat-inSummary\">0 %</td></tr><tr><td class=\"stat-name\">Critical Chance %</td><td id=\"stat-critical-chance\" class=\"stat-value stat-inSummary\">0</td></tr><tr><td class=\"stat-name\">Critical Power Rating</td><td id=\"stat-critical-power\" class=\"stat-value stat-inSummary\">0</td></tr><tr><td class=\"stat-name\">Critical Power %</td><td id=\"stat-critical-power-percentage\" class=\"stat-value stat-inSummary\">0 %</td></tr><tr><td class=\"stat-name\">Hit Rating</td><td id=\"stat-hit-rating\" class=\"stat-value stat-inSummary\">0</td></tr><tr><td class=\"stat-name\">Glance Reduction %</td><td id=\"stat-glance-reduction\" class=\"stat-value stat-inSummary\">0%</td></tr></tbody></table></div><div id=\"table-defensive\"><table class=\"table table-stats\"><thead><th>Defensive Stats</th><th>Value</th></thead><tbody><tr><td class=\"stat-name\">Defense Rating</td><td id=\"stat-defense-rating\" class=\"stat-value stat-inSummary\">0</td></tr><tr><td class=\"stat-name\">Glance Chance %</td><td id=\"stat-glance-chance\" class=\"stat-value stat-inSummary\">0%</td></tr><tr><td class=\"stat-name\">Evade Rating</td><td id=\"stat-evade-rating\" class=\"stat-value stat-inSummary\">0</td></tr><tr><td class=\"stat-name\">Evade Chance %</td><td id=\"stat-evade-chance\" class=\"stat-value stat-inSummary\">0%</td></tr><!--below stats are not functionnal yet--><tr><td class=\"stat-name not-functionnal\">Physical Protection</td><td id=\"stat-physical-protection\" class=\"not-functionnal stat-value stat-inSummary\">249</td></tr><tr><td class=\"stat-name not-functionnal\">Magical Protection</td><td id=\"stat-magical-protection\" class=\"not-functionnal stat-value stat-inSummary\">249</td></tr></tbody></table></div></div>");}return body_0;})();;$(document).ready(function() {
     swlcalc.init();
 });
@@ -126,10 +126,10 @@ swlcalc.summary = function() {
     //TODO/REFACTOR : remove ? currently needed for compatibility
     var init = function() {
     };
-  
+
     //TODO/REFACTOR : to be sure to use 'this' instead of 'var'
     var animaAllocation = 'DAMAGE';
-  
+
     /**
      * Refreshes all values in the summary
      * -> triggered after any change that affects a stat
@@ -166,7 +166,7 @@ swlcalc.summary = function() {
     var updateOnePrimaryStat = function(stat, value) {
         $('#stat-' + stat).text(value);
     };
-  
+
     /**
      * Updates all primary stats in the summary
      */
@@ -202,7 +202,7 @@ swlcalc.summary = function() {
                 sums['ilvl'] += slot.totalILvl();
                 if (slot.isWeapon() && !slot.weaponDrawn) {
                     continue;
-                } else if (slot.isWeapon() && slot.wtype() != 'none') {
+                } else if (slot.isWeapon() && slot.itemId() != 'none') {
                     sums['weapon-power'] = slot.powerRating();
                 } else if (!slot.isWeapon() && slot.itemId() != 'none') {
                     sums['power-rating'] += slot.powerRating();
@@ -212,9 +212,9 @@ swlcalc.summary = function() {
         // first basic implementation of anima allocation
         // TODO/FEATURE : add conversion to AR/HR/HP based on a ratio
         if (animaAllocation == 'DAMAGE') {
-            sums['attack-rating'] += sums['power-rating'];            
+            sums['attack-rating'] += sums['power-rating'];
         } else if (animaAllocation == 'HEALING') {
-            sums['heal-rating'] += sums['power-rating'];          
+            sums['heal-rating'] += sums['power-rating'];
         } else if (animaAllocation == 'SURVIVABILITY') {
             // TODO/REFACTOR : to move to a -data file?
             // TODO/REFACTOR : this is a "pretty precise but still approximated" value of the real IG multiplier
@@ -252,7 +252,7 @@ swlcalc.summary = function() {
 
         return Math.round((heal_rating + weapon_power) / ratio);
     };
-  
+
     /**
      * Updates glyph stats in the summary
      */
@@ -417,7 +417,7 @@ swlcalc.summary = function() {
             }
         }
     };
-  
+
     /**
      * Boolean function. Determines whether a stat is percentage-based or not
      */
@@ -428,22 +428,23 @@ swlcalc.summary = function() {
             || statName == 'evade-chance'
             || statName == 'glance-chance';
     };
-    
+
     /**
      * Setter for animaAllocation attribute
      */
     var setAnimaAllocation = function(newAllocation) {
         animaAllocation = newAllocation;
     }
-    
+
     /**
-     * Launch a description refresh for each item in order to display the right bonus values
+     * Launch a description refresh for each item (in order to display the right bonus values)
      */
     var updateDescriptions = function() {
         //TODO/REFACTOR : avoid using hasSlot
         for (var slotId in swlcalc.slots) {
             if (swlcalc.slots.hasSlot(slotId)) {
-                swlcalc.slots[slotId].refreshItemBonus(combatPower(), healingPower());
+                swlcalc.slots[slotId].refreshItemBonuses(combatPower(), healingPower());
+                swlcalc.slots[slotId].refreshSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
             }
         }
     };
@@ -487,7 +488,7 @@ swlcalc.select = swlcalc.select || {};
 swlcalc.select.SelectHandler = function SelectHandler(slot) {
     var self = this;
     var slotObj = swlcalc.slots[slot.id_prefix];
-    
+
     //TODO/REFACTOR : to rename as "init"
     this.initiate = function() {
         this.bindEvents();
@@ -499,11 +500,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Associates the right process to each trigger.
      */
     this.bindEvents = function() {
-        if (slotObj.isWeapon()) {
-            slotObj.el.wtype.change(this.handleWtypeChange);
-        } else {
-            slotObj.el.itemId.change(this.handleItemChange);
-        }
+        slotObj.el.itemId.change(this.handleItemChange);
         slotObj.el.rarity.change(this.handleRarityChange);
         slotObj.el.quality.change(this.handleQualityChange);
         slotObj.el.level.change(this.handleLevelChange);
@@ -517,30 +514,26 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.signetRarity.change(this.handleSignetRarityChange);
         slotObj.el.signetLevel.change(this.handleSignetLevelChange);
     };
-  
+
     /**
      * Loads items (swlcalc-data-items) as options list in the #slot-itemId select
      */
     this.addItemsToSelect = function() {
         // makes the function compatible both for talismans and weapons
-        // TODO/REFACTOR : merge the notions of wtype and itemId ?
         var slotToUse;
-        var itemIdOrWtype;
         if (slot.group == 'weapon') {
             slotToUse = 'weapon'
-            itemIdOrWtype = 'wtype';
         } else {
             slotToUse = slot.id_prefix
-            itemIdOrWtype = 'itemId';
         }
-      
-        slotObj.el[itemIdOrWtype].append($('<option>', {
+
+        slotObj.el.itemId.append($('<option>', {
             value: "none",
             text: "None",
             selected: "true"
         }));
         var items = swlcalc.data.items.slot[slotToUse].slice();
-   
+
         //sort alphabetically for a better ergonomy
         //sort for weapons include weapon type as prefix => TODO/REFACTOR : code duplication
         if (slot.group == 'weapon') {
@@ -559,16 +552,16 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
                     return -1;
                 }
             });
-        }        
+        }
         items.forEach(function(item) {
-            slotObj.el[itemIdOrWtype].append($('<option>', {
+            slotObj.el.itemId.append($('<option>', {
                 value: item.id,
                 //TODO/REFACTOR : quick & dirty ; we test 3 times the weapon condition in this function
-                text: (itemIdOrWtype == 'wtype' ? '[' + item.type + '] ' + item.name : item.name)
+                text: (slot.group == 'weapon' ? '[' + item.type + '] ' + item.name : item.name)
             }));
         });
     };
-  
+
     /**
      * Loads signets (swlcalc-data-signets) as options list in the #slot-signet select
      */
@@ -582,7 +575,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
         //TODO/REFACTOR : to improve
         var idToUse = (slot.id_prefix == 'weapon2' ? 'weapon' : slot.id_prefix);
-        var signetsInSlotGroup = swlcalc.data.signets.slot[idToUse];
+        var signetsInSlotGroup = swlcalc.data.signets.slot[idToUse].slice();
         //sort alphabetically for a better ergonomy
         signetsInSlotGroup.sort(function(a, b) {
             if (a.name.toLowerCase() > b.name.toLowerCase()) {
@@ -591,7 +584,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
                 return -1;
             }
         });
-      
+
         $.each(signetsInSlotGroup, function(index, value) {
             slotObj.el.signetId.append($('<option>', {
                 value: value.id,
@@ -614,35 +607,19 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Event handlers : Item |
      *                       V
      **********************************************************************************/
-    
+
     /**
      * Handler for #slot-itemId
-     * -> triggers item update for the slot (= image + description).
-     * -> triggers power rating update for the slot.
-     * -> triggers ilvl update for the slot (to cover the case when previous value was or new value is 'none').
      */
     this.handleItemChange = function(event) {
-        slotObj.updateTalisman()
-        slotObj.updatePowerRating();
-        slotObj.updateILvl();
-        swlcalc.summary.updateAllStats();
-    };
-  
-    /**
-     * Handler for #slot-wtype
-     * -> triggers image update for the weapon.
-     * -> triggers power rating update for the slot.
-     * -> triggers ilvl update for the slot (to cover the case when previous value was or new value is 'none').
-     */
-    this.handleWtypeChange = function(event) {
-           //TODO/FEATURE : reenable slot name display
-//         var wtype = $(this).val();
-//         if(wtype != 'none') {
-//             slotObj.name(': ' + swlcalc.util.capitalise(wtype));
-//         } else {
-//             slotObj.name('');
-//         }
-        slotObj.updateWeapon();
+        //TODO/FEATURE : reenable slot name display
+//      var wtype = $(this).val();
+//      if(wtype != 'none') {
+//          slotObj.name(': ' + swlcalc.util.capitalise(wtype));
+//      } else {
+//          slotObj.name('');
+//      }
+        slotObj.updateItem();
         slotObj.updatePowerRating();
         slotObj.updateILvl();
         swlcalc.summary.updateAllStats();
@@ -682,20 +659,17 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateILvl();
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Handler for #slot-quality
-     * -> triggers power rating update for the slot.
      */
     this.handleQualityChange = function(event) {
         slotObj.updatePowerRating();
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Handler for #slot-level
-     * -> triggers power rating update for the slot.
-     * -> triggers ilvl update for the slot.
      */
     this.handleLevelChange = function(event) {
         slotObj.updateILvl();
@@ -707,13 +681,9 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Event handlers : Glyph |
      *                        V
      **********************************************************************************/
-    
+
     /**
      * Handler for #slot-glyph
-     * -> triggers image update for the glyph.
-     * -> triggers rating update for the glyph.
-     * -> triggers label update for the glyph.
-     * -> triggers ilvl update for the glyph (to cover the case when previous value was or new value is 'none').
      */
     this.handleGlyphChange = function(event) {
         slotObj.updateGlyphImgIcon();
@@ -722,13 +692,10 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateGlyphILvl();
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Handler for #slot-glyph-rarity
      * -> triggers rarity's text color update for the glyph.
-     * -> triggers border image update for the glyph.
-     * -> triggers ilvl update for the glyph.
-     * -> triggers rating update for the glyph.
      */
     this.handleGlyphRarityChange = function(event) {
         //self.updateTextColor(event.target);
@@ -739,20 +706,17 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.updateGlyphRating();
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Handler for #slot-glyph-quality
-     * -> triggers rating update for the glyph.
      */
     this.handleGlyphQualityChange = function(event) {
         slotObj.updateGlyphRating();
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Handler for #slot-glyph-level
-     * -> triggers rating update for the glyph.
-     * -> triggers ilvl update for the glyph.
      */
     this.handleGlyphLevelChange = function(event) {
         slotObj.updateGlyphRating();
@@ -768,7 +732,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     /**
      * Handler for #slot-signet
      * -> triggers signet update for the signet. //TODO : review slotObj.updateSignet()
-     * -> triggers ilvl update for the signet (to cover the case when previous value was or new value is 'none').
+     * -> triggers ilvl update for the signet.
      */
     this.handleSignetChange = function(event) {
         slotObj.updateSignet();
@@ -779,19 +743,18 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         }
         swlcalc.summary.updateAllStats();
     };
-  
+
     /**
      * Handler for #slot-signet-rarity
      * -> triggers rarity's text color update for the signet.
      * -> triggers signet update for the signet. //TODO : review slotObj.updateSignet()
-     * -> triggers ilvl update for the signet.
      */
     //TODO/REFACTOR : code duplication with handleSignetChange()
     this.handleSignetRarityChange = function(event) {
         //self.updateTextColor(event.target);
         //TODO/REFACTOR : to reuse updateTextColor
         $(event.target).attr("class", $("#" + slotObj.id + "-signet-rarity option:selected").attr('class'));
-        slotObj.updateSignet();
+        slotObj.updateSignetIcon();
         //weapon signets (= suffixes) don't have item power attribute
         if (!slotObj.isWeapon()) {
             slotObj.updateSignetILvl();
@@ -801,7 +764,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     /**
      * Handler for #slot-signet-level
-     * -> triggers ilvl update for the signet.
      */
     this.handleSignetLevelChange = function(event) {
         slotObj.updateSignetILvl();
@@ -1045,14 +1007,10 @@ swlcalc.export = function() {
      * Builds the subpart of the export URL for the submitted slot
      */
     var createSlotUrl = function(slot, state) {
-        var idOrWtype = state.itemId;
-        if(slot.isWeapon()) {
-            idOrWtype = state.wtype;
-        }
         // see swlcalc-import.js for the order
         var slotUrl = slot.id + '='
             + state.rarity + ','
-            + idOrWtype + ','
+            + state.itemId + ','
             + state.quality + ','
             + state.level + ','
             + state.glyph_rarity + ','
@@ -1132,13 +1090,8 @@ swlcalc.import = function() {
         slotObj.rarity(swlcalc.data.rarity_mapping.to_name[values[0]]);
         slotObj.el.rarity.change();
         // values[1] == Item's Type (ID)
-        if(slotObj.isWeapon()) {
-            slotObj.wtype(values[1] == '0' ? 'none' : values[1]);
-            slotObj.el.wtype.change();
-        } else {
-            slotObj.itemId(values[1] == '0' ? 'none' : values[1]);
-            slotObj.el.itemId.change();
-        }
+        slotObj.itemId(values[1] == '0' ? 'none' : values[1]);
+        slotObj.el.itemId.change();          
         // values[2] == Item's Quality
         if(slotObj.isWeapon()) {
             slotObj.quality(swlcalc.data.weapon_quality_mapping.to_name[values[2]]);
@@ -1260,7 +1213,7 @@ swlcalc.slots = function() {
     var init = function() {
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             var slotData = swlcalc.data.template_data.slots[i];
-            this[slotData.id_prefix] = new swlcalc.slots.Slot(slotData.id_prefix, slotData.name, slotData.group);
+            this[slotData.id_prefix] = new swlcalc.slots.Slot(slotData.id_prefix, slotData.name, slotData.type, slotData.group);
             this[slotData.id_prefix].el.nameWarning.hide();
         }
         drawPrimaryWeapon();
@@ -1354,10 +1307,11 @@ swlcalc.slots = function() {
     return oPublic;
 }();
 
-swlcalc.slots.Slot = function Slot(id, name, group) {
+swlcalc.slots.Slot = function Slot(id, name, type, group) {
     var self = this;
     this.id = id;
     this.name = name;
+    this.type = type;
     this.group = group;
     this.weaponDrawn = false;
 
@@ -1370,8 +1324,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         div: $('#' + this.id + '-slot'),
         name: $('#' + this.id + '-name'),
         totalILvl: $('#' + this.id + '-total-ilvl'),
-        itemId: $('#' + this.id + '-itemId'), //TODO/refactor : remove "Id" ?
-        wtype: $('#' + this.id + '-wtype'),
+        itemId: $('#' + this.id + '-itemId'),
         rarity: $('#' + this.id + '-rarity'),
         quality: $('#' + this.id + '-quality'),
         level: $('#' + this.id + '-level'),
@@ -1433,7 +1386,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Item functions | (talismans + weapons)
      *                V
      **********************************************************************************/
-  
+
     /**
      * Returns true if the slot belongs to the weapon group
      */
@@ -1462,24 +1415,13 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Getter/Setter for #slot-wtype
-     */
-    this.wtype = function() {
-        if (arguments.length == 1) {
-            this.el.wtype.val(arguments[0]);
-        } else {
-            return this.isWeapon() ? this.el.wtype.val() : 'none';
-        }
-    };
-
-    /**
      * Getter/Setter for #slot-itemId
      */
     this.itemId = function() {
         if (arguments.length == 1) {
             this.el.itemId.val(arguments[0]);
         } else {
-            return this.group != 'weapon' ? this.el.itemId.val() : 'none';
+            return this.el.itemId.val();
         }
     };
 
@@ -1487,13 +1429,12 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Getter to retrieve full item object from the data model
      */
     this.getItem = function() {
+        var slotToUse = this.id
+        //TODO/REFACTOR : maybe there is a better way to get weapon items for secondary weapon
         if (this.isWeapon()) {
-            //TODO/REFACTOR : quick and dirty way to get weapon items for secondary weapon
-            //return swlcalc.data.items.slot[this.id][this.wtype() - 1];
-            return swlcalc.data.items.slot['weapon'][this.wtype() - 1];
-        } else {
-            return swlcalc.data.items.slot[this.id][this.itemId() - 1];
+            slotToUse = 'weapon';
         }
+        return swlcalc.data.items.slot[slotToUse][this.itemId() - 1];
     };
 
     /**
@@ -1583,149 +1524,79 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.imgBorder.attr('src');
         }
     };
-  
+
     /**
-     * Getter/Setter for #slot-bonus
+     * Getter/Setter for any #slot-bonusN element (#slot-bonus1, #slot-bonus2, #slot-bonus3 ...)
      */
-    this.bonus = function() {
-        if (arguments.length == 1) {
-            $('#' + this.id + '-bonus').html(arguments[0]);
+    this.bonusN = function() {
+        if (arguments.length == 2) {
+            $('#' + this.id + '-bonus' + arguments[0]).html(arguments[1]);
+        } else if (arguments.length == 1) {
+            return $('#' + this.id + '-bonus' + arguments[0]).html();
         } else {
-            return $('#' + this.id + '-bonus').html();
+            console.log("Error on this.bonusN() call")
         }
     };
 
     /**
-     * Getter/Setter for #slot-bonus2
+     * Updates #slot-image + #slot-description
      */
-    // TODO/REFACTOR : quick & dirty, to avoid code duplication with this.bonus()
-    this.bonus2 = function() {
-        if (arguments.length == 1) {
-            $('#' + this.id + '-bonus2').html(arguments[0]);
-        } else {
-            return $('#' + this.id + '-bonus2').html();
-        }
-    };
-  
-    /**
-     * Getter/Setter for #slot-bonus3
-     */
-    // TODO/REFACTOR : quick & dirty, to avoid code duplication with this.bonus()
-    this.bonus3 = function() {
-        if (arguments.length == 1) {
-            $('#' + this.id + '-bonus3').html(arguments[0]);
-        } else {
-            return $('#' + this.id + '-bonus3').html();
-        }
-    };
-
-    /**
-     * Getter/Setter for #slot-bonus4
-     */
-    // TODO/REFACTOR : quick & dirty, to avoid code duplication with this.bonus()
-    this.bonus4 = function() {
-        if (arguments.length == 1) {
-            $('#' + this.id + '-bonus4').html(arguments[0]);
-        } else {
-            return $('#' + this.id + '-bonus4').html();
-        }
-    };
-  
-    /**
-     * Updates #slot-image + #slot-description for talismans
-     */
-    //TODO/REFACTOR : to merge with updateWeapon (= to merge itemId and wtype)
-    this.updateTalisman = function() {
+    this.updateItem = function() {
         var newImage;
         var newDescription;
         if (this.itemId() == 'none') {
             //To enable when all images will be present :
             // newImage = 'assets/images/icons/talisman/None.png';
-            this.imgIcon('assets/images/icons/talisman/None.png');
+            this.imgIcon('assets/images/icons/' + this.type + '/None.png');
             newDescription = '';
         } else {
-            var newSelectedItem = swlcalc.data.items.slot[this.id][this.itemId() - 1];
+            var slotToUse = (this.isWeapon() ? 'weapon' : this.id);
+            var newSelectedItem = swlcalc.data.items.slot[slotToUse][this.itemId() - 1];
             //TODO/FEATURE :
             /* temporary code ********************************************************************************
              * => Will be used as long as item images are not added to the resources. The final code will be :
-            newImage = 'assets/images/icons/talisman/' + newSelectedItem.name + '.png';
+            newImage = 'assets/images/icons/' + this.type + '/' + newSelectedItem.name + '.png';
              * => For now replaced by : */
             var image = new Image();
             image.onload = function() {
-                self.imgIcon('assets/images/icons/talisman/' + newSelectedItem.name + '.png');
+                self.imgIcon('assets/images/icons/' + self.type + '/' + newSelectedItem.name + '.png');
             }
             image.onerror = function() {
-                self.imgIcon('assets/images/icons/talisman/' + swlcalc.data.items.slot[self.id][0].name + '.png');
+                if (self.isWeapon()) {
+                    self.imgIcon('assets/images/icons/' + self.type + '/temp/' + newSelectedItem.type + '.png');
+                } else {
+                    self.imgIcon('assets/images/icons/' + self.type + '/' + swlcalc.data.items.slot[self.id][0].name + '.png');
+                }
             }
-            image.src = "assets/images/icons/talisman/" + newSelectedItem.name + ".png";
+            image.src = 'assets/images/icons/' + this.type + '/' + newSelectedItem.name + '.png';
             /* temporary code ********************************************************************************/
             newDescription = newSelectedItem.description;
-        }
-        //To enable when all images will be present :
-        //this.imgIcon(newImage);
-        this.description(newDescription);
-    };
-  
-    /**
-     * Updates #slot-image + #slot-description for weapons
-     */
-    //TODO/REFACTOR : to merge with updateTalisman (= to merge itemId and wtype)
-    this.updateWeapon = function() {
-        var newImage;
-        var newDescription;
-        if (this.wtype() == 'none') {
-            //To enable when all images will be present :
-            // newImage = 'assets/images/icons/talisman/None.png';
-            this.imgIcon('assets/images/icons/weapon/None.png');
-            newDescription = '';
-        } else {
-            var newSelectedItem = swlcalc.data.items.slot.weapon[this.wtype() - 1];
-            //TODO/FEATURE :
-            /* temporary code ********************************************************************************
-             * => Will be used as long as item images are not added to the resources. The final code will be :
-            newImage = 'assets/images/icons/weapon/' + newSelectedItem.name + '.png';
-             * => For now replaced by : */
-            var image = new Image();
-            image.onload = function() {
-                self.imgIcon('assets/images/icons/weapon/' + newSelectedItem.name + '.png');
-            }
-            image.onerror = function() {
-                //temporary directory to retrieve the right placeholder image through the item type
-                //self.imgIcon('assets/images/icons/weapon/None.png');
-                self.imgIcon('assets/images/icons/weapon/temp/' + newSelectedItem.type + '.png');
-            }
-            image.src = "assets/images/icons/weapon/" + newSelectedItem.name + ".png";
-            /* temporary code ********************************************************************************/
-            newDescription = newSelectedItem.description;
-            //TODO/REFACTOR : quick and dirty way to have weapon-bonus working for secondary weapon
-            if (this.id == 'weapon2') {
-                newDescription = newDescription.replace('weapon-bonus', 'weapon2-bonus');
-                newDescription = newDescription.replace('weapon-bonus2', 'weapon2-bonus2');
-                newDescription = newDescription.replace('weapon-bonus3', 'weapon2-bonus3');
-                newDescription = newDescription.replace('weapon-bonus4', 'weapon2-bonus4');
+
+            if (this.isWeapon()) {
+                // Replaces %id% either by 'weapon' or 'weapon2' depending on the current slot
+                // TODO/REFACTOR : maybe there's a better way to achieve this..
+                newDescription = newDescription.replace(/%id/g, this.id);
             }
         }
         //To enable when all images will be present :
         //this.imgIcon(newImage);
         this.description(newDescription);
     };
-  
+
     /**
      * Updates #slot-power-rating (calculatations with stats data)
      */
     this.updatePowerRating = function() {
         var base_value = 0;
         var bonus_value = 0;
-        // calculation rule for weapons
-        if (this.isWeapon()) {
-            if (this.wtype() != 'none') {
-                base_value = swlcalc.data.power_rating['weapon'][this.rarity()].weapon_power_init;
-                bonus_value = swlcalc.data.power_rating['weapon'][this.rarity()].weapon_power_per_level * (this.level() - 1);
+        if (this.itemId() != 'none') {
+            // calculation rule for weapons
+            if (this.isWeapon()) {
+                base_value = swlcalc.data.power_rating.weapon[this.rarity()].weapon_power_init;
+                bonus_value = swlcalc.data.power_rating.weapon[this.rarity()].weapon_power_per_level * (this.level() - 1);
             }
-        }
-        // calculation rule for talismans
-        else {
-            if (this.itemId() != 'none') {
+            // calculation rule for talismans
+            else {
                 base_value = swlcalc.data.power_rating[this.group][this.rarity()][this.quality()].power_rating_init;
                 bonus_value = swlcalc.data.power_rating[this.group][this.rarity()][this.quality()].power_rating_per_level * (this.level() - 1);
             }
@@ -1752,7 +1623,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      */
     this.updateILvl = function() {
         var calculatedILvl = 0;
-        if (!(this.itemId() == 'none' && this.wtype() == 'none')) {
+        if (!(this.itemId() == 'none')) {
             calculatedILvl = this.calculateILvl('talisman-or-weapon', this.rarity(), this.level());
             // Weapons are worth ~15% more Item Power than talismans
             // TODO/REFACTOR : could be done in  a better way
@@ -1768,54 +1639,20 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Updates #slot-bonus + #slot-bonus2
+     * Updates every #slot-bonusN element
      */
-    this.refreshItemBonus = function(combatPower, healingPower) {
-        if (this.bonus() === undefined) return;
+    this.refreshItemBonuses = function(combatPower, healingPower) {
+        if (this.bonusN(1) === undefined) return;
         var item = this.getItem();
         var statForComputation = 0;
-        if (item.stat == 'Combat Power') {
-            statForComputation = combatPower;
-        } else if (item.stat == 'Healing Power') {
-            statForComputation = healingPower;
-        }
-        this.bonus(Math.round(item.coefficient * statForComputation));
 
-        // particular case : items with 2 dynamic values
-        // TODO/REFACTOR : quick & dirty, to avoid code duplication
-        if (this.bonus2() !== undefined) {
-            item = this.getItem();
-            statForComputation = 0;
-            if (item.stat2 == 'Combat Power') {
+        for (i = 0; i < item.coefficients.length; i++) {
+            if (item.stats[i] == 'Combat Power') {
                 statForComputation = combatPower;
-            } else if (item.stat2 == 'Healing Power') {
+            } else if (item.stats[i] == 'Healing Power') {
                 statForComputation = healingPower;
             }
-            this.bonus2(Math.round(item.coefficient2 * statForComputation));
-        }
-        // particular case : items with 3 dynamic values
-        // TODO/REFACTOR : quick & dirty, to avoid code duplication
-        if (this.bonus3() !== undefined) {
-            item = this.getItem();
-            statForComputation = 0;
-            if (item.stat2 == 'Combat Power') {
-                statForComputation = combatPower;
-            } else if (item.stat2 == 'Healing Power') {
-                statForComputation = healingPower;
-            }
-            this.bonus3(Math.round(item.coefficient3 * statForComputation));
-        }
-        // particular case : items with 4 dynamic values
-        // TODO/REFACTOR : quick & dirty, to avoid code duplication
-        if (this.bonus4() !== undefined) {
-            item = this.getItem();
-            statForComputation = 0;
-            if (item.stat4 == 'Combat Power') {
-                statForComputation = combatPower;
-            } else if (item.stat4 == 'Healing Power') {
-                statForComputation = healingPower;
-            }
-            this.bonus4(Math.round(item.coefficient4 * statForComputation));
+            this.bonusN(i + 1, Math.round(item.coefficients[i] * statForComputation));
         }
     }
 
@@ -1878,7 +1715,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return parseInt(this.el.glyphRating.html());
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-glyph-label
      */
@@ -1910,7 +1747,7 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return this.el.glyphImgBorder.attr('src');
         }
     };
-  
+
     /**
      * Getter/Setter for #slot-glyph-iLvl
      */
@@ -2005,11 +1842,10 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
             return swlcalc.data.signets.noneSignet;
      // } else if (this.id == 'weapon' || this.id == 'weapon2') {
      //     return swlcalc.data.suffixes.slot[this.signetId()];
-        } else {
-            //TODO/REFACTOR : patch to improve
-            var idToUse = (this.id == 'weapon2' ? 'weapon' : this.id);
-            return swlcalc.data.signets.slot[idToUse][this.signetId() - 1];
         }
+        //TODO/REFACTOR : patch to improve
+        var idToUse = (this.id == 'weapon2' ? 'weapon' : this.id);
+        return swlcalc.data.signets.slot[idToUse][this.signetId() - 1];
     };
 
     /**
@@ -2061,24 +1897,22 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      */
     //TODO/FEATURE : to use for signets like in tswcalc
     this.signetDescription = function() {
-        var signet = this.signet();
-        if (signet === null) {
-            return '';
+        if (arguments.length == 1) {
+            this.el.signetDescription.html(arguments[0]);
+        } else {
+            return this.el.signetDescription.text();
         }
-        var description = signet.description;
-        if(signet.rarity) {
-            description = description.replace('%s', this.determineSignetRarityValue(signet));
-            description = description.replace('%d', this.determineSignetRarityValue(signet));
-            if (Object.prototype.toString.call(signet.rarity) === '[object Array]') {
-                description = description.replace('%0', this.determineSignetRarityValue(signet, 0));
-                description = description.replace('%1', this.determineSignetRarityValue(signet, 1));
-            }
-        }
-        if (signet.cooldown && signet.cooldown != '0') {
-            description += ' ' + signet.cooldown + ' seconds cooldown.';
-        }
+    };
 
-        return description;
+    /**
+     * Getter/Setter for #id-signet-bonus
+     */
+    this.signetBonus = function() {
+        if (arguments.length == 1) {
+            $('#' + this.id + '-signet-bonus').html(arguments[0]);
+        } else {
+            return $('#' + this.id + 'signet-bonus').html();
+        }
     };
 
     /**
@@ -2108,11 +1942,21 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
-     * Updates signet
+     * Updates signet (#slot-signet-icon + #slot-signet-description)
      */
     this.updateSignet = function() {
         this.updateSignetIcon();
-        this.updateSignetDescription();
+
+        var signet = this.signet();
+        var newDescription = signet.description;
+        if (this.isWeapon()) {
+            // Replaces %id% either by 'weapon' or 'weapon2' depending on the current slot
+            // TODO/REFACTOR : maybe there's a better way to achieve this..
+            newDescription = newDescription.replace(/%id/g, this.id);
+        }
+        this.signetDescription(newDescription);
+
+        this.refreshSignetBonus();
     };
 
     /**
@@ -2152,6 +1996,51 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
     };
 
     /**
+     * Updates the dynamic bonus displayed in the signet's description (#slot-signet-bonus)
+     */
+    // TODO to enhance
+    this.refreshSignetBonus = function(combatPower, healingPower){
+        var newValue = 0;
+        // coefficient in case CP or HP is used in the bonus computation
+        var coef = 1
+
+        if (this.signet().id != 0) {
+            var slotToUse = (this.isWeapon() ? 'weapon' : this.id);
+            var signet = swlcalc.data.signets.slot[slotToUse][this.signetId() - 1]
+
+            if (this.isWeapon()) {
+                newValue = signet.quality[this.quality()]
+            } else if (signet.name == "Signet of Shoulder Tackle") {
+                // TODO there should be a better way to handle this particular case
+                bonus1 = signet.ratio[this.signetRarity()].init[0];
+                bonus2 = signet.ratio[this.signetRarity()].init[1]
+                           - signet.ratio[this.signetRarity()].per_level[1] * (this.signetLevel() - 1);
+                $('#' + this.id + '-signet-bonus').html(bonus1);
+                $('#' + this.id + '-signet-bonus2').html(swlcalc.util.precisionRound(bonus2, 4));
+                return;
+            } else if (signet.name == "Signet of Contortion") {
+                // TODO there should be a better way to handle this particular case
+                newValue = signet.ratio[this.signetRarity()].init
+                           - signet.ratio[this.signetRarity()].per_level * (this.signetLevel() - 1)
+            } else {
+                newValue = signet.ratio[this.signetRarity()].init
+                           + signet.ratio[this.signetRarity()].per_level * (this.signetLevel() - 1)
+            }
+
+            if (signet.stat != undefined) {
+                if (signet.stat == 'Combat Power') {
+                    coef = combatPower;
+                } else if (signet.stat == 'Healing Power') {
+                    coef = healingPower;
+                }
+            }
+        }
+        newValue *= coef
+        newValue = swlcalc.util.precisionRound(newValue, 4)
+        this.signetBonus(newValue);
+    };
+
+    /**
      * Updates #slot-signet-ilvl
      * -> Calculates item power for the slot's signet and updates GUI with it
      */
@@ -2176,7 +2065,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Reset slot by setting default values for each select
      */
     this.reset = function() {
-        this.el.wtype.prop("selectedIndex", 0);
         this.el.itemId.prop("selectedIndex", 0);
         this.el.rarity.prop("selectedIndex", 0);
         this.el.quality.prop("selectedIndex", 0);
@@ -2192,7 +2080,6 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
         this.el.signetLevel.prop("selectedIndex", 0);
 
         this.el.itemId.change();
-        this.el.wtype.change();
         this.el.rarity.change();
         this.el.glyph.change();
         this.el.glyphRarity.change();
@@ -2206,16 +2093,16 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      */
     this.state = function() {
         return {
-            rarity: this.rarity(),
-            quality: this.quality(),
-            level: this.level(),
-            glyph: this.glyph(),
-            glyph_rarity: this.glyphRarity(),
+            rarity:        this.rarity(),
+            quality:       this.quality(),
+            level:         this.level(),
+            glyph:         this.glyph(),
+            glyph_rarity:  this.glyphRarity(),
             glyph_quality: this.glyphQuality(),
-            glyph_level: this.glyphLevel(),
-            signet_id: this.signetId(),
+            glyph_level:   this.glyphLevel(),
+            signet_id:     this.signetId(),
             signet_rarity: this.signetRarity(),
-            signet_level: this.signetLevel(),
+            signet_level:  this.signetLevel(),
         };
     };
 
@@ -2223,24 +2110,23 @@ swlcalc.slots.Slot = function Slot(id, name, group) {
      * Mapping function for import/export feature
      */
     this.mappedState = function() {
-        var gmap = swlcalc.data.glyph_stat_mapping.to_num;
-        var rmap = swlcalc.data.rarity_mapping.to_num;
+        var gmap  = swlcalc.data.glyph_stat_mapping.to_num;
+        var rmap  = swlcalc.data.rarity_mapping.to_num;
         var wqmap = swlcalc.data.weapon_quality_mapping.to_num;
         var gqmap = swlcalc.data.glyph_quality_mapping.to_num;
         var tqmap = swlcalc.data.talisman_quality_mapping.to_num;
         return {
-            itemId: this.stripContent(this.itemId()),
-            wtype: this.stripContent(this.wtype()),
-            rarity: this.stripContent(this.rarity(), rmap),
-            quality: this.isWeapon() ? this.stripContent(this.quality(), wqmap) : this.stripContent(this.quality(), tqmap),
-            level: this.level(),
-            glyph: this.stripContent(this.glyph(), gmap),
-            glyph_rarity: this.stripContent(this.glyphRarity(), rmap),
+            itemId:        this.stripContent(this.itemId()),
+            rarity:        this.stripContent(this.rarity(), rmap),
+            quality:       this.isWeapon() ? this.stripContent(this.quality(), wqmap) : this.stripContent(this.quality(), tqmap),
+            level:         this.level(),
+            glyph:         this.stripContent(this.glyph(), gmap),
+            glyph_rarity:  this.stripContent(this.glyphRarity(), rmap),
             glyph_quality: this.stripContent(this.glyphQuality(), gqmap),
-            glyph_level: this.glyphLevel(),
-            signet_id: this.stripContent(this.signetId()),
+            glyph_level:   this.glyphLevel(),
+            signet_id:     this.stripContent(this.signetId()),
             signet_rarity: this.stripContent(this.signetRarity(), rmap),
-            signet_level: this.stripContent(this.signetLevel())
+            signet_level:  this.stripContent(this.signetLevel())
         };
     };
 
