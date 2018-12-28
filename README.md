@@ -4,7 +4,7 @@
 swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by Funcom. It can be used to plan your gear progression, to visualize the stats you will reach with a given gear and also to share and show others what gear you use to tackle encounters in PvE or PvP.
 
 **swlcalc features :**
-* All the gear slots (weapons and talismans) and their bound item/glyph/signet are customizable.
+* All the gear slots and their bound talisman/weapon, glyph & signet are customizable.
 * A global recap shows the total value given by the gear for each primary and secondary stat.
 * Item Power is calculated and displayed for each slot and the entire gear as well.
 * Any gear simulation done with swlcalc can be shared with others.
@@ -63,7 +63,7 @@ Run tests :
 Tests can be found in the `test` folder. Open the html file to run tests in the browser. Open the js file to view the test logic.
 
 When developing, use:
-    
+
     grunt watch
 
 The previous command monitors changes to files in the `src` folder. If any changes are detected, the build task is run.
@@ -72,7 +72,7 @@ Open `build/index.html` to view.
 
 Distribution
 ------------
-To create a distribution in the `dist` folder : 
+To create a distribution in the `dist` folder :
 
     grunt dist
 
@@ -86,7 +86,7 @@ Contributing
 ------------
 Pull requests are welcome! They should be done against the `develop` branch.
 
-There are many things to do. Some suggestions can be found in the [swlcalc boards](https://github.com/AntoineThebaud/swlcalc/projects). 
+There are many things to do. Some suggestions can be found in the [swlcalc boards](https://github.com/AntoineThebaud/swlcalc/projects).
 
 Contributions can also be bug reports, feature requests and other feedback.
 
@@ -94,7 +94,7 @@ License
 -------
 MIT License for the source code. Please see the LICENSE file.
 
-All art assets included in `public/assets/images/icons/` should be considered property of Funcom GmBH unless otherwise noted. A small sample of signet, glyph and item icons are redistributed under fair use.
+All art assets included in `public/assets/images/icons/` should be considered property of Funcom GmBH unless otherwise noted. A small sample of signet, glyph and equipment icons are redistributed under fair use.
 
 Acknowledgements
 ----------------

@@ -1,4 +1,4 @@
-<select id="{id_prefix}{id_suffix}-level" title="Please select level">
+<select id="{id_prefix}-{id_suffix}-level" title="Please select level">
     <option value="20">20</option>
     <option value="19">19</option>
     <option value="18">18</option>

@@ -1,7 +1,7 @@
 var swlcalc = swlcalc || {};
 
 swlcalc.export = function() {
-    
+
     var el = {};
 
     var elInit = function() {
@@ -72,12 +72,12 @@ swlcalc.export = function() {
     var createSlotUrl = function(slot, state) {
         // see swlcalc-import.js for the order
         var slotUrl = slot.id + '='
-            + state.rarity + ','
-            + state.itemId + ','
-            + state.quality + ','
-            + state.level + ','
+            + state.equipment_rarity + ','
+            + state.equipment_id + ','
+            + state.equipment_quality + ','
+            + state.equipment_level + ','
             + state.glyph_rarity + ','
-            + state.glyph + ','
+            + state.glyph_id + ','
             + state.glyph_quality + ','
             + state.glyph_level;
 

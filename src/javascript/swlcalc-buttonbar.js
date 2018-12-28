@@ -60,14 +60,14 @@ swlcalc.buttonBar = function() {
     };
 
     /**
-     * Set the same chosen rarity to all items+glyphs+signets.
+     * Set the same chosen rarity to all equipments+glyphs+signets.
      */
     var setRarityOnAllSlots = function(event) {
         var newRarity = event.currentTarget.id.split('-')[2];
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            slot.rarity(newRarity);
-            slot.el.rarity.change();
+            slot.equipmentRarity(newRarity);
+            slot.el.equipmentRarity.change();
 
             slot.glyphRarity(newRarity);
             slot.el.glyphRarity.change();

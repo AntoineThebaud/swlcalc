@@ -3,10 +3,10 @@
  *===================================================|====================================
  *                      Element                      |               Values
  *---------------------------------------------------|------------------------------------
- *                  ____________ Item's Rarity        [1,2,3,4,5]
- *                 / ___________ Item's Type (ID)     [refer to swlcalc-data-items.js]
- *                / / __________ Item's Quality       [1,2,3]
- *               / / / _________ Item's Level         [1->20/25/30/35/70]
+ *                  ____________ Equipment's Rarity        [1,2,3,4,5]
+ *                 / ___________ Equipment's Type (ID)     [refer to swlcalc-data-equipments.js]
+ *                / / __________ Equipment's Quality       [1,2,3]
+ *               / / / _________ Equipment's Level         [1->20/25/30/35/70]
  *              / / / / ________ Glyph's Rarity       [1,2,3,4,5]
  *             / / / / / _______ Glyph's Stat         [0,1,2,3,4,5]
  *            / / / / / / ______ Glyph's Quality      [1,2,3]
@@ -42,27 +42,27 @@ swlcalc.import = function() {
     var loadSlot = function(slotId, values) {
         var slotObj = swlcalc.gear.slots[slotId];
         // values[0] == Item's Rarity
-        slotObj.rarity(swlcalc.data.rarity_mapping.to_name[values[0]]);
-        slotObj.el.rarity.change();
+        slotObj.equipmentRarity(swlcalc.data.rarity_mapping.to_name[values[0]]);
+        slotObj.el.equipmentRarity.change();
         // values[1] == Item's Type (ID)
-        slotObj.itemId(values[1] == '0' ? 'none' : values[1]);
-        slotObj.el.itemId.change();
+        slotObj.equipmentId(values[1] == '0' ? 'none' : values[1]);
+        slotObj.el.equipmentId.change();
         // values[2] == Item's Quality
         if(slotObj.isWeapon()) {
-            slotObj.quality(swlcalc.data.weapon_quality_mapping.to_name[values[2]]);
+            slotObj.equipmentQuality(swlcalc.data.weapon_quality_mapping.to_name[values[2]]);
         } else {
-            slotObj.quality(swlcalc.data.talisman_quality_mapping.to_name[values[2]]);
+            slotObj.equipmentQuality(swlcalc.data.talisman_quality_mapping.to_name[values[2]]);
         }
-        slotObj.el.quality.change();
+        slotObj.el.equipmentQuality.change();
         // values[3] == Item's Level
-        slotObj.level(values[3]);
-        slotObj.el.level.change();
+        slotObj.equipmentLevel(values[3]);
+        slotObj.el.equipmentLevel.change();
         // values[4] == Glyph's Rarity
         slotObj.glyphRarity(swlcalc.data.rarity_mapping.to_name[values[4]]);
         slotObj.el.glyphRarity.change();
         // values[5] == Glyph's Stat
-        slotObj.glyph(swlcalc.data.glyph_stat_mapping.to_stat[values[5]]);
-        slotObj.el.glyph.change();
+        slotObj.glyphId(swlcalc.data.glyph_stat_mapping.to_stat[values[5]]);
+        slotObj.el.glyphId.change();
         // values[6] == Glyph's Quality
         slotObj.glyphQuality(swlcalc.data.glyph_quality_mapping.to_name[values[6]]);
         slotObj.el.glyphQuality.change();
@@ -74,26 +74,14 @@ swlcalc.import = function() {
         && typeof values[9] !== 'undefined' && values[9] !== "999"
         && typeof values[10] !== 'undefined') {
             // values[8] == Signet's Rarity
-            var signetRarity = swlcalc.data.rarity_mapping.to_name[values[8]];
+            slotObj.signetRarity(swlcalc.data.rarity_mapping.to_name[values[8]]);
             // values[9] == Signet's Type (ID)
-            var signetId = values[9] != '0' ? values[9] : 'none';
+            slotObj.signetId((values[9] != '0' ? values[9] : 'none'));
             // values[10] == Signet's Level
-            var signetLevel = values[10];
-            changeSignet(slotId, signetRarity, signetId, signetLevel);
+            slotObj.signetLevel(values[10]);
+            slotObj.el.signetId.change();
+            slotObj.el.signetRarity.change();
         }
-    };
-
-    /**
-     * Loads informations about a signet into swlcalc.
-     */
-    //TODO/REFACTOR maybe there is a better way to update GUI than simulating change() ?
-    var changeSignet = function(slotId, rarity, id, level) {
-        var slotObj = swlcalc.gear.slots[slotId];
-        slotObj.signetRarity(rarity);
-        slotObj.signetId(id);
-        slotObj.signetLevel(level);
-        slotObj.el.signetId.change();
-        slotObj.el.signetRarity.change();
     };
 
     /**

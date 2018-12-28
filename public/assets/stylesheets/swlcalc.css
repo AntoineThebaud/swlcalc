@@ -114,7 +114,7 @@ select {
     min-width: 300px;
 }
 
-/* slot > item : talisman/weapon */
+/* rules relative to any kind of item (talisman, weapon, glyph or signet) */
 td.item-title {
     font-size: 15px;
     color: #A7A7A7;
@@ -125,26 +125,37 @@ td.item-title {
     padding-left: 15px;
     padding-top: 13px;
 }
-td.item-img {
+
+td.item-description {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    text-align: justify;
+    vertical-align: top;
+}
+
+
+/* slot > equipment (talisman/weapon) */
+td.equipment-img {
     width: 48px;
     padding-right: 4px;
     vertical-align: top;
 }
-img.item-icon {
+img.equipment-icon {
     width: 48px;
     height:48px;
     z-index: 0;
 }
-img.item-icon-border {
+img.equipment-icon-border {
     width: 48px;
     height:48px;
     position: absolute;
     z-index: 1;
 }
-td.item-select {
+td.equipment-select {
     width: 150px;
 }
-td.item-select select {
+td.equipment-select select {
     margin-bottom: 0px;
     max-width: 140px;
 }
@@ -152,17 +163,7 @@ td.item-select select {
     height: 48px;
 }
 
-/* slot > item : glyph */
-td.glyph-title {
-    font-size: 15px;
-    color: #A7A7A7;
-    font-style: italic;
-    font-weight: bold;
-    vertical-align: bottom;
-    padding-bottom: 8px;
-    padding-left: 15px;
-    padding-top: 13px;
-}
+/* slot > glyph */
 td.glyph-img {
     width: 38px;
     padding-right: 4px;
@@ -186,17 +187,7 @@ td.glyph-select select {
     max-width: 150px;
 }
 
-/* slot > item : signet */
-td.signet-title {
-    font-size: 15px;
-    color: #A7A7A7;
-    font-style: italic;
-    font-weight: bold;
-    vertical-align: bottom;
-    padding-bottom: 8px;
-    padding-left: 15px;
-    padding-top: 13px;
-}
+/* slot > signet */
 td.signet-img {
     width: 38px;
     padding-right: 4px;
@@ -221,7 +212,7 @@ td.signet-select select {
 }
 
 
-/* slot/glyph/signet > rarity+quality+level */
+/* slot > all > rarity+quality+level */
 td.upgrade-label {
     width: 50px;
 }
@@ -234,7 +225,7 @@ td.upgrade-select select {
 }
 
 
-/* slot > rarity */
+/* slot > all > rarity */
 td.rarity-label {
     padding-top: 10px;
     padding-bottom: 5px;
@@ -248,7 +239,7 @@ td.rarity-select select {
 }
 
 
-/* slot > quality */
+/* slot > all > quality */
 td.quality-label {
 }
 td.quality-select {
@@ -257,7 +248,7 @@ td.quality-select select {
 }
 
 
-/* slot > level */
+/* slot > all > level */
 td.level-label {
     vertical-align: top;
     padding-top: 5px;
@@ -271,14 +262,6 @@ td.level-select select {
 
 td.filler {
     width: auto;
-}
-
-td.item-description {
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 5px;
-    text-align: justify;
-    vertical-align: top;
 }
 
 

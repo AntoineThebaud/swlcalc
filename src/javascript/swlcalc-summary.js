@@ -76,13 +76,13 @@ swlcalc.summary = function() {
 
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            sums['ilvl'] += slot.totalILvl();
+            sums['ilvl'] += slot.iLvl();
             if (slot.isWeapon() && !slot.weaponDrawn) {
                 continue;
-            } else if (slot.isWeapon() && slot.itemId() != 'none') {
-                sums['weapon-power'] = slot.powerRating();
-            } else if (!slot.isWeapon() && slot.itemId() != 'none') {
-                sums['power-rating'] += slot.powerRating();
+            } else if (slot.isWeapon() && slot.equipmentId() != 'none') {
+                sums['weapon-power'] = slot.equipmentPowerRating();
+            } else if (!slot.isWeapon() && slot.equipmentId() != 'none') {
+                sums['power-rating'] += slot.equipmentPowerRating();
             }
         }
         // first basic implementation of anima allocation
@@ -162,7 +162,7 @@ swlcalc.summary = function() {
             if(slot.isWeapon() && !slot.weaponDrawn) {
                 continue;
             }
-            sums[slot.glyph()] += slot.glyphRating();
+            sums[slot.glyphId()] += slot.glyphRating();
         }
         // get ratio stats
         sums['critical-chance'] += calculateCriticalChance(sums['critical-rating']);
@@ -315,7 +315,7 @@ swlcalc.summary = function() {
      */
     var updateDescriptions = function() {
         for (var id in swlcalc.gear.slots) {
-            swlcalc.gear.slots[id].refreshItemBonuses(combatPower(), healingPower());
+            swlcalc.gear.slots[id].refreshEquipmentBonuses(combatPower(), healingPower());
             swlcalc.gear.slots[id].refreshSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
         }
     };

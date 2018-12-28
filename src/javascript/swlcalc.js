@@ -32,7 +32,7 @@ swlcalc = function() {
      * Add tooltips for images (signets, glyphs, currencies..)
      */
     var activateToolTips = function() {
-        $('.item-tooltip, .glyph-tooltip, .signet-tooltip').tooltip({
+        $('.equipment-tooltip, .glyph-tooltip, .signet-tooltip').tooltip({
             placement: 'left'
         });
         $('#table-primary > label').tooltip({

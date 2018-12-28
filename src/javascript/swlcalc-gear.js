@@ -97,56 +97,45 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.rawSignetILvl = 0.0;
 
     this.el = {
-        div:               $('#' + this.id + '-slot'),
-        name:              $('#' + this.id + '-name'),
-        totalILvl:         $('#' + this.id + '-total-ilvl'),
-        itemId:            $('#' + this.id + '-itemId'),
-        rarity:            $('#' + this.id + '-rarity'),
-        quality:           $('#' + this.id + '-quality'),
-        level:             $('#' + this.id + '-level'),
-        powerRating:       $('#' + this.id + '-power-rating'),
-        iLvl:              $('#' + this.id + '-ilvl'),
-        imgIcon:           $('#' + this.id + '-img-icon'),
-        imgBorder:         $('#' + this.id + '-img-rarity'),
-        description:       $('#' + this.id + '-description'),
-        glyph:             $('#' + this.id + '-glyph'),
-        glyphRarity:       $('#' + this.id + '-glyph-rarity'),
-        glyphQuality:      $('#' + this.id + '-glyph-quality'),
-        glyphLevel:        $('#' + this.id + '-glyph-level'),
-        glyphRating:       $('#' + this.id + '-glyph-rating'),
-        glyphLabel:        $('#' + this.id + '-glyph-label'),
-        glyphImgIcon:      $('#' + this.id + '-glyph-img-icon'),
-        glyphImgBorder:    $('#' + this.id + '-glyph-img-rarity'),
-        glyphILvl:         $('#' + this.id + '-glyph-ilvl'),
-        signetId:          $('#' + this.id + '-signet'),
-        signetRarity:      $('#' + this.id + '-signet-rarity'),
-        signetLevel:       $('#' + this.id + '-signet-level'),
-        signetImgIcon:     $('#' + this.id + '-signet-img-icon'),
-        signetImgBorder:   $('#' + this.id + '-signet-img-rarity'),
-        signetDescription: $('#' + this.id + '-signet-description'),
-        signetILvl:        $('#' + this.id + '-signet-ilvl'),
-        nameWarning:       $('#' + this.id + '-name-warning'),
+        div:                  $('#' + this.id + '-slot'),
+        iLvl:                 $('#' + this.id + '-ilvl'),
+        equipmentId:          $('#' + this.id + '-equipment-id'),
+        equipmentName:        $('#' + this.id + '-equipment-name'),
+        equipmentRarity:      $('#' + this.id + '-equipment-rarity'),
+        equipmentQuality:     $('#' + this.id + '-equipment-quality'),
+        equipmentLevel:       $('#' + this.id + '-equipment-level'),
+        equipmentPowerRating: $('#' + this.id + '-equipment-power-rating'),
+        equipmentILvl:        $('#' + this.id + '-equipment-ilvl'),
+        equipmentImgIcon:     $('#' + this.id + '-equipment-img-icon'),
+        equipmentImgBorder:   $('#' + this.id + '-equipment-img-rarity'),
+        equipmentDescription: $('#' + this.id + '-equipment-description'),
+        glyphId:              $('#' + this.id + '-glyph-id'),
+        glyphRarity:          $('#' + this.id + '-glyph-rarity'),
+        glyphQuality:         $('#' + this.id + '-glyph-quality'),
+        glyphLevel:           $('#' + this.id + '-glyph-level'),
+        glyphRating:          $('#' + this.id + '-glyph-rating'),
+        glyphLabel:           $('#' + this.id + '-glyph-label'),
+        glyphImgIcon:         $('#' + this.id + '-glyph-img-icon'),
+        glyphImgBorder:       $('#' + this.id + '-glyph-img-rarity'),
+        glyphILvl:            $('#' + this.id + '-glyph-ilvl'),
+        signetId:             $('#' + this.id + '-signet-id'),
+        signetRarity:         $('#' + this.id + '-signet-rarity'),
+        signetLevel:          $('#' + this.id + '-signet-level'),
+        signetImgIcon:        $('#' + this.id + '-signet-img-icon'),
+        signetImgBorder:      $('#' + this.id + '-signet-img-rarity'),
+        signetDescription:    $('#' + this.id + '-signet-description'),
+        signetILvl:           $('#' + this.id + '-signet-ilvl'),
+        nameWarning:          $('#' + this.id + '-name-warning'),
     };
 
     /**
-     * Getter/Setter for #slot-name
+     * Getter/Setter for #slot-ilvl
      */
-    this.name = function() {
+    this.iLvl = function() {
         if (arguments.length == 1) {
-            this.el.name.html(arguments[0]);
+            this.el.iLvl.html(arguments[0]);
         } else {
-            return this.el.name.html();
-        }
-    };
-
-    /**
-     * Getter/Setter for #slot-total-ilvl
-     */
-    this.totalILvl = function() {
-        if (arguments.length == 1) {
-            this.el.totalILvl.html(arguments[0]);
-        } else {
-            return parseInt(this.el.totalILvl.html());
+            return parseInt(this.el.iLvl.html());
         }
     };
 
@@ -154,13 +143,24 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates #slot-total-ilvl
      * -> Calculates total ilvl of the slot (talisman or weapon + glyph + signet) by reusing the "raw" values previously registered
      */
-    this.refreshTotalILvl = function() {
-        this.totalILvl(Math.round(this.rawILvl + this.rawGlyphILvl + this.rawSignetILvl));
+    this.refreshILvl = function() {
+        this.iLvl(Math.round(this.rawILvl + this.rawGlyphILvl + this.rawSignetILvl));
+    };
+
+    /**
+     * Getter/Setter for #slot-equipment-name
+     */
+    this.equipmentName = function() {
+        if (arguments.length == 1) {
+            this.el.equipmentName.html(arguments[0]);
+        } else {
+            return this.el.equipmentName.html();
+        }
     };
 
     /**********************************************************************************
-     * Item functions | (talismans + weapons)
-     *                V
+     * Equipment functions | (talismans + weapons)
+     *                     V
      **********************************************************************************/
 
     /**
@@ -191,13 +191,13 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-itemId
+     * Getter/Setter for #slot-equipment-id
      */
-    this.itemId = function() {
+    this.equipmentId = function() {
         if (arguments.length == 1) {
-            this.el.itemId.val(arguments[0]);
+            this.el.equipmentId.val(arguments[0]);
         } else {
-            return this.el.itemId.val();
+            return this.el.equipmentId.val();
         }
     };
 
@@ -210,123 +210,123 @@ swlcalc.gear.Slot = function Slot(slotData) {
         if (this.isWeapon()) {
             slotToUse = 'weapon';
         }
-        return swlcalc.data.items.slot[slotToUse][this.itemId() - 1];
+        return swlcalc.data.equipments.slot[slotToUse][this.equipmentId() - 1];
     };
 
     /**
-     * Getter/Setter for #slot-rarity
+     * Getter/Setter for #slot-equipment-rarity
      */
-    this.rarity = function() {
+    this.equipmentRarity = function() {
         if (arguments.length == 1) {
-            this.el.rarity.val(arguments[0]);
+            this.el.equipmentRarity.val(arguments[0]);
         } else {
-            return this.el.rarity.val();
+            return this.el.equipmentRarity.val();
         }
     };
 
     /**
-     * Getter/Setter for #slot-quality
+     * Getter/Setter for #slot-equipment-quality
      */
-    this.quality = function() {
+    this.equipmentQuality = function() {
         if (arguments.length == 1) {
-            this.el.quality.val(arguments[0]);
+            this.el.equipmentQuality.val(arguments[0]);
         } else {
-            return this.el.quality.val();
+            return this.el.equipmentQuality.val();
         }
     };
 
     /**
-     * Getter/Setter for #slot-level
+     * Getter/Setter for #slot-equipment-level
      */
-    this.level = function() {
+    this.equipmentLevel = function() {
         if (arguments.length == 1) {
-            this.el.level.val(arguments[0]);
+            this.el.equipmentLevel.val(arguments[0]);
         } else {
-            return this.el.level.val();
+            return this.el.equipmentLevel.val();
         }
     };
 
     /**
-     * Getter/Setter for #slot-power-rating
+     * Getter/Setter for #slot-equipment-power-rating
      */
-    this.powerRating = function() {
+    this.equipmentPowerRating = function() {
         if (arguments.length == 1) {
-            this.el.powerRating.html(arguments[0]);
+            this.el.equipmentPowerRating.html(arguments[0]);
         } else {
-            return parseInt(this.el.powerRating.html());
+            return parseInt(this.el.equipmentPowerRating.html());
         }
     };
 
     /**
-     * Getter/Setter for #slot-iLvl
+     * Getter/Setter for #slot-equipment-iLvl
      */
-    this.iLvl = function() {
+    this.equipmentILvl = function() {
         if (arguments.length == 1) {
-            this.el.iLvl.html(arguments[0]);
+            this.el.equipmentILvl.html(arguments[0]);
         } else {
-            return parseInt(this.el.iLvl.html());
+            return parseInt(this.el.equipmentILvl.html());
         }
     };
 
     /**
-     * Getter/Setter for #slot-description
+     * Getter/Setter for #slot-equipment-description
      */
-    this.description = function() {
+    this.equipmentDescription = function() {
         if (arguments.length == 1) {
-            this.el.description.html(arguments[0]);
+            this.el.equipmentDescription.html(arguments[0]);
         } else {
-            return this.el.description.text();
+            return this.el.equipmentDescription.text();
         }
     };
 
     /**
-     * Getter/Setter for #slot-img-icon
+     * Getter/Setter for #slot-equipment-img-icon
      */
-    this.imgIcon = function() {
+    this.equipmentImgIcon = function() {
         if (arguments.length == 1) {
-            this.el.imgIcon.attr('src', arguments[0])
+            this.el.equipmentImgIcon.attr('src', arguments[0])
         } else {
-            return this.el.imgIcon.attr('src');
+            return this.el.equipmentImgIcon.attr('src');
         }
     };
 
     /**
-     * Getter/Setter for #slot-img-rarity
+     * Getter/Setter for #slot-equipment-img-rarity
      */
-    this.imgBorder = function() {
+    this.equipmentImgBorder = function() {
         if (arguments.length == 1) {
-            this.el.imgBorder.attr('src', arguments[0])
+            this.el.equipmentImgBorder.attr('src', arguments[0])
         } else {
-            return this.el.imgBorder.attr('src');
+            return this.el.equipmentImgBorder.attr('src');
         }
     };
 
     /**
-     * Getter/Setter for any #slot-bonusN element (#slot-bonus1, #slot-bonus2, #slot-bonus3 ...)
+     * Getter/Setter for any #slot-equipment-bonusN element (#slot-equipment-bonus1, #slot-equipment-bonus2, #slot-equipment-bonus3 ...)
      */
-    this.bonusN = function() {
+    this.equipmentBonusN = function() {
         if (arguments.length == 2) {
-            $('#' + this.id + '-bonus' + arguments[0]).html(arguments[1]);
+            $('#' + this.id + '-equipment-bonus' + arguments[0]).html(arguments[1]);
         } else if (arguments.length == 1) {
-            return $('#' + this.id + '-bonus' + arguments[0]).html();
+            return $('#' + this.id + '-equipment-bonus' + arguments[0]).html();
         } else {
-            console.log("Error on this.bonusN() call")
+            console.log("Error on this.equipmentBonusN() call")
         }
     };
 
     /**
-     * Updates #slot-image + #slot-description
+     * Updates #slot-equipment-image + #slot-equipment-description
      */
-    this.updateItem = function() {
+    this.updateEquipment = function() {
         var newImage;
         var newDescription;
-        if (this.itemId() == 'none') {
+        if (this.equipmentId() == 'none') {
             //To enable when all images will be present :
             // newImage = 'assets/images/icons/talisman/None.png';
-            this.imgIcon('assets/images/icons/' + this.type + '/None.png');
+            this.equipmentImgIcon('assets/images/icons/' + this.type + '/None.png');
             newDescription = '';
         } else {
-            var newSelectedItem = swlcalc.data.items.slot[this.kind][this.itemId() - 1];
+            var newSelectedItem = swlcalc.data.equipments.slot[this.kind][this.equipmentId() - 1];
             //TODO/FEATURE :
             /* temporary code ********************************************************************************
              * => Will be used as long as item images are not added to the resources. The final code will be :
@@ -334,13 +334,13 @@ swlcalc.gear.Slot = function Slot(slotData) {
              * => For now replaced by : */
             var image = new Image();
             image.onload = function() {
-                self.imgIcon('assets/images/icons/' + self.type + '/' + newSelectedItem.name + '.png');
+                self.equipmentImgIcon('assets/images/icons/' + self.type + '/' + newSelectedItem.name + '.png');
             }
             image.onerror = function() {
                 if (self.isWeapon()) {
-                    self.imgIcon('assets/images/icons/' + self.type + '/temp/' + newSelectedItem.type + '.png');
+                    self.equipmentImgIcon('assets/images/icons/' + self.type + '/temp/' + newSelectedItem.type + '.png');
                 } else {
-                    self.imgIcon('assets/images/icons/' + self.type + '/' + swlcalc.data.items.slot[self.id][0].name + '.png');
+                    self.equipmentImgIcon('assets/images/icons/' + self.type + '/' + swlcalc.data.equipments.slot[self.id][0].name + '.png');
                 }
             }
             image.src = 'assets/images/icons/' + this.type + '/' + newSelectedItem.name + '.png';
@@ -354,26 +354,26 @@ swlcalc.gear.Slot = function Slot(slotData) {
             }
         }
         //To enable when all images will be present :
-        //this.imgIcon(newImage);
-        this.description(newDescription);
+        //this.equipmentImgIcon(newImage);
+        this.equipmentDescription(newDescription);
     };
 
     /**
-     * Updates #slot-power-rating (calculatations with stats data)
+     * Updates #slot-equipment-power-rating (calculatations with stats data)
      */
-    this.updatePowerRating = function() {
+    this.updateEquipmentPowerRating = function() {
         var base_value = 0;
         var bonus_value = 0;
-        if (this.itemId() != 'none') {
+        if (this.equipmentId() != 'none') {
             // calculation rule for weapons
             if (this.isWeapon()) {
-                base_value = swlcalc.data.power_rating.weapon[this.rarity()].weapon_power_init;
-                bonus_value = swlcalc.data.power_rating.weapon[this.rarity()].weapon_power_per_level * (this.level() - 1);
+                base_value = swlcalc.data.power_rating.weapon[this.equipmentRarity()].weapon_power_init;
+                bonus_value = swlcalc.data.power_rating.weapon[this.equipmentRarity()].weapon_power_per_level * (this.equipmentLevel() - 1);
             }
             // calculation rule for talismans
             else {
-                base_value = swlcalc.data.power_rating[this.group][this.rarity()][this.quality()].power_rating_init;
-                bonus_value = swlcalc.data.power_rating[this.group][this.rarity()][this.quality()].power_rating_per_level * (this.level() - 1);
+                base_value = swlcalc.data.power_rating[this.group][this.equipmentRarity()][this.equipmentQuality()].power_rating_init;
+                bonus_value = swlcalc.data.power_rating[this.group][this.equipmentRarity()][this.equipmentQuality()].power_rating_per_level * (this.equipmentLevel() - 1);
             }
         }
         var newValue = base_value + Math.round(bonus_value);
@@ -381,43 +381,43 @@ swlcalc.gear.Slot = function Slot(slotData) {
         if (newValue !== 0) {
             newValue = '+' + newValue;
         }
-        this.powerRating(newValue);
+        this.equipmentPowerRating(newValue);
     };
 
     /**
-     * Updates #slot-img-rarity
+     * Updates #slot-equipment-img-rarity
      */
-    this.updateImgBorder = function() {
-        var img_path = 'assets/images/icons/rarity/' + this.rarity() + '-42x42.png';
-        this.imgBorder(img_path);
+    this.updateEquipmentImgBorder = function() {
+        var img_path = 'assets/images/icons/rarity/' + this.equipmentRarity() + '-42x42.png';
+        this.equipmentImgBorder(img_path);
     };
 
     /**
-     * Updates #slot-ilvl
+     * Updates #slot-equipment-ilvl
      * -> Calculates item power for the slot's talisman (or weapon) and updates GUI with it
      */
-    this.updateILvl = function() {
-        var calculatedILvl = 0;
-        if (!(this.itemId() == 'none')) {
-            calculatedILvl = this.calculateILvl('talisman-or-weapon', this.rarity(), this.level());
+    this.updateEquipmentILvl = function() {
+        var newILvl = 0;
+        if (!(this.equipmentId() == 'none')) {
+            newILvl = this.computeItemILvl('talisman-or-weapon', this.equipmentRarity(), this.equipmentLevel());
             // Weapons are worth ~15% more Item Power than talismans
             // TODO/REFACTOR : could be done in  a better way
             if (this.isWeapon()) {
-                calculatedILvl = calculatedILvl * 1.15;
+                newILvl = newILvl * 1.15;
             }
         }
         //register value before it is rounded (used for #slot-total-ilvl)
-        this.rawILvl = calculatedILvl;
+        this.rawILvl = newILvl;
 
-        this.iLvl(Math.round(calculatedILvl));
-        this.refreshTotalILvl();
+        this.equipmentILvl(Math.round(newILvl));
+        this.refreshILvl();
     };
 
     /**
-     * Updates every #slot-bonusN element
+     * Updates every #slot-equipment-bonusN element
      */
-    this.refreshItemBonuses = function(combatPower, healingPower) {
-        if (this.bonusN(1) === undefined) return;
+        this.refreshEquipmentBonuses = function(combatPower, healingPower) {
+        if (this.equipmentBonusN(1) === undefined) return;
         var item = this.getItem();
         var statForComputation = 0;
 
@@ -427,7 +427,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             } else if (item.stats[i] == 'Healing Power') {
                 statForComputation = healingPower;
             }
-            this.bonusN(i + 1, Math.round(item.coefficients[i] * statForComputation));
+            this.equipmentBonusN(i + 1, Math.round(item.coefficients[i] * statForComputation));
         }
     }
 
@@ -439,11 +439,11 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Getter/Setter for #slot-glyph
      */
-    this.glyph = function() {
+    this.glyphId = function() {
         if (arguments.length == 1) {
-            this.el.glyph.val(arguments[0]);
+            this.el.glyphId.val(arguments[0]);
         } else {
-            return this.el.glyph.val();
+            return this.el.glyphId.val();
         }
     };
 
@@ -542,11 +542,11 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.updateGlyphRating = function() {
         var newValue = 0;
-        if (this.glyph() != 'none') {
+        if (this.glyphId() != 'none') {
             var baseValue = swlcalc.data.glyph[this.glyphRarity()][this.glyphQuality()].rating_init;
             var bonusValue = swlcalc.data.glyph[this.glyphRarity()][this.glyphQuality()].rating_per_level * (this.glyphLevel() - 1);
             newValue = baseValue + Math.round(bonusValue);
-            if (this.glyph() == 'critical-power') {
+            if (this.glyphId() == 'critical-power') {
                 newValue = 0.973 * newValue;
             }
             // remove decimals for display
@@ -563,7 +563,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates #slot-glyph-img-icon
      */
     this.updateGlyphImgIcon = function() {
-        var img_path = 'assets/images/icons/glyph/' + this.glyph() + '.png';
+        var img_path = 'assets/images/icons/glyph/' + this.glyphId() + '.png';
         this.glyphImgIcon(img_path);
     };
 
@@ -580,27 +580,27 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * -> Calculates item power for the slot's glyph and updates GUI with it
      */
     this.updateGlyphILvl = function() {
-        var calculatedILvl = 0;
-        if (this.glyph() != 'none') {
-            calculatedILvl = this.calculateILvl('glyph', this.glyphRarity(), this.glyphLevel());
+        var newILvl = 0;
+        if (this.glyphId() != 'none') {
+            newILvl = this.computeItemILvl('glyph', this.glyphRarity(), this.glyphLevel());
             // Glyphs in weapons are worth ~22.5% more Item Power than glyphs in talismans
             // TODO/REFACTOR : could be done in  a better way
             if (this.isWeapon()) {
-                calculatedILvl = calculatedILvl * 1.225;
+                newILvl = newILvl * 1.225;
             }
         }
         //register value before it is rounded (used for #slot-total-ilvl)
-        this.rawGlyphILvl = calculatedILvl;
+        this.rawGlyphILvl = newILvl;
 
-        this.glyphILvl(Math.round(calculatedILvl));
-        this.refreshTotalILvl();
+        this.glyphILvl(Math.round(newILvl));
+        this.refreshILvl();
     };
 
     /**
      * Updates for #slot-glyph-label
      */
     this.updateGlyphLabel = function() {
-        this.glyphLabel(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[this.glyph()]);
+        this.glyphLabel(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[this.glyphId()]);
     };
 
     /**********************************************************************************
@@ -710,15 +710,15 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateSignetIcon = function() {
         var signet = this.getSignet();
         var signetRarity = this.signetRarity();
-        this.updateSignetIconImage(signet);
-        this.updateSignetIconBorder(signetRarity);
+        this.updateSignetImgIcon(signet);
+        this.updateSignetImgBorder(signetRarity);
     };
 
     /**
      * Updates #slot-signet-img-icon
      */
     //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
-    this.updateSignetIconImage = function(signet) {
+    this.updateSignetImgIcon = function(signet) {
         var pngName = (signet == swlcalc.data.signets.noneSignet ? 'none' : this.id)
         var signet_icon_url = 'assets/images/icons/signet/' + pngName + '.png';
         this.el.signetImgIcon.attr('src', signet_icon_url);
@@ -728,7 +728,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Getter/Setter for #slot-signet-img-border
      */
     //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
-    this.updateSignetIconBorder = function(signetRarity) {
+    this.updateSignetImgBorder = function(signetRarity) {
         var signet_rarity_url = 'assets/images/icons/rarity/' + signetRarity + '-42x42.png';
         this.el.signetImgBorder.attr('src', signet_rarity_url);
     };
@@ -754,7 +754,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             var signet = swlcalc.data.signets.slot[this.kind][this.signetId() - 1]
 
             if (this.isWeapon()) {
-                newValue = signet.quality[this.quality()]
+                newValue = signet.quality[this.equipmentQuality()]
             } else if (signet.name == "Signet of Shoulder Tackle") {
                 bonus1 = signet.ratio[this.signetRarity()].init[0];
                 bonus2 = signet.ratio[this.signetRarity()].init[1]
@@ -788,15 +788,15 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * -> Calculates item power for the slot's signet and updates GUI with it
      */
     this.updateSignetILvl = function() {
-        var calculatedILvl = 0;
+        var newILvl = 0;
         if (this.signetId() != 'none') {
-            calculatedILvl = this.calculateILvl('signet', this.signetRarity(), this.signetLevel());
+            newILvl = this.computeItemILvl('signet', this.signetRarity(), this.signetLevel());
         }
         //register value before it is rounded (used for #slot-total-ilvl)
-        this.rawSignetILvl = calculatedILvl;
+        this.rawSignetILvl = newILvl;
 
-        this.signetILvl(Math.round(calculatedILvl));
-        this.refreshTotalILvl();
+        this.signetILvl(Math.round(newILvl));
+        this.refreshILvl();
     };
 
     /**********************************************************************************
@@ -808,12 +808,12 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Reset slot by setting default values for each select
      */
     this.reset = function() {
-        this.el.itemId.prop("selectedIndex", 0);
-        this.el.rarity.prop("selectedIndex", 0);
-        this.el.quality.prop("selectedIndex", 0);
-        //this.el.itemId.change();
+        this.el.equipmentId.prop("selectedIndex", 0);
+        this.el.equipmentRarity.prop("selectedIndex", 0);
+        this.el.equipmentQuality.prop("selectedIndex", 0);
+        //this.el.equipmentId.change();
 
-        this.el.glyph.prop("selectedIndex", 0);
+        this.el.glyphId.prop("selectedIndex", 0);
         this.el.glyphRarity.prop("selectedIndex", 0);
         this.el.glyphQuality.prop("selectedIndex", 0);
         this.el.glyphLevel.prop("selectedIndex", 0);
@@ -822,9 +822,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.el.signetRarity.prop("selectedIndex", 0);
         this.el.signetLevel.prop("selectedIndex", 0);
 
-        this.el.itemId.change();
-        this.el.rarity.change();
-        this.el.glyph.change();
+        this.el.equipmentId.change();
+        this.el.equipmentRarity.change();
+        this.el.glyphId.change();
         this.el.glyphRarity.change();
         this.el.signetId.change();
         this.el.signetRarity.change();
@@ -836,16 +836,16 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.state = function() {
         return {
-            rarity:        this.rarity(),
-            quality:       this.quality(),
-            level:         this.level(),
-            glyph:         this.glyph(),
-            glyph_rarity:  this.glyphRarity(),
-            glyph_quality: this.glyphQuality(),
-            glyph_level:   this.glyphLevel(),
-            signet_id:     this.signetId(),
-            signet_rarity: this.signetRarity(),
-            signet_level:  this.signetLevel(),
+            equipment_rarity:  this.equipmentRarity(),
+            equipment_quality: this.equipmentQuality(),
+            equipment_level:   this.equipmentLevel(),
+            glyph_id:          this.glyphId(),
+            glyph_rarity:      this.glyphRarity(),
+            glyph_quality:     this.glyphQuality(),
+            glyph_level:       this.glyphLevel(),
+            signet_id:         this.signetId(),
+            signet_rarity:     this.signetRarity(),
+            signet_level:      this.signetLevel(),
         };
     };
 
@@ -859,17 +859,17 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var gqmap = swlcalc.data.glyph_quality_mapping.to_num;
         var tqmap = swlcalc.data.talisman_quality_mapping.to_num;
         return {
-            itemId:        this.stripContent(this.itemId()),
-            rarity:        this.stripContent(this.rarity(), rmap),
-            quality:       this.isWeapon() ? this.stripContent(this.quality(), wqmap) : this.stripContent(this.quality(), tqmap),
-            level:         this.level(),
-            glyph:         this.stripContent(this.glyph(), gmap),
-            glyph_rarity:  this.stripContent(this.glyphRarity(), rmap),
-            glyph_quality: this.stripContent(this.glyphQuality(), gqmap),
-            glyph_level:   this.glyphLevel(),
-            signet_id:     this.stripContent(this.signetId()),
-            signet_rarity: this.stripContent(this.signetRarity(), rmap),
-            signet_level:  this.stripContent(this.signetLevel())
+            equipment_id:      this.stripContent(this.equipmentId()),
+            equipment_rarity:  this.stripContent(this.equipmentRarity(), rmap),
+            equipment_quality: this.isWeapon() ? this.stripContent(this.equipmentQuality(), wqmap) : this.stripContent(this.equipmentQuality(), tqmap),
+            equipment_level:   this.equipmentLevel(),
+            glyph_id:          this.stripContent(this.glyphId(), gmap),
+            glyph_rarity:      this.stripContent(this.glyphRarity(), rmap),
+            glyph_quality:     this.stripContent(this.glyphQuality(), gqmap),
+            glyph_level:       this.glyphLevel(),
+            signet_id:         this.stripContent(this.signetId()),
+            signet_rarity:     this.stripContent(this.signetRarity(), rmap),
+            signet_level:      this.stripContent(this.signetLevel())
         };
     };
 
@@ -890,7 +890,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Calculates item power for the given item (talisman, weapon, glyph or signet)
      */
-    this.calculateILvl = function(element, rarity, level) {
+    this.computeItemILvl = function(element, rarity, level) {
         var dataToUse = swlcalc.data.ilvl.gear[element].rarity[rarity];
         return dataToUse.ilvl_init + dataToUse.ilvl_per_level * (level - 1);
     }

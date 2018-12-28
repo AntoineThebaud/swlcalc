@@ -1,4 +1,4 @@
-<select id="{id_prefix}{id_suffix}-rarity" title="Please select rarity">
+<select id="{id_prefix}-{id_suffix}-rarity" title="Please select rarity">
 	<option value="standard" class="color-standard">Standard</option>
 	<option value="superior" class="color-superior">Superior</option>
 	<option value="epic" class="color-epic">Epic</option>

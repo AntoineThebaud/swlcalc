@@ -216,27 +216,27 @@ module('summary-integration-tests with buttonbar', {
 
 test('should set combat power + healing power and affect any talisman and weapon bonuses correctly', 9, function() {
     createTankBuild();
-    $('#waist-itemId').val('12');
-    $('#waist-itemId').change();
-    equal(swlcalc.gear.slots.waist.description(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 834 physical damage or your next healing Fist Weapon ability will restore an additional 519 health.');
-    $('#weapon2-itemId').val('53');
-    $('#weapon2-itemId').change();
-    equal(swlcalc.gear.slots.weapon2.description(), 'This weapon gains more Weapon Power when leveling up.Whenever you hit, you have a 33% chance to hex your target and deal an additional 111-556 magical damage. The damage dealt increases each time this effect is applied, up to a maximum of 5 times. This effect is guaranteed to trigger on critical hits.When an enemy affected by this hex is defeated, nearby enemies are dealt 70-349 magical damage, based on the number of times the damaging effect has been applied.');
+    $('#waist-equipment-id').val('12');
+    $('#waist-equipment-id').change();
+    equal(swlcalc.gear.slots.waist.equipmentDescription(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 834 physical damage or your next healing Fist Weapon ability will restore an additional 519 health.');
+    $('#weapon2-equipment-id').val('53');
+    $('#weapon2-equipment-id').change();
+    equal(swlcalc.gear.slots.weapon2.equipmentDescription(), 'This weapon gains more Weapon Power when leveling up.Whenever you hit, you have a 33% chance to hex your target and deal an additional 111-556 magical damage. The damage dealt increases each time this effect is applied, up to a maximum of 5 times. This effect is guaranteed to trigger on critical hits.When an enemy affected by this hex is defeated, nearby enemies are dealt 70-349 magical damage, based on the number of times the damaging effect has been applied.');
 
     $('#stat-combat-power').html('1000');
     swlcalc.summary.updateDescriptions();
-    equal(swlcalc.gear.slots.waist.description(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 1125 physical damage or your next healing Fist Weapon ability will restore an additional 519 health.');
-    equal(swlcalc.gear.slots.weapon2.description(), 'This weapon gains more Weapon Power when leveling up.Whenever you hit, you have a 33% chance to hex your target and deal an additional 150-750 magical damage. The damage dealt increases each time this effect is applied, up to a maximum of 5 times. This effect is guaranteed to trigger on critical hits.When an enemy affected by this hex is defeated, nearby enemies are dealt 95-471 magical damage, based on the number of times the damaging effect has been applied.');
+    equal(swlcalc.gear.slots.waist.equipmentDescription(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 1125 physical damage or your next healing Fist Weapon ability will restore an additional 519 health.');
+    equal(swlcalc.gear.slots.weapon2.equipmentDescription(), 'This weapon gains more Weapon Power when leveling up.Whenever you hit, you have a 33% chance to hex your target and deal an additional 150-750 magical damage. The damage dealt increases each time this effect is applied, up to a maximum of 5 times. This effect is guaranteed to trigger on critical hits.When an enemy affected by this hex is defeated, nearby enemies are dealt 95-471 magical damage, based on the number of times the damaging effect has been applied.');
 
     $('#stat-healing-power').html('1000');
     swlcalc.summary.updateDescriptions();
-    equal(swlcalc.gear.slots.waist.description(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 1125 physical damage or your next healing Fist Weapon ability will restore an additional 1125 health.');
+    equal(swlcalc.gear.slots.waist.equipmentDescription(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 1125 physical damage or your next healing Fist Weapon ability will restore an additional 1125 health.');
 
     swlcalc.summary.updateAllStats();
-    equal(swlcalc.gear.slots.waist.description(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 834 physical damage or your next healing Fist Weapon ability will restore an additional 519 health.');
-    equal(swlcalc.gear.slots.weapon2.description(), 'This weapon gains more Weapon Power when leveling up.Whenever you hit, you have a 33% chance to hex your target and deal an additional 111-556 magical damage. The damage dealt increases each time this effect is applied, up to a maximum of 5 times. This effect is guaranteed to trigger on critical hits.When an enemy affected by this hex is defeated, nearby enemies are dealt 70-349 magical damage, based on the number of times the damaging effect has been applied.');
+    equal(swlcalc.gear.slots.waist.equipmentDescription(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 834 physical damage or your next healing Fist Weapon ability will restore an additional 519 health.');
+    equal(swlcalc.gear.slots.weapon2.equipmentDescription(), 'This weapon gains more Weapon Power when leveling up.Whenever you hit, you have a 33% chance to hex your target and deal an additional 111-556 magical damage. The damage dealt increases each time this effect is applied, up to a maximum of 5 times. This effect is guaranteed to trigger on critical hits.When an enemy affected by this hex is defeated, nearby enemies are dealt 70-349 magical damage, based on the number of times the damaging effect has been applied.');
 
     $('#btn-all-heal').click();
-    equal(swlcalc.gear.slots.waist.description(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 520 physical damage or your next healing Fist Weapon ability will restore an additional 833 health.');
-    equal(swlcalc.gear.slots.weapon2.description(), 'This weapon gains more Weapon Power when leveling up.Whenever you hit, you have a 33% chance to hex your target and deal an additional 69-347 magical damage. The damage dealt increases each time this effect is applied, up to a maximum of 5 times. This effect is guaranteed to trigger on critical hits.When an enemy affected by this hex is defeated, nearby enemies are dealt 44-218 magical damage, based on the number of times the damaging effect has been applied.');
+    equal(swlcalc.gear.slots.waist.equipmentDescription(), 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional 520 physical damage or your next healing Fist Weapon ability will restore an additional 833 health.');
+    equal(swlcalc.gear.slots.weapon2.equipmentDescription(), 'This weapon gains more Weapon Power when leveling up.Whenever you hit, you have a 33% chance to hex your target and deal an additional 69-347 magical damage. The damage dealt increases each time this effect is applied, up to a maximum of 5 times. This effect is guaranteed to trigger on critical hits.When an enemy affected by this hex is defeated, nearby enemies are dealt 44-218 magical damage, based on the number of times the damaging effect has been applied.');
 });

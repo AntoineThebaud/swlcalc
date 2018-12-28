@@ -34,19 +34,19 @@ test('should reset all slots', 171, function() {
     for (var i = 0; i < swlcalc.gear.nbSlots(); i++) {
         var slotId = swlcalc.data.template_data.slots[i].id_prefix;
         var slot = swlcalc.gear.slots[slotId];
-        equal(slot.totalILvl(), '0');
-        equal(slot.itemId(), 'none');
-        if(slot.isWeapon()) {
-            equal(slot.quality(), 'mkI');
-        } else {
-            equal(slot.quality(), 'faded');
-        }
-        equal(slot.rarity(), 'standard');
-        equal(slot.level(), '20');
-        equal(slot.powerRating(), '0');
-        equal(slot.description(), '');
         equal(slot.iLvl(), '0');
-        equal(slot.glyph(), 'none');
+        equal(slot.equipmentId(), 'none');
+        if(slot.isWeapon()) {
+            equal(slot.equipmentQuality(), 'mkI');
+        } else {
+            equal(slot.equipmentQuality(), 'faded');
+        }
+        equal(slot.equipmentRarity(), 'standard');
+        equal(slot.equipmentLevel(), '20');
+        equal(slot.equipmentPowerRating(), '0');
+        equal(slot.equipmentDescription(), '');
+        equal(slot.equipmentILvl(), '0');
+        equal(slot.glyphId(), 'none');
         equal(slot.glyphRarity(), 'standard');
         equal(slot.glyphQuality(), 'crude');
         equal(slot.glyphLevel(), '20');
@@ -77,7 +77,7 @@ test('should set rarity on all slots', 125, function() {
         $('#btn-all-' + mixedRarities[r]).click();
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             var id = swlcalc.data.template_data.slots[i].id_prefix;
-            equal(swlcalc.gear.slots[id].rarity(), mixedRarities[r]);
+            equal(swlcalc.gear.slots[id].equipmentRarity(), mixedRarities[r]);
             equal(swlcalc.gear.slots[id].glyphRarity(), mixedRarities[r]);
             if (id != 'weapon' && id != 'weapon2') {
                 equal(swlcalc.gear.slots[id].signetRarity(), mixedRarities[r]);

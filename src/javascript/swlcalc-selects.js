@@ -15,12 +15,12 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Associates the right process to each trigger.
      */
     this.bindEvents = function() {
-        slotObj.el.itemId.change(this.handleItemChange);
-        slotObj.el.rarity.change(this.handleRarityChange);
-        slotObj.el.quality.change(this.handleQualityChange);
-        slotObj.el.level.change(this.handleLevelChange);
+        slotObj.el.equipmentId.change(this.handleItemChange);
+        slotObj.el.equipmentRarity.change(this.handleRarityChange);
+        slotObj.el.equipmentQuality.change(this.handleQualityChange);
+        slotObj.el.equipmentLevel.change(this.handleLevelChange);
 
-        slotObj.el.glyph.change(this.handleGlyphChange);
+        slotObj.el.glyphId.change(this.handleGlyphChange);
         slotObj.el.glyphRarity.change(this.handleGlyphRarityChange);
         slotObj.el.glyphQuality.change(this.handleGlyphQualityChange);
         slotObj.el.glyphLevel.change(this.handleGlyphLevelChange);
@@ -35,12 +35,12 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     /**
-     * Loads items (swlcalc-data-items) as options list in the #slot-itemId select
+     * Loads items (swlcalc-data-equipments) as options list in the #slot-itemId select
      */
     this.addItemsToSelect = function() {
-        var items = swlcalc.data.items.slot[slot.kind].slice();
+        var items = swlcalc.data.equipments.slot[slot.kind].slice();
 
-        slotObj.el.itemId.append($('<option>', {
+        slotObj.el.equipmentId.append($('<option>', {
             value: "none",
             text: "None",
             selected: "true"
@@ -52,7 +52,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
                 return swlcalc.util.sortAsc(a.type + a.name.toLowerCase(), b.type + b.name.toLowerCase())
             });
             items.forEach(function(item) {
-                slotObj.el.itemId.append($('<option>', {
+                slotObj.el.equipmentId.append($('<option>', {
                     value: item.id,
                     text: '[' + item.type + '] ' + item.name
                 }));
@@ -62,7 +62,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
                 return swlcalc.util.sortAsc(a.name.toLowerCase(), b.name.toLowerCase())
             });
             items.forEach(function(item) {
-                slotObj.el.itemId.append($('<option>', {
+                slotObj.el.equipmentId.append($('<option>', {
                     value: item.id,
                     text:  item.name
                 }));
@@ -128,9 +128,9 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 //      } else {
 //          slotObj.name('');
 //      }
-        slotObj.updateItem();
-        slotObj.updatePowerRating();
-        slotObj.updateILvl();
+        slotObj.updateEquipment();
+        slotObj.updateEquipmentPowerRating();
+        slotObj.updateEquipmentILvl();
         swlcalc.summary.updateAllStats();
     };
 
@@ -139,21 +139,21 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleRarityChange = function(event) {
         updateTextColor(this);
-        slotObj.updateImgBorder();
+        slotObj.updateEquipmentImgBorder();
 
         //refresh the list of available levels
-        slotObj.el.level.empty();
+        slotObj.el.equipmentLevel.empty();
         var minLvl = 1;
         var maxLvl = swlcalc.data.rarity_mapping.to_max_level[this.value];
         for (i = maxLvl; i >= minLvl ; i--) {
-           slotObj.el.level.append($('<option>', {
+           slotObj.el.equipmentLevel.append($('<option>', {
                value: i,
                text: i
            }));
         }
 
-        slotObj.updatePowerRating();
-        slotObj.updateILvl();
+        slotObj.updateEquipmentPowerRating();
+        slotObj.updateEquipmentILvl();
         swlcalc.summary.updateAllStats();
     };
 
@@ -161,7 +161,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-quality
      */
     this.handleQualityChange = function(event) {
-        slotObj.updatePowerRating();
+        slotObj.updateEquipmentPowerRating();
         swlcalc.summary.updateAllStats();
     };
 
@@ -169,8 +169,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-level
      */
     this.handleLevelChange = function(event) {
-        slotObj.updateILvl();
-        slotObj.updatePowerRating();
+        slotObj.updateEquipmentILvl();
+        slotObj.updateEquipmentPowerRating();
         swlcalc.summary.updateAllStats();
     };
 
