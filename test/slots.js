@@ -232,7 +232,7 @@ test('should set talisman signet id, rarity and level', 3, function() {
 
 //TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should get talisman signet object', 1, function() {
-//     deepEqual(swlcalc.gear.slots.head.signet(), swlcalc.data.signet_data.find('head', '18'));
+//     deepEqual(swlcalc.gear.slots.head.getSignet(), swlcalc.data.signet_data.find('head', '18'));
 // });
 
 test('should get the slot\'s signet rarity', 1, function() {
@@ -300,7 +300,7 @@ test('should set the slot\'s signet iLvl', 1, function() {
 
 //TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should get single signet value based on rarity', 1, function() {
-//     var signet = swlcalc.gear.slots.head.signet();
+//     var signet = swlcalc.gear.slots.head.getSignet();
 
 //     deepEqual(swlcalc.gear.slots.head.determineSignetRarityValue(signet), 45);
 // });
@@ -309,7 +309,7 @@ test('should set the slot\'s signet iLvl', 1, function() {
 // test('should get indexed signet value based on rarity', 2, function() {
 //     swlcalc.gear.slots.occult.signetId('47');
 //     swlcalc.gear.slots.occult.signetRarity('epic');
-//     var signet = swlcalc.gear.slots.occult.signet();
+//     var signet = swlcalc.gear.slots.occult.getSignet();
 
 //     deepEqual(swlcalc.gear.slots.occult.determineSignetRarityValue(signet, 0), 150);
 //     deepEqual(swlcalc.gear.slots.occult.determineSignetRarityValue(signet, 1), 57);
@@ -334,7 +334,7 @@ test('should reset slot state', 10, function() {
     equal(swlcalc.gear.slots.head.glyphRarity(), 'standard');
     equal(swlcalc.gear.slots.head.glyphQuality(), 'crude');
     equal(swlcalc.gear.slots.head.glyphLevel(), '20');
-    //equal(swlcalc.gear.slots.head.signet(), 'none'); => see swlcalc.data.signet_data.noneSignet()
+    //equal(swlcalc.gear.slots.head.getSignet(), 'none'); => see swlcalc.data.signet_data.noneSignet()
     equal(swlcalc.gear.slots.head.signetRarity(), 'standard');
     equal(swlcalc.gear.slots.head.signetLevel(), '20');
 });

@@ -11,7 +11,6 @@ swlcalc = function() {
      */
     var init = function() {
         renderContainer(swlcalc.data.template_data);
-        addHash();
         startSubModules();
         if (!checkIfExported()) {
             // if no parameters are present in the URL, trigger artificial reset to generate base parameters ("#weapon=0,0,0,0,0,4,0&weapon2=0,0,[...]")
@@ -63,7 +62,7 @@ swlcalc = function() {
      */
     var checkIfExported = function() {
         var vars = $.getUrlVars();
-        // TODO/REFACTOR : check if parameters for each slot are correct !
+        // TODO/REFACTOR : currently we don't check if parameters for each slot are correct !
         if (!$.isEmptyObject(vars) && Object.keys(vars).length == 9) {
             swlcalc.import.start(vars);
             return true;
@@ -86,23 +85,13 @@ swlcalc = function() {
     };
 
     /**
-     * Add an empty hash if current is null
-     * TODO/REFACTOR : check if still accurate ?
-     */
-    var addHash = function() {
-        if (location.hash == '') {
-            location.hash = ' ';
-        }
-    };
-
-    /**
      * Create select handler for a slot.
      */
     var startSelectHandler = function(slot) {
         swlcalc.select[slot.id_prefix] = new swlcalc.select.SelectHandler(slot);
-        swlcalc.select[slot.id_prefix].initiate();
+        swlcalc.select[slot.id_prefix].init();
     };
-  
+
     /**
      * Exposition of functions that are going to be called from outside
      */

@@ -97,35 +97,35 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.rawSignetILvl = 0.0;
 
     this.el = {
-        div: $('#' + this.id + '-slot'),
-        name: $('#' + this.id + '-name'),
-        totalILvl: $('#' + this.id + '-total-ilvl'),
-        itemId: $('#' + this.id + '-itemId'),
-        rarity: $('#' + this.id + '-rarity'),
-        quality: $('#' + this.id + '-quality'),
-        level: $('#' + this.id + '-level'),
-        powerRating: $('#' + this.id + '-power-rating'),
-        iLvl: $('#' + this.id + '-ilvl'),
-        imgIcon: $('#' + this.id + '-img-icon'),
-        imgBorder: $('#' + this.id + '-img-rarity'),
-        description: $('#' + this.id + '-description'),
-        glyph: $('#' + this.id + '-glyph'),
-        glyphRarity: $('#' + this.id + '-glyph-rarity'),
-        glyphQuality: $('#' + this.id + '-glyph-quality'),
-        glyphLevel: $('#' + this.id + '-glyph-level'),
-        glyphRating: $('#' + this.id + '-glyph-rating'),
-        glyphLabel: $('#' + this.id + '-glyph-label'),
-        glyphImgIcon: $('#' + this.id + '-glyph-img-icon'),
-        glyphImgBorder: $('#' + this.id + '-glyph-img-rarity'),
-        glyphILvl: $('#' + this.id + '-glyph-ilvl'),
-        signetId: $('#' + this.id + '-signet'),
-        signetRarity: $('#' + this.id + '-signet-rarity'),
-        signetLevel: $('#' + this.id + '-signet-level'),
-        signetImgIcon: $('#' + this.id + '-signet-img-icon'),
-        signetImgBorder: $('#' + this.id + '-signet-img-rarity'),
+        div:               $('#' + this.id + '-slot'),
+        name:              $('#' + this.id + '-name'),
+        totalILvl:         $('#' + this.id + '-total-ilvl'),
+        itemId:            $('#' + this.id + '-itemId'),
+        rarity:            $('#' + this.id + '-rarity'),
+        quality:           $('#' + this.id + '-quality'),
+        level:             $('#' + this.id + '-level'),
+        powerRating:       $('#' + this.id + '-power-rating'),
+        iLvl:              $('#' + this.id + '-ilvl'),
+        imgIcon:           $('#' + this.id + '-img-icon'),
+        imgBorder:         $('#' + this.id + '-img-rarity'),
+        description:       $('#' + this.id + '-description'),
+        glyph:             $('#' + this.id + '-glyph'),
+        glyphRarity:       $('#' + this.id + '-glyph-rarity'),
+        glyphQuality:      $('#' + this.id + '-glyph-quality'),
+        glyphLevel:        $('#' + this.id + '-glyph-level'),
+        glyphRating:       $('#' + this.id + '-glyph-rating'),
+        glyphLabel:        $('#' + this.id + '-glyph-label'),
+        glyphImgIcon:      $('#' + this.id + '-glyph-img-icon'),
+        glyphImgBorder:    $('#' + this.id + '-glyph-img-rarity'),
+        glyphILvl:         $('#' + this.id + '-glyph-ilvl'),
+        signetId:          $('#' + this.id + '-signet'),
+        signetRarity:      $('#' + this.id + '-signet-rarity'),
+        signetLevel:       $('#' + this.id + '-signet-level'),
+        signetImgIcon:     $('#' + this.id + '-signet-img-icon'),
+        signetImgBorder:   $('#' + this.id + '-signet-img-rarity'),
         signetDescription: $('#' + this.id + '-signet-description'),
-        signetILvl: $('#' + this.id + '-signet-ilvl'),
-        nameWarning: $('#' + this.id + '-name-warning'),
+        signetILvl:        $('#' + this.id + '-signet-ilvl'),
+        nameWarning:       $('#' + this.id + '-name-warning'),
     };
 
     /**
@@ -609,14 +609,12 @@ swlcalc.gear.Slot = function Slot(slotData) {
      **********************************************************************************/
 
     /**
-     * Big mess here
+     * Getter to retrieve full signet object from the data model
      */
-    //TODO/REFACTOR : move code and delete this function ?
-    this.signet = function() {
+    //TODO : find better name for getSignet method (and also getItem above)
+    this.getSignet = function() {
         if (this.signetId() == 'none' || this.signetId() == undefined || this.signetId() == null) {
             return swlcalc.data.signets.noneSignet;
-     // } else if (this.id == 'weapon' || this.id == 'weapon2') {
-     //     return swlcalc.data.suffixes.slot[this.signetId()];
         }
         return swlcalc.data.signets.slot[this.kind][this.signetId() - 1];
     };
@@ -689,38 +687,12 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Determines signet rarity value
-     */
-    //TODO/FEATURE : to use for signets like in tswcalc
-    //TODO/REFACTOR : is it still accurate in swlcalc ?
-    this.determineSignetRarityValue = function(signet, quality_index) {
-        quality_index = typeof quality_index !== 'undefined' ? quality_index : -1;
-        var rarity = this.signetRarity();
-        switch (rarity) {
-            case 'none':
-                return 0;
-            case 'standard':
-                return quality_index == -1 ? signet.rarity.normal : signet.rarity[quality_index].normal;
-            case 'superior':
-                return quality_index == -1 ? signet.rarity.superior : signet.rarity[quality_index].superior;
-            case 'epic':
-                return quality_index == -1 ? signet.rarity.epic : signet.rarity[quality_index].epic;
-            case 'mythic':
-                return quality_index == -1 ? signet.rarity.mythic : signet.rarity[quality_index].mythic;
-            case 'legendary':
-                return quality_index == -1 ? signet.rarity.mythic : signet.rarity[quality_index].legendary;
-            default:
-                return 0;
-        }
-    };
-
-    /**
      * Updates signet (#slot-signet-icon + #slot-signet-description)
      */
     this.updateSignet = function() {
         this.updateSignetIcon();
 
-        var signet = this.signet();
+        var signet = this.getSignet();
         var newDescription = signet.description;
         if (this.isWeapon()) {
             // Replaces %id% either by 'weapon' or 'weapon2' depending on the current slot
@@ -736,7 +708,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates signet icon
      */
     this.updateSignetIcon = function() {
-        var signet = this.signet();
+        var signet = this.getSignet();
         var signetRarity = this.signetRarity();
         this.updateSignetIconImage(signet);
         this.updateSignetIconBorder(signetRarity);
@@ -777,13 +749,13 @@ swlcalc.gear.Slot = function Slot(slotData) {
         // coefficient in case CP or HP is used in the bonus computation
         var coef = 1
 
-        if (this.signet().id != 0) {
+        // TODO/REFACTOR : there should  a better way to handle the particular cases of Signet of Shoulder Tackle & Signet of Contortion
+        if (this.getSignet().id != 0) {
             var signet = swlcalc.data.signets.slot[this.kind][this.signetId() - 1]
 
             if (this.isWeapon()) {
                 newValue = signet.quality[this.quality()]
             } else if (signet.name == "Signet of Shoulder Tackle") {
-                // TODO there should be a better way to handle this particular case
                 bonus1 = signet.ratio[this.signetRarity()].init[0];
                 bonus2 = signet.ratio[this.signetRarity()].init[1]
                            - signet.ratio[this.signetRarity()].per_level[1] * (this.signetLevel() - 1);
@@ -791,7 +763,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
                 $('#' + this.id + '-signet-bonus2').html(swlcalc.util.precisionRound(bonus2, 4));
                 return;
             } else if (signet.name == "Signet of Contortion") {
-                // TODO there should be a better way to handle this particular case
                 newValue = signet.ratio[this.signetRarity()].init
                            - signet.ratio[this.signetRarity()].per_level * (this.signetLevel() - 1)
             } else {

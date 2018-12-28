@@ -5,8 +5,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
     var slotObj = swlcalc.gear.slots[slot.id_prefix];
 
-    //TODO/REFACTOR : to rename as "init"
-    this.initiate = function() {
+    this.init = function() {
         this.bindEvents();
         this.addSignetsToSelect();
         this.addItemsToSelect();
@@ -26,9 +25,13 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         slotObj.el.glyphQuality.change(this.handleGlyphQualityChange);
         slotObj.el.glyphLevel.change(this.handleGlyphLevelChange);
 
-        slotObj.el.signetId.change(this.handleSignetChange);
-        slotObj.el.signetRarity.change(this.handleSignetRarityChange);
-        slotObj.el.signetLevel.change(this.handleSignetLevelChange);
+        if (slot.kind == "weapon") {
+            slotObj.el.signetId.change(this.handleSuffixChange);
+        } else {
+            slotObj.el.signetId.change(this.handleSignetChange);
+            slotObj.el.signetRarity.change(this.handleSignetRarityChange);
+            slotObj.el.signetLevel.change(this.handleSignetLevelChange);
+        }
     };
 
     /**
@@ -43,9 +46,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             selected: "true"
         }));
 
-        //sort alphabetically for a better ergonomy
-        //sort for weapons include weapon type as prefix => TODO/REFACTOR : code duplication
         if (slot.group == 'weapon') {
+            //sort alphabetically for a better ergonomy
             items.sort(function(a, b) {
                 return swlcalc.util.sortAsc(a.type + a.name.toLowerCase(), b.type + b.name.toLowerCase())
             });
@@ -135,7 +137,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     /**
      * Handler for #slot-rarity
      */
-    //TODO/REFACTOR : review the way it uses slotObj.id
     this.handleRarityChange = function(event) {
         updateTextColor(this);
         slotObj.updateImgBorder();
@@ -150,6 +151,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
                text: i
            }));
         }
+
         slotObj.updatePowerRating();
         slotObj.updateILvl();
         swlcalc.summary.updateAllStats();
@@ -222,30 +224,30 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      *                         V
      **********************************************************************************/
 
+     /**
+      * Handler for #slot-signet for weapons
+      */
+     this.handleSuffixChange = function(event) {
+         slotObj.updateSignet();
+         swlcalc.summary.updateAllStats();
+     };
+
     /**
-     * Handler for #slot-signet
+     * Handler for #slot-signet for talismans
      */
     this.handleSignetChange = function(event) {
         slotObj.updateSignet();
-        //weapon signets (= suffixes) don't have item power attribute
-        //TODO/REFACTOR : to bind a handleSuffixChange function for weapons in order to do a "if" just on swlcalc initalization and not on each signet change like this !
-        if (!slotObj.isWeapon()) {
-            slotObj.updateSignetILvl();
-        }
+        slotObj.updateSignetILvl();
         swlcalc.summary.updateAllStats();
     };
 
     /**
      * Handler for #slot-signet-rarity
      */
-    //TODO/REFACTOR : code duplication with handleSignetChange()
     this.handleSignetRarityChange = function(event) {
         updateTextColor(this);
         slotObj.updateSignetIcon();
-        //weapon signets (= suffixes) don't have item power attribute
-        if (!slotObj.isWeapon()) {
-            slotObj.updateSignetILvl();
-        }
+        slotObj.updateSignetILvl();
         swlcalc.summary.updateAllStats();
     };
 

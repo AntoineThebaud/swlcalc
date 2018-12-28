@@ -30,7 +30,7 @@ module('buttonbar-integration-tests', {
 });
 
 test('should reset all slots', 171, function() {
-    swlcalc.buttonBar.resetAllSlots();
+    swlcalc.buttonBar.resetGear();
     for (var i = 0; i < swlcalc.gear.nbSlots(); i++) {
         var slotId = swlcalc.data.template_data.slots[i].id_prefix;
         var slot = swlcalc.gear.slots[slotId];

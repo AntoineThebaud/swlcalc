@@ -2,11 +2,10 @@ var swlcalc = swlcalc || {};
 
 swlcalc.summary = function() {
 
-    //TODO/REFACTOR : remove ? currently needed for compatibility
+    // useless here but kept for future updates
     var init = function() {
     };
 
-    //TODO/REFACTOR : to be sure to use 'this' instead of 'var'
     var animaAllocation = 'DAMAGE';
 
     /**

@@ -3,7 +3,7 @@ var swlcalc = swlcalc || {};
 swlcalc.buttonBar = function() {
 
     var el = {};
-    
+
     var elInit = function() {
         return {
             btn_all_dps: $('#btn-all-dps'),
@@ -35,7 +35,7 @@ swlcalc.buttonBar = function() {
         el.btn_all_epic.on('click', setRarityOnAllSlots);
         el.btn_all_mythic.on('click', setRarityOnAllSlots);
         el.btn_all_legendary.on('click', setRarityOnAllSlots);
-        el.btn_reset.on('click', resetAllSlots);
+        el.btn_reset.on('click', resetGear);
     };
 
     /**
@@ -62,7 +62,6 @@ swlcalc.buttonBar = function() {
     /**
      * Set the same chosen rarity to all items+glyphs+signets.
      */
-    //TODO/REFACTOR : to define if "slot" is the right term here
     var setRarityOnAllSlots = function(event) {
         var newRarity = event.currentTarget.id.split('-')[2];
         for (var id in swlcalc.gear.slots) {
@@ -83,7 +82,7 @@ swlcalc.buttonBar = function() {
      * Set all slots to 'none'
      */
     //TODO/REFACTOR : to define if "slot" is the right term here
-    var resetAllSlots = function(event) {
+    var resetGear = function(event) {
         swlcalc.gear.reset();
         swlcalc.summary.updateAllStats();
     };
@@ -95,7 +94,7 @@ swlcalc.buttonBar = function() {
         el: el,
         init: init,
         setRarityOnAllSlots: setRarityOnAllSlots,
-        resetAllSlots: resetAllSlots
+        resetGear: resetGear
     };
 
     return oPublic;
