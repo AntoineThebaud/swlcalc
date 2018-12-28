@@ -35,42 +35,37 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Loads items (swlcalc-data-items) as options list in the #slot-itemId select
      */
     this.addItemsToSelect = function() {
-        // makes the function compatible both for talismans and weapons
-        var slotToUse;
-        if (slot.group == 'weapon') {
-            slotToUse = 'weapon'
-        } else {
-            slotToUse = slot.id_prefix
-        }
+        var items = swlcalc.data.items.slot[slot.kind].slice();
 
         slotObj.el.itemId.append($('<option>', {
             value: "none",
             text: "None",
             selected: "true"
         }));
-        var items = swlcalc.data.items.slot[slotToUse].slice();
 
         //sort alphabetically for a better ergonomy
         //sort for weapons include weapon type as prefix => TODO/REFACTOR : code duplication
         if (slot.group == 'weapon') {
             items.sort(function(a, b) {
-                if (a.type + a.name.toLowerCase() > b.type + b.name.toLowerCase()) return 1;
-                else return -1;
+                return swlcalc.util.sortAsc(a.type + a.name.toLowerCase(), b.type + b.name.toLowerCase())
+            });
+            items.forEach(function(item) {
+                slotObj.el.itemId.append($('<option>', {
+                    value: item.id,
+                    text: '[' + item.type + '] ' + item.name
+                }));
             });
         } else {
             items.sort(function(a, b) {
-                if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-                else return -1;
+                return swlcalc.util.sortAsc(a.name.toLowerCase(), b.name.toLowerCase())
+            });
+            items.forEach(function(item) {
+                slotObj.el.itemId.append($('<option>', {
+                    value: item.id,
+                    text:  item.name
+                }));
             });
         }
-
-        items.forEach(function(item) {
-            slotObj.el.itemId.append($('<option>', {
-                value: item.id,
-                //TODO/REFACTOR : quick & dirty ; we test 3 times the weapon condition in this function
-                text: (slot.group == 'weapon' ? '[' + item.type + '] ' + item.name : item.name)
-            }));
-        });
     };
 
     /**
@@ -85,12 +80,10 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         this.updateToDefaultSignet();
 
         var signetsInSlotGroup = swlcalc.data.signets.slot[slot.kind].slice();
-        //sort alphabetically for a better ergonomy
+        //reorder elements to improve ergonomy
         signetsInSlotGroup.sort(function(a, b) {
-            if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-            else return -1;
+            return swlcalc.util.sortAsc(a.name.toLowerCase(), b.name.toLowerCase())
         });
-
         $.each(signetsInSlotGroup, function(index, value) {
             slotObj.el.signetId.append($('<option>', {
                 value: value.id,

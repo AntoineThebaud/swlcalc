@@ -4,7 +4,7 @@ var swlcalc = swlcalc || {};
  * Utility functions
  */
 swlcalc.util = function() {
-    
+
     var capitalise = function(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
@@ -21,13 +21,19 @@ swlcalc.util = function() {
         return Math.round(number * factor) / factor;
     }
 
+    var sortAsc = function(a, b) {
+        if (a > b) return 1;
+        else return -1;
+    }
+
     /**
      * Exposition of functions that are going to be called from outside
      */
     var oPublic = {
         capitalise: capitalise,
         blankIfNone: blankIfNone,
-        precisionRound: precisionRound
+        precisionRound: precisionRound,
+        sortAsc: sortAsc
     }
     return oPublic;
 }();
