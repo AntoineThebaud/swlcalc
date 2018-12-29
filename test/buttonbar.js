@@ -1,3 +1,4 @@
+
 module('buttonbar-dom', {
     setup: function() {
         renderButtonbar();

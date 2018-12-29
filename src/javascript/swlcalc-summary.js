@@ -52,7 +52,7 @@ swlcalc.summary = function() {
         var sums = collectPrimaryStats();
 
         for (var stat in sums) {
-            if (sums.hasOwnProperty(stat)) {
+            if (sums.hasOwnProperty(stat)) { // TODO/REFACTOR this if could be removed ?
                 updateOnePrimaryStat(stat, sums[stat]);
             }
         }

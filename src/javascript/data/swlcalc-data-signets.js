@@ -85,7 +85,7 @@ swlcalc.data.signets = {
             {
                 id: 8,
                 name: 'Warding',
-                description: 'Increases Protection by <span id="%id-signet-bonus" class="bonus-const">%d</span> while wielded',
+                description: 'Increases Protection by <span id="%id-signet-bonus" class="bonus-const">%d</span> while wielded.',
                 quality: {
                     'mkI': 150,
                     'mkII': 300,
@@ -1293,7 +1293,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Overwhelming Power',
                 type: 'All',
-                description: 'Increases the damage and healing of Ultimate Abilities by <span id="wrist-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>',
+                description: 'Increases the damage and healing of Ultimate Abilities by <span id="wrist-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1412,7 +1412,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Empowerment',
                 type: 'All',
-                description: 'When you critically heal, your defensive target is given a beneficial effect that increases their damage by <span id="luck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> for <span class="bonus-const">5</span> seconds. This ability can only occur once every <span class="bonus-const">15</span> seconds',
+                description: 'When you critically heal, your defensive target is given a beneficial effect that increases their damage by <span id="luck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> for <span class="bonus-const">5</span> seconds. This ability can only occur once every <span class="bonus-const">15</span> seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1679,7 +1679,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Contortion',
                 type: 'All',
-                description: 'Active dodges break movement hindering effects, but also have their cooldown increased by <span id="occult-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>',
+                description: 'Active dodges break movement hindering effects, but also have their cooldown increased by <span id="occult-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
                 cooldown: '', // TODO for this one the number decreases with levels !
                 ratio: {
                     'standard': {
@@ -1766,7 +1766,7 @@ swlcalc.data.signets = {
                 id: 5,
                 name: 'Signet of Agility',
                 type: 'All',
-                description: 'Reduces the cooldown of Gadgets by <span id="occult-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Your active dodges have a <span id="occult-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> chance to not trigger their cooldown.',
                 cooldown: '',
                 ratio: {
                     'standard': {

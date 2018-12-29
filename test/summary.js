@@ -95,14 +95,14 @@ test('should collect primary stats for tank build', 8, function() {
 
     var sums = swlcalc.summary.collectPrimaryStats();
 
-    equal(sums['combat-power'], 741);
-    equal(sums['healing-power'], 461);
+    equal(sums['ilvl'], 377);
+    equal(sums['power-rating'], 3730);
     equal(sums['weapon-power'], 1832);
     equal(sums['attack-rating'], 8052);
     equal(sums['heal-rating'], 4310);
     equal(sums['hitpoints'], 7512);
-    equal(sums['power-rating'], 3730);
-    equal(sums['ilvl'], 357);
+    equal(sums['combat-power'], 741);
+    equal(sums['healing-power'], 461);
 });
 
 test('should collect offensive and defensive stats for initial state', 10, function() {
@@ -152,7 +152,7 @@ test('should collect all stats and return two objects', 2, function() {
         'attack-rating': 8052,
         'heal-rating': 4310,
         'power-rating': 3730,
-        'ilvl': 357
+        'ilvl': 377
     };
     var expectedOffensiveDefensiveStats = {
         'critical-rating': '841',

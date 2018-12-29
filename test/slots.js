@@ -27,7 +27,7 @@ test('should get and set the slot\'s equipment id', 2, function() {
 });
 
 test('should get and set slot\'s total iLvl', 2, function() {
-    equal(swlcalc.gear.slots.head.iLvl(), '453');
+    equal(swlcalc.gear.slots.head.iLvl(), '480');
     swlcalc.gear.slots.head.iLvl('9999');
     equal(swlcalc.gear.slots.head.iLvl(), '9999');
 });
@@ -172,13 +172,13 @@ test('should set talisman signet id, rarity and level', 3, function() {
 // });
 
 test('should get and set the slot\'s signet rarity', 2, function() {
-    equal(swlcalc.gear.slots.head.signetRarity(), 'standard');
+    equal(swlcalc.gear.slots.head.signetRarity(), 'superior');
     swlcalc.gear.slots.head.signetRarity('legendary');
     equal(swlcalc.gear.slots.head.signetRarity(), 'legendary');
 });
 
 test('should get and set the slot\'s signet level', 2, function() {
-    equal(swlcalc.gear.slots.head.signetLevel(), '20');
+    equal(swlcalc.gear.slots.head.signetLevel(), '15');
     swlcalc.gear.slots.head.signetLevel('7');
     equal(swlcalc.gear.slots.head.signetLevel(), '7');
 });
@@ -193,7 +193,7 @@ test('should update signet icon and border', 1, function() {
 });
 
 test('should get and set the slot\'s signet iLvl', 2, function() {
-    equal(swlcalc.gear.slots.head.signetILvl(), 0);
+    equal(swlcalc.gear.slots.head.signetILvl(), 26);
     swlcalc.gear.slots.head.signetILvl(666);
     equal(swlcalc.gear.slots.head.signetILvl(), 666);
 });
@@ -211,12 +211,14 @@ test('should get and set the slot\'s signet iLvl', 2, function() {
 // });
 
 //TODO/TEST tswcalc test. swlcalc equivalent needed
-// test('should get signet equipmentDescription for multiple value replace', 1, function() {
-//     swlcalc.gear.slots.occult.signetId('47');
-//     swlcalc.gear.slots.occult.signetRarity('epic');
-
-//     equal(swlcalc.gear.slots.occult.signetDescription(), 'When your health is below 50% you are healed for 150 and affected by a heal over time effect healing you for 57 every 2 seconds for 8 seconds. 12 seconds cooldown.');
-// });
+test('should get and set the slot\'s signet description', 2, function() {
+    equal(swlcalc.gear.slots.occult.signetDescription(), 'After using Active Dodge, you recieve a speed bonus of 26.1579% for 4 seconds.');
+    swlcalc.gear.slots.occult.signetId('3');
+    swlcalc.gear.slots.occult.signetRarity('epic');
+    swlcalc.gear.slots.occult.signetLevel('18');
+    swlcalc.gear.slots.occult.updateSignet();
+    equal(swlcalc.gear.slots.occult.signetDescription(), 'Your active dodges have a 30% to knock down enemies in your path, but also have their cooldown increased by 74.03%.');
+});
 
 //TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should update signet equipmentDescription', 1, function() {
@@ -276,9 +278,9 @@ test('should collect current slot state', 10, function() {
     deepEqual(slotState.glyph_rarity, 'mythic');
     deepEqual(slotState.glyph_quality, 'intricate');
     deepEqual(slotState.glyph_level, '1');
-    deepEqual(slotState.signet_id, 'none');
-    deepEqual(slotState.signet_rarity, 'standard');
-    deepEqual(slotState.signet_level, '20');
+    deepEqual(slotState.signet_id, '20');
+    deepEqual(slotState.signet_rarity, 'superior');
+    deepEqual(slotState.signet_level, '15');
 });
 
 test('should collect current mapped slot state', 11, function() {
@@ -292,9 +294,9 @@ test('should collect current mapped slot state', 11, function() {
     deepEqual(slotState.glyph_rarity, 4);
     deepEqual(slotState.glyph_quality, 3);
     deepEqual(slotState.glyph_level, '1');
-    deepEqual(slotState.signet_id, 0);
-    deepEqual(slotState.signet_rarity, 1);
-    deepEqual(slotState.signet_level, '20');
+    deepEqual(slotState.signet_id, '20');
+    deepEqual(slotState.signet_rarity, 2);
+    deepEqual(slotState.signet_level, '15');
 });
 
 test('should collect all slot states', 20, function() {
@@ -307,7 +309,7 @@ test('should collect all slot states', 20, function() {
     deepEqual(slotStates.weapon.glyph_rarity, 'superior');
     deepEqual(slotStates.weapon.glyph_quality, 'crude');
     deepEqual(slotStates.weapon.glyph_level, '1');
-    deepEqual(slotStates.weapon.signet_id, 'none');
+    deepEqual(slotStates.weapon.signet_id, '6');
     deepEqual(slotStates.weapon.signet_rarity, undefined);
     deepEqual(slotStates.weapon.signet_level, undefined);
 
@@ -318,9 +320,9 @@ test('should collect all slot states', 20, function() {
     deepEqual(slotStates.head.glyph_rarity, 'mythic');
     deepEqual(slotStates.head.glyph_quality, 'intricate');
     deepEqual(slotStates.head.glyph_level, '1');
-    deepEqual(slotStates.head.signet_id, 'none');
-    deepEqual(slotStates.head.signet_rarity, 'standard');
-    deepEqual(slotStates.head.signet_level, '20');
+    deepEqual(slotStates.head.signet_id, '20');
+    deepEqual(slotStates.head.signet_rarity, 'superior');
+    deepEqual(slotStates.head.signet_level, '15');
 });
 
 //TODO/REFACTOR : to have only numerical values, not strings
@@ -335,7 +337,7 @@ test('should collect all mapped slot states', 22, function() {
     deepEqual(slotStates.weapon.glyph_rarity, 2);
     deepEqual(slotStates.weapon.glyph_quality, 1);
     deepEqual(slotStates.weapon.glyph_level, '1');
-    deepEqual(slotStates.weapon.signet_id, 0);
+    deepEqual(slotStates.weapon.signet_id, '6');
     deepEqual(slotStates.weapon.signet_rarity, 0);
     deepEqual(slotStates.weapon.signet_level, 0);
 
@@ -347,7 +349,7 @@ test('should collect all mapped slot states', 22, function() {
     deepEqual(slotStates.head.glyph_rarity, 4);
     deepEqual(slotStates.head.glyph_quality, 3);
     deepEqual(slotStates.head.glyph_level, '1');
-    deepEqual(slotStates.head.signet_id, 0);
-    deepEqual(slotStates.head.signet_rarity, 1);
-    deepEqual(slotStates.head.signet_level, '20');
+    deepEqual(slotStates.head.signet_id, '20');
+    deepEqual(slotStates.head.signet_rarity, 2);
+    deepEqual(slotStates.head.signet_level, '15');
 });

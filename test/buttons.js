@@ -1,3 +1,4 @@
+
 module('swap-button-integration-tests', {
     setup: function() {
         renderSlots();

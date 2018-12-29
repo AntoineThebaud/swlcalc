@@ -1,3 +1,4 @@
+
 module('swlcalc');
 
 /*test('should initate swlcalc submodules', 8, function() {
@@ -12,13 +13,12 @@ module('swlcalc');
     ok(swlcalc.import);
 });*/
 
-//TODO/TEST + TODO/FEATURE : to add assertions for signet text when implemented
-test('should import from hash', 180, function() {
-    location.hash = 'weapon=3,4,3,19,3,2,2,13,0,4,0&weapon2=3,7,2,29,4,3,1,15,0,8,0&head=3,4,2,24,4,3,2,18,1,1,16&finger=2,2,1,20,5,4,3,15,4,1,2&neck=1,11,3,6,3,2,1,20,1,1,3&wrist=5,2,2,68,3,3,2,6,5,1,8&luck=1,1,1,10,2,2,1,18,3,1,13&waist=5,11,1,2,4,5,3,8,3,1,16&occult=1,7,3,19,5,1,3,2,2,1,10'
+test('should import from hash', 189, function() {
+    location.hash = 'weapon=3,4,3,19,3,2,2,13,0,2,0&weapon2=3,7,2,29,4,3,1,15,0,8,0&head=3,4,2,24,4,3,2,18,1,1,16&finger=2,2,1,20,5,4,3,15,4,1,2&neck=1,11,3,6,3,2,1,20,4,1,3&wrist=5,2,2,68,3,3,2,6,5,1,8&luck=1,1,1,10,2,2,1,18,3,1,13&waist=5,11,1,2,4,5,3,8,3,3,16&occult=1,7,3,19,5,1,3,2,5,2,10'
     swlcalc.init();
 
     // Summary
-    equal($('#stat-ilvl').html(), '538');
+    equal($('#stat-ilvl').html(), '565');
     equal($('#stat-power-rating').html(), '4388');
     equal($('#stat-weapon-power').html(), '1577');
     equal($('#stat-attack-rating').html(), '8710');
@@ -54,10 +54,11 @@ test('should import from hash', 180, function() {
     equal($('#weapon-glyph-level').val(), '13');
     equal($('#weapon-glyph-rating').html(), '+329');
     equal($('#weapon-glyph-ilvl').html(), '136');
-    equal($('#weapon-signet-id').val(), '4');
+    equal($('#weapon-signet-id').val(), '2');
     equal($('#weapon-signet-rarity').val(), undefined);
     equal($('#weapon-signet-level').val(), undefined);
     equal($('#weapon-signet-ilvl').html(), undefined);
+    equal($('#weapon-signet-description').html(), 'This weapon deals <span id="weapon-signet-bonus" class="bonus-var-attack">347.4</span> additional damage to enemies that are below 35% health.');
 
     ok(!$('#weapon2-slot').is(':visible'));
     equal($('#weapon2-ilvl').html(), '581');
@@ -78,6 +79,7 @@ test('should import from hash', 180, function() {
     equal($('#weapon2-signet-rarity').val(), undefined);
     equal($('#weapon2-signet-level').val(), undefined);
     equal($('#weapon2-signet-ilvl').html(), undefined);
+    equal($('#weapon2-signet-description').html(), 'Increases Protection by <span id="weapon2-signet-bonus" class="bonus-const">300</span> while wielded.');
 
     equal($('#head-ilvl').html(), '487');
     equal($('#head-equipment-id').val(), '4');
@@ -97,6 +99,8 @@ test('should import from hash', 180, function() {
     equal($('#head-signet-rarity').val(), 'standard');
     equal($('#head-signet-level').val(), '16');
     equal($('#head-signet-ilvl').html(), '10');
+    equal($('#head-signet-description').html(), 'Increases the damage and healing of Pistols Elite Abilities by <span id="head-signet-bonus" class="bonus-const">3.4495</span><span class="bonus-const">%</span>.');
+
 
     equal($('#finger-ilvl').html(), '571');
     equal($('#finger-equipment-id').val(), '2');
@@ -116,8 +120,9 @@ test('should import from hash', 180, function() {
     equal($('#finger-signet-rarity').val(), 'mythic');
     equal($('#finger-signet-level').val(), '2');
     equal($('#finger-signet-ilvl').html(), '89');
+    equal($('#finger-signet-description').html(), 'Increases the damage and healing of Pistols Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">47.9079</span><span class="bonus-const">%</span>.');
 
-    equal($('#neck-ilvl').html(), '143');
+    equal($('#neck-ilvl').html(), '232');
     equal($('#neck-equipment-id').val(), '11');
     equal($('#neck-equipment-rarity').val(), 'standard');
     equal($('#neck-equipment-quality').val(), 'radiant');
@@ -132,9 +137,10 @@ test('should import from hash', 180, function() {
     equal($('#neck-glyph-rating').html(), '+339');
     equal($('#neck-glyph-ilvl').html(), '128');
     equal($('#neck-signet-id').val(), '1');
-    equal($('#neck-signet-rarity').val(), 'standard');
+    equal($('#neck-signet-rarity').val(), 'mythic');
     equal($('#neck-signet-level').val(), '3');
-    equal($('#neck-signet-ilvl').html(), '2');
+    equal($('#neck-signet-ilvl').html(), '91');
+    equal($('#neck-signet-description').html(), 'Increases the damage and healing of Pistols Power Abilities by <span id="neck-signet-bonus" class="bonus-const">12.6405</span><span class="bonus-const">%</span>.');
 
     equal($('#wrist-ilvl').html(), '1292');
     equal($('#wrist-equipment-id').val(), '2');
@@ -154,6 +160,7 @@ test('should import from hash', 180, function() {
     equal($('#wrist-signet-rarity').val(), 'legendary');
     equal($('#wrist-signet-level').val(), '8');
     equal($('#wrist-signet-ilvl').html(), '172');
+    equal($('#wrist-signet-description').html(), 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="wrist-signet-bonus" class="bonus-const">36.1004</span><span class="bonus-const">%</span>.');
 
     equal($('#luck-ilvl').html(), '136');
     equal($('#luck-equipment-id').val(), '1');
@@ -173,6 +180,7 @@ test('should import from hash', 180, function() {
     equal($('#luck-signet-rarity').val(), 'epic');
     equal($('#luck-signet-level').val(), '13');
     equal($('#luck-signet-ilvl').html(), '55');
+    equal($('#luck-signet-description').html(), 'When you critically heal, you gain a beneficial effect that grants you a <span id="luck-signet-bonus" class="bonus-var-heal">17.8511</span><span class="bonus-var-heal">%</span> bonus to healing for <span class="bonus-const">5</span> seconds. This ability can only occur once every <span class="bonus-const">15</span> seconds.');
 
     equal($('#waist-ilvl').html(), '846');
     equal($('#waist-equipment-id').val(), '11');
@@ -188,12 +196,13 @@ test('should import from hash', 180, function() {
     equal($('#waist-glyph-level').val(), '8');
     equal($('#waist-glyph-rating').html(), '+560');
     equal($('#waist-glyph-ilvl').html(), '196');
-    equal($('#waist-signet-id').val(), '1');
+    equal($('#waist-signet-id').val(), '3');
     equal($('#waist-signet-rarity').val(), 'epic');
     equal($('#waist-signet-level').val(), '16');
     equal($('#waist-signet-ilvl').html(), '59');
+    equal($('#waist-signet-description').html(), 'Reduces the cooldown of Gadgets by <span id="waist-signet-bonus" class="bonus-const">32.7158</span><span class="bonus-const">%</span>.');
 
-    equal($('#occult-ilvl').html(), '386');
+    equal($('#occult-ilvl').html(), '540');
     equal($('#occult-equipment-id').val(), '7');
     equal($('#occult-equipment-rarity').val(), 'standard');
     equal($('#occult-equipment-quality').val(), 'radiant');
@@ -207,13 +216,14 @@ test('should import from hash', 180, function() {
     equal($('#occult-glyph-level').val(), '2');
     equal($('#occult-glyph-rating').html(), '+783');
     equal($('#occult-glyph-ilvl').html(), '322');
-    equal($('#occult-signet-id').val(), '1');
-    equal($('#occult-signet-rarity').val(), 'superior');
+    equal($('#occult-signet-id').val(), '2');
+    equal($('#occult-signet-rarity').val(), 'legendary');
     equal($('#occult-signet-level').val(), '10');
-    equal($('#occult-signet-ilvl').html(), '22');
+    equal($('#occult-signet-ilvl').html(), '175');
+    equal($('#occult-signet-description').html(), 'Active dodges break movement hindering effects, but also have their cooldown increased by <span id="occult-signet-bonus" class="bonus-const">56.4684</span><span class="bonus-const">%</span>.');
 });
 
-test('should set default values with an empty hash', 173, function() {
+test('should set default values with an empty hash', 191, function() {
     location.hash = ''
     swlcalc.init();
 
@@ -261,6 +271,8 @@ test('should set default values with an empty hash', 173, function() {
     equal($('#weapon-signet-rarity').val(), undefined);
     equal($('#weapon-signet-level').val(), undefined);
     equal($('#weapon-signet-ilvl').html(), undefined);
+    equal($('#weapon-signet-description').html(), '');
+    equal($('#weapon-signet-bonus').val(), undefined);
 
     ok(!$('#weapon2-slot').is(':visible'));
     equal($('#weapon2-ilvl').html(), '0');
@@ -281,6 +293,8 @@ test('should set default values with an empty hash', 173, function() {
     equal($('#weapon2-signet-rarity').val(), undefined);
     equal($('#weapon2-signet-level').val(), undefined);
     equal($('#weapon2-signet-ilvl').html(), undefined);
+    equal($('#weapon2-signet-description').html(), '');
+    equal($('#weapon2-signet-bonus').val(), undefined);
 
     equal($('#head-ilvl').html(), '0');
     equal($('#head-equipment-id').val(), 'none');
@@ -299,6 +313,8 @@ test('should set default values with an empty hash', 173, function() {
     equal($('#head-signet-rarity').val(), 'standard');
     equal($('#head-signet-level').val(), '20');
     equal($('#head-signet-ilvl').html(), '0');
+    equal($('#head-signet-description').html(), '');
+    equal($('#head-signet-bonus').val(), undefined);
 
     equal($('#finger-ilvl').html(), '0');
     equal($('#finger-equipment-id').val(), 'none');
@@ -317,6 +333,8 @@ test('should set default values with an empty hash', 173, function() {
     equal($('#finger-signet-rarity').val(), 'standard');
     equal($('#finger-signet-level').val(), '20');
     equal($('#finger-signet-ilvl').html(), '0');
+    equal($('#finger-signet-description').html(), '');
+    equal($('#finger-signet-bonus').val(), undefined);
 
     equal($('#neck-ilvl').html(), '0');
     equal($('#neck-equipment-id').val(), 'none');
@@ -335,6 +353,8 @@ test('should set default values with an empty hash', 173, function() {
     equal($('#neck-signet-rarity').val(), 'standard');
     equal($('#neck-signet-level').val(), '20');
     equal($('#neck-signet-ilvl').html(), '0');
+    equal($('#neck-signet-description').html(), '');
+    equal($('#neck-signet-bonus').val(), undefined);
 
     equal($('#wrist-ilvl').html(), '0');
     equal($('#wrist-equipment-id').val(), 'none');
@@ -353,6 +373,8 @@ test('should set default values with an empty hash', 173, function() {
     equal($('#wrist-signet-rarity').val(), 'standard');
     equal($('#wrist-signet-level').val(), '20');
     equal($('#wrist-signet-ilvl').html(), '0');
+    equal($('#wrist-signet-description').html(), '');
+    equal($('#wrist-signet-bonus').val(), undefined);
 
     equal($('#luck-ilvl').html(), '0');
     equal($('#luck-equipment-id').val(), 'none');
@@ -371,6 +393,8 @@ test('should set default values with an empty hash', 173, function() {
     equal($('#luck-signet-rarity').val(), 'standard');
     equal($('#luck-signet-level').val(), '20');
     equal($('#luck-signet-ilvl').html(), '0');
+    equal($('#luck-signet-description').html(), '');
+    equal($('#luck-signet-bonus').val(), undefined);
 
     equal($('#waist-ilvl').html(), '0');
     equal($('#waist-equipment-id').val(), 'none');
@@ -389,6 +413,8 @@ test('should set default values with an empty hash', 173, function() {
     equal($('#waist-signet-rarity').val(), 'standard');
     equal($('#waist-signet-level').val(), '20');
     equal($('#waist-signet-ilvl').html(), '0');
+    equal($('#waist-signet-description').html(), '');
+    equal($('#waist-signet-bonus').val(), undefined);
 
     equal($('#occult-ilvl').html(), '0');
     equal($('#occult-equipment-id').val(), 'none');
@@ -407,4 +433,6 @@ test('should set default values with an empty hash', 173, function() {
     equal($('#occult-signet-rarity').val(), 'standard');
     equal($('#occult-signet-level').val(), '20');
     equal($('#occult-signet-ilvl').html(), '0');
+    equal($('#occult-signet-description').html(), '');
+    equal($('#occult-signet-bonus').val(), undefined);
 });
