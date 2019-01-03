@@ -35,7 +35,7 @@ swlcalc.data.signets = {
             {
                 id: 3,
                 name: 'Energy',
-                description: 'Your attacks and heals with this weapon have a 50% chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'When you use a Power Ability with this weapon you have <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> of consuming one less Energy.',
                 quality: {
                     'mkI': 11,
                     'mkII': 22,
@@ -45,7 +45,7 @@ swlcalc.data.signets = {
             {
                 id: 4,
                 name: 'Efficiency',
-                description: 'When you use a Power Ability with this weapon you have <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> of consuming one less Energy.',
+                description: 'Your attacks and heals with this weapon have a 50% chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
                 quality: {
                     'mkI': 2,
                     'mkII': 3,
