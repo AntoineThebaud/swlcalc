@@ -70,9 +70,9 @@ test('should get and set the slot\'s equipment icon image', 1 /*2*/, function() 
 });
 
 test('should get and set the slot\'s equipment border image', 2, function() {
-    equal(swlcalc.gear.slots.head.equipmentImgBorder(), 'assets/images/icons/rarity/epic-42x42.png');
-    swlcalc.gear.slots.head.equipmentImgBorder('lorem/ipsum/dolor/sit/amet');
-    equal(swlcalc.gear.slots.head.equipmentImgBorder(), 'lorem/ipsum/dolor/sit/amet');
+    equal(swlcalc.gear.slots.head.equipmentImgRarity(), 'assets/images/icons/rarity/epic-42x42.png');
+    swlcalc.gear.slots.head.equipmentImgRarity('lorem/ipsum/dolor/sit/amet');
+    equal(swlcalc.gear.slots.head.equipmentImgRarity(), 'lorem/ipsum/dolor/sit/amet');
 });
 
 test('should get and set the slot\'s equipment description', 2, function() {
@@ -145,9 +145,9 @@ test('should get and set the slot\'s glyph imgIcon', 2, function() {
 
 test('should get and set the slot\'s glyph imgBorder', 2, function() {
     //TODO/FEATURE : to use assets/image/icons/rarity/none-42x42.png
-    equal(swlcalc.gear.slots.head.glyphImgBorder(), 'assets/images/icons/rarity/none-42x42.png');
-    swlcalc.gear.slots.head.glyphImgBorder('lorem/ipsum/dolor/sit/amet');
-    equal(swlcalc.gear.slots.head.glyphImgBorder(), 'lorem/ipsum/dolor/sit/amet');
+    equal(swlcalc.gear.slots.head.glyphImgRarity(), 'assets/images/icons/rarity/none-42x42.png');
+    swlcalc.gear.slots.head.glyphImgRarity('lorem/ipsum/dolor/sit/amet');
+    equal(swlcalc.gear.slots.head.glyphImgRarity(), 'lorem/ipsum/dolor/sit/amet');
 });
 
 test('should get and set the slot\'s glyph iLvl', 2, function() {

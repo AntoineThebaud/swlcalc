@@ -139,7 +139,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleRarityChange = function(event) {
         updateTextColor(this);
-        slotObj.updateEquipmentImgBorder();
+        slotObj.updateEquipmentImgRarity();
 
         //refresh the list of available levels
         slotObj.el.equipmentLevel.empty();
@@ -162,6 +162,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleQualityChange = function(event) {
         slotObj.updateEquipmentPowerRating();
+        slotObj.updateEquipmentImgQuality();
         swlcalc.summary.updateAllStats();
     };
 
@@ -195,7 +196,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleGlyphRarityChange = function(event) {
         updateTextColor(this);
-        slotObj.updateGlyphImgBorder();
+        slotObj.updateGlyphImgRarity();
         slotObj.updateGlyphILvl();
         slotObj.updateGlyphRating();
 
@@ -207,6 +208,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleGlyphQualityChange = function(event) {
         slotObj.updateGlyphRating();
+        slotObj.updateGlyphImgQuality();
         swlcalc.summary.updateAllStats();
     };
 

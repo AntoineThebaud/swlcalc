@@ -107,7 +107,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
         equipmentPowerRating: $('#' + this.id + '-equipment-power-rating'),
         equipmentILvl:        $('#' + this.id + '-equipment-ilvl'),
         equipmentImgIcon:     $('#' + this.id + '-equipment-img-icon'),
-        equipmentImgBorder:   $('#' + this.id + '-equipment-img-rarity'),
+        equipmentImgRarity:   $('#' + this.id + '-equipment-img-rarity'),
+        equipmentImgQuality:  $('#' + this.id + '-equipment-img-quality'),
         equipmentDescription: $('#' + this.id + '-equipment-description'),
         glyphId:              $('#' + this.id + '-glyph-id'),
         glyphRarity:          $('#' + this.id + '-glyph-rarity'),
@@ -116,13 +117,14 @@ swlcalc.gear.Slot = function Slot(slotData) {
         glyphRating:          $('#' + this.id + '-glyph-rating'),
         glyphLabel:           $('#' + this.id + '-glyph-label'),
         glyphImgIcon:         $('#' + this.id + '-glyph-img-icon'),
-        glyphImgBorder:       $('#' + this.id + '-glyph-img-rarity'),
+        glyphImgRarity:       $('#' + this.id + '-glyph-img-rarity'),
+        glyphImgQuality:      $('#' + this.id + '-glyph-img-quality'),
         glyphILvl:            $('#' + this.id + '-glyph-ilvl'),
         signetId:             $('#' + this.id + '-signet-id'),
         signetRarity:         $('#' + this.id + '-signet-rarity'),
         signetLevel:          $('#' + this.id + '-signet-level'),
         signetImgIcon:        $('#' + this.id + '-signet-img-icon'),
-        signetImgBorder:      $('#' + this.id + '-signet-img-rarity'),
+        signetImgRarity:      $('#' + this.id + '-signet-img-rarity'),
         signetDescription:    $('#' + this.id + '-signet-description'),
         signetILvl:           $('#' + this.id + '-signet-ilvl'),
         nameWarning:          $('#' + this.id + '-name-warning'),
@@ -293,11 +295,22 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Getter/Setter for #slot-equipment-img-rarity
      */
-    this.equipmentImgBorder = function() {
+    this.equipmentImgRarity = function() {
         if (arguments.length == 1) {
-            this.el.equipmentImgBorder.attr('src', arguments[0])
+            this.el.equipmentImgRarity.attr('src', arguments[0])
         } else {
-            return this.el.equipmentImgBorder.attr('src');
+            return this.el.equipmentImgRarity.attr('src');
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-equipment-img-quality
+     */
+    this.equipmentImgQuality = function() {
+        if (arguments.length == 1) {
+            this.el.equipmentImgQuality.attr('src', arguments[0])
+        } else {
+            return this.el.equipmentImgQuality.attr('src');
         }
     };
 
@@ -387,9 +400,24 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Updates #slot-equipment-img-rarity
      */
-    this.updateEquipmentImgBorder = function() {
+    this.updateEquipmentImgRarity = function() {
         var img_path = 'assets/images/icons/rarity/' + this.equipmentRarity() + '-42x42.png';
-        this.equipmentImgBorder(img_path);
+        this.equipmentImgRarity(img_path);
+    };
+
+    /**
+     * Updates #slot-equipment-img-quality
+     */
+    this.updateEquipmentImgQuality = function() {
+        // TODO : replace all quality id's by 1,2,3 to avoid the need of using mapping ? would avoid need of isWeapon also
+        var index = 0
+        if (this.isWeapon()) {
+            var index = swlcalc.data.weapon_quality_mapping.to_num[this.equipmentQuality()]
+        } else {
+            var index = swlcalc.data.talisman_quality_mapping.to_num[this.equipmentQuality()]
+        }
+        var img_path = 'assets/images/icons/quality/' + index + '.png';
+        this.equipmentImgQuality(img_path);
     };
 
     /**
@@ -515,11 +543,22 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Getter/Setter for #slot-glyph-img-rarity
      */
-    this.glyphImgBorder = function() {
+    this.glyphImgRarity = function() {
         if (arguments.length == 1) {
-            this.el.glyphImgBorder.attr('src', arguments[0])
+            this.el.glyphImgRarity.attr('src', arguments[0])
         } else {
-            return this.el.glyphImgBorder.attr('src');
+            return this.el.glyphImgRarity.attr('src');
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-glyph-img-quality
+     */
+    this.glyphImgQuality = function() {
+        if (arguments.length == 1) {
+            this.el.glyphImgQuality.attr('src', arguments[0])
+        } else {
+            return this.el.glyphImgQuality.attr('src');
         }
     };
 
@@ -570,9 +609,19 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Updates #slot-glyph-img-rarity
      */
-    this.updateGlyphImgBorder = function() {
+    this.updateGlyphImgRarity = function() {
         var img_path = 'assets/images/icons/rarity/' + this.glyphRarity() + '-42x42.png';
-        this.glyphImgBorder(img_path);
+        this.glyphImgRarity(img_path);
+    };
+
+    /**
+     * Updates #slot-glyph-img-quality
+     */
+    this.updateGlyphImgQuality = function() {
+        // TODO : replace all quality id's by 1,2,3 to avoid the need of using mapping ?
+        var index = swlcalc.data.glyph_quality_mapping.to_num[this.glyphQuality()]
+        var img_path = 'assets/images/icons/quality/' + index + '.png'; // TODO maybe not accurate
+        this.glyphImgQuality(img_path);
     };
 
     /**
@@ -653,6 +702,28 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Getter/Setter for #slot-signet-img-icon
+     */
+    this.signetImgIcon = function() {
+        if (arguments.length == 1) {
+            this.el.signetImgIcon.attr('src', arguments[0])
+        } else {
+            return this.el.signetImgIcon.attr('src');
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-signet-img-rarity
+     */
+    this.signetImgRarity = function() {
+        if (arguments.length == 1) {
+            this.el.signetImgRarity.attr('src', arguments[0])
+        } else {
+            return this.el.signetImgRarity.attr('src');
+        }
+    };
+
+    /**
      * Getter/Setter for #slot-signet-ilvl
      */
     this.signetILvl = function() {
@@ -707,35 +778,34 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Updates signet icon
      */
+    //TODO/REFACTOR : change name/responsability / or delete function, according to the previous Getter/Setter/"refresher" functions ?
     this.updateSignetIcon = function() {
-        var signet = this.getSignet();
-        var signetRarity = this.signetRarity();
-        this.updateSignetImgIcon(signet);
-        this.updateSignetImgBorder(signetRarity);
+        this.updateSignetImgIcon();
+        this.updateSignetImgRarity();
     };
 
     /**
      * Updates #slot-signet-img-icon
      */
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
-    this.updateSignetImgIcon = function(signet) {
+    this.updateSignetImgIcon = function() {
+        var signet = this.getSignet();
         var pngName = (signet == swlcalc.data.signets.noneSignet ? 'none' : this.id)
-        var signet_icon_url = 'assets/images/icons/signet/' + pngName + '.png';
-        this.el.signetImgIcon.attr('src', signet_icon_url);
+        var img_path = 'assets/images/icons/signet/' + pngName + '.png';
+        this.signetImgIcon(img_path);
     };
 
     /**
-     * Getter/Setter for #slot-signet-img-border
+     * Getter/Setter for #slot-signet-img-rarity
      */
-    //TODO/REFACTOR : change name/responsability according to the previous Getter/Setter functions ?
-    this.updateSignetImgBorder = function(signetRarity) {
-        var signet_rarity_url = 'assets/images/icons/rarity/' + signetRarity + '-42x42.png';
-        this.el.signetImgBorder.attr('src', signet_rarity_url);
+    this.updateSignetImgRarity = function() {
+        var img_path = 'assets/images/icons/rarity/' + this.signetRarity() + '-42x42.png';
+        this.signetImgRarity(img_path);
     };
 
     /**
      * Setter for #slot-signet-description
      */
+    //TODO/REFACTOR : change name/responsability / or delete function, according to the previous Getter/Setter/"refresher" functions ?
     this.updateSignetDescription = function() {
         this.el.signetDescription.html(this.signetDescription());
     };
