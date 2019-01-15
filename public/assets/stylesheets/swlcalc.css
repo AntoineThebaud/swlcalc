@@ -152,6 +152,12 @@ img.equipment-icon-border {
     position: absolute;
     z-index: 1;
 }
+img.equipment-icon-quality {
+    width: 48px;
+    height:48px;
+    position: absolute;
+    z-index: 2;
+}
 td.equipment-select {
     width: 150px;
 }
@@ -178,6 +184,12 @@ img.glyph-icon-border {
     height:38px;
     position: absolute;
     z-index: 1;
+}
+img.glyph-icon-quality {
+    width: 38px;
+    height:38px;
+    position: absolute;
+    z-index: 2;
 }
 td.glyph-select {
     width: 160px;
