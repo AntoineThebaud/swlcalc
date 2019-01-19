@@ -6,7 +6,7 @@ swlcalc.summary = function() {
     var init = function() {
     };
 
-    var animaAllocation = 'DAMAGE';
+    var animaAllocation = 'dps';
 
     /**
      * Refreshes all values in the summary
@@ -87,11 +87,11 @@ swlcalc.summary = function() {
         }
         // first basic implementation of anima allocation
         // TODO/FEATURE : add conversion to AR/HR/HP based on a ratio
-        if (animaAllocation == 'DAMAGE') {
+        if (animaAllocation == 'dps') {
             sums['attack-rating'] += sums['power-rating'];
-        } else if (animaAllocation == 'HEALING') {
+        } else if (animaAllocation == 'heal') {
             sums['heal-rating'] += sums['power-rating'];
-        } else if (animaAllocation == 'SURVIVABILITY') {
+        } else if (animaAllocation == 'tank') {
             // TODO/REFACTOR : to move to a -data file?
             // TODO/REFACTOR : this is a "pretty precise but still approximated" value of the real IG multiplier
             var hitPointsMultiplier = 1.427675;
@@ -307,7 +307,8 @@ swlcalc.summary = function() {
      * Setter for animaAllocation attribute
      */
     var setAnimaAllocation = function(newAllocation) {
-        animaAllocation = newAllocation;
+        animaAllocation = newAllocation
+        this.updateAllStats();
     }
 
     /**

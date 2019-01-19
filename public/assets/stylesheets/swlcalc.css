@@ -76,6 +76,16 @@ select {
     color: #E62C38;
 }
 
+.color-dps {
+    color: #E62C38;
+}
+.color-heal {
+    color: #05B114;
+}
+.color-tank {
+    color: #039BD9;
+}
+
 
 .table {
     margin-bottom: 10px;
@@ -351,4 +361,24 @@ td.ilvl {
 
 .not-functionnal {
     color: lightgray !important;
+}
+
+.fix-link {
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.anima-allocation-label {
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 5px;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.anima-allocation-select {
+    width: auto;
+    margin-bottom: 0px;
 }

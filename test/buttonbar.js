@@ -5,10 +5,8 @@ module('buttonbar-dom', {
     }
 });
 
-test('should have required buttonbar buttons in DOM', 9, function() {
-    ok($('#btn-all-dps').length !== 0, 'all-dps button exists');
-    ok($('#btn-all-heal').length !== 0, 'all-heal button exists');
-    ok($('#btn-all-tank').length !== 0, 'all-tank button exists');
+test('should have required buttonbar buttons in DOM', 7, function() {
+    ok($('#select-anima-allocation').length !== 0, 'select-anima-allocation dropdown exists');
     ok($('#btn-all-standard').length !== 0, 'all-standard button exists');
     ok($('#btn-all-superior').length !== 0, 'all-superior button exists');
     ok($('#btn-all-epic').length !== 0, 'all-epic button exists');
@@ -93,19 +91,22 @@ test('should set anima allocation and affect stats correctly', 20, function() {
     equal($('#stat-attack-rating').html(), '8052');
     equal($('#stat-heal-rating').html(), '4310');
     equal($('#stat-hitpoints').html(), '7512');
-    $('#btn-all-heal').click();
+    $('#select-anima-allocation').val('heal');
+    $('#select-anima-allocation').change();
     equal($('#stat-combat-power').html(), '462');
     equal($('#stat-healing-power').html(), '740');
     equal($('#stat-attack-rating').html(), '4322');
     equal($('#stat-heal-rating').html(), '8040');
     equal($('#stat-hitpoints').html(), '7512');
-    $('#btn-all-tank').click();
+    $('#select-anima-allocation').val('tank');
+    $('#select-anima-allocation').change();
     equal($('#stat-combat-power').html(), '462');
     equal($('#stat-healing-power').html(), '461');
     equal($('#stat-attack-rating').html(), '4322');
     equal($('#stat-heal-rating').html(), '4310');
     equal($('#stat-hitpoints').html(), '12837');
-    $('#btn-all-dps').click();
+    $('#select-anima-allocation').val('dps');
+    $('#select-anima-allocation').change();
     equal($('#stat-combat-power').html(), '741');
     equal($('#stat-healing-power').html(), '461');
     equal($('#stat-attack-rating').html(), '8052');

@@ -6,9 +6,7 @@ swlcalc.buttonBar = function() {
 
     var elInit = function() {
         return {
-            btn_all_dps: $('#btn-all-dps'),
-            btn_all_heal: $('#btn-all-heal'),
-            btn_all_tank: $('#btn-all-tank'),
+            select_anima_allocation: $('#select-anima-allocation'),
             btn_all_standard: $('#btn-all-standard'),
             btn_all_superior: $('#btn-all-superior'),
             btn_all_epic: $('#btn-all-epic'),
@@ -27,9 +25,7 @@ swlcalc.buttonBar = function() {
      * Associates the right process to each trigger.
      */
     var bindEvents = function() {
-        el.btn_all_dps.on('click', setAnimaAllocation);
-        el.btn_all_heal.on('click', setAnimaAllocation);
-        el.btn_all_tank.on('click', setAnimaAllocation);
+        el.select_anima_allocation.on('change', setAnimaAllocation);
         el.btn_all_standard.on('click', setRarityOnAllSlots);
         el.btn_all_superior.on('click', setRarityOnAllSlots);
         el.btn_all_epic.on('click', setRarityOnAllSlots);
@@ -43,20 +39,8 @@ swlcalc.buttonBar = function() {
      */
     //TODO/REFACTOR : basic implementation, everything to review
     var setAnimaAllocation = function(event) {
-        el.btn_all_dps.removeClass('active');
-        el.btn_all_heal.removeClass('active');
-        el.btn_all_tank.removeClass('active');
-        $(event.target).addClass('active');
-
-        if (event.target.id == 'btn-all-dps') {
-            swlcalc.summary.setAnimaAllocation('DAMAGE');
-        } else if (event.target.id == 'btn-all-heal') {
-            swlcalc.summary.setAnimaAllocation('HEALING');
-        } else if (event.target.id == 'btn-all-tank') {
-            swlcalc.summary.setAnimaAllocation('SURVIVABILITY');
-        }
-
-        swlcalc.summary.updateAllStats();
+        $(this).attr("class", "anima-allocation-select color-" + this.value);
+        swlcalc.summary.setAnimaAllocation(event.target.value);
     };
 
     /**
