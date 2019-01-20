@@ -100,71 +100,71 @@ swlcalc.data.power_rating = {
     },
     'head': {
         'standard': {
-            'faded': {
+            '1': {
                 power_rating_init: 42,
                 power_rating_per_level: 190/19 // == (232 - 42) / (20 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 47,
                 power_rating_per_level: 216/19 // == (263 - 47) / (20 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 53,
                 power_rating_per_level: 240/19 // == (293 - 53) / (20 - 1)
             }
         },
         'superior': {
-            'faded': {
+            '1': {
                 power_rating_init: 293,
                 power_rating_per_level: 291/24 // == (584 - 293) / (25 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 329,
                 power_rating_per_level: 328/24 // == (657 - 329) / (25 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 366,
                 power_rating_per_level: 364/24 // == (730 - 366) / (25 - 1)
             }
         },
         'epic': {
-            'faded': {
+            '1': {
                 power_rating_init: 677,
                 power_rating_per_level: 393/29 // == (1070 - 677) / (30 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 762,
                 power_rating_per_level: 442/29 // == (1204 - 762) / (30 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 847,
                 power_rating_per_level: 490/29 // == (1337 - 847) / (30 - 1)
             }
         },
         'mythic': {
-            'faded': {
+            '1': {
                 power_rating_init: 1232,
                 power_rating_per_level: 493/34 // == (1725 - 1232) / (35 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 1386,
                 power_rating_per_level: 555/34 // == (1941 - 1386) / (35 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 1540,
                 power_rating_per_level: 616/34 // == (2156 - 1540) / (35 - 1)
             }
         },
         'legendary': {
-            'faded': {
+            '1': {
                 power_rating_init: 1923,
                 power_rating_per_level: 997/69 // == (2920 - 1923) / (70 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 2164,
                 power_rating_per_level: 1121/69 // == (3285 - 2164) / (70 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 2404,
                 power_rating_per_level: 1246/69 // == (3650 - 2404) / (70 - 1)
             }
@@ -172,71 +172,71 @@ swlcalc.data.power_rating = {
     },
     'major': {
         'standard': {
-            'faded': {
+            '1': {
                 power_rating_init: 25,
                 power_rating_per_level: 115/19 // == (140 - 25) / (20 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 28,
                 power_rating_per_level: 130/19 // == (158 - 28) / (20 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 32,
                 power_rating_per_level: 144/19 // == (176 - 32) / (20 - 1)
             }
         },
         'superior': {
-            'faded': {
+            '1': {
                 power_rating_init: 176,
                 power_rating_per_level: 174/24 // == (350 - 176) / (25 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 198,
                 power_rating_per_level: 196/24 // == (394 - 198) / (25 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 220,
                 power_rating_per_level: 218/24 // == (438 - 220) / (25 - 1)
             }
         },
         'epic': {
-            'faded': {
+            '1': {
                 power_rating_init: 406,
                 power_rating_per_level: 236/29 // == (642 - 406) / (30 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 457,
                 power_rating_per_level: 265/29 // == (722 - 457) / (30 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 508,
                 power_rating_per_level: 294/29 // == (802 - 508) / (30 - 1)
             }
         },
         'mythic': {
-            'faded': {
+            '1': {
                 power_rating_init: 739,
                 power_rating_per_level: 296/34 // == (1035 - 739) / (35 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 832,
                 power_rating_per_level: 332/34 // == (1164 - 832) / (35 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 924,
                 power_rating_per_level: 370/34 // == (1294 - 924) / (35 - 1)
             }
         },
         'legendary': {
-            'faded': {
+            '1': {
                 power_rating_init: 1154,
                 power_rating_per_level: 598/69 // == (1752 - 1154) / (70 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 1298,
                 power_rating_per_level: 673/69 // == (1971 - 1298) / (70 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 1442,
                 power_rating_per_level: 748/69 // == (2190 - 1442) / (70 - 1)
             }
@@ -244,71 +244,71 @@ swlcalc.data.power_rating = {
     },
     'minor': {
         'standard': {
-            'faded': {
+            '1': {
                 power_rating_init: 17,
                 power_rating_per_level: 77/19 // == (94 - 17) / (20 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 19,
                 power_rating_per_level: 86/19 // == (105 - 19) / (20 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 21,
                 power_rating_per_level: 96/19 // == (117 - 21) / (20 - 1)
             }
         },
         'superior': {
-            'faded': {
+            '1': {
                 power_rating_init: 117,
                 power_rating_per_level: 117/24 // == (234 - 117) / (25 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 132,
                 power_rating_per_level: 131/24 // == (263 - 132) / (25 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 146,
                 power_rating_per_level: 146/24 // == (292 - 146) / (25 - 1)
             }
         },
         'epic': {
-            'faded': {
+            '1': {
                 power_rating_init: 271,
                 power_rating_per_level: 157/29 // == (428 - 271) / (30 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 305,
                 power_rating_per_level: 176/29 // == (481 - 305) / (30 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 339,
                 power_rating_per_level: 196/29 // == (535 - 339) / (30 - 1)
             }
         },
         'mythic': {
-            'faded': {
+            '1': {
                 power_rating_init: 493,
                 power_rating_per_level: 197/34 // == (690 - 493) / (35 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 554,
                 power_rating_per_level: 222/34 // == (776 - 554) / (35 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 616,
                 power_rating_per_level: 246/34 // == (862 - 616) / (35 - 1)
             }
         },
         'legendary': {
-            'faded': {
+            '1': {
                 power_rating_init: 769,
                 power_rating_per_level: 399/69 // == (1168 - 769) / (70 - 1)
             },
-            'luminous': {
+            '2': {
                 power_rating_init: 865,
                 power_rating_per_level: 449/69 // == (1314 - 865) / (70 - 1)
             },
-            'radiant': {
+            '3': {
                 power_rating_init: 962,
                 power_rating_per_level: 498/69 // == (1460 - 962) / (70 - 1)
             }
@@ -380,51 +380,6 @@ swlcalc.data.rarity_mapping = {
     }
 };
 
-swlcalc.data.weapon_quality_mapping = {
-    to_num: {
-        'none': 0,
-        'mkI': 1,
-        'mkII': 2,
-        'mkIII': 3,
-    },
-    to_name: {
-        0: 'none',
-        1: 'mkI',
-        2: 'mkII',
-        3: 'mkIII',
-    }
-};
-
-swlcalc.data.glyph_quality_mapping = {
-    to_num: {
-        'none': 0,
-        'crude': 1,
-        'simple': 2,
-        'intricate': 3,
-    },
-    to_name: {
-        0: 'none',
-        1: 'crude',
-        2: 'simple',
-        3: 'intricate',
-    }
-};
-
-swlcalc.data.talisman_quality_mapping = {
-    to_num: {
-        'none': 0,
-        'faded': 1,
-        'luminous': 2,
-        'radiant': 3,
-    },
-    to_name: {
-        0: 'none',
-        1: 'faded',
-        2: 'luminous',
-        3: 'radiant',
-    }
-};
-
 swlcalc.data.suffix_mapping = {
     to_num: {
         'alacrity': 1,
@@ -465,9 +420,9 @@ swlcalc.data.signets = {
                 name: 'Alacrity',
                 description: 'Increased your move speed by <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> while in combat.',
                 quality: {
-                    'mkI': 10,
-                    'mkII': 15,
-                    'mkIII': 20
+                    '1': 10,
+                    '2': 15,
+                    '3': 20
                 }
             },
             {
@@ -475,9 +430,9 @@ swlcalc.data.signets = {
                 name: 'Destruction',
                 description: 'This weapon deals <span id="%id-signet-bonus" class="bonus-var-attack">%d</span> additional damage to enemies that are below 35% health.',
                 quality: {
-                    'mkI': 0.15,
-                    'mkII': 0.30,
-                    'mkIII': 0.45
+                    '1': 0.15,
+                    '2': 0.30,
+                    '3': 0.45
                 },
                 stat: 'Combat Power'
             },
@@ -486,9 +441,9 @@ swlcalc.data.signets = {
                 name: 'Energy',
                 description: 'When you use a Power Ability with this weapon you have <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> of consuming one less Energy.',
                 quality: {
-                    'mkI': 11,
-                    'mkII': 22,
-                    'mkIII': 33
+                    '1': 11,
+                    '2': 22,
+                    '3': 33
                 }
             },
             {
@@ -496,9 +451,9 @@ swlcalc.data.signets = {
                 name: 'Efficiency',
                 description: 'Your attacks and heals with this weapon have a 50% chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
                 quality: {
-                    'mkI': 2,
-                    'mkII': 3,
-                    'mkIII': 5
+                    '1': 2,
+                    '2': 3,
+                    '3': 5
                 }
             },
             {
@@ -506,9 +461,9 @@ swlcalc.data.signets = {
                 name: 'Havoc',
                 description: '+<span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> critical hit damage and critical healing.',
                 quality: {
-                    'mkI': 2.5,
-                    'mkII': 5,
-                    'mkIII': 7.5
+                    '1': 2.5,
+                    '2': 5,
+                    '3': 7.5
                 }
             },
             {
@@ -516,9 +471,9 @@ swlcalc.data.signets = {
                 name: 'Restoration',
                 description: 'When you hit or heal a target with this weapon you have a 50% chance to restore <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> of your health.',
                 quality: {
-                    'mkI': 0.75,
-                    'mkII': 1.5,
-                    'mkIII': 2.25
+                    '1': 0.75,
+                    '2': 1.5,
+                    '3': 2.25
                 }
             },
             {
@@ -526,9 +481,9 @@ swlcalc.data.signets = {
                 name: 'Recovery',
                 description: 'You receive <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> more health from incoming heals.',
                 quality: {
-                    'mkI': 1,
-                    'mkII': 2,
-                    'mkIII': 3
+                    '1': 1,
+                    '2': 2,
+                    '3': 3
                 }
             },
             {
@@ -536,9 +491,9 @@ swlcalc.data.signets = {
                 name: 'Warding',
                 description: 'Increases Protection by <span id="%id-signet-bonus" class="bonus-const">%d</span> while wielded.',
                 quality: {
-                    'mkI': 150,
-                    'mkII': 300,
-                    'mkIII': 450
+                    '1': 150,
+                    '2': 300,
+                    '3': 450
                 }
             }
         ],
@@ -2248,71 +2203,71 @@ swlcalc.data = swlcalc.data || {};
 
 swlcalc.data.glyph = {
     'standard': {
-        'crude': {
+        '1': {
             rating_init: 12,
             rating_per_level: 55/19 // == (67 - 12) / (20 - 1)
         },
-        'simple': {
+        '2': {
             rating_init: 14,
             rating_per_level: 62/19 // == (76 - 14) / (20 - 1)
         },
-        'intricate': {
+        '3': {
             rating_init: 15,
             rating_per_level: 69/19 // == (84 - 15) / (20 - 1)
         }
     },
     'superior': {
-        'crude': {
+        '1': {
             rating_init: 85,
             rating_per_level: 100/19 // == (185 - 85) / (20 - 1)
         },
-        'simple': {
+        '2': {
             rating_init: 95,
             rating_per_level: 113/19 // == (208 - 95) / (20 - 1)
         },
-        'intricate': {
+        '3': {
             rating_init: 106,
             rating_per_level: 125/19 // == (231 - 106) / (20 - 1)
         }
     },
     'epic': {
-        'crude': {
+        '1': {
             rating_init: 215,
             rating_per_level: 124/19 // == (339 - 215) / (20 - 1)
         },
-        'simple': {
+        '2': {
             rating_init: 241,
             rating_per_level: 140/19 // == (381 - 241) / (20 - 1)
         },
-        'intricate': {
+        '3': {
             rating_init: 268,
             rating_per_level: 156/19 // == (424 - 268) / (20 - 1)
         }
     },
     'mythic': {
-        'crude': {
+        '1': {
             rating_init: 390,
             rating_per_level: 156/19 // == (546 - 390) / (20 - 1)
         },
-        'simple': {
+        '2': {
             rating_init: 439,
             rating_per_level: 176/19 // == (615 - 439) / (20 - 1)
         },
-        'intricate': {
+        '3': {
             rating_init: 488,
             rating_per_level: 195/19 // == (683 - 488) / (20 - 1)
         }
     },
     'legendary': {
-        'crude': {
+        '1': {
             rating_init: 610,
             rating_per_level: 315/19 // == (925 - 610) / (20 - 1)
         },
-        'simple': {
+        '2': {
             rating_init: 686,
             rating_per_level: 354/19 // == (1040 - 686) / (20 - 1)
         },
-        'intricate': {
+        '3': {
             rating_init: 762,
             rating_per_level: 394/19 // == (1156 - 762) / (20 - 1)
         }
