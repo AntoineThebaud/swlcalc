@@ -63,9 +63,9 @@
             <td class="upgrade-label quality-label"><strong>Quality :</strong></td>
             <td class="upgrade-select quality-select">
                 {?is_weapon}
-                {>qualityselect id_suffix="equipment" pip1_v="mkI" pip1_n="MK I" pip2_v="mkII" pip2_n="MK II" pip3_v="mkIII" pip3_n="MK III"/}
+                {>qualityselect id_suffix="equipment" pip1_name="MK I" pip2_name="MK II" pip3_name="MK III"/}
                 {:else}
-                {>qualityselect id_suffix="equipment" pip1_v="faded" pip1_n="Faded" pip2_v="luminous" pip2_n="Luminous" pip3_v="radiant" pip3_n="Radiant"/}
+                {>qualityselect id_suffix="equipment" pip1_name="Faded" pip2_name="Luminous" pip3_name="Radiant"/}
                 {/is_weapon}
             </td>
             <td rowspan="2" class="item-description">
@@ -111,7 +111,7 @@
             </td>
             <td class="upgrade-label quality-label"><strong>Quality :</strong></td>
             <td class="upgrade-select quality-select">
-                {>qualityselect id_suffix="glyph" pip1_v="crude" pip1_n="Crude" pip2_v="simple" pip2_n="Simple" pip3_v="intricate" pip3_n="Intricate"/}
+                {>qualityselect id_suffix="glyph" pip1_name="Crude" pip2_name="Simple" pip3_name="Intricate"/}
             </td>
             <td class="stat-value stat-inSlot">
               <span id="{id_prefix}-glyph-rating">0</span>

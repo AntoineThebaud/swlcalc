@@ -39,9 +39,9 @@ test('should get and set the slot\'s equipment rarity', 2, function() {
 });
 
 test('should get and set the slot\'s equipment quality', 2, function() {
-    equal(swlcalc.gear.slots.head.equipmentQuality(), 'faded');
-    swlcalc.gear.slots.head.equipmentQuality('radiant');
-    equal(swlcalc.gear.slots.head.equipmentQuality(), 'radiant');
+    equal(swlcalc.gear.slots.head.equipmentQuality(), '1');
+    swlcalc.gear.slots.head.equipmentQuality('3');
+    equal(swlcalc.gear.slots.head.equipmentQuality(), '3');
 });
 
 test('should get and set the slot\'s equipment level', 2, function() {
@@ -108,9 +108,9 @@ test('should get and set the slot\'s glyph rarity', 2, function() {
 });
 
 test('should get and set the slot\'s glyph quality', 2, function() {
-    equal(swlcalc.gear.slots.head.glyphQuality(), 'intricate');
-    swlcalc.gear.slots.head.glyphQuality('crude');
-    equal(swlcalc.gear.slots.head.glyphQuality(), 'crude');
+    equal(swlcalc.gear.slots.head.glyphQuality(), '3');
+    swlcalc.gear.slots.head.glyphQuality('1');
+    equal(swlcalc.gear.slots.head.glyphQuality(), '1');
 });
 
 test('should get and set the slot\'s glyph level', 2, function() {
@@ -122,7 +122,7 @@ test('should get and set the slot\'s glyph level', 2, function() {
 test('should get and set the slot\'s glyph (all attributes)', 2, function() {
     swlcalc.gear.slots.head.glyphId('hit-rating');
     swlcalc.gear.slots.head.glyphRarity('superior');
-    swlcalc.gear.slots.head.glyphQuality('intricate');
+    swlcalc.gear.slots.head.glyphQuality('3');
     swlcalc.gear.slots.head.glyphLevel('20');
 
     swlcalc.gear.slots.head.updateGlyphRating();
@@ -257,11 +257,11 @@ test('should reset slot state', 10, function() {
 
     equal(swlcalc.gear.slots.head.equipmentId(), 'none');
     equal(swlcalc.gear.slots.head.equipmentRarity(), 'standard');
-    equal(swlcalc.gear.slots.head.equipmentQuality(), 'faded');
+    equal(swlcalc.gear.slots.head.equipmentQuality(), '1');
     equal(swlcalc.gear.slots.head.equipmentLevel(), '20');
     equal(swlcalc.gear.slots.head.glyphId(), 'none');
     equal(swlcalc.gear.slots.head.glyphRarity(), 'standard');
-    equal(swlcalc.gear.slots.head.glyphQuality(), 'crude');
+    equal(swlcalc.gear.slots.head.glyphQuality(), '1');
     equal(swlcalc.gear.slots.head.glyphLevel(), '20');
     //equal(swlcalc.gear.slots.head.getSignet(), 'none'); => see swlcalc.data.signet_data.noneSignet()
     equal(swlcalc.gear.slots.head.signetRarity(), 'standard');
@@ -272,11 +272,11 @@ test('should collect current slot state', 10, function() {
     var slotState = swlcalc.gear.slots.head.state();
 
     deepEqual(slotState.equipment_rarity, 'epic');
-    deepEqual(slotState.equipment_quality, 'faded');
+    deepEqual(slotState.equipment_quality, '1');
     deepEqual(slotState.equipment_level, '30');
     deepEqual(slotState.glyph_id, 'hit-rating');
     deepEqual(slotState.glyph_rarity, 'mythic');
-    deepEqual(slotState.glyph_quality, 'intricate');
+    deepEqual(slotState.glyph_quality, '3');
     deepEqual(slotState.glyph_level, '1');
     deepEqual(slotState.signet_id, '20');
     deepEqual(slotState.signet_rarity, 'superior');
@@ -288,11 +288,11 @@ test('should collect current mapped slot state', 11, function() {
 
     deepEqual(slotState.equipment_id, '1');
     deepEqual(slotState.equipment_rarity, 3);
-    deepEqual(slotState.equipment_quality, 1);
+    deepEqual(slotState.equipment_quality, '1');
     deepEqual(slotState.equipment_level, '30');
     deepEqual(slotState.glyph_id, 1);
     deepEqual(slotState.glyph_rarity, 4);
-    deepEqual(slotState.glyph_quality, 3);
+    deepEqual(slotState.glyph_quality, '3');
     deepEqual(slotState.glyph_level, '1');
     deepEqual(slotState.signet_id, '20');
     deepEqual(slotState.signet_rarity, 2);
@@ -303,22 +303,22 @@ test('should collect all slot states', 20, function() {
     var slotStates = swlcalc.gear.state();
 
     deepEqual(slotStates.weapon.equipment_rarity, 'epic');
-    deepEqual(slotStates.weapon.equipment_quality, 'mkI');
+    deepEqual(slotStates.weapon.equipment_quality, '1');
     deepEqual(slotStates.weapon.equipment_level, '30');
     deepEqual(slotStates.weapon.glyph_id, 'critical-rating');
     deepEqual(slotStates.weapon.glyph_rarity, 'superior');
-    deepEqual(slotStates.weapon.glyph_quality, 'crude');
+    deepEqual(slotStates.weapon.glyph_quality, '1');
     deepEqual(slotStates.weapon.glyph_level, '1');
     deepEqual(slotStates.weapon.signet_id, '6');
     deepEqual(slotStates.weapon.signet_rarity, undefined);
     deepEqual(slotStates.weapon.signet_level, undefined);
 
     deepEqual(slotStates.head.equipment_rarity, 'epic');
-    deepEqual(slotStates.head.equipment_quality, 'faded');
+    deepEqual(slotStates.head.equipment_quality, '1');
     deepEqual(slotStates.head.equipment_level, '30');
     deepEqual(slotStates.head.glyph_id, 'hit-rating');
     deepEqual(slotStates.head.glyph_rarity, 'mythic');
-    deepEqual(slotStates.head.glyph_quality, 'intricate');
+    deepEqual(slotStates.head.glyph_quality, '3');
     deepEqual(slotStates.head.glyph_level, '1');
     deepEqual(slotStates.head.signet_id, '20');
     deepEqual(slotStates.head.signet_rarity, 'superior');
@@ -331,11 +331,11 @@ test('should collect all mapped slot states', 22, function() {
 
     deepEqual(slotStates.weapon.equipment_id, '1');
     deepEqual(slotStates.weapon.equipment_rarity, 3);
-    deepEqual(slotStates.weapon.equipment_quality, 1);
+    deepEqual(slotStates.weapon.equipment_quality, '1');
     deepEqual(slotStates.weapon.equipment_level, '30');
     deepEqual(slotStates.weapon.glyph_id, 2);
     deepEqual(slotStates.weapon.glyph_rarity, 2);
-    deepEqual(slotStates.weapon.glyph_quality, 1);
+    deepEqual(slotStates.weapon.glyph_quality, '1');
     deepEqual(slotStates.weapon.glyph_level, '1');
     deepEqual(slotStates.weapon.signet_id, '6');
     deepEqual(slotStates.weapon.signet_rarity, 0);
@@ -343,11 +343,11 @@ test('should collect all mapped slot states', 22, function() {
 
     deepEqual(slotStates.head.equipment_id, '1');
     deepEqual(slotStates.head.equipment_rarity, 3);
-    deepEqual(slotStates.head.equipment_quality, 1);
+    deepEqual(slotStates.head.equipment_quality, '1');
     deepEqual(slotStates.head.equipment_level, '30');
     deepEqual(slotStates.head.glyph_id, 1);
     deepEqual(slotStates.head.glyph_rarity, 4);
-    deepEqual(slotStates.head.glyph_quality, 3);
+    deepEqual(slotStates.head.glyph_quality, '3');
     deepEqual(slotStates.head.glyph_level, '1');
     deepEqual(slotStates.head.signet_id, '20');
     deepEqual(slotStates.head.signet_rarity, 2);

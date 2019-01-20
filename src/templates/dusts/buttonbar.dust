@@ -10,11 +10,23 @@
             Set rarity <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-             <li><a id="btn-all-standard"><span class="fix-link">All <span class="color-standard">Standard</span></span></a></li>
-             <li><a id="btn-all-superior"><span class="fix-link">All <span class="color-superior">Superior</span></span></a></li>
-             <li><a id="btn-all-epic"><span class="fix-link">All <span class="color-epic">Epic</span></span></a></li>
+            <li><a id="btn-all-standard"><span class="fix-link">All <span class="color-standard">Standard</span></span></a></li>
+            <li><a id="btn-all-superior"><span class="fix-link">All <span class="color-superior">Superior</span></span></a></li>
+            <li><a id="btn-all-epic"><span class="fix-link">All <span class="color-epic">Epic</span></span></a></li>
             <li><a id="btn-all-mythic" ><span class="fix-link">All <span class="color-mythic">Mythic</span></span></a></li>
             <li><a id="btn-all-legendary"><span class="fix-link">All <span class="color-legendary">Legendary</span></span></a></li>
+        </ul>
+    </div>
+
+    <!-- [ All 1 pip ][ All 2 pips ][ All 3 pips ] -->
+    <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            Set quality <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a id="btn-all-1-pip"><span class="fix-link">All 1 pip</span></a></li>
+            <li><a id="btn-all-2-pip"><span class="fix-link">All 2 pips</span></a></li>
+            <li><a id="btn-all-3-pip"><span class="fix-link">All 3 pips</span></a></li>
         </ul>
     </div>
 
@@ -28,6 +40,7 @@
         </select>
     </div>
 </div>
+
 <div class="span4">
     <!-- [ Export ] -->
     <div class="btn-group">

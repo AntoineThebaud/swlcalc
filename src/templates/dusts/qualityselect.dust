@@ -1,5 +1,5 @@
 <select id="{id_prefix}-{id_suffix}-quality" title="Please select quality">
-    <option value="{pip1_v}" class="pips">{pip1_n}</option>
-    <option value="{pip2_v}" class="pips">{pip2_n}</option>
-    <option value="{pip3_v}" class="pips">{pip3_n}</option>
+    <option value="1">{pip1_name}</option>
+    <option value="2">{pip2_name}</option>
+    <option value="3">{pip3_name}</option>
 </select>

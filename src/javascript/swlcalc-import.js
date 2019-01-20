@@ -49,9 +49,9 @@ swlcalc.import = function() {
         slotObj.el.equipmentId.change();
         // values[2] == Item's Quality
         if(slotObj.isWeapon()) {
-            slotObj.equipmentQuality(swlcalc.data.weapon_quality_mapping.to_name[values[2]]);
+            slotObj.equipmentQuality(values[2]);
         } else {
-            slotObj.equipmentQuality(swlcalc.data.talisman_quality_mapping.to_name[values[2]]);
+            slotObj.equipmentQuality(values[2]);
         }
         slotObj.el.equipmentQuality.change();
         // values[3] == Item's Level
@@ -64,7 +64,7 @@ swlcalc.import = function() {
         slotObj.glyphId(swlcalc.data.glyph_stat_mapping.to_stat[values[5]]);
         slotObj.el.glyphId.change();
         // values[6] == Glyph's Quality
-        slotObj.glyphQuality(swlcalc.data.glyph_quality_mapping.to_name[values[6]]);
+        slotObj.glyphQuality(values[6]);
         slotObj.el.glyphQuality.change();
         // values[7] == Glyph's Level
         slotObj.glyphLevel(values[7]);

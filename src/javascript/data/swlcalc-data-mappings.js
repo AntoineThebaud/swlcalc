@@ -63,51 +63,6 @@ swlcalc.data.rarity_mapping = {
     }
 };
 
-swlcalc.data.weapon_quality_mapping = {
-    to_num: {
-        'none': 0,
-        'mkI': 1,
-        'mkII': 2,
-        'mkIII': 3,
-    },
-    to_name: {
-        0: 'none',
-        1: 'mkI',
-        2: 'mkII',
-        3: 'mkIII',
-    }
-};
-
-swlcalc.data.glyph_quality_mapping = {
-    to_num: {
-        'none': 0,
-        'crude': 1,
-        'simple': 2,
-        'intricate': 3,
-    },
-    to_name: {
-        0: 'none',
-        1: 'crude',
-        2: 'simple',
-        3: 'intricate',
-    }
-};
-
-swlcalc.data.talisman_quality_mapping = {
-    to_num: {
-        'none': 0,
-        'faded': 1,
-        'luminous': 2,
-        'radiant': 3,
-    },
-    to_name: {
-        0: 'none',
-        1: 'faded',
-        2: 'luminous',
-        3: 'radiant',
-    }
-};
-
 swlcalc.data.suffix_mapping = {
     to_num: {
         'alacrity': 1,

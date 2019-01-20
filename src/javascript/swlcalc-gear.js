@@ -409,14 +409,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates #slot-equipment-img-quality
      */
     this.updateEquipmentImgQuality = function() {
-        // TODO : replace all quality id's by 1,2,3 to avoid the need of using mapping ? would avoid need of isWeapon also
-        var index = 0
-        if (this.isWeapon()) {
-            var index = swlcalc.data.weapon_quality_mapping.to_num[this.equipmentQuality()]
-        } else {
-            var index = swlcalc.data.talisman_quality_mapping.to_num[this.equipmentQuality()]
-        }
-        var img_path = 'assets/images/icons/quality/' + index + '.png';
+        var img_path = 'assets/images/icons/quality/' + this.equipmentQuality() + '.png';
         this.equipmentImgQuality(img_path);
     };
 
@@ -618,9 +611,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates #slot-glyph-img-quality
      */
     this.updateGlyphImgQuality = function() {
-        // TODO : replace all quality id's by 1,2,3 to avoid the need of using mapping ?
-        var index = swlcalc.data.glyph_quality_mapping.to_num[this.glyphQuality()]
-        var img_path = 'assets/images/icons/quality/' + index + '.png'; // TODO maybe not accurate
+        var img_path = 'assets/images/icons/quality/' + this.glyphQuality() + '.png'; // TODO maybe not accurate
         this.glyphImgQuality(img_path);
     };
 
@@ -925,17 +916,14 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.mappedState = function() {
         var gmap  = swlcalc.data.glyph_stat_mapping.to_num;
         var rmap  = swlcalc.data.rarity_mapping.to_num;
-        var wqmap = swlcalc.data.weapon_quality_mapping.to_num;
-        var gqmap = swlcalc.data.glyph_quality_mapping.to_num;
-        var tqmap = swlcalc.data.talisman_quality_mapping.to_num;
         return {
             equipment_id:      this.stripContent(this.equipmentId()),
             equipment_rarity:  this.stripContent(this.equipmentRarity(), rmap),
-            equipment_quality: this.isWeapon() ? this.stripContent(this.equipmentQuality(), wqmap) : this.stripContent(this.equipmentQuality(), tqmap),
+            equipment_quality: this.equipmentQuality(),
             equipment_level:   this.equipmentLevel(),
             glyph_id:          this.stripContent(this.glyphId(), gmap),
             glyph_rarity:      this.stripContent(this.glyphRarity(), rmap),
-            glyph_quality:     this.stripContent(this.glyphQuality(), gqmap),
+            glyph_quality:     this.glyphQuality(),
             glyph_level:       this.glyphLevel(),
             signet_id:         this.stripContent(this.signetId()),
             signet_rarity:     this.stripContent(this.signetRarity(), rmap),

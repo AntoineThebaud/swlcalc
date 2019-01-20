@@ -35,11 +35,7 @@ test('should reset all slots', 171, function() {
         var slot = swlcalc.gear.slots[slotId];
         equal(slot.iLvl(), '0');
         equal(slot.equipmentId(), 'none');
-        if(slot.isWeapon()) {
-            equal(slot.equipmentQuality(), 'mkI');
-        } else {
-            equal(slot.equipmentQuality(), 'faded');
-        }
+        equal(slot.equipmentQuality(), '1');
         equal(slot.equipmentRarity(), 'standard');
         equal(slot.equipmentLevel(), '20');
         equal(slot.equipmentPowerRating(), '0');
@@ -47,7 +43,7 @@ test('should reset all slots', 171, function() {
         equal(slot.equipmentILvl(), '0');
         equal(slot.glyphId(), 'none');
         equal(slot.glyphRarity(), 'standard');
-        equal(slot.glyphQuality(), 'crude');
+        equal(slot.glyphQuality(), '1');
         equal(slot.glyphLevel(), '20');
         equal(slot.glyphRating(), '0');
         equal(slot.glyphLabel(), ' ');
@@ -65,11 +61,7 @@ test('should reset all slots', 171, function() {
     }
 });
 
-
-//TODO/TEST test('should set rarity and glyph rarity on all slots to x', 16, function() {});
-
 test('should set rarity on all slots', 125, function() {
-
     var mixedRarities = ['epic', 'standard', 'legendary', 'superior', 'mythic'];
 
     for (var r = 0; r < mixedRarities.length; r++) {
@@ -81,6 +73,19 @@ test('should set rarity on all slots', 125, function() {
             if (id != 'weapon' && id != 'weapon2') {
                 equal(swlcalc.gear.slots[id].signetRarity(), mixedRarities[r]);
             }
+        }
+    }
+});
+
+test('should set quality on all slots', 54, function() {
+    var mixedQualities = ['3', '1', '2'];
+
+    for (var r = 0; r < mixedQualities.length; r++) {
+        $('#btn-all-' + mixedQualities[r] + '-pip').click();
+        for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
+            var id = swlcalc.data.template_data.slots[i].id_prefix;
+            equal(swlcalc.gear.slots[id].equipmentQuality(), mixedQualities[r]);
+            equal(swlcalc.gear.slots[id].glyphQuality(), mixedQualities[r]);
         }
     }
 });

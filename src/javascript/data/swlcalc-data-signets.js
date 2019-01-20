@@ -16,9 +16,9 @@ swlcalc.data.signets = {
                 name: 'Alacrity',
                 description: 'Increased your move speed by <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> while in combat.',
                 quality: {
-                    'mkI': 10,
-                    'mkII': 15,
-                    'mkIII': 20
+                    '1': 10,
+                    '2': 15,
+                    '3': 20
                 }
             },
             {
@@ -26,9 +26,9 @@ swlcalc.data.signets = {
                 name: 'Destruction',
                 description: 'This weapon deals <span id="%id-signet-bonus" class="bonus-var-attack">%d</span> additional damage to enemies that are below 35% health.',
                 quality: {
-                    'mkI': 0.15,
-                    'mkII': 0.30,
-                    'mkIII': 0.45
+                    '1': 0.15,
+                    '2': 0.30,
+                    '3': 0.45
                 },
                 stat: 'Combat Power'
             },
@@ -37,9 +37,9 @@ swlcalc.data.signets = {
                 name: 'Energy',
                 description: 'When you use a Power Ability with this weapon you have <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> of consuming one less Energy.',
                 quality: {
-                    'mkI': 11,
-                    'mkII': 22,
-                    'mkIII': 33
+                    '1': 11,
+                    '2': 22,
+                    '3': 33
                 }
             },
             {
@@ -47,9 +47,9 @@ swlcalc.data.signets = {
                 name: 'Efficiency',
                 description: 'Your attacks and heals with this weapon have a 50% chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
                 quality: {
-                    'mkI': 2,
-                    'mkII': 3,
-                    'mkIII': 5
+                    '1': 2,
+                    '2': 3,
+                    '3': 5
                 }
             },
             {
@@ -57,9 +57,9 @@ swlcalc.data.signets = {
                 name: 'Havoc',
                 description: '+<span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> critical hit damage and critical healing.',
                 quality: {
-                    'mkI': 2.5,
-                    'mkII': 5,
-                    'mkIII': 7.5
+                    '1': 2.5,
+                    '2': 5,
+                    '3': 7.5
                 }
             },
             {
@@ -67,9 +67,9 @@ swlcalc.data.signets = {
                 name: 'Restoration',
                 description: 'When you hit or heal a target with this weapon you have a 50% chance to restore <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> of your health.',
                 quality: {
-                    'mkI': 0.75,
-                    'mkII': 1.5,
-                    'mkIII': 2.25
+                    '1': 0.75,
+                    '2': 1.5,
+                    '3': 2.25
                 }
             },
             {
@@ -77,9 +77,9 @@ swlcalc.data.signets = {
                 name: 'Recovery',
                 description: 'You receive <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> more health from incoming heals.',
                 quality: {
-                    'mkI': 1,
-                    'mkII': 2,
-                    'mkIII': 3
+                    '1': 1,
+                    '2': 2,
+                    '3': 3
                 }
             },
             {
@@ -87,9 +87,9 @@ swlcalc.data.signets = {
                 name: 'Warding',
                 description: 'Increases Protection by <span id="%id-signet-bonus" class="bonus-const">%d</span> while wielded.',
                 quality: {
-                    'mkI': 150,
-                    'mkII': 300,
-                    'mkIII': 450
+                    '1': 150,
+                    '2': 300,
+                    '3': 450
                 }
             }
         ],
