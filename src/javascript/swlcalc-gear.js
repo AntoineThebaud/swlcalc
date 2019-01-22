@@ -204,15 +204,10 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Getter to retrieve full item object from the data model
+     * Getter to retrieve full equipment object from the data model
      */
-    this.getItem = function() {
-        var slotToUse = this.id
-        //TODO/REFACTOR : maybe there is a better way to get weapon items for secondary weapon
-        if (this.isWeapon()) {
-            slotToUse = 'weapon';
-        }
-        return swlcalc.data.equipments.slot[slotToUse][this.equipmentId() - 1];
+    this.equipmentData = function() {
+        return swlcalc.data.equipments.slot[this.kind][this.equipmentId() - 1];
     };
 
     /**
@@ -339,26 +334,26 @@ swlcalc.gear.Slot = function Slot(slotData) {
             this.equipmentImgIcon('assets/images/icons/' + this.type + '/None.png');
             newDescription = '';
         } else {
-            var newSelectedItem = swlcalc.data.equipments.slot[this.kind][this.equipmentId() - 1];
+            var newEquipment = this.equipmentData()
             //TODO/FEATURE :
             /* temporary code ********************************************************************************
              * => Will be used as long as item images are not added to the resources. The final code will be :
-            newImage = 'assets/images/icons/' + this.type + '/' + newSelectedItem.name + '.png';
+            newImage = 'assets/images/icons/' + this.type + '/' + newEquipment.name + '.png';
              * => For now replaced by : */
             var image = new Image();
             image.onload = function() {
-                self.equipmentImgIcon('assets/images/icons/' + self.type + '/' + newSelectedItem.name + '.png');
+                self.equipmentImgIcon('assets/images/icons/' + self.type + '/' + newEquipment.name + '.png');
             }
             image.onerror = function() {
                 if (self.isWeapon()) {
-                    self.equipmentImgIcon('assets/images/icons/' + self.type + '/temp/' + newSelectedItem.type + '.png');
+                    self.equipmentImgIcon('assets/images/icons/' + self.type + '/temp/' + newEquipment.type + '.png');
                 } else {
                     self.equipmentImgIcon('assets/images/icons/' + self.type + '/' + swlcalc.data.equipments.slot[self.id][0].name + '.png');
                 }
             }
-            image.src = 'assets/images/icons/' + this.type + '/' + newSelectedItem.name + '.png';
+            image.src = 'assets/images/icons/' + this.type + '/' + newEquipment.name + '.png';
             /* temporary code ********************************************************************************/
-            newDescription = newSelectedItem.description;
+            newDescription = newEquipment.description;
 
             if (this.isWeapon()) {
                 // Replaces %id% either by 'weapon' or 'weapon2' depending on the current slot
@@ -420,7 +415,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateEquipmentILvl = function() {
         var newILvl = 0;
         if (!(this.equipmentId() == 'none')) {
-            newILvl = this.computeItemILvl('talisman-or-weapon', this.equipmentRarity(), this.equipmentLevel());
+            newILvl = this.computeItemILvl('equipment', this.equipmentRarity(), this.equipmentLevel());
             // Weapons are worth ~15% more Item Power than talismans
             // TODO/REFACTOR : could be done in  a better way
             if (this.isWeapon()) {
@@ -437,9 +432,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Updates every #slot-equipment-bonusN element
      */
-        this.refreshEquipmentBonuses = function(combatPower, healingPower) {
+    this.refreshEquipmentBonuses = function(combatPower, healingPower) {
         if (this.equipmentBonusN(1) === undefined) return;
-        var item = this.getItem();
+        var item = this.equipmentData();
         var statForComputation = 0;
 
         for (i = 0; i < item.coefficients.length; i++) {
@@ -651,8 +646,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Getter to retrieve full signet object from the data model
      */
-    //TODO : find better name for getSignet method (and also getItem above)
-    this.getSignet = function() {
+    this.signetData = function() {
         if (this.signetId() == 'none' || this.signetId() == undefined || this.signetId() == null) {
             return swlcalc.data.signets.noneSignet;
         }
@@ -754,7 +748,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateSignet = function() {
         this.updateSignetIcon();
 
-        var signet = this.getSignet();
+        var signet = this.signetData();
         var newDescription = signet.description;
         if (this.isWeapon()) {
             // Replaces %id% either by 'weapon' or 'weapon2' depending on the current slot
@@ -779,7 +773,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates #slot-signet-img-icon
      */
     this.updateSignetImgIcon = function() {
-        var signet = this.getSignet();
+        var signet = this.signetData();
         var pngName = (signet == swlcalc.data.signets.noneSignet ? 'none' : this.id)
         var img_path = 'assets/images/icons/signet/' + pngName + '.png';
         this.signetImgIcon(img_path);
@@ -811,7 +805,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var coef = 1
 
         // TODO/REFACTOR : there should  a better way to handle the particular cases of Signet of Shoulder Tackle & Signet of Contortion
-        if (this.getSignet().id != 0) {
+        if (this.signetData().id != 0) {
             var signet = swlcalc.data.signets.slot[this.kind][this.signetId() - 1]
 
             if (this.isWeapon()) {

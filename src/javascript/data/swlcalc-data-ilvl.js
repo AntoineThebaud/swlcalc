@@ -26,7 +26,7 @@ swlcalc.data.ilvl_base = {
 
 swlcalc.data.ilvl = {
     gear: {
-        'talisman-or-weapon': {
+        'equipment': {
             rarity: {
                 'standard': {
                     xp_per_level: 200,
