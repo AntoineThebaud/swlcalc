@@ -45,11 +45,10 @@
         </tr>
         <tr class="tr-with-icon">
             <td class="equipment-img">
-                <a href="#" class="equipment-tooltip" data-toggle="tooltip" title="Equipment for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
-                    <img id="{id_prefix}-equipment-img-quality" class="equipment-icon-quality" src="assets/images/icons/quality/1.png"/>
-                    <img id="{id_prefix}-equipment-img-rarity" class="equipment-icon-border" src=""/>
-                    <img id="{id_prefix}-equipment-img-icon" class="equipment-icon" src="" alt="image"/>
-                </a>
+                <img id="{id_prefix}-equipment-img-quality" class="equipment-icon-quality" src="assets/images/icons/quality/1.png"/>
+                <img id="{id_prefix}-equipment-img-rarity" class="equipment-icon-rarity" src=""/>
+                <img id="{id_prefix}-equipment-img-icon" class="equipment-icon-item" src="" alt="image"/>
+                <div class="equipment-icon-level border-standard">79</div>
             </td>
             <td class="equipment-select">
                 {?is_weapon}
