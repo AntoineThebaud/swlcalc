@@ -146,24 +146,24 @@ test('should set a non-zero ilvl value when selecting a glyph and then set it ba
     equal(swlcalc.gear.slots.occult.glyphILvl(), 0);
 });
 
-test('should update the #slot-equipment-level selects when their associated rarity is changed', 54, function() {
+test('should update any #slot-equipment-level sliders when its associated rarity is changed', 54, function() {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var id = swlcalc.data.template_data.slots[i].id_prefix;
-        equal($('#' + id + '-equipment-level option').size(), 20, "Untouched " + id + "-equipment-level should have values between 1 and 20");
+        equal($('#' + id + '-equipment-level').attr('max'), 20, "Untouched " + id + "-equipment-level should have values between 1 and 20");
         swlcalc.gear.slots[id].equipmentRarity('superior');
         swlcalc.gear.slots[id].el.equipmentRarity.change();
-        equal($('#' + id + '-equipment-level option').size(), 25, "After " + id + "-equipment-rarity set to Superior, " + id + "-equipment-level should have values between 1 and 25");
+        equal($('#' + id + '-equipment-level').attr('max'), 25, "After " + id + "-equipment-rarity set to Superior, " + id + "-equipment-level should have values between 1 and 25");
         swlcalc.gear.slots[id].equipmentRarity('legendary');
         swlcalc.gear.slots[id].el.equipmentRarity.change();
-        equal($('#' + id + '-equipment-level option').size(), 70, "After " + id + "-equipment-rarity set to Legendary, " + id + "-equipment-level should have values between 1 and 70");
+        equal($('#' + id + '-equipment-level').attr('max'), 70, "After " + id + "-equipment-rarity set to Legendary, " + id + "-equipment-level should have values between 1 and 70");
         swlcalc.gear.slots[id].equipmentRarity('epic');
         swlcalc.gear.slots[id].el.equipmentRarity.change();
-        equal($('#' + id + '-equipment-level option').size(), 30, "After " + id + "-equipment-rarity set to Epic, " + id + "-equipment-level should have values between 1 and 30");
+        equal($('#' + id + '-equipment-level').attr('max'), 30, "After " + id + "-equipment-rarity set to Epic, " + id + "-equipment-level should have values between 1 and 30");
         swlcalc.gear.slots[id].equipmentRarity('mythic');
         swlcalc.gear.slots[id].el.equipmentRarity.change();
-        equal($('#' + id + '-equipment-level option').size(), 35, "After " + id + "-equipment-rarity set to Mythic, " + id + "-equipment-level should have values between 1 and 35");
+        equal($('#' + id + '-equipment-level').attr('max'), 35, "After " + id + "-equipment-rarity set to Mythic, " + id + "-equipment-level should have values between 1 and 35");
         swlcalc.gear.slots[id].equipmentRarity('standard');
         swlcalc.gear.slots[id].el.equipmentRarity.change();
-        equal($('#' + id + '-equipment-level option').size(), 20, "After " + id + "-equipment-rarity set back to Standard, " + id + "-equipment-level should have values between 1 and 20");
+        equal($('#' + id + '-equipment-level').attr('max'), 20, "After " + id + "-equipment-rarity set back to Standard, " + id + "-equipment-level should have values between 1 and 20");
     }
 });

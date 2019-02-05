@@ -312,12 +312,12 @@ swlcalc.summary = function() {
     }
 
     /**
-     * Launch a description refresh for each item (in order to display the right bonus values)
+     * Launch a description update for each item (in order to display the right bonus values)
      */
     var updateDescriptions = function() {
         for (var id in swlcalc.gear.slots) {
-            swlcalc.gear.slots[id].refreshEquipmentBonuses(combatPower(), healingPower());
-            swlcalc.gear.slots[id].refreshSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
+            swlcalc.gear.slots[id].updateEquipmentBonuses(combatPower(), healingPower());
+            swlcalc.gear.slots[id].updateSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
         }
     };
 

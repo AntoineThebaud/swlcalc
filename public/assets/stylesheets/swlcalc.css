@@ -321,6 +321,9 @@ td.level-select {
 }
 td.level-select select {
 }
+.level-slider {
+    width: 100px;
+}
 
 
 td.filler {

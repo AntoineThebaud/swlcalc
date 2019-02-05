@@ -99,7 +99,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Updates the text color of the dropdown "select" by reusing the color of the selected option.
      */
     var updateTextColor = function(select) {
-        $(select).attr("class", "color-" + select.value);
+        $(select).attr('class', 'color-' + select.value);
     };
 
     /**
@@ -140,18 +140,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.handleRarityChange = function(event) {
         updateTextColor(this);
         slotObj.updateEquipmentImgRarity();
-
-        //refresh the list of available levels
-        slotObj.el.equipmentLevel.empty();
-        var minLvl = 1;
-        var maxLvl = swlcalc.data.rarity_mapping.to_max_level[this.value];
-        for (i = maxLvl; i >= minLvl ; i--) {
-           slotObj.el.equipmentLevel.append($('<option>', {
-               value: i,
-               text: i
-           }));
-        }
-
+        slotObj.updateEquipmentLevel();
         slotObj.updateEquipmentPowerRating();
         slotObj.updateEquipmentILvl();
         swlcalc.summary.updateAllStats();
@@ -172,6 +161,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.handleLevelChange = function(event) {
         slotObj.updateEquipmentILvl();
         slotObj.updateEquipmentPowerRating();
+        slotObj.updateEquipmentLabelLevelText();
         swlcalc.summary.updateAllStats();
     };
 
@@ -248,7 +238,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleSignetRarityChange = function(event) {
         updateTextColor(this);
-        slotObj.updateSignetIcon();
+        slotObj.updateSignetImgIcon();
+        slotObj.updateSignetImgRarity();
         slotObj.updateSignetILvl();
         swlcalc.summary.updateAllStats();
     };

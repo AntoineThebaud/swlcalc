@@ -109,6 +109,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         equipmentImgIcon:     $('#' + this.id + '-equipment-img-icon'),
         equipmentImgRarity:   $('#' + this.id + '-equipment-img-rarity'),
         equipmentImgQuality:  $('#' + this.id + '-equipment-img-quality'),
+        equipmentLabelLevel:  $('#' + this.id + '-equipment-label-level'),
         equipmentDescription: $('#' + this.id + '-equipment-description'),
         glyphId:              $('#' + this.id + '-glyph-id'),
         glyphRarity:          $('#' + this.id + '-glyph-rarity'),
@@ -145,7 +146,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates #slot-total-ilvl
      * -> Calculates total ilvl of the slot (talisman or weapon + glyph + signet) by reusing the "raw" values previously registered
      */
-    this.refreshILvl = function() {
+    this.updateILvl = function() {
         this.iLvl(Math.round(this.rawILvl + this.rawGlyphILvl + this.rawSignetILvl));
     };
 
@@ -310,6 +311,17 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Getter/Setter for #slot-equipment-label-level
+     */
+    this.equipmentLabelLevel = function() {
+        if (arguments.length == 1) {
+            this.el.equipmentLabelLevel.html(arguments[0]);
+        } else {
+            return this.el.equipmentLabelLevel.text();
+        }
+    };
+
+    /**
      * Getter/Setter for any #slot-equipment-bonusN element (#slot-equipment-bonus1, #slot-equipment-bonus2, #slot-equipment-bonus3 ...)
      */
     this.equipmentBonusN = function() {
@@ -367,6 +379,19 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Updates, depending on the rarity selected, :
+     * - #slot-equipment-level : refresh list of available levels
+     * - #slot-equipment-label-level : update text + border color
+     */
+    this.updateEquipmentLevel = function() {
+        var maxLvl = swlcalc.data.rarity_mapping.to_max_level[this.equipmentRarity()];
+        this.el.equipmentLevel.attr('max', maxLvl)
+        this.equipmentLevel(maxLvl);
+        this.updateEquipmentLabelLevelText();
+        this.updateEquipmentLabelLevelColor();
+    }
+
+    /**
      * Updates #slot-equipment-power-rating (calculatations with stats data)
      */
     this.updateEquipmentPowerRating = function() {
@@ -393,22 +418,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Updates #slot-equipment-img-rarity
-     */
-    this.updateEquipmentImgRarity = function() {
-        var img_path = 'assets/images/icons/rarity/' + this.equipmentRarity() + '-42x42.png';
-        this.equipmentImgRarity(img_path);
-    };
-
-    /**
-     * Updates #slot-equipment-img-quality
-     */
-    this.updateEquipmentImgQuality = function() {
-        var img_path = 'assets/images/icons/quality/' + this.equipmentQuality() + '.png';
-        this.equipmentImgQuality(img_path);
-    };
-
-    /**
      * Updates #slot-equipment-ilvl
      * -> Calculates item power for the slot's talisman (or weapon) and updates GUI with it
      */
@@ -426,13 +435,43 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.rawILvl = newILvl;
 
         this.equipmentILvl(Math.round(newILvl));
-        this.refreshILvl();
+        this.updateILvl();
+    };
+
+    /**
+     * Updates #slot-equipment-img-rarity
+     */
+    this.updateEquipmentImgRarity = function() {
+        var img_path = 'assets/images/icons/rarity/' + this.equipmentRarity() + '-42x42.png';
+        this.equipmentImgRarity(img_path);
+    };
+
+    /**
+     * Updates #slot-equipment-img-quality
+     */
+    this.updateEquipmentImgQuality = function() {
+        var img_path = 'assets/images/icons/quality/' + this.equipmentQuality() + '.png';
+        this.equipmentImgQuality(img_path);
+    };
+
+    /**
+     * Updates #slot-equipment-label-level (text)
+     */
+    this.updateEquipmentLabelLevelText = function() {
+        this.equipmentLabelLevel(this.equipmentLevel())
+    };
+
+    /**
+     * Updates #slot-equipment-label-level (border color)
+     */
+    this.updateEquipmentLabelLevelColor = function() {
+        this.el.equipmentLabelLevel.attr('class', 'equipment-icon-level border-' + this.equipmentRarity());
     };
 
     /**
      * Updates every #slot-equipment-bonusN element
      */
-    this.refreshEquipmentBonuses = function(combatPower, healingPower) {
+    this.updateEquipmentBonuses = function(combatPower, healingPower) {
         if (this.equipmentBonusN(1) === undefined) return;
         var item = this.equipmentData();
         var statForComputation = 0;
@@ -628,7 +667,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.rawGlyphILvl = newILvl;
 
         this.glyphILvl(Math.round(newILvl));
-        this.refreshILvl();
+        this.updateILvl();
     };
 
     /**
@@ -746,7 +785,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates signet (#slot-signet-icon + #slot-signet-description)
      */
     this.updateSignet = function() {
-        this.updateSignetIcon();
+        this.updateSignetImgIcon();
+        this.updateSignetImgRarity();
 
         var signet = this.signetData();
         var newDescription = signet.description;
@@ -757,16 +797,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         }
         this.signetDescription(newDescription);
 
-        this.refreshSignetBonus();
-    };
-
-    /**
-     * Updates signet icon
-     */
-    //TODO/REFACTOR : change name/responsability / or delete function, according to the previous Getter/Setter/"refresher" functions ?
-    this.updateSignetIcon = function() {
-        this.updateSignetImgIcon();
-        this.updateSignetImgRarity();
+        this.updateSignetBonus();
     };
 
     /**
@@ -790,7 +821,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Setter for #slot-signet-description
      */
-    //TODO/REFACTOR : change name/responsability / or delete function, according to the previous Getter/Setter/"refresher" functions ?
+    //TODO/REFACTOR : change name/responsability / or delete function, according to the previous Getter/Setter/"updateer" functions ?
     this.updateSignetDescription = function() {
         this.el.signetDescription.html(this.signetDescription());
     };
@@ -799,7 +830,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates the dynamic bonus displayed in the signet's description (#slot-signet-bonus)
      */
     // TODO to enhance
-    this.refreshSignetBonus = function(combatPower, healingPower){
+    this.updateSignetBonus = function(combatPower, healingPower){
         var newValue = 0;
         // coefficient in case CP or HP is used in the bonus computation
         var coef = 1
@@ -851,7 +882,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.rawSignetILvl = newILvl;
 
         this.signetILvl(Math.round(newILvl));
-        this.refreshILvl();
+        this.updateILvl();
     };
 
     /**********************************************************************************

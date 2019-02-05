@@ -48,7 +48,7 @@
                 <img id="{id_prefix}-equipment-img-quality" class="equipment-icon-quality" src="assets/images/icons/quality/1.png"/>
                 <img id="{id_prefix}-equipment-img-rarity" class="equipment-icon-rarity" src=""/>
                 <img id="{id_prefix}-equipment-img-icon" class="equipment-icon-item" src="" alt="image"/>
-                <div class="equipment-icon-level border-standard">79</div>
+                <div id="{id_prefix}-equipment-label-level" class="equipment-icon-level border-standard">20</div>
             </td>
             <td class="equipment-select">
                 {?is_weapon}
@@ -75,7 +75,9 @@
             <td rowspan="2" class="filler"></td>
             <td rowspan="2" class="filler"></td>
             <td rowspan="2" class="upgrade-label level-label"><strong>Level :</strong></td>
-            <td rowspan="2" class="upgrade-select level-select">{>levelselect id_suffix="equipment"/}</td>
+            <td rowspan="2" class="upgrade-select level-select">
+                <input id="{id_prefix}-equipment-level" type="range" min="1" max="20" value="20" class="level-slider">
+            </td>
         </tr>
         <tr>
             <td class="ilvl">

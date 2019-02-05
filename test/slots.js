@@ -185,9 +185,10 @@ test('should get and set the slot\'s signet level', 2, function() {
 
 test('should update signet icon and border', 1, function() {
     swlcalc.gear.slots.head.signetRarity('superior');
-    swlcalc.gear.slots.head.updateSignetIcon();
+    swlcalc.gear.slots.head.updateSignetImgIcon();
+    swlcalc.gear.slots.head.updateSignetImgRarity();
 
-    //TODO/TEST tswcalc test. swlcalc equivalent needed
+    //TODO/TEST not working ! (not updated fast enough ?)
     // equal($('#head-signet-img-icon').attr('src'), 'assets/images/icons/head_tank.png');
     equal($('#head-signet-img-rarity').attr('src'), 'assets/images/icons/rarity/superior-42x42.png');
 });

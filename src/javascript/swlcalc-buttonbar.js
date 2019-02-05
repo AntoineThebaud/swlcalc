@@ -51,7 +51,7 @@ swlcalc.buttonBar = function() {
      */
     //TODO/REFACTOR : basic implementation, everything to review
     var setAnimaAllocation = function(event) {
-        $(this).attr("class", "anima-allocation-select color-" + this.value);
+        $(this).attr('class', 'anima-allocation-select color-' + this.value);
         swlcalc.summary.setAnimaAllocation(event.target.value);
     };
 
