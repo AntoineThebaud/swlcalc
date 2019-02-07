@@ -120,6 +120,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         glyphImgIcon:         $('#' + this.id + '-glyph-img-icon'),
         glyphImgRarity:       $('#' + this.id + '-glyph-img-rarity'),
         glyphImgQuality:      $('#' + this.id + '-glyph-img-quality'),
+        glyphLabelLevel:      $('#' + this.id + '-glyph-label-level'),
         glyphILvl:            $('#' + this.id + '-glyph-ilvl'),
         signetId:             $('#' + this.id + '-signet-id'),
         signetRarity:         $('#' + this.id + '-signet-rarity'),
@@ -127,6 +128,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         signetImgIcon:        $('#' + this.id + '-signet-img-icon'),
         signetImgRarity:      $('#' + this.id + '-signet-img-rarity'),
         signetDescription:    $('#' + this.id + '-signet-description'),
+        signetLabelLevel:     $('#' + this.id + '-signet-label-level'),
         signetILvl:           $('#' + this.id + '-signet-ilvl'),
         nameWarning:          $('#' + this.id + '-name-warning'),
     };
@@ -278,6 +280,19 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Getter/Setter for any #slot-equipment-bonusN element (#slot-equipment-bonus1, #slot-equipment-bonus2, #slot-equipment-bonus3 ...)
+     */
+    this.equipmentBonusN = function() {
+        if (arguments.length == 2) {
+            $('#' + this.id + '-equipment-bonus' + arguments[0]).html(arguments[1]);
+        } else if (arguments.length == 1) {
+            return $('#' + this.id + '-equipment-bonus' + arguments[0]).html();
+        } else {
+            console.log("Error on this.equipmentBonusN() call")
+        }
+    };
+
+    /**
      * Getter/Setter for #slot-equipment-img-icon
      */
     this.equipmentImgIcon = function() {
@@ -318,19 +333,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
             this.el.equipmentLabelLevel.html(arguments[0]);
         } else {
             return this.el.equipmentLabelLevel.text();
-        }
-    };
-
-    /**
-     * Getter/Setter for any #slot-equipment-bonusN element (#slot-equipment-bonus1, #slot-equipment-bonus2, #slot-equipment-bonus3 ...)
-     */
-    this.equipmentBonusN = function() {
-        if (arguments.length == 2) {
-            $('#' + this.id + '-equipment-bonus' + arguments[0]).html(arguments[1]);
-        } else if (arguments.length == 1) {
-            return $('#' + this.id + '-equipment-bonus' + arguments[0]).html();
-        } else {
-            console.log("Error on this.equipmentBonusN() call")
         }
     };
 
@@ -439,6 +441,24 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Updates every #slot-equipment-bonusN element
+     */
+    this.updateEquipmentBonuses = function(combatPower, healingPower) {
+        if (this.equipmentBonusN(1) === undefined) return;
+        var item = this.equipmentData();
+        var statForComputation = 0;
+
+        for (i = 0; i < item.coefficients.length; i++) {
+            if (item.stats[i] == 'Combat Power') {
+                statForComputation = combatPower;
+            } else if (item.stats[i] == 'Healing Power') {
+                statForComputation = healingPower;
+            }
+            this.equipmentBonusN(i + 1, Math.round(item.coefficients[i] * statForComputation));
+        }
+    }
+
+    /**
      * Updates #slot-equipment-img-rarity
      */
     this.updateEquipmentImgRarity = function() {
@@ -465,26 +485,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates #slot-equipment-label-level (border color)
      */
     this.updateEquipmentLabelLevelColor = function() {
-        this.el.equipmentLabelLevel.attr('class', 'equipment-icon-level border-' + this.equipmentRarity());
+        this.el.equipmentLabelLevel.attr('class', 'equipment-label-level border-' + this.equipmentRarity());
     };
-
-    /**
-     * Updates every #slot-equipment-bonusN element
-     */
-    this.updateEquipmentBonuses = function(combatPower, healingPower) {
-        if (this.equipmentBonusN(1) === undefined) return;
-        var item = this.equipmentData();
-        var statForComputation = 0;
-
-        for (i = 0; i < item.coefficients.length; i++) {
-            if (item.stats[i] == 'Combat Power') {
-                statForComputation = combatPower;
-            } else if (item.stats[i] == 'Healing Power') {
-                statForComputation = healingPower;
-            }
-            this.equipmentBonusN(i + 1, Math.round(item.coefficients[i] * statForComputation));
-        }
-    }
 
     /**********************************************************************************
      * Glyph functions |
@@ -556,6 +558,19 @@ swlcalc.gear.Slot = function Slot(slotData) {
             return this.el.glyphLabel.html();
         }
     };
+
+
+    /**
+     * Getter/Setter for #slot-glyph-iLvl
+     */
+    this.glyphILvl = function() {
+        if (arguments.length == 1) {
+            this.el.glyphILvl.html(arguments[0]);
+        } else {
+            return parseInt(this.el.glyphILvl.html());
+        }
+    };
+
     /**
      * Getter/Setter for #slot-glyph-img-icon
      */
@@ -590,13 +605,13 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-glyph-iLvl
+     * Getter/Setter for #slot-glyph-label-level
      */
-    this.glyphILvl = function() {
+    this.glyphLabelLevel = function() {
         if (arguments.length == 1) {
-            this.el.glyphILvl.html(arguments[0]);
+            this.el.glyphLabelLevel.html(arguments[0]);
         } else {
-            return parseInt(this.el.glyphILvl.html());
+            return this.el.glyphLabelLevel.text();
         }
     };
 
@@ -677,6 +692,20 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.glyphLabel(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[this.glyphId()]);
     };
 
+    /**
+     * Updates #slot-glyph-label-level (text)
+     */
+    this.updateGlyphLabelLevelText = function() {
+        this.glyphLabelLevel(this.glyphLevel())
+    };
+
+    /**
+     * Updates #slot-glyph-label-level (border color)
+     */
+    this.updateGlyphLabelLevelColor = function() {
+        this.el.glyphLabelLevel.attr('class', 'glyph-label-level border-' + this.glyphRarity());
+    };
+
     /**********************************************************************************
      * Signet functions |
      *                  V
@@ -726,28 +755,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-signet-img-icon
-     */
-    this.signetImgIcon = function() {
-        if (arguments.length == 1) {
-            this.el.signetImgIcon.attr('src', arguments[0])
-        } else {
-            return this.el.signetImgIcon.attr('src');
-        }
-    };
-
-    /**
-     * Getter/Setter for #slot-signet-img-rarity
-     */
-    this.signetImgRarity = function() {
-        if (arguments.length == 1) {
-            this.el.signetImgRarity.attr('src', arguments[0])
-        } else {
-            return this.el.signetImgRarity.attr('src');
-        }
-    };
-
-    /**
      * Getter/Setter for #slot-signet-ilvl
      */
     this.signetILvl = function() {
@@ -778,6 +785,39 @@ swlcalc.gear.Slot = function Slot(slotData) {
             $('#' + this.id + '-signet-bonus').html(arguments[0]);
         } else {
             return $('#' + this.id + 'signet-bonus').html();
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-signet-img-icon
+     */
+    this.signetImgIcon = function() {
+        if (arguments.length == 1) {
+            this.el.signetImgIcon.attr('src', arguments[0])
+        } else {
+            return this.el.signetImgIcon.attr('src');
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-signet-img-rarity
+     */
+    this.signetImgRarity = function() {
+        if (arguments.length == 1) {
+            this.el.signetImgRarity.attr('src', arguments[0])
+        } else {
+            return this.el.signetImgRarity.attr('src');
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-signet-label-level
+     */
+    this.signetLabelLevel = function() {
+        if (arguments.length == 1) {
+            this.el.signetLabelLevel.html(arguments[0]);
+        } else {
+            return this.el.signetLabelLevel.text();
         }
     };
 
@@ -885,6 +925,20 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.updateILvl();
     };
 
+    /**
+     * Updates #slot-signet-label-level (text)
+     */
+    this.updateSignetLabelLevelText = function() {
+        this.signetLabelLevel(this.signetLevel())
+    };
+
+    /**
+     * Updates #slot-signet-label-level (border color)
+     */
+    this.updateSignetLabelLevelColor = function() {
+        this.el.signetLabelLevel.attr('class', 'signet-label-level border-' + this.signetRarity());
+    };
+
     /**********************************************************************************
      * Other functions |
      *                 V
@@ -897,23 +951,27 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.el.equipmentId.prop("selectedIndex", 0);
         this.el.equipmentRarity.prop("selectedIndex", 0);
         this.el.equipmentQuality.prop("selectedIndex", 0);
-        //this.el.equipmentId.change();
+        // no need to set equipmentLevel here
 
         this.el.glyphId.prop("selectedIndex", 0);
         this.el.glyphRarity.prop("selectedIndex", 0);
         this.el.glyphQuality.prop("selectedIndex", 0);
-        this.el.glyphLevel.prop("selectedIndex", 0);
+        this.el.glyphLevel.val("20");
 
         this.el.signetId.prop("selectedIndex", 0);
         this.el.signetRarity.prop("selectedIndex", 0);
-        this.el.signetLevel.prop("selectedIndex", 0);
+        this.el.signetLevel.val("20");
 
         this.el.equipmentId.change();
         this.el.equipmentRarity.change();
+        this.el.equipmentQuality.change();
         this.el.glyphId.change();
         this.el.glyphRarity.change();
+        this.el.glyphQuality.change();
+        this.el.glyphLevel.change();
         this.el.signetId.change();
         this.el.signetRarity.change();
+        this.el.signetLevel.change();
         this.updateSignet();
     };
 

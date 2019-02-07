@@ -15,10 +15,10 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Associates the right process to each trigger.
      */
     this.bindEvents = function() {
-        slotObj.el.equipmentId.change(this.handleItemChange);
-        slotObj.el.equipmentRarity.change(this.handleRarityChange);
-        slotObj.el.equipmentQuality.change(this.handleQualityChange);
-        slotObj.el.equipmentLevel.change(this.handleLevelChange);
+        slotObj.el.equipmentId.change(this.handleEquipmentItemChange);
+        slotObj.el.equipmentRarity.change(this.handleEquipmentRarityChange);
+        slotObj.el.equipmentQuality.change(this.handleEquipmentQualityChange);
+        slotObj.el.equipmentLevel.change(this.handleEquipmentLevelChange);
 
         slotObj.el.glyphId.change(this.handleGlyphChange);
         slotObj.el.glyphRarity.change(this.handleGlyphRarityChange);
@@ -120,7 +120,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     /**
      * Handler for #slot-itemId
      */
-    this.handleItemChange = function(event) {
+    this.handleEquipmentItemChange = function(event) {
         //TODO/FEATURE : reenable slot name display
 //      var wtype = $(this).val();
 //      if(wtype != 'none') {
@@ -137,7 +137,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     /**
      * Handler for #slot-rarity
      */
-    this.handleRarityChange = function(event) {
+    this.handleEquipmentRarityChange = function(event) {
         updateTextColor(this);
         slotObj.updateEquipmentImgRarity();
         slotObj.updateEquipmentLevel();
@@ -149,7 +149,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     /**
      * Handler for #slot-quality
      */
-    this.handleQualityChange = function(event) {
+    this.handleEquipmentQualityChange = function(event) {
         slotObj.updateEquipmentPowerRating();
         slotObj.updateEquipmentImgQuality();
         swlcalc.summary.updateAllStats();
@@ -158,7 +158,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     /**
      * Handler for #slot-level
      */
-    this.handleLevelChange = function(event) {
+    this.handleEquipmentLevelChange = function(event) {
         slotObj.updateEquipmentILvl();
         slotObj.updateEquipmentPowerRating();
         slotObj.updateEquipmentLabelLevelText();
@@ -187,9 +187,9 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.handleGlyphRarityChange = function(event) {
         updateTextColor(this);
         slotObj.updateGlyphImgRarity();
+        slotObj.updateGlyphLabelLevelColor();
         slotObj.updateGlyphILvl();
         slotObj.updateGlyphRating();
-
         swlcalc.summary.updateAllStats();
     };
 
@@ -208,6 +208,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.handleGlyphLevelChange = function(event) {
         slotObj.updateGlyphRating();
         slotObj.updateGlyphILvl();
+        slotObj.updateGlyphLabelLevelText();
         swlcalc.summary.updateAllStats();
     }
 
@@ -240,6 +241,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
         updateTextColor(this);
         slotObj.updateSignetImgIcon();
         slotObj.updateSignetImgRarity();
+        slotObj.updateSignetLabelLevelColor();
         slotObj.updateSignetILvl();
         swlcalc.summary.updateAllStats();
     };
@@ -249,6 +251,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleSignetLevelChange = function(event) {
         slotObj.updateSignetILvl();
+        slotObj.updateSignetLabelLevelText();
         swlcalc.summary.updateAllStats();
     };
 };

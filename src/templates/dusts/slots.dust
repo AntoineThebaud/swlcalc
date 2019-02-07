@@ -32,8 +32,12 @@
             {:else}
             <td class="item-title" colspan="2">Talisman</td>
             {/is_weapon}
-            <td class="upgrade-label rarity-label"><strong>Rarity :</strong></td>
-            <td class="upgrade-select rarity-select">{>rarityselect id_suffix="equipment"/}</td>
+            <td class="upgrade-label rarity-label">
+                <strong>Rarity :</strong>
+            </td>
+            <td class="upgrade-select rarity-select">
+                {>rarityselect id_suffix="equipment"/}
+            </td>
             <td class="stat-value stat-inSlot">
                 <span id="{id_prefix}-equipment-power-rating">0</span>
                 {?is_weapon}
@@ -48,7 +52,7 @@
                 <img id="{id_prefix}-equipment-img-quality" class="equipment-icon-quality" src="assets/images/icons/quality/1.png"/>
                 <img id="{id_prefix}-equipment-img-rarity" class="equipment-icon-rarity" src=""/>
                 <img id="{id_prefix}-equipment-img-icon" class="equipment-icon-item" src="" alt="image"/>
-                <div id="{id_prefix}-equipment-label-level" class="equipment-icon-level border-standard">20</div>
+                <div id="{id_prefix}-equipment-label-level" class="equipment-label-level border-standard">20</div>
             </td>
             <td class="equipment-select">
                 {?is_weapon}
@@ -59,7 +63,9 @@
                 </select>
                 {/is_weapon}
             </td>
-            <td class="upgrade-label quality-label"><strong>Quality :</strong></td>
+            <td class="upgrade-label quality-label">
+                <strong>Quality :</strong>
+            </td>
             <td class="upgrade-select quality-select">
                 {?is_weapon}
                 {>qualityselect id_suffix="equipment" pip1_name="MK I" pip2_name="MK II" pip3_name="MK III"/}
@@ -74,7 +80,9 @@
         <tr>
             <td rowspan="2" class="filler"></td>
             <td rowspan="2" class="filler"></td>
-            <td rowspan="2" class="upgrade-label level-label"><strong>Level :</strong></td>
+            <td rowspan="2" class="upgrade-label level-label">
+                <strong>Level :</strong>
+            </td>
             <td rowspan="2" class="upgrade-select level-select">
                 <input id="{id_prefix}-equipment-level" type="range" min="1" max="20" value="20" class="level-slider">
             </td>
@@ -88,16 +96,21 @@
     <table id="{id_prefix}-glyphs" class="table table-slots">
         <tr>
             <td class="item-title" colspan="2">Glyph</td>
-            <td class="upgrade-label rarity-label"><strong>Rarity :</strong></td>
-            <td class="upgrade-select rarity-select">{>rarityselect id_suffix="glyph"/}</td>
+            <td class="upgrade-label rarity-label">
+                <strong>Rarity :</strong>
+            </td>
+            <td class="upgrade-select rarity-select">
+                {>rarityselect id_suffix="glyph"/}
+            </td>
             <td class="filler"></td>
         </tr>
         <tr class="tr-with-icon">
             <td class="glyph-img">
                 <a href="#" class="glyph-tooltip" data-toggle="tooltip" title="Glyph for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
                     <img id="{id_prefix}-glyph-img-quality" class="glyph-icon-quality" src="assets/images/icons/quality/1.png"/>
-                    <img id="{id_prefix}-glyph-img-rarity" class="glyph-icon-border" src="assets/images/icons/rarity/none-42x42.png"/>
-                    <img id="{id_prefix}-glyph-img-icon" class="glyph-icon" src="assets/images/icons/glyph/none.png" alt="Glyph"/>
+                    <img id="{id_prefix}-glyph-img-rarity" class="glyph-icon-rarity" src="assets/images/icons/rarity/none-42x42.png"/>
+                    <img id="{id_prefix}-glyph-img-icon" class="glyph-icon-item" src="assets/images/icons/glyph/none.png" alt="Glyph"/>
+                    <div id="{id_prefix}-glyph-label-level" class="glyph-label-level border-standard">20</div>
                 </a>
             </td>
             <td class="glyph-select">
@@ -110,7 +123,9 @@
                     <option value="defense-rating">Stalwart</option>
                 </select>
             </td>
-            <td class="upgrade-label quality-label"><strong>Quality :</strong></td>
+            <td class="upgrade-label quality-label">
+                <strong>Quality :</strong>
+            </td>
             <td class="upgrade-select quality-select">
                 {>qualityselect id_suffix="glyph" pip1_name="Crude" pip2_name="Simple" pip3_name="Intricate"/}
             </td>
@@ -122,8 +137,12 @@
         <tr>
             <td class="filler"></td>
             <td class="filler"></td>
-            <td class="upgrade-label level-label"><strong>Level :</strong></td>
-            <td class="upgrade-select level-select">{>levelselect id_suffix="glyph"/}</td>
+            <td class="upgrade-label level-label">
+                <strong>Level :</strong>
+            </td>
+            <td class="upgrade-select level-select">
+                <input id="{id_prefix}-glyph-level" type="range" min="1" max="20" value="20" class="level-slider">
+            </td>
             <td class="ilvl">
                 <span id="{id_prefix}-glyph-ilvl">0</span>
             </td>
@@ -136,30 +155,37 @@
             <td id="{id_prefix}-signet-description" class="item-description" colspan="3" rowspan="2"></td>
         <tr>
             <td class="signet-select" colspan="2">
-                <select id="{id_prefix}-signet-id" title="Please select signet">
-                </select>
+                <select id="{id_prefix}-signet-id" title="Please select signet"></select>
             </td>
         </tr>
         {:else}
         <tr>
             <td class="item-title" colspan="2">Signet</td>
-            <td class="upgrade-label rarity-label"><strong>Rarity :</strong></td>
-            <td class="upgrade-select rarity-select">{>rarityselect id_suffix="signet"/}</td>
+            <td class="upgrade-label rarity-label">
+                <strong>Rarity :</strong>
+            </td>
+            <td class="upgrade-select rarity-select">
+                {>rarityselect id_suffix="signet"/}
+            </td>
             <td id="{id_prefix}-signet-description" class="item-description"></td>
         </tr>
         <tr class="tr-with-icon">
             <td class="signet-img">
                 <a href="#" class="signet-tooltip" data-toggle="tooltip" title="Signet for the {name} slot. Choose the rarity and type of signet.">
-                    <img id="{id_prefix}-signet-img-rarity" class="signet-icon-border" src="assets/images/icons/rarity/none-42x42.png"/>
-                    <img id="{id_prefix}-signet-img-icon" class="signet-icon" src="assets/images/icons/signet/none.png" alt="Signet"/>
+                    <img id="{id_prefix}-signet-img-rarity" class="signet-icon-rarity" src="assets/images/icons/rarity/none-42x42.png"/>
+                    <img id="{id_prefix}-signet-img-icon" class="signet-icon-item" src="assets/images/icons/signet/none.png" alt="Signet"/>
+                    <div id="{id_prefix}-signet-label-level" class="signet-label-level border-standard">20</div>
                 </a>
             </td>
             <td class="signet-select">
-                <select id="{id_prefix}-signet-id" title="Please select signet">
-                </select>
+                <select id="{id_prefix}-signet-id" title="Please select signet"></select>
             </td>
-            <td class="upgrade-label quality-label"><strong>Level :</strong></td> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
-            <td class="upgrade-select quality-select">{>levelselect id_suffix="signet"/}</td> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
+            <td class="upgrade-label quality-label"> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
+                <strong>Level :</strong>
+            </td>
+            <td class="upgrade-select quality-select"> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
+                <input id="{id_prefix}-signet-level" type="range" min="1" max="20" value="20" class="level-slider">
+            </td>
             <td class="ilvl">
                 <span id="{id_prefix}-signet-ilvl">0</span>
             </td>

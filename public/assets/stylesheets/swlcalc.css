@@ -161,6 +161,7 @@ td.item-description {
 }
 
 
+
 /* slot > equipment (talisman/weapon) */
 td.equipment-img {
     width: 58px;
@@ -192,7 +193,7 @@ td.equipment-img {
     position: absolute;
     z-index: 2;
 }
-.equipment-icon-level {
+.equipment-label-level {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -204,10 +205,10 @@ td.equipment-img {
     line-height: 15px;
     padding-left: 1px;
     padding-right: 1px;
+    padding-top: 1px;
     width: 20px;
     text-align: center;
 }
-
 
 td.equipment-select {
     width: 150px;
@@ -222,25 +223,49 @@ td.equipment-select select {
 
 /* slot > glyph */
 td.glyph-img {
-    width: 38px;
+    width: 48px;
     padding-right: 4px;
+    position: relative;
 }
-img.glyph-icon {
+img.glyph-icon-item {
     width: 38px;
     height:38px;
+    left: 5px;
+    top: 10px;
+    position: absolute;
     z-index: 0;
 }
-img.glyph-icon-border {
+img.glyph-icon-rarity {
     width: 38px;
     height:38px;
+    left: 5px;
+    top: 10px;
     position: absolute;
     z-index: 1;
 }
 img.glyph-icon-quality {
     width: 38px;
     height:38px;
+    left: 5px;
+    top: 10px;
     position: absolute;
     z-index: 2;
+}
+.glyph-label-level {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    color: white;
+    background-image: linear-gradient(#050505, #3B3B3B);
+    border: 2px solid;
+    border-radius: 4px;
+    line-height: 15px;
+    /*padding: 0px;*/
+    width: 20px;
+    text-align: center;
+    font-size: 10px;
+    width: 18px;
 }
 td.glyph-select {
     width: 160px;
@@ -252,19 +277,41 @@ td.glyph-select select {
 
 /* slot > signet */
 td.signet-img {
-    width: 38px;
+    width: 48px;
     padding-right: 4px;
+    position: relative;
 }
-img.signet-icon {
+img.signet-icon-item {
     width: 38px;
     height:38px;
+    left: 5px;
+    top: 10px;
+    position: absolute;
     z-index: 0;
 }
-img.signet-icon-border {
+img.signet-icon-rarity {
     width: 38px;
     height:38px;
+    left: 5px;
+    top: 10px;
     position: absolute;
     z-index: 1;
+}
+.signet-label-level {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    color: white;
+    background-image: linear-gradient(#050505, #3B3B3B);
+    border: 2px solid;
+    border-radius: 4px;
+    line-height: 15px;
+    /*padding: 0px;*/
+    width: 20px;
+    text-align: center;
+    font-size: 10px;
+    width: 18px;
 }
 td.signet-select {
     width: 160px;
