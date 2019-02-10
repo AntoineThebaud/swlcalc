@@ -18,6 +18,9 @@ swlcalc.buttonBar = function() {
             btn_all_2_pip: $('#btn-all-2-pip'),
             btn_all_3_pip: $('#btn-all-3-pip'),
 
+            btn_all_lvl_min: $('#btn-all-lvl-min'),
+            btn_all_lvl_max: $('#btn-all-lvl-max'),
+
             btn_reset: $('#btn-reset')
         };
     };
@@ -42,6 +45,9 @@ swlcalc.buttonBar = function() {
         el.btn_all_1_pip.on('click', setQualityOnAllSlots);
         el.btn_all_2_pip.on('click', setQualityOnAllSlots);
         el.btn_all_3_pip.on('click', setQualityOnAllSlots);
+
+        el.btn_all_lvl_min.on('click', setLevelOnAllSlots);
+        el.btn_all_lvl_max.on('click', setLevelOnAllSlots);
 
         el.btn_reset.on('click', resetGear);
     };
@@ -83,6 +89,23 @@ swlcalc.buttonBar = function() {
             slot.el.equipmentQuality.change();
             slot.glyphQuality(newQuality);
             slot.el.glyphQuality.change();
+        }
+        swlcalc.summary.updateAllStats(); //TODO maybe useless ?
+    };
+
+    /**
+     * Set the same chosen rarity to all equipments+glyphs+signets.
+     */
+    var setLevelOnAllSlots = function(event) {
+        var minOrMax = event.currentTarget.id.split('-')[3]; //TODO better way to retrieve this value maybe ?
+        for (var id in swlcalc.gear.slots) {
+            var slot = swlcalc.gear.slots[id];
+            slot.equipmentLevel(slot.getAttrFromEquipmentLevel(minOrMax));
+            slot.el.equipmentLevel.change();
+            slot.glyphLevel(slot.getAttrFromGlyphLevel(minOrMax)); // TODO maybe simply put 1 or 20 ?
+            slot.el.glyphLevel.change();
+            slot.signetLevel(slot.getAttrFromSignetLevel(minOrMax)); // TODO maybe simply put 1 or 20 ?
+            slot.el.signetLevel.change();
         }
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
     };

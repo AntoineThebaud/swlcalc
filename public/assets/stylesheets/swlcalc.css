@@ -165,7 +165,6 @@ td.item-description {
 /* slot > equipment (talisman/weapon) */
 td.equipment-img {
     width: 58px;
-    padding-right: 4px;
     vertical-align: top;
     position: relative;
 }
@@ -224,7 +223,6 @@ td.equipment-select select {
 /* slot > glyph */
 td.glyph-img {
     width: 48px;
-    padding-right: 4px;
     position: relative;
 }
 img.glyph-icon-item {
@@ -278,7 +276,6 @@ td.glyph-select select {
 /* slot > signet */
 td.signet-img {
     width: 48px;
-    padding-right: 4px;
     position: relative;
 }
 img.signet-icon-item {
@@ -459,17 +456,37 @@ td.ilvl {
     pointer-events: none;
 }
 
+.btn-button-bar {
+    padding: 4px 6px;
+}
+
+.anima-allocation-span {
+    position: relative;
+}
+.anima-allocation-div {
+    position: absolute;
+    right: 0px;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+}
 .anima-allocation-label {
     font-size: 14px;
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-right: 5px;
+    /* margin-right: 5px; */
     margin-left: 5px;
     display: inline-block;
     vertical-align: middle;
 }
-
 .anima-allocation-select {
+    font-size: 14px;
     width: auto;
     margin-bottom: 0px;
+    background-color: #F5F5F5;
+    border: 0px;
+    padding: 0px;
+}
+
+.button-bar-dropdown {
+    min-width: auto;
 }

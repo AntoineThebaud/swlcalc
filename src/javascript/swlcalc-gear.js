@@ -247,6 +247,13 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Special Getter for #slot-equipment-level to retrieve any attribute value (like min, max..)
+     */
+    this.getAttrFromEquipmentLevel = function(attribute) {
+        return this.el.equipmentLevel.attr(attribute);
+    }
+
+    /**
      * Getter/Setter for #slot-equipment-power-rating
      */
     this.equipmentPowerRating = function() {
@@ -538,6 +545,13 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Special Getter for #slot-glyph-level to retrieve any attribute value (like min, max..)
+     */
+    this.getAttrFromGlyphLevel = function(attribute) {
+        return this.el.glyphLevel.attr(attribute);
+    }
+
+    /**
      * Getter/Setter for #slot-glyph-rating
      */
     this.glyphRating = function() {
@@ -558,7 +572,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
             return this.el.glyphLabel.html();
         }
     };
-
 
     /**
      * Getter/Setter for #slot-glyph-iLvl
@@ -753,6 +766,13 @@ swlcalc.gear.Slot = function Slot(slotData) {
             return this.el.signetLevel.val();
         }
     };
+
+    /**
+     * Special Getter for #slot-signet-level to retrieve any attribute value (like min, max..)
+     */
+    this.getAttrFromSignetLevel = function(attribute) {
+        return this.el.signetLevel.attr(attribute);
+    }
 
     /**
      * Getter/Setter for #slot-signet-ilvl
