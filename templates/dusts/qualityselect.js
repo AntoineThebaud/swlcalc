@@ -1,2 +1,0 @@
-// qualityselect.dust
-(function(){dust.register("qualityselect",body_0);function body_0(chk,ctx){return chk.write("<select id=\"").reference(ctx.get("id_prefix"),ctx,"h").write("-").reference(ctx.get("id_suffix"),ctx,"h").write("-quality\" title=\"Please select quality\"><option value=\"1\">").reference(ctx.get("pip1_name"),ctx,"h").write("</option><option value=\"2\">").reference(ctx.get("pip2_name"),ctx,"h").write("</option><option value=\"3\">").reference(ctx.get("pip3_name"),ctx,"h").write("</option></select>");}return body_0;})();
