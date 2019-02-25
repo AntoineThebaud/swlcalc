@@ -1737,7 +1737,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Quickness',
                 type: 'All',
-                description: 'After using Active Dodge, you recieve a speed bonus of <span id="occult-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> for 4 seconds.',
+                description: 'After using Active Dodge, you receive a speed bonus of <span id="occult-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> for 4 seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {

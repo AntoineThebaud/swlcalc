@@ -233,5 +233,5 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#occult-signet-rarity').val(), 'epic');
     equal($('#occult-signet-level').val(), '18');
     equal($('#occult-signet-ilvl').html(), '61');
-    equal($('#occult-signet-description').html(), 'After using Active Dodge, you recieve a speed bonus of <span id="occult-signet-bonus" class="bonus-val const">26.1579</span><span class="bonus-val const">%</span> for 4 seconds.');
+    equal($('#occult-signet-description').html(), 'After using Active Dodge, you receive a speed bonus of <span id="occult-signet-bonus" class="bonus-val const">26.1579</span><span class="bonus-val const">%</span> for 4 seconds.');
 });

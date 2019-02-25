@@ -213,7 +213,7 @@ test('should get and set the slot\'s signet iLvl', 2, function() {
 
 //TODO/TEST tswcalc test. swlcalc equivalent needed
 test('should get and set the slot\'s signet description', 2, function() {
-    equal(swlcalc.gear.slots.occult.signetDescription(), 'After using Active Dodge, you recieve a speed bonus of 26.1579% for 4 seconds.');
+    equal(swlcalc.gear.slots.occult.signetDescription(), 'After using Active Dodge, you receive a speed bonus of 26.1579% for 4 seconds.');
     swlcalc.gear.slots.occult.signetId('3');
     swlcalc.gear.slots.occult.signetRarity('epic');
     swlcalc.gear.slots.occult.signetLevel('18');
