@@ -55,7 +55,7 @@ option:disabled {
     color: #435682;
 }
 .templar {
-    color: #7e2d2f;
+    color: #7E2D2F;
 }
 .dragon {
     color: #436329;
@@ -68,7 +68,7 @@ option:disabled {
     color: #717171;
 }
 .darkgrey {
-    color: #3f3f3f;
+    color: #3F3F3F;
 }
 /******************************************************/
 .color-standard {
@@ -323,12 +323,12 @@ td.stat-inSummary {
     color: green;
 }
 .bonus-val.const {
-    color: orange;
+    color: #FF7D00;
 }
 /******************************************************/
 div .slot {
     margin-bottom: 20px;
-    background-color: #f5f5f5;
+    background-color: #F5F5F5;
     padding:5px;
     border-radius: 8px;
 }

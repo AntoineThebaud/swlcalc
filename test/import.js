@@ -72,7 +72,7 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#weapon-signet-rarity').val(), undefined);
     equal($('#weapon-signet-level').val(), undefined);
     equal($('#weapon-signet-ilvl').html(), undefined);
-    equal($('#weapon-signet-description').html(), 'When you hit or heal a target with this weapon you have a 50% chance to restore <span id="weapon-signet-bonus" class="bonus-val const">0.75</span><span class="bonus-val const">%</span> of your health.');
+    equal($('#weapon-signet-description').html(), 'When you hit or heal a target with this weapon you have a <span class="bonus-val const">50%</span> chance to restore <span id="weapon-signet-bonus" class="bonus-val const">0.75</span><span class="bonus-val const">%</span> of your health.');
 
     equal($('#weapon2-ilvl').html(), '353');
     equal($('#weapon2-equipment-id').val(), '2');
@@ -92,7 +92,7 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#weapon2-signet-rarity').val(), undefined);
     equal($('#weapon2-signet-level').val(), undefined);
     equal($('#weapon2-signet-ilvl').html(), undefined);
-    equal($('#weapon2-signet-description').html(), 'This weapon deals <span id="weapon2-signet-bonus" class="bonus-val attack">333.45</span> additional damage to enemies that are below 35% health.');
+    equal($('#weapon2-signet-description').html(), 'This weapon deals <span id="weapon2-signet-bonus" class="bonus-val attack">333.45</span> additional damage to enemies that are below <span class="bonus-val const">35%</span> health.');
 
     equal($('#head-ilvl').html(), '480');
     equal($('#head-equipment-id').val(), '1');
@@ -233,5 +233,5 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#occult-signet-rarity').val(), 'epic');
     equal($('#occult-signet-level').val(), '18');
     equal($('#occult-signet-ilvl').html(), '61');
-    equal($('#occult-signet-description').html(), 'After using Active Dodge, you receive a speed bonus of <span id="occult-signet-bonus" class="bonus-val const">26.1579</span><span class="bonus-val const">%</span> for 4 seconds.');
+    equal($('#occult-signet-description').html(), 'After using Active Dodge, you receive a speed bonus of <span id="occult-signet-bonus" class="bonus-val const">26.1579</span><span class="bonus-val const">%</span> for <span class="bonus-val const">4</span> seconds.');
 });

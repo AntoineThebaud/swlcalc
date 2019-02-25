@@ -24,7 +24,7 @@ swlcalc.data.signets = {
             {
                 id: 2,
                 name: 'Destruction',
-                description: 'This weapon deals <span id="%id-signet-bonus" class="bonus-val attack">%d</span> additional damage to enemies that are below 35% health.',
+                description: 'This weapon deals <span id="%id-signet-bonus" class="bonus-val attack">%d</span> additional damage to enemies that are below <span class="bonus-val const">35%</span> health.',
                 quality: {
                     '1': 0.15,
                     '2': 0.30,
@@ -45,7 +45,7 @@ swlcalc.data.signets = {
             {
                 id: 4,
                 name: 'Efficiency',
-                description: 'Your attacks and heals with this weapon have a 50% chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Your attacks and heals with this weapon have a <span class="bonus-val const">50%</span> chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 quality: {
                     '1': 2,
                     '2': 3,
@@ -65,7 +65,7 @@ swlcalc.data.signets = {
             {
                 id: 6,
                 name: 'Restoration',
-                description: 'When you hit or heal a target with this weapon you have a 50% chance to restore <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> of your health.',
+                description: 'When you hit or heal a target with this weapon you have a <span class="bonus-val const">50%</span> chance to restore <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> of your health.',
                 quality: {
                     '1': 0.75,
                     '2': 1.5,
@@ -1737,7 +1737,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Quickness',
                 type: 'All',
-                description: 'After using Active Dodge, you receive a speed bonus of <span id="occult-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> for 4 seconds.',
+                description: 'After using Active Dodge, you receive a speed bonus of <span id="occult-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> for <span class="bonus-val const">4</span> seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {
