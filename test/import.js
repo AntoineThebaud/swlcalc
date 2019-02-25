@@ -72,7 +72,7 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#weapon-signet-rarity').val(), undefined);
     equal($('#weapon-signet-level').val(), undefined);
     equal($('#weapon-signet-ilvl').html(), undefined);
-    equal($('#weapon-signet-description').html(), 'When you hit or heal a target with this weapon you have a 50% chance to restore <span id="weapon-signet-bonus" class="bonus-const">0.75</span><span class="bonus-const">%</span> of your health.');
+    equal($('#weapon-signet-description').html(), 'When you hit or heal a target with this weapon you have a 50% chance to restore <span id="weapon-signet-bonus" class="bonus-val const">0.75</span><span class="bonus-val const">%</span> of your health.');
 
     equal($('#weapon2-ilvl').html(), '353');
     equal($('#weapon2-equipment-id').val(), '2');
@@ -92,7 +92,7 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#weapon2-signet-rarity').val(), undefined);
     equal($('#weapon2-signet-level').val(), undefined);
     equal($('#weapon2-signet-ilvl').html(), undefined);
-    equal($('#weapon2-signet-description').html(), 'This weapon deals <span id="weapon2-signet-bonus" class="bonus-var-attack">333.45</span> additional damage to enemies that are below 35% health.');
+    equal($('#weapon2-signet-description').html(), 'This weapon deals <span id="weapon2-signet-bonus" class="bonus-val attack">333.45</span> additional damage to enemies that are below 35% health.');
 
     equal($('#head-ilvl').html(), '480');
     equal($('#head-equipment-id').val(), '1');
@@ -112,7 +112,7 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#head-signet-rarity').val(), 'superior');
     equal($('#head-signet-level').val(), '15');
     equal($('#head-signet-ilvl').html(), '26');
-    equal($('#head-signet-description').html(), 'Reduces the cooldown of all Elite Abilities by <span id="head-signet-bonus" class="bonus-const">7.0286</span><span class="bonus-const">%</span>.');
+    equal($('#head-signet-description').html(), 'Reduces the cooldown of all Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">7.0286</span><span class="bonus-val const">%</span>.');
 
 
     equal($('#finger-ilvl').html(), '411');
@@ -133,7 +133,7 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#finger-signet-rarity').val(), 'standard');
     equal($('#finger-signet-level').val(), '9');
     equal($('#finger-signet-ilvl').html(), '5');
-    equal($('#finger-signet-description').html(), 'Increases the damage and healing of all Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">2.1011</span><span class="bonus-const">%</span>.');
+    equal($('#finger-signet-description').html(), 'Increases the damage and healing of all Basic Abilities by <span id="finger-signet-bonus" class="bonus-val const">2.1011</span><span class="bonus-val const">%</span>.');
 
     equal($('#neck-ilvl').html(), '421');
     equal($('#neck-equipment-id').val(), '1');
@@ -153,7 +153,7 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#neck-signet-rarity').val(), 'superior');
     equal($('#neck-signet-level').val(), '3');
     equal($('#neck-signet-ilvl').html(), '16');
-    equal($('#neck-signet-description').html(), 'Increases the damage and healing of all Power Abilities by <span id="neck-signet-bonus" class="bonus-const">1.6271</span><span class="bonus-const">%</span>.');
+    equal($('#neck-signet-description').html(), 'Increases the damage and healing of all Power Abilities by <span id="neck-signet-bonus" class="bonus-val const">1.6271</span><span class="bonus-val const">%</span>.');
 
     equal($('#wrist-ilvl').html(), '286');
     equal($('#wrist-equipment-id').val(), '1');
@@ -173,7 +173,7 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#wrist-signet-rarity').val(), 'standard');
     equal($('#wrist-signet-level').val(), '14');
     equal($('#wrist-signet-ilvl').html(), '8');
-    equal($('#wrist-signet-description').html(), 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="wrist-signet-bonus" class="bonus-const">2.6362</span><span class="bonus-const">%</span>.');
+    equal($('#wrist-signet-description').html(), 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="wrist-signet-bonus" class="bonus-val const">2.6362</span><span class="bonus-val const">%</span>.');
 
     equal($('#luck-ilvl').html(), '325');
     equal($('#luck-equipment-id').val(), '1');
@@ -193,7 +193,7 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#luck-signet-rarity').val(), 'epic');
     equal($('#luck-signet-level').val(), '6');
     equal($('#luck-signet-ilvl').html(), '47');
-    equal($('#luck-signet-description').html(), 'When you critically hit, you are given a beneficial effect that damages attackers for <span id="luck-signet-bonus" class="bonus-var-attack">69.7008</span> when they hit you for <span class="bonus-const">5</span> seconds. This ability can only occur once every <span class="bonus-const">15</span> seconds.');
+    equal($('#luck-signet-description').html(), 'When you critically hit, you are given a beneficial effect that damages attackers for <span id="luck-signet-bonus" class="bonus-val attack">69.7008</span> when they hit you for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.');
 
     equal($('#waist-ilvl').html(), '428');
     equal($('#waist-equipment-id').val(), '1');
@@ -213,7 +213,7 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#waist-signet-rarity').val(), 'superior');
     equal($('#waist-signet-level').val(), '11');
     equal($('#waist-signet-ilvl').html(), '23');
-    equal($('#waist-signet-description').html(), 'Reduces the cooldown of Gadgets by <span id="waist-signet-bonus" class="bonus-const">17.5547</span><span class="bonus-const">%</span>.');
+    equal($('#waist-signet-description').html(), 'Reduces the cooldown of Gadgets by <span id="waist-signet-bonus" class="bonus-val const">17.5547</span><span class="bonus-val const">%</span>.');
 
     equal($('#occult-ilvl').html(), '339');
     equal($('#occult-equipment-id').val(), '1');
@@ -233,5 +233,5 @@ test('should import URL and set summary and slots', 189, function() {
     equal($('#occult-signet-rarity').val(), 'epic');
     equal($('#occult-signet-level').val(), '18');
     equal($('#occult-signet-ilvl').html(), '61');
-    equal($('#occult-signet-description').html(), 'After using Active Dodge, you recieve a speed bonus of <span id="occult-signet-bonus" class="bonus-const">26.1579</span><span class="bonus-const">%</span> for 4 seconds.');
+    equal($('#occult-signet-description').html(), 'After using Active Dodge, you recieve a speed bonus of <span id="occult-signet-bonus" class="bonus-val const">26.1579</span><span class="bonus-val const">%</span> for 4 seconds.');
 });

@@ -14,7 +14,7 @@ swlcalc.data.signets = {
             {
                 id: 1,
                 name: 'Alacrity',
-                description: 'Increased your move speed by <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> while in combat.',
+                description: 'Increased your move speed by <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> while in combat.',
                 quality: {
                     '1': 10,
                     '2': 15,
@@ -24,7 +24,7 @@ swlcalc.data.signets = {
             {
                 id: 2,
                 name: 'Destruction',
-                description: 'This weapon deals <span id="%id-signet-bonus" class="bonus-var-attack">%d</span> additional damage to enemies that are below 35% health.',
+                description: 'This weapon deals <span id="%id-signet-bonus" class="bonus-val attack">%d</span> additional damage to enemies that are below 35% health.',
                 quality: {
                     '1': 0.15,
                     '2': 0.30,
@@ -35,7 +35,7 @@ swlcalc.data.signets = {
             {
                 id: 3,
                 name: 'Energy',
-                description: 'When you use a Power Ability with this weapon you have <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> of consuming one less Energy.',
+                description: 'When you use a Power Ability with this weapon you have <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> of consuming one less Energy.',
                 quality: {
                     '1': 11,
                     '2': 22,
@@ -45,7 +45,7 @@ swlcalc.data.signets = {
             {
                 id: 4,
                 name: 'Efficiency',
-                description: 'Your attacks and heals with this weapon have a 50% chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Your attacks and heals with this weapon have a 50% chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 quality: {
                     '1': 2,
                     '2': 3,
@@ -55,7 +55,7 @@ swlcalc.data.signets = {
             {
                 id: 5,
                 name: 'Havoc',
-                description: '+<span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> critical hit damage and critical healing.',
+                description: '+<span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> critical hit damage and critical healing.',
                 quality: {
                     '1': 2.5,
                     '2': 5,
@@ -65,7 +65,7 @@ swlcalc.data.signets = {
             {
                 id: 6,
                 name: 'Restoration',
-                description: 'When you hit or heal a target with this weapon you have a 50% chance to restore <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> of your health.',
+                description: 'When you hit or heal a target with this weapon you have a 50% chance to restore <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> of your health.',
                 quality: {
                     '1': 0.75,
                     '2': 1.5,
@@ -75,7 +75,7 @@ swlcalc.data.signets = {
             {
                 id: 7,
                 name: 'Recovery',
-                description: 'You receive <span id="%id-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> more health from incoming heals.',
+                description: 'You receive <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> more health from incoming heals.',
                 quality: {
                     '1': 1,
                     '2': 2,
@@ -85,7 +85,7 @@ swlcalc.data.signets = {
             {
                 id: 8,
                 name: 'Warding',
-                description: 'Increases Protection by <span id="%id-signet-bonus" class="bonus-const">%d</span> while wielded.',
+                description: 'Increases Protection by <span id="%id-signet-bonus" class="bonus-val const">%d</span> while wielded.',
                 quality: {
                     '1': 150,
                     '2': 300,
@@ -98,7 +98,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of the Gunslinger',
                 type: 'Pistols',
-                description: 'Increases the damage and healing of Pistols Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Pistols Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -127,7 +127,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Cataclysms',
                 type: 'Elementalism',
-                description: 'Increases the damage and healing of Elemental Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Elemental Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -156,7 +156,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Deadly Force',
                 type: 'Shotgun',
-                description: 'Increases the damage and healing of Shotgun Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Shotgun Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -185,7 +185,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Disequilibrium',
                 type: 'Chaos',
-                description: 'Increases the damage and healing of Chaos Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Chaos Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -214,7 +214,7 @@ swlcalc.data.signets = {
                 id: 5,
                 name: 'Signet of Rituals',
                 type: 'Blood',
-                description: 'Increases the damage and healing of Blood Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Blood Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -243,7 +243,7 @@ swlcalc.data.signets = {
                 id: 6,
                 name: 'Signet of the Master',
                 type: 'Blade',
-                description: 'Increases the damage and healing of Blade Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Blade Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -272,7 +272,7 @@ swlcalc.data.signets = {
                 id: 7,
                 name: 'Signet of the Veteran',
                 type: 'Assault Rifle',
-                description: 'Increases the damage and healing of Assault Rifle Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Assault Rifle Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -301,7 +301,7 @@ swlcalc.data.signets = {
                 id: 8,
                 name: 'Signet of Fervour',
                 type: 'Fist',
-                description: 'Increases the damage and healing of Fist Weapon Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Fist Weapon Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -330,7 +330,7 @@ swlcalc.data.signets = {
                 id: 9,
                 name: 'Signet of Shattering',
                 type: 'Hammer',
-                description: 'Increases the damage and healing of Hammer Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Hammer Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -359,7 +359,7 @@ swlcalc.data.signets = {
                 id: 10,
                 name: 'Signet of the Paragon',
                 type: 'All',
-                description: 'Increases the damage and healing of all Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of all Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -388,7 +388,7 @@ swlcalc.data.signets = {
                 id: 11,
                 name: 'Signet of Quick Draw',
                 type: 'Pistols',
-                description: 'Reduces the cooldown of Pistols Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Reduces the cooldown of Pistols Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -417,7 +417,7 @@ swlcalc.data.signets = {
                 id: 12,
                 name: 'Signet of the Conflux',
                 type: 'Elementalism',
-                description: 'Reduces the cooldown of Elemental Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Reduces the cooldown of Elemental Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -446,7 +446,7 @@ swlcalc.data.signets = {
                 id: 13,
                 name: 'Signet of Rapid Response',
                 type: 'Shotgun',
-                description: 'Reduces the cooldown of Shotgun Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Reduces the cooldown of Shotgun Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -475,7 +475,7 @@ swlcalc.data.signets = {
                 id: 14,
                 name: 'Signet of Transience',
                 type: 'Chaos',
-                description: 'Reduces the cooldown of Chaos Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Reduces the cooldown of Chaos Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -504,7 +504,7 @@ swlcalc.data.signets = {
                 id: 15,
                 name: 'Signet of Bloodletting',
                 type: 'Blood',
-                description: 'Reduces the cooldown of Blood Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Reduces the cooldown of Blood Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -533,7 +533,7 @@ swlcalc.data.signets = {
                 id: 16,
                 name: 'Signet of Bladestorm',
                 type: 'Blade',
-                description: 'Reduces the cooldown of Blade Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Reduces the cooldown of Blade Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -562,7 +562,7 @@ swlcalc.data.signets = {
                 id: 17,
                 name: 'Signet of Burst Fire',
                 type: 'Assault Rifle',
-                description: 'Reduces the cooldown of Assault Rifle Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Reduces the cooldown of Assault Rifle Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -591,7 +591,7 @@ swlcalc.data.signets = {
                 id: 18,
                 name: 'Signet of Zeal',
                 type: 'Fist',
-                description: 'Reduces the cooldown of Fist Weapon Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Reduces the cooldown of Fist Weapon Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -620,7 +620,7 @@ swlcalc.data.signets = {
                 id: 19,
                 name: 'Signet of Mauling',
                 type: 'Hammer',
-                description: 'Reduces the cooldown of Hammer Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Reduces the cooldown of Hammer Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -649,7 +649,7 @@ swlcalc.data.signets = {
                 id: 20,
                 name: 'Signet of the Ascendant',
                 type: 'All',
-                description: 'Reduces the cooldown of all Elite Abilities by <span id="head-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Reduces the cooldown of all Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -680,7 +680,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of the Gambler',
                 type: 'Pistols',
-                description: 'Increases the damage and healing of Pistols Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Pistols Basic Abilities by <span id="finger-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -709,7 +709,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Elements',
                 type: 'Elementalism',
-                description: 'Increases the damage and healing of Elementalism Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Elementalism Basic Abilities by <span id="finger-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -738,7 +738,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Engagement',
                 type: 'Shotgun',
-                description: 'Increases the damage and healing of Shotgun Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Shotgun Basic Abilities by <span id="finger-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -767,7 +767,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Waxing Delirium',
                 type: 'Chaos',
-                description: 'Increases the damage and healing of Chaos Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Chaos Basic Abilities by <span id="finger-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -796,7 +796,7 @@ swlcalc.data.signets = {
                 id: 5,
                 name: 'Signet of Incantations',
                 type: 'Blood',
-                description: 'Increases the damage and healing of Blood Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Blood Basic Abilities by <span id="finger-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -825,7 +825,7 @@ swlcalc.data.signets = {
                 id: 6,
                 name: 'Signet of the Pupil',
                 type: 'Blade',
-                description: 'Increases the damage and healing of Blade Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Blade Basic Abilities by <span id="finger-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -854,7 +854,7 @@ swlcalc.data.signets = {
                 id: 7,
                 name: 'Signet of Rifleman\'s Creed',
                 type: 'Assault Rifle',
-                description: 'Increases the damage and healing of Assault Rifle Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Assault Rifle Basic Abilities by <span id="finger-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -883,7 +883,7 @@ swlcalc.data.signets = {
                 id: 8,
                 name: 'Signet of Intensity',
                 type: 'Fist',
-                description: 'Increases the damage and healing of Fist Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Fist Basic Abilities by <span id="finger-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -912,7 +912,7 @@ swlcalc.data.signets = {
                 id: 9,
                 name: 'Signet of Bludgeoning',
                 type: 'Hammer',
-                description: 'Increases the damage and healing of Hammer Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Hammer Basic Abilities by <span id="finger-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -941,7 +941,7 @@ swlcalc.data.signets = {
                 id: 10,
                 name: 'Signet of the Neophyte',
                 type: 'All',
-                description: 'Increases the damage and healing of all Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of all Basic Abilities by <span id="finger-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -972,7 +972,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of the Outlaw',
                 type: 'Pistols',
-                description: 'Increases the damage and healing of Pistols Power Abilities by <span id="neck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Pistols Power Abilities by <span id="neck-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -1001,7 +1001,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Devastation',
                 type: 'Elementalism',
-                description: 'Increases the damage and healing of Elementalism Power Abilities by <span id="neck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Elementalism Power Abilities by <span id="neck-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1030,7 +1030,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Riot Control',
                 type: 'Shotgun',
-                description: 'Increases the damage and healing of Shotgun Power Abilities by <span id="neck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Shotgun Power Abilities by <span id="neck-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1059,7 +1059,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Capriciousness',
                 type: 'Chaos',
-                description: 'Increases the damage and healing of Chaos Power Abilities by <span id="neck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Chaos Power Abilities by <span id="neck-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1088,7 +1088,7 @@ swlcalc.data.signets = {
                 id: 5,
                 name: 'Signet of Blood Rites',
                 type: 'Blood',
-                description: 'Increases the damage and healing of Blood Power Abilities by <span id="neck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Blood Power Abilities by <span id="neck-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1117,7 +1117,7 @@ swlcalc.data.signets = {
                 id: 6,
                 name: 'Signet of the Adept',
                 type: 'Blade',
-                description: 'Increases the damage and healing of Blade Power Abilities by <span id="neck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Blade Power Abilities by <span id="neck-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1146,7 +1146,7 @@ swlcalc.data.signets = {
                 id: 7,
                 name: 'Signet of the Commando',
                 type: 'Assault Rifle',
-                description: 'Increases the damage and healing of Assault Rifle Power Abilities by <span id="neck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Assault Rifle Power Abilities by <span id="neck-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1175,7 +1175,7 @@ swlcalc.data.signets = {
                 id: 8,
                 name: 'Signet of Ferocity',
                 type: 'Fist',
-                description: 'Increases the damage and healing of Fist Power Abilities by <span id="neck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Fist Power Abilities by <span id="neck-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1204,7 +1204,7 @@ swlcalc.data.signets = {
                 id: 9,
                 name: 'Signet of Crushing',
                 type: 'Hammer',
-                description: 'Increases the damage and healing of Hammer Power Abilities by <span id="neck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Hammer Power Abilities by <span id="neck-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -1233,7 +1233,7 @@ swlcalc.data.signets = {
                 id: 10,
                 name: 'Signet of the Journeyman',
                 type: 'All',
-                description: 'Increases the damage and healing of all Power Abilities by <span id="neck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of all Power Abilities by <span id="neck-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -1264,7 +1264,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of Condensed Anima',
                 type: 'All',
-                description: 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="wrist-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="wrist-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -1293,7 +1293,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Overwhelming Power',
                 type: 'All',
-                description: 'Increases the damage and healing of Ultimate Abilities by <span id="wrist-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage and healing of Ultimate Abilities by <span id="wrist-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1324,7 +1324,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of Amelioration',
                 type: 'All',
-                description: 'When you critically heal, you gain a beneficial effect that grants you a <span id="luck-signet-bonus" class="bonus-var-heal">%d</span><span class="bonus-var-heal">%</span> bonus to healing for <span class="bonus-const">5</span> seconds. This ability can only occur once every <span class="bonus-const">15</span> seconds.',
+                description: 'When you critically heal, you gain a beneficial effect that grants you a <span id="luck-signet-bonus" class="bonus-val heal">%d</span><span class="bonus-val heal">%</span> bonus to healing for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
                 cooldown: '0', //TODO/FEATURE : cooldown decrease with gear power
                 ratio: {
                     'standard': {
@@ -1353,7 +1353,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Cruel Delight',
                 type: 'All',
-                description: 'When you critically hit, you are healed for <span id="luck-signet-bonus" class="bonus-var-heal">%d</span>.',
+                description: 'When you critically hit, you are healed for <span id="luck-signet-bonus" class="bonus-val heal">%d</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1382,7 +1382,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Echoes',
                 type: 'All',
-                description: 'When you critically heal, your defensive target is given a beneficial effect that heals for <span id="luck-signet-bonus" class="bonus-var-heal">%d</span> every second for <span class="bonus-const">5</span> seconds. This ability can only occur once every <span class="bonus-const">15</span> seconds.',
+                description: 'When you critically heal, your defensive target is given a beneficial effect that heals for <span id="luck-signet-bonus" class="bonus-val heal">%d</span> every second for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1412,7 +1412,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Empowerment',
                 type: 'All',
-                description: 'When you critically heal, your defensive target is given a beneficial effect that increases their damage by <span id="luck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> for <span class="bonus-const">5</span> seconds. This ability can only occur once every <span class="bonus-const">15</span> seconds.',
+                description: 'When you critically heal, your defensive target is given a beneficial effect that increases their damage by <span id="luck-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1441,7 +1441,7 @@ swlcalc.data.signets = {
                 id: 5,
                 name: 'Signet of Laceration',
                 type: 'All',
-                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="luck-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> bonus to critical damage for <span class="bonus-const">5</span> seconds. This ability can only occur once every <span class="bonus-const">15</span> seconds.',
+                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="luck-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> bonus to critical damage for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1470,7 +1470,7 @@ swlcalc.data.signets = {
                 id: 6,
                 name: 'Signet of Sadism',
                 type: 'All',
-                description: 'When you critically hit, your target is affected with a detrimental effect that deals <span id="luck-signet-bonus" class="bonus-var-attack">%d</span> damage every second for <span class="bonus-const">5</span> seconds. This ability can only occur once every <span class="bonus-const">15</span> seconds.',
+                description: 'When you critically hit, your target is affected with a detrimental effect that deals <span id="luck-signet-bonus" class="bonus-val attack">%d</span> damage every second for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1500,7 +1500,7 @@ swlcalc.data.signets = {
                 id: 7,
                 name: 'Signet of Thirst',
                 type: 'All',
-                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="luck-signet-bonus" class="bonus-var-heal">%d</span><span class="bonus-const">%</span> leech effect for <span class="bonus-const">5</span> seconds. This effect can heal up to y damage before being removed, and can only occur once every <span class="bonus-const">15</span> seconds.',
+                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="luck-signet-bonus" class="bonus-val heal">%d</span><span class="bonus-val const">%</span> leech effect for <span class="bonus-val const">5</span> seconds. This effect can heal up to y damage before being removed, and can only occur once every <span class="bonus-val const">15</span> seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1529,7 +1529,7 @@ swlcalc.data.signets = {
                 id: 8,
                 name: 'Signet of Thorns',
                 type: 'All',
-                description: 'When you critically hit, you are given a beneficial effect that damages attackers for <span id="luck-signet-bonus" class="bonus-var-attack">%d</span> when they hit you for <span class="bonus-const">5</span> seconds. This ability can only occur once every <span class="bonus-const">15</span> seconds.',
+                description: 'When you critically hit, you are given a beneficial effect that damages attackers for <span id="luck-signet-bonus" class="bonus-val attack">%d</span> when they hit you for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1561,7 +1561,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of Biological Metamorphosis',
                 type: 'All',
-                description: 'Increases the healing of Gadgets by <span id="waist-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the healing of Gadgets by <span id="waist-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1590,7 +1590,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Matter Creation',
                 type: 'All',
-                description: 'Increases the damage of Gadgets by <span id="waist-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Increases the damage of Gadgets by <span id="waist-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1619,7 +1619,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Time and Space Alteration',
                 type: 'All',
-                description: 'Reduces the cooldown of Gadgets by <span id="waist-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Reduces the cooldown of Gadgets by <span id="waist-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1650,7 +1650,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of Acrobatics',
                 type: 'All',
-                description: 'Reduces the cooldown of Active Dodge by <span id="occult-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Reduces the cooldown of Active Dodge by <span id="occult-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1679,7 +1679,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Contortion',
                 type: 'All',
-                description: 'Active dodges break movement hindering effects, but also have their cooldown increased by <span id="occult-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Active dodges break movement hindering effects, but also have their cooldown increased by <span id="occult-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '', // TODO for this one the number decreases with levels !
                 ratio: {
                     'standard': {
@@ -1708,7 +1708,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Shoulder Tackle',
                 type: 'All',
-                description: 'Your active dodges have a <span id="occult-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> to knock down enemies in your path, but also have their cooldown increased by <span id="occult-signet-bonus2" class="bonus-const">%d</span><span class="bonus-const">%</span>.',
+                description: 'Your active dodges have a <span id="occult-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> to knock down enemies in your path, but also have their cooldown increased by <span id="occult-signet-bonus2" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1737,7 +1737,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Quickness',
                 type: 'All',
-                description: 'After using Active Dodge, you recieve a speed bonus of <span id="occult-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> for 4 seconds.',
+                description: 'After using Active Dodge, you recieve a speed bonus of <span id="occult-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> for 4 seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1766,7 +1766,7 @@ swlcalc.data.signets = {
                 id: 5,
                 name: 'Signet of Agility',
                 type: 'All',
-                description: 'Your active dodges have a <span id="occult-signet-bonus" class="bonus-const">%d</span><span class="bonus-const">%</span> chance to not trigger their cooldown.',
+                description: 'Your active dodges have a <span id="occult-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> chance to not trigger their cooldown.',
                 cooldown: '',
                 ratio: {
                     'standard': {

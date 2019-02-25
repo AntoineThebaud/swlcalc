@@ -492,7 +492,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates #slot-equipment-label-level (border color)
      */
     this.updateEquipmentLabelLevelColor = function() {
-        this.el.equipmentLabelLevel.attr('class', 'equipment-label-level border-' + this.equipmentRarity());
+        this.el.equipmentLabelLevel.attr('class', 'label-level big border-' + this.equipmentRarity());
     };
 
     /**********************************************************************************
@@ -716,7 +716,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates #slot-glyph-label-level (border color)
      */
     this.updateGlyphLabelLevelColor = function() {
-        this.el.glyphLabelLevel.attr('class', 'glyph-label-level border-' + this.glyphRarity());
+        this.el.glyphLabelLevel.attr('class', 'label-level little border-' + this.glyphRarity());
     };
 
     /**********************************************************************************
@@ -956,7 +956,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Updates #slot-signet-label-level (border color)
      */
     this.updateSignetLabelLevelColor = function() {
-        this.el.signetLabelLevel.attr('class', 'signet-label-level border-' + this.signetRarity());
+        this.el.signetLabelLevel.attr('class', 'label-level little border-' + this.signetRarity());
     };
 
     /**********************************************************************************

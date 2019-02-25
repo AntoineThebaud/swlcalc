@@ -58,7 +58,7 @@ test('should import from hash', 189, function() {
     equal($('#weapon-signet-rarity').val(), undefined);
     equal($('#weapon-signet-level').val(), undefined);
     equal($('#weapon-signet-ilvl').html(), undefined);
-    equal($('#weapon-signet-description').html(), 'This weapon deals <span id="weapon-signet-bonus" class="bonus-var-attack">347.4</span> additional damage to enemies that are below 35% health.');
+    equal($('#weapon-signet-description').html(), 'This weapon deals <span id="weapon-signet-bonus" class="bonus-val attack">347.4</span> additional damage to enemies that are below 35% health.');
 
     ok(!$('#weapon2-slot').is(':visible'));
     equal($('#weapon2-ilvl').html(), '581');
@@ -79,7 +79,7 @@ test('should import from hash', 189, function() {
     equal($('#weapon2-signet-rarity').val(), undefined);
     equal($('#weapon2-signet-level').val(), undefined);
     equal($('#weapon2-signet-ilvl').html(), undefined);
-    equal($('#weapon2-signet-description').html(), 'Increases Protection by <span id="weapon2-signet-bonus" class="bonus-const">300</span> while wielded.');
+    equal($('#weapon2-signet-description').html(), 'Increases Protection by <span id="weapon2-signet-bonus" class="bonus-val const">300</span> while wielded.');
 
     equal($('#head-ilvl').html(), '487');
     equal($('#head-equipment-id').val(), '4');
@@ -88,7 +88,7 @@ test('should import from hash', 189, function() {
     equal($('#head-equipment-level').val(), '24');
     equal($('#head-equipment-power-rating').html(), '+1113');
     equal($('#head-equipment-ilvl').html(), '252');
-    equal($('#head-equipment-description').html(), 'Whenever you hit the same enemy 3 times in succession, you deal <span id="head-equipment-bonus1" class="bonus-var-attack">290</span> physical damage.');
+    equal($('#head-equipment-description').html(), 'Whenever you hit the same enemy 3 times in succession, you deal <span id="head-equipment-bonus1" class="bonus-val attack">290</span> physical damage.');
     equal($('#head-glyph-id').val(), 'critical-power');
     equal($('#head-glyph-rarity').val(), 'mythic');
     equal($('#head-glyph-quality').val(), '2');
@@ -99,7 +99,7 @@ test('should import from hash', 189, function() {
     equal($('#head-signet-rarity').val(), 'standard');
     equal($('#head-signet-level').val(), '16');
     equal($('#head-signet-ilvl').html(), '10');
-    equal($('#head-signet-description').html(), 'Increases the damage and healing of Pistols Elite Abilities by <span id="head-signet-bonus" class="bonus-const">3.4495</span><span class="bonus-const">%</span>.');
+    equal($('#head-signet-description').html(), 'Increases the damage and healing of Pistols Elite Abilities by <span id="head-signet-bonus" class="bonus-val const">3.4495</span><span class="bonus-val const">%</span>.');
 
 
     equal($('#finger-ilvl').html(), '571');
@@ -109,7 +109,7 @@ test('should import from hash', 189, function() {
     equal($('#finger-equipment-level').val(), '20');
     equal($('#finger-equipment-power-rating').html(), '+314');
     equal($('#finger-equipment-ilvl').html(), '113');
-    equal($('#finger-equipment-description').html(), 'Whenever you purge a beneficial effect from an enemy\'s ability, your Protection is increased by <span class="bonus-const">1530</span> for 4 seconds.');
+    equal($('#finger-equipment-description').html(), 'Whenever you purge a beneficial effect from an enemy\'s ability, your Protection is increased by <span class="bonus-val const">1530</span> for 4 seconds.');
     equal($('#finger-glyph-id').val(), 'evade-rating');
     equal($('#finger-glyph-rarity').val(), 'legendary');
     equal($('#finger-glyph-quality').val(), '3');
@@ -120,7 +120,7 @@ test('should import from hash', 189, function() {
     equal($('#finger-signet-rarity').val(), 'mythic');
     equal($('#finger-signet-level').val(), '2');
     equal($('#finger-signet-ilvl').html(), '89');
-    equal($('#finger-signet-description').html(), 'Increases the damage and healing of Pistols Basic Abilities by <span id="finger-signet-bonus" class="bonus-const">47.9079</span><span class="bonus-const">%</span>.');
+    equal($('#finger-signet-description').html(), 'Increases the damage and healing of Pistols Basic Abilities by <span id="finger-signet-bonus" class="bonus-val const">47.9079</span><span class="bonus-val const">%</span>.');
 
     equal($('#neck-ilvl').html(), '232');
     equal($('#neck-equipment-id').val(), '11');
@@ -140,7 +140,7 @@ test('should import from hash', 189, function() {
     equal($('#neck-signet-rarity').val(), 'mythic');
     equal($('#neck-signet-level').val(), '3');
     equal($('#neck-signet-ilvl').html(), '91');
-    equal($('#neck-signet-description').html(), 'Increases the damage and healing of Pistols Power Abilities by <span id="neck-signet-bonus" class="bonus-const">12.6405</span><span class="bonus-const">%</span>.');
+    equal($('#neck-signet-description').html(), 'Increases the damage and healing of Pistols Power Abilities by <span id="neck-signet-bonus" class="bonus-val const">12.6405</span><span class="bonus-val const">%</span>.');
 
     equal($('#wrist-ilvl').html(), '1292');
     equal($('#wrist-equipment-id').val(), '2');
@@ -149,7 +149,7 @@ test('should import from hash', 189, function() {
     equal($('#wrist-equipment-level').val(), '68');
     equal($('#wrist-equipment-power-rating').html(), '+1951');
     equal($('#wrist-equipment-ilvl').html(), '1026');
-    equal($('#wrist-equipment-description').html(), 'Whenever you heal an ally who does not have any active detrimental effects, you have a 25% chance to restore <span id="wrist-equipment-bonus1" class="bonus-var-heal">221</span> health to that ally.');
+    equal($('#wrist-equipment-description').html(), 'Whenever you heal an ally who does not have any active detrimental effects, you have a 25% chance to restore <span id="wrist-equipment-bonus1" class="bonus-val heal">221</span> health to that ally.');
     equal($('#wrist-glyph-id').val(), 'critical-power');
     equal($('#wrist-glyph-rarity').val(), 'epic');
     equal($('#wrist-glyph-quality').val(), '2');
@@ -160,7 +160,7 @@ test('should import from hash', 189, function() {
     equal($('#wrist-signet-rarity').val(), 'legendary');
     equal($('#wrist-signet-level').val(), '8');
     equal($('#wrist-signet-ilvl').html(), '172');
-    equal($('#wrist-signet-description').html(), 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="wrist-signet-bonus" class="bonus-const">36.1004</span><span class="bonus-const">%</span>.');
+    equal($('#wrist-signet-description').html(), 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="wrist-signet-bonus" class="bonus-val const">36.1004</span><span class="bonus-val const">%</span>.');
 
     equal($('#luck-ilvl').html(), '136');
     equal($('#luck-equipment-id').val(), '1');
@@ -180,7 +180,7 @@ test('should import from hash', 189, function() {
     equal($('#luck-signet-rarity').val(), 'epic');
     equal($('#luck-signet-level').val(), '13');
     equal($('#luck-signet-ilvl').html(), '55');
-    equal($('#luck-signet-description').html(), 'When you critically heal, you gain a beneficial effect that grants you a <span id="luck-signet-bonus" class="bonus-var-heal">17.8511</span><span class="bonus-var-heal">%</span> bonus to healing for <span class="bonus-const">5</span> seconds. This ability can only occur once every <span class="bonus-const">15</span> seconds.');
+    equal($('#luck-signet-description').html(), 'When you critically heal, you gain a beneficial effect that grants you a <span id="luck-signet-bonus" class="bonus-val heal">17.8511</span><span class="bonus-val heal">%</span> bonus to healing for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.');
 
     equal($('#waist-ilvl').html(), '846');
     equal($('#waist-equipment-id').val(), '11');
@@ -200,7 +200,7 @@ test('should import from hash', 189, function() {
     equal($('#waist-signet-rarity').val(), 'epic');
     equal($('#waist-signet-level').val(), '16');
     equal($('#waist-signet-ilvl').html(), '59');
-    equal($('#waist-signet-description').html(), 'Reduces the cooldown of Gadgets by <span id="waist-signet-bonus" class="bonus-const">32.7158</span><span class="bonus-const">%</span>.');
+    equal($('#waist-signet-description').html(), 'Reduces the cooldown of Gadgets by <span id="waist-signet-bonus" class="bonus-val const">32.7158</span><span class="bonus-val const">%</span>.');
 
     equal($('#occult-ilvl').html(), '540');
     equal($('#occult-equipment-id').val(), '7');
@@ -209,7 +209,7 @@ test('should import from hash', 189, function() {
     equal($('#occult-equipment-level').val(), '19');
     equal($('#occult-equipment-power-rating').html(), '+112');
     equal($('#occult-equipment-ilvl').html(), '42');
-    equal($('#occult-equipment-description').html(), 'Whenever you or any of your group members defeat an enemy, your Protection is increased by <span class="bonus-const">2045</span> for 5 seconds.');
+    equal($('#occult-equipment-description').html(), 'Whenever you or any of your group members defeat an enemy, your Protection is increased by <span class="bonus-val const">2045</span> for 5 seconds.');
     equal($('#occult-glyph-id').val(), 'hit-rating');
     equal($('#occult-glyph-rarity').val(), 'legendary');
     equal($('#occult-glyph-quality').val(), '3');
@@ -220,7 +220,7 @@ test('should import from hash', 189, function() {
     equal($('#occult-signet-rarity').val(), 'legendary');
     equal($('#occult-signet-level').val(), '10');
     equal($('#occult-signet-ilvl').html(), '175');
-    equal($('#occult-signet-description').html(), 'Active dodges break movement hindering effects, but also have their cooldown increased by <span id="occult-signet-bonus" class="bonus-const">56.4684</span><span class="bonus-const">%</span>.');
+    equal($('#occult-signet-description').html(), 'Active dodges break movement hindering effects, but also have their cooldown increased by <span id="occult-signet-bonus" class="bonus-val const">56.4684</span><span class="bonus-val const">%</span>.');
 });
 
 test('should set default values with an empty hash', 191, function() {

@@ -20,7 +20,7 @@
                 </a>
             </td>
             {/is_weapon}
-            <td class="slot-ilvl">
+            <td class="slot-ilvl lightgrey">
                 Item Power : <span id="{id_prefix}-ilvl">0</span>
             </td>
         </tr>
@@ -28,14 +28,14 @@
     <table class="table table-slots">
         <tr>
             {?is_weapon}
-            <td class="item-title" colspan="2">Weapon</td>
+            <td class="item-title lightgrey" colspan="2">Weapon</td>
             {:else}
-            <td class="item-title" colspan="2">Talisman</td>
+            <td class="item-title lightgrey" colspan="2">Talisman</td>
             {/is_weapon}
-            <td class="upgrade-label rarity-label">
+            <td class="upgrade-label rarity swlcalclabel">
                 <strong>Rarity :</strong>
             </td>
-            <td class="upgrade-select rarity-select">
+            <td class="upgrade-select rarity swlcalcselect">
                 {>rarityselect id_suffix="equipment"/}
             </td>
             <td class="stat-value stat-inSlot">
@@ -47,12 +47,12 @@
                 {/is_weapon}
             </td>
         </tr>
-        <tr class="tr-with-icon">
+        <tr class="with-icon">
             <td class="equipment-img">
-                <img id="{id_prefix}-equipment-img-quality" class="equipment-icon-quality" src="assets/images/icons/quality/1.png"/>
-                <img id="{id_prefix}-equipment-img-rarity" class="equipment-icon-rarity" src=""/>
-                <img id="{id_prefix}-equipment-img-icon" class="equipment-icon-item" src="" alt="image"/>
-                <div id="{id_prefix}-equipment-label-level" class="equipment-label-level border-standard">20</div>
+                <img id="{id_prefix}-equipment-img-quality" class="item-icon equipment quality" src="assets/images/icons/quality/1.png"/>
+                <img id="{id_prefix}-equipment-img-rarity" class="item-icon equipment rarity" src=""/>
+                <img id="{id_prefix}-equipment-img-icon" class="item-icon equipment item" src="" alt="image"/>
+                <div id="{id_prefix}-equipment-label-level" class="label-level big border-standard">20</div>
             </td>
             <td class="equipment-select">
                 {?is_weapon}
@@ -88,29 +88,29 @@
             </td>
         </tr>
         <tr>
-            <td class="ilvl">
+            <td class="ilvl lightgrey">
                 <span id="{id_prefix}-equipment-ilvl">0</span>
             </td>
         </tr>
     </table>
     <table id="{id_prefix}-glyphs" class="table table-slots">
         <tr>
-            <td class="item-title" colspan="2">Glyph</td>
-            <td class="upgrade-label rarity-label">
+            <td class="item-title lightgrey" colspan="2">Glyph</td>
+            <td class="upgrade-label rarity swlcalclabel">
                 <strong>Rarity :</strong>
             </td>
-            <td class="upgrade-select rarity-select">
+            <td class="upgrade-select rarity swlcalcselect">
                 {>rarityselect id_suffix="glyph"/}
             </td>
             <td class="filler"></td>
         </tr>
-        <tr class="tr-with-icon">
+        <tr class="with-icon">
             <td class="glyph-img">
                 <a href="#" class="glyph-tooltip" data-toggle="tooltip" title="Glyph for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
-                    <img id="{id_prefix}-glyph-img-quality" class="glyph-icon-quality" src="assets/images/icons/quality/1.png"/>
-                    <img id="{id_prefix}-glyph-img-rarity" class="glyph-icon-rarity" src="assets/images/icons/rarity/none-42x42.png"/>
-                    <img id="{id_prefix}-glyph-img-icon" class="glyph-icon-item" src="assets/images/icons/glyph/none.png" alt="Glyph"/>
-                    <div id="{id_prefix}-glyph-label-level" class="glyph-label-level border-standard">20</div>
+                    <img id="{id_prefix}-glyph-img-quality" class="item-icon glyph quality" src="assets/images/icons/quality/1.png"/>
+                    <img id="{id_prefix}-glyph-img-rarity" class="item-icon glyph rarity" src="assets/images/icons/rarity/none-42x42.png"/>
+                    <img id="{id_prefix}-glyph-img-icon" class="item-icon glyph item" src="assets/images/icons/glyph/none.png" alt="Glyph"/>
+                    <div id="{id_prefix}-glyph-label-level" class="label-level little border-standard">20</div>
                 </a>
             </td>
             <td class="glyph-select">
@@ -143,7 +143,7 @@
             <td class="upgrade-select level-select">
                 <input id="{id_prefix}-glyph-level" type="range" min="1" max="20" value="20" class="level-slider">
             </td>
-            <td class="ilvl">
+            <td class="ilvl lightgrey">
                 <span id="{id_prefix}-glyph-ilvl">0</span>
             </td>
         </tr>
@@ -151,7 +151,7 @@
     <table id="{id_prefix}-signets" class="table table-slots">
         {?is_weapon}
         <tr>
-            <td class="item-title" colspan="2">Suffix</td>
+            <td class="item-title lightgrey" colspan="2">Suffix</td>
             <td id="{id_prefix}-signet-description" class="item-description" colspan="3" rowspan="2"></td>
         <tr>
             <td class="signet-select" colspan="2">
@@ -160,21 +160,21 @@
         </tr>
         {:else}
         <tr>
-            <td class="item-title" colspan="2">Signet</td>
-            <td class="upgrade-label rarity-label">
+            <td class="item-title lightgrey" colspan="2">Signet</td>
+            <td class="upgrade-label rarity swlcalclabel">
                 <strong>Rarity :</strong>
             </td>
-            <td class="upgrade-select rarity-select">
+            <td class="upgrade-select rarity swlcalcselect">
                 {>rarityselect id_suffix="signet"/}
             </td>
             <td id="{id_prefix}-signet-description" class="item-description"></td>
         </tr>
-        <tr class="tr-with-icon">
+        <tr class="with-icon">
             <td class="signet-img">
                 <a href="#" class="signet-tooltip" data-toggle="tooltip" title="Signet for the {name} slot. Choose the rarity and type of signet.">
-                    <img id="{id_prefix}-signet-img-rarity" class="signet-icon-rarity" src="assets/images/icons/rarity/none-42x42.png"/>
-                    <img id="{id_prefix}-signet-img-icon" class="signet-icon-item" src="assets/images/icons/signet/none.png" alt="Signet"/>
-                    <div id="{id_prefix}-signet-label-level" class="signet-label-level border-standard">20</div>
+                    <img id="{id_prefix}-signet-img-rarity" class="item-icon signet rarity" src="assets/images/icons/rarity/none-42x42.png"/>
+                    <img id="{id_prefix}-signet-img-icon" class="item-icon signet item" src="assets/images/icons/signet/none.png" alt="Signet"/>
+                    <div id="{id_prefix}-signet-label-level" class="label-level little border-standard">20</div>
                 </a>
             </td>
             <td class="signet-select">
@@ -186,7 +186,7 @@
             <td class="upgrade-select quality-select"> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
                 <input id="{id_prefix}-signet-level" type="range" min="1" max="20" value="20" class="level-slider">
             </td>
-            <td class="ilvl">
+            <td class="ilvl lightgrey">
                 <span id="{id_prefix}-signet-ilvl">0</span>
             </td>
         </tr>
