@@ -1,6 +1,6 @@
 
-module('swap-button-integration-tests', {
-    setup: function() {
+QUnit.module("swap-button-integration-tests", {
+    beforeEach: function(assert) {
         renderSlots();
         initiateButtonHandlers();
         initiateSelectHandlers();
@@ -8,22 +8,22 @@ module('swap-button-integration-tests', {
     }
 });
 
-test('should have primary weapon drawn and secondary weapon sheathed', 2, function() {
-    ok(swlcalc.gear.slots.weapon.el.div.is(':visible'), 'primary visible');
-    ok(!swlcalc.gear.slots.weapon2.el.div.is(':visible'), 'secondary hidden');
+QUnit.test("should have primary weapon drawn and secondary weapon sheathed", function(assert) {
+    assert.ok(swlcalc.gear.slots.weapon.el.div.is(":visible"), "primary visible");
+    assert.ok(!swlcalc.gear.slots.weapon2.el.div.is(":visible"), "secondary hidden");
 });
 
-test('should swap weapon from primary to secondary', 2, function() {
-    $('#weapon-swap-weapon').click();
+QUnit.test("should swap weapon from primary to secondary", function(assert) {
+    $("#weapon-swap-weapon").click();
 
-    ok(!swlcalc.gear.slots.weapon.el.div.is(':visible'), 'primary hidden');
-    ok(swlcalc.gear.slots.weapon2.el.div.is(':visible'), 'secondary visible');
+    assert.ok(!swlcalc.gear.slots.weapon.el.div.is(":visible"), "primary hidden");
+    assert.ok(swlcalc.gear.slots.weapon2.el.div.is(":visible"), "secondary visible");
 });
 
-test('should swap weapon from primary to secondary and back again', 2, function() {
-    $('#weapon-swap-weapon').click();
-    $('#weapon2-swap-weapon').click();
+QUnit.test("should swap weapon from primary to secondary and back again", function(assert) {
+    $("#weapon-swap-weapon").click();
+    $("#weapon2-swap-weapon").click();
 
-    ok(swlcalc.gear.slots.weapon.el.div.is(':visible'), 'primary visible');
-    ok(!swlcalc.gear.slots.weapon2.el.div.is(':visible'), 'secondary hidden');
+    assert.ok(swlcalc.gear.slots.weapon.el.div.is(":visible"), "primary visible");
+    assert.ok(!swlcalc.gear.slots.weapon2.el.div.is(":visible"), "secondary hidden");
 });

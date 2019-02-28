@@ -1,13 +1,13 @@
 
-module('util-unit-tests', {});
+QUnit.module("util-unit-tests", {});
 
-test('should capitalise word', 1, function() {
-    deepEqual(swlcalc.util.capitalise('swlcalc'), 'Swlcalc');
+QUnit.test("should capitalise word", function(assert) {
+    assert.deepEqual(swlcalc.util.capitalise("swlcalc"), "Swlcalc");
 });
 
-test('should return blank if None/none', 2, function() {
-    deepEqual(swlcalc.util.blankIfNone('none'), '');
-    deepEqual(swlcalc.util.blankIfNone('None'), '');
+QUnit.test("should return blank if None/none", function(assert) {
+    assert.deepEqual(swlcalc.util.blankIfNone("none"), "");
+    assert.deepEqual(swlcalc.util.blankIfNone("None"), "");
 });
 
 //TODO/TEST : add test for precisionRound()

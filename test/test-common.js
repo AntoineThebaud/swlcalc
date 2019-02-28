@@ -1,7 +1,7 @@
 //TODO/REFACTOR : use these functions for each test module setup !
 
 function renderSlots() {
-    renderTemplate('slots', {
+    renderTemplate("slots", {
         slots: swlcalc.data.template_data.slots,
         signets: swlcalc.data.signets
     });
@@ -9,7 +9,7 @@ function renderSlots() {
 }
 
 function renderSummary() {
-    renderTemplate('summary', {});
+    renderTemplate("summary", {});
 }
 
 function renderButtonbar() {
@@ -23,12 +23,12 @@ function renderTemplate(template_name, data) {
         if (err) {
             console.log(err);
         }
-        $('#qunit-fixture').append(out);
+        $("#qunit-fixture").append(out);
     });
 }
 
 function clearFixture() {
-    $('#qunit-fixture').html('');
+    $("#qunit-fixture").html("");
 }
 
 function initiateSummary() {
@@ -41,9 +41,9 @@ function initiateButtonHandlers() {
 
 function initiateSelectHandlers() {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-        var slot = swlcalc.data.template_data.slots[i];
-        swlcalc.select[slot.id_prefix] = new swlcalc.select.SelectHandler(slot);
-        swlcalc.select[slot.id_prefix].init();
+        var slot = swlcalc.data.template_data.slots[ i ];
+        swlcalc.select[ slot.id_prefix ] = new swlcalc.select.SelectHandler(slot);
+        swlcalc.select[ slot.id_prefix ].init();
     }
 }
 

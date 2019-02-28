@@ -1,57 +1,57 @@
 
-module('selects-dom', {
-    setup: function() {
+QUnit.module("selects-dom", {
+    beforeEach: function(assert) {
         renderSlots();
     }
 });
 
-test('should have required selects in the DOM', 95, function() {
+QUnit.test("should have required selects in the DOM", function(assert) {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var id = swlcalc.data.template_data.slots[i].id_prefix;
-        ok($('#' + id + '-equipment-id').length !== 0, id + '-equipment-id exists');
-        ok($('#' + id + '-equipment-rarity').length !== 0, id + '-equipment-rarity exists');
-        ok($('#' + id + '-equipment-quality').length !== 0, id + '-equipment-quality exists');
-        ok($('#' + id + '-equipment-level').length !== 0, id + '-equipment-level exists');
-        ok($('#' + id + '-glyph-id').length !== 0, id + '-glyph-id exists');
-        ok($('#' + id + '-glyph-rarity').length !== 0, id + '-glyph-rarity exists');
-        ok($('#' + id + '-glyph-quality').length !== 0, id + '-glyph-quality exists');
-        ok($('#' + id + '-glyph-level').length !== 0, id + '-glyph-level exists');
-        ok($('#' + id + '-signet-id').length !== 0, id + '-signet-id exists');
-        if (id != 'weapon' && id != 'weapon2') {
-            ok($('#' + id + '-signet-rarity').length !== 0, id + '-signet-rarity exists');
-            ok($('#' + id + '-signet-level').length !== 0, id + '-signet-level exists');
+        assert.ok($("#" + id + "-equipment-id").length !== 0, id + "-equipment-id exists");
+        assert.ok($("#" + id + "-equipment-rarity").length !== 0, id + "-equipment-rarity exists");
+        assert.ok($("#" + id + "-equipment-quality").length !== 0, id + "-equipment-quality exists");
+        assert.ok($("#" + id + "-equipment-level").length !== 0, id + "-equipment-level exists");
+        assert.ok($("#" + id + "-glyph-id").length !== 0, id + "-glyph-id exists");
+        assert.ok($("#" + id + "-glyph-rarity").length !== 0, id + "-glyph-rarity exists");
+        assert.ok($("#" + id + "-glyph-quality").length !== 0, id + "-glyph-quality exists");
+        assert.ok($("#" + id + "-glyph-level").length !== 0, id + "-glyph-level exists");
+        assert.ok($("#" + id + "-signet-id").length !== 0, id + "-signet-id exists");
+        if (id != "weapon" && id != "weapon2") {
+            assert.ok($("#" + id + "-signet-rarity").length !== 0, id + "-signet-rarity exists");
+            assert.ok($("#" + id + "-signet-level").length !== 0, id + "-signet-level exists");
         }
     }
 });
 
-module('selects-events', {
-    setup: function() {
+QUnit.module("selects-events", {
+    beforeEach: function(assert) {
         renderSlots();
         initiateSelectHandlers();
     }
 });
 
-test('should have required event listeners for change on selects in the DOM', 95, function() {
+QUnit.test("should have required event listeners for change on selects in the DOM", function(assert) {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var id = swlcalc.data.template_data.slots[i].id_prefix;
-        ok($._data($('#' + id + '-equipment-id').get(0), 'events').change instanceof Array);
-        ok($._data($('#' + id + '-equipment-rarity').get(0), 'events').change instanceof Array);
-        ok($._data($('#' + id + '-equipment-quality').get(0), 'events').change instanceof Array);
-        ok($._data($('#' + id + '-equipment-level').get(0), 'events').change instanceof Array);
-        ok($._data($('#' + id + '-glyph-id').get(0), 'events').change instanceof Array);
-        ok($._data($('#' + id + '-glyph-rarity').get(0), 'events').change instanceof Array);
-        ok($._data($('#' + id + '-glyph-quality').get(0), 'events').change instanceof Array);
-        ok($._data($('#' + id + '-glyph-level').get(0), 'events').change instanceof Array);
-        ok($._data($('#' + id + '-signet-id').get(0), 'events').change instanceof Array);
-        if (id != 'weapon' && id != 'weapon2') {
-            ok($._data($('#' + id + '-signet-rarity').get(0), 'events').change instanceof Array);
-            ok($._data($('#' + id + '-signet-level').get(0), 'events').change instanceof Array);
+        assert.ok($._data($("#" + id + "-equipment-id").get(0), "events").change instanceof Array);
+        assert.ok($._data($("#" + id + "-equipment-rarity").get(0), "events").change instanceof Array);
+        assert.ok($._data($("#" + id + "-equipment-quality").get(0), "events").change instanceof Array);
+        assert.ok($._data($("#" + id + "-equipment-level").get(0), "events").change instanceof Array);
+        assert.ok($._data($("#" + id + "-glyph-id").get(0), "events").change instanceof Array);
+        assert.ok($._data($("#" + id + "-glyph-rarity").get(0), "events").change instanceof Array);
+        assert.ok($._data($("#" + id + "-glyph-quality").get(0), "events").change instanceof Array);
+        assert.ok($._data($("#" + id + "-glyph-level").get(0), "events").change instanceof Array);
+        assert.ok($._data($("#" + id + "-signet-id").get(0), "events").change instanceof Array);
+        if (id != "weapon" && id != "weapon2") {
+            assert.ok($._data($("#" + id + "-signet-rarity").get(0), "events").change instanceof Array);
+            assert.ok($._data($("#" + id + "-signet-level").get(0), "events").change instanceof Array);
         }
     }
 });
 
-module('selects-unit-tests', {
-    setup: function() {
+QUnit.module("selects-unit-tests", {
+    beforeEach: function(assert) {
         renderButtonbar();
         renderSlots();
         initiateSelectHandlers();
@@ -59,17 +59,18 @@ module('selects-unit-tests', {
     }
 });
 
-test('should have fill talismans and weapon lists', 9, function() {
+QUnit.test("should have fill talismans and weapon lists", function(assert) {
+
     // None option must be taken into account
-    equal($('#weapon-equipment-id option').size(), 145);
-    equal($('#weapon2-equipment-id option').size(), 145);
-    equal($('#head-equipment-id option').size(), 15);
-    equal($('#finger-equipment-id option').size(), 8);
-    equal($('#neck-equipment-id option').size(), 13);
-    equal($('#wrist-equipment-id option').size(), 9);
-    equal($('#luck-equipment-id option').size(), 9);
-    equal($('#waist-equipment-id option').size(), 20);
-    equal($('#occult-equipment-id option').size(), 9);
+    assert.equal($("#weapon-equipment-id option").size(), 145);
+    assert.equal($("#weapon2-equipment-id option").size(), 145);
+    assert.equal($("#head-equipment-id option").size(), 15);
+    assert.equal($("#finger-equipment-id option").size(), 8);
+    assert.equal($("#neck-equipment-id option").size(), 13);
+    assert.equal($("#wrist-equipment-id option").size(), 9);
+    assert.equal($("#luck-equipment-id option").size(), 9);
+    assert.equal($("#waist-equipment-id option").size(), 20);
+    assert.equal($("#occult-equipment-id option").size(), 9);
 });
 
 //TODO/TEST tswcalc test. swlcalc equivalent needed
@@ -90,8 +91,8 @@ test('should have fill talismans and weapon lists', 9, function() {
 //     equal(swlcalc.select['head'].getSignetsForHead('head').length, 22);
 // });
 
-module('selects-integration-tests', {
-    setup: function() {
+QUnit.module("selects-integration-tests", {
+    beforeEach: function(assert) {
         renderButtonbar();
         renderSlots();
         initiateButtonHandlers();
@@ -105,7 +106,7 @@ module('selects-integration-tests', {
 //     swlcalc.gear.slots.weapon.equipmentId('1');
 //     swlcalc.gear.slots.weapon.el.equipmentId.change();
 
-//     deepEqual(swlcalc.gear.slots.weapon.name(), ': Blade');
+//     DeepEqual(swlcalc.gear.slots.weapon.name(), ': Blade');
 // });
 
 //TODO/FEATURE : dynamic slot name
@@ -113,7 +114,7 @@ module('selects-integration-tests', {
 //     swlcalc.gear.slots.weapon2.equipmentId('1');
 //     swlcalc.gear.slots.weapon2.el.equipmentId.change();
 
-//     deepEqual(swlcalc.gear.slots.weapon2.name(), ': Blade');
+//     DeepEqual(swlcalc.gear.slots.weapon2.name(), ': Blade');
 // });
 
 //TODO/FEATURE : dynamic slot name
@@ -123,7 +124,7 @@ module('selects-integration-tests', {
 //     swlcalc.gear.slots.weapon.equipmentId('none');
 //     swlcalc.gear.slots.weapon.el.equipmentId.change();
 
-//     deepEqual(swlcalc.gear.slots.weapon.name(), '');
+//     DeepEqual(swlcalc.gear.slots.weapon.name(), '');
 // });
 
 //TODO/FEATURE : dynamic slot name
@@ -133,37 +134,37 @@ module('selects-integration-tests', {
 //     swlcalc.gear.slots.weapon2.equipmentId('none');
 //     swlcalc.gear.slots.weapon2.el.equipmentId.change();
 
-//     deepEqual(swlcalc.gear.slots.weapon2.name(), '');
+//     DeepEqual(swlcalc.gear.slots.weapon2.name(), '');
 // });
 
-test('should set a non-zero ilvl value when selecting a glyph and then set it back to 0 when selecting none option', 3, function() {
-    equal(swlcalc.gear.slots.occult.glyphILvl(), 0);
-    swlcalc.gear.slots.occult.glyphId('critical-rating');
+QUnit.test("should set a non-zero ilvl value when selecting a glyph and then set it back to 0 when selecting none option", function(assert) {
+    assert.equal(swlcalc.gear.slots.occult.glyphILvl(), 0);
+    swlcalc.gear.slots.occult.glyphId("critical-rating");
     swlcalc.gear.slots.occult.el.glyphId.change();
-    equal(swlcalc.gear.slots.occult.glyphILvl(), 24);
-    swlcalc.gear.slots.occult.glyphId('none');
+    assert.equal(swlcalc.gear.slots.occult.glyphILvl(), 24);
+    swlcalc.gear.slots.occult.glyphId("none");
     swlcalc.gear.slots.occult.el.glyphId.change();
-    equal(swlcalc.gear.slots.occult.glyphILvl(), 0);
+    assert.equal(swlcalc.gear.slots.occult.glyphILvl(), 0);
 });
 
-test('should update any #slot-equipment-level sliders when its associated rarity is changed', 54, function() {
+QUnit.test("should update any #slot-equipment-level sliders when its associated rarity is changed", function(assert) {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var id = swlcalc.data.template_data.slots[i].id_prefix;
-        equal($('#' + id + '-equipment-level').attr('max'), 20, "Untouched " + id + "-equipment-level should have values between 1 and 20");
-        swlcalc.gear.slots[id].equipmentRarity('superior');
+        assert.equal($("#" + id + "-equipment-level").attr("max"), 20, "Untouched " + id + "-equipment-level should have values between 1 and 20");
+        swlcalc.gear.slots[id].equipmentRarity("superior");
         swlcalc.gear.slots[id].el.equipmentRarity.change();
-        equal($('#' + id + '-equipment-level').attr('max'), 25, "After " + id + "-equipment-rarity set to Superior, " + id + "-equipment-level should have values between 1 and 25");
-        swlcalc.gear.slots[id].equipmentRarity('legendary');
+        assert.equal($("#" + id + "-equipment-level").attr("max"), 25, "After " + id + "-equipment-rarity set to Superior, " + id + "-equipment-level should have values between 1 and 25");
+        swlcalc.gear.slots[id].equipmentRarity("legendary");
         swlcalc.gear.slots[id].el.equipmentRarity.change();
-        equal($('#' + id + '-equipment-level').attr('max'), 70, "After " + id + "-equipment-rarity set to Legendary, " + id + "-equipment-level should have values between 1 and 70");
-        swlcalc.gear.slots[id].equipmentRarity('epic');
+        assert.equal($("#" + id + "-equipment-level").attr("max"), 70, "After " + id + "-equipment-rarity set to Legendary, " + id + "-equipment-level should have values between 1 and 70");
+        swlcalc.gear.slots[id].equipmentRarity("epic");
         swlcalc.gear.slots[id].el.equipmentRarity.change();
-        equal($('#' + id + '-equipment-level').attr('max'), 30, "After " + id + "-equipment-rarity set to Epic, " + id + "-equipment-level should have values between 1 and 30");
-        swlcalc.gear.slots[id].equipmentRarity('mythic');
+        assert.equal($("#" + id + "-equipment-level").attr("max"), 30, "After " + id + "-equipment-rarity set to Epic, " + id + "-equipment-level should have values between 1 and 30");
+        swlcalc.gear.slots[id].equipmentRarity("mythic");
         swlcalc.gear.slots[id].el.equipmentRarity.change();
-        equal($('#' + id + '-equipment-level').attr('max'), 35, "After " + id + "-equipment-rarity set to Mythic, " + id + "-equipment-level should have values between 1 and 35");
-        swlcalc.gear.slots[id].equipmentRarity('standard');
+        assert.equal($("#" + id + "-equipment-level").attr("max"), 35, "After " + id + "-equipment-rarity set to Mythic, " + id + "-equipment-level should have values between 1 and 35");
+        swlcalc.gear.slots[id].equipmentRarity("standard");
         swlcalc.gear.slots[id].el.equipmentRarity.change();
-        equal($('#' + id + '-equipment-level').attr('max'), 20, "After " + id + "-equipment-rarity set back to Standard, " + id + "-equipment-level should have values between 1 and 20");
+        assert.equal($("#" + id + "-equipment-level").attr("max"), 20, "After " + id + "-equipment-rarity set back to Standard, " + id + "-equipment-level should have values between 1 and 20");
     }
 });
