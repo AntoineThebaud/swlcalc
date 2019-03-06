@@ -62,15 +62,15 @@ QUnit.module("selects-unit-tests", {
 QUnit.test("should have fill talismans and weapon lists", function(assert) {
 
     // None option must be taken into account
-    assert.equal($("#weapon-equipment-id option").size(), 145);
-    assert.equal($("#weapon2-equipment-id option").size(), 145);
-    assert.equal($("#head-equipment-id option").size(), 15);
-    assert.equal($("#finger-equipment-id option").size(), 8);
-    assert.equal($("#neck-equipment-id option").size(), 13);
-    assert.equal($("#wrist-equipment-id option").size(), 9);
-    assert.equal($("#luck-equipment-id option").size(), 9);
-    assert.equal($("#waist-equipment-id option").size(), 20);
-    assert.equal($("#occult-equipment-id option").size(), 9);
+    assert.equal($("#weapon-equipment-id option").length, 145);
+    assert.equal($("#weapon2-equipment-id option").length, 145);
+    assert.equal($("#head-equipment-id option").length, 15);
+    assert.equal($("#finger-equipment-id option").length, 8);
+    assert.equal($("#neck-equipment-id option").length, 13);
+    assert.equal($("#wrist-equipment-id option").length, 9);
+    assert.equal($("#luck-equipment-id option").length, 9);
+    assert.equal($("#waist-equipment-id option").length, 20);
+    assert.equal($("#occult-equipment-id option").length, 9);
 });
 
 //TODO/TEST tswcalc test. swlcalc equivalent needed
