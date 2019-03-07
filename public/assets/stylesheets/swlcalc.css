@@ -6,6 +6,9 @@ body {
 select {
     font-size: 12px;
     height: 32px;
+    width: 220px;
+    background-color: #fff;
+    border: 1px solid #ccc;
 }
 option:disabled {
     display:none;
@@ -126,14 +129,14 @@ option:disabled {
 .table-slots {
     border-top: 1px solid #ddd;
 }
-.table-slots td {
+div[id$="-slot"] .table-slots td {
     border: none;
-}
-.table-stats td {
-    font-size: 12px;
     padding: 0px;
 }
-.table-stats th {
+div[id="summary"] .table-stats td {
+    padding: 0px;
+}
+div[id="summary"] .table-stats th {
     padding: 5px 5px 5px 0px;
 }
 #table-primary label {
@@ -368,7 +371,7 @@ td.ilvl {
 }
 .anima-allocation-div {
     position: absolute;
-    right: 0px;
+    right: 15px;
     background-color: #F5F5F5;
     border-radius: 4px;
 }
