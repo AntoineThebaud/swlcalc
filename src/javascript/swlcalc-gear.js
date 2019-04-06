@@ -629,6 +629,19 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Updates #slot-glyph-quality (refresh list of available qualities after change on glyph rarity)
+     */
+    this.updateGlyphQuality = function() {
+        var elaborateOptionExists = ($('#' + this.id + '-glyph-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
+        if (swlcalc.data.rarity_mapping.to_num[this.glyphRarity()] >= 3 && !elaborateOptionExists) { // TODO/REFACTOR add global const like EPIC = 3 ?
+            this.el.glyphQuality.append("<option value='4'>Elaborate</option>");
+        } else if (swlcalc.data.rarity_mapping.to_num[this.glyphRarity()] < 3 && elaborateOptionExists) {
+            $('#' + this.id + '-glyph-quality option[value=4]').remove(); // TODO/REFACTOR to abstract access
+            this.updateGlyphImgQuality();
+        }
+    }
+
+    /**
      * Updates #slot-glyph-rating (calculatations with stats data)
      *   INFO : in SWL a glyph rating value depends on its rarity-quality-level, neither the slot (head/major/minor) nor
      *   the glyph stat impact the calculation (whereas it was the case in TSW) => /!\ exception for crit power

@@ -186,6 +186,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleGlyphRarityChange = function(event) {
         updateTextColor(this);
+        slotObj.updateGlyphQuality();        
         slotObj.updateGlyphImgRarity();
         slotObj.updateGlyphLabelLevelColor();
         slotObj.updateGlyphILvl();

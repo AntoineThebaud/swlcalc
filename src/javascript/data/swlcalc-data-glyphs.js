@@ -42,6 +42,10 @@ swlcalc.data.glyph = {
         '3': {
             rating_init: 268,
             rating_per_level: 156/19 // == (424 - 268) / (20 - 1)
+        },
+        '4': {
+            rating_init: 295,
+            rating_per_level: 171/19 // == (466 - 295) / (20 - 1)
         }
     },
     'mythic': {
@@ -56,6 +60,10 @@ swlcalc.data.glyph = {
         '3': {
             rating_init: 488,
             rating_per_level: 195/19 // == (683 - 488) / (20 - 1)
+        },
+        '4': {
+            rating_init: 537,
+            rating_per_level: 214/19 // == (751 - 537) / (20 - 1)
         }
     },
     'legendary': {
@@ -70,6 +78,10 @@ swlcalc.data.glyph = {
         '3': {
             rating_init: 762,
             rating_per_level: 394/19 // == (1156 - 762) / (20 - 1)
+        },
+        '4': {
+            rating_init: 838,
+            rating_per_level: 434/19 // == (1272 - 838) / (20 - 1)
         }
     }
 };
