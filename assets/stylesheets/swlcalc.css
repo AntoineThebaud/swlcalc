@@ -1,19 +1,36 @@
+/******************************************************/
 body {
     padding-top: 10px;
     padding-bottom: 20px;
 }
-
 select {
     font-size: 12px;
     height: 32px;
+    width: 220px;
+    background-color: #fff;
+    border: 1px solid #ccc;
 }
-
-
+option:disabled {
+    display:none;
+}
+div.container {
+    width: 940px;
+}
+/******************************************************/
 .masthead {
     margin-top: 10px;
 }
-
-
+#export-textarea {
+  resize: none;
+}
+.not-functionnal {
+    color: lightgray !important;
+}
+.fix-link {
+    cursor: pointer;
+    pointer-events: none;
+}
+/******************************************************/
 .div-logo {
     display: inline-block;
     position: relative;
@@ -23,6 +40,7 @@ select {
 }
 .logo-slogan {
     font-size: 12px;
+    font-weight: normal;
     margin-left: 10px;
     position: absolute;
     bottom: 0;
@@ -36,30 +54,29 @@ select {
     width: 180px;
     position: absolute;
     bottom: 2px;
-    left: 285px;
+    left: 302px;
 }
-
-
+/******************************************************/
 .illuminati {
     color: #435682;
 }
 .templar {
-    color: #7e2d2f;
+    color: #7E2D2F;
 }
 .dragon {
     color: #436329;
 }
-
-
+/******************************************************/
 .lightgrey {
+    color: #A7A7A7;
+}
+.mediumgrey {
     color: #717171;
-    font-weight: normal;
 }
 .darkgrey {
-    color: #3f3f3f;
+    color: #3F3F3F;
 }
-
-
+/******************************************************/
 .color-standard {
     color: #05B114;
 }
@@ -75,7 +92,17 @@ select {
 .color-legendary {
     color: #E62C38;
 }
-
+/******************************************************/
+.color-dps {
+    color: #E62C38;
+}
+.color-heal {
+    color: #05B114;
+}
+.color-tank {
+    color: #039BD9;
+}
+/******************************************************/
 .border-standard {
     border-color: #05B114 !important;
 }
@@ -91,18 +118,11 @@ select {
 .border-legendary {
     border-color: #E62C38 !important;
 }
-
-.color-dps {
-    color: #E62C38;
+/******************************************************/
+.btn-group.setter {
+    padding-right: 5px;
 }
-.color-heal {
-    color: #05B114;
-}
-.color-tank {
-    color: #039BD9;
-}
-
-
+/******************************************************/
 .table {
     margin-bottom: 10px;
 }
@@ -110,21 +130,31 @@ select {
     min-width: 32px;
     min-height: 32px;
     font-size: 12px;
-    padding: 0px;
+    /* padding: 0px; */
     vertical-align: middle;
 }
 .table-slots {
     border-top: 1px solid #ddd;
 }
-.table-slots td {
+div[id$="-slot"] select {
+    border-radius: 4px;
+}
+div[id$="-slot"] .table-slots td {
     border: none;
+    vertical-align: top;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
-.table-stats td {
-    font-size: 12px;
-    padding: 0px;
+div[id="summary"] .table-stats td {
+    padding: 1px;
 }
-.table-stats th {
-    padding: 5px 5px 5px 0px;
+div[id="summary"] .table-stats th {
+    padding-top: 5px;
+    padding-bottom: 3px;
+    padding-right: 5px;
+    padding-left: 0px;
 }
 #table-primary label {
    margin: 10px 0px 10px 0px;
@@ -135,250 +165,172 @@ select {
 .table-title {
     width: 100%;
 }
-
 .td-title {
     min-width: 300px;
 }
+tr.with-icon {
+    height: 48px;
+}
+td.filler {
+    width: auto;
+}
+.icon-retweet {
 
+}
+.swap-weapon {
+    margin-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+/******************************************************/
 /* rules relative to any kind of item (talisman, weapon, glyph or signet) */
-td.item-title {
+div[id$="-slot"] .table-slots td.item-title {
     font-size: 15px;
-    color: #A7A7A7;
     font-style: italic;
     font-weight: bold;
-    vertical-align: bottom;
-    padding-bottom: 8px;
+    vertical-align: middle;
     padding-left: 15px;
-    padding-top: 13px;
 }
-
-td.item-description {
-    padding-top: 10px;
+div[id$="-slot"] .table-slots td.item-description {
+    text-align: justify;
+    line-height: 18px;
+    vertical-align: top;
     padding-left: 10px;
     padding-right: 5px;
-    text-align: justify;
-    vertical-align: top;
 }
-
-
-
+/******************************************************/
+div.label-level {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    color: white;
+    background-image: linear-gradient(#050505, #3B3B3B);
+    border: 2px solid;
+    border-radius: 4px;
+    line-height: 15px;
+    text-align: center;
+}
+div.label-level.big {
+    width: 24px;
+    padding-top: 1px;
+}
+div.label-level.little {
+    width: 20px;
+    font-size: 10px;
+}
+/******************************************************/
+div[id$="-slot"] .table-slots img.item-icon {
+    position: absolute;
+}
+div[id$="-slot"] .table-slots img.item-icon.item {
+    z-index: 0;
+}
+div[id$="-slot"] .table-slots img.item-icon.rarity {
+    z-index: 1;
+}
+div[id$="-slot"] .table-slots img.item-icon.quality {
+    z-index: 2;
+}
+/******************************************************/
 /* slot > equipment (talisman/weapon) */
-td.equipment-img {
+div[id$="-slot"] .table-slots td.equipment-img {
     width: 58px;
     vertical-align: top;
     position: relative;
 }
-.equipment-icon-item {
+div[id$="-slot"] .table-slots img.item-icon.equipment {
     width: 48px;
     height:48px;
     left: 5px;
     top: 5px;
-    position: absolute;
-    z-index: 0;
 }
-.equipment-icon-rarity {
-    width: 48px;
-    height:48px;
-    left: 5px;
-    top: 5px;
-    position: absolute;
-    z-index: 1;
-}
-.equipment-icon-quality {
-    width: 48px;
-    height:48px;
-    left: 5px;
-    top: 5px;
-    position: absolute;
-    z-index: 2;
-}
-.equipment-label-level {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 3;
-    color: white;
-    background-image: linear-gradient(#050505, #3B3B3B);
-    border: 2px solid;
-    border-radius: 4px;
-    line-height: 15px;
-    padding-left: 1px;
-    padding-right: 1px;
-    padding-top: 1px;
-    width: 20px;
-    text-align: center;
-}
-
-td.equipment-select {
+div[id$="-slot"] .table-slots td.equipment-select {
     width: 150px;
 }
-td.equipment-select select {
-    margin-bottom: 0px;
+div[id$="-slot"] .table-slots td.equipment-select select {
     max-width: 140px;
 }
-.tr-with-icon {
-    height: 58px;
-}
-
-/* slot > glyph */
-td.glyph-img {
+/******************************************************/
+/* slot > glyph & signet */
+div[id$="-slot"] .table-slots td.glyph-img,
+div[id$="-slot"] .table-slots td.signet-img {
     width: 48px;
     position: relative;
 }
-img.glyph-icon-item {
+div[id$="-slot"] .table-slots img.item-icon.glyph,
+div[id$="-slot"] .table-slots img.item-icon.signet {
     width: 38px;
     height:38px;
     left: 5px;
     top: 10px;
-    position: absolute;
-    z-index: 0;
 }
-img.glyph-icon-rarity {
-    width: 38px;
-    height:38px;
-    left: 5px;
-    top: 10px;
-    position: absolute;
-    z-index: 1;
-}
-img.glyph-icon-quality {
-    width: 38px;
-    height:38px;
-    left: 5px;
-    top: 10px;
-    position: absolute;
-    z-index: 2;
-}
-.glyph-label-level {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 3;
-    color: white;
-    background-image: linear-gradient(#050505, #3B3B3B);
-    border: 2px solid;
-    border-radius: 4px;
-    line-height: 15px;
-    /*padding: 0px;*/
-    width: 20px;
-    text-align: center;
-    font-size: 10px;
-    width: 18px;
-}
-td.glyph-select {
+div[id$="-slot"] .table-slots td.glyph-select,
+div[id$="-slot"] .table-slots td.signet-select {
     width: 160px;
 }
-td.glyph-select select {
-    margin-bottom: 0px;
+div[id$="-slot"] .table-slots td.glyph-select select,
+div[id$="-slot"] .table-slots td.signet-select select {
     max-width: 150px;
 }
-
-/* slot > signet */
-td.signet-img {
-    width: 48px;
-    position: relative;
-}
-img.signet-icon-item {
-    width: 38px;
-    height:38px;
-    left: 5px;
-    top: 10px;
-    position: absolute;
-    z-index: 0;
-}
-img.signet-icon-rarity {
-    width: 38px;
-    height:38px;
-    left: 5px;
-    top: 10px;
-    position: absolute;
-    z-index: 1;
-}
-.signet-label-level {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 3;
-    color: white;
-    background-image: linear-gradient(#050505, #3B3B3B);
-    border: 2px solid;
-    border-radius: 4px;
-    line-height: 15px;
-    /*padding: 0px;*/
-    width: 20px;
-    text-align: center;
-    font-size: 10px;
-    width: 18px;
-}
-td.signet-select {
-    width: 160px;
-}
-td.signet-select select {
-    margin-bottom: 0px;
-    max-width: 150px;
-}
-
-
+/******************************************************/
 /* slot > all > rarity+quality+level */
-td.upgrade-label {
-    width: 50px;
+div[id$="-slot"] .table-slots td.upgrade-label {
+    width: 65px;
 }
-td.upgrade-select {
+div[id$="-slot"] .table-slots td.upgrade-select {
     width: 100px;
 }
-td.upgrade-select select {
+div[id$="-slot"] .table-slots td.upgrade-select select {
     width: 100%;
-    margin-bottom: 0px;
 }
-
-
+/******************************************************/
 /* slot > all > rarity */
-td.rarity-label {
-    padding-top: 10px;
-    padding-bottom: 5px;
-    vertical-align: bottom;
+div[id$="-slot"] .table-slots td.rarity {
 }
-td.rarity-select {
-    padding-top: 10px;
-    vertical-align: bottom;
+div[id$="-slot"] .table-slots td.rarity.swlcalclabel {
 }
-td.rarity-select select {
+div[id$="-slot"] .table-slots td.rarity.swlcalclabel strong {
+    padding-top: 8px;
+    display: inline-block; /* see https://stackoverflow.com/questions/14604541/padding-top-not-working */
 }
-
-
+div[id$="-slot"] .table-slots td.rarity.swlcalcselect {
+}
+div[id$="-slot"] .table-slots td.rarity.select select {
+}
+/******************************************************/
 /* slot > all > quality */
-td.quality-label {
+div[id$="-slot"] .table-slots td.quality-label {
 }
-td.quality-select {
+div[id$="-slot"] .table-slots td.quality-label strong {
+    padding-top: 8px;
+    display: inline-block; /* see https://stackoverflow.com/questions/14604541/padding-top-not-working */
 }
-td.quality-select select {
+div[id$="-slot"] .table-slots td.quality-select {
 }
-
-
+table[id$="-signets"] td.quality-select {
+    vertical-align: middle;
+}
+div[id$="-slot"] .table-slots td.quality-select select {
+}
+/******************************************************/
 /* slot > all > level */
-td.level-label {
-    vertical-align: top;
-    padding-top: 5px;
+div[id$="-slot"] .table-slots td.level-label {
 }
-td.level-select {
-    vertical-align: top;
+div[id$="-slot"] .table-slots td.level-select {
 }
-td.level-select select {
+div[id$="-slot"] .table-slots td.level-select select {
 }
-.level-slider {
+div[id$="-slot"] .table-slots input.level-slider {
     width: 100px;
 }
-
-
-td.filler {
-    width: auto;
-}
-
-
-.stat-name {
+/******************************************************/
+td.stat-name {
     width: 200px;
 }
-.stat-value {
+td.stat-value {
     font-weight: bold;
     color: green;
 }
@@ -388,57 +340,47 @@ td.stat-inSlot {
 td.stat-inSummary {
     text-align: right;
 }
-
-
-.bonus-var-attack {
+/******************************************************/
+.bonus-val {
     font-weight: bold;
+}
+.bonus-val.attack {
     color: red;
 }
-.bonus-var-heal {
-    font-weight: bold;
+.bonus-val.heal {
     color: green;
 }
-.bonus-const {
-    font-weight: bold;
-    color: orange;
+.bonus-val.const {
+    color: #FF7D00;
 }
-
-
+/******************************************************/
 div .slot {
     margin-bottom: 20px;
-    background-color: #f5f5f5;
+    background-color: #F5F5F5;
     padding:5px;
     border-radius: 8px;
 }
-
 .slot-name {
     font-weight: normal;
 }
-
 .slot h4 {
     padding: 0px;
     display: inline;
+    font-weight: bold
 }
 
-#export-textarea {
-  resize: none;
+div[id="summary"] h4 {
+    font-weight: bold
 }
-
-option:disabled {
-    display:none;
-}
-
+/******************************************************/
 td.slot-ilvl {
-    color: #A7A7A7;
     font-size: 12px;
     padding: 0px;
     text-align: right;
     font-weight: bold;
     min-width: 100px;
 }
-
 td.ilvl {
-    color: #A7A7A7;
     font-size: 10px;
     font-weight: bold;
     padding: 0px;
@@ -446,26 +388,23 @@ td.ilvl {
     vertical-align: bottom;
     line-height: 12px;
 }
-
-.not-functionnal {
-    color: lightgray !important;
+.td-swap {
+    padding-left: 100px;
 }
-
-.fix-link {
-    cursor: pointer;
-    pointer-events: none;
-}
-
+/******************************************************/
 .btn-button-bar {
     padding: 4px 6px;
 }
-
+.button-bar-dropdown {
+    min-width: auto;
+}
+/******************************************************/
 .anima-allocation-span {
     position: relative;
 }
 .anima-allocation-div {
     position: absolute;
-    right: 0px;
+    right: 15px;
     background-color: #F5F5F5;
     border-radius: 4px;
 }
@@ -485,8 +424,4 @@ td.ilvl {
     background-color: #F5F5F5;
     border: 0px;
     padding: 0px;
-}
-
-.button-bar-dropdown {
-    min-width: auto;
 }
