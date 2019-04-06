@@ -1,7 +1,7 @@
 <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-5">
         <!-- [ Set rarity v ] -->
-        <div class="btn-group">
+        <div class="btn-group setter">
             <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
                 Set rarity <span class="caret"></span>
             </a>
@@ -15,7 +15,7 @@
         </div>
 
         <!-- [ Set quality v ] -->
-        <div class="btn-group">
+        <div class="btn-group setter">
             <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
                 Set quality <span class="caret"></span>
             </a>
@@ -27,7 +27,7 @@
         </div>
 
         <!-- [ Set level v ] -->
-        <div class="btn-group">
+        <div class="btn-group setter">
             <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
                 Set level <span class="caret"></span>
             </a>
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <div class="col-lg-5 anima-allocation-span">
+    <div class="col-lg-4 anima-allocation-span">
         <!-- Anima allocation [ 100% DPS |V] -->
         <div class="btn-group anima-allocation-div">
             <p class="anima-allocation-label">Anima allocation :</p>

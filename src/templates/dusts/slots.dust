@@ -14,9 +14,9 @@
                 </span>
             </td>
             {?is_weapon}
-            <td>
+            <td class="td-swap">
                 <a id="{id_prefix}-swap-weapon" class="btn btn-success swap-weapon">
-                    <i class="icon-retweet icon-white icon-align-left"></i>    Swap weapon
+                    Swap weapon
                 </a>
             </td>
             {/is_weapon}

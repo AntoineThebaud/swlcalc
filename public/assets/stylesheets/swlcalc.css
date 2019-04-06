@@ -13,6 +13,9 @@ select {
 option:disabled {
     display:none;
 }
+div.container {
+    width: 940px;
+}
 /******************************************************/
 .masthead {
     margin-top: 10px;
@@ -116,6 +119,10 @@ option:disabled {
     border-color: #E62C38 !important;
 }
 /******************************************************/
+.btn-group.setter {
+    padding-right: 5px;
+}
+/******************************************************/
 .table {
     margin-bottom: 10px;
 }
@@ -123,21 +130,31 @@ option:disabled {
     min-width: 32px;
     min-height: 32px;
     font-size: 12px;
-    padding: 0px;
+    /* padding: 0px; */
     vertical-align: middle;
 }
 .table-slots {
     border-top: 1px solid #ddd;
 }
+div[id$="-slot"] select {
+    border-radius: 4px;
+}
 div[id$="-slot"] .table-slots td {
     border: none;
-    padding: 0px;
+    vertical-align: top;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 div[id="summary"] .table-stats td {
-    padding: 0px;
+    padding: 1px;
 }
 div[id="summary"] .table-stats th {
-    padding: 5px 5px 5px 0px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    padding-right: 5px;
+    padding-left: 0px;
 }
 #table-primary label {
    margin: 10px 0px 10px 0px;
@@ -152,28 +169,36 @@ div[id="summary"] .table-stats th {
     min-width: 300px;
 }
 tr.with-icon {
-    height: 58px;
+    height: 48px;
 }
 td.filler {
     width: auto;
 }
+.icon-retweet {
+
+}
+.swap-weapon {
+    margin-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
 /******************************************************/
 /* rules relative to any kind of item (talisman, weapon, glyph or signet) */
-td.item-title {
+div[id$="-slot"] .table-slots td.item-title {
     font-size: 15px;
     font-style: italic;
     font-weight: bold;
-    vertical-align: bottom;
-    padding-bottom: 8px;
+    vertical-align: middle;
     padding-left: 15px;
-    padding-top: 13px;
 }
-td.item-description {
-    padding-top: 10px;
+div[id$="-slot"] .table-slots td.item-description {
+    text-align: justify;
+    line-height: 18px;
+    vertical-align: top;
     padding-left: 10px;
     padding-right: 5px;
-    text-align: justify;
-    vertical-align: top;
 }
 /******************************************************/
 div.label-level {
@@ -199,106 +224,108 @@ div.label-level.little {
     font-size: 10px;
 }
 /******************************************************/
-img.item-icon {
+div[id$="-slot"] .table-slots img.item-icon {
     position: absolute;
 }
-img.item-icon.item {
+div[id$="-slot"] .table-slots img.item-icon.item {
     z-index: 0;
 }
-img.item-icon.rarity {
+div[id$="-slot"] .table-slots img.item-icon.rarity {
     z-index: 1;
 }
-img.item-icon.quality {
+div[id$="-slot"] .table-slots img.item-icon.quality {
     z-index: 2;
 }
 /******************************************************/
 /* slot > equipment (talisman/weapon) */
-td.equipment-img {
+div[id$="-slot"] .table-slots td.equipment-img {
     width: 58px;
     vertical-align: top;
     position: relative;
 }
-img.item-icon.equipment {
+div[id$="-slot"] .table-slots img.item-icon.equipment {
     width: 48px;
     height:48px;
     left: 5px;
     top: 5px;
 }
-td.equipment-select {
+div[id$="-slot"] .table-slots td.equipment-select {
     width: 150px;
 }
-td.equipment-select select {
-    margin-bottom: 0px;
+div[id$="-slot"] .table-slots td.equipment-select select {
     max-width: 140px;
 }
 /******************************************************/
 /* slot > glyph & signet */
-td.glyph-img,
-td.signet-img {
+div[id$="-slot"] .table-slots td.glyph-img,
+div[id$="-slot"] .table-slots td.signet-img {
     width: 48px;
     position: relative;
 }
-img.item-icon.glyph,
-img.item-icon.signet {
+div[id$="-slot"] .table-slots img.item-icon.glyph,
+div[id$="-slot"] .table-slots img.item-icon.signet {
     width: 38px;
     height:38px;
     left: 5px;
     top: 10px;
 }
-td.glyph-select,
-td.signet-select {
+div[id$="-slot"] .table-slots td.glyph-select,
+div[id$="-slot"] .table-slots td.signet-select {
     width: 160px;
 }
-td.glyph-select select,
-td.signet-select select {
-    margin-bottom: 0px;
+div[id$="-slot"] .table-slots td.glyph-select select,
+div[id$="-slot"] .table-slots td.signet-select select {
     max-width: 150px;
 }
 /******************************************************/
 /* slot > all > rarity+quality+level */
-td.upgrade-label {
-    width: 50px;
+div[id$="-slot"] .table-slots td.upgrade-label {
+    width: 65px;
 }
-td.upgrade-select {
+div[id$="-slot"] .table-slots td.upgrade-select {
     width: 100px;
 }
-td.upgrade-select select {
+div[id$="-slot"] .table-slots td.upgrade-select select {
     width: 100%;
-    margin-bottom: 0px;
 }
 /******************************************************/
 /* slot > all > rarity */
-td.rarity {
-    padding-top: 10px;
-    vertical-align: bottom;
+div[id$="-slot"] .table-slots td.rarity {
 }
-td.rarity.swlcalclabel {
-    padding-bottom: 5px;
+div[id$="-slot"] .table-slots td.rarity.swlcalclabel {
 }
-td.rarity.swlcalcselect {
+div[id$="-slot"] .table-slots td.rarity.swlcalclabel strong {
+    padding-top: 8px;
+    display: inline-block; /* see https://stackoverflow.com/questions/14604541/padding-top-not-working */
 }
-td.rarity.select select {
+div[id$="-slot"] .table-slots td.rarity.swlcalcselect {
+}
+div[id$="-slot"] .table-slots td.rarity.select select {
 }
 /******************************************************/
 /* slot > all > quality */
-td.quality-label {
+div[id$="-slot"] .table-slots td.quality-label {
 }
-td.quality-select {
+div[id$="-slot"] .table-slots td.quality-label strong {
+    padding-top: 8px;
+    display: inline-block; /* see https://stackoverflow.com/questions/14604541/padding-top-not-working */
 }
-td.quality-select select {
+div[id$="-slot"] .table-slots td.quality-select {
+}
+table[id$="-signets"] td.quality-select {
+    vertical-align: middle;
+}
+div[id$="-slot"] .table-slots td.quality-select select {
 }
 /******************************************************/
 /* slot > all > level */
-td.level-label {
-    vertical-align: top;
-    padding-top: 5px;
+div[id$="-slot"] .table-slots td.level-label {
 }
-td.level-select {
-    vertical-align: top;
+div[id$="-slot"] .table-slots td.level-select {
 }
-td.level-select select {
+div[id$="-slot"] .table-slots td.level-select select {
 }
-input.level-slider {
+div[id$="-slot"] .table-slots input.level-slider {
     width: 100px;
 }
 /******************************************************/
@@ -341,6 +368,11 @@ div .slot {
 .slot h4 {
     padding: 0px;
     display: inline;
+    font-weight: bold
+}
+
+div[id="summary"] h4 {
+    font-weight: bold
 }
 /******************************************************/
 td.slot-ilvl {
@@ -357,6 +389,9 @@ td.ilvl {
     text-align: right;
     vertical-align: bottom;
     line-height: 12px;
+}
+.td-swap {
+    padding-left: 100px;
 }
 /******************************************************/
 .btn-button-bar {

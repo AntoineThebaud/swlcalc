@@ -1500,7 +1500,7 @@ swlcalc.data.signets = {
                 id: 7,
                 name: 'Signet of Thirst',
                 type: 'All',
-                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="luck-signet-bonus" class="bonus-val heal">%d</span><span class="bonus-val const">%</span> leech effect for <span class="bonus-val const">5</span> seconds. This effect can heal up to y damage before being removed, and can only occur once every <span class="bonus-val const">15</span> seconds.',
+                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="luck-signet-bonus" class="bonus-val heal">%d</span><span class="bonus-val heal">%</span> leech effect for <span class="bonus-val const">5</span> seconds. This effect can heal up to y damage before being removed, and can only occur once every <span class="bonus-val const">15</span> seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {
