@@ -54,7 +54,7 @@ div.container {
     width: 180px;
     position: absolute;
     bottom: 2px;
-    left: 285px;
+    left: 302px;
 }
 /******************************************************/
 .illuminati {
@@ -214,13 +214,11 @@ div.label-level {
     text-align: center;
 }
 div.label-level.big {
-    width: 20px;
-    padding-left: 1px;
-    padding-right: 1px;
+    width: 24px;
     padding-top: 1px;
 }
 div.label-level.little {
-    width: 18px;
+    width: 20px;
     font-size: 10px;
 }
 /******************************************************/
