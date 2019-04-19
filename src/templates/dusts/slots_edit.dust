@@ -1,4 +1,4 @@
-{#slots}
+{#slots_edit}
 <div id="{id_prefix}-slot" class="slot">
      <table class="table-title">
         <tr>
@@ -195,4 +195,4 @@
 </div>
 {:else}
 <p>No slots found (Bug)!</p>
-{/slots}
+{/slots_edit}

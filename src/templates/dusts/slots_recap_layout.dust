@@ -1,0 +1,45 @@
+<div id="slotrecaplayout" class="slotrecaplayout">
+    <div class="row">
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap_layout[0]/}
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap_layout[1]/}
+        </div>
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap_layout[2]/}
+        </div>
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap_layout[3]/}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap_layout[4]/}
+        </div>
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap_layout[5]/}
+        </div>
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap_layout[6]/}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap_layout[7]/}
+        </div>
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap_layout[8]/}
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div>
+</div>

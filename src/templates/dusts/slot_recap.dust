@@ -1,0 +1,20 @@
+<div id="{slot.name}-slotrecap" class="slotrecap">
+  <h5><span class="bonus-val const">Luminous {slot.kind} {slot.type}</span></h5>
+  <p>{slot.name}</p>
+  <p>Item Power: 148</p>
+  <p>Character bound</p>
+  <hr>
+  <p>+563 Health</p>
+  <p>+833 Magical Protection</p>
+  <p>+833 Physical Protection</p>
+  <hr>
+  <p>This {slot.type} gains more power when leveling up. Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.</p>
+  <hr>
+  <h6><span class="bonus-val const">Simple Stalwart Glyph</span></h6>
+  <p>Glyph (Lv 20 Superior)</p>
+  <p>+208 Defence Rating</p>
+  <hr>
+  <h6><span class="bonus-val const">Simple Enormous Signet</span></h6>
+  <p>Glyph (Lv 20 Superior)</p>
+  <p>Increases the damage and healing of Elemental Elite Abilities by <span class="bonus-val const">%d</span><span class="bonus-val const">%</span>.</p>
+</div>

@@ -14,7 +14,7 @@ option:disabled {
     display:none;
 }
 div.container {
-    width: 940px;
+    width: 1220px;
 }
 /******************************************************/
 .masthead {
@@ -421,4 +421,33 @@ td.ilvl {
     background-color: #F5F5F5;
     border: 0px;
     padding: 0px;
+}
+
+
+div[id$="-slotrecap"] {
+    width: 275px;
+    min-height: 300px;
+    background-color: #F5F5F5;
+    display: inline-block;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+div[id$="-slotrecap"] p {
+    font-size: 11px;
+    margin: 0;
+}
+div[id$="-slotrecap"] h5 {
+    font-weight: bold;
+    margin: 0;
+}
+div[id$="-slotrecap"] h6 {
+    font-weight: bold;
+    margin: 0;
+}
+div[id$="-slotrecap"] hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-top: 2px solid #ddd;
 }

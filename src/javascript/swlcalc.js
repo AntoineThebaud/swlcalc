@@ -45,8 +45,8 @@ swlcalc = function() {
      */
     var renderContainer = function(data) {
         dust.render('container', {
-            slots: swlcalc.data.template_data.slots,
-            signets: swlcalc.data.signets
+            slots_recap_layout: swlcalc.data.template_data.slots,
+            slots_edit: swlcalc.data.template_data.slots
         },
 
         function(err, out) {
