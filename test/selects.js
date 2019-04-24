@@ -7,7 +7,7 @@ QUnit.module("selects-dom", {
 
 QUnit.test("should have required selects in the DOM", function(assert) {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-        var id = swlcalc.data.template_data.slots[i].id_prefix;
+        var id = swlcalc.data.template_data.slots[i].id;
         assert.ok($("#" + id + "-equipment-id").length !== 0, id + "-equipment-id exists");
         assert.ok($("#" + id + "-equipment-rarity").length !== 0, id + "-equipment-rarity exists");
         assert.ok($("#" + id + "-equipment-quality").length !== 0, id + "-equipment-quality exists");
@@ -33,7 +33,7 @@ QUnit.module("selects-events", {
 
 QUnit.test("should have required event listeners for change on selects in the DOM", function(assert) {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-        var id = swlcalc.data.template_data.slots[i].id_prefix;
+        var id = swlcalc.data.template_data.slots[i].id;
         assert.ok($._data($("#" + id + "-equipment-id").get(0), "events").change instanceof Array);
         assert.ok($._data($("#" + id + "-equipment-rarity").get(0), "events").change instanceof Array);
         assert.ok($._data($("#" + id + "-equipment-quality").get(0), "events").change instanceof Array);
@@ -149,7 +149,7 @@ QUnit.test("should set a non-zero ilvl value when selecting a glyph and then set
 
 QUnit.test("should update any #slot-equipment-level sliders when its associated rarity is changed", function(assert) {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-        var id = swlcalc.data.template_data.slots[i].id_prefix;
+        var id = swlcalc.data.template_data.slots[i].id;
         assert.equal($("#" + id + "-equipment-level").attr("max"), 20, "Untouched " + id + "-equipment-level should have values between 1 and 20");
         swlcalc.gear.slots[id].equipmentRarity("superior");
         swlcalc.gear.slots[id].el.equipmentRarity.change();

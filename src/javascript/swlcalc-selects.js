@@ -3,7 +3,7 @@ swlcalc.select = swlcalc.select || {};
 
 swlcalc.select.SelectHandler = function SelectHandler(slot) {
 
-    var slotObj = swlcalc.gear.slots[slot.id_prefix];
+    var slotObj = swlcalc.gear.slots[slot.id];
 
     this.init = function() {
         this.bindEvents();
@@ -108,8 +108,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.updateToDefaultSignet = function() {
         var signet_icon_url = 'assets/images/icons/signet/none.png';
         var signet_rarity_url = 'assets/images/icons/rarity/none-42x42.png';
-        $('#' + slot.id_prefix + '-signet-img-icon').attr('src', signet_icon_url);
-        $('#' + slot.id_prefix + '-signet-img-rarity').attr('src', signet_rarity_url);
+        $('#' + slot.id + '-signet-img-icon').attr('src', signet_icon_url);
+        $('#' + slot.id + '-signet-img-rarity').attr('src', signet_rarity_url);
     };
 
     /**********************************************************************************

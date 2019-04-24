@@ -31,7 +31,7 @@ QUnit.module("buttonbar-integration-tests", {
 QUnit.test("should reset all slots", function(assert) {
     swlcalc.buttonBar.resetGear();
     for (var i = 0; i < swlcalc.gear.nbSlots(); i++) {
-        var slotId = swlcalc.data.template_data.slots[i].id_prefix;
+        var slotId = swlcalc.data.template_data.slots[i].id;
         var slot = swlcalc.gear.slots[slotId];
         assert.equal(slot.iLvl(), "0");
         assert.equal(slot.equipmentId(), "none");
@@ -67,7 +67,7 @@ QUnit.test("should set rarity on all slots", function(assert) {
     for (var r = 0; r < mixedRarities.length; r++) {
         $("#btn-all-" + mixedRarities[r]).click();
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-            var id = swlcalc.data.template_data.slots[i].id_prefix;
+            var id = swlcalc.data.template_data.slots[i].id;
             assert.equal(swlcalc.gear.slots[id].equipmentRarity(), mixedRarities[r]);
             assert.equal(swlcalc.gear.slots[id].glyphRarity(), mixedRarities[r]);
             if (id != "weapon" && id != "weapon2") {
@@ -83,7 +83,7 @@ QUnit.test("should set quality on all slots", function(assert) {
     for (var r = 0; r < mixedQualities.length; r++) {
         $("#btn-all-" + mixedQualities[r] + "-pip").click();
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-            var id = swlcalc.data.template_data.slots[i].id_prefix;
+            var id = swlcalc.data.template_data.slots[i].id;
             assert.equal(swlcalc.gear.slots[id].equipmentQuality(), mixedQualities[r]);
             assert.equal(swlcalc.gear.slots[id].glyphQuality(), mixedQualities[r]);
         }

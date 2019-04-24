@@ -13,8 +13,8 @@ swlcalc.gear = function() {
     var init = function() {
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             var slotData = swlcalc.data.template_data.slots[i];
-            this.slots[slotData.id_prefix] = new swlcalc.gear.Slot(slotData);
-            this.slots[slotData.id_prefix].el.nameWarning.hide();
+            this.slots[slotData.id] = new swlcalc.gear.Slot(slotData);
+            this.slots[slotData.id].el.nameWarning.hide();
         }
         drawPrimaryWeapon();
     };
@@ -84,7 +84,7 @@ swlcalc.gear = function() {
 swlcalc.gear.Slot = function Slot(slotData) {
 
     var self = this;
-    this.id = slotData.id_prefix;
+    this.id = slotData.id;
     this.name = slotData.name;
     this.kind = slotData.kind;
     this.type = slotData.type;

@@ -4,56 +4,56 @@ swlcalc.data = swlcalc.data || {};
 swlcalc.data.template_data = {
     slots: [
         {
-            id_prefix: 'head',
+            id: 'head',
             name: 'Head Talisman',
             kind: 'head',
             group: 'head',
             type: 'talisman'
         },
         {
-            id_prefix: 'finger',
+            id: 'finger',
             name: 'Finger Talisman',
             kind: 'finger',
             group: 'major',
             type: 'talisman'
         },
         {
-            id_prefix: 'neck',
+            id: 'neck',
             name: 'Neck Talisman',
             kind: 'neck',
             type: 'talisman',
             group: 'major'
         },
         {
-            id_prefix: 'wrist',
+            id: 'wrist',
             name: 'Wrist Talisman',
             kind: 'wrist',
             type: 'talisman',
             group: 'major'
         },
         {
-            id_prefix: 'luck',
+            id: 'luck',
             name: 'Luck Talisman',
             kind: 'luck',
             type: 'talisman',
             group: 'minor'
         },
         {
-            id_prefix: 'waist',
+            id: 'waist',
             name: 'Waist Talisman',
             kind: 'waist',
             type: 'talisman',
             group: 'minor'
         },
         {
-            id_prefix: 'occult',
+            id: 'occult',
             name: 'Occult Talisman',
             kind: 'occult',
             type: 'talisman',
             group: 'minor'
         },
         {
-            id_prefix: 'weapon',
+            id: 'weapon',
             name: 'Primary Weapon',
             kind: 'weapon',
             group: 'weapon',
@@ -62,7 +62,7 @@ swlcalc.data.template_data = {
             is_primary: true
         },
         {
-            id_prefix: 'weapon2',
+            id: 'weapon2',
             name: 'Secondary Weapon',
             kind: 'weapon',
             group: 'weapon',

@@ -88,8 +88,8 @@ swlcalc = function() {
      * Create select handler for a slot.
      */
     var startSelectHandler = function(slot) {
-        swlcalc.select[slot.id_prefix] = new swlcalc.select.SelectHandler(slot);
-        swlcalc.select[slot.id_prefix].init();
+        swlcalc.select[slot.id] = new swlcalc.select.SelectHandler(slot);
+        swlcalc.select[slot.id].init();
     };
 
     /**
