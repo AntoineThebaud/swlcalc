@@ -1,20 +1,85 @@
-<div id="{slot.name}-slotrecap" class="slotrecap">
-  <h5><span class="bonus-val const">Luminous {slot.kind} {slot.type}</span></h5>
-  <p>{slot.name}</p>
-  <p>Item Power: 148</p>
-  <p>Character bound</p>
-  <hr>
-  <p>+563 Health</p>
-  <p>+833 Magical Protection</p>
-  <p>+833 Physical Protection</p>
-  <hr>
-  <p>This {slot.type} gains more power when leveling up. Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.</p>
-  <hr>
-  <h6><span class="bonus-val const">Simple Stalwart Glyph</span></h6>
-  <p>Glyph (Lv 20 Superior)</p>
-  <p>+208 Defence Rating</p>
-  <hr>
-  <h6><span class="bonus-val const">Simple Enormous Signet</span></h6>
-  <p>Glyph (Lv 20 Superior)</p>
-  <p>Increases the damage and healing of Elemental Elite Abilities by <span class="bonus-val const">%d</span><span class="bonus-val const">%</span>.</p>
+<div id="{slot.id}-recap-wraperdiv">
+    <div id="{slot.name}-slotrecap">
+        <table>
+            <tr>
+                <td id="{slot.id}-recap-equipment-wrapertd">
+                    <h5 id="{slot.id}-recap-equipment-title">
+                        <span id="{slot.id}-recap-equipment-quality">Luminous</span>
+                        <span id="{slot.id}-recap-equipment-item"> Iron-Sulfur {slot.kind}</span>
+                    </h5>
+                    <p>
+                        <span id="{slot.id}-recap-name">{slot.name}</span>
+                        <span> (Lv </span>
+                        <span id="{slot.id}-recap-equipment-level">12</span>
+                        <span> </span>
+                        <span id="{slot.id}-recap-equipment-rarity">Standard</span>
+                        <span>)</span>
+                    </p>
+                    <p>
+                        <span>Item Power: </span>
+                        <span id="{slot.id}-recap-subtitle-ilvl">148</span>
+                    </p>
+                    <p class="mediumgrey">Character bound</p>
+                </td>
+                <td id="{slot.id}-recap-equipment-img-wrapertd">
+                    <img id="{slot.id}-recap-equipment-img-item" class="slotrecap-itemicon" src="assets/images/icons/talisman/Dice.png" alt="image"/>
+                    <img id="{slot.id}-recap-equipment-img-rarity" class="slotrecap-itemicon" src="assets/images/icons/rarity/epic-64x64.png"/>
+                    <img id="{slot.id}-recap-equipment-img-quality" class="slotrecap-itemicon" src="assets/images/icons/quality/1.png"/>
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <p>
+            <span id="{slot.id}-recap-equipment-stat-value">+563</span>
+            <span> </span>
+            <span id="{slot.id}-recap-equipment-stat-name">Health</span>
+        </p>
+        <p>
+            <span id="{slot.id}-recap-equipment-magprot-value">+833</span>
+            <span> </span>
+            <span id="{slot.id}-recap-equipment-magprot-name">Magical Protection</span>
+        </p>
+        <p>
+            <span id="{slot.id}-recap-equipment-phyprot-value">+833</span>
+            <span> </span>
+            <span id="{slot.id}-recap-equipment-phyprot-name">Physical Protection</span>
+        </p>
+        <hr>
+        <p id="{slot.id}-recap-equipment-description">
+            This {slot.type} gains more power when leveling up. Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.
+        </p>
+        <hr>
+        <h6 id="{slot.id}-recap-glyph-title">
+            <span id="{slot.id}-recap-glyph-quality">Simple</span>
+            <span> </span>
+            <span id="{slot.id}-recap-glyph-item">Stalwart</span>
+            <span> Glyph</span>
+        </h6>
+        <p class="mediumgrey">
+            <span>Glyph (Lv </span>
+            <span id="{slot.id}-recap-glyph-level">12</span>
+            <span> </span>
+            <span id="{slot.id}-recap-glyph-rarity">Standard</span>
+            <span>)</span>
+        </p>
+        <p>
+          <span id="{slot.id}-recap-glyph-stat-value">+208</span>
+          <span> </span>
+          <span id="{slot.id}-recap-glyph-stat-name">Defence Rating</span>
+        </p>
+        <hr>
+        <h6 id="{slot.id}-recap-signet-title">
+            <span id="{slot.id}-recap-signet-item">Signet of Bludgeoning<span>
+        </h6>
+        <p class="mediumgrey">
+            <span>Signet (Lv </span>
+            <span id="{slot.id}-recap-signet-level">19</span>
+            <span> </span>
+            <span id="{slot.id}-recap-signet-rarity">Superior</span>
+            <span>)</span>
+        </p>
+        <p id="{slot.id}-recap-signet-description">
+            Increases the damage and healing of Elemental Elite Abilities by <span class="bonus-val const">%d</span><span class="bonus-val const">%</span>.
+        </p>
+    </div>
 </div>

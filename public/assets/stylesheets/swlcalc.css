@@ -434,6 +434,28 @@ div[id$="-slotrecap"] {
     border-radius: 10px;
 }
 
+td[id$="-recap-equipment-wrapertd"] {
+    width: 200px;
+}
+td[id$="-recap-equipment-img-wrapertd"] {
+    position: relative;
+}
+.slotrecap-itemicon {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 0px;
+    left: 5px;
+}
+div[id$="-recap-equipment-img-item"] {
+    z-index: 0;
+}
+div[id$="-recap-equipment-img-rarity"] {
+    z-index: 1;
+}
+div[id$="-recap-equipment-img-quality"] {
+    z-index: 2;
+}
 div[id$="-slotrecap"] p {
     font-size: 11px;
     margin: 0;
