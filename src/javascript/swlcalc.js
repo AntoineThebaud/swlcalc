@@ -10,7 +10,7 @@ swlcalc = function() {
      * Init function. Triggered when document is ready.
      */
     var init = function() {
-        renderContainer(swlcalc.data.template_data);
+        renderContainer();
         startSubModules();
         if (!checkIfExported()) {
             // if no parameters are present in the URL, trigger artificial reset to generate base parameters ("#weapon=0,0,0,0,0,4,0&weapon2=0,0,[...]")
@@ -43,7 +43,7 @@ swlcalc = function() {
     /**
      * Generate html code in the container, based on .dust template files
      */
-    var renderContainer = function(data) {
+    var renderContainer = function() {
         dust.render('container', {
             slots_recap_layout: swlcalc.data.template_data.slots,
             slots_edit: swlcalc.data.template_data.slots
