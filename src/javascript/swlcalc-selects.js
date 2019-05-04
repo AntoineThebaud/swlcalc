@@ -12,7 +12,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     /**
-     * Associates the right process to each trigger.
+     * Associates the right processing to each trigger.
      */
     this.bindEvents = function() {
         slotObj.el.equipmentId.change(this.handleEquipmentItemChange);
@@ -186,7 +186,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleGlyphRarityChange = function(event) {
         updateTextColor(this);
-        slotObj.updateGlyphQuality();        
+        slotObj.updateGlyphQuality();
         slotObj.updateGlyphImgRarity();
         slotObj.updateGlyphLabelLevelColor();
         slotObj.updateGlyphILvl();

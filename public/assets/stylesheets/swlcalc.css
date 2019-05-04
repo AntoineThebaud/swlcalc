@@ -351,11 +351,25 @@ td.stat-inSummary {
     color: #FF7D00;
 }
 /******************************************************/
-div .slot {
-    margin-bottom: 20px;
+div[id$="-edit-modal"] {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+div[id$="-slot"] {
     background-color: #F5F5F5;
-    padding:5px;
-    border-radius: 8px;
+    border-radius: 15px;
+    margin: 15% auto;
+    padding: 15px;
+    width: 35%;
 }
 .slot-name {
     font-weight: normal;
@@ -435,17 +449,16 @@ div[id$="-slotrecap"] {
 }
 
 td[id$="-recap-equipment-wrapertd"] {
-    width: 200px;
 }
 td[id$="-recap-equipment-img-wrapertd"] {
     position: relative;
+    width: 55px;
 }
-.slotrecap-itemicon {
+td[id$="-recap-equipment-img-wrapertd"] img {
     position: absolute;
     width: 48px;
     height: 48px;
     top: 0px;
-    left: 5px;
 }
 div[id$="-recap-equipment-img-item"] {
     z-index: 0;
@@ -472,4 +485,17 @@ div[id$="-slotrecap"] hr {
   margin-top: 4px;
   margin-bottom: 4px;
   border-top: 2px solid #ddd;
+}
+
+td[id$="-editbtn-wrapertd"] {
+  vertical-align: top;
+}
+button[id$="-editbtn"] {
+  padding: 0px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: 0;
+}
+button[id$="-editbtn"] img {
+  width: 25px;
 }

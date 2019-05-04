@@ -45,7 +45,7 @@ swlcalc = function() {
      */
     var renderContainer = function() {
         dust.render('container', {
-            slots_recap_layout: swlcalc.data.template_data.slots,
+            slots_recap: swlcalc.data.template_data.slots,
             slots_edit: swlcalc.data.template_data.slots
         },
 
@@ -77,6 +77,7 @@ swlcalc = function() {
         swlcalc.gear.init();
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             startSelectHandler(swlcalc.data.template_data.slots[i]);
+            startButtonHandler(swlcalc.data.template_data.slots[i]);
         }
         swlcalc.button.init();
         swlcalc.buttonBar.init();
@@ -90,6 +91,14 @@ swlcalc = function() {
     var startSelectHandler = function(slot) {
         swlcalc.select[slot.id] = new swlcalc.select.SelectHandler(slot);
         swlcalc.select[slot.id].init();
+    };
+
+    /**
+     * Create button handler for a slot.
+     */
+    var startButtonHandler = function(slot) {
+        swlcalc.button[slot.id] = new swlcalc.button.ButtonHandler(slot);
+        swlcalc.button[slot.id].init();
     };
 
     /**

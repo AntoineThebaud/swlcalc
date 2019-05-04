@@ -20,7 +20,7 @@
 <hr/>
 <div class="row">
     <div class="col-lg-9">
-        {>slots_recap_layout/}
+        {>slots_recap/}
         {>slots_edit/}
     </div>
     <div class="col-lg-3">

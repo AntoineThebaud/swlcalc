@@ -1,8 +1,8 @@
 //TODO/REFACTOR : use these functions for each test module setup !
 
 function renderSlots() {
-    renderTemplate("slots_recap_layout", {
-        slots_recap_layout: swlcalc.data.template_data.slots
+    renderTemplate("slots_recap", {
+        slots_recap: swlcalc.data.template_data.slots
     });
     renderTemplate("slots_edit", {
         slots_edit: swlcalc.data.template_data.slots

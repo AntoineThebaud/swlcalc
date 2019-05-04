@@ -3,10 +3,8 @@ var swlcalc = swlcalc || {};
 /**
  * Defines the not-in-buttonbar buttons of swlcalc
  */
-//TODO/REFACTOR : merge swlcalc.button and swlcalc.button.SwapWeaponButton ? (since glyph
-//distribution doesn't exist in SWL, the only remaining button here is the weapon-swap one)
 swlcalc.button = function() {
-    
+
     var weaponSwap = {};
 
     var init = function() {
@@ -51,5 +49,39 @@ swlcalc.button.SwapWeaponButton = function SwapWeaponButton(slotId) {
 
     this.otherWeapon = function() {
         return slotId == 'weapon' ? 'weapon2' : 'weapon';
+    };
+};
+
+swlcalc.button.ButtonHandler = function ButtonHandler(slot) {
+
+    var slotObj = swlcalc.gear.slots[slot.id];
+
+    this.init = function() {
+        this.bindEvents();
+    };
+
+    /**
+     * Associates the right processing to each trigger.
+     */
+    this.bindEvents = function() {
+        slotObj.el.editBtn.click(this.handleEditBtnClick);
+        slotObj.el.editModal.click(this.handleEditModalClick);
+    };
+
+    /**
+     * Handler for #slot-recap-editbtn : display edit modal box
+     */
+    this.handleEditBtnClick = function(event) {
+        slotObj.showEditModal();
+    };
+
+
+    /**
+     * Handler for #slot-recap-editbtn : close edit window
+     */
+    this.handleEditModalClick = function(event) {
+        if (event.target == slotObj.el.editModal[0]) {
+            slotObj.hideEditModal();
+        }
     };
 };

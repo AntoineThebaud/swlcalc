@@ -14,7 +14,7 @@ swlcalc.gear = function() {
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             var slotData = swlcalc.data.template_data.slots[i];
             this.slots[slotData.id] = new swlcalc.gear.Slot(slotData);
-            this.slots[slotData.id].el.nameWarning.hide();
+            this.slots[slotData.id].el.nameWarning.hide(); // TODO/FEATURE : Review this warning stuff
         }
         drawPrimaryWeapon();
     };
@@ -131,6 +131,10 @@ swlcalc.gear.Slot = function Slot(slotData) {
         signetLabelLevel:     $('#' + this.id + '-signet-label-level'),
         signetILvl:           $('#' + this.id + '-signet-ilvl'),
         nameWarning:          $('#' + this.id + '-name-warning'),
+
+        editModal:            $('#' + this.id + '-edit-modal'),
+        editBtn:              $('#' + this.id + '-editbtn'),
+        recapEquipmentImgIcon:$('#' + this.id + '-recap-equipment-img-item')
     };
 
     /**
@@ -344,6 +348,17 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Getter/Setter for #slot-recap-equipment-img-icon
+     */
+    this.recapEquipmentImgIcon = function() {
+        if (arguments.length == 1) {
+            this.el.recapEquipmentImgIcon.attr('src', arguments[0])
+        } else {
+            return this.el.recapEquipmentImgIcon.attr('src');
+        }
+    };
+
+    /**
      * Updates #slot-equipment-image + #slot-equipment-description
      */
     this.updateEquipment = function() {
@@ -353,6 +368,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             //To enable when all images will be present :
             // newImage = 'assets/images/icons/talisman/None.png';
             this.equipmentImgIcon('assets/images/icons/' + this.type + '/None.png');
+            this.recapEquipmentImgIcon('assets/images/icons/' + this.type + '/None.png');
             newDescription = '';
         } else {
             var newEquipment = this.equipmentData()
@@ -364,12 +380,15 @@ swlcalc.gear.Slot = function Slot(slotData) {
             var image = new Image();
             image.onload = function() {
                 self.equipmentImgIcon('assets/images/icons/' + self.type + '/' + newEquipment.name + '.png');
+                self.recapEquipmentImgIcon('assets/images/icons/' + self.type + '/' + newEquipment.name + '.png');
             }
             image.onerror = function() {
                 if (self.isWeapon()) {
                     self.equipmentImgIcon('assets/images/icons/' + self.type + '/temp/' + newEquipment.type + '.png');
+                    self.recapEquipmentImgIcon('assets/images/icons/' + self.type + '/temp/' + newEquipment.type + '.png');
                 } else {
                     self.equipmentImgIcon('assets/images/icons/' + self.type + '/' + swlcalc.data.equipments.slot[self.id][0].name + '.png');
+                    self.recapEquipmentImgIcon('assets/images/icons/' + self.type + '/' + swlcalc.data.equipments.slot[self.id][0].name + '.png');
                 }
             }
             image.src = 'assets/images/icons/' + this.type + '/' + newEquipment.name + '.png';
@@ -1068,4 +1087,17 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var dataToUse = swlcalc.data.ilvl.gear[element].rarity[rarity];
         return dataToUse.ilvl_init + dataToUse.ilvl_per_level * (level - 1);
     }
+
+    /**
+     * TODO Comment
+     */
+    this.showEditModal = function() {
+        this.el.editModal.show();
+    };
+    /**
+     * TODO Comment
+     */
+    this.hideEditModal = function() {
+        this.el.editModal.hide();
+    };
 };
