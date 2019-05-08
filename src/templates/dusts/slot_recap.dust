@@ -9,13 +9,22 @@
                 </td>
                 <td id="{slot.id}-recap-equipment-wrapertd">
                     <h5 id="{slot.id}-recap-equipment-title">
-                        <span id="{slot.id}-recap-equipment-quality">Luminous</span>
-                        <span id="{slot.id}-recap-equipment-item"> Iron-Sulfur {slot.kind}</span>
+                        {?slot.is_weapon}
+                        <span id="{slot.id}-recap-equipment-item"></span>
+                        <span> </span>
+                        <span id="{slot.id}-recap-suffix">of Energy</span>
+                        <span> </span>
+                        <span id="{slot.id}-recap-equipment-quality"></span>
+                        {:else}
+                        <span id="{slot.id}-recap-equipment-quality"></span>
+                        <span> </span>
+                        <span id="{slot.id}-recap-equipment-item"></span>
+                        {/slot.is_weapon}
                     </h5>
                     <p>
                         <span id="{slot.id}-recap-name">{slot.name}</span>
                         <span> (Lv </span>
-                        <span id="{slot.id}-recap-equipment-level">12</span>
+                        <span id="{slot.id}-recap-equipment-level"></span>
                         <span> </span>
                         <span id="{slot.id}-recap-equipment-rarity">Standard</span>
                         <span>)</span>

@@ -139,8 +139,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleEquipmentRarityChange = function(event) {
         updateTextColor(this);
-        slotObj.updateEquipmentImgRarity();
-        slotObj.updateEquipmentLevel();
+        slotObj.updateEquipmentRarity();
         slotObj.updateEquipmentPowerRating();
         slotObj.updateEquipmentILvl();
         swlcalc.summary.updateAllStats();
@@ -151,7 +150,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleEquipmentQualityChange = function(event) {
         slotObj.updateEquipmentPowerRating();
-        slotObj.updateEquipmentImgQuality();
+        slotObj.updateEquipmentQuality();
         swlcalc.summary.updateAllStats();
     };
 
@@ -159,9 +158,9 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-level
      */
     this.handleEquipmentLevelChange = function(event) {
+        slotObj.updateEquipmentLevel();
         slotObj.updateEquipmentILvl();
         slotObj.updateEquipmentPowerRating();
-        slotObj.updateEquipmentLabelLevelText();
         swlcalc.summary.updateAllStats();
     };
 

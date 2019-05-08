@@ -134,7 +134,13 @@ swlcalc.gear.Slot = function Slot(slotData) {
 
         editModal:            $('#' + this.id + '-edit-modal'),
         editBtn:              $('#' + this.id + '-editbtn'),
-        recapEquipmentImgIcon:$('#' + this.id + '-recap-equipment-img-item')
+        recapEquipmentTitle  :$('#' + this.id + '-recap-equipment-title'),
+        recapEquipmentItem   :$('#' + this.id + '-recap-equipment-item'),
+        recapEquipmentQuality:$('#' + this.id + '-recap-equipment-quality'),
+        recapEquipmentLevel:  $('#' + this.id + '-recap-equipment-level'),
+        recapEquipmentImgIcon:$('#' + this.id + '-recap-equipment-img-item'),
+        recapEquipmentImgRarity:$('#' + this.id + '-recap-equipment-img-rarity'),
+        recapEquipmentImgQuality:$('#' + this.id + '-recap-equipment-img-quality')
     };
 
     /**
@@ -348,6 +354,39 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Getter/Setter for #slot-recap-equipment-item
+     */
+    this.recapEquipmentItem = function() {
+        if (arguments.length == 1) {
+            this.el.recapEquipmentItem.html(arguments[0]);
+        } else {
+            return parseInt(this.el.recapEquipmentItem.html());
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-recap-equipment-quality
+     */
+    this.recapEquipmentQuality = function() {
+        if (arguments.length == 1) {
+            this.el.recapEquipmentQuality.html(arguments[0]);
+        } else {
+            return parseInt(this.el.recapEquipmentQuality.html());
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-recap-equipment-level
+     */
+    this.recapEquipmentLevel = function() {
+        if (arguments.length == 1) {
+            this.el.recapEquipmentLevel.html(arguments[0]);
+        } else {
+            return parseInt(this.el.recapEquipmentLevel.html());
+        }
+    };
+
+    /**
      * Getter/Setter for #slot-recap-equipment-img-icon
      */
     this.recapEquipmentImgIcon = function() {
@@ -359,17 +398,42 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Getter/Setter for #slot-recap-equipment-img-rarity
+     */
+    this.recapEquipmentImgRarity = function() {
+        if (arguments.length == 1) {
+            this.el.recapEquipmentImgRarity.attr('src', arguments[0])
+        } else {
+            return this.el.recapEquipmentImgRarity.attr('src');
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-recap-equipment-img-quality
+     */
+    this.recapEquipmentImgQuality = function() {
+        if (arguments.length == 1) {
+            this.el.recapEquipmentImgQuality.attr('src', arguments[0])
+        } else {
+            return this.el.recapEquipmentImgQuality.attr('src');
+        }
+    };
+
+    /**
      * Updates #slot-equipment-image + #slot-equipment-description
      */
     this.updateEquipment = function() {
         var newImage;
         var newDescription;
+        var newTitle;
+
         if (this.equipmentId() == 'none') {
             //To enable when all images will be present :
             // newImage = 'assets/images/icons/talisman/None.png';
             this.equipmentImgIcon('assets/images/icons/' + this.type + '/None.png');
-            this.recapEquipmentImgIcon('assets/images/icons/' + this.type + '/None.png');
+            this.recapEquipmentImgIcon('assets/images/icons/' + this.type + '/None.png'); // TODO it's like duplicate call here, wrap these into updateImg function maybe ?
             newDescription = '';
+            newTitle = 'Empty';
         } else {
             var newEquipment = this.equipmentData()
             //TODO/FEATURE :
@@ -394,6 +458,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             image.src = 'assets/images/icons/' + this.type + '/' + newEquipment.name + '.png';
             /* temporary code ********************************************************************************/
             newDescription = newEquipment.description;
+            newTitle = newEquipment.name;
 
             if (this.isWeapon()) {
                 // Replaces %id% either by 'weapon' or 'weapon2' depending on the current slot
@@ -404,19 +469,50 @@ swlcalc.gear.Slot = function Slot(slotData) {
         //To enable when all images will be present :
         //this.equipmentImgIcon(newImage);
         this.equipmentDescription(newDescription);
+        this.recapEquipmentItem(newTitle);
+    };
+
+
+    /**
+     * Updates elements related to equipment's rarity + max available level for equipment
+     */
+    this.updateEquipmentRarity = function() {
+        var newRarity = this.equipmentRarity();
+
+        this.el.recapEquipmentTitle.attr('class', 'color-' + newRarity);
+        var img_path = 'assets/images/icons/rarity/' + newRarity + '-42x42.png';
+        this.equipmentImgRarity(img_path);
+        this.recapEquipmentImgRarity(img_path);
+        this.el.equipmentLabelLevel.attr('class', 'label-level big border-' + newRarity);
+
+        // update max available level for equipment :
+        var maxLvl = swlcalc.data.rarity_mapping.to_max_level[newRarity];
+        this.el.equipmentLevel.attr('max', maxLvl)
+        this.equipmentLevel(maxLvl);
+        this.equipmentLabelLevel(this.equipmentLevel())
     };
 
     /**
-     * Updates, depending on the rarity selected, :
-     * - #slot-equipment-level : refresh list of available levels
-     * - #slot-equipment-label-level : update text + border color
+     * Updates elements related to equipment's quality
+     */
+    this.updateEquipmentQuality = function() {
+        var newQuality = this.equipmentQuality();
+
+        this.recapEquipmentQuality(swlcalc.data.quality_mapping[this.type].to_name[newQuality]);
+        var img_path = 'assets/images/icons/quality/' + newQuality + '.png';
+        this.equipmentImgQuality(img_path);
+        this.recapEquipmentImgQuality(img_path);
+    };
+
+    /**
+     * Updates elements related to equipment's level
      */
     this.updateEquipmentLevel = function() {
-        var maxLvl = swlcalc.data.rarity_mapping.to_max_level[this.equipmentRarity()];
-        this.el.equipmentLevel.attr('max', maxLvl)
-        this.equipmentLevel(maxLvl);
-        this.updateEquipmentLabelLevelText();
-        this.updateEquipmentLabelLevelColor();
+        var newLevel = this.equipmentLevel();
+
+        this.equipmentLabelLevel(newLevel);
+        this.recapEquipmentLevel(newLevel);
+        // TODO : to add this.recapequipmentLabelLevel(newLevel);
     }
 
     /**
@@ -483,36 +579,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
             this.equipmentBonusN(i + 1, Math.round(item.coefficients[i] * statForComputation));
         }
     }
-
-    /**
-     * Updates #slot-equipment-img-rarity
-     */
-    this.updateEquipmentImgRarity = function() {
-        var img_path = 'assets/images/icons/rarity/' + this.equipmentRarity() + '-42x42.png';
-        this.equipmentImgRarity(img_path);
-    };
-
-    /**
-     * Updates #slot-equipment-img-quality
-     */
-    this.updateEquipmentImgQuality = function() {
-        var img_path = 'assets/images/icons/quality/' + this.equipmentQuality() + '.png';
-        this.equipmentImgQuality(img_path);
-    };
-
-    /**
-     * Updates #slot-equipment-label-level (text)
-     */
-    this.updateEquipmentLabelLevelText = function() {
-        this.equipmentLabelLevel(this.equipmentLevel())
-    };
-
-    /**
-     * Updates #slot-equipment-label-level (border color)
-     */
-    this.updateEquipmentLabelLevelColor = function() {
-        this.el.equipmentLabelLevel.attr('class', 'label-level big border-' + this.equipmentRarity());
-    };
 
     /**********************************************************************************
      * Glyph functions |

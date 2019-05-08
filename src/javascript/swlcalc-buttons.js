@@ -69,15 +69,14 @@ swlcalc.button.ButtonHandler = function ButtonHandler(slot) {
     };
 
     /**
-     * Handler for #slot-recap-editbtn : display edit modal box
+     * Handler for #slot-editbtn : display edit modal box
      */
     this.handleEditBtnClick = function(event) {
         slotObj.showEditModal();
     };
 
-
     /**
-     * Handler for #slot-recap-editbtn : close edit window
+     * Handler for #slot-editbtn : close edit window
      */
     this.handleEditModalClick = function(event) {
         if (event.target == slotObj.el.editModal[0]) {

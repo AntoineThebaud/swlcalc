@@ -63,6 +63,31 @@ swlcalc.data.rarity_mapping = {
     }
 };
 
+swlcalc.data.quality_mapping = {
+    'weapon': {
+        to_name: {
+            1: 'MK I',
+            2: 'MK II',
+            3: 'MK III'
+        }
+    },
+    'talisman': {
+        to_name: {
+            1: 'Faded',
+            2: 'Luminous',
+            3: 'Radiant'
+        }
+    },
+    'glyph': {
+        to_name: {
+            1: 'Crude',
+            2: 'Simple',
+            3: 'Intricate',
+            4: 'Elaborate'
+        }
+    }
+};
+
 swlcalc.data.suffix_mapping = {
     to_num: {
         'alacrity': 1,
