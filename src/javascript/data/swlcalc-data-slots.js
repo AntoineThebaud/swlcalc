@@ -4,6 +4,24 @@ swlcalc.data = swlcalc.data || {};
 swlcalc.data.template_data = {
     slots: [
         {
+            id: 'weapon',
+            name: 'Primary Weapon',
+            kind: 'weapon',
+            group: 'weapon',
+            type: 'weapon',
+            is_weapon: true,
+            is_primary: true
+        },
+        {
+            id: 'weapon2',
+            name: 'Secondary Weapon',
+            kind: 'weapon',
+            group: 'weapon',
+            type: 'weapon',
+            is_weapon: true,
+            is_primary: false
+        },
+        {
             id: 'head',
             name: 'Head Talisman',
             kind: 'head',
@@ -51,24 +69,6 @@ swlcalc.data.template_data = {
             kind: 'occult',
             type: 'talisman',
             group: 'minor'
-        },
-        {
-            id: 'weapon',
-            name: 'Primary Weapon',
-            kind: 'weapon',
-            group: 'weapon',
-            type: 'weapon',
-            is_weapon: true,
-            is_primary: true
-        },
-        {
-            id: 'weapon2',
-            name: 'Secondary Weapon',
-            kind: 'weapon',
-            group: 'weapon',
-            type: 'weapon',
-            is_weapon: true,
-            is_primary: false
         }
     ]
 };

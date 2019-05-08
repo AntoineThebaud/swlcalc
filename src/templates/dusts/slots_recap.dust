@@ -3,41 +3,41 @@
         <div class="col-lg-4">
         </div>
         <div class="col-lg-4">
-            {>slot_recap slot=slots_recap[0]/}
-        </div>
-        <div class="col-lg-4">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-4">
-            {>slot_recap slot=slots_recap[1]/}
-        </div>
-        <div class="col-lg-4">
             {>slot_recap slot=slots_recap[2]/}
         </div>
         <div class="col-lg-4">
-            {>slot_recap slot=slots_recap[3]/}
         </div>
     </div>
     <div class="row">
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap[3]/}
+        </div>
         <div class="col-lg-4">
             {>slot_recap slot=slots_recap[4]/}
         </div>
         <div class="col-lg-4">
             {>slot_recap slot=slots_recap[5]/}
         </div>
-        <div class="col-lg-4">
-            {>slot_recap slot=slots_recap[6]/}
-        </div>
     </div>
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap[6]/}
         </div>
         <div class="col-lg-4">
             {>slot_recap slot=slots_recap[7]/}
         </div>
         <div class="col-lg-4">
             {>slot_recap slot=slots_recap[8]/}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap[0]/}
+        </div>
+        <div class="col-lg-4">
+            {>slot_recap slot=slots_recap[1]/}
         </div>
         <div class="col-lg-2">
         </div>
