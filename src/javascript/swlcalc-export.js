@@ -7,7 +7,7 @@ swlcalc.export = function() {
     var elInit = function() {
         return {
             export_btn: $('a.export'),
-            export_textarea: $('#export-textarea'),
+            export_text: $('#export-text'),
             open_export_modal: $('#open-export-modal')
         };
     };
@@ -25,11 +25,11 @@ swlcalc.export = function() {
             startExportUrl();
         });
 
-        el.open_export_modal.on('shown', function() {
-            el.export_textarea.focus();
+        el.open_export_modal.on('shown.bs.modal', function() {
+          el.export_text.focus();
         });
 
-        el.export_textarea.focus(function() {
+        el.export_text.focus(function() {
             $(this).select();
 
             $(this).mouseup(function() {
@@ -45,8 +45,7 @@ swlcalc.export = function() {
     //TODO/REFACTOR : remove or change name ?
     var startExportUrl = function() {
         var url = createExportUrl();
-        el.export_textarea.attr('rows', '1');
-        el.export_textarea.html(location.origin + location.pathname + '#' + url);
+        el.export_text.val(location.origin + location.pathname + '#' + url);
     };
 
     /**

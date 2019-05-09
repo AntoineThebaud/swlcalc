@@ -27,5 +27,5 @@ QUnit.test("should create export url", function(assert) {
 
 QUnit.test("should start export url and set in textfield", function(assert) {
     swlcalc.export.startExportUrl();
-    assert.equal($("#export-textarea").html(), location.origin + location.pathname + "#weapon=3,1,1,30,2,2,1,1,0,6,0&amp;weapon2=3,2,3,30,2,2,1,1,0,2,0&amp;head=3,1,1,30,4,1,3,1,2,20,15&amp;finger=3,1,1,30,3,5,2,20,1,10,9&amp;neck=3,1,1,30,3,5,2,20,2,10,3&amp;wrist=3,1,1,1,3,5,2,20,1,1,14&amp;luck=3,1,1,1,3,4,2,20,3,8,6&amp;waist=3,1,1,30,3,4,2,20,2,3,11&amp;occult=3,1,1,1,3,4,2,20,3,4,18");
+    assert.equal($("#export-text").val(), location.origin + location.pathname + "#weapon=3,1,1,30,2,2,1,1,0,6,0&weapon2=3,2,3,30,2,2,1,1,0,2,0&head=3,1,1,30,4,1,3,1,2,20,15&finger=3,1,1,30,3,5,2,20,1,10,9&neck=3,1,1,30,3,5,2,20,2,10,3&wrist=3,1,1,1,3,5,2,20,1,1,14&luck=3,1,1,1,3,4,2,20,3,8,6&waist=3,1,1,30,3,4,2,20,2,3,11&occult=3,1,1,1,3,4,2,20,3,4,18");
 });

@@ -63,15 +63,18 @@
         </div>
 
         <!-- Pop-up window on [ Export ] -->
-        <div id="open-export-modal" class="modal hide fade">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h5>Export</h5>
-            </div>
-            <div class="modal-body">
-                Copy this and share:
-                <br/>
-                <textarea id="export-textarea" class="field span12" wrap="off" rows="10"></textarea>
+        <div id="open-export-modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Export</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Copy this and share :</p>
+                        <input id="export-text" type="text" class="form-control"></input>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
