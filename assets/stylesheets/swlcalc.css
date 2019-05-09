@@ -20,9 +20,6 @@ div.container {
 .masthead {
     margin-top: 10px;
 }
-#export-textarea {
-  resize: none;
-}
 .not-functionnal {
     color: lightgray !important;
 }
