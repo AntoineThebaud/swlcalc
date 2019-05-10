@@ -77,7 +77,6 @@ swlcalc = function() {
         swlcalc.gear.init();
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             startSelectHandler(swlcalc.data.template_data.slots[i]);
-            startButtonHandler(swlcalc.data.template_data.slots[i]);
         }
         swlcalc.button.init();
         swlcalc.buttonBar.init();

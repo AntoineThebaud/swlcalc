@@ -36,7 +36,7 @@
                     <p class="mediumgrey">Character bound</p>
                 </td>
                 <td id="{slot.id}-editbtn-wrapertd">
-                    <button id="{slot.id}-editbtn" class="btn btn-default">
+                    <button id="{slot.id}-editbtn" class="btn btn-default" data-toggle="modal" data-target="#{slot.id}-edit-modal">
                         <img src="assets/images/buttons/btn-edit.png" alt="image"/>
                     </button>
                 </td>

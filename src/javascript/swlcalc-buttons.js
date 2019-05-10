@@ -51,36 +51,3 @@ swlcalc.button.SwapWeaponButton = function SwapWeaponButton(slotId) {
         return slotId == 'weapon' ? 'weapon2' : 'weapon';
     };
 };
-
-swlcalc.button.ButtonHandler = function ButtonHandler(slot) {
-
-    var slotObj = swlcalc.gear.slots[slot.id];
-
-    this.init = function() {
-        this.bindEvents();
-    };
-
-    /**
-     * Associates the right processing to each trigger.
-     */
-    this.bindEvents = function() {
-        slotObj.el.editBtn.click(this.handleEditBtnClick);
-        slotObj.el.editModal.click(this.handleEditModalClick);
-    };
-
-    /**
-     * Handler for #slot-editbtn : display edit modal box
-     */
-    this.handleEditBtnClick = function(event) {
-        slotObj.showEditModal();
-    };
-
-    /**
-     * Handler for #slot-editbtn : close edit window
-     */
-    this.handleEditModalClick = function(event) {
-        if (event.target == slotObj.el.editModal[0]) {
-            slotObj.hideEditModal();
-        }
-    };
-};
