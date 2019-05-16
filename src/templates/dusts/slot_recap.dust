@@ -6,6 +6,7 @@
                     <img id="{slot.id}-recap-equipment-img-item" class="slotrecap-itemicon" src="assets/images/icons/talisman/Dice.png" alt="image"/>
                     <img id="{slot.id}-recap-equipment-img-rarity" class="slotrecap-itemicon" src="assets/images/icons/rarity/epic-64x64.png"/>
                     <img id="{slot.id}-recap-equipment-img-quality" class="slotrecap-itemicon" src="assets/images/icons/quality/1.png"/>
+                    <div id="{slot.id}-recap-equipment-label-level" class="label-level big border-standard">20</div>
                 </td>
                 <td id="{slot.id}-recap-equipment-wrapertd">
                     <h5 id="{slot.id}-recap-equipment-title">
@@ -26,12 +27,12 @@
                         <span> (Lv </span>
                         <span id="{slot.id}-recap-equipment-level"></span>
                         <span> </span>
-                        <span id="{slot.id}-recap-equipment-rarity">Standard</span>
+                        <span id="{slot.id}-recap-equipment-rarity"></span>
                         <span>)</span>
                     </p>
                     <p>
                         <span>Item Power: </span>
-                        <span id="{slot.id}-recap-subtitle-ilvl">148</span>
+                        <span id="{slot.id}-recap-ilvl"></span>
                     </p>
                     <p class="mediumgrey">Character bound</p>
                 </td>
@@ -59,21 +60,19 @@
             <span id="{slot.id}-recap-equipment-phyprot-name">Physical Protection</span>
         </p>
         <hr>
-        <p id="{slot.id}-recap-equipment-description">
-            This {slot.type} gains more power when leveling up. Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.
-        </p>
+        <p id="{slot.id}-recap-equipment-description"></p>
         <hr>
         <h6 id="{slot.id}-recap-glyph-title">
-            <span id="{slot.id}-recap-glyph-quality">Simple</span>
+            <span id="{slot.id}-recap-glyph-quality"></span>
             <span> </span>
-            <span id="{slot.id}-recap-glyph-item">Stalwart</span>
+            <span id="{slot.id}-recap-glyph-item"></span>
             <span> Glyph</span>
         </h6>
         <p class="mediumgrey">
             <span>Glyph (Lv </span>
-            <span id="{slot.id}-recap-glyph-level">12</span>
+            <span id="{slot.id}-recap-glyph-level"></span>
             <span> </span>
-            <span id="{slot.id}-recap-glyph-rarity">Standard</span>
+            <span id="{slot.id}-recap-glyph-rarity"></span>
             <span>)</span>
         </p>
         <p>
@@ -83,13 +82,13 @@
         </p>
         <hr>
         <h6 id="{slot.id}-recap-signet-title">
-            <span id="{slot.id}-recap-signet-item">Signet of Bludgeoning<span>
+            <span id="{slot.id}-recap-signet-item"><span>
         </h6>
         <p class="mediumgrey">
             <span>Signet (Lv </span>
-            <span id="{slot.id}-recap-signet-level">19</span>
+            <span id="{slot.id}-recap-signet-level"></span>
             <span> </span>
-            <span id="{slot.id}-recap-signet-rarity">Superior</span>
+            <span id="{slot.id}-recap-signet-rarity"></span>
             <span>)</span>
         </p>
         <p id="{slot.id}-recap-signet-description">

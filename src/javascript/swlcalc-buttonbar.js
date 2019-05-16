@@ -46,8 +46,8 @@ swlcalc.buttonBar = function() {
         el.btn_all_2_pip.on('click', setQualityOnAllSlots);
         el.btn_all_3_pip.on('click', setQualityOnAllSlots);
 
-        el.btn_all_lvl_min.on('click', setLevelOnAllSlots);
-        el.btn_all_lvl_max.on('click', setLevelOnAllSlots);
+        el.btn_all_lvl_min.on('click', setMinLevelOnAllSlots);
+        el.btn_all_lvl_max.on('click', setMaxLevelOnAllSlots);
 
         el.btn_reset.on('click', resetGear);
     };
@@ -94,17 +94,32 @@ swlcalc.buttonBar = function() {
     };
 
     /**
-     * Set the same chosen rarity to all equipments+glyphs+signets.
+     * Set the min level to all equipments+glyphs+signets.
      */
-    var setLevelOnAllSlots = function(event) {
-        var minOrMax = event.currentTarget.id.split('-')[3]; //TODO better way to retrieve this value maybe ?
+    var setMinLevelOnAllSlots = function(event) {
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            slot.equipmentLevel(slot.getAttrFromEquipmentLevel(minOrMax));
+            slot.equipmentLevel(slot.equipmentLevelMin());
             slot.el.equipmentLevel.change();
-            slot.glyphLevel(slot.getAttrFromGlyphLevel(minOrMax)); // TODO maybe simply put 1 or 20 ?
+            slot.glyphLevel(slot.glyphLevelMin());
             slot.el.glyphLevel.change();
-            slot.signetLevel(slot.getAttrFromSignetLevel(minOrMax)); // TODO maybe simply put 1 or 20 ?
+            slot.signetLevel(slot.signetLevelMin());
+            slot.el.signetLevel.change();
+        }
+        swlcalc.summary.updateAllStats(); //TODO maybe useless ?
+    };
+
+    /**
+     * Set the max level to all equipments+glyphs+signets.
+     */
+    var setMaxLevelOnAllSlots = function(event) {
+        for (var id in swlcalc.gear.slots) {
+            var slot = swlcalc.gear.slots[id];
+            slot.equipmentLevel(slot.equipmentLevelMax());
+            slot.el.equipmentLevel.change();
+            slot.glyphLevel(slot.glyphLevelMax());
+            slot.el.glyphLevel.change();
+            slot.signetLevel(slot.signetLevelMax());
             slot.el.signetLevel.change();
         }
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?

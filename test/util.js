@@ -1,8 +1,8 @@
 
 QUnit.module("util-unit-tests", {});
 
-QUnit.test("should capitalise word", function(assert) {
-    assert.deepEqual(swlcalc.util.capitalise("swlcalc"), "Swlcalc");
+QUnit.test("should capitalize word", function(assert) {
+    assert.deepEqual(swlcalc.util.capitalize("swlcalc"), "Swlcalc");
 });
 
 QUnit.test("should return blank if None/none", function(assert) {

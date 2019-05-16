@@ -5,148 +5,198 @@
 function createTankBuild() {
     $("#weapon-equipment-id").val("1");
     $("#weapon-equipment-rarity").val("epic");
-    $("#weapon-equipment-rarity").change(); //Required because triggers update of #weapon-level
+    $("#weapon-equipment-rarity").change();
     $("#weapon-equipment-quality").val("1");
+    $("#weapon-equipment-quality").change();
     $("#weapon-equipment-level").val("30");
-    $("#weapon-equipment-level").change(); //Required because triggers update of #weapon-power-rating
+    $("#weapon-equipment-level").change();
     $("#weapon-glyph-id").val("critical-rating");
     $("#weapon-glyph-rarity").val("superior");
+    $("#weapon-glyph-id").change();
+    $("#weapon-glyph-rarity").change();
     $("#weapon-glyph-quality").val("1");
+    $("#weapon-glyph-quality").change();
     $("#weapon-glyph-level").val("1");
-    $("#weapon-glyph-id").change(); //Required because triggers update of #weapon-glyph-rating
+    $("#weapon-glyph-level").change();
     $("#weapon-signet-id").val("6");
-    $("#weapon-signet-id").change(); //Required because triggers update of #weapon-signet-description
+    $("#weapon-signet-id").change();
 
     $("#weapon2-equipment-id").val("2");
     $("#weapon2-equipment-rarity").val("epic");
-    $("#weapon2-equipment-rarity").change(); //Required because triggers update of #weapon2-level
+    $("#weapon2-equipment-rarity").change();
     $("#weapon2-equipment-quality").val("3");
+    $("#weapon2-equipment-quality").change();
     $("#weapon2-equipment-level").val("30");
-    $("#weapon2-equipment-level").change(); //Required because triggers update of #weapon2-power-rating
+    $("#weapon2-equipment-level").change();
     $("#weapon2-glyph-id").val("critical-rating");
     $("#weapon2-glyph-rarity").val("superior");
+    $("#weapon2-glyph-id").change();
+    $("#weapon2-glyph-rarity").change();
     $("#weapon2-glyph-quality").val("1");
+    $("#weapon2-glyph-quality").change();
     $("#weapon2-glyph-level").val("1");
-    $("#weapon2-glyph-id").change(); //Required because triggers update of #weapon2-glyph-rating
+    $("#weapon2-glyph-level").change();
     $("#weapon2-signet-id").val("2");
-    $("#weapon2-signet-id").change(); //Required because triggers update of #weapon2-signet-description
+    $("#weapon2-signet-id").change();
 
     $("#head-equipment-id").val("1");
-    $("#head-equipment-id").change(); //TODO/TEST indentify if change needed and when it should be triggered
+    $("#head-equipment-id").change();
     $("#head-equipment-rarity").val("epic");
-    $("#head-equipment-rarity").change(); //Required because triggers update of #head-level
+    $("#head-equipment-rarity").change();
     $("#head-equipment-quality").val("1");
+    $("#head-equipment-quality").change();
     $("#head-equipment-level").val("30");
-    $("#head-equipment-level").change(); //Required because triggers update of #head-power-rating
+    $("#head-equipment-level").change();
     $("#head-glyph-id").val("hit-rating");
+    $("#head-glyph-id").change();
     $("#head-glyph-rarity").val("mythic");
+    $("#head-glyph-rarity").change();
     $("#head-glyph-quality").val("3");
+    $("#head-glyph-quality").change();
     $("#head-glyph-level").val("1");
-    $("#head-glyph-id").change(); //Required because triggers update of #head-glyph-rating
+    $("#head-glyph-level").change();
     $("#head-signet-id").val("20");
+    $("#head-signet-id").change();
     $("#head-signet-rarity").val("superior");
+    $("#head-signet-rarity").change();
     $("#head-signet-level").val("15");
-    $("#head-signet-id").change(); //Required because triggers update of #head-signet-description
+    $("#head-signet-level").change();
 
     $("#finger-equipment-id").val("1");
-    $("#finger-equipment-id").change(); //TODO/TEST indentify if change needed and when it should be triggered
+    $("#finger-equipment-id").change();
     $("#finger-equipment-rarity").val("epic");
-    $("#finger-equipment-rarity").change(); //Required because triggers update of #finger-level
+    $("#finger-equipment-rarity").change();
     $("#finger-equipment-quality").val("1");
+    $("#finger-equipment-quality").change();
     $("#finger-equipment-level").val("30");
-    $("#finger-equipment-level").change(); //Required because triggers update of #finger-power-rating
+    $("#finger-equipment-level").change();
     $("#finger-glyph-id").val("defense-rating");
+    $("#finger-glyph-id").change();
     $("#finger-glyph-rarity").val("epic");
+    $("#finger-glyph-rarity").change();
     $("#finger-glyph-quality").val("2");
+    $("#finger-glyph-quality").change();
     $("#finger-glyph-level").val("20");
-    $("#finger-glyph-id").change(); //Required because triggers update of #finger-glyph-rating
+    $("#finger-glyph-level").change();
     $("#finger-signet-id").val("10");
+    $("#finger-signet-id").change();
     $("#finger-signet-rarity").val("standard");
+    $("#finger-signet-rarity").change();
     $("#finger-signet-level").val("9");
-    $("#finger-signet-id").change(); //Required because triggers update of #finger-signet-description
+    $("#finger-signet-level").change();
 
     $("#neck-equipment-id").val("1");
-    $("#neck-equipment-id").change(); //TODO/TEST indentify if change needed and when it should be triggered
+    $("#neck-equipment-id").change();
     $("#neck-equipment-rarity").val("epic");
-    $("#neck-equipment-rarity").change(); //Required because triggers update of #neck-level
+    $("#neck-equipment-rarity").change();
     $("#neck-equipment-quality").val("1");
+    $("#neck-equipment-quality").change();
     $("#neck-equipment-level").val("30");
-    $("#neck-equipment-level").change(); //Required because triggers update of #neck-power-rating
+    $("#neck-equipment-level").change();
     $("#neck-glyph-id").val("defense-rating");
+    $("#neck-glyph-id").change();
     $("#neck-glyph-rarity").val("epic");
+    $("#neck-glyph-rarity").change();
     $("#neck-glyph-quality").val("2");
+    $("#neck-glyph-quality").change();
     $("#neck-glyph-level").val("20");
-    $("#neck-glyph-id").change(); //Required because triggers update of #neck-glyph-rating
+    $("#neck-glyph-level").change();
     $("#neck-signet-id").val("10");
+    $("#neck-signet-id").change();
     $("#neck-signet-rarity").val("superior");
+    $("#neck-signet-rarity").change();
     $("#neck-signet-level").val("3");
-    $("#neck-signet-id").change(); //Required because triggers update of #neck-signet-description
+    $("#neck-signet-level").change();
 
     $("#wrist-equipment-id").val("1");
-    $("#wrist-equipment-id").change(); //TODO/TEST indentify if change needed and when it should be triggered
+    $("#wrist-equipment-id").change();
     $("#wrist-equipment-rarity").val("epic");
-    $("#wrist-equipment-rarity").change(); //Required because triggers update of #wrist-level
+    $("#wrist-equipment-rarity").change();
     $("#wrist-equipment-quality").val("1");
+    $("#wrist-equipment-quality").change();
     $("#wrist-equipment-level").val("1");
-    $("#wrist-equipment-level").change(); //Required because triggers update of #wrist-power-rating
+    $("#wrist-equipment-level").change();
     $("#wrist-glyph-id").val("defense-rating");
+    $("#wrist-glyph-id").change();
     $("#wrist-glyph-rarity").val("epic");
+    $("#wrist-glyph-rarity").change();
     $("#wrist-glyph-quality").val("2");
+    $("#wrist-glyph-quality").change();
     $("#wrist-glyph-level").val("20");
-    $("#wrist-glyph-id").change(); //Required because triggers update of #wrist-glyph-rating
+    $("#wrist-glyph-level").change();
     $("#wrist-signet-id").val("1");
+    $("#wrist-signet-id").change();
     $("#wrist-signet-rarity").val("standard");
+    $("#wrist-signet-rarity").change();
     $("#wrist-signet-level").val("14");
-    $("#wrist-signet-id").change(); //Required because triggers update of #wrist-signet-description
+    $("#wrist-signet-level").change();
 
     $("#luck-equipment-id").val("1");
-    $("#luck-equipment-id").change(); //TODO/TEST indentify if change needed and when it should be triggered
+    $("#luck-equipment-id").change();
     $("#luck-equipment-rarity").val("epic");
-    $("#luck-equipment-rarity").change(); //Required because triggers update of #luck-level
+    $("#luck-equipment-rarity").change();
     $("#luck-equipment-quality").val("1");
+    $("#luck-equipment-quality").change();
     $("#luck-equipment-level").val("1");
-    $("#luck-equipment-level").change(); //Required because triggers update of #luck-power-rating
+    $("#luck-equipment-level").change();
     $("#luck-glyph-id").val("evade-rating");
+    $("#luck-glyph-id").change();
     $("#luck-glyph-rarity").val("epic");
+    $("#luck-glyph-rarity").change();
     $("#luck-glyph-quality").val("2");
+    $("#luck-glyph-quality").change();
     $("#luck-glyph-level").val("20");
-    $("#luck-glyph-id").change(); //Required because triggers update of #luck-glyph-rating
+    $("#luck-glyph-level").change();
     $("#luck-signet-id").val("8");
+    $("#luck-signet-id").change();
     $("#luck-signet-rarity").val("epic");
+    $("#luck-signet-rarity").change();
     $("#luck-signet-level").val("6");
-    $("#luck-signet-id").change(); //Required because triggers update of #luck-signet-description
+    $("#luck-signet-level").change();
 
     $("#waist-equipment-id").val("1");
-    $("#waist-equipment-id").change(); //TODO/TEST indentify if change needed and when it should be triggered
+    $("#waist-equipment-id").change();
     $("#waist-equipment-rarity").val("epic");
-    $("#waist-equipment-rarity").change(); //Required because triggers update of #waist-level
+    $("#waist-equipment-rarity").change();
     $("#waist-equipment-quality").val("1");
+    $("#waist-equipment-quality").change();
     $("#waist-equipment-level").val("30");
-    $("#waist-equipment-level").change(); //Required because triggers update of #waist-power-rating
+    $("#waist-equipment-level").change();
     $("#waist-glyph-id").val("evade-rating");
+    $("#waist-glyph-id").change();
     $("#waist-glyph-rarity").val("epic");
+    $("#waist-glyph-rarity").change();
     $("#waist-glyph-quality").val("2");
+    $("#waist-glyph-quality").change();
     $("#waist-glyph-level").val("20");
-    $("#waist-glyph-id").change(); //Required because triggers update of #waist-glyph-rating
+    $("#waist-glyph-level").change();
     $("#waist-signet-id").val("3");
+    $("#waist-signet-id").change();
     $("#waist-signet-rarity").val("superior");
+    $("#waist-signet-rarity").change();
     $("#waist-signet-level").val("11");
-    $("#waist-signet-id").change(); //Required because triggers update of #waist-signet-description
+    $("#waist-signet-level").change();
 
     $("#occult-equipment-id").val("1");
-    $("#occult-equipment-id").change(); //TODO : indentify if change needed and when it should be triggered
+    $("#occult-equipment-id").change();
     $("#occult-equipment-rarity").val("epic");
-    $("#occult-equipment-rarity").change(); //Required because triggers update of #occult-level
+    $("#occult-equipment-rarity").change();
     $("#occult-equipment-quality").val("1");
+    $("#occult-equipment-quality").change();
     $("#occult-equipment-level").val("1");
-    $("#occult-equipment-level").change(); //Required because triggers update of #occult-power-rating
+    $("#occult-equipment-level").change();
     $("#occult-glyph-id").val("evade-rating");
+    $("#occult-glyph-id").change();
     $("#occult-glyph-rarity").val("epic");
+    $("#occult-glyph-rarity").change();
     $("#occult-glyph-quality").val("2");
+    $("#occult-glyph-quality").change();
     $("#occult-glyph-level").val("20");
-    $("#occult-glyph-id").change(); //Required because triggers update of #occult-glyph-rating
+    $("#occult-glyph-level").change();
     $("#occult-signet-id").val("4");
+    $("#occult-signet-id").change();
     $("#occult-signet-rarity").val("epic");
+    $("#occult-signet-rarity").change();
     $("#occult-signet-level").val("18");
-    $("#occult-signet-id").change(); //Required because triggers update of #occult-signet-description
+    $("#occult-signet-level").change();
 }

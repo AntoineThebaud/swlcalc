@@ -108,7 +108,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.updateToDefaultSignet = function() {
         var signet_icon_url = 'assets/images/icons/signet/none.png';
         var signet_rarity_url = 'assets/images/icons/rarity/none-42x42.png';
-        $('#' + slot.id + '-signet-img-icon').attr('src', signet_icon_url);
+        $('#' + slot.id + '-signet-img-item').attr('src', signet_icon_url);
         $('#' + slot.id + '-signet-img-rarity').attr('src', signet_rarity_url);
     };
 
@@ -121,13 +121,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-itemId
      */
     this.handleEquipmentItemChange = function(event) {
-        //TODO/FEATURE : reenable slot name display
-//      var wtype = $(this).val();
-//      if(wtype != 'none') {
-//          slotObj.name(': ' + swlcalc.util.capitalise(wtype));
-//      } else {
-//          slotObj.name('');
-//      }
         slotObj.updateEquipment();
         slotObj.updateEquipmentPowerRating();
         slotObj.updateEquipmentILvl();
@@ -149,8 +142,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-quality
      */
     this.handleEquipmentQualityChange = function(event) {
-        slotObj.updateEquipmentPowerRating();
         slotObj.updateEquipmentQuality();
+        slotObj.updateEquipmentPowerRating();
         swlcalc.summary.updateAllStats();
     };
 
@@ -159,8 +152,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleEquipmentLevelChange = function(event) {
         slotObj.updateEquipmentLevel();
-        slotObj.updateEquipmentILvl();
         slotObj.updateEquipmentPowerRating();
+        slotObj.updateEquipmentILvl();
         swlcalc.summary.updateAllStats();
     };
 
@@ -173,9 +166,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-glyph
      */
     this.handleGlyphChange = function(event) {
-        slotObj.updateGlyphImgIcon();
+        slotObj.updateGlyph();
         slotObj.updateGlyphRating();
-        slotObj.updateGlyphLabel();
         slotObj.updateGlyphILvl();
         swlcalc.summary.updateAllStats();
     };
@@ -185,11 +177,9 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleGlyphRarityChange = function(event) {
         updateTextColor(this);
-        slotObj.updateGlyphQuality();
-        slotObj.updateGlyphImgRarity();
-        slotObj.updateGlyphLabelLevelColor();
-        slotObj.updateGlyphILvl();
+        slotObj.updateGlyphRarity();
         slotObj.updateGlyphRating();
+        slotObj.updateGlyphILvl();
         swlcalc.summary.updateAllStats();
     };
 
@@ -197,8 +187,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-glyph-quality
      */
     this.handleGlyphQualityChange = function(event) {
+        slotObj.updateGlyphQuality();
         slotObj.updateGlyphRating();
-        slotObj.updateGlyphImgQuality();
         swlcalc.summary.updateAllStats();
     };
 
@@ -206,9 +196,9 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-glyph-level
      */
     this.handleGlyphLevelChange = function(event) {
+        slotObj.updateGlyphLevel();
         slotObj.updateGlyphRating();
         slotObj.updateGlyphILvl();
-        slotObj.updateGlyphLabelLevelText();
         swlcalc.summary.updateAllStats();
     }
 
@@ -239,9 +229,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     this.handleSignetRarityChange = function(event) {
         updateTextColor(this);
-        slotObj.updateSignetImgIcon();
-        slotObj.updateSignetImgRarity();
-        slotObj.updateSignetLabelLevelColor();
+        slotObj.updateSignetRarity();
         slotObj.updateSignetILvl();
         swlcalc.summary.updateAllStats();
     };
@@ -250,8 +238,8 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Handler for #slot-signet-level
      */
     this.handleSignetLevelChange = function(event) {
+        slotObj.updateSignetLevel();
         slotObj.updateSignetILvl();
-        slotObj.updateSignetLabelLevelText();
         swlcalc.summary.updateAllStats();
     };
 };

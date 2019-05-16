@@ -209,6 +209,7 @@ div.label-level {
     border-radius: 4px;
     line-height: 15px;
     text-align: center;
+    font-size: 12px;
 }
 div.label-level.big {
     width: 24px;
@@ -219,30 +220,42 @@ div.label-level.little {
     font-size: 10px;
 }
 /******************************************************/
-div[id$="-slot"] .table-slots img.item-icon {
+/* slot > equipment (talisman/weapon) & glyph & signet */
+td[id$="-img-wrapertd"] {
+    position: relative;
+    vertical-align: top;
+}
+td[id$="-equipment-img-wrapertd"] {
+    width: 58px;
+}
+td[id$="-glyph-img-wrapertd"],
+td[id$="-signet-img-wrapertd"] {
+    width: 48px;
+}
+td[id$="-img-wrapertd"] img {
     position: absolute;
 }
-div[id$="-slot"] .table-slots img.item-icon.item {
-    z-index: 0;
-}
-div[id$="-slot"] .table-slots img.item-icon.rarity {
-    z-index: 1;
-}
-div[id$="-slot"] .table-slots img.item-icon.quality {
-    z-index: 2;
-}
-/******************************************************/
-/* slot > equipment (talisman/weapon) */
-div[id$="-slot"] .table-slots td.equipment-img {
-    width: 58px;
-    vertical-align: top;
-    position: relative;
-}
-div[id$="-slot"] .table-slots img.item-icon.equipment {
+td[id$="-equipment-img-wrapertd"] img {
     width: 48px;
-    height:48px;
+    height: 48px;
     left: 5px;
     top: 5px;
+}
+td[id$="-glyph-img-wrapertd"] img,
+td[id$="-signet-img-wrapertd"] img {
+    width: 38px;
+    height:38px;
+    left: 5px;
+    top: 10px;
+}
+img[id$="-img-item"] {
+    z-index: 0;
+}
+img[id$="-img-rarity"] {
+    z-index: 1;
+}
+img[id$="-img-quality"] {
+    z-index: 2;
 }
 div[id$="-slot"] .table-slots td.equipment-select {
     width: 150px;
@@ -252,18 +265,6 @@ div[id$="-slot"] .table-slots td.equipment-select select {
 }
 /******************************************************/
 /* slot > glyph & signet */
-div[id$="-slot"] .table-slots td.glyph-img,
-div[id$="-slot"] .table-slots td.signet-img {
-    width: 48px;
-    position: relative;
-}
-div[id$="-slot"] .table-slots img.item-icon.glyph,
-div[id$="-slot"] .table-slots img.item-icon.signet {
-    width: 38px;
-    height:38px;
-    left: 5px;
-    top: 10px;
-}
 div[id$="-slot"] .table-slots td.glyph-select,
 div[id$="-slot"] .table-slots td.signet-select {
     width: 160px;
@@ -436,28 +437,6 @@ div[id$="-slotrecap"] {
     padding: 10px;
     border-radius: 10px;
 }
-
-td[id$="-recap-equipment-wrapertd"] {
-}
-td[id$="-recap-equipment-img-wrapertd"] {
-    position: relative;
-    width: 55px;
-}
-td[id$="-recap-equipment-img-wrapertd"] img {
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    top: 0px;
-}
-div[id$="-recap-equipment-img-item"] {
-    z-index: 0;
-}
-div[id$="-recap-equipment-img-rarity"] {
-    z-index: 1;
-}
-div[id$="-recap-equipment-img-quality"] {
-    z-index: 2;
-}
 div[id$="-slotrecap"] p {
     font-size: 11px;
     margin: 0;
@@ -478,6 +457,9 @@ div[id$="-slotrecap"] hr {
 
 td[id$="-editbtn-wrapertd"] {
   vertical-align: top;
+}
+td[id$="-recap-equipment-wrapertd"] {
+    width: 160px;
 }
 button[id$="-editbtn"] {
   padding: 0px;

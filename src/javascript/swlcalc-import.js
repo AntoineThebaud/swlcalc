@@ -48,11 +48,7 @@ swlcalc.import = function() {
         slotObj.equipmentId(values[1] == '0' ? 'none' : values[1]);
         slotObj.el.equipmentId.change();
         // values[2] == Item's Quality
-        if(slotObj.isWeapon()) {
-            slotObj.equipmentQuality(values[2]);
-        } else {
-            slotObj.equipmentQuality(values[2]);
-        }
+        slotObj.equipmentQuality(values[2]);
         slotObj.el.equipmentQuality.change();
         // values[3] == Item's Level
         slotObj.equipmentLevel(values[3]);
@@ -75,12 +71,13 @@ swlcalc.import = function() {
         && typeof values[10] !== 'undefined') {
             // values[8] == Signet's Rarity
             slotObj.signetRarity(swlcalc.data.rarity_mapping.to_name[values[8]]);
+            slotObj.el.signetRarity.change();
             // values[9] == Signet's Type (ID)
             slotObj.signetId((values[9] != '0' ? values[9] : 'none'));
+            slotObj.el.signetId.change();
             // values[10] == Signet's Level
             slotObj.signetLevel(values[10]);
-            slotObj.el.signetId.change();
-            slotObj.el.signetRarity.change();
+            slotObj.el.signetLevel.change();
         }
     };
 

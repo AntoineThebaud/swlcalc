@@ -51,10 +51,10 @@
                         </td>
                     </tr>
                     <tr class="with-icon">
-                        <td class="equipment-img">
-                            <img id="{id}-equipment-img-quality" class="item-icon equipment quality" src="assets/images/icons/quality/1.png"/>
-                            <img id="{id}-equipment-img-rarity" class="item-icon equipment rarity" src=""/>
-                            <img id="{id}-equipment-img-icon" class="item-icon equipment item" src="" alt="image"/>
+                        <td id="{id}-equipment-img-wrapertd">
+                            <img id="{id}-equipment-img-item" src="" alt="image"/>
+                            <img id="{id}-equipment-img-rarity" src=""/>
+                            <img id="{id}-equipment-img-quality" src=""/>
                             <div id="{id}-equipment-label-level" class="label-level big border-standard">20</div>
                         </td>
                         <td class="equipment-select">
@@ -108,11 +108,11 @@
                         <td class="filler"></td>
                     </tr>
                     <tr class="with-icon">
-                        <td class="glyph-img">
+                        <td id="{id}-glyph-img-wrapertd" class="glyph-img">
                             <a href="#" class="glyph-tooltip" data-toggle="tooltip" title="Glyph for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
-                                <img id="{id}-glyph-img-quality" class="item-icon glyph quality" src="assets/images/icons/quality/1.png"/>
-                                <img id="{id}-glyph-img-rarity" class="item-icon glyph rarity" src="assets/images/icons/rarity/none-42x42.png"/>
-                                <img id="{id}-glyph-img-icon" class="item-icon glyph item" src="assets/images/icons/glyph/none.png" alt="Glyph"/>
+                                <img id="{id}-glyph-img-item" src="" alt="Glyph"/>
+                                <img id="{id}-glyph-img-quality" src=""/>
+                                <img id="{id}-glyph-img-rarity" src=""/>
                                 <div id="{id}-glyph-label-level" class="label-level little border-standard">20</div>
                             </a>
                         </td>
@@ -173,10 +173,10 @@
                         <td id="{id}-signet-description" class="item-description"></td>
                     </tr>
                     <tr class="with-icon">
-                        <td class="signet-img">
+                        <td id="{id}-signet-img-wrapertd" class="signet-img">
                             <a href="#" class="signet-tooltip" data-toggle="tooltip" title="Signet for the {name} slot. Choose the rarity and type of signet.">
-                                <img id="{id}-signet-img-rarity" class="item-icon signet rarity" src="assets/images/icons/rarity/none-42x42.png"/>
-                                <img id="{id}-signet-img-icon" class="item-icon signet item" src="assets/images/icons/signet/none.png" alt="Signet"/>
+                                <img id="{id}-signet-img-item" src="" alt="Signet"/>
+                                <img id="{id}-signet-img-rarity" src=""/>
                                 <div id="{id}-signet-label-level" class="label-level little border-standard">20</div>
                             </a>
                         </td>

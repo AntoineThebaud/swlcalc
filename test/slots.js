@@ -65,9 +65,9 @@ QUnit.test("should get and set the slot's equipment iLvl", function(assert) {
 QUnit.test("should get and set the slot's equipment icon image", function(assert) {
 
     //TODO/BUG : this one should finish in status ok !
-    //equal(swlcalc.gear.slots.head.equipmentImgIcon(), 'assets/images/icons/talisman/Ashes.png');
-    swlcalc.gear.slots.head.equipmentImgIcon("lorem/ipsum/dolor/sit/amet");
-    assert.equal(swlcalc.gear.slots.head.equipmentImgIcon(), "lorem/ipsum/dolor/sit/amet");
+    //equal(swlcalc.gear.slots.head.equipmentImgItem(), 'assets/images/icons/talisman/Ashes.png');
+    swlcalc.gear.slots.head.equipmentImgItem("lorem/ipsum/dolor/sit/amet");
+    assert.equal(swlcalc.gear.slots.head.equipmentImgItem(), "lorem/ipsum/dolor/sit/amet");
 });
 
 QUnit.test("should get and set the slot's equipment border image", function(assert) {
@@ -86,8 +86,8 @@ QUnit.test("should update the slot's equipment image and description", function(
     swlcalc.gear.slots.head.equipmentId("12");
     swlcalc.gear.slots.head.updateEquipment();
 
-    //TODO/BUGGY not updated faster enough : equal(swlcalc.gear.slots.head.equipmentImgIcon(), 'assets/images/icons/talisman/Ashes.png', "should have update #head-imgIcon");
-    assert.equal(swlcalc.gear.slots.head.equipmentDescription(), "Whenever you are hit 5 times in succession, you deal %d physical damage to nearby enemies. This damage generates a large amount of hate.", "should have update #head-equipmentDescription");
+    //TODO/BUGGY not updated faster enough : assert.equal(swlcalc.gear.slots.head.equipmentImgItem(), 'assets/images/icons/talisman/Ashes.png', "should have update #head-imgItem");
+    assert.equal(swlcalc.gear.slots.head.equipmentDescription(), "Whenever you are hit <span class=\"bonus-val const\">5</span> times in succession, you deal <span id=\"head-equipment-bonus1\" class=\"bonus-val attack\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
 });
 
 QUnit.test("should update the slot's equipment power rating", function(assert) {
@@ -139,16 +139,14 @@ QUnit.test("should get and set the slot's glyph label", function(assert) {
     assert.equal(swlcalc.gear.slots.head.glyphLabel(), " Accele Rating");
 });
 
-QUnit.test("should get and set the slot's glyph imgIcon", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.glyphImgIcon(), "assets/images/icons/glyph/hit-rating.png");
-    swlcalc.gear.slots.head.glyphImgIcon("lorem/ipsum/dolor/sit/amet");
-    assert.equal(swlcalc.gear.slots.head.glyphImgIcon(), "lorem/ipsum/dolor/sit/amet");
+QUnit.test("should get and set the slot's glyph imgItem", function(assert) {
+    assert.equal(swlcalc.gear.slots.head.glyphImgItem(), "assets/images/icons/glyph/hit-rating.png");
+    swlcalc.gear.slots.head.glyphImgItem("lorem/ipsum/dolor/sit/amet");
+    assert.equal(swlcalc.gear.slots.head.glyphImgItem(), "lorem/ipsum/dolor/sit/amet");
 });
 
 QUnit.test("should get and set the slot's glyph imgBorder", function(assert) {
-
-    //TODO/FEATURE : to use assets/image/icons/rarity/none-42x42.png
-    assert.equal(swlcalc.gear.slots.head.glyphImgRarity(), "assets/images/icons/rarity/none-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.glyphImgRarity(), "assets/images/icons/rarity/mythic-42x42.png");
     swlcalc.gear.slots.head.glyphImgRarity("lorem/ipsum/dolor/sit/amet");
     assert.equal(swlcalc.gear.slots.head.glyphImgRarity(), "lorem/ipsum/dolor/sit/amet");
 });
@@ -186,14 +184,20 @@ QUnit.test("should get and set the slot's signet level", function(assert) {
     assert.equal(swlcalc.gear.slots.head.signetLevel(), "7");
 });
 
-QUnit.test("should update signet icon and border", function(assert) {
-    swlcalc.gear.slots.head.signetRarity("superior");
-    swlcalc.gear.slots.head.updateSignetImgIcon();
-    swlcalc.gear.slots.head.updateSignetImgRarity();
+// TODO cover new fields from recap div
+QUnit.test("should update signet's item image ", function(assert) {
+    assert.equal($('#head-signet-img-item').attr('src'), 'assets/images/icons/signet/head.png');
+    swlcalc.gear.slots.head.signetId("none");
+    swlcalc.gear.slots.head.updateSignet();
+    assert.equal($('#head-signet-img-item').attr('src'), 'assets/images/icons/signet/none.png');
+});
 
-    //TODO/TEST not working ! (not updated fast enough ?)
-    // equal($('#head-signet-img-icon').attr('src'), 'assets/images/icons/head_tank.png');
+// TODO cover new fields from recap div
+QUnit.test("should update signet's rarity image ", function(assert) {
     assert.equal($("#head-signet-img-rarity").attr("src"), "assets/images/icons/rarity/superior-42x42.png");
+    swlcalc.gear.slots.head.signetRarity("mythic");
+    swlcalc.gear.slots.head.updateSignetRarity();
+    assert.equal($("#head-signet-img-rarity").attr("src"), "assets/images/icons/rarity/mythic-42x42.png");
 });
 
 QUnit.test("should get and set the slot's signet iLvl", function(assert) {
@@ -204,9 +208,9 @@ QUnit.test("should get and set the slot's signet iLvl", function(assert) {
 
 //TODO/TEST tswcalc test. swlcalc equivalent needed
 // test('should update signet icon from name', 1, function() {
-//     swlcalc.gear.slots.head.updateSignetImgIconFromName('minor_dps');
+//     swlcalc.gear.slots.head.updateSignetImgItemFromName('minor_dps');
 
-//     Equal($('#head-signet-img-icon').attr('src'), 'assets/images/icons/minor_dps.png');
+//     Equal($('#head-signet-img-item').attr('src'), 'assets/images/icons/minor_dps.png');
 // });
 
 //TODO/TEST tswcalc test. swlcalc equivalent needed
@@ -216,12 +220,12 @@ QUnit.test("should get and set the slot's signet iLvl", function(assert) {
 
 //TODO/TEST tswcalc test. swlcalc equivalent needed
 QUnit.test("should get and set the slot's signet description", function(assert) {
-    assert.equal(swlcalc.gear.slots.occult.signetDescription(), "After using Active Dodge, you receive a speed bonus of 26.1579% for 4 seconds.");
+    assert.equal(swlcalc.gear.slots.occult.signetDescription(), "After using Active Dodge, you receive a speed bonus of <span id=\"occult-signet-bonus\" class=\"bonus-val const\">26.1579</span><span class=\"bonus-val const\">%</span> for <span class=\"bonus-val const\">4</span> seconds.");
     swlcalc.gear.slots.occult.signetId("3");
     swlcalc.gear.slots.occult.signetRarity("epic");
     swlcalc.gear.slots.occult.signetLevel("18");
     swlcalc.gear.slots.occult.updateSignet();
-    assert.equal(swlcalc.gear.slots.occult.signetDescription(), "Your active dodges have a 30% to knock down enemies in your path, but also have their cooldown increased by 74.03%.");
+    assert.equal(swlcalc.gear.slots.occult.signetDescription(), "Your active dodges have a <span id=\"occult-signet-bonus\" class=\"bonus-val const\">30</span><span class=\"bonus-val const\">%</span> to knock down enemies in your path, but also have their cooldown increased by <span id=\"occult-signet-bonus2\" class=\"bonus-val const\">74.03</span><span class=\"bonus-val const\">%</span>.");
 });
 
 //TODO/TEST tswcalc test. swlcalc equivalent needed

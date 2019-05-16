@@ -25,6 +25,13 @@ swlcalc.data.glyph_stat_mapping = {
         'critical-power': 'Critical Power',
         'evade-rating': 'Evade Rating',
         'defense-rating': 'Defense Rating',
+    },
+    to_name: {
+      'hit-rating': 'Accurate',
+      'critical-rating': 'Fierce',
+      'critical-power': 'Devastating',
+      'evade-rating': 'Elusive',
+      'defense-rating': 'Stalwart'
     }
 };
 

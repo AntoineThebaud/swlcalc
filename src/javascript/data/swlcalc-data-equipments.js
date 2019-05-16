@@ -1031,21 +1031,21 @@ swlcalc.data.equipments = {
             {
                 id: 4,
                 name: 'Ashes of Crushed Cities',
-                description: 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="head-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.375 ],
                 stats: [ 'Combat Power' ]
             },
             {
                 id: 5,
                 name: 'Revenant Ashes',
-                description: 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="head-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to that enemy and other nearby enemies.',
+                description: 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to that enemy and other nearby enemies.',
                 coefficients: [ 0.1875 ],
                 stats: [ 'Combat Power' ]
             },
             {
                 id: 6,
                 name: 'Ashes of Elder Things',
-                description: 'Whenever you hit the same enemy <span class="bonus-val const">6</span> times in succession, your next damaging Power Ability deals an additional <span id="head-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit the same enemy <span class="bonus-val const">6</span> times in succession, your next damaging Power Ability deals an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 1.05 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1057,21 +1057,21 @@ swlcalc.data.equipments = {
             {
                 id: 8,
                 name: 'Pharaoh\'s Blood',
-                description: 'Whenever you heal the same target <span class="bonus-val const">5</span> times, they are healed for an additional <span id="head-equipment-bonus1" class="bonus-val heal">%d</span> every second for <span class="bonus-val const">3</span> seconds.',
+                description: 'Whenever you heal the same target <span class="bonus-val const">5</span> times, they are healed for an additional <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> every second for <span class="bonus-val const">3</span> seconds.',
                 coefficients: [ 0.2 ],
                 stats: [ 'Healing Power' ]
             },
             {
                 id: 9,
                 name: 'Blood of the Old Ones',
-                description: 'Whenever you heal the same target <span class="bonus-val const">5</span> times, you heal your entire group for an additional <span id="head-equipment-bonus1" class="bonus-val heal">%d</span>.',
+                description: 'Whenever you heal the same target <span class="bonus-val const">5</span> times, you heal your entire group for an additional <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span>.',
                 coefficients: [ 0.375 ],
                 stats: [ 'Healing Power' ]
             },
             {
                 id: 10,
                 name: 'Oni Blood',
-                description: 'Whenever you heal the same target <span class="bonus-val const">5</span> times, they gain a leech effect that heals for <span class="bonus-val const">10%</span> of their damage dealt for <span class="bonus-val const">3</span> seconds. This effect can heal up to <span id="head-equipment-bonus1" class="bonus-val heal">%d</span> damage before being removed.',
+                description: 'Whenever you heal the same target <span class="bonus-val const">5</span> times, they gain a leech effect that heals for <span class="bonus-val const">10%</span> of their damage dealt for <span class="bonus-val const">3</span> seconds. This effect can heal up to <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> damage before being removed.',
                 coefficients: [ 0.811 ],
                 stats: [ 'Healing Power' ]
             },
@@ -1083,7 +1083,7 @@ swlcalc.data.equipments = {
             {
                 id: 12,
                 name: 'Cosmic Pigment',
-                description: 'Whenever you are hit <span class="bonus-val const">5</span> times in succession, you deal <span id="head-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.',
+                description: 'Whenever you are hit <span class="bonus-val const">5</span> times in succession, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.',
                 coefficients: [ 0.40 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1112,14 +1112,14 @@ swlcalc.data.equipments = {
             {
                 id: 3,
                 name: 'Skadi\'s Ring',
-                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, you deal <span id="finger-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.625 ],
                 stats: [ 'Combat Power' ]
             },
             {
                 id: 4,
                 name: 'Band of the Bacab',
-                description: 'Whenever you attempt to cleanse, you also restore <span id="finger-equipment-bonus1" class="bonus-val heal">%d</span> health to your defensive target.',
+                description: 'Whenever you attempt to cleanse, you also restore <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> health to your defensive target.',
                 coefficients: [ 0.185 ],
                 stats: [ 'Healing Power' ]
             },
@@ -1131,7 +1131,7 @@ swlcalc.data.equipments = {
             {
                 id: 6,
                 name: 'Cold Metal',
-                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, you are healed for <span id="finger-equipment-bonus1" class="bonus-val heal">%d</span>.',
+                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, you are healed for <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span>.',
                 coefficients: [ 0.625 ],
                 stats: [ 'Healing Power' ]
             },
@@ -1160,21 +1160,21 @@ swlcalc.data.equipments = {
             {
                 id: 4,
                 name: 'Choker of Shed Blood',
-                description: 'Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="neck-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
             {
                 id: 5,
                 name: 'Egon Pendant',
-                description: 'Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you apply a damage over time effect that deals <span id="neck-equipment-bonus1" class="bonus-val attack">%d</span> physical damage over <span class="bonus-val const">5</span> seconds. Your damage is increased by <span class="bonus-val const">4.5%</span> for each enemy affected by this effect.',
+                description: 'Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you apply a damage over time effect that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage over <span class="bonus-val const">5</span> seconds. Your damage is increased by <span class="bonus-val const">4.5%</span> for each enemy affected by this effect.',
                 coefficients: [ 0.15 ],
                 stats: [ 'Combat Power' ]
             },
             {
                 id: 6,
                 name: 'Spectral Essence',
-                description: 'This talisman gains more Attack Rating when leveling up.<br/>Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">33%</span> chance to summon a Spectre who will cast Unravel Soul. <span class="bonus-val const">10</span> second cooldown.<br/>Unravel Soul: An attack that deals <span id="neck-equipment-bonus1" class="bonus-val attack">%d</span> magical damage.',
+                description: 'This talisman gains more Attack Rating when leveling up.<br/>Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">33%</span> chance to summon a Spectre who will cast Unravel Soul. <span class="bonus-val const">10</span> second cooldown.<br/>Unravel Soul: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> magical damage.',
                 coefficients: [ 2.2 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1191,14 +1191,14 @@ swlcalc.data.equipments = {
             {
                 id: 9,
                 name: 'Vampiric Essence',
-                description: 'This talisman gains more Heal Rating when leveling up.<br/>Whenever you heal an ally who is below <span class="bonus-val const">50%</span> of their maximum health, their damage is increased by <span class="bonus-val const">4.5%</span> and their attacks restore their health up to a maximum of <span id="neck-equipment-bonus1" class="bonus-val heal">%d</span> health restored for <span class="bonus-val const">3</span> seconds. This effect can only be applied once every <span class="bonus-val const">10</span> seconds.',
+                description: 'This talisman gains more Heal Rating when leveling up.<br/>Whenever you heal an ally who is below <span class="bonus-val const">50%</span> of their maximum health, their damage is increased by <span class="bonus-val const">4.5%</span> and their attacks restore their health up to a maximum of <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> health restored for <span class="bonus-val const">3</span> seconds. This effect can only be applied once every <span class="bonus-val const">10</span> seconds.',
                 coefficients: [ 0.335 ],
                 stats: [ 'Healing Power' ]
             },
             {
                 id: 10,
                 name: 'Medallion of Wadjet',
-                description: 'Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, you gain a barrier which absorbs 100 of incoming damage and dissipates after absorbing <span id="neck-equipment-bonus1" class="bonus-val heal">%d</span> damage. This effect can only occur once every <span class="bonus-val const">10</span> seconds.',
+                description: 'Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, you gain a barrier which absorbs 100 of incoming damage and dissipates after absorbing <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> damage. This effect can only occur once every <span class="bonus-val const">10</span> seconds.',
                 coefficients: [ 1.25 ],
                 stats: [ 'Healing Power' ]
             },
@@ -1222,14 +1222,14 @@ swlcalc.data.equipments = {
             {
                 id: 2,
                 name: 'Bone Timepiece',
-                description: 'Whenever you heal an ally who does not have any active detrimental effects, you have a <span class="bonus-val const">25%</span> chance to restore <span id="wrist-equipment-bonus1" class="bonus-val heal">%d</span> health to that ally.',
+                description: 'Whenever you heal an ally who does not have any active detrimental effects, you have a <span class="bonus-val const">25%</span> chance to restore <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> health to that ally.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Healing Power' ]
             },
             {
                 id: 3,
                 name: 'Iron-Sulfur Bracelet',
-                description: 'Whenever you hit an enemy who is Exposed or Debilitated, you have a <span class="bonus-val const">25%</span> chance to deal <span id="wrist-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit an enemy who is Exposed or Debilitated, you have a <span class="bonus-val const">25%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1246,7 +1246,7 @@ swlcalc.data.equipments = {
             {
                 id: 6,
                 name: 'Bracer of Forgotten Horrors',
-                description: 'Whenever an Exposed or Debilitated enemy attacks you, you deal <span id="wrist-equipment-bonus1" class="bonus-val attack">%d</span> physical damage back to them. This damage generates a large amount of hate.',
+                description: 'Whenever an Exposed or Debilitated enemy attacks you, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage back to them. This damage generates a large amount of hate.',
                 coefficients: [ 0.04 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1275,7 +1275,7 @@ swlcalc.data.equipments = {
             {
                 id: 3,
                 name: 'Gambler\'s Soul',
-                description: 'Whenever you critically hit, you additionally deal <span id="luck-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you critically hit, you additionally deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.25 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1287,7 +1287,7 @@ swlcalc.data.equipments = {
             {
                 id: 5,
                 name: 'Chit of Kinich Ahau',
-                description: 'Whenever you critically heal, you additionally restore <span id="luck-equipment-bonus1" class="bonus-val heal">%d</span> health to your target.',
+                description: 'Whenever you critically heal, you additionally restore <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> health to your target.',
                 coefficients: [ 0.25 ],
                 stats: [ 'Healing Power' ]
             },
@@ -1299,7 +1299,7 @@ swlcalc.data.equipments = {
             {
                 id: 7,
                 name: 'Golden Coin',
-                description: 'Whenever you evade an attack or an attack glances you, you deal <span id="luck-equipment-bonus1" class="bonus-val attack">%d</span> physical damage back to the attacker. This damage generate a large amount of hate.',
+                description: 'Whenever you evade an attack or an attack glances you, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage back to the attacker. This damage generate a large amount of hate.',
                 coefficients: [ 0.2875 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1318,7 +1318,7 @@ swlcalc.data.equipments = {
             {
                 id: 2,
                 name: 'High Roller\'s Chain',
-                description: 'Whenever you roll a Double Blue or better set of matching chambers, your next Pistol attack deals an additional <span id="waist-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you roll a Double Blue or better set of matching chambers, your next Pistol attack deals an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.9 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1360,7 +1360,7 @@ swlcalc.data.equipments = {
             {
                 id: 10,
                 name: 'Master\'s Chain',
-                description: 'Whenever you activate Spirit Blade, your next Blade attack will deal an additional <span id="waist-equipment-bonus1" class="bonus-val attack">%d</span> - <span id="waist-equipment-bonus2" class="bonus-val attack">%d</span> physical damage. The amount of damage dealt scales based on the amount of Chi you had when activating Spirit Blade.',
+                description: 'Whenever you activate Spirit Blade, your next Blade attack will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> - <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage. The amount of damage dealt scales based on the amount of Chi you had when activating Spirit Blade.',
                 coefficients: [ 0.25, 1.25 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1372,14 +1372,14 @@ swlcalc.data.equipments = {
             {
                 id: 12,
                 name: 'Primal Rope Belt',
-                description: 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id="waist-equipment-bonus1" class="bonus-val attack">%d</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id="waist-equipment-bonus2" class="bonus-val heal">%d</span> health.',
+                description: 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id="%id-equipment-bonus2" class="bonus-val heal">%d</span> health.',
                 coefficients: [ 1.125, 1.125 ],
                 stats: [ 'Combat Power', 'Healing Power' ]
             },
             {
                 id: 13,
                 name: 'Pentacle Wrap',
-                description: 'Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class="bonus-val const">10%</span>. In addition, once you have lost <span class="bonus-val const">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id="waist-equipment-bonus1" class="bonus-val attack">%d</span> magical damage or your next healing Blood Magic ability will restore an additional <span id="waist-equipment-bonus2" class="bonus-val heal">%d</span> health.',
+                description: 'Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class="bonus-val const">10%</span>. In addition, once you have lost <span class="bonus-val const">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> magical damage or your next healing Blood Magic ability will restore an additional <span id="%id-equipment-bonus2" class="bonus-val heal">%d</span> health.',
                 coefficients: [ 0.425, 0.425 ],
                 stats: [ 'Combat Power', 'Healing Power' ]
             },
@@ -1391,14 +1391,14 @@ swlcalc.data.equipments = {
             {
                 id: 15,
                 name: 'Thermotic Cinch',
-                description: 'Whenever you overheat, your next Elemental cold ability will deal an additional <span id="waist-equipment-bonus1" class="bonus-val attack">%d</span> magical damage.',
+                description: 'Whenever you overheat, your next Elemental cold ability will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> magical damage.',
                 coefficients: [ 1.25 ],
                 stats: [ 'Combat Power' ]
             },
             {
                 id: 16,
                 name: 'Tactical Belt',
-                description: 'Whenever you reload your Shotgun, your next Shotgun attack will deal an additional <span id="waist-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you reload your Shotgun, your next Shotgun attack will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.875 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1410,7 +1410,7 @@ swlcalc.data.equipments = {
             {
                 id: 18,
                 name: 'Generalist\'s Belt',
-                description: '"Whenever you activate a Power ability, there is a <span class="bonus-val const">33%</span> chance that you will deal <span id="waist-equipment-bonus1" class="bonus-val attack">%d</span> physical damage or the target is healed for and additional <span id="waist-equipment-bonus2" class="bonus-val heal">%d</span>. Additional damage occurs when using damaging power abilities and additional healing occurs when using healing power abilities.',
+                description: '"Whenever you activate a Power ability, there is a <span class="bonus-val const">33%</span> chance that you will deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage or the target is healed for and additional <span id="%id-equipment-bonus2" class="bonus-val heal">%d</span>. Additional damage occurs when using damaging power abilities and additional healing occurs when using healing power abilities.',
                 coefficients: [ 0.375, 0.375 ],
                 stats: [ 'Combat Power', 'Healing Power' ]
             },
@@ -1429,7 +1429,7 @@ swlcalc.data.equipments = {
             {
                 id: 2,
                 name: 'Sigil of Ambition',
-                description: 'Whenever you or any of your group members defeat an enemy, your next attack will deal <span id="occult-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you or any of your group members defeat an enemy, your next attack will deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.833 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1446,7 +1446,7 @@ swlcalc.data.equipments = {
             {
                 id: 5,
                 name: 'Ankh',
-                description: 'Whenever you or any of your group members defeat an enemy, your next heal will restore <span id="occult-equipment-bonus1" class="bonus-val heal">%d</span> health to your defensive target.',
+                description: 'Whenever you or any of your group members defeat an enemy, your next heal will restore <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> health to your defensive target.',
                 coefficients: [ 0.833 ],
                 stats: [ 'Healing Power' ]
             },
@@ -1463,7 +1463,7 @@ swlcalc.data.equipments = {
             {
                 id: 8,
                 name: 'Alloy Heart',
-                description: 'Whenever you or any of your group members defeat an enemy, you are healed for <span id="occult-equipment-bonus1" class="bonus-val heal">%d</span>.',
+                description: 'Whenever you or any of your group members defeat an enemy, you are healed for <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span>.',
                 coefficients: [ 0.833 ],
                 stats: [ 'Healing Power' ]
             }

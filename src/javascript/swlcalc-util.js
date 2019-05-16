@@ -5,7 +5,7 @@ var swlcalc = swlcalc || {};
  */
 swlcalc.util = function() {
 
-    var capitalise = function(string) {
+    var capitalize = function(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
 
@@ -27,10 +27,10 @@ swlcalc.util = function() {
     }
 
     /**
-     * Exposition of functions that are going to be called from outside
+     * Public interface
      */
     var oPublic = {
-        capitalise: capitalise,
+        capitalize: capitalize,
         blankIfNone: blankIfNone,
         precisionRound: precisionRound,
         sortAsc: sortAsc
