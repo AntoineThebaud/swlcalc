@@ -80,9 +80,9 @@ swlcalc.summary = function() {
             if (slot.isWeapon() && !slot.weaponDrawn) {
                 continue;
             } else if (slot.isWeapon() && slot.equipmentId() != 'none') {
-                sums['weapon-power'] = slot.equipmentPowerRating();
+                sums['weapon-power'] = slot.equipmentStatRating();
             } else if (!slot.isWeapon() && slot.equipmentId() != 'none') {
-                sums['power-rating'] += slot.equipmentPowerRating();
+                sums['power-rating'] += slot.equipmentStatRating();
             }
         }
         // first basic implementation of anima allocation
@@ -162,7 +162,7 @@ swlcalc.summary = function() {
             if(slot.isWeapon() && !slot.weaponDrawn) {
                 continue;
             }
-            sums[slot.glyphId()] += slot.glyphRating();
+            sums[slot.glyphId()] += slot.glyphStatRating();
         }
         // get ratio stats
         sums['critical-chance'] += calculateCriticalChance(sums['critical-rating']);

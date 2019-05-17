@@ -41,12 +41,13 @@
                         <td class="upgrade-select rarity swlcalcselect">
                             {>rarityselect itemtype="equipment"/}
                         </td>
-                        <td class="stat-value stat-inSlot">
-                            <span id="{id}-equipment-power-rating">0</span>
+                        <td class="stat-inSlot">
+                            <span id="{id}-equipment-stat-rating" class="stat-value">0</span>
+                            <span> </span>
                             {?is_weapon}
-                            <span> Weapon Power</span>
+                            <span>Weapon Power</span>
                             {:else}
-                            <span> Power Rating</span>
+                            <span>Power Rating</span>
                             {/is_weapon}
                         </td>
                     </tr>
@@ -132,9 +133,10 @@
                         <td class="upgrade-select quality-select">
                             {>qualityselect itemtype="glyph" pip1="Crude" pip2="Simple" pip3="Intricate"/}
                         </td>
-                        <td class="stat-value stat-inSlot">
-                          <span id="{id}-glyph-rating">0</span>
-                          <span id="{id}-glyph-label"></span>
+                        <td class="stat-inSlot">
+                          <span id="{id}-glyph-stat-rating" class="stat-value">0</span>
+                          <span> </span>
+                          <span id="{id}-glyph-stat-text"></span>
                         </td>
                     </tr>
                     <tr>

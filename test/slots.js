@@ -51,9 +51,9 @@ QUnit.test("should get and set the slot's equipment level", function(assert) {
 });
 
 QUnit.test("should get and set the slot's equipment power rating", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.equipmentPowerRating(), "1070");
-    swlcalc.gear.slots.head.equipmentPowerRating("8");
-    assert.equal(swlcalc.gear.slots.head.equipmentPowerRating(), "8");
+    assert.equal(swlcalc.gear.slots.head.equipmentStatRating(), "1070");
+    swlcalc.gear.slots.head.equipmentStatRating("8");
+    assert.equal(swlcalc.gear.slots.head.equipmentStatRating(), "8");
 });
 
 QUnit.test("should get and set the slot's equipment iLvl", function(assert) {
@@ -91,10 +91,10 @@ QUnit.test("should update the slot's equipment image and description", function(
 });
 
 QUnit.test("should update the slot's equipment power rating", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.equipmentPowerRating(), "1070");
+    assert.equal(swlcalc.gear.slots.head.equipmentStatRating(), "1070");
     swlcalc.gear.slots.head.equipmentRarity("legendary");
-    swlcalc.gear.slots.head.updateEquipmentPowerRating();
-    assert.equal(swlcalc.gear.slots.head.equipmentPowerRating(), "2342");
+    swlcalc.gear.slots.head.updateEquipmentStatRating();
+    assert.equal(swlcalc.gear.slots.head.equipmentStatRating(), "2342");
 });
 
 QUnit.test("should get and set the slot's glyph id", function(assert) {
@@ -129,14 +129,14 @@ QUnit.test("should get and set the slot's glyph (all attributes)", function(asse
 
     swlcalc.gear.slots.head.updateGlyphRating();
 
-    assert.equal(swlcalc.gear.slots.head.glyphRating(), 231);
-    assert.deepEqual(swlcalc.gear.slots.head.el.glyphRating.html(), "+231");
+    assert.equal(swlcalc.gear.slots.head.glyphStatRating(), 231);
+    assert.deepEqual(swlcalc.gear.slots.head.el.glyphStatRating.html(), "+231");
 });
 
 QUnit.test("should get and set the slot's glyph label", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.glyphLabel(), " Hit Rating");
-    swlcalc.gear.slots.head.glyphLabel(" Accele Rating");
-    assert.equal(swlcalc.gear.slots.head.glyphLabel(), " Accele Rating");
+    assert.equal(swlcalc.gear.slots.head.glyphStatText(), "Hit Rating");
+    swlcalc.gear.slots.head.glyphStatText("Accele Rating");
+    assert.equal(swlcalc.gear.slots.head.glyphStatText(), "Accele Rating");
 });
 
 QUnit.test("should get and set the slot's glyph imgItem", function(assert) {

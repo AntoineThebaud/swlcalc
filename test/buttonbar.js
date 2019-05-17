@@ -38,15 +38,15 @@ QUnit.test("should reset all slots", function(assert) {
         assert.equal(slot.equipmentQuality(), "1");
         assert.equal(slot.equipmentRarity(), "standard");
         assert.equal(slot.equipmentLevel(), "20");
-        assert.equal(slot.equipmentPowerRating(), "0");
+        assert.equal(slot.equipmentStatRating(), "0");
         assert.equal(slot.equipmentDescription(), "");
         assert.equal(slot.equipmentILvl(), "0");
         assert.equal(slot.glyphId(), "none");
         assert.equal(slot.glyphRarity(), "standard");
         assert.equal(slot.glyphQuality(), "1");
         assert.equal(slot.glyphLevel(), "20");
-        assert.equal(slot.glyphRating(), "0");
-        assert.equal(slot.glyphLabel(), " ");
+        assert.equal(slot.glyphStatRating(), "0");
+        assert.equal(slot.glyphStatText(), "");
         assert.equal(slot.glyphILvl(), "0");
         assert.equal(slot.signetId(), "none");
         if (slot.isWeapon()) {

@@ -328,7 +328,7 @@ div[id$="-slot"] .table-slots input.level-slider {
 td.stat-name {
     width: 200px;
 }
-td.stat-value {
+.stat-value {
     font-weight: bold;
     color: green;
 }

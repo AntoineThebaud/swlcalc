@@ -6,14 +6,14 @@
                     <img id="{slot.id}-recap-equipment-img-item" class="slotrecap-itemicon" src="assets/images/icons/talisman/Dice.png" alt="image"/>
                     <img id="{slot.id}-recap-equipment-img-rarity" class="slotrecap-itemicon" src="assets/images/icons/rarity/epic-64x64.png"/>
                     <img id="{slot.id}-recap-equipment-img-quality" class="slotrecap-itemicon" src="assets/images/icons/quality/1.png"/>
-                    <div id="{slot.id}-recap-equipment-label-level" class="label-level big border-standard">20</div>
+                    <div id="{slot.id}-recap-equipment-label-level" class="label-level big border-standard"></div>
                 </td>
                 <td id="{slot.id}-recap-equipment-wrapertd">
                     <h5 id="{slot.id}-recap-equipment-title">
                         {?slot.is_weapon}
                         <span id="{slot.id}-recap-equipment-item"></span>
                         <span> </span>
-                        <span id="{slot.id}-recap-suffix">of Energy</span>
+                        <span id="{slot.id}-recap-suffix"></span>
                         <span> </span>
                         <span id="{slot.id}-recap-equipment-quality"></span>
                         {:else}
@@ -34,7 +34,6 @@
                         <span>Item Power: </span>
                         <span id="{slot.id}-recap-ilvl"></span>
                     </p>
-                    <p class="mediumgrey">Character bound</p>
                 </td>
                 <td id="{slot.id}-editbtn-wrapertd">
                     <button id="{slot.id}-editbtn" class="btn btn-default" data-toggle="modal" data-target="#{slot.id}-edit-modal">
@@ -45,11 +44,15 @@
         </table>
         <hr>
         <p>
-            <span id="{slot.id}-recap-equipment-stat-value">+563</span>
+            <span class="stat-value" id="{slot.id}-recap-equipment-stat-rating"></span>
             <span> </span>
-            <span id="{slot.id}-recap-equipment-stat-name">Health</span>
+            {?slot.is_weapon}
+            <span>Weapon Power</span>
+            {:else}
+            <span>Power Rating</span>
+            {/slot.is_weapon}
         </p>
-        <p>
+        <!-- <p>
             <span id="{slot.id}-recap-equipment-magprot-value">+833</span>
             <span> </span>
             <span id="{slot.id}-recap-equipment-magprot-name">Magical Protection</span>
@@ -58,7 +61,7 @@
             <span id="{slot.id}-recap-equipment-phyprot-value">+833</span>
             <span> </span>
             <span id="{slot.id}-recap-equipment-phyprot-name">Physical Protection</span>
-        </p>
+        </p> -->
         <hr>
         <p id="{slot.id}-recap-equipment-description"></p>
         <hr>
@@ -76,9 +79,9 @@
             <span>)</span>
         </p>
         <p>
-          <span id="{slot.id}-recap-glyph-stat-value">+208</span>
+          <span id="{slot.id}-recap-glyph-stat-rating" class="stat-value"></span>
           <span> </span>
-          <span id="{slot.id}-recap-glyph-stat-name">Defence Rating</span>
+          <span id="{slot.id}-recap-glyph-stat-text"></span>
         </p>
         <hr>
         <h6 id="{slot.id}-recap-signet-title">

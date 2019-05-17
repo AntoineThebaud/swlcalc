@@ -104,7 +104,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         equipmentRarity:           $('#' + this.id + '-equipment-rarity'),
         equipmentQuality:          $('#' + this.id + '-equipment-quality'),
         equipmentLevel:            $('#' + this.id + '-equipment-level'),
-        equipmentPowerRating:      $('#' + this.id + '-equipment-power-rating'),
+        equipmentStatRating:       $('#' + this.id + '-equipment-stat-rating'),
         equipmentILvl:             $('#' + this.id + '-equipment-ilvl'),
         equipmentImgItem:          $('#' + this.id + '-equipment-img-item'),
         equipmentImgRarity:        $('#' + this.id + '-equipment-img-rarity'),
@@ -115,8 +115,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
         glyphRarity:               $('#' + this.id + '-glyph-rarity'),
         glyphQuality:              $('#' + this.id + '-glyph-quality'),
         glyphLevel:                $('#' + this.id + '-glyph-level'),
-        glyphRating:               $('#' + this.id + '-glyph-rating'),
-        glyphLabel:                $('#' + this.id + '-glyph-label'),
+        glyphStatRating:           $('#' + this.id + '-glyph-stat-rating'),
+        glyphStatText:             $('#' + this.id + '-glyph-stat-text'),
         glyphImgItem:              $('#' + this.id + '-glyph-img-item'),
         glyphImgRarity:            $('#' + this.id + '-glyph-img-rarity'),
         glyphImgQuality:           $('#' + this.id + '-glyph-img-quality'),
@@ -137,8 +137,10 @@ swlcalc.gear.Slot = function Slot(slotData) {
         recapILvl:                 $('#' + this.id + '-recap-ilvl'),
         recapEquipmentTitle:       $('#' + this.id + '-recap-equipment-title'),
         recapEquipmentItem:        $('#' + this.id + '-recap-equipment-item'),
+        recapEquipmentRarity:      $('#' + this.id + '-recap-equipment-rarity'),
         recapEquipmentQuality:     $('#' + this.id + '-recap-equipment-quality'),
         recapEquipmentLevel:       $('#' + this.id + '-recap-equipment-level'),
+        recapEquipmentStatRating:  $('#' + this.id + '-recap-equipment-stat-rating'),
         recapEquipmentImgItem:     $('#' + this.id + '-recap-equipment-img-item'),
         recapEquipmentImgRarity:   $('#' + this.id + '-recap-equipment-img-rarity'),
         recapEquipmentImgQuality:  $('#' + this.id + '-recap-equipment-img-quality'),
@@ -149,6 +151,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
         recapGlyphRarity:          $('#' + this.id + '-recap-glyph-rarity'),
         recapGlyphQuality:         $('#' + this.id + '-recap-glyph-quality'),
         recapGlyphLevel:           $('#' + this.id + '-recap-glyph-level'),
+        recapGlyphStatRating:      $('#' + this.id + '-recap-glyph-stat-rating'),
+        recapGlyphStatText:        $('#' + this.id + '-recap-glyph-stat-text'),
         recapSignetTitle:          $('#' + this.id + '-recap-signet-title'),
         recapSignetItem:           $('#' + this.id + '-recap-signet-item'),
         recapSignetRarity:         $('#' + this.id + '-recap-signet-rarity'),
@@ -298,13 +302,13 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-equipment-power-rating
+     * Getter/Setter for #slot-equipment-stat-rating
      */
-    this.equipmentPowerRating = function() {
+    this.equipmentStatRating = function() {
         if (arguments.length == 1) {
-            this.el.equipmentPowerRating.html(arguments[0]);
+            this.el.equipmentStatRating.text(arguments[0]);
         } else {
-            return parseInt(this.el.equipmentPowerRating.html());
+            return parseInt(this.el.equipmentStatRating.text());
         }
     };
 
@@ -313,9 +317,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.equipmentILvl = function() {
         if (arguments.length == 1) {
-            this.el.equipmentILvl.html(arguments[0]);
+            this.el.equipmentILvl.text(arguments[0]);
         } else {
-            return parseInt(this.el.equipmentILvl.html());
+            return parseInt(this.el.equipmentILvl.text());
         }
     };
 
@@ -397,6 +401,17 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Getter/Setter for #slot-recap-equipment-rarity
+     */
+    this.recapEquipmentRarity = function() {
+        if (arguments.length == 1) {
+            this.el.recapEquipmentRarity.text(arguments[0]);
+        } else {
+            return this.el.recapEquipmentRarity.text();
+        }
+    };
+
+    /**
      * Getter/Setter for #slot-recap-equipment-quality
      */
     this.recapEquipmentQuality = function() {
@@ -415,6 +430,17 @@ swlcalc.gear.Slot = function Slot(slotData) {
             this.el.recapEquipmentLevel.text(arguments[0]);
         } else {
             return parseInt(this.el.recapEquipmentLevel.text());
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-recap-equipment-stat-rating
+     */
+    this.recapEquipmentStatRating = function() {
+        if (arguments.length == 1) {
+            this.el.recapEquipmentStatRating.text(arguments[0]);
+        } else {
+            return parseInt(this.el.recapEquipmentStatRating.text());
         }
     };
 
@@ -554,6 +580,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.recapEquipmentImgRarity(img_path);
         this.el.equipmentLabelLevel.attr('class', 'label-level big border-' + newRarity);
         this.el.recapEquipmentLabelLevel.attr('class', 'label-level big border-' + newRarity);
+        this.recapEquipmentRarity(swlcalc.util.capitalize(newRarity));
 
         // update max available level for equipment :
         var maxLvl = swlcalc.data.rarity_mapping.to_max_level[newRarity];
@@ -586,9 +613,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
     }
 
     /**
-     * Update #slot-equipment-power-rating (calculatations with stats data)
+     * Update elements related to equipement stat's rating (calculatations with stats data)
      */
-    this.updateEquipmentPowerRating = function() {
+    this.updateEquipmentStatRating = function() {
         var base_value = 0;
         var bonus_value = 0;
         if (this.equipmentId() != 'none') {
@@ -608,7 +635,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
         if (newValue !== 0) {
             newValue = '+' + newValue;
         }
-        this.equipmentPowerRating(newValue);
+        this.equipmentStatRating(newValue);
+        this.recapEquipmentStatRating(newValue);
     };
 
     /**
@@ -722,24 +750,24 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-glyph-rating
+     * Getter/Setter for #slot-glyph-stat-rating
      */
-    this.glyphRating = function() {
+    this.glyphStatRating = function() {
         if (arguments.length == 1) {
-            this.el.glyphRating.html(arguments[0]);
+            this.el.glyphStatRating.text(arguments[0]);
         } else {
-            return parseInt(this.el.glyphRating.html());
+            return parseInt(this.el.glyphStatRating.text());
         }
     };
 
     /**
-     * Getter/Setter for #slot-glyph-label
+     * Getter/Setter for #slot-glyph-stat-text
      */
-    this.glyphLabel = function() {
+    this.glyphStatText = function() {
         if (arguments.length == 1) {
-            this.el.glyphLabel.html(arguments[0]);
+            this.el.glyphStatText.text(arguments[0]);
         } else {
-            return this.el.glyphLabel.html();
+            return this.el.glyphStatText.text();
         }
     };
 
@@ -748,9 +776,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.glyphILvl = function() {
         if (arguments.length == 1) {
-            this.el.glyphILvl.html(arguments[0]);
+            this.el.glyphILvl.text(arguments[0]);
         } else {
-            return parseInt(this.el.glyphILvl.html());
+            return parseInt(this.el.glyphILvl.text());
         }
     };
 
@@ -843,17 +871,40 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Getter/Setter for #slot-recap-glyph-stat-rating
+     */
+    this.recapGlyphStatRating = function() {
+        if (arguments.length == 1) {
+            this.el.recapGlyphStatRating.text(arguments[0]);
+        } else {
+            return parseInt(this.el.recapGlyphStatRating.text());
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-recap-glyph-stat-text
+     */
+    this.recapGlyphStatText = function() {
+        if (arguments.length == 1) {
+            this.el.recapGlyphStatText.text(arguments[0]);
+        } else {
+            return this.el.recapGlyphStatText.text();
+        }
+    };
+
+    /**
      * Update elements related to glyph's item/id
      */
     this.updateGlyph = function() {
         var newId = this.glyphId()
 
-        this.glyphLabel(' ' + swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newId]);
+        this.glyphStatText(swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newId]);
 
         var img_path = 'assets/images/icons/glyph/' + newId + '.png';
         this.glyphImgItem(img_path);
 
         this.recapGlyphItem(swlcalc.data.glyph_stat_mapping.to_name[newId]);
+        this.recapGlyphStatText(swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newId]);
     };
 
     /**
@@ -900,7 +951,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     }
 
     /**
-     * Update #slot-glyph-rating (calculatations with stats data)
+     * Update #slot-glyph-stat-rating (calculatations with stats data)
      *   INFO : in SWL a glyph rating value depends on its rarity-quality-level, neither the slot (head/major/minor) nor
      *   the glyph stat impact the calculation (whereas it was the case in TSW) => /!\ exception for crit power
      *   glyphs that give 97.3% of the value of other glyphs)
@@ -921,7 +972,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
                 newValue = '+' + newValue;
             }
         }
-        this.glyphRating(newValue);
+        this.glyphStatRating(newValue);
+        this.recapGlyphStatRating(newValue);
     };
 
     /**
@@ -1008,9 +1060,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.signetILvl = function() {
         if (arguments.length == 1) {
-            this.el.signetILvl.html(arguments[0]);
+            this.el.signetILvl.text(arguments[0]);
         } else {
-            return (this.isWeapon() ? undefined : parseInt(this.el.signetILvl.html()));
+            return (this.isWeapon() ? undefined : parseInt(this.el.signetILvl.text()));
         }
     };
 
