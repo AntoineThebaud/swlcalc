@@ -65,37 +65,49 @@
         <hr>
         <p id="{slot.id}-recap-equipment-description"></p>
         <hr>
-        <h6 id="{slot.id}-recap-glyph-title">
-            <span id="{slot.id}-recap-glyph-quality"></span>
-            <span> </span>
-            <span id="{slot.id}-recap-glyph-item"></span>
-            <span> Glyph</span>
-        </h6>
-        <p class="mediumgrey">
-            <span>Glyph (Lv </span>
-            <span id="{slot.id}-recap-glyph-level"></span>
-            <span> </span>
-            <span id="{slot.id}-recap-glyph-rarity"></span>
-            <span>)</span>
-        </p>
-        <p>
-          <span id="{slot.id}-recap-glyph-stat-rating" class="stat-value"></span>
-          <span> </span>
-          <span id="{slot.id}-recap-glyph-stat-text"></span>
+        <div id="{slot.id}-recap-glyph-section">
+            <h6 id="{slot.id}-recap-glyph-title">
+                <span id="{slot.id}-recap-glyph-quality"></span>
+                <span> </span>
+                <span id="{slot.id}-recap-glyph-item"></span>
+                <span> Glyph</span>
+            </h6>
+            <p class="mediumgrey">
+                <span>Glyph (Lv </span>
+                <span id="{slot.id}-recap-glyph-level"></span>
+                <span> </span>
+                <span id="{slot.id}-recap-glyph-rarity"></span>
+                <span>)</span>
+            </p>
+            <p>
+                <span id="{slot.id}-recap-glyph-stat-rating" class="stat-value"></span>
+                <span> </span>
+                <span id="{slot.id}-recap-glyph-stat-text"></span>
+            </p>
+        </div>
+        <p id="{slot.id}-recap-glyph-empty" class="empty-slot" hidden>
+            <input type="checkbox" disabled>
+            <span class="mediumgrey"> Empty Glyph Slot</span>
         </p>
         <hr>
-        <h6 id="{slot.id}-recap-signet-title">
-            <span id="{slot.id}-recap-signet-item"><span>
-        </h6>
-        <p class="mediumgrey">
-            <span>Signet (Lv </span>
-            <span id="{slot.id}-recap-signet-level"></span>
-            <span> </span>
-            <span id="{slot.id}-recap-signet-rarity"></span>
-            <span>)</span>
-        </p>
-        <p id="{slot.id}-recap-signet-description">
-            Increases the damage and healing of Elemental Elite Abilities by <span class="bonus-val const">%d</span><span class="bonus-val const">%</span>.
+        <div id="{slot.id}-recap-signet-section">
+            <h6 id="{slot.id}-recap-signet-title">
+                <span id="{slot.id}-recap-signet-item"><span>
+            </h6>
+            <p class="mediumgrey">
+                <span>Signet (Lv </span>
+                <span id="{slot.id}-recap-signet-level"></span>
+                <span> </span>
+                <span id="{slot.id}-recap-signet-rarity"></span>
+                <span>)</span>
+            </p>
+            <p id="{slot.id}-recap-signet-description">
+                Increases the damage and healing of Elemental Elite Abilities by <span class="bonus-val const">%d</span><span class="bonus-val const">%</span>.
+            </p>
+        </div>
+        <p id="{slot.id}-recap-signet-empty" class="empty-slot" hidden>
+            <input type="checkbox" disabled>
+            <span class="mediumgrey"> Empty Signet Slot</span>
         </p>
     </div>
 </div>

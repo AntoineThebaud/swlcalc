@@ -450,23 +450,33 @@ div[id$="-slotrecap"] h6 {
     margin: 0;
 }
 div[id$="-slotrecap"] hr {
-  margin-top: 4px;
-  margin-bottom: 4px;
-  border-top: 2px solid #ddd;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-top: 2px solid #ddd;
 }
 
 td[id$="-editbtn-wrapertd"] {
-  vertical-align: top;
+    vertical-align: top;
 }
 td[id$="-recap-equipment-wrapertd"] {
     width: 160px;
 }
 button[id$="-editbtn"] {
-  padding: 0px;
-  margin-left: 10px;
-  background-color: transparent;
-  border: 0;
+    padding: 0px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: 0;
 }
 button[id$="-editbtn"] img {
-  width: 25px;
+    width: 25px;
+}
+div[id$="-slotrecap"] .empty-slot {
+    margin-top: 8px;
+}
+.empty-slot input[type="checkbox"] {
+    margin: 0;
+    cursor: default;
+}
+.empty-slot span {
+    vertical-align: top;
 }

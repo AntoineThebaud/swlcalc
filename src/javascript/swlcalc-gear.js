@@ -146,6 +146,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
         recapEquipmentImgQuality:  $('#' + this.id + '-recap-equipment-img-quality'),
         recapEquipmentDescription: $('#' + this.id + '-recap-equipment-description'),
         recapEquipmentLabelLevel:  $('#' + this.id + '-recap-equipment-label-level'),
+        recapGlyphSection:         $('#' + this.id + '-recap-glyph-section'),
+        recapGlyphEmpty:           $('#' + this.id + '-recap-glyph-empty'),
         recapGlyphTitle:           $('#' + this.id + '-recap-glyph-title'),
         recapGlyphItem:            $('#' + this.id + '-recap-glyph-item'),
         recapGlyphRarity:          $('#' + this.id + '-recap-glyph-rarity'),
@@ -153,6 +155,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
         recapGlyphLevel:           $('#' + this.id + '-recap-glyph-level'),
         recapGlyphStatRating:      $('#' + this.id + '-recap-glyph-stat-rating'),
         recapGlyphStatText:        $('#' + this.id + '-recap-glyph-stat-text'),
+        recapSignetSection:        $('#' + this.id + '-recap-signet-section'),
+        recapSignetEmpty:          $('#' + this.id + '-recap-signet-empty'),
         recapSignetTitle:          $('#' + this.id + '-recap-signet-title'),
         recapSignetItem:           $('#' + this.id + '-recap-signet-item'),
         recapSignetRarity:         $('#' + this.id + '-recap-signet-rarity'),
@@ -563,7 +567,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         //To enable when all images will be present :
         //this.equipmentImgItem(newImage);
         this.equipmentDescription(newDescription.replace(/%id/g, this.id));
-        // add recap suffix here to avoid id collision
+        // add "-recap" suffix here to avoid id collision
         this.recapEquipmentDescription(newDescription.replace(/%id/g, this.id + '-recap'));
         this.recapEquipmentItem(newTitle);
     };
@@ -896,15 +900,23 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Update elements related to glyph's item/id
      */
     this.updateGlyph = function() {
-        var newId = this.glyphId()
+        var newId = this.glyphId();
 
         this.glyphStatText(swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newId]);
 
         var img_path = 'assets/images/icons/glyph/' + newId + '.png';
         this.glyphImgItem(img_path);
 
-        this.recapGlyphItem(swlcalc.data.glyph_stat_mapping.to_name[newId]);
-        this.recapGlyphStatText(swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newId]);
+        // display "Empty Glyph Slot" in the recap if glyphId is set to None
+        if (newId == 'none') {
+            this.el.recapGlyphSection.hide();
+            this.el.recapGlyphEmpty.show();
+        } else {
+            this.el.recapGlyphSection.show();
+            this.el.recapGlyphEmpty.hide();
+            this.recapGlyphItem(swlcalc.data.glyph_stat_mapping.to_name[newId]);
+            this.recapGlyphStatText(swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newId]);
+        }
     };
 
     /**
@@ -1182,8 +1194,10 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Update elements related to signet's item/id
      */
     this.updateSignet = function() {
+        var newId = this.signetId();
+
         // retrieve full signet object from the data model
-        var newSignet = (this.signetId() == 'none' ? swlcalc.data.signets.noneSignet : swlcalc.data.signets.slot[this.kind][this.signetId() - 1]);
+        var newSignet = (newId == 'none' ? swlcalc.data.signets.noneSignet : swlcalc.data.signets.slot[this.kind][this.signetId() - 1]);
 
         // update image
         var pngName = (newSignet == swlcalc.data.signets.noneSignet ? 'none' : this.id)
@@ -1192,11 +1206,19 @@ swlcalc.gear.Slot = function Slot(slotData) {
 
         var newDescription = newSignet.description;
         this.signetDescription(newDescription.replace(/%id/g, this.id));
-        // add recap suffix here to avoid id collision
-        this.recapSignetDescription(newDescription.replace(/%id/g, this.id + '-recap'));
         this.updateSignetBonus();
 
-        this.recapSignetItem(newSignet.name);
+        // display "Empty Signet Slot" in the recap if signetId is set to None
+        if (newId == 'none') {
+            this.el.recapSignetSection.hide();
+            this.el.recapSignetEmpty.show();
+        } else {
+            this.el.recapSignetSection.show();
+            this.el.recapSignetEmpty.hide();
+            // add "-recap" suffix here to avoid id collision
+            this.recapSignetDescription(newDescription.replace(/%id/g, this.id + '-recap'));
+            this.recapSignetItem(newSignet.name);
+        }
     };
 
 
