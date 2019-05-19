@@ -161,7 +161,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
         recapSignetItem:           $('#' + this.id + '-recap-signet-item'),
         recapSignetRarity:         $('#' + this.id + '-recap-signet-rarity'),
         recapSignetLevel:          $('#' + this.id + '-recap-signet-level'),
-        recapSignetDescription:    $('#' + this.id + '-recap-signet-description')
+        recapSignetDescription:    $('#' + this.id + '-recap-signet-description'),
+        recapSuffix:               $('#' + this.id + '-recap-suffix'),
+        recapSuffixQuality:        $('#' + this.id + '-recap-suffix-quality')
     };
 
     /**
@@ -599,10 +601,17 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateEquipmentQuality = function() {
         var newQuality = this.equipmentQuality();
 
-        this.recapEquipmentQuality(swlcalc.data.quality_mapping[this.type].to_name[newQuality]);
         var img_path = 'assets/images/icons/quality/' + newQuality + '.png';
         this.equipmentImgQuality(img_path);
         this.recapEquipmentImgQuality(img_path);
+
+        var qualityName = swlcalc.data.quality_mapping[this.type].to_name[newQuality];
+        this.recapEquipmentQuality(qualityName);
+        if (this.isWeapon()) {
+            this.recapSuffixQuality(qualityName);
+            // little hack here : use quality's index in rarity mapping to display the right color
+            this.el.recapSignetTitle.attr('class', 'color-' + swlcalc.data.rarity_mapping.to_name[newQuality]);
+        }
     };
 
     /**
@@ -1191,6 +1200,28 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
+     * Getter/Setter for #slot-recap-suffix
+     */
+    this.recapSuffix = function() {
+        if (arguments.length == 1) {
+            this.el.recapSuffix.text(arguments[0]);
+        } else {
+            return this.el.recapSuffix.text();
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-recap-suffix-quality
+     */
+    this.recapSuffixQuality = function() {
+        if (arguments.length == 1) {
+            this.el.recapSuffixQuality.text(arguments[0]);
+        } else {
+            return this.el.recapSuffixQuality.text();
+        }
+    };
+
+    /**
      * Update elements related to signet's item/id
      */
     this.updateSignet = function() {
@@ -1212,12 +1243,18 @@ swlcalc.gear.Slot = function Slot(slotData) {
         if (newId == 'none') {
             this.el.recapSignetSection.hide();
             this.el.recapSignetEmpty.show();
+            if (this.isWeapon()) {
+                this.recapSuffix('');
+            }
         } else {
             this.el.recapSignetSection.show();
             this.el.recapSignetEmpty.hide();
             // add "-recap" suffix here to avoid id collision
             this.recapSignetDescription(newDescription.replace(/%id/g, this.id + '-recap'));
             this.recapSignetItem(newSignet.name);
+            if (this.isWeapon()) {
+                this.recapSuffix('of ' + newSignet.name);
+            }
         }
     };
 

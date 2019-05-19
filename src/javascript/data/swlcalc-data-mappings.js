@@ -73,9 +73,9 @@ swlcalc.data.rarity_mapping = {
 swlcalc.data.quality_mapping = {
     'weapon': {
         to_name: {
-            1: 'MK I',
-            2: 'MK II',
-            3: 'MK III'
+            1: 'Mk I',
+            2: 'Mk II',
+            3: 'Mk III'
         }
     },
     'talisman': {

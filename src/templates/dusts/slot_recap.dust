@@ -92,8 +92,13 @@
         <hr>
         <div id="{slot.id}-recap-signet-section">
             <h6 id="{slot.id}-recap-signet-title">
-                <span id="{slot.id}-recap-signet-item"><span>
+                <span id="{slot.id}-recap-signet-item"></span>
+                {?slot.is_weapon}
+                <span> </span>
+                <span id="{slot.id}-recap-suffix-quality"></span>
+                {/slot.is_weapon}
             </h6>
+            {^slot.is_weapon}
             <p class="mediumgrey">
                 <span>Signet (Lv </span>
                 <span id="{slot.id}-recap-signet-level"></span>
@@ -101,6 +106,7 @@
                 <span id="{slot.id}-recap-signet-rarity"></span>
                 <span>)</span>
             </p>
+            {/slot.is_weapon}
             <p id="{slot.id}-recap-signet-description">
                 Increases the damage and healing of Elemental Elite Abilities by <span class="bonus-val const">%d</span><span class="bonus-val const">%</span>.
             </p>
