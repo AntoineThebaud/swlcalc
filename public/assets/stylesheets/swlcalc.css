@@ -221,28 +221,28 @@ div.label-level.little {
 }
 /******************************************************/
 /* slot > equipment (talisman/weapon) & glyph & signet */
-td[id$="-img-wrapertd"] {
+td[id$="-img-section"] {
     position: relative;
     vertical-align: top;
 }
-td[id$="-equipment-img-wrapertd"] {
+td[id$="-equipment-img-section"] {
     width: 58px;
 }
-td[id$="-glyph-img-wrapertd"],
-td[id$="-signet-img-wrapertd"] {
+td[id$="-glyph-img-section"],
+td[id$="-signet-img-section"] {
     width: 48px;
 }
-td[id$="-img-wrapertd"] img {
+td[id$="-img-section"] img {
     position: absolute;
 }
-td[id$="-equipment-img-wrapertd"] img {
+td[id$="-equipment-img-section"] img {
     width: 48px;
     height: 48px;
     left: 5px;
     top: 5px;
 }
-td[id$="-glyph-img-wrapertd"] img,
-td[id$="-signet-img-wrapertd"] img {
+td[id$="-glyph-img-section"] img,
+td[id$="-signet-img-section"] img {
     width: 38px;
     height:38px;
     left: 5px;
@@ -454,12 +454,13 @@ div[id$="-slotrecap"] hr {
     margin-bottom: 4px;
     border-top: 2px solid #ddd;
 }
-
-td[id$="-editbtn-wrapertd"] {
+td[id$="-editbtn-section"] {
     vertical-align: top;
 }
-td[id$="-recap-equipment-wrapertd"] {
+td[id$="-recap-equipment-section"] {
     width: 160px;
+    height: 60px;
+    vertical-align: top;
 }
 button[id$="-editbtn"] {
     padding: 0px;
@@ -479,4 +480,8 @@ div[id$="-slotrecap"] .empty-slot {
 }
 .empty-slot span {
     vertical-align: top;
+}
+td[id$="-recap-equipment-empty"] {
+    width: 90%;
+    height: 30px;
 }

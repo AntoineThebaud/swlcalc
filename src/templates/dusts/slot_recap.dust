@@ -1,14 +1,20 @@
 <div id="{slot.id}-recap-wraperdiv">
-    <div id="{slot.name}-slotrecap">
+    <div id="{slot.id}-slotrecap">
         <table>
             <tr>
-                <td id="{slot.id}-recap-equipment-img-wrapertd">
+                <td id="{slot.id}-recap-equipment-empty" hidden>
+                    <p class="empty-slot">
+                        <input type="checkbox" disabled>
+                        <span class="mediumgrey"> Empty Equipment Slot</span>
+                    </p>
+                </td>
+                <td id="{slot.id}-recap-equipment-img-section">
                     <img id="{slot.id}-recap-equipment-img-item" class="slotrecap-itemicon" src="assets/images/icons/talisman/Dice.png" alt="image"/>
                     <img id="{slot.id}-recap-equipment-img-rarity" class="slotrecap-itemicon" src="assets/images/icons/rarity/epic-64x64.png"/>
                     <img id="{slot.id}-recap-equipment-img-quality" class="slotrecap-itemicon" src="assets/images/icons/quality/1.png"/>
                     <div id="{slot.id}-recap-equipment-label-level" class="label-level big border-standard"></div>
                 </td>
-                <td id="{slot.id}-recap-equipment-wrapertd">
+                <td id="{slot.id}-recap-equipment-section">
                     <h5 id="{slot.id}-recap-equipment-title">
                         {?slot.is_weapon}
                         <span id="{slot.id}-recap-equipment-item"></span>
@@ -35,7 +41,7 @@
                         <span id="{slot.id}-recap-ilvl"></span>
                     </p>
                 </td>
-                <td id="{slot.id}-editbtn-wrapertd">
+                <td id="{slot.id}-editbtn-section">
                     <button id="{slot.id}-editbtn" class="btn btn-default" data-toggle="modal" data-target="#{slot.id}-edit-modal">
                         <img src="assets/images/buttons/btn-edit.png" alt="image"/>
                     </button>
@@ -43,15 +49,18 @@
             </tr>
         </table>
         <hr>
-        <p>
-            <span class="stat-value" id="{slot.id}-recap-equipment-stat-rating"></span>
-            <span> </span>
-            {?slot.is_weapon}
-            <span>Weapon Power</span>
-            {:else}
-            <span>Power Rating</span>
-            {/slot.is_weapon}
-        </p>
+        <div id="{slot.id}-recap-equipment-stat-section">
+            <p>
+                <span class="stat-value" id="{slot.id}-recap-equipment-stat-rating"></span>
+                <span> </span>
+                {?slot.is_weapon}
+                <span>Weapon Power</span>
+                {:else}
+                <span>Power Rating</span>
+                {/slot.is_weapon}
+            </p>
+            <hr>
+        </div>
         <!-- <p>
             <span id="{slot.id}-recap-equipment-magprot-value">+833</span>
             <span> </span>
@@ -62,9 +71,10 @@
             <span> </span>
             <span id="{slot.id}-recap-equipment-phyprot-name">Physical Protection</span>
         </p> -->
-        <hr>
-        <p id="{slot.id}-recap-equipment-description"></p>
-        <hr>
+        <div id="{slot.id}-recap-equipment-description-section">
+            <p id="{slot.id}-recap-equipment-description"></p>
+            <hr>
+        </div>
         <div id="{slot.id}-recap-glyph-section">
             <h6 id="{slot.id}-recap-glyph-title">
                 <span id="{slot.id}-recap-glyph-quality"></span>

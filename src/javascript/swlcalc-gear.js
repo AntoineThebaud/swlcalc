@@ -97,73 +97,78 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.rawSignetILvl = 0.0;
 
     this.el = {
-        div:                       $('#' + this.id + '-slot'),
-        iLvl:                      $('#' + this.id + '-ilvl'),
-        equipmentId:               $('#' + this.id + '-equipment-id'),
-        equipmentName:             $('#' + this.id + '-equipment-name'),
-        equipmentRarity:           $('#' + this.id + '-equipment-rarity'),
-        equipmentQuality:          $('#' + this.id + '-equipment-quality'),
-        equipmentLevel:            $('#' + this.id + '-equipment-level'),
-        equipmentStatRating:       $('#' + this.id + '-equipment-stat-rating'),
-        equipmentILvl:             $('#' + this.id + '-equipment-ilvl'),
-        equipmentImgItem:          $('#' + this.id + '-equipment-img-item'),
-        equipmentImgRarity:        $('#' + this.id + '-equipment-img-rarity'),
-        equipmentImgQuality:       $('#' + this.id + '-equipment-img-quality'),
-        equipmentLabelLevel:       $('#' + this.id + '-equipment-label-level'),
-        equipmentDescription:      $('#' + this.id + '-equipment-description'),
-        glyphId:                   $('#' + this.id + '-glyph-id'),
-        glyphRarity:               $('#' + this.id + '-glyph-rarity'),
-        glyphQuality:              $('#' + this.id + '-glyph-quality'),
-        glyphLevel:                $('#' + this.id + '-glyph-level'),
-        glyphStatRating:           $('#' + this.id + '-glyph-stat-rating'),
-        glyphStatText:             $('#' + this.id + '-glyph-stat-text'),
-        glyphImgItem:              $('#' + this.id + '-glyph-img-item'),
-        glyphImgRarity:            $('#' + this.id + '-glyph-img-rarity'),
-        glyphImgQuality:           $('#' + this.id + '-glyph-img-quality'),
-        glyphLabelLevel:           $('#' + this.id + '-glyph-label-level'),
-        glyphILvl:                 $('#' + this.id + '-glyph-ilvl'),
-        signetId:                  $('#' + this.id + '-signet-id'),
-        signetRarity:              $('#' + this.id + '-signet-rarity'),
-        signetLevel:               $('#' + this.id + '-signet-level'),
-        signetImgItem:             $('#' + this.id + '-signet-img-item'),
-        signetImgRarity:           $('#' + this.id + '-signet-img-rarity'),
-        signetDescription:         $('#' + this.id + '-signet-description'),
-        signetLabelLevel:          $('#' + this.id + '-signet-label-level'),
-        signetILvl:                $('#' + this.id + '-signet-ilvl'),
-        nameWarning:               $('#' + this.id + '-name-warning'),
+        div:                              $('#' + this.id + '-slot'),
+        iLvl:                             $('#' + this.id + '-ilvl'),
+        equipmentId:                      $('#' + this.id + '-equipment-id'),
+        equipmentName:                    $('#' + this.id + '-equipment-name'),
+        equipmentRarity:                  $('#' + this.id + '-equipment-rarity'),
+        equipmentQuality:                 $('#' + this.id + '-equipment-quality'),
+        equipmentLevel:                   $('#' + this.id + '-equipment-level'),
+        equipmentStatRating:              $('#' + this.id + '-equipment-stat-rating'),
+        equipmentILvl:                    $('#' + this.id + '-equipment-ilvl'),
+        equipmentImgItem:                 $('#' + this.id + '-equipment-img-item'),
+        equipmentImgRarity:               $('#' + this.id + '-equipment-img-rarity'),
+        equipmentImgQuality:              $('#' + this.id + '-equipment-img-quality'),
+        equipmentLabelLevel:              $('#' + this.id + '-equipment-label-level'),
+        equipmentDescription:             $('#' + this.id + '-equipment-description'),
+        glyphId:                          $('#' + this.id + '-glyph-id'),
+        glyphRarity:                      $('#' + this.id + '-glyph-rarity'),
+        glyphQuality:                     $('#' + this.id + '-glyph-quality'),
+        glyphLevel:                       $('#' + this.id + '-glyph-level'),
+        glyphStatRating:                  $('#' + this.id + '-glyph-stat-rating'),
+        glyphStatText:                    $('#' + this.id + '-glyph-stat-text'),
+        glyphImgItem:                     $('#' + this.id + '-glyph-img-item'),
+        glyphImgRarity:                   $('#' + this.id + '-glyph-img-rarity'),
+        glyphImgQuality:                  $('#' + this.id + '-glyph-img-quality'),
+        glyphLabelLevel:                  $('#' + this.id + '-glyph-label-level'),
+        glyphILvl:                        $('#' + this.id + '-glyph-ilvl'),
+        signetId:                         $('#' + this.id + '-signet-id'),
+        signetRarity:                     $('#' + this.id + '-signet-rarity'),
+        signetLevel:                      $('#' + this.id + '-signet-level'),
+        signetImgItem:                    $('#' + this.id + '-signet-img-item'),
+        signetImgRarity:                  $('#' + this.id + '-signet-img-rarity'),
+        signetDescription:                $('#' + this.id + '-signet-description'),
+        signetLabelLevel:                 $('#' + this.id + '-signet-label-level'),
+        signetILvl:                       $('#' + this.id + '-signet-ilvl'),
+        nameWarning:                      $('#' + this.id + '-name-warning'),
 
-        editModal:                 $('#' + this.id + '-edit-modal'),
-        editBtn:                   $('#' + this.id + '-editbtn'),
-        recapILvl:                 $('#' + this.id + '-recap-ilvl'),
-        recapEquipmentTitle:       $('#' + this.id + '-recap-equipment-title'),
-        recapEquipmentItem:        $('#' + this.id + '-recap-equipment-item'),
-        recapEquipmentRarity:      $('#' + this.id + '-recap-equipment-rarity'),
-        recapEquipmentQuality:     $('#' + this.id + '-recap-equipment-quality'),
-        recapEquipmentLevel:       $('#' + this.id + '-recap-equipment-level'),
-        recapEquipmentStatRating:  $('#' + this.id + '-recap-equipment-stat-rating'),
-        recapEquipmentImgItem:     $('#' + this.id + '-recap-equipment-img-item'),
-        recapEquipmentImgRarity:   $('#' + this.id + '-recap-equipment-img-rarity'),
-        recapEquipmentImgQuality:  $('#' + this.id + '-recap-equipment-img-quality'),
-        recapEquipmentDescription: $('#' + this.id + '-recap-equipment-description'),
-        recapEquipmentLabelLevel:  $('#' + this.id + '-recap-equipment-label-level'),
-        recapGlyphSection:         $('#' + this.id + '-recap-glyph-section'),
-        recapGlyphEmpty:           $('#' + this.id + '-recap-glyph-empty'),
-        recapGlyphTitle:           $('#' + this.id + '-recap-glyph-title'),
-        recapGlyphItem:            $('#' + this.id + '-recap-glyph-item'),
-        recapGlyphRarity:          $('#' + this.id + '-recap-glyph-rarity'),
-        recapGlyphQuality:         $('#' + this.id + '-recap-glyph-quality'),
-        recapGlyphLevel:           $('#' + this.id + '-recap-glyph-level'),
-        recapGlyphStatRating:      $('#' + this.id + '-recap-glyph-stat-rating'),
-        recapGlyphStatText:        $('#' + this.id + '-recap-glyph-stat-text'),
-        recapSignetSection:        $('#' + this.id + '-recap-signet-section'),
-        recapSignetEmpty:          $('#' + this.id + '-recap-signet-empty'),
-        recapSignetTitle:          $('#' + this.id + '-recap-signet-title'),
-        recapSignetItem:           $('#' + this.id + '-recap-signet-item'),
-        recapSignetRarity:         $('#' + this.id + '-recap-signet-rarity'),
-        recapSignetLevel:          $('#' + this.id + '-recap-signet-level'),
-        recapSignetDescription:    $('#' + this.id + '-recap-signet-description'),
-        recapSuffix:               $('#' + this.id + '-recap-suffix'),
-        recapSuffixQuality:        $('#' + this.id + '-recap-suffix-quality')
+        editModal:                        $('#' + this.id + '-edit-modal'),
+        editBtn:                          $('#' + this.id + '-editbtn'),
+        recapILvl:                        $('#' + this.id + '-recap-ilvl'),
+        recapEquipmentSection:            $('#' + this.id + '-recap-equipment-section'),
+        recapEquipmentEmpty:              $('#' + this.id + '-recap-equipment-empty'),
+        recapEquipmentTitle:              $('#' + this.id + '-recap-equipment-title'),
+        recapEquipmentItem:               $('#' + this.id + '-recap-equipment-item'),
+        recapEquipmentRarity:             $('#' + this.id + '-recap-equipment-rarity'),
+        recapEquipmentQuality:            $('#' + this.id + '-recap-equipment-quality'),
+        recapEquipmentLevel:              $('#' + this.id + '-recap-equipment-level'),
+        recapEquipmentStatSection:        $('#' + this.id + '-recap-equipment-stat-section'),
+        recapEquipmentStatRating:         $('#' + this.id + '-recap-equipment-stat-rating'),
+        recapEquipmentImgSection:         $('#' + this.id + '-recap-equipment-img-section'),
+        recapEquipmentImgItem:            $('#' + this.id + '-recap-equipment-img-item'),
+        recapEquipmentImgRarity:          $('#' + this.id + '-recap-equipment-img-rarity'),
+        recapEquipmentImgQuality:         $('#' + this.id + '-recap-equipment-img-quality'),
+        recapEquipmentDescription:        $('#' + this.id + '-recap-equipment-description'),
+        recapEquipmentDescriptionSection: $('#' + this.id + '-recap-equipment-description-section'),
+        recapEquipmentLabelLevel:         $('#' + this.id + '-recap-equipment-label-level'),
+        recapGlyphSection:                $('#' + this.id + '-recap-glyph-section'),
+        recapGlyphEmpty:                  $('#' + this.id + '-recap-glyph-empty'),
+        recapGlyphTitle:                  $('#' + this.id + '-recap-glyph-title'),
+        recapGlyphItem:                   $('#' + this.id + '-recap-glyph-item'),
+        recapGlyphRarity:                 $('#' + this.id + '-recap-glyph-rarity'),
+        recapGlyphQuality:                $('#' + this.id + '-recap-glyph-quality'),
+        recapGlyphLevel:                  $('#' + this.id + '-recap-glyph-level'),
+        recapGlyphStatRating:             $('#' + this.id + '-recap-glyph-stat-rating'),
+        recapGlyphStatText:               $('#' + this.id + '-recap-glyph-stat-text'),
+        recapSignetSection:               $('#' + this.id + '-recap-signet-section'),
+        recapSignetEmpty:                 $('#' + this.id + '-recap-signet-empty'),
+        recapSignetTitle:                 $('#' + this.id + '-recap-signet-title'),
+        recapSignetItem:                  $('#' + this.id + '-recap-signet-item'),
+        recapSignetRarity:                $('#' + this.id + '-recap-signet-rarity'),
+        recapSignetLevel:                 $('#' + this.id + '-recap-signet-level'),
+        recapSignetDescription:           $('#' + this.id + '-recap-signet-description'),
+        recapSuffix:                      $('#' + this.id + '-recap-suffix'),
+        recapSuffixQuality:               $('#' + this.id + '-recap-suffix-quality')
     };
 
     /**
@@ -401,6 +406,16 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.recapEquipmentItem = function() {
         if (arguments.length == 1) {
             this.el.recapEquipmentItem.text(arguments[0]);
+            // recap : hide whole section if slot is empty
+            if (arguments[0] == 'Empty') {
+                this.el.recapEquipmentSection.hide();
+                this.el.recapEquipmentStatSection.hide();
+                this.el.recapEquipmentEmpty.show();
+            } else if (this.el.recapEquipmentSection.is(":hidden")) {
+                this.el.recapEquipmentSection.show();
+                this.el.recapEquipmentStatSection.show();
+                this.el.recapEquipmentEmpty.hide();
+            }
         } else {
             return parseInt(this.el.recapEquipmentItem.text());
         }
@@ -456,6 +471,12 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.recapEquipmentDescription = function() {
         if (arguments.length == 1) {
             this.el.recapEquipmentDescription.html(arguments[0]);
+            // recap : hide whole section if description is empty
+            if (arguments[0] == '') {
+                this.el.recapEquipmentDescriptionSection.hide();
+            } else if (this.el.recapEquipmentDescriptionSection.is(":hidden")) {
+                this.el.recapEquipmentDescriptionSection.show();
+            }
         } else {
             return this.el.recapEquipmentDescription.html();
         }
@@ -478,6 +499,12 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.recapEquipmentImgItem = function() {
         if (arguments.length == 1) {
             this.el.recapEquipmentImgItem.attr('src', arguments[0])
+            // recap : hide whole section if img is None
+            if (arguments[0] == 'assets/images/icons/' + this.type + '/None.png') {
+                this.el.recapEquipmentImgSection.hide();
+            } else if (this.el.recapEquipmentImgSection.is(":hidden")) {
+                this.el.recapEquipmentImgSection.show();
+            }
         } else {
             return this.el.recapEquipmentImgItem.attr('src');
         }
@@ -523,7 +550,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateEquipment = function() {
         var newImage;
         var newDescription;
-        var newTitle;
+        var newName;
 
         //TODO/FEATURE : reenable slot name display
 //      var wtype = $(this).val();
@@ -534,18 +561,17 @@ swlcalc.gear.Slot = function Slot(slotData) {
 //      }
 
         if (this.equipmentId() == 'none') {
-            //To enable when all images will be present :
-            // newImage = 'assets/images/icons/talisman/None.png';
-            this.equipmentImgItem('assets/images/icons/' + this.type + '/None.png');
-            this.recapEquipmentImgItem('assets/images/icons/' + this.type + '/None.png'); // TODO it's like duplicate call here, wrap these into updateImg function maybe ?
             newDescription = '';
-            newTitle = 'Empty';
+            newName = 'Empty';
+            this.equipmentImgItem('assets/images/icons/' + this.type + '/None.png');
+            this.recapEquipmentImgItem('assets/images/icons/' + this.type + '/None.png');
         } else {
             var newEquipmentData = swlcalc.data.equipments.slot[this.kind][this.equipmentId() - 1];
-            //TODO/FEATURE :
-            /* temporary code ********************************************************************************
-             * => Will be used as long as item images are not added to the resources. The final code will be :
-            newImage = 'assets/images/icons/' + this.type + '/' + newEquipment.name + '.png';
+
+            /**************************************< temporary code >*********************************************
+             * TODO/FEATURE => to add all the missing equipment images to swlcalc
+             * => This temporary code will be used as long as item images are not added to the resources. The final code will be :
+            this.equipmentImgItem('assets/images/icons/' + this.type + '/' + newEquipmentData.name + '.png');
              * => For now replaced by : */
             var image = new Image();
             image.onload = function() {
@@ -562,16 +588,17 @@ swlcalc.gear.Slot = function Slot(slotData) {
                 }
             }
             image.src = 'assets/images/icons/' + this.type + '/' + newEquipmentData.name + '.png';
-            /* temporary code ********************************************************************************/
+            /**************************************< temporary code />********************************************/
+
             newDescription = newEquipmentData.description;
-            newTitle = newEquipmentData.name;
+            newName = newEquipmentData.name;
         }
         //To enable when all images will be present :
         //this.equipmentImgItem(newImage);
         this.equipmentDescription(newDescription.replace(/%id/g, this.id));
         // add "-recap" suffix here to avoid id collision
         this.recapEquipmentDescription(newDescription.replace(/%id/g, this.id + '-recap'));
-        this.recapEquipmentItem(newTitle);
+        this.recapEquipmentItem(newName);
     };
 
     /**
@@ -845,6 +872,14 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.recapGlyphItem = function() {
         if (arguments.length == 1) {
             this.el.recapGlyphItem.text(arguments[0]);
+            // recap : hide whole section if glyph slot is empty
+            if (arguments[0] == '') {
+                this.el.recapGlyphSection.hide();
+                this.el.recapGlyphEmpty.show();
+            } else if (this.el.recapGlyphSection.is(":hidden")) {
+                this.el.recapGlyphSection.show();
+                this.el.recapGlyphEmpty.hide();
+            }
         } else {
             return this.el.recapGlyphItem.text();
         }
@@ -912,19 +947,15 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newId = this.glyphId();
 
         this.glyphStatText(swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newId]);
+        this.recapGlyphStatText(swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newId]);
 
         var img_path = 'assets/images/icons/glyph/' + newId + '.png';
         this.glyphImgItem(img_path);
 
-        // display "Empty Glyph Slot" in the recap if glyphId is set to None
         if (newId == 'none') {
-            this.el.recapGlyphSection.hide();
-            this.el.recapGlyphEmpty.show();
+            this.recapGlyphItem('');
         } else {
-            this.el.recapGlyphSection.show();
-            this.el.recapGlyphEmpty.hide();
             this.recapGlyphItem(swlcalc.data.glyph_stat_mapping.to_name[newId]);
-            this.recapGlyphStatText(swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newId]);
         }
     };
 
@@ -1149,6 +1180,14 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.recapSignetItem = function() {
         if (arguments.length == 1) {
             this.el.recapSignetItem.text(arguments[0]);
+            // recap : hide whole section if signet is empty
+            if (arguments[0] == '') {
+                this.el.recapSignetSection.hide();
+                this.el.recapSignetEmpty.show();
+            } else if (this.el.recapSignetSection.is(":hidden")) {
+                this.el.recapSignetSection.show();
+                this.el.recapSignetEmpty.hide();
+            }
         } else {
             return this.el.recapSignetItem.text();
         }
@@ -1204,7 +1243,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.recapSuffix = function() {
         if (arguments.length == 1) {
-            this.el.recapSuffix.text(arguments[0]);
+            this.el.recapSuffix.text('of '+ arguments[0]);
         } else {
             return this.el.recapSuffix.text();
         }
@@ -1231,31 +1270,16 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newSignet = (newId == 'none' ? swlcalc.data.signets.noneSignet : swlcalc.data.signets.slot[this.kind][this.signetId() - 1]);
 
         // update image
-        var pngName = (newSignet == swlcalc.data.signets.noneSignet ? 'none' : this.id)
-        var img_path = 'assets/images/icons/signet/' + pngName + '.png';
-        this.signetImgItem(img_path);
+        var newImage = 'assets/images/icons/signet/' + (newSignet == swlcalc.data.signets.noneSignet ? 'none' : this.id) + '.png';
+        this.signetImgItem(newImage);
 
         var newDescription = newSignet.description;
         this.signetDescription(newDescription.replace(/%id/g, this.id));
+        this.recapSignetDescription(newDescription.replace(/%id/g, this.id + '-recap'));
         this.updateSignetBonus();
 
-        // display "Empty Signet Slot" in the recap if signetId is set to None
-        if (newId == 'none') {
-            this.el.recapSignetSection.hide();
-            this.el.recapSignetEmpty.show();
-            if (this.isWeapon()) {
-                this.recapSuffix('');
-            }
-        } else {
-            this.el.recapSignetSection.show();
-            this.el.recapSignetEmpty.hide();
-            // add "-recap" suffix here to avoid id collision
-            this.recapSignetDescription(newDescription.replace(/%id/g, this.id + '-recap'));
-            this.recapSignetItem(newSignet.name);
-            if (this.isWeapon()) {
-                this.recapSuffix('of ' + newSignet.name);
-            }
-        }
+        this.recapSignetItem(newSignet.name);
+        if (this.isWeapon()) this.recapSuffix(newSignet.name);
     };
 
 
@@ -1298,10 +1322,14 @@ swlcalc.gear.Slot = function Slot(slotData) {
                 newValue = signet.quality[this.equipmentQuality()]
             } else if (signet.name == "Signet of Shoulder Tackle") {
                 bonus1 = signet.ratio[this.signetRarity()].init[0];
-                bonus2 = signet.ratio[this.signetRarity()].init[1]
-                           - signet.ratio[this.signetRarity()].per_level[1] * (this.signetLevel() - 1);
+                bonus2 = swlcalc.util.precisionRound(
+                  signet.ratio[this.signetRarity()].init[1] - signet.ratio[this.signetRarity()].per_level[1] * (this.signetLevel() - 1),
+                  4
+                );
                 $('#' + this.id + '-signet-bonus').html(bonus1);
-                $('#' + this.id + '-signet-bonus2').html(swlcalc.util.precisionRound(bonus2, 4));
+                $('#' + this.id + '-signet-bonus2').html(bonus2);
+                $('#' + this.id + '-recap-signet-bonus').html(bonus1);
+                $('#' + this.id + '-recap-signet-bonus2').html(bonus2);
                 return;
             } else if (signet.name == "Signet of Contortion") {
                 newValue = signet.ratio[this.signetRarity()].init
