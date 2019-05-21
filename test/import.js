@@ -6,7 +6,6 @@ QUnit.module("import-integration-tests", {
         renderSummary();
         initiateSummary();
         initiateSelectHandlers();
-        initiateButtonHandlers();
     }
 });
 

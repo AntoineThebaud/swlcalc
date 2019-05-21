@@ -38,8 +38,11 @@ function initiateSummary() {
     swlcalc.summary.init();
 }
 
-function initiateButtonHandlers() {
-    swlcalc.button.init();
+function initiateSwapHandlers() {
+    swlcalc.swap['weapon'] = new swlcalc.swap.SwapHandler('weapon');
+    swlcalc.swap['weapon'].init();
+    swlcalc.swap['weapon2'] = new swlcalc.swap.SwapHandler('weapon2');
+    swlcalc.swap['weapon2'].init();
 }
 
 function initiateSelectHandlers() {

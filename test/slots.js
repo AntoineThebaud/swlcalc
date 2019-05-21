@@ -4,7 +4,6 @@ QUnit.module("slots-unit-tests", {
         renderSlots();
         renderSummary();
         initiateSelectHandlers();
-        initiateButtonHandlers();
         initiateSummary();
         createTankBuild();
     }

@@ -5,7 +5,7 @@ QUnit.module("swlcalc");
     swlcalc.init();
     ok(swlcalc);
     ok(swlcalc.data);
-    ok(swlcalc.button);
+    ok(swlcalc.swap);
     ok(swlcalc.select);
     ok(swlcalc.buttonBar);
     ok(swlcalc.summary);
@@ -62,7 +62,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-signet-ilvl").html(), undefined);
     assert.equal($("#weapon-signet-description").html(), 'This weapon deals <span id="weapon-signet-bonus" class="bonus-val attack">347.4</span> additional damage to enemies that are below <span class="bonus-val const">35%</span> health.');
 
-    assert.ok(!$("#weapon2-slot").is(":visible"));
+    assert.ok(!$("#weapon2-active").is(":visible"));
     assert.equal($("#weapon2-ilvl").html(), "581");
 
     //TODO/FEATURE equal($('#weapon2-name').html(), ': Shotgun');
@@ -257,7 +257,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     // Equal($('#stat-physical-protection').html(), '+660');
     // equal($('#stat-magical-protection').html(), '+300');
 
-    assert.ok($("#weapon-slot").is(":visible"));
+    assert.ok($("#weapon-active").is(":visible"));
     assert.equal($("#weapon-ilvl").html(), "0");
 
     //TODO/FEATURE equal($('#weapon-name').html(), '');
@@ -280,7 +280,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#weapon-signet-description").html(), "");
     assert.equal($("#weapon-signet-bonus").val(), undefined);
 
-    assert.ok(!$("#weapon2-slot").is(":visible"));
+    assert.ok(!$("#weapon2-active").is(":visible"));
     assert.equal($("#weapon2-ilvl").html(), "0");
 
     //TODO/FEATURE equal($('#weapon2-name').html(), '');

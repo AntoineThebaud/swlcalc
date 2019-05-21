@@ -78,7 +78,8 @@ swlcalc = function() {
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             startSelectHandler(swlcalc.data.template_data.slots[i]);
         }
-        swlcalc.button.init();
+        startSwapHandler('weapon');
+        startSwapHandler('weapon2');
         swlcalc.buttonBar.init();
         swlcalc.summary.init();
         swlcalc.export.init();
@@ -95,9 +96,9 @@ swlcalc = function() {
     /**
      * Create button handler for a slot.
      */
-    var startButtonHandler = function(slot) {
-        swlcalc.button[slot.id] = new swlcalc.button.ButtonHandler(slot);
-        swlcalc.button[slot.id].init();
+    var startSwapHandler = function(slot) {
+        swlcalc.swap[slot] = new swlcalc.swap.SwapHandler(slot);
+        swlcalc.swap[slot].init();
     };
 
     /**

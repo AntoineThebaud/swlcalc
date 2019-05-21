@@ -134,7 +134,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
 
         editModal:                        $('#' + this.id + '-edit-modal'),
         editBtn:                          $('#' + this.id + '-editbtn'),
+        editBtnImg:                       $('#' + this.id + '-editbtn-img'),
         recapILvl:                        $('#' + this.id + '-recap-ilvl'),
+        recapSection:                     $('#' + this.id + '-recap-section'),
         recapEquipmentSection:            $('#' + this.id + '-recap-equipment-section'),
         recapEquipmentEmpty:              $('#' + this.id + '-recap-equipment-empty'),
         recapEquipmentTitle:              $('#' + this.id + '-recap-equipment-title'),
@@ -218,23 +220,23 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Hides the current slot (for weapons only)
+     * Weapon becomes active. Not used for talismans.
      */
-    this.sheathWeapon = function() {
-        if(this.isWeapon()) {
-            this.weaponDrawn = false;
-            this.el.div.hide();
-        }
+    this.drawWeapon = function() {
+        this.weaponDrawn = true;
+        // show "Active Weapon" label
+        $('#' + this.id + '-active').show();
+        $('#' + this.id + '-slotrecap').addClass("weapon-active-div");
     };
 
     /**
-     * Displays the current slot (for weapons only)
+     * Weapon becomes passive. Not used for talismans.
      */
-    this.drawWeapon = function() {
-        if(this.isWeapon()) {
-            this.weaponDrawn = true;
-            this.el.div.show();
-        }
+    this.sheathWeapon = function() {
+        this.weaponDrawn = false;
+        // hide "Active Weapon" label
+        $('#' + this.id + '-active').hide();
+        $('#' + this.id + '-slotrecap').removeClass("weapon-active-div");
     };
 
     /**

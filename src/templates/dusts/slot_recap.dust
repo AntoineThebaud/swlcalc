@@ -1,4 +1,4 @@
-<div id="{slot.id}-recap-wraperdiv">
+<div id="{slot.id}-recap-section">
     <div id="{slot.id}-slotrecap">
         <table>
             <tr>
@@ -43,7 +43,7 @@
                 </td>
                 <td id="{slot.id}-editbtn-section">
                     <button id="{slot.id}-editbtn" class="btn btn-default" data-toggle="modal" data-target="#{slot.id}-edit-modal">
-                        <img src="assets/images/buttons/btn-edit.png" alt="image"/>
+                        <img id="{slot.id}-editbtn-img" src="assets/images/buttons/btn-edit.png" alt="image"/>
                     </button>
                 </td>
             </tr>

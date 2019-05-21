@@ -35,9 +35,11 @@
         </div>
         <div class="col-lg-4">
             {>slot_recap slot=slots_recap[0]/}
+            <p id="weapon-active" class="weapon-active-p">Active Weapon</p>
         </div>
         <div class="col-lg-4">
             {>slot_recap slot=slots_recap[1]/}
+            <p id="weapon2-active" class="weapon-active-p" hidden>Active Weapon</p>
         </div>
         <div class="col-lg-2">
         </div>

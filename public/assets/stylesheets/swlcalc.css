@@ -433,7 +433,10 @@ div[id$="-slotrecap"] {
     min-height: 300px;
     background-color: #F5F5F5;
     display: inline-block;
-    margin: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    margin-left: 15px;
     padding: 10px;
     border-radius: 10px;
 }
@@ -484,4 +487,21 @@ div[id$="-slotrecap"] .empty-slot {
 td[id$="-recap-equipment-empty"] {
     width: 90%;
     height: 30px;
+}
+.weapon-active-p {
+    text-align: center;
+    margin-right: 15px;
+    margin-left: 15px;
+    width: 100%;
+    background-color: #878787;
+    color: white;
+    border-radius: 0px 0px 10px 10px;
+    font-size: 14px;
+}
+.weapon-active-div {
+    border-radius: 10px 10px 0px 0px !important;
+}
+div[id$="weapon-slotrecap"],
+div[id$="weapon2-slotrecap"]{
+    margin-bottom: 0px;
 }

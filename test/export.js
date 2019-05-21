@@ -4,7 +4,6 @@ QUnit.module("export-integration-tests", {
         renderSlots();
         renderButtonbar();
         initiateSelectHandlers();
-        initiateButtonHandlers();
         initiateSummary();
         swlcalc.export.init();
         createTankBuild();

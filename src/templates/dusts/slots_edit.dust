@@ -16,13 +16,6 @@
                                 </span>
                             </span>
                         </td>
-                        {?is_weapon}
-                        <td class="td-swap">
-                            <a id="{id}-swap-weapon" class="btn btn-success swap-weapon">
-                                Swap weapon
-                            </a>
-                        </td>
-                        {/is_weapon}
                         <td class="slot-ilvl lightgrey">
                             Item Power : <span id="{id}-ilvl">0</span>
                         </td>

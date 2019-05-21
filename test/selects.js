@@ -95,7 +95,6 @@ QUnit.module("selects-integration-tests", {
     beforeEach: function(assert) {
         renderButtonbar();
         renderSlots();
-        initiateButtonHandlers();
         initiateSelectHandlers();
         swlcalc.gear.init();
     }

@@ -73,7 +73,6 @@ QUnit.module("summary-integration-tests", {
         renderSlots();
         initiateSummary();
         initiateSelectHandlers();
-        initiateButtonHandlers();
     },
     afterEach: function(assert) {
 
@@ -214,7 +213,6 @@ QUnit.module("summary-integration-tests with buttonbar", {
         initiateSummary();
         initiateButtonBar();
         initiateSelectHandlers();
-        initiateButtonHandlers();
     },
     afterEach: function(assert) {
 
