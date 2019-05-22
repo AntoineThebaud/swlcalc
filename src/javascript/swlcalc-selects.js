@@ -15,22 +15,22 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Associates the right processing to each trigger.
      */
     this.bindEvents = function() {
-        slotObj.el.equipmentId.change(this.handleEquipmentItemChange);
-        slotObj.el.equipmentRarity.change(this.handleEquipmentRarityChange);
-        slotObj.el.equipmentQuality.change(this.handleEquipmentQualityChange);
-        slotObj.el.equipmentLevel.change(this.handleEquipmentLevelChange);
+        slotObj.edit.el.equipmentId.change(this.handleEquipmentItemChange);
+        slotObj.edit.el.equipmentRarity.change(this.handleEquipmentRarityChange);
+        slotObj.edit.el.equipmentQuality.change(this.handleEquipmentQualityChange);
+        slotObj.edit.el.equipmentLevel.change(this.handleEquipmentLevelChange);
 
-        slotObj.el.glyphId.change(this.handleGlyphChange);
-        slotObj.el.glyphRarity.change(this.handleGlyphRarityChange);
-        slotObj.el.glyphQuality.change(this.handleGlyphQualityChange);
-        slotObj.el.glyphLevel.change(this.handleGlyphLevelChange);
+        slotObj.edit.el.glyphId.change(this.handleGlyphChange);
+        slotObj.edit.el.glyphRarity.change(this.handleGlyphRarityChange);
+        slotObj.edit.el.glyphQuality.change(this.handleGlyphQualityChange);
+        slotObj.edit.el.glyphLevel.change(this.handleGlyphLevelChange);
 
         if (slot.kind == "weapon") {
-            slotObj.el.signetId.change(this.handleSuffixChange);
+            slotObj.edit.el.signetId.change(this.handleSuffixChange);
         } else {
-            slotObj.el.signetId.change(this.handleSignetChange);
-            slotObj.el.signetRarity.change(this.handleSignetRarityChange);
-            slotObj.el.signetLevel.change(this.handleSignetLevelChange);
+            slotObj.edit.el.signetId.change(this.handleSignetChange);
+            slotObj.edit.el.signetRarity.change(this.handleSignetRarityChange);
+            slotObj.edit.el.signetLevel.change(this.handleSignetLevelChange);
         }
     };
 
@@ -40,7 +40,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.addItemsToSelect = function() {
         var items = swlcalc.data.equipments.slot[slot.kind].slice();
 
-        slotObj.el.equipmentId.append($('<option>', {
+        slotObj.edit.el.equipmentId.append($('<option>', {
             value: "none",
             text: "None",
             selected: "true"
@@ -52,7 +52,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
                 return swlcalc.util.sortAsc(a.type + a.name.toLowerCase(), b.type + b.name.toLowerCase())
             });
             items.forEach(function(item) {
-                slotObj.el.equipmentId.append($('<option>', {
+                slotObj.edit.el.equipmentId.append($('<option>', {
                     value: item.id,
                     text: '[' + item.type + '] ' + item.name
                 }));
@@ -62,7 +62,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
                 return swlcalc.util.sortAsc(a.name.toLowerCase(), b.name.toLowerCase())
             });
             items.forEach(function(item) {
-                slotObj.el.equipmentId.append($('<option>', {
+                slotObj.edit.el.equipmentId.append($('<option>', {
                     value: item.id,
                     text:  item.name
                 }));
@@ -74,7 +74,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      * Loads signets (swlcalc-data-signets) as options list in the #slot-signet select
      */
     this.addSignetsToSelect = function() {
-        slotObj.el.signetId.append($('<option>', {
+        slotObj.edit.el.signetId.append($('<option>', {
             value: "none",
             text: "None",
             selected: "true"
@@ -87,7 +87,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             return swlcalc.util.sortAsc(a.name.toLowerCase(), b.name.toLowerCase())
         });
         $.each(signetsInSlotGroup, function(index, value) {
-            slotObj.el.signetId.append($('<option>', {
+            slotObj.edit.el.signetId.append($('<option>', {
                 value: value.id,
                 text: value.name
             }));

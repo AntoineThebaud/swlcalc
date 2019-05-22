@@ -13,15 +13,15 @@ swlcalc.swap.SwapHandler = function SwapHandler(slotId) {
     };
 
     this.bindEvents = function() {
-        slotObj.el.recapSection.on('click', this.weaponSwap);
+        slotObj.recap.el.section.on('click', this.weaponSwap);
     };
 
     this.weaponSwap = function(event) {
         // cancel event if click was done on edit button
-        if (event.target == slotObj.el.editBtnImg[0]) return;
+        if (event.target == slotObj.recap.el.editBtnImg[0]) return;
 
-        slotObj.drawWeapon();
-        swlcalc.gear.slots[self.otherWeapon()].sheathWeapon();
+        slotObj.draw();
+        swlcalc.gear.slots[self.otherWeapon()].sheath();
 
         swlcalc.summary.updateAllStats();
     };

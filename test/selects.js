@@ -137,33 +137,33 @@ QUnit.module("selects-integration-tests", {
 // });
 
 QUnit.test("should set a non-zero ilvl value when selecting a glyph and then set it back to 0 when selecting none option", function(assert) {
-    assert.equal(swlcalc.gear.slots.occult.glyphILvl(), 0);
-    swlcalc.gear.slots.occult.glyphId("critical-rating");
-    swlcalc.gear.slots.occult.el.glyphId.change();
-    assert.equal(swlcalc.gear.slots.occult.glyphILvl(), 24);
-    swlcalc.gear.slots.occult.glyphId("none");
-    swlcalc.gear.slots.occult.el.glyphId.change();
-    assert.equal(swlcalc.gear.slots.occult.glyphILvl(), 0);
+    assert.equal(swlcalc.gear.slots.occult.edit.glyphILvl(), 0);
+    swlcalc.gear.slots.occult.edit.glyphId("critical-rating");
+    swlcalc.gear.slots.occult.edit.el.glyphId.change();
+    assert.equal(swlcalc.gear.slots.occult.edit.glyphILvl(), 24);
+    swlcalc.gear.slots.occult.edit.glyphId("none");
+    swlcalc.gear.slots.occult.edit.el.glyphId.change();
+    assert.equal(swlcalc.gear.slots.occult.edit.glyphILvl(), 0);
 });
 
 QUnit.test("should update any #slot-equipment-level sliders when its associated rarity is changed", function(assert) {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var id = swlcalc.data.template_data.slots[i].id;
         assert.equal($("#" + id + "-equipment-level").attr("max"), 20, "Untouched " + id + "-equipment-level should have values between 1 and 20");
-        swlcalc.gear.slots[id].equipmentRarity("superior");
-        swlcalc.gear.slots[id].el.equipmentRarity.change();
+        swlcalc.gear.slots[id].edit.equipmentRarity("superior");
+        swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
         assert.equal($("#" + id + "-equipment-level").attr("max"), 25, "After " + id + "-equipment-rarity set to Superior, " + id + "-equipment-level should have values between 1 and 25");
-        swlcalc.gear.slots[id].equipmentRarity("legendary");
-        swlcalc.gear.slots[id].el.equipmentRarity.change();
+        swlcalc.gear.slots[id].edit.equipmentRarity("legendary");
+        swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
         assert.equal($("#" + id + "-equipment-level").attr("max"), 70, "After " + id + "-equipment-rarity set to Legendary, " + id + "-equipment-level should have values between 1 and 70");
-        swlcalc.gear.slots[id].equipmentRarity("epic");
-        swlcalc.gear.slots[id].el.equipmentRarity.change();
+        swlcalc.gear.slots[id].edit.equipmentRarity("epic");
+        swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
         assert.equal($("#" + id + "-equipment-level").attr("max"), 30, "After " + id + "-equipment-rarity set to Epic, " + id + "-equipment-level should have values between 1 and 30");
-        swlcalc.gear.slots[id].equipmentRarity("mythic");
-        swlcalc.gear.slots[id].el.equipmentRarity.change();
+        swlcalc.gear.slots[id].edit.equipmentRarity("mythic");
+        swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
         assert.equal($("#" + id + "-equipment-level").attr("max"), 35, "After " + id + "-equipment-rarity set to Mythic, " + id + "-equipment-level should have values between 1 and 35");
-        swlcalc.gear.slots[id].equipmentRarity("standard");
-        swlcalc.gear.slots[id].el.equipmentRarity.change();
+        swlcalc.gear.slots[id].edit.equipmentRarity("standard");
+        swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
         assert.equal($("#" + id + "-equipment-level").attr("max"), 20, "After " + id + "-equipment-rarity set back to Standard, " + id + "-equipment-level should have values between 1 and 20");
     }
 });

@@ -68,12 +68,12 @@ swlcalc.buttonBar = function() {
         var newRarity = event.currentTarget.id.split('-')[2]; //TODO better way to retrieve this value maybe ?
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            slot.equipmentRarity(newRarity);
-            slot.el.equipmentRarity.change();
-            slot.glyphRarity(newRarity);
-            slot.el.glyphRarity.change();
-            slot.signetRarity(newRarity);
-            slot.el.signetRarity.change();
+            slot.edit.equipmentRarity(newRarity);
+            slot.edit.el.equipmentRarity.change();
+            slot.edit.glyphRarity(newRarity);
+            slot.edit.el.glyphRarity.change();
+            slot.edit.signetRarity(newRarity);
+            slot.edit.el.signetRarity.change();
         }
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
     };
@@ -85,10 +85,10 @@ swlcalc.buttonBar = function() {
         var newQuality = event.currentTarget.id.split('-')[2]; //TODO better way to retrieve this value maybe ?
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            slot.equipmentQuality(newQuality);
-            slot.el.equipmentQuality.change();
-            slot.glyphQuality(newQuality);
-            slot.el.glyphQuality.change();
+            slot.edit.equipmentQuality(newQuality);
+            slot.edit.el.equipmentQuality.change();
+            slot.edit.glyphQuality(newQuality);
+            slot.edit.el.glyphQuality.change();
         }
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
     };
@@ -99,12 +99,12 @@ swlcalc.buttonBar = function() {
     var setMinLevelOnAllSlots = function(event) {
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            slot.equipmentLevel(slot.equipmentLevelMin());
-            slot.el.equipmentLevel.change();
-            slot.glyphLevel(slot.glyphLevelMin());
-            slot.el.glyphLevel.change();
-            slot.signetLevel(slot.signetLevelMin());
-            slot.el.signetLevel.change();
+            slot.edit.equipmentLevel(slot.edit.equipmentLevelMin());
+            slot.edit.el.equipmentLevel.change();
+            slot.edit.glyphLevel(slot.edit.glyphLevelMin());
+            slot.edit.el.glyphLevel.change();
+            slot.edit.signetLevel(slot.edit.signetLevelMin());
+            slot.edit.el.signetLevel.change();
         }
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
     };
@@ -115,12 +115,12 @@ swlcalc.buttonBar = function() {
     var setMaxLevelOnAllSlots = function(event) {
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            slot.equipmentLevel(slot.equipmentLevelMax());
-            slot.el.equipmentLevel.change();
-            slot.glyphLevel(slot.glyphLevelMax());
-            slot.el.glyphLevel.change();
-            slot.signetLevel(slot.signetLevelMax());
-            slot.el.signetLevel.change();
+            slot.edit.equipmentLevel(slot.edit.equipmentLevelMax());
+            slot.edit.el.equipmentLevel.change();
+            slot.edit.glyphLevel(slot.edit.glyphLevelMax());
+            slot.edit.el.glyphLevel.change();
+            slot.edit.signetLevel(slot.edit.signetLevelMax());
+            slot.edit.el.signetLevel.change();
         }
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
     };

@@ -76,13 +76,13 @@ swlcalc.summary = function() {
 
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            sums['ilvl'] += slot.iLvl();
-            if (slot.isWeapon() && !slot.weaponDrawn) {
+            sums['ilvl'] += slot.edit.iLvl();
+            if (slot.isWeapon() && !slot.active) {
                 continue;
-            } else if (slot.isWeapon() && slot.equipmentId() != 'none') {
-                sums['weapon-power'] = slot.equipmentStatRating();
-            } else if (!slot.isWeapon() && slot.equipmentId() != 'none') {
-                sums['power-rating'] += slot.equipmentStatRating();
+            } else if (slot.isWeapon() && slot.edit.equipmentId() != 'none') {
+                sums['weapon-power'] = slot.edit.equipmentStatRating();
+            } else if (!slot.isWeapon() && slot.edit.equipmentId() != 'none') {
+                sums['power-rating'] += slot.edit.equipmentStatRating();
             }
         }
         // first basic implementation of anima allocation
@@ -159,10 +159,10 @@ swlcalc.summary = function() {
         // get flat stats
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            if(slot.isWeapon() && !slot.weaponDrawn) {
+            if(slot.isWeapon() && !slot.active) {
                 continue;
             }
-            sums[slot.glyphId()] += slot.glyphStatRating();
+            sums[slot.edit.glyphId()] += slot.edit.glyphStatRating();
         }
         // get ratio stats
         sums['critical-chance'] += calculateCriticalChance(sums['critical-rating']);

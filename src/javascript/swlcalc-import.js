@@ -42,42 +42,42 @@ swlcalc.import = function() {
     var loadSlot = function(slotId, values) {
         var slotObj = swlcalc.gear.slots[slotId];
         // values[0] == Item's Rarity
-        slotObj.equipmentRarity(swlcalc.data.rarity_mapping.to_name[values[0]]);
-        slotObj.el.equipmentRarity.change();
+        slotObj.edit.equipmentRarity(swlcalc.data.rarity_mapping.to_name[values[0]]);
+        slotObj.edit.el.equipmentRarity.change();
         // values[1] == Item's Type (ID)
-        slotObj.equipmentId(values[1] == '0' ? 'none' : values[1]);
-        slotObj.el.equipmentId.change();
+        slotObj.edit.equipmentId(values[1] == '0' ? 'none' : values[1]);
+        slotObj.edit.el.equipmentId.change();
         // values[2] == Item's Quality
-        slotObj.equipmentQuality(values[2]);
-        slotObj.el.equipmentQuality.change();
+        slotObj.edit.equipmentQuality(values[2]);
+        slotObj.edit.el.equipmentQuality.change();
         // values[3] == Item's Level
-        slotObj.equipmentLevel(values[3]);
-        slotObj.el.equipmentLevel.change();
+        slotObj.edit.equipmentLevel(values[3]);
+        slotObj.edit.el.equipmentLevel.change();
         // values[4] == Glyph's Rarity
-        slotObj.glyphRarity(swlcalc.data.rarity_mapping.to_name[values[4]]);
-        slotObj.el.glyphRarity.change();
+        slotObj.edit.glyphRarity(swlcalc.data.rarity_mapping.to_name[values[4]]);
+        slotObj.edit.el.glyphRarity.change();
         // values[5] == Glyph's Stat
-        slotObj.glyphId(swlcalc.data.glyph_stat_mapping.to_stat[values[5]]);
-        slotObj.el.glyphId.change();
+        slotObj.edit.glyphId(swlcalc.data.glyph_stat_mapping.to_stat[values[5]]);
+        slotObj.edit.el.glyphId.change();
         // values[6] == Glyph's Quality
-        slotObj.glyphQuality(values[6]);
-        slotObj.el.glyphQuality.change();
+        slotObj.edit.glyphQuality(values[6]);
+        slotObj.edit.el.glyphQuality.change();
         // values[7] == Glyph's Level
-        slotObj.glyphLevel(values[7]);
-        slotObj.el.glyphLevel.change();
+        slotObj.edit.glyphLevel(values[7]);
+        slotObj.edit.el.glyphLevel.change();
         // support signets (values [8], [9] & [10])
         if (typeof values[8] !== 'undefined'
         && typeof values[9] !== 'undefined' && values[9] !== "999"
         && typeof values[10] !== 'undefined') {
             // values[8] == Signet's Rarity
-            slotObj.signetRarity(swlcalc.data.rarity_mapping.to_name[values[8]]);
-            slotObj.el.signetRarity.change();
+            slotObj.edit.signetRarity(swlcalc.data.rarity_mapping.to_name[values[8]]);
+            slotObj.edit.el.signetRarity.change();
             // values[9] == Signet's Type (ID)
-            slotObj.signetId((values[9] != '0' ? values[9] : 'none'));
-            slotObj.el.signetId.change();
+            slotObj.edit.signetId((values[9] != '0' ? values[9] : 'none'));
+            slotObj.edit.el.signetId.change();
             // values[10] == Signet's Level
-            slotObj.signetLevel(values[10]);
-            slotObj.el.signetLevel.change();
+            slotObj.edit.signetLevel(values[10]);
+            slotObj.edit.el.signetLevel.change();
         }
     };
 
