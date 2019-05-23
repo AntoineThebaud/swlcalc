@@ -505,3 +505,7 @@ div[id$="weapon-slotrecap"],
 div[id$="weapon2-slotrecap"]{
     margin-bottom: 0px;
 }
+.stat-transformed {
+    font-style: italic;
+    margin-left: 18px;
+}

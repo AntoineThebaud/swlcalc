@@ -101,9 +101,6 @@ swlcalc = function() {
         swlcalc.swap[slot].init();
     };
 
-    /**
-     * Exposition of functions that are going to be called from outside
-     */
     var oPublic = {
         init: init
     };

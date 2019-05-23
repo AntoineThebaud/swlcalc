@@ -50,9 +50,9 @@ QUnit.test("should get and set the slot's equipment level", function(assert) {
 });
 
 QUnit.test("should get and set the slot's equipment power rating", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentStatRating(), "1070");
-    swlcalc.gear.slots.head.edit.equipmentStatRating("8");
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentStatRating(), "8");
+    assert.equal(swlcalc.gear.slots.head.edit.equipmentStatValue(), "1070");
+    swlcalc.gear.slots.head.edit.equipmentStatValue("8");
+    assert.equal(swlcalc.gear.slots.head.edit.equipmentStatValue(), "8");
 });
 
 QUnit.test("should get and set the slot's equipment iLvl", function(assert) {
@@ -90,10 +90,10 @@ QUnit.test("should update the slot's equipment image and description", function(
 });
 
 QUnit.test("should update the slot's equipment power rating", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentStatRating(), "1070");
+    assert.equal(swlcalc.gear.slots.head.edit.equipmentStatValue(), "1070");
     swlcalc.gear.slots.head.edit.equipmentRarity("legendary");
     swlcalc.gear.slots.head.updateEquipmentStatRating();
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentStatRating(), "2342");
+    assert.equal(swlcalc.gear.slots.head.edit.equipmentStatValue(), "2342");
 });
 
 QUnit.test("should get and set the slot's glyph id", function(assert) {

@@ -61,7 +61,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#weapon-equipment-rarity").val(), "epic");
     assert.equal($("#weapon-equipment-quality").val(), "1");
     assert.equal($("#weapon-equipment-level").val(), "30");
-    assert.equal($("#weapon-equipment-stat-rating").html(), "+1832");
+    assert.equal($("#weapon-equipment-stat-value").html(), "1832");
     assert.equal($("#weapon-equipment-ilvl").html(), "320");
     assert.equal($("#weapon-glyph-id").val(), "critical-rating");
     assert.equal($("#weapon-glyph-rarity").val(), "superior");
@@ -81,7 +81,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#weapon2-equipment-rarity").val(), "epic");
     assert.equal($("#weapon2-equipment-quality").val(), "3");
     assert.equal($("#weapon2-equipment-level").val(), "30");
-    assert.equal($("#weapon2-equipment-stat-rating").html(), "+1832");
+    assert.equal($("#weapon2-equipment-stat-value").html(), "1832");
     assert.equal($("#weapon2-equipment-ilvl").html(), "320");
     assert.equal($("#weapon2-glyph-id").val(), "critical-rating");
     assert.equal($("#weapon2-glyph-rarity").val(), "superior");
@@ -101,7 +101,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#head-equipment-rarity").val(), "epic");
     assert.equal($("#head-equipment-quality").val(), "1");
     assert.equal($("#head-equipment-level").val(), "30");
-    assert.equal($("#head-equipment-stat-rating").html(), "+1070");
+    assert.equal($("#head-equipment-stat-value").html(), "1070");
     assert.equal($("#head-equipment-ilvl").html(), "278");
     assert.equal($("#head-glyph-id").val(), "hit-rating");
     assert.equal($("#head-glyph-rarity").val(), "mythic");
@@ -121,7 +121,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#finger-equipment-rarity").val(), "epic");
     assert.equal($("#finger-equipment-quality").val(), "1");
     assert.equal($("#finger-equipment-level").val(), "30");
-    assert.equal($("#finger-equipment-stat-rating").html(), "+642");
+    assert.equal($("#finger-equipment-stat-value").html(), "642");
     assert.equal($("#finger-equipment-ilvl").html(), "278");
     assert.equal($("#finger-glyph-id").val(), "defense-rating");
     assert.equal($("#finger-glyph-rarity").val(), "epic");
@@ -141,7 +141,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#neck-equipment-rarity").val(), "epic");
     assert.equal($("#neck-equipment-quality").val(), "1");
     assert.equal($("#neck-equipment-level").val(), "30");
-    assert.equal($("#neck-equipment-stat-rating").html(), "+642");
+    assert.equal($("#neck-equipment-stat-value").html(), "642");
     assert.equal($("#neck-equipment-ilvl").html(), "278");
     assert.equal($("#neck-glyph-id").val(), "defense-rating");
     assert.equal($("#neck-glyph-rarity").val(), "epic");
@@ -161,7 +161,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#wrist-equipment-rarity").val(), "epic");
     assert.equal($("#wrist-equipment-quality").val(), "1");
     assert.equal($("#wrist-equipment-level").val(), "1");
-    assert.equal($("#wrist-equipment-stat-rating").html(), "+406");
+    assert.equal($("#wrist-equipment-stat-value").html(), "406");
     assert.equal($("#wrist-equipment-ilvl").html(), "150");
     assert.equal($("#wrist-glyph-id").val(), "defense-rating");
     assert.equal($("#wrist-glyph-rarity").val(), "epic");
@@ -181,7 +181,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#luck-equipment-rarity").val(), "epic");
     assert.equal($("#luck-equipment-quality").val(), "1");
     assert.equal($("#luck-equipment-level").val(), "1");
-    assert.equal($("#luck-equipment-stat-rating").html(), "+271");
+    assert.equal($("#luck-equipment-stat-value").html(), "271");
     assert.equal($("#luck-equipment-ilvl").html(), "150");
     assert.equal($("#luck-glyph-id").val(), "evade-rating");
     assert.equal($("#luck-glyph-rarity").val(), "epic");
@@ -201,7 +201,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#waist-equipment-rarity").val(), "epic");
     assert.equal($("#waist-equipment-quality").val(), "1");
     assert.equal($("#waist-equipment-level").val(), "30");
-    assert.equal($("#waist-equipment-stat-rating").html(), "+428");
+    assert.equal($("#waist-equipment-stat-value").html(), "428");
     assert.equal($("#waist-equipment-ilvl").html(), "278");
     assert.equal($("#waist-glyph-id").val(), "evade-rating");
     assert.equal($("#waist-glyph-rarity").val(), "epic");
@@ -221,7 +221,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#occult-equipment-rarity").val(), "epic");
     assert.equal($("#occult-equipment-quality").val(), "1");
     assert.equal($("#occult-equipment-level").val(), "1");
-    assert.equal($("#occult-equipment-stat-rating").html(), "+271");
+    assert.equal($("#occult-equipment-stat-value").html(), "271");
     assert.equal($("#occult-equipment-ilvl").html(), "150");
     assert.equal($("#occult-glyph-id").val(), "evade-rating");
     assert.equal($("#occult-glyph-rarity").val(), "epic");

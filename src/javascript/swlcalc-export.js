@@ -93,9 +93,6 @@ swlcalc.export = function() {
         return slotUrl;
     };
 
-    /**
-     * Exposition of functions that are going to be called from outside
-     */
     var oPublic = {
         init: init,
         createSlotUrl: createSlotUrl,

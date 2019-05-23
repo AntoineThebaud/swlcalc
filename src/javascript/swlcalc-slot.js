@@ -193,13 +193,28 @@ swlcalc.gear.Slot = function Slot(slotData) {
             }
         }
         var newValue = base_value + Math.round(bonus_value);
-        // add '+' for display
-        if (newValue !== 0) {
-            newValue = '+' + newValue;
-        }
-        this.edit.equipmentStatRating(newValue);
-        this.recap.equipmentStatRating(newValue);
+        this.edit.equipmentStatValue(newValue);
+        this.recap.equipmentStatRawValue(newValue);
     };
+
+    this.updateEquipmentStatValueTransformed = function() {
+        var animaAllocation = $('#select-anima-allocation').val();
+        var valueRaw = this.edit.equipmentStatValue();
+        // TODO/REFACTOR : to move to a -data file?
+        // TODO/REFACTOR : this is a "pretty precise but still approximated" value of the real IG multiplier
+        var hitPointsMultiplier = 1.427675;
+
+        if (animaAllocation == 'dps') {
+            this.recap.equipmentStatTransformedValue('+' + valueRaw);
+            this.recap.equipmentStatTransformedText('Attack Rating');
+        } else if (animaAllocation == 'heal') {
+            this.recap.equipmentStatTransformedValue('+' + valueRaw);
+            this.recap.equipmentStatTransformedText('Heal Rating');
+        } else if (animaAllocation == 'tank') {
+            this.recap.equipmentStatTransformedValue('+' + Math.round(valueRaw * hitPointsMultiplier));
+            this.recap.equipmentStatTransformedText('Hit Points');
+        }
+    }
 
     /**
      * Update #slot-equipment-ilvl

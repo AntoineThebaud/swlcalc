@@ -35,7 +35,7 @@
                             {>rarityselect itemtype="equipment"/}
                         </td>
                         <td class="stat-inSlot">
-                            <span id="{id}-equipment-stat-rating" class="stat-value">0</span>
+                            <span id="{id}-equipment-stat-value" class="stat-value">0</span>
                             <span> </span>
                             {?is_weapon}
                             <span>Weapon Power</span>
@@ -65,7 +65,7 @@
                         </td>
                         <td class="upgrade-select quality-select">
                             {?is_weapon}
-                            {>qualityselect itemtype="equipment" pip1="MK I" pip2="MK II" pip3="MK III"/}
+                            {>qualityselect itemtype="equipment" pip1="Mk I" pip2="Mk II" pip3="Mk III"/}
                             {:else}
                             {>qualityselect itemtype="equipment" pip1="Faded" pip2="Luminous" pip3="Radiant"/}
                             {/is_weapon}

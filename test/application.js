@@ -48,7 +48,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-equipment-rarity").val(), "epic");
     assert.equal($("#weapon-equipment-quality").val(), "3");
     assert.equal($("#weapon-equipment-level").val(), "19");
-    assert.equal($("#weapon-equipment-stat-rating").html(), "+1577");
+    assert.equal($("#weapon-equipment-stat-value").html(), "1577");
     assert.equal($("#weapon-equipment-ilvl").html(), "264");
     assert.equal($("#weapon-glyph-id").val(), "critical-rating");
     assert.equal($("#weapon-glyph-rarity").val(), "epic");
@@ -70,7 +70,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-equipment-rarity").val(), "epic");
     assert.equal($("#weapon2-equipment-quality").val(), "2");
     assert.equal($("#weapon2-equipment-level").val(), "29");
-    assert.equal($("#weapon2-equipment-stat-rating").html(), "+1809");
+    assert.equal($("#weapon2-equipment-stat-value").html(), "1809");
     assert.equal($("#weapon2-equipment-ilvl").html(), "315");
     assert.equal($("#weapon2-glyph-id").val(), "critical-power");
     assert.equal($("#weapon2-glyph-rarity").val(), "mythic");
@@ -89,7 +89,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-equipment-rarity").val(), "epic");
     assert.equal($("#head-equipment-quality").val(), "2");
     assert.equal($("#head-equipment-level").val(), "24");
-    assert.equal($("#head-equipment-stat-rating").html(), "+1113");
+    assert.equal($("#head-equipment-stat-value").html(), "1113");
     assert.equal($("#head-equipment-ilvl").html(), "252");
     assert.equal($("#head-equipment-description").html(), 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="head-equipment-bonus1" class="bonus-val attack">290</span> physical damage.');
     assert.equal($("#head-glyph-id").val(), "critical-power");
@@ -109,7 +109,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#finger-equipment-rarity").val(), "superior");
     assert.equal($("#finger-equipment-quality").val(), "1");
     assert.equal($("#finger-equipment-level").val(), "20");
-    assert.equal($("#finger-equipment-stat-rating").html(), "+314");
+    assert.equal($("#finger-equipment-stat-value").html(), "314");
     assert.equal($("#finger-equipment-ilvl").html(), "113");
     assert.equal($("#finger-equipment-description").html(), 'Whenever you purge a beneficial effect from an enemy\'s ability, your Protection is increased by <span class="bonus-val const">1530</span> for <span class="bonus-val const">4</span> seconds.');
     assert.equal($("#finger-glyph-id").val(), "evade-rating");
@@ -129,7 +129,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#neck-equipment-rarity").val(), "standard");
     assert.equal($("#neck-equipment-quality").val(), "3");
     assert.equal($("#neck-equipment-level").val(), "6");
-    assert.equal($("#neck-equipment-stat-rating").html(), "+70");
+    assert.equal($("#neck-equipment-stat-value").html(), "70");
     assert.equal($("#neck-equipment-ilvl").html(), "13");
     assert.equal($("#neck-equipment-description").html(), 'This talisman gains more health when leveling up.<br>Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, your damage is increased by <span class="bonus-val const">17%</span> for <span class="bonus-val const">3</span> seconds and your next attack during this time will restore <span class="bonus-val const">4%</span> of your maximum health. This effect can only occur once every <span class="bonus-val const">10</span> seconds.');
     assert.equal($("#neck-glyph-id").val(), "critical-rating");
@@ -149,7 +149,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#wrist-equipment-rarity").val(), "legendary");
     assert.equal($("#wrist-equipment-quality").val(), "2");
     assert.equal($("#wrist-equipment-level").val(), "68");
-    assert.equal($("#wrist-equipment-stat-rating").html(), "+1951");
+    assert.equal($("#wrist-equipment-stat-value").html(), "1951");
     assert.equal($("#wrist-equipment-ilvl").html(), "1026");
     assert.equal($("#wrist-equipment-description").html(), 'Whenever you heal an ally who does not have any active detrimental effects, you have a <span class="bonus-val const">25%</span> chance to restore <span id="wrist-equipment-bonus1" class="bonus-val heal">221</span> health to that ally.');
     assert.equal($("#wrist-glyph-id").val(), "critical-power");
@@ -169,7 +169,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#luck-equipment-rarity").val(), "standard");
     assert.equal($("#luck-equipment-quality").val(), "1");
     assert.equal($("#luck-equipment-level").val(), "10");
-    assert.equal($("#luck-equipment-stat-rating").html(), "+53");
+    assert.equal($("#luck-equipment-stat-value").html(), "53");
     assert.equal($("#luck-equipment-ilvl").html(), "22");
     assert.equal($("#luck-equipment-description").html(), "");
     assert.equal($("#luck-glyph-id").val(), "critical-rating");
@@ -189,7 +189,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#waist-equipment-rarity").val(), "legendary");
     assert.equal($("#waist-equipment-quality").val(), "1");
     assert.equal($("#waist-equipment-level").val(), "2");
-    assert.equal($("#waist-equipment-stat-rating").html(), "+775");
+    assert.equal($("#waist-equipment-stat-value").html(), "775");
     assert.equal($("#waist-equipment-ilvl").html(), "591");
     assert.equal($("#waist-equipment-description").html(), 'Whenever you spend Rage to empower an attack, you gain <span class="bonus-val const">7</span> Rage. Rage must be spent in order to trigger this effect.');
     assert.equal($("#waist-glyph-id").val(), "defense-rating");
@@ -209,7 +209,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#occult-equipment-rarity").val(), "standard");
     assert.equal($("#occult-equipment-quality").val(), "3");
     assert.equal($("#occult-equipment-level").val(), "19");
-    assert.equal($("#occult-equipment-stat-rating").html(), "+112");
+    assert.equal($("#occult-equipment-stat-value").html(), "112");
     assert.equal($("#occult-equipment-ilvl").html(), "42");
     assert.equal($("#occult-equipment-description").html(), 'Whenever you or any of your group members defeat an enemy, your Protection is increased by <span class="bonus-val const">2045</span> for <span class="bonus-val const">5</span> seconds.');
     assert.equal($("#occult-glyph-id").val(), "hit-rating");
@@ -265,7 +265,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#weapon-equipment-rarity").val(), "standard");
     assert.equal($("#weapon-equipment-quality").val(), "1");
     assert.equal($("#weapon-equipment-level").val(), "20");
-    assert.equal($("#weapon-equipment-stat-rating").html(), "0");
+    assert.equal($("#weapon-equipment-stat-value").html(), "0");
     assert.equal($("#weapon-equipment-ilvl").html(), "0");
     assert.equal($("#weapon-glyph-id").val(), "none");
     assert.equal($("#weapon-glyph-rarity").val(), "standard");
@@ -288,7 +288,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#weapon2-equipment-rarity").val(), "standard");
     assert.equal($("#weapon2-equipment-quality").val(), "1");
     assert.equal($("#weapon2-equipment-level").val(), "20");
-    assert.equal($("#weapon2-equipment-stat-rating").html(), "0");
+    assert.equal($("#weapon2-equipment-stat-value").html(), "0");
     assert.equal($("#weapon2-equipment-ilvl").html(), "0");
     assert.equal($("#weapon2-glyph-id").val(), "none");
     assert.equal($("#weapon2-glyph-rarity").val(), "standard");
@@ -308,7 +308,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#head-equipment-rarity").val(), "standard");
     assert.equal($("#head-equipment-quality").val(), "1");
     assert.equal($("#head-equipment-level").val(), "20");
-    assert.equal($("#head-equipment-stat-rating").html(), "0");
+    assert.equal($("#head-equipment-stat-value").html(), "0");
     assert.equal($("#head-equipment-ilvl").html(), "0");
     assert.equal($("#head-glyph-id").val(), "none");
     assert.equal($("#head-glyph-rarity").val(), "standard");
@@ -328,7 +328,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#finger-equipment-rarity").val(), "standard");
     assert.equal($("#finger-equipment-quality").val(), "1");
     assert.equal($("#finger-equipment-level").val(), "20");
-    assert.equal($("#finger-equipment-stat-rating").html(), "0");
+    assert.equal($("#finger-equipment-stat-value").html(), "0");
     assert.equal($("#finger-equipment-ilvl").html(), "0");
     assert.equal($("#finger-glyph-id").val(), "none");
     assert.equal($("#finger-glyph-rarity").val(), "standard");
@@ -348,7 +348,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#neck-equipment-rarity").val(), "standard");
     assert.equal($("#neck-equipment-quality").val(), "1");
     assert.equal($("#neck-equipment-level").val(), "20");
-    assert.equal($("#neck-equipment-stat-rating").html(), "0");
+    assert.equal($("#neck-equipment-stat-value").html(), "0");
     assert.equal($("#neck-equipment-ilvl").html(), "0");
     assert.equal($("#neck-glyph-id").val(), "none");
     assert.equal($("#neck-glyph-rarity").val(), "standard");
@@ -368,7 +368,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#wrist-equipment-rarity").val(), "standard");
     assert.equal($("#wrist-equipment-quality").val(), "1");
     assert.equal($("#wrist-equipment-level").val(), "20");
-    assert.equal($("#wrist-equipment-stat-rating").html(), "0");
+    assert.equal($("#wrist-equipment-stat-value").html(), "0");
     assert.equal($("#wrist-equipment-ilvl").html(), "0");
     assert.equal($("#wrist-glyph-id").val(), "none");
     assert.equal($("#wrist-glyph-rarity").val(), "standard");
@@ -388,7 +388,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#luck-equipment-rarity").val(), "standard");
     assert.equal($("#luck-equipment-quality").val(), "1");
     assert.equal($("#luck-equipment-level").val(), "20");
-    assert.equal($("#luck-equipment-stat-rating").html(), "0");
+    assert.equal($("#luck-equipment-stat-value").html(), "0");
     assert.equal($("#luck-equipment-ilvl").html(), "0");
     assert.equal($("#luck-glyph-id").val(), "none");
     assert.equal($("#luck-glyph-rarity").val(), "standard");
@@ -408,7 +408,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#waist-equipment-rarity").val(), "standard");
     assert.equal($("#waist-equipment-quality").val(), "1");
     assert.equal($("#waist-equipment-level").val(), "20");
-    assert.equal($("#waist-equipment-stat-rating").html(), "0");
+    assert.equal($("#waist-equipment-stat-value").html(), "0");
     assert.equal($("#waist-equipment-ilvl").html(), "0");
     assert.equal($("#waist-glyph-id").val(), "none");
     assert.equal($("#waist-glyph-rarity").val(), "standard");
@@ -428,7 +428,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#occult-equipment-rarity").val(), "standard");
     assert.equal($("#occult-equipment-quality").val(), "1");
     assert.equal($("#occult-equipment-level").val(), "20");
-    assert.equal($("#occult-equipment-stat-rating").html(), "0");
+    assert.equal($("#occult-equipment-stat-value").html(), "0");
     assert.equal($("#occult-equipment-ilvl").html(), "0");
     assert.equal($("#occult-glyph-id").val(), "none");
     assert.equal($("#occult-glyph-rarity").val(), "standard");

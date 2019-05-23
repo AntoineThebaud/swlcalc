@@ -108,7 +108,7 @@ QUnit.test("should collect primary stats for tank build", function(assert) {
 });
 
 QUnit.test("should collect offensive and defensive stats for initial state", function(assert) {
-    var sums = swlcalc.summary.collectOffensiveDefensiveStats();
+    var sums = swlcalc.summary.collectSecondaryStats();
 
     assert.equal(sums[ "critical-rating" ], 756);
     assert.equal(sums[ "critical-chance" ], 13.3);
@@ -128,7 +128,7 @@ QUnit.test("should collect offensive and defensive stats for initial state", fun
 QUnit.test("should collect offensive and defensive stats for tank build", function(assert) {
     createTankBuild();
 
-    var sums = swlcalc.summary.collectOffensiveDefensiveStats();
+    var sums = swlcalc.summary.collectSecondaryStats();
 
     assert.equal(sums[ "critical-rating" ], 841);
     assert.equal(sums[ "critical-chance" ], 13.8);
@@ -158,7 +158,7 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
         "power-rating": 3730,
         "ilvl": 377
     };
-    var expectedOffensiveDefensiveStats = {
+    var expectedSecondaryStats = {
         "critical-rating": "841",
         "critical-chance": "13.8",
         "critical-power": "1008",
@@ -177,7 +177,7 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
     var allSums = swlcalc.summary.collectAllStats();
 
     assert.deepEqual(allSums.primary, expectedPrimaryStats);
-    assert.deepEqual(allSums.offensive_defensive, expectedOffensiveDefensiveStats);
+    assert.deepEqual(allSums.secondary, expectedSecondaryStats);
 });
 
 QUnit.test("should update all stats", function(assert) {

@@ -17,7 +17,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         equipmentRarity:      $('#' + this.id + '-equipment-rarity'),
         equipmentQuality:     $('#' + this.id + '-equipment-quality'),
         equipmentLevel:       $('#' + this.id + '-equipment-level'),
-        equipmentStatRating:  $('#' + this.id + '-equipment-stat-rating'),
+        equipmentStatValue:   $('#' + this.id + '-equipment-stat-value'),
         equipmentILvl:        $('#' + this.id + '-equipment-ilvl'),
         equipmentImgItem:     $('#' + this.id + '-equipment-img-item'),
         equipmentImgRarity:   $('#' + this.id + '-equipment-img-rarity'),
@@ -138,13 +138,13 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-equipment-stat-rating
+     * Getter/Setter for #slot-equipment-stat-value
      */
-    this.equipmentStatRating = function() {
+    this.equipmentStatValue = function() {
         if (arguments.length == 1) {
-            this.el.equipmentStatRating.text(arguments[0]);
+            this.el.equipmentStatValue.text(arguments[0]);
         } else {
-            return parseInt(this.el.equipmentStatRating.text()); // TODO remove parseInt to align set and get methods
+            return parseInt(this.el.equipmentStatValue.text()); // TODO remove parseInt to align set and get methods
         }
     };
 

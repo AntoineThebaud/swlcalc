@@ -66,9 +66,6 @@ swlcalc.gear = function() {
         return mappedSlotStates;
     };
 
-    /**
-     * Exposition of functions that are going to be called from outside
-     */
     var oPublic = {
         slots: slots,
         init: init,

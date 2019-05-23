@@ -15,8 +15,9 @@ swlcalc.summary = function() {
     //TODO/REFACTOR : to avoid useless refreshes ?
     var updateAllStats = function() {
         updatePrimaryStats();
-        updateOffensiveDefensiveStats();
+        updateSecondaryStats();
         updateDescriptions();
+        updateEquipmentsStatsValuesTransformed();
         updateURL();
     };
 
@@ -33,8 +34,8 @@ swlcalc.summary = function() {
      */
     var collectAllStats = function() {
         return {
-            primary: collectPrimaryStats(),
-            offensive_defensive: collectOffensiveDefensiveStats()
+            primary:   collectPrimaryStats(),
+            secondary: collectSecondaryStats()
         };
     };
 
@@ -80,9 +81,9 @@ swlcalc.summary = function() {
             if (slot.isWeapon() && !slot.active) {
                 continue;
             } else if (slot.isWeapon() && slot.edit.equipmentId() != 'none') {
-                sums['weapon-power'] = slot.edit.equipmentStatRating();
+                sums['weapon-power'] = slot.edit.equipmentStatValue();
             } else if (!slot.isWeapon() && slot.edit.equipmentId() != 'none') {
-                sums['power-rating'] += slot.edit.equipmentStatRating();
+                sums['power-rating'] += slot.edit.equipmentStatValue();
             }
         }
         // first basic implementation of anima allocation
@@ -132,15 +133,15 @@ swlcalc.summary = function() {
     /**
      * Updates glyph stats in the summary
      */
-    var updateOffensiveDefensiveStats = function() {
-        var sums = collectOffensiveDefensiveStats();
+    var updateSecondaryStats = function() {
+        var sums = collectSecondaryStats();
         updateStats(sums);
     };
 
     /**
      * Collects glyph stats by going through the whole gear
      */
-    var collectOffensiveDefensiveStats = function() {
+    var collectSecondaryStats = function() {
         var sums = {
             'critical-rating': 756,           // amount brought by passives skills
             'critical-chance': 1,             // base percentage
@@ -306,18 +307,28 @@ swlcalc.summary = function() {
     /**
      * Setter for animaAllocation attribute
      */
-    var setAnimaAllocation = function(newAllocation) {
+    var updateAnimaAllocation = function(newAllocation) {
         animaAllocation = newAllocation
         this.updateAllStats();
     }
 
     /**
-     * Launch a description update for each item (in order to display the right bonus values)
+     * Launch an update on each slot's description (in order to display the right bonus values)
      */
     var updateDescriptions = function() {
         for (var id in swlcalc.gear.slots) {
             swlcalc.gear.slots[id].updateEquipmentBonuses(combatPower(), healingPower());
             swlcalc.gear.slots[id].updateSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
+        }
+    };
+
+    /**
+     * Launch an update on each equipment's stat transformed value (in order to display the amount of HP/AR/HR gained depending on the current anima allocation)
+     */
+    var updateEquipmentsStatsValuesTransformed = function() {
+
+        for (var id in swlcalc.gear.slots) {
+            swlcalc.gear.slots[id].updateEquipmentStatValueTransformed(animaAllocation);
         }
     };
 
@@ -335,9 +346,6 @@ swlcalc.summary = function() {
         return parseInt($('#stat-healing-power').text());
     }
 
-    /**
-     * Exposition of functions that are going to be called from outside
-     */
     var oPublic = {
         init: init,
         calculateCriticalChance: calculateCriticalChance,
@@ -345,11 +353,11 @@ swlcalc.summary = function() {
         calculateEvadeChance: calculateEvadeChance,
         calculateCombatPower: calculateCombatPower,
         collectPrimaryStats: collectPrimaryStats,
-        collectOffensiveDefensiveStats: collectOffensiveDefensiveStats,
+        collectSecondaryStats: collectSecondaryStats,
         collectAllStats: collectAllStats,
         updateAllStats: updateAllStats,
         updateDescriptions: updateDescriptions,
-        setAnimaAllocation: setAnimaAllocation
+        updateAnimaAllocation: updateAnimaAllocation
     };
 
     return oPublic;
