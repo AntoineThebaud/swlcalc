@@ -17,9 +17,10 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         weaponActive:                  $('#' + this.id + '-active'), // TODO change name
         iLvl:                          $('#' + this.id + '-recap-ilvl'),
         section:                       $('#' + this.id + '-recap-section'),
-        equipmentSection:              $('#' + this.id + '-recap-equipment-section'),
         equipmentEmpty:                $('#' + this.id + '-recap-equipment-empty'),
+        equipmentTitleSection:         $('#' + this.id + '-recap-equipment-title-section'),
         equipmentTitle:                $('#' + this.id + '-recap-equipment-title'),
+        equipmentSubtitleSection:      $('#' + this.id + '-recap-equipment-subtitle-section'),
         equipmentItem:                 $('#' + this.id + '-recap-equipment-item'),
         equipmentRarity:               $('#' + this.id + '-recap-equipment-rarity'),
         equipmentQuality:              $('#' + this.id + '-recap-equipment-quality'),
@@ -79,11 +80,13 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
             this.el.equipmentItem.text(arguments[0]);
             // recap : hide whole section if slot is empty
             if (arguments[0] == 'Empty') {
-                this.el.equipmentSection.hide();
+                this.el.equipmentTitleSection.hide();
+                this.el.equipmentSubtitleSection.hide();
                 this.el.equipmentStatSection.hide();
                 this.el.equipmentEmpty.show();
-            } else if (this.el.equipmentSection.is(":hidden")) {
-                this.el.equipmentSection.show();
+            } else if (this.el.equipmentTitleSection.is(":hidden")) {
+                this.el.equipmentTitleSection.show();
+                this.el.equipmentSubtitleSection.show();
                 this.el.equipmentStatSection.show();
                 this.el.equipmentEmpty.hide();
             }

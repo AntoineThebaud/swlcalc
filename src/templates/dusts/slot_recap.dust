@@ -8,13 +8,13 @@
                         <span class="mediumgrey"> Empty Equipment Slot</span>
                     </p>
                 </td>
-                <td id="{slot.id}-recap-equipment-img-section">
+                <td id="{slot.id}-recap-equipment-img-section" rowspan="2">
                     <img id="{slot.id}-recap-equipment-img-item" class="slotrecap-itemicon" src="assets/images/icons/talisman/Dice.png" alt="image"/>
                     <img id="{slot.id}-recap-equipment-img-rarity" class="slotrecap-itemicon" src="assets/images/icons/rarity/epic-64x64.png"/>
                     <img id="{slot.id}-recap-equipment-img-quality" class="slotrecap-itemicon" src="assets/images/icons/quality/1.png"/>
                     <div id="{slot.id}-recap-equipment-label-level" class="label-level big border-standard"></div>
                 </td>
-                <td id="{slot.id}-recap-equipment-section">
+                <td id="{slot.id}-recap-equipment-title-section">
                     <h5 id="{slot.id}-recap-equipment-title">
                         {?slot.is_weapon}
                         <span id="{slot.id}-recap-equipment-item"></span>
@@ -28,6 +28,15 @@
                         <span id="{slot.id}-recap-equipment-item"></span>
                         {/slot.is_weapon}
                     </h5>
+                </td>
+                <td id="{slot.id}-editbtn-section">
+                    <button id="{slot.id}-editbtn" class="btn btn-default" data-toggle="modal" data-target="#{slot.id}-edit-modal">
+                        <img id="{slot.id}-editbtn-img" src="assets/images/buttons/btn-edit.png" alt="image"/>
+                    </button>
+                </td>
+            </tr>
+            <tr id="{slot.id}-recap-equipment-subtitle-section">
+                <td colspan="2">
                     <p>
                         <span id="{slot.id}-recap-name">{slot.name}</span>
                         <span> (Lv </span>
@@ -40,11 +49,6 @@
                         <span>Item Power: </span>
                         <span id="{slot.id}-recap-ilvl"></span>
                     </p>
-                </td>
-                <td id="{slot.id}-editbtn-section">
-                    <button id="{slot.id}-editbtn" class="btn btn-default" data-toggle="modal" data-target="#{slot.id}-edit-modal">
-                        <img id="{slot.id}-editbtn-img" src="assets/images/buttons/btn-edit.png" alt="image"/>
-                    </button>
                 </td>
             </tr>
         </table>
