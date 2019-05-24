@@ -2,8 +2,9 @@
 QUnit.module("export-integration-tests", {
     beforeEach: function(assert) {
         renderSlots();
-        renderButtonbar();
+        renderButtonbar(); // remove need of button bar in this unit test (= save anima allocation as attribute to gear maybe ?)
         initiateSelectHandlers();
+        initiateButtonBar();
         initiateSummary();
         swlcalc.export.init();
         createTankBuild();

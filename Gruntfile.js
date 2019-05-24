@@ -61,7 +61,8 @@ module.exports = function(grunt) {
             '<%= dirs.src %>/data/<%= pkg.name %>-data-signets.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-glyphs.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-equipments.js',
-            '<%= dirs.src %>/data/<%= pkg.name %>-data-ilvl.js'
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-ilvl.js',
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-stats.js'
         ],
         dest: '<%= dirs.build %>/assets/javascripts/<%= pkg.name %>-data.js'
       }

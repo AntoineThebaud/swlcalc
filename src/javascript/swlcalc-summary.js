@@ -6,8 +6,6 @@ swlcalc.summary = function() {
     var init = function() {
     };
 
-    var animaAllocation = 'dps';
-
     /**
      * Refreshes all values in the summary
      * -> triggered after any change that affects a stat
@@ -17,7 +15,6 @@ swlcalc.summary = function() {
         updatePrimaryStats();
         updateSecondaryStats();
         updateDescriptions();
-        updateEquipmentsStatsValuesTransformed();
         updateURL();
     };
 
@@ -88,15 +85,13 @@ swlcalc.summary = function() {
         }
         // first basic implementation of anima allocation
         // TODO/FEATURE : add conversion to AR/HR/HP based on a ratio
+        var animaAllocation = swlcalc.buttonBar.getAnimaAllocation();
         if (animaAllocation == 'dps') {
             sums['attack-rating'] += sums['power-rating'];
         } else if (animaAllocation == 'heal') {
             sums['heal-rating'] += sums['power-rating'];
         } else if (animaAllocation == 'tank') {
-            // TODO/REFACTOR : to move to a -data file?
-            // TODO/REFACTOR : this is a "pretty precise but still approximated" value of the real IG multiplier
-            var hitPointsMultiplier = 1.427675;
-            sums['hitpoints'] += Math.round(sums['power-rating'] * hitPointsMultiplier);
+            sums['hitpoints'] += Math.round(sums['power-rating'] * swlcalc.data.stats.hp_multiplier);
         }
 
         sums['combat-power'] = calculateCombatPower(sums['attack-rating'], sums['weapon-power']);
@@ -305,11 +300,11 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Setter for animaAllocation attribute
+     * Cascade anima allocation change on all gear
      */
-    var updateAnimaAllocation = function(newAllocation) {
-        animaAllocation = newAllocation
-        this.updateAllStats();
+    var updateAnimaAllocation = function() {
+        updateAllStats();
+        updateEquipmentsStatsValuesTransformed();
     }
 
     /**
@@ -326,9 +321,8 @@ swlcalc.summary = function() {
      * Launch an update on each equipment's stat transformed value (in order to display the amount of HP/AR/HR gained depending on the current anima allocation)
      */
     var updateEquipmentsStatsValuesTransformed = function() {
-
         for (var id in swlcalc.gear.slots) {
-            swlcalc.gear.slots[id].updateEquipmentStatValueTransformed(animaAllocation);
+            swlcalc.gear.slots[id].updateEquipmentStatValueTransformed();
         }
     };
 

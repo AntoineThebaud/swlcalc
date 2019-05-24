@@ -2,6 +2,8 @@
 QUnit.module("summary-dom", {
     beforeEach: function(assert) {
         renderSummary();
+        renderButtonbar(); // remove need of button bar in this unit test (= save anima allocation as attribute to gear maybe ?)
+        initiateButtonBar();
     }
 });
 

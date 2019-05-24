@@ -4,6 +4,8 @@ QUnit.module("import-integration-tests", {
     beforeEach: function(assert) {
         renderSlots();
         renderSummary();
+        renderButtonbar(); // remove need of button bar in this unit test (= save anima allocation as attribute to gear maybe ?)
+        initiateButtonBar();
         initiateSummary();
         initiateSelectHandlers();
     }

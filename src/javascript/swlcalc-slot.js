@@ -195,14 +195,12 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newValue = base_value + Math.round(bonus_value);
         this.edit.equipmentStatValue(newValue);
         this.recap.equipmentStatRawValue(newValue);
+        this.updateEquipmentStatValueTransformed();
     };
 
     this.updateEquipmentStatValueTransformed = function() {
-        var animaAllocation = $('#select-anima-allocation').val();
+        var animaAllocation = swlcalc.buttonBar.getAnimaAllocation();
         var valueRaw = this.edit.equipmentStatValue();
-        // TODO/REFACTOR : to move to a -data file?
-        // TODO/REFACTOR : this is a "pretty precise but still approximated" value of the real IG multiplier
-        var hitPointsMultiplier = 1.427675;
 
         if (animaAllocation == 'dps') {
             this.recap.equipmentStatTransformedValue('+' + valueRaw);
@@ -211,7 +209,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             this.recap.equipmentStatTransformedValue('+' + valueRaw);
             this.recap.equipmentStatTransformedText('Heal Rating');
         } else if (animaAllocation == 'tank') {
-            this.recap.equipmentStatTransformedValue('+' + Math.round(valueRaw * hitPointsMultiplier));
+            this.recap.equipmentStatTransformedValue('+' + Math.round(valueRaw * swlcalc.data.stats.hp_multiplier));
             this.recap.equipmentStatTransformedText('Hit Points');
         }
     }
@@ -224,10 +222,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newILvl = 0;
         if (!(this.edit.equipmentId() == 'none')) {
             newILvl = this.computeItemILvl('equipment', this.edit.equipmentRarity(), this.edit.equipmentLevel());
-            // Weapons are worth ~15% more Item Power than talismans
-            // TODO/REFACTOR : could be done in  a better way
             if (this.isWeapon()) {
-                newILvl = newILvl * 1.15;
+                newILvl = newILvl * swlcalc.data.stats.weapon_power_multiplier;
             }
         }
         //register value before it is rounded (used for #slot-total-ilvl)
@@ -328,7 +324,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Update #slot-glyph-stat-rating (calculatations with stats data)
      *   INFO : in SWL a glyph rating value depends on its rarity-quality-level, neither the slot (head/major/minor) nor
      *   the glyph stat impact the calculation (whereas it was the case in TSW) => /!\ exception for crit power
-     *   glyphs that give 97.3% of the value of other glyphs)
+     *   glyphs that give a bit less)
      */
     this.updateGlyphRating = function() {
         var newValue = 0;
@@ -337,7 +333,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             var bonusValue = swlcalc.data.glyph[this.edit.glyphRarity()][this.edit.glyphQuality()].rating_per_level * (this.edit.glyphLevel() - 1);
             newValue = baseValue + Math.round(bonusValue);
             if (this.edit.glyphId() == 'critical-power') {
-                newValue = 0.973 * newValue;
+                newValue = newValue * swlcalc.data.stats.pcrit_multiplier;
             }
             // remove decimals for display
             newValue = newValue.toFixed(0);
@@ -358,10 +354,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newILvl = 0;
         if (this.edit.glyphId() != 'none') {
             newILvl = this.computeItemILvl('glyph', this.edit.glyphRarity(), this.edit.glyphLevel());
-            // Glyphs in weapons are worth ~22.5% more Item Power than glyphs in talismans
-            // TODO/REFACTOR : could be done in  a better way
             if (this.isWeapon()) {
-                newILvl = newILvl * 1.225;
+                newILvl = newILvl * swlcalc.data.stats.glyph_in_weapon_multiplier;
             }
         }
         //register value before it is rounded (used for #slot-total-ilvl)

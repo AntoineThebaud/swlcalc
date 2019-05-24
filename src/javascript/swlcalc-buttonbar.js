@@ -34,7 +34,7 @@ swlcalc.buttonBar = function() {
      * Associates the right process to each trigger.
      */
     var bindEvents = function() {
-        el.select_anima_allocation.on('change', updateAnimaAllocation);
+        el.select_anima_allocation.on('change', handleAnimaAllocationChange);
 
         el.btn_all_standard.on('click', setRarityOnAllSlots);
         el.btn_all_superior.on('click', setRarityOnAllSlots);
@@ -53,12 +53,19 @@ swlcalc.buttonBar = function() {
     };
 
     /**
+     * Get current anima allocation
+     */
+    var getAnimaAllocation = function() {
+        return el.select_anima_allocation.val();
+    }
+
+    /**
      * Sets anima allocation ratio
      */
     //TODO/REFACTOR : basic implementation, everything to review
-    var updateAnimaAllocation = function(event) {
-        $(this).attr('class', 'anima-allocation-select color-' + this.value);
-        swlcalc.summary.updateAnimaAllocation(event.target.value);
+    var handleAnimaAllocationChange = function(event) {
+        el.select_anima_allocation.attr('class', 'anima-allocation-select color-' + this.value);
+        swlcalc.summary.updateAnimaAllocation();
     };
 
     /**
@@ -137,8 +144,8 @@ swlcalc.buttonBar = function() {
     var oPublic = {
         el: el,
         init: init,
-        setRarityOnAllSlots: setRarityOnAllSlots,
-        resetGear: resetGear
+        resetGear: resetGear,
+        getAnimaAllocation: getAnimaAllocation
     };
 
     return oPublic;

@@ -389,9 +389,6 @@ td.ilvl {
     vertical-align: bottom;
     line-height: 12px;
 }
-.td-swap {
-    padding-left: 100px;
-}
 /******************************************************/
 .btn-button-bar {
     padding: 4px 6px;
@@ -426,7 +423,8 @@ td.ilvl {
     border: 0px;
     padding: 0px;
 }
-
+/******************************************************/
+/* slot > recap */
 
 div[id$="-slotrecap"] {
     width: 275px;
@@ -457,12 +455,14 @@ div[id$="-slotrecap"] hr {
     margin-bottom: 4px;
     border-top: 2px solid #ddd;
 }
-td[id$="-editbtn-section"] {
-    vertical-align: top;
-}
+/*----------------------------------------------------*/
 td[id$="-recap-equipment-section"] {
     width: 160px;
     height: 60px;
+    vertical-align: top;
+}
+/*----------------------------------------------------*/
+td[id$="-editbtn-section"] {
     vertical-align: top;
 }
 button[id$="-editbtn"] {
@@ -474,6 +474,7 @@ button[id$="-editbtn"] {
 button[id$="-editbtn"] img {
     width: 25px;
 }
+/*----------------------------------------------------*/
 div[id$="-slotrecap"] .empty-slot {
     margin-top: 8px;
 }
@@ -488,6 +489,7 @@ td[id$="-recap-equipment-empty"] {
     width: 90%;
     height: 30px;
 }
+/*----------------------------------------------------*/
 .weapon-active-p {
     text-align: center;
     margin-right: 15px;
@@ -505,6 +507,7 @@ div[id$="weapon-slotrecap"],
 div[id$="weapon2-slotrecap"]{
     margin-bottom: 0px;
 }
+/*----------------------------------------------------*/
 .stat-transformed {
     font-style: italic;
     margin-left: 18px;
