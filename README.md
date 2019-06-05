@@ -15,24 +15,9 @@ Contributions can also be bug reports, feature requests and other feedback !
 
 ## Prerequisites
 
-The tools needed to build swlcalc are:
-* [node.js](http://nodejs.org/) (v0.10.45)
-* npm (v2.15.1)
-* [grunt](http://gruntjs.com/) (v0.4.1)
+First, download and install [Node.js](http://nodejs.org/).
 
-> /!\ The technical stack is not really up to date with modern JavaScript standards. It is planned to address this issue in a future 2.0 version.
-
-Install and use [nvm](https://github.com/creationix/nvm) to manage your node.js and npm installations.
-
-Installing the correct node.js version:
-
-    nvm install 0.10.45
-
-Switch to the installation:
-
-    nvm use 0.10.45
-
-Install `grunt` globally:
+Then install `grunt` globally :
 
     npm install -g grunt-cli
 
