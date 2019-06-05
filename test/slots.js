@@ -16,11 +16,6 @@ QUnit.test("should tell whether this slot is a weapon slot", function(assert) {
     assert.equal(swlcalc.gear.slots.head.isWeapon(), false);
 });
 
-QUnit.test("should set and get the slot's equipment name", function(assert) {
-    swlcalc.gear.slots.head.edit.equipmentName("Mark of the starspawn");
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentName(), "Mark of the starspawn");
-});
-
 QUnit.test("should get and set the slot's equipment id", function(assert) {
     assert.equal(swlcalc.gear.slots.head.edit.equipmentId(), "1");
     swlcalc.gear.slots.head.edit.equipmentId("3");

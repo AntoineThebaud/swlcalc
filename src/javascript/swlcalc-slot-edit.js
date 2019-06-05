@@ -13,7 +13,6 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         div:                  $('#' + this.id + '-slot'),
         iLvl:                 $('#' + this.id + '-ilvl'),
         equipmentId:          $('#' + this.id + '-equipment-id'),
-        equipmentName:        $('#' + this.id + '-equipment-name'),
         equipmentRarity:      $('#' + this.id + '-equipment-rarity'),
         equipmentQuality:     $('#' + this.id + '-equipment-quality'),
         equipmentLevel:       $('#' + this.id + '-equipment-level'),
@@ -42,8 +41,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         signetImgRarity:      $('#' + this.id + '-signet-img-rarity'),
         signetDescription:    $('#' + this.id + '-signet-description'),
         signetLabelLevel:     $('#' + this.id + '-signet-label-level'),
-        signetILvl:           $('#' + this.id + '-signet-ilvl'),
-        nameWarning:          $('#' + this.id + '-name-warning') // TODO to review
+        signetILvl:           $('#' + this.id + '-signet-ilvl')
     };
 
     /**
@@ -61,17 +59,6 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      * Equipment functions | (talismans + weapons)
      *                     V
      **********************************************************************************/
-
-    /**
-     * Getter/Setter for #slot-equipment-name
-     */
-    this.equipmentName = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentName.html(arguments[0]);
-        } else {
-            return this.el.equipmentName.html();
-        }
-    };
 
     /**
      * Getter/Setter for #slot-equipment-id

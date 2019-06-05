@@ -14,7 +14,6 @@ swlcalc.gear = function() {
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             var slotData = swlcalc.data.template_data.slots[i];
             this.slots[slotData.id] = new swlcalc.gear.Slot(slotData);
-            this.slots[slotData.id].edit.el.nameWarning.hide(); // TODO/FEATURE : Review this & this warning stuff in general
         }
         drawPrimaryWeapon();
     };

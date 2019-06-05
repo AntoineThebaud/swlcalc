@@ -6,15 +6,7 @@
                 <table class="table-title">
                     <tr>
                         <td class="td-title">
-                            <span>
-                                <h4 class="slot">{name}</h4>
-                                <h4 id="{id}-equipment-name" class="slot-name"></h4>
-                                <span id="{id}-name-warning" class="label label-important">
-                                    <a class="slot-warning" href="#" data-toggle="tooltip">
-                                        <i class="icon-warning-sign icon-white"></i>
-                                    </a>
-                                </span>
-                            </span>
+                            <h4 class="slot">{name}</h4>
                         </td>
                         <td class="slot-ilvl lightgrey">
                             Item Power : <span id="{id}-ilvl">0</span>
