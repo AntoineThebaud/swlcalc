@@ -1,4 +1,5 @@
 
+//TODO/REFACTOR : to check if some of these calls can be removed
 QUnit.module("gear-unit-tests", {
     beforeEach: function(assert) {
         renderSlots();
@@ -17,6 +18,7 @@ QUnit.test("gear should contain 9 slots", function(assert) {
     assert.equal(swlcalc.gear.nbSlots(), 9);
 });
 
+//TODO/REFACTOR : to change the test logic ? should ensure all 9 slots are present (maybe test array length ?)
 QUnit.test("should collect all slot states", function(assert) {
     var slotStates = swlcalc.gear.state();
 
@@ -44,6 +46,7 @@ QUnit.test("should collect all slot states", function(assert) {
 });
 
 //TODO/REFACTOR : to harmnonize numerical values and strings (to have only one type ?)
+//TODO/REFACTOR : to change the test logic ? should ensure all 9 slots are present (maybe test array length ?)
 QUnit.test("should collect all mapped slot states", function(assert) {
     var slotStates = swlcalc.gear.mappedState();
 
