@@ -3,46 +3,52 @@
 QUnit.module("gear-unit-tests", {
     beforeEach: function(assert) {
         renderSlots();
-        renderSummary();
-        renderButtonbar(); // remove need of button bar in this unit test (= save anima allocation as attribute to gear maybe ?)
         initiateButtonBar();
         initiateSelectHandlers();
-        initiateSummary();
         createTankBuild();
     }
 });
 
-//TODO/TEST : to test all the functions of swlcalc-gear
-
 QUnit.test("gear should contain 9 slots", function(assert) {
     assert.equal(swlcalc.gear.nbSlots(), 9);
+});
+
+QUnit.test("gear should be fully reset", function(assert) {
+    assert.equal($("#weapon-equipment-id").val(), "1");
+    assert.equal($("#weapon2-equipment-id").val(), "2");
+    assert.equal($("#head-equipment-id").val(), "1");
+    assert.equal($("#finger-equipment-id").val(), "1");
+    assert.equal($("#neck-equipment-id").val(), "1");
+    assert.equal($("#wrist-equipment-id").val(), "1");
+    assert.equal($("#luck-equipment-id").val(), "1");
+    assert.equal($("#waist-equipment-id").val(), "1");
+    assert.equal($("#occult-equipment-id").val(), "1");
+    swlcalc.gear.reset();
+    assert.equal($("#weapon-equipment-id").val(), "none");
+    assert.equal($("#weapon2-equipment-id").val(), "none");
+    assert.equal($("#head-equipment-id").val(), "none");
+    assert.equal($("#finger-equipment-id").val(), "none");
+    assert.equal($("#neck-equipment-id").val(), "none");
+    assert.equal($("#wrist-equipment-id").val(), "none");
+    assert.equal($("#luck-equipment-id").val(), "none");
+    assert.equal($("#waist-equipment-id").val(), "none");
+    assert.equal($("#occult-equipment-id").val(), "none");
 });
 
 //TODO/REFACTOR : to change the test logic ? should ensure all 9 slots are present (maybe test array length ?)
 QUnit.test("should collect all slot states", function(assert) {
     var slotStates = swlcalc.gear.state();
 
-    assert.deepEqual(slotStates.weapon.equipment_rarity, "epic");
-    assert.deepEqual(slotStates.weapon.equipment_quality, "1");
-    assert.deepEqual(slotStates.weapon.equipment_level, "30");
-    assert.deepEqual(slotStates.weapon.glyph_id, "critical-rating");
-    assert.deepEqual(slotStates.weapon.glyph_rarity, "superior");
-    assert.deepEqual(slotStates.weapon.glyph_quality, "1");
-    assert.deepEqual(slotStates.weapon.glyph_level, "1");
-    assert.deepEqual(slotStates.weapon.signet_id, "6");
-    assert.deepEqual(slotStates.weapon.signet_rarity, undefined);
-    assert.deepEqual(slotStates.weapon.signet_level, undefined);
-
-    assert.deepEqual(slotStates.head.equipment_rarity, "epic");
-    assert.deepEqual(slotStates.head.equipment_quality, "1");
-    assert.deepEqual(slotStates.head.equipment_level, "30");
-    assert.deepEqual(slotStates.head.glyph_id, "hit-rating");
-    assert.deepEqual(slotStates.head.glyph_rarity, "mythic");
-    assert.deepEqual(slotStates.head.glyph_quality, "3");
-    assert.deepEqual(slotStates.head.glyph_level, "1");
-    assert.deepEqual(slotStates.head.signet_id, "20");
-    assert.deepEqual(slotStates.head.signet_rarity, "superior");
-    assert.deepEqual(slotStates.head.signet_level, "15");
+    assert.equal(Object.keys(slotStates).length, 9);
+    assert.equal(slotStates.hasOwnProperty("weapon"), true);
+    assert.equal(slotStates.hasOwnProperty("weapon2"), true);
+    assert.equal(slotStates.hasOwnProperty("head"), true);
+    assert.equal(slotStates.hasOwnProperty("finger"), true);
+    assert.equal(slotStates.hasOwnProperty("neck"), true);
+    assert.equal(slotStates.hasOwnProperty("wrist"), true);
+    assert.equal(slotStates.hasOwnProperty("luck"), true);
+    assert.equal(slotStates.hasOwnProperty("waist"), true);
+    assert.equal(slotStates.hasOwnProperty("occult"), true);
 });
 
 //TODO/REFACTOR : to harmnonize numerical values and strings (to have only one type ?)
@@ -50,27 +56,14 @@ QUnit.test("should collect all slot states", function(assert) {
 QUnit.test("should collect all mapped slot states", function(assert) {
     var slotStates = swlcalc.gear.mappedState();
 
-    assert.deepEqual(slotStates.weapon.equipment_id, "1");
-    assert.deepEqual(slotStates.weapon.equipment_rarity, 3);
-    assert.deepEqual(slotStates.weapon.equipment_quality, "1");
-    assert.deepEqual(slotStates.weapon.equipment_level, "30");
-    assert.deepEqual(slotStates.weapon.glyph_id, 2);
-    assert.deepEqual(slotStates.weapon.glyph_rarity, 2);
-    assert.deepEqual(slotStates.weapon.glyph_quality, "1");
-    assert.deepEqual(slotStates.weapon.glyph_level, "1");
-    assert.deepEqual(slotStates.weapon.signet_id, "6");
-    assert.deepEqual(slotStates.weapon.signet_rarity, 0);
-    assert.deepEqual(slotStates.weapon.signet_level, 0);
-
-    assert.deepEqual(slotStates.head.equipment_id, "1");
-    assert.deepEqual(slotStates.head.equipment_rarity, 3);
-    assert.deepEqual(slotStates.head.equipment_quality, "1");
-    assert.deepEqual(slotStates.head.equipment_level, "30");
-    assert.deepEqual(slotStates.head.glyph_id, 1);
-    assert.deepEqual(slotStates.head.glyph_rarity, 4);
-    assert.deepEqual(slotStates.head.glyph_quality, "3");
-    assert.deepEqual(slotStates.head.glyph_level, "1");
-    assert.deepEqual(slotStates.head.signet_id, "20");
-    assert.deepEqual(slotStates.head.signet_rarity, 2);
-    assert.deepEqual(slotStates.head.signet_level, "15");
+    assert.equal(Object.keys(slotStates).length, 9);
+    assert.equal(slotStates.hasOwnProperty("weapon"), true);
+    assert.equal(slotStates.hasOwnProperty("weapon2"), true);
+    assert.equal(slotStates.hasOwnProperty("head"), true);
+    assert.equal(slotStates.hasOwnProperty("finger"), true);
+    assert.equal(slotStates.hasOwnProperty("neck"), true);
+    assert.equal(slotStates.hasOwnProperty("wrist"), true);
+    assert.equal(slotStates.hasOwnProperty("luck"), true);
+    assert.equal(slotStates.hasOwnProperty("waist"), true);
+    assert.equal(slotStates.hasOwnProperty("occult"), true);
 });

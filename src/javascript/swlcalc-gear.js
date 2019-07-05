@@ -22,12 +22,12 @@ swlcalc.gear = function() {
      * Draw primary weapon (-> hide secondary weapon)
      */
     var drawPrimaryWeapon = function() {
+        swlcalc.gear.slots.weapon.draw();
         swlcalc.gear.slots.weapon2.sheath();
-        swlcalc.gear.slots.weapon.active = true;
     };
 
     /**
-     * Returns the total number of slots in the gear (= 9 as of now)
+     * Returns the total number of slots in the gear
      */
     var nbSlots = function() {
         return Object.keys(this.slots).length;
