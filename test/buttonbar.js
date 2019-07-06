@@ -29,8 +29,7 @@ QUnit.module("buttonbar-integration-tests", {
 
 QUnit.test("should reset all slots", function(assert) {
     swlcalc.buttonBar.resetGear();
-    for (var i = 0; i < swlcalc.gear.nbSlots(); i++) {
-        var slotId = swlcalc.data.template_data.slots[i].id;
+    for (var slotId in swlcalc.gear.slots){
         var slot = swlcalc.gear.slots[slotId];
         assert.equal(slot.edit.iLvl(), "0");
         assert.equal(slot.edit.equipmentId(), "none");

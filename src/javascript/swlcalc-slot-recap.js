@@ -91,7 +91,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
                 this.el.equipmentEmpty.hide();
             }
         } else {
-            return parseInt(this.el.equipmentItem.text());
+            return this.el.equipmentItem.text();
         }
     };
 
@@ -113,7 +113,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         if (arguments.length == 1) {
             this.el.equipmentQuality.text(arguments[0]);
         } else {
-            return parseInt(this.el.equipmentQuality.text());
+            return this.el.equipmentQuality.text();
         }
     };
 
@@ -135,7 +135,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         if (arguments.length == 1) {
             this.el.equipmentStatRawValue.text(arguments[0]);
         } else {
-            return parseInt(this.el.equipmentStatRawValue.text());
+            return this.el.equipmentStatRawValue.text();
         }
     };
 
@@ -146,7 +146,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         if (arguments.length == 1) {
             this.el.equipmentStatTransformedValue.text(arguments[0]);
         } else {
-            return parseInt(this.el.equipmentStatTransformedValue.text());
+            return this.el.equipmentStatTransformedValue.text();
         }
     };
 
@@ -157,7 +157,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         if (arguments.length == 1) {
             this.el.equipmentStatTransformedText.text(arguments[0]);
         } else {
-            return parseInt(this.el.equipmentStatTransformedText.text());
+            return this.el.equipmentStatTransformedText.text();
         }
     };
 
@@ -304,7 +304,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         if (arguments.length == 1) {
             this.el.glyphStatRating.text(arguments[0]);
         } else {
-            return parseInt(this.el.glyphStatRating.text());
+            return this.el.glyphStatRating.text();
         }
     };
 
@@ -394,6 +394,11 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     this.suffix = function() {
         if (arguments.length == 1) {
             this.el.suffix.text('of '+ arguments[0]);
+            if (arguments[0] == '') {
+                this.el.suffix.hide();
+            } else if (this.el.suffix.is(":hidden")) {
+                this.el.suffix.show();
+            }
         } else {
             return this.el.suffix.text();
         }

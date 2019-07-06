@@ -1,5 +1,4 @@
 
-//TODO/REFACTOR : to check if some of these calls can be removed
 QUnit.module("gear-unit-tests", {
     beforeEach: function(assert) {
         renderSlots();
@@ -21,7 +20,7 @@ QUnit.test("gear should be fully reset", function(assert) {
     assert.equal($("#neck-equipment-id").val(), "1");
     assert.equal($("#wrist-equipment-id").val(), "1");
     assert.equal($("#luck-equipment-id").val(), "1");
-    assert.equal($("#waist-equipment-id").val(), "1");
+    assert.equal($("#waist-equipment-id").val(), "13");
     assert.equal($("#occult-equipment-id").val(), "1");
     swlcalc.gear.reset();
     assert.equal($("#weapon-equipment-id").val(), "none");

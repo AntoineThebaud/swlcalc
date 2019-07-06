@@ -215,8 +215,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     }
 
     /**
-     * Update #slot-equipment-ilvl
-     * -> Calculates item power for the slot's talisman (or weapon) and updates GUI with it
+     * Update elements related to equipement's ilvl
      */
     this.updateEquipmentILvl = function() {
         var newILvl = 0;
@@ -226,7 +225,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
                 newILvl = newILvl * swlcalc.data.stats.weapon_power_multiplier;
             }
         }
-        //register value before it is rounded (used for #slot-total-ilvl)
+        // register value before it is rounded (used to compute total ilvl precisely)
         this.rawILvl = newILvl;
 
         this.edit.equipmentILvl(Math.round(newILvl));
@@ -234,7 +233,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Update every bonus values present in equipment desription (both edit & recap)
+     * Update every bonus values present in equipment's description (both edit & recap)
      */
     this.updateEquipmentBonuses = function(combatPower, healingPower) {
         if (this.edit.equipmentBonusN(1) === undefined) return;
@@ -321,7 +320,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     }
 
     /**
-     * Update #slot-glyph-stat-rating (calculatations with stats data)
+     * Update elements related to glyph's stat rating
      *   INFO : in SWL a glyph rating value depends on its rarity-quality-level, neither the slot (head/major/minor) nor
      *   the glyph stat impact the calculation (whereas it was the case in TSW) => /!\ exception for crit power
      *   glyphs that give a bit less)
@@ -347,8 +346,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Update #slot-glyph-ilvl
-     * -> Calculates item power for the slot's glyph and updates GUI with it
+     * Update elements related to glyph's ilvl
      */
     this.updateGlyphILvl = function() {
         var newILvl = 0;

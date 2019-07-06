@@ -1,6 +1,6 @@
 /**
  * Creates tank build
- * -> equivalent to : weapon=3,1,1,30,2,2,1,1,0,6,0&weapon2=3,2,3,30,2,2,1,1,0,2,0&head=3,1,1,30,4,1,3,1,2,20,15&finger=3,1,1,30,3,5,2,20,1,10,9&neck=3,1,1,30,3,5,2,20,2,10,3&wrist=3,1,1,1,3,5,2,20,1,1,14&luck=3,1,1,1,3,4,2,20,3,8,6&waist=3,1,1,30,3,4,2,20,2,3,11&occult=3,1,1,1,3,4,2,20,3,4,18
+ * -> equivalent to : weapon=3,1,1,30,2,2,1,1,0,6,0&weapon2=3,2,3,30,2,2,1,1,0,2,0&head=3,1,1,30,4,1,3,1,2,20,15&finger=3,1,1,30,3,5,2,20,1,10,9&neck=3,1,1,30,3,5,2,20,2,10,3&wrist=3,1,1,1,3,5,2,20,1,1,14&luck=3,1,1,1,3,4,2,20,3,8,6&waist=3,13,1,30,3,4,2,20,2,3,11&occult=3,1,1,1,3,4,2,20,3,4,18
  */
 function createTankBuild() {
     $("#weapon-equipment-id").val("1");
@@ -154,7 +154,7 @@ function createTankBuild() {
     $("#luck-signet-level").val("6");
     $("#luck-signet-level").change();
 
-    $("#waist-equipment-id").val("1");
+    $("#waist-equipment-id").val("13");
     $("#waist-equipment-id").change();
     $("#waist-equipment-rarity").val("epic");
     $("#waist-equipment-rarity").change();
