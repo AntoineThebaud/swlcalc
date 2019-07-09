@@ -56,3 +56,7 @@ function initiateSelectHandlers() {
 function initiateButtonBar() {
     swlcalc.buttonBar.init();
 }
+
+function initiateExport() {
+    swlcalc.export.init();
+}

@@ -98,7 +98,6 @@ QUnit.module("selects-integration-tests", {
         renderButtonbar();
         renderSlots();
         initiateSelectHandlers();
-        swlcalc.gear.init();
     }
 });
 

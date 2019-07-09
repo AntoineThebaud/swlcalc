@@ -21,7 +21,7 @@ QUnit.module("buttonbar-integration-tests", {
         renderButtonbar();
         renderSlots();
         initiateSelectHandlers();
-        swlcalc.buttonBar.init();
+        initiateButtonBar();
         initiateSummary();
         createTankBuild();
     }

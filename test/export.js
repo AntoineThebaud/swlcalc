@@ -6,7 +6,7 @@ QUnit.module("export-integration-tests", {
         initiateSelectHandlers();
         initiateButtonBar();
         initiateSummary();
-        swlcalc.export.init();
+        initiateExport();
         createTankBuild();
     }
 });
