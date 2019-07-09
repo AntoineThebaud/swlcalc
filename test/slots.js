@@ -1,9 +1,10 @@
 
-
 QUnit.module("slots-unit-tests", {
     beforeEach: function(assert) {
         renderSlots();
-        initiateButtonBar(); // remove need of button bar in this unit test (= save anima allocation as attribute to gear maybe ?)
+        renderSummary();
+        renderButtonbar(); // TODO/REFACTOR this is needed otherwise anima allocation is undefined. to change ? Save anima allocation as attribute to gear maybe ?
+        initiateButtonBar(); // see previous comment
         initiateSelectHandlers();
         createTankBuild();
     }

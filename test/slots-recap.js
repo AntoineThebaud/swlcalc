@@ -3,7 +3,8 @@ QUnit.module("slots-unit-tests", {
     beforeEach: function(assert) {
         renderSlots();
         renderSummary();
-        initiateButtonBar(); // TODO/REFACTOR remove need of button bar in this test suite ? (= save anima allocation as attribute to gear maybe ?)
+        renderButtonbar(); // TODO/REFACTOR this is needed otherwise anima allocation is undefined. to change ? Save anima allocation as attribute to gear maybe ?
+        initiateButtonBar(); // see previous comment
         initiateSelectHandlers();
         createTankBuild();
     }
@@ -66,7 +67,7 @@ QUnit.test("should get and set the slot's equipment description on recap view", 
 });
 
 QUnit.test("should get and set the slot's equipment bonus value on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(1), "196");
+    assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(1), "315");
     assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(2), "196");
     swlcalc.gear.slots.waist.recap.equipmentBonusN(1, "19920804");
     assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(1), "19920804");
@@ -162,7 +163,7 @@ QUnit.test("should get and set the slot's signet description on recap view", fun
 });
 
 QUnit.test("should get and set the slot's signet bonus value on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.recap.signetBonus(), "43.4572");
+    assert.equal(swlcalc.gear.slots.luck.recap.signetBonus(), "69.7008");
     swlcalc.gear.slots.luck.recap.signetBonus("1992.0804");
     assert.equal(swlcalc.gear.slots.luck.recap.signetBonus(), "1992.0804");
 });

@@ -202,15 +202,21 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var animaAllocation = swlcalc.buttonBar.getAnimaAllocation();
         var valueRaw = this.edit.equipmentStatValue();
 
-        if (animaAllocation == 'dps') {
-            this.recap.equipmentStatTransformedValue('+' + valueRaw);
-            this.recap.equipmentStatTransformedText('Attack Rating');
-        } else if (animaAllocation == 'heal') {
-            this.recap.equipmentStatTransformedValue('+' + valueRaw);
-            this.recap.equipmentStatTransformedText('Heal Rating');
-        } else if (animaAllocation == 'tank') {
-            this.recap.equipmentStatTransformedValue('+' + Math.round(valueRaw * swlcalc.data.stats.hp_multiplier));
-            this.recap.equipmentStatTransformedText('Hit Points');
+        switch (animaAllocation) {
+            case 'dps':
+                this.recap.equipmentStatTransformedValue('+' + valueRaw);
+                this.recap.equipmentStatTransformedText('Attack Rating');
+                break;
+            case 'heal':
+                this.recap.equipmentStatTransformedValue('+' + valueRaw);
+                this.recap.equipmentStatTransformedText('Heal Rating');
+                break;
+            case 'tank':
+                this.recap.equipmentStatTransformedValue('+' + Math.round(valueRaw * swlcalc.data.stats.hp_multiplier));
+                this.recap.equipmentStatTransformedText('Hit Points');
+                break;
+            default:
+                throw "animaAllocation value \"" + animaAllocation + "\" is not valid.";
         }
     }
 
@@ -289,9 +295,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
 
         // refresh list of available qualities after change on glyph rarity :
         var elaborateOptionExists = ($('#' + this.id + '-glyph-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
-        if (swlcalc.data.rarity_mapping.to_num[this.edit.glyphRarity()] >= 3 && !elaborateOptionExists) { // TODO/REFACTOR add global const like EPIC = 3 ?
+        if (swlcalc.data.rarity_mapping.to_num[this.edit.glyphRarity()] >= swlcalc.data.rarity_mapping.to_num['epic'] && !elaborateOptionExists) {
             this.edit.el.glyphQuality.append("<option value='4'>Elaborate</option>");
-        } else if (swlcalc.data.rarity_mapping.to_num[this.edit.glyphRarity()] < 3 && elaborateOptionExists) {
+        } else if (swlcalc.data.rarity_mapping.to_num[this.edit.glyphRarity()] < swlcalc.data.rarity_mapping.to_num['epic'] && elaborateOptionExists) {
             $('#' + this.id + '-glyph-quality option[value=4]').remove(); // TODO/REFACTOR to abstract access
             this.updateGlyphQuality();
         }
