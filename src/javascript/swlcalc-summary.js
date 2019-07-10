@@ -94,43 +94,51 @@ swlcalc.summary = function() {
             sums['hitpoints'] += Math.round(sums['power-rating'] * swlcalc.data.stats.hp_multiplier);
         }
 
-        sums['combat-power'] = calculateCombatPower(sums['attack-rating'], sums['weapon-power']);
-        sums['healing-power'] = calculateHealingPower(sums['heal-rating'], sums['weapon-power']);
-        sums['ilvl'] = calculateAverageILvl(sums['ilvl']); //TODO/REFACTOR : refactor (it's weird)
+        sums['combat-power'] = computeCombatPower(sums['attack-rating'], sums['weapon-power']);
+        sums['healing-power'] = computeHealingPower(sums['heal-rating'], sums['weapon-power']);
+        sums['ilvl'] = computeAverageILvl(sums['ilvl']); //TODO/REFACTOR : refactor (it's weird)
 
         return sums;
     };
 
     /**
-     * Calculates the Combat Power for the given Attack Rating and Weapon Power values
+     * Computes the Combat Power for the given Attack Rating and Weapon Power values
      * SWL formula for Combat Power is like :
      * -> +1 Combat Power every 13.33 Attack Rating
      * -> +1 Combat Power every 13.33 Weapon Power
      */
-    var calculateCombatPower = function(attack_rating, weapon_power) {
+    var computeCombatPower = function(attack_rating, weapon_power) {
         var ratio = 13 + 1/3;
 
         return Math.round((attack_rating + weapon_power) / ratio);
     };
 
     /**
-     * Calculates the Healing Power for the given Heal Rating and Weapon Power values
+     * Computes the Healing Power for the given Heal Rating and Weapon Power values
      * SWL formula for Combat Power is like :
      * -> +1 Healing Power every 13.33 Heal Rating
      * -> +1 Healing Power every 13.33 Weapon Power
      */
-    var calculateHealingPower = function(heal_rating, weapon_power) {
+    var computeHealingPower = function(heal_rating, weapon_power) {
         var ratio = 13 + 1/3;
 
         return Math.round((heal_rating + weapon_power) / ratio);
     };
 
     /**
-     * Updates glyph stats in the summary
+     * Updates secondary stats in the summary
      */
     var updateSecondaryStats = function() {
         var sums = collectSecondaryStats();
-        updateStats(sums);
+        for (var stat in sums) {
+            if (sums.hasOwnProperty(stat)) {
+                if (sums[stat] > 0) {
+                    $('#stat-' + stat).html(isStatPercentageBased(stat) ? sums[stat].toString() + "%" : '+' + sums[stat]);
+                } else {
+                    $('#stat-' + stat).html(isStatPercentageBased(stat) ? "0%" : "0");
+                }
+            }
+        }
     };
 
     /**
@@ -161,11 +169,11 @@ swlcalc.summary = function() {
             sums[slot.edit.glyphId()] += slot.edit.glyphStatRating();
         }
         // get ratio stats
-        sums['critical-chance'] += calculateCriticalChance(sums['critical-rating']);
-        sums['critical-power-percentage'] += calculateCriticalPowerPercentage(sums['critical-power']);
-        sums['glance-reduction'] = calculateGlanceReduction(sums['hit-rating']);
-        sums['glance-chance'] = calculateGlanceChance(sums['defense-rating']);
-        sums['evade-chance'] = calculateEvadeChance(sums['evade-rating']);
+        sums['critical-chance'] += computeCriticalChance(sums['critical-rating']);
+        sums['critical-power-percentage'] += computeCriticalPowerPercentage(sums['critical-power']);
+        sums['glance-reduction'] = computeGlanceReduction(sums['hit-rating']);
+        sums['glance-chance'] = computeGlanceChance(sums['defense-rating']);
+        sums['evade-chance'] = computeEvadeChance(sums['evade-rating']);
         // round values for display purpose
         sums['critical-rating'] = sums['critical-rating'].toFixed(0);
         sums['critical-chance'] = sums['critical-chance'].toFixed(1);
@@ -179,13 +187,13 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Calculates the critical chance given by the whole gear
+     * Computes the critical chance given by the whole gear
      * SWL formula for critical chances is like :
      * -> Up to 6536 rating => 1% Critical Chance every 157.49 Rating
      * -> After 6536 rating => 1% Critical Chance every 683.00 Rating
      * The calculation includes weapon expertise
      */
-    var calculateCriticalChance = function(critical_rating) {
+    var computeCriticalChance = function(critical_rating) {
         var hardCap = 6536;
         var softCapRatio = 157.49;
         var hardCapRatio = 683.00;
@@ -199,13 +207,13 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Calculates the % critical power given by the whole gear
+     * Computes the % critical power given by the whole gear
      * SWL formula for % critical power is like :
      * -> Up to 3258 rating => 1% Critical Power every 28.31 Rating
      * -> After 3258 rating => 1% Critical Power every 136.00 Rating
      * The calculation includes weapon expertise (= 30% at max level)
      */
-    var calculateCriticalPowerPercentage = function(critical_power) {
+    var computeCriticalPowerPercentage = function(critical_power) {
         var hardCap = 3258;
         var softCapRatio = 28.31;
         var hardCapRatio = 136.00;
@@ -219,12 +227,12 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Calculates the % evade chance given by the whole gear
+     * Computes the % evade chance given by the whole gear
      * SWL formula for % evade chance is like :
      * -> Up to 4221 rating => 1% Evade Chance every 145.55 Rating
      * -> After 4221 rating => 1% Evade Chance every 977.40 Rating
      */
-    var calculateEvadeChance = function(evade_rating) {
+    var computeEvadeChance = function(evade_rating) {
         var hardCap = 4221;
         var softCapRatio = 145.55;
         var hardCapRatio = 977.40;
@@ -237,12 +245,12 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Calculates the % glance chance given by the whole gear
+     * Computes the % glance chance given by the whole gear
      * SWL formula for % glance chance is like :
      * -> Up to 4221 rating => 1% Evade Chance every 101.71 Rating
      * -> After 4221 rating => 1% Evade Chance every 683.00 Rating
      */
-    var calculateGlanceChance = function(defense_rating) {
+    var computeGlanceChance = function(defense_rating) {
         var hardCap = 4221;
         var softCapRatio = 101.71;
         var hardCapRatio = 683.00;
@@ -255,38 +263,22 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Calculates the % glance reduction given by the whole gear
+     * Computes the % glance reduction given by the whole gear
      * SWL formula for % glance reduction is like :
      * -> 1% Evade Chance every 50.85 Rating (no hard cap)
      */
-    var calculateGlanceReduction = function(hit_rating) {
+    var computeGlanceReduction = function(hit_rating) {
         var ratio = 50.85;
 
         return swlcalc.util.precisionRound(hit_rating / ratio, 1);
     };
 
     /**
-     * Calculates the average Item Power given by the whole gear
-     * 9 = number of slots to take into account (2 weapons + 7 talismans)
+     * Computes the average Item Power given by the whole gear
      */
-    var calculateAverageILvl = function(sum_ilvl) {
-        return Math.round(sum_ilvl / 9);
+    var computeAverageILvl = function(sum_ilvl) {
+        return Math.round(sum_ilvl / swlcalc.gear.nbSlots());
     }
-
-    /**
-     * Updates values (stats) displayed in the summary
-     */
-    var updateStats = function(sums) {
-        for (var stat in sums) {
-            if (sums.hasOwnProperty(stat)) {
-                if (sums[stat] > 0) {
-                    $('#stat-' + stat).html(isStatPercentageBased(stat) ? sums[stat].toString() + "%" : '+' + sums[stat]);
-                } else {
-                    $('#stat-' + stat).html(isStatPercentageBased(stat) ? "0%" : "0");
-                }
-            }
-        }
-    };
 
     /**
      * Boolean function. Determines whether a stat is percentage-based or not
@@ -298,15 +290,6 @@ swlcalc.summary = function() {
             || statName == 'evade-chance'
             || statName == 'glance-chance';
     };
-
-    /**
-     * Cascade anima allocation change on all gear
-     */
-    var updateAnimaAllocation = function() {
-        updateAllStats();
-        updateEquipmentsStatsValuesTransformed();
-    }
-
     /**
      * Launch an update on each slot's description (in order to display the right bonus values)
      */
@@ -314,15 +297,6 @@ swlcalc.summary = function() {
         for (var id in swlcalc.gear.slots) {
             swlcalc.gear.slots[id].updateEquipmentBonuses(combatPower(), healingPower());
             swlcalc.gear.slots[id].updateSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
-        }
-    };
-
-    /**
-     * Launch an update on each equipment's stat transformed value (in order to display the amount of HP/AR/HR gained depending on the current anima allocation)
-     */
-    var updateEquipmentsStatsValuesTransformed = function() {
-        for (var id in swlcalc.gear.slots) {
-            swlcalc.gear.slots[id].updateEquipmentStatValueTransformed();
         }
     };
 
@@ -342,16 +316,19 @@ swlcalc.summary = function() {
 
     var oPublic = {
         init: init,
-        calculateCriticalChance: calculateCriticalChance,
-        calculateCriticalPowerPercentage: calculateCriticalPowerPercentage,
-        calculateEvadeChance: calculateEvadeChance,
-        calculateCombatPower: calculateCombatPower,
-        collectPrimaryStats: collectPrimaryStats,
-        collectSecondaryStats: collectSecondaryStats,
-        collectAllStats: collectAllStats,
+        computeCriticalChance: computeCriticalChance,                   //TODO/REFACTOR : visibility relevant only for tests
+        computeCriticalPowerPercentage: computeCriticalPowerPercentage, //TODO/REFACTOR : visibility relevant only for tests
+        computeEvadeChance: computeEvadeChance,                         //TODO/REFACTOR : visibility relevant only for tests
+        computeGlanceChance: computeGlanceChance,                       //TODO/REFACTOR : visibility relevant only for tests
+        computeGlanceReduction: computeGlanceReduction,                 //TODO/REFACTOR : visibility relevant only for tests
+        computeCombatPower: computeCombatPower,                         //TODO/REFACTOR : visibility relevant only for tests
+        computeHealingPower: computeHealingPower,                       //TODO/REFACTOR : visibility relevant only for tests
+        computeAverageILvl: computeAverageILvl,                         //TODO/REFACTOR : visibility relevant only for tests
+        collectPrimaryStats: collectPrimaryStats,                       //TODO/REFACTOR : visibility relevant only for tests
+        collectSecondaryStats: collectSecondaryStats,                   //TODO/REFACTOR : visibility relevant only for tests
+        collectAllStats: collectAllStats,                               //TODO/REFACTOR : visibility relevant only for tests
         updateAllStats: updateAllStats,
-        updateDescriptions: updateDescriptions,
-        updateAnimaAllocation: updateAnimaAllocation
+        updateDescriptions: updateDescriptions
     };
 
     return oPublic;

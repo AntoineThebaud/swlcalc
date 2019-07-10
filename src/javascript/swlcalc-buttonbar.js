@@ -60,12 +60,15 @@ swlcalc.buttonBar = function() {
     }
 
     /**
-     * Sets anima allocation ratio
+     * Cascade anima allocation change on whole gear
      */
-    //TODO/REFACTOR : basic implementation, everything to review
     var handleAnimaAllocationChange = function(event) {
-        el.select_anima_allocation.attr('class', 'anima-allocation-select color-' + this.value);
-        swlcalc.summary.updateAnimaAllocation();
+        el.select_anima_allocation.attr('class', 'anima-allocation-select color-' + this.value); //TODO/REFACTOR : to abstract access ?
+
+        for (var id in swlcalc.gear.slots) {
+            swlcalc.gear.slots[id].updateEquipmentStatValueTransformed();
+        }
+        swlcalc.summary.updateAllStats();
     };
 
     /**
