@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         options: {
           relative: true,
           runtime: false,
-          amd: false
+          wrapper: false
         }
       }
     },
@@ -180,29 +180,19 @@ module.exports = function(grunt) {
           {expand: true, cwd: 'dist/', src: '**/*'}
         ]
       }
-    },
-    release: {
-      options: {
-        push: false,
-        pushTags: false,
-        npm: false,
-        commitMessage: 'Prepare version <%= version %>',
-        tagMessage: 'Release version <%= version %>'
-      }
     }
   });
 
   grunt.loadNpmTasks('grunt-dust');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-replace');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-release');
+  grunt.loadNpmTasks('grunt-contrib-qunit');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-replace');
 
   grunt.registerTask('build', ['dust', 'concat', 'replace:develop', 'copy:develop']);
   grunt.registerTask('default', ['build', 'qunit']);
