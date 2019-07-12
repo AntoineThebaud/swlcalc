@@ -8,7 +8,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     this.init = function() {
         this.bindEvents();
         this.addSignetsToSelect();
-        this.addItemsToSelect();
+        this.addEquipmentsToSelect();
     };
 
     /**
@@ -35,43 +35,43 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     /**
-     * Loads items (swlcalc-data-equipments) as options list in the #slot-itemId select
+     * Loads items (swlcalc-data-equipments) as options list in the #slot-equipment-id select
      */
-    this.addItemsToSelect = function() {
-        var items = swlcalc.data.equipments.slot[slot.kind].slice();
-
+    this.addEquipmentsToSelect = function() {
         slotObj.edit.el.equipmentId.append($('<option>', {
             value: "none",
             text: "None",
             selected: "true"
         }));
 
+        var equipments = swlcalc.data.equipments.slot[slot.kind].slice();
+
         if (slot.group == 'weapon') {
             //sort alphabetically for a better ergonomy
-            items.sort(function(a, b) {
+            equipments.sort(function(a, b) {
                 return swlcalc.util.sortAsc(a.type + a.name.toLowerCase(), b.type + b.name.toLowerCase())
             });
-            items.forEach(function(item) {
+            equipments.forEach(function(equipment) {
                 slotObj.edit.el.equipmentId.append($('<option>', {
-                    value: item.id,
-                    text: '[' + item.type + '] ' + item.name
+                    value: equipment.id,
+                    text: '[' + equipment.type + '] ' + equipment.name
                 }));
             });
         } else {
-            items.sort(function(a, b) {
+            equipments.sort(function(a, b) {
                 return swlcalc.util.sortAsc(a.name.toLowerCase(), b.name.toLowerCase())
             });
-            items.forEach(function(item) {
+            equipments.forEach(function(equipment) {
                 slotObj.edit.el.equipmentId.append($('<option>', {
-                    value: item.id,
-                    text:  item.name
+                    value: equipment.id,
+                    text:  equipment.name
                 }));
             });
         }
     };
 
     /**
-     * Loads signets (swlcalc-data-signets) as options list in the #slot-signet select
+     * Loads signets (swlcalc-data-signets) as options list in the #slot-signet-id select
      */
     this.addSignetsToSelect = function() {
         slotObj.edit.el.signetId.append($('<option>', {
@@ -79,17 +79,16 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
             text: "None",
             selected: "true"
         }));
-        this.updateToDefaultSignet();
 
-        var signetsInSlotGroup = swlcalc.data.signets.slot[slot.kind].slice();
+        var signets = swlcalc.data.signets.slot[slot.kind].slice();
         //reorder elements to improve ergonomy
-        signetsInSlotGroup.sort(function(a, b) {
+        signets.sort(function(a, b) {
             return swlcalc.util.sortAsc(a.name.toLowerCase(), b.name.toLowerCase())
         });
-        $.each(signetsInSlotGroup, function(index, value) {
+        signets.forEach(function(signet) {
             slotObj.edit.el.signetId.append($('<option>', {
-                value: value.id,
-                text: value.name
+                value: signet.id,
+                text: signet.name
             }));
         });
     };
@@ -100,16 +99,6 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
      */
     var updateTextColor = function(select) {
         $(select).attr('class', 'color-' + select.value);
-    };
-
-    /**
-     * Resets this signet field to the default value ("none" value, white border...)
-     */
-    this.updateToDefaultSignet = function() {
-        var signet_icon_url = 'assets/images/icons/signet/none.png';
-        var signet_rarity_url = 'assets/images/icons/rarity/none-42x42.png';
-        $('#' + slot.id + '-signet-img-item').attr('src', signet_icon_url);
-        $('#' + slot.id + '-signet-img-rarity').attr('src', signet_rarity_url);
     };
 
     /**********************************************************************************
