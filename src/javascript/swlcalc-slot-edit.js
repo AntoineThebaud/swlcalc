@@ -51,7 +51,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         if (arguments.length == 1) {
             this.el.iLvl.text(arguments[0]);
         } else {
-            return parseInt(this.el.iLvl.text()); // TODO remove parseInt to align set and get methods
+            return this.el.iLvl.text();
         }
     };
 
@@ -131,7 +131,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         if (arguments.length == 1) {
             this.el.equipmentStatValue.text(arguments[0]);
         } else {
-            return parseInt(this.el.equipmentStatValue.text()); // TODO remove parseInt to align set and get methods
+            return this.el.equipmentStatValue.text();
         }
     };
 
@@ -142,7 +142,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         if (arguments.length == 1) {
             this.el.equipmentILvl.text(arguments[0]);
         } else {
-            return parseInt(this.el.equipmentILvl.text()); // TODO remove parseInt to align set and get methods
+            return this.el.equipmentILvl.text();
         }
     };
 
@@ -288,7 +288,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         if (arguments.length == 1) {
             this.el.glyphStatRating.text(arguments[0]);
         } else {
-            return parseInt(this.el.glyphStatRating.text()); // TODO remove parseInt to align set and get methods
+            return this.el.glyphStatRating.text();
         }
     };
 
@@ -310,7 +310,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         if (arguments.length == 1) {
             this.el.glyphILvl.text(arguments[0]);
         } else {
-            return parseInt(this.el.glyphILvl.text()); // TODO remove parseInt to align set and get methods
+            return this.el.glyphILvl.text();
         }
     };
 
@@ -423,7 +423,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         if (arguments.length == 1) {
             this.el.signetILvl.text(arguments[0]);
         } else {
-            return parseInt(this.el.signetILvl.text()); // TODO remove parseInt to align set and get methods
+            return this.el.signetILvl.text();
         }
     };
 

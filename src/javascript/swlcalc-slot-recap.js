@@ -63,7 +63,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         if (arguments.length == 1) {
             this.el.iLvl.text(arguments[0]);
         } else {
-            return parseInt(this.el.iLvl.text());
+            return this.el.iLvl.text();
         }
     };
 
@@ -124,7 +124,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         if (arguments.length == 1) {
             this.el.equipmentLevel.text(arguments[0]);
         } else {
-            return parseInt(this.el.equipmentLevel.text());
+            return this.el.equipmentLevel.text();
         }
     };
 

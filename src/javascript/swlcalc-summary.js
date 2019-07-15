@@ -74,13 +74,13 @@ swlcalc.summary = function() {
 
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            sums['ilvl'] += slot.edit.iLvl();
+            sums['ilvl'] += parseInt(slot.edit.iLvl());
             if (slot.isWeapon() && !slot.active) {
                 continue;
             } else if (slot.isWeapon() && slot.edit.equipmentId() != 'none') {
-                sums['weapon-power'] = slot.edit.equipmentStatValue();
+                sums['weapon-power'] = parseInt(slot.edit.equipmentStatValue());
             } else if (!slot.isWeapon() && slot.edit.equipmentId() != 'none') {
-                sums['power-rating'] += slot.edit.equipmentStatValue();
+                sums['power-rating'] += parseInt(slot.edit.equipmentStatValue());
             }
         }
         // first basic implementation of anima allocation
@@ -166,7 +166,7 @@ swlcalc.summary = function() {
             if(slot.isWeapon() && !slot.active) {
                 continue;
             }
-            sums[slot.edit.glyphId()] += slot.edit.glyphStatRating();
+            sums[slot.edit.glyphId()] += parseInt(slot.edit.glyphStatRating());
         }
         // get ratio stats
         sums['critical-chance'] += computeCriticalChance(sums['critical-rating']);

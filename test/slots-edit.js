@@ -139,9 +139,9 @@ QUnit.test("should get and set the upper bound for slot's glyph level on edit vi
 });
 
 QUnit.test("should get and set the slot's glyph stat rating on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.glyphStatRating(), "488");
-    swlcalc.gear.slots.head.edit.glyphStatRating("99");
-    assert.equal(swlcalc.gear.slots.head.edit.glyphStatRating(), "99");
+    assert.equal(swlcalc.gear.slots.head.edit.glyphStatRating(), "+488");
+    swlcalc.gear.slots.head.edit.glyphStatRating("-99");
+    assert.equal(swlcalc.gear.slots.head.edit.glyphStatRating(), "-99");
 });
 
 QUnit.test("should get and set the slot's glyph stat text on edit view", function(assert) {
