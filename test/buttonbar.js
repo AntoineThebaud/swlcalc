@@ -1,7 +1,13 @@
 
-QUnit.module("buttonbar-dom", {
+QUnit.module("buttonbar-unit-tests", {
     beforeEach: function(assert) {
+        renderSummary();
         renderButtonbar();
+        renderSlots();
+        initiateSelectHandlers();
+        initiateButtonBar();
+        initiateSummary();
+        createTankBuild();
     }
 });
 
@@ -15,78 +21,13 @@ QUnit.test("should have required buttonbar buttons in DOM", function(assert) {
     assert.ok($("#btn-reset").length !== 0, "reset button exists");
 });
 
-QUnit.module("buttonbar-integration-tests", {
-    beforeEach: function(assert) {
-        renderSummary();
-        renderButtonbar();
-        renderSlots();
-        initiateSelectHandlers();
-        initiateButtonBar();
-        initiateSummary();
-        createTankBuild();
-    }
-});
-
-QUnit.test("should reset all slots", function(assert) {
-    swlcalc.buttonBar.resetGear();
-    for (var slotId in swlcalc.gear.slots){
-        var slot = swlcalc.gear.slots[slotId];
-        assert.equal(slot.edit.iLvl(), "0");
-        assert.equal(slot.edit.equipmentId(), "none");
-        assert.equal(slot.edit.equipmentQuality(), "1");
-        assert.equal(slot.edit.equipmentRarity(), "standard");
-        assert.equal(slot.edit.equipmentLevel(), "20");
-        assert.equal(slot.edit.equipmentStatValue(), "0");
-        assert.equal(slot.edit.equipmentDescription(), "");
-        assert.equal(slot.edit.equipmentILvl(), "0");
-        assert.equal(slot.edit.glyphId(), "none");
-        assert.equal(slot.edit.glyphRarity(), "standard");
-        assert.equal(slot.edit.glyphQuality(), "1");
-        assert.equal(slot.edit.glyphLevel(), "20");
-        assert.equal(slot.edit.glyphStatRating(), "0");
-        assert.equal(slot.edit.glyphStatText(), "");
-        assert.equal(slot.edit.glyphILvl(), "0");
-        assert.equal(slot.edit.signetId(), "none");
-        if (slot.isWeapon()) {
-            // TODO : to replace by NaN or ""; actually parseInt should be removed from the getters to allow this
-            // assert.equal(slot.edit.signetRarity(), undefined, "expect signetRarity for weapon to be undefined");
-            // assert.equal(slot.edit.signetLevel(), undefined, "expect signetLevel for weapon to be undefined");
-            // assert.equal(slot.edit.signetILvl(), undefined, "expect signetILvl for weapon to be undefined");
-        } else {
-            assert.equal(slot.edit.signetRarity(), "standard");
-            assert.equal(slot.edit.signetLevel(), "20");
-            assert.equal(slot.edit.signetILvl(), "0");
-        }
-    }
-});
-
-QUnit.test("should set rarity on all slots", function(assert) {
-    var mixedRarities = ["epic", "standard", "legendary", "superior", "mythic"];
-
-    for (var r = 0; r < mixedRarities.length; r++) {
-        $("#btn-all-" + mixedRarities[r]).click();
-        for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-            var id = swlcalc.data.template_data.slots[i].id;
-            assert.equal(swlcalc.gear.slots[id].edit.equipmentRarity(), mixedRarities[r]);
-            assert.equal(swlcalc.gear.slots[id].edit.glyphRarity(), mixedRarities[r]);
-            if (id != "weapon" && id != "weapon2") {
-                assert.equal(swlcalc.gear.slots[id].edit.signetRarity(), mixedRarities[r]);
-            }
-        }
-    }
-});
-
-QUnit.test("should set quality on all slots", function(assert) {
-    var mixedQualities = ["3", "1", "2"];
-
-    for (var r = 0; r < mixedQualities.length; r++) {
-        $("#btn-all-" + mixedQualities[r] + "-pip").click();
-        for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-            var id = swlcalc.data.template_data.slots[i].id;
-            assert.equal(swlcalc.gear.slots[id].edit.equipmentQuality(), mixedQualities[r]);
-            assert.equal(swlcalc.gear.slots[id].edit.glyphQuality(), mixedQualities[r]);
-        }
-    }
+QUnit.test("should update anima allocation accordingly", function(assert) {
+    assert.equal(swlcalc.buttonBar.getAnimaAllocation(), "dps");
+    assert.equal($('#select-anima-allocation').attr('class'), 'anima-allocation-select color-dps');
+    $('#select-anima-allocation').val("tank");
+    $('#select-anima-allocation').change();
+    assert.equal(swlcalc.buttonBar.getAnimaAllocation(), "tank");
+    assert.equal($('#select-anima-allocation').attr('class'), 'anima-allocation-select color-tank');
 });
 
 QUnit.test("should set anima allocation and affect stats correctly", function(assert) {
@@ -116,4 +57,71 @@ QUnit.test("should set anima allocation and affect stats correctly", function(as
     assert.equal($("#stat-attack-rating").html(), "8052");
     assert.equal($("#stat-heal-rating").html(), "4310");
     assert.equal($("#stat-hitpoints").html(), "7512");
+});
+
+QUnit.test("should set rarity on all slots", function(assert) {
+    var mixedRarities = ["epic", "standard", "legendary", "superior", "mythic"];
+
+    for (var r = 0; r < mixedRarities.length; r++) {
+        $("#btn-all-" + mixedRarities[r]).click();
+        for (var slotId in swlcalc.gear.slots){
+            var slot = swlcalc.gear.slots[slotId];
+            assert.equal(slot.edit.equipmentRarity(), mixedRarities[r]);
+            assert.equal(slot.edit.glyphRarity(), mixedRarities[r]);
+            if (slot.id != "weapon" && slot.id != "weapon2") {
+                assert.equal(slot.edit.signetRarity(), mixedRarities[r]);
+            }
+        }
+    }
+});
+
+QUnit.test("should set quality on all slots", function(assert) {
+    var mixedQualities = ["3", "1", "2"];
+
+    for (var r = 0; r < mixedQualities.length; r++) {
+        $("#btn-all-" + mixedQualities[r] + "-pip").click();
+        for (var slotId in swlcalc.gear.slots){
+            var slot = swlcalc.gear.slots[slotId];
+            assert.equal(slot.edit.equipmentQuality(), mixedQualities[r]);
+            assert.equal(slot.edit.glyphQuality(), mixedQualities[r]);
+        }
+    }
+});
+
+QUnit.test("should set level on all slots", function(assert) {
+      $('#btn-all-mythic').click();
+
+      $("#btn-all-lvl-min").click();
+      for (var slotId in swlcalc.gear.slots){
+          var slot = swlcalc.gear.slots[slotId];
+          assert.equal(slot.edit.equipmentLevel(), "1");
+          assert.equal(slot.edit.glyphLevel(), "1");
+          if (slot.id != "weapon" && slot.id != "weapon2") {
+              assert.equal(slot.edit.signetLevel(), "1");
+          }
+      }
+      $("#btn-all-lvl-max").click();
+      for (var slotId in swlcalc.gear.slots){
+          var slot = swlcalc.gear.slots[slotId];
+          assert.equal(slot.edit.equipmentLevel(), "35");
+          assert.equal(slot.edit.glyphLevel(), "20");
+          if (slot.id != "weapon" && slot.id != "weapon2") {
+              assert.equal(slot.edit.signetLevel(), "20");
+          }
+      }
+});
+
+QUnit.test("should reset all slots", function(assert) {
+    swlcalc.buttonBar.resetGear();
+
+    assert.equal($("#stat-ilvl").text(), "0");
+    assert.equal($("#stat-power-rating").text(), "0");
+    assert.equal($("#stat-weapon-power").text(), "0");
+
+    for (var slotId in swlcalc.gear.slots) {
+        var slot = swlcalc.gear.slots[slotId];
+        assert.equal(slot.edit.equipmentId(), "none");
+        assert.equal(slot.edit.glyphId(), "none");
+        assert.equal(slot.edit.signetId(), "none");
+    }
 });

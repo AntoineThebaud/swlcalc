@@ -1,6 +1,5 @@
-var importModule = {};
 
-QUnit.module("import-integration-tests", {
+QUnit.module("import-unit-tests", {
     beforeEach: function(assert) {
         renderSlots();
         renderSummary();

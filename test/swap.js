@@ -1,5 +1,5 @@
 
-QUnit.module("swap-integration-tests", {
+QUnit.module("swap-unit-tests", {
     beforeEach: function(assert) {
         renderSlots();
         renderButtonbar();
