@@ -179,3 +179,16 @@ QUnit.test("should get and set the slot's suffix quality on recap view", functio
     swlcalc.gear.slots.weapon.recap.suffixQuality("Mk X");
     assert.equal(swlcalc.gear.slots.weapon.recap.suffixQuality(), "Mk X");
 });
+
+QUnit.test("should return undefined or empty for elements that don't exist for this slot", function(assert) {
+    for (var slotId in swlcalc.gear.slots) {
+        var slot = swlcalc.gear.slots[slotId];
+        if (slot.type == "talisman") {
+            assert.equal(slot.recap.suffix(), "");
+            assert.equal(slot.recap.suffixQuality(), "");
+        } else if (slot.type == "weapon") {
+            assert.equal(slot.recap.signetRarity(), "");
+            assert.equal(slot.recap.signetLevel(), "");
+        }
+    }
+});

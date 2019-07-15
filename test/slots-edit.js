@@ -245,3 +245,17 @@ QUnit.test("should get and set the slot's signet level label on edit view", func
     swlcalc.gear.slots.occult.edit.signetLabelLevel("1304");
     assert.equal(swlcalc.gear.slots.occult.edit.signetLabelLevel(), "1304");
 });
+
+QUnit.test("should return undefined or empty for elements that don't exist for this slot", function(assert) {
+    for (var slotId in swlcalc.gear.slots) {
+        var slot = swlcalc.gear.slots[slotId];
+        if (slot.type == "weapon") {
+            assert.equal(slot.edit.signetRarity(), undefined);
+            assert.equal(slot.edit.signetLevel(), undefined);
+            assert.equal(slot.edit.signetImgItem(), undefined);
+            assert.equal(slot.edit.signetImgRarity(), undefined);
+            assert.equal(slot.edit.signetLabelLevel(), "");
+            assert.equal(slot.edit.signetILvl(), "");
+        }
+    }
+});
