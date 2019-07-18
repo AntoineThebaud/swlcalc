@@ -10,38 +10,38 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     this.group = slotData.group;
 
     this.el = {
-        div:                  $('#' + this.id + '-slot'),
-        iLvl:                 $('#' + this.id + '-ilvl'),
-        equipmentId:          $('#' + this.id + '-equipment-id'),
-        equipmentRarity:      $('#' + this.id + '-equipment-rarity'),
-        equipmentQuality:     $('#' + this.id + '-equipment-quality'),
-        equipmentLevel:       $('#' + this.id + '-equipment-level'),
-        equipmentStatValue:   $('#' + this.id + '-equipment-stat-value'),
-        equipmentILvl:        $('#' + this.id + '-equipment-ilvl'),
-        equipmentImgItem:     $('#' + this.id + '-equipment-img-item'),
-        equipmentImgRarity:   $('#' + this.id + '-equipment-img-rarity'),
-        equipmentImgQuality:  $('#' + this.id + '-equipment-img-quality'),
-        equipmentLabelLevel:  $('#' + this.id + '-equipment-label-level'),
-        equipmentDescription: $('#' + this.id + '-equipment-description'),
-        glyphId:              $('#' + this.id + '-glyph-id'),
-        glyphRarity:          $('#' + this.id + '-glyph-rarity'),
-        glyphQuality:         $('#' + this.id + '-glyph-quality'),
-        glyphLevel:           $('#' + this.id + '-glyph-level'),
-        glyphStatRating:      $('#' + this.id + '-glyph-stat-rating'),
-        glyphStatText:        $('#' + this.id + '-glyph-stat-text'),
-        glyphImgItem:         $('#' + this.id + '-glyph-img-item'),
-        glyphImgRarity:       $('#' + this.id + '-glyph-img-rarity'),
-        glyphImgQuality:      $('#' + this.id + '-glyph-img-quality'),
-        glyphLabelLevel:      $('#' + this.id + '-glyph-label-level'),
-        glyphILvl:            $('#' + this.id + '-glyph-ilvl'),
-        signetId:             $('#' + this.id + '-signet-id'),
-        signetRarity:         $('#' + this.id + '-signet-rarity'),
-        signetLevel:          $('#' + this.id + '-signet-level'),
-        signetImgItem:        $('#' + this.id + '-signet-img-item'),
-        signetImgRarity:      $('#' + this.id + '-signet-img-rarity'),
-        signetDescription:    $('#' + this.id + '-signet-description'),
-        signetLabelLevel:     $('#' + this.id + '-signet-label-level'),
-        signetILvl:           $('#' + this.id + '-signet-ilvl')
+        div:                  $('#' + this.id + '-edit-slot'),
+        iLvl:                 $('#' + this.id + '-edit-ilvl'),
+        equipmentId:          $('#' + this.id + '-edit-equipment-id'),
+        equipmentRarity:      $('#' + this.id + '-edit-equipment-rarity'),
+        equipmentQuality:     $('#' + this.id + '-edit-equipment-quality'),
+        equipmentLevel:       $('#' + this.id + '-edit-equipment-level'),
+        equipmentStatValue:   $('#' + this.id + '-edit-equipment-stat-value'),
+        equipmentILvl:        $('#' + this.id + '-edit-equipment-ilvl'),
+        equipmentImgItem:     $('#' + this.id + '-edit-equipment-img-item'),
+        equipmentImgRarity:   $('#' + this.id + '-edit-equipment-img-rarity'),
+        equipmentImgQuality:  $('#' + this.id + '-edit-equipment-img-quality'),
+        equipmentLabelLevel:  $('#' + this.id + '-edit-equipment-label-level'),
+        equipmentDescription: $('#' + this.id + '-edit-equipment-description'),
+        glyphId:              $('#' + this.id + '-edit-glyph-id'),
+        glyphRarity:          $('#' + this.id + '-edit-glyph-rarity'),
+        glyphQuality:         $('#' + this.id + '-edit-glyph-quality'),
+        glyphLevel:           $('#' + this.id + '-edit-glyph-level'),
+        glyphStatRating:      $('#' + this.id + '-edit-glyph-stat-rating'),
+        glyphStatText:        $('#' + this.id + '-edit-glyph-stat-text'),
+        glyphImgItem:         $('#' + this.id + '-edit-glyph-img-item'),
+        glyphImgRarity:       $('#' + this.id + '-edit-glyph-img-rarity'),
+        glyphImgQuality:      $('#' + this.id + '-edit-glyph-img-quality'),
+        glyphLabelLevel:      $('#' + this.id + '-edit-glyph-label-level'),
+        glyphILvl:            $('#' + this.id + '-edit-glyph-ilvl'),
+        signetId:             $('#' + this.id + '-edit-signet-id'),
+        signetRarity:         $('#' + this.id + '-edit-signet-rarity'),
+        signetLevel:          $('#' + this.id + '-edit-signet-level'),
+        signetImgItem:        $('#' + this.id + '-edit-signet-img-item'),
+        signetImgRarity:      $('#' + this.id + '-edit-signet-img-rarity'),
+        signetDescription:    $('#' + this.id + '-edit-signet-description'),
+        signetLabelLevel:     $('#' + this.id + '-edit-signet-label-level'),
+        signetILvl:           $('#' + this.id + '-edit-signet-ilvl')
     };
 
     /**
@@ -162,9 +162,9 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentBonusN = function(index) {
         if (arguments.length == 2) {
-            $('#' + this.id + '-equipment-bonus' + index).html(arguments[1]);
+            $('#' + this.id + '-edit-equipment-bonus' + index).html(arguments[1]);
         } else {
-            return $('#' + this.id + '-equipment-bonus' + index).html();
+            return $('#' + this.id + '-edit-equipment-bonus' + index).html();
         }
     };
 
@@ -444,9 +444,9 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.signetBonus = function() {
         if (arguments.length == 1) {
-            $('#' + this.id + '-signet-bonus').text(arguments[0]);
+            $('#' + this.id + '-edit-signet-bonus').text(arguments[0]);
         } else {
-            return $('#' + this.id + '-signet-bonus').text();
+            return $('#' + this.id + '-edit-signet-bonus').text();
         }
     };
 

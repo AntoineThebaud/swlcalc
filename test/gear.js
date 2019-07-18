@@ -14,25 +14,25 @@ QUnit.test("gear should contain 9 slots", function(assert) {
 });
 
 QUnit.test("gear should be fully reset", function(assert) {
-    assert.equal($("#weapon-equipment-id").val(), "1");
-    assert.equal($("#weapon2-equipment-id").val(), "2");
-    assert.equal($("#head-equipment-id").val(), "1");
-    assert.equal($("#finger-equipment-id").val(), "1");
-    assert.equal($("#neck-equipment-id").val(), "1");
-    assert.equal($("#wrist-equipment-id").val(), "1");
-    assert.equal($("#luck-equipment-id").val(), "1");
-    assert.equal($("#waist-equipment-id").val(), "13");
-    assert.equal($("#occult-equipment-id").val(), "1");
+    assert.equal($("#weapon-edit-equipment-id").val(), "1");
+    assert.equal($("#weapon2-edit-equipment-id").val(), "2");
+    assert.equal($("#head-edit-equipment-id").val(), "1");
+    assert.equal($("#finger-edit-equipment-id").val(), "1");
+    assert.equal($("#neck-edit-equipment-id").val(), "1");
+    assert.equal($("#wrist-edit-equipment-id").val(), "1");
+    assert.equal($("#luck-edit-equipment-id").val(), "1");
+    assert.equal($("#waist-edit-equipment-id").val(), "13");
+    assert.equal($("#occult-edit-equipment-id").val(), "1");
     swlcalc.gear.reset();
-    assert.equal($("#weapon-equipment-id").val(), "none");
-    assert.equal($("#weapon2-equipment-id").val(), "none");
-    assert.equal($("#head-equipment-id").val(), "none");
-    assert.equal($("#finger-equipment-id").val(), "none");
-    assert.equal($("#neck-equipment-id").val(), "none");
-    assert.equal($("#wrist-equipment-id").val(), "none");
-    assert.equal($("#luck-equipment-id").val(), "none");
-    assert.equal($("#waist-equipment-id").val(), "none");
-    assert.equal($("#occult-equipment-id").val(), "none");
+    assert.equal($("#weapon-edit-equipment-id").val(), "none");
+    assert.equal($("#weapon2-edit-equipment-id").val(), "none");
+    assert.equal($("#head-edit-equipment-id").val(), "none");
+    assert.equal($("#finger-edit-equipment-id").val(), "none");
+    assert.equal($("#neck-edit-equipment-id").val(), "none");
+    assert.equal($("#wrist-edit-equipment-id").val(), "none");
+    assert.equal($("#luck-edit-equipment-id").val(), "none");
+    assert.equal($("#waist-edit-equipment-id").val(), "none");
+    assert.equal($("#occult-edit-equipment-id").val(), "none");
 });
 
 //TODO/REFACTOR : to change the test logic ? should ensure all 9 slots are present (maybe test array length ?)

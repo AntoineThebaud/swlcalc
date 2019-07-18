@@ -2,14 +2,14 @@
 <div id="{id}-edit-modal" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-body">
-            <div id="{id}-slot" class="slot">
+            <div id="{id}-edit-slot" class="slot">
                 <table class="table-title">
                     <tr>
                         <td class="td-title">
                             <h4 class="slot">{name}</h4>
                         </td>
                         <td class="slot-ilvl lightgrey">
-                            Item Power : <span id="{id}-ilvl">0</span>
+                            Item Power : <span id="{id}-edit-ilvl">0</span>
                         </td>
                     </tr>
                 </table>
@@ -27,7 +27,7 @@
                             {>rarityselect itemtype="equipment"/}
                         </td>
                         <td class="stat-inSlot">
-                            <span id="{id}-equipment-stat-value" class="stat-value">0</span>
+                            <span id="{id}-edit-equipment-stat-value" class="stat-value">0</span>
                             <span> </span>
                             {?is_weapon}
                             <span>Weapon Power</span>
@@ -37,18 +37,18 @@
                         </td>
                     </tr>
                     <tr class="with-icon">
-                        <td id="{id}-equipment-img-section">
-                            <img id="{id}-equipment-img-item" src="" alt="image"/>
-                            <img id="{id}-equipment-img-rarity" src=""/>
-                            <img id="{id}-equipment-img-quality" src=""/>
-                            <div id="{id}-equipment-label-level" class="label-level big border-standard">20</div>
+                        <td id="{id}-edit-equipment-img-section">
+                            <img id="{id}-edit-equipment-img-item" src="" alt="image"/>
+                            <img id="{id}-edit-equipment-img-rarity" src=""/>
+                            <img id="{id}-edit-equipment-img-quality" src=""/>
+                            <div id="{id}-edit-equipment-label-level" class="label-level big border-standard">20</div>
                         </td>
                         <td class="equipment-select">
                             {?is_weapon}
-                            <select id="{id}-equipment-id" title="Please select weapon">
+                            <select id="{id}-edit-equipment-id" title="Please select weapon">
                             </select>
                             {:else}
-                            <select id="{id}-equipment-id" title="Please select talisman">
+                            <select id="{id}-edit-equipment-id" title="Please select talisman">
                             </select>
                             {/is_weapon}
                         </td>
@@ -63,7 +63,7 @@
                             {/is_weapon}
                         </td>
                         <td rowspan="2" class="item-description">
-                            <span id="{id}-equipment-description"></span>
+                            <span id="{id}-edit-equipment-description"></span>
                         </td>
                     </tr>
                     <tr>
@@ -73,16 +73,16 @@
                             <strong>Level :</strong>
                         </td>
                         <td rowspan="2" class="upgrade-select level-select">
-                            <input id="{id}-equipment-level" type="range" min="1" max="20" value="20" class="level-slider">
+                            <input id="{id}-edit-equipment-level" type="range" min="1" max="20" value="20" class="level-slider">
                         </td>
                     </tr>
                     <tr>
                         <td class="ilvl lightgrey">
-                            <span id="{id}-equipment-ilvl">0</span>
+                            <span id="{id}-edit-equipment-ilvl">0</span>
                         </td>
                     </tr>
                 </table>
-                <table id="{id}-glyphs" class="table table-slots">
+                <table id="{id}-edit-glyphs" class="table table-slots">
                     <tr>
                         <td class="item-title lightgrey" colspan="2">Glyph</td>
                         <td class="upgrade-label rarity swlcalclabel">
@@ -94,16 +94,16 @@
                         <td class="filler"></td>
                     </tr>
                     <tr class="with-icon">
-                        <td id="{id}-glyph-img-section" class="glyph-img">
+                        <td id="{id}-edit-glyph-img-section" class="glyph-img">
                             <a href="#" class="glyph-tooltip" data-toggle="tooltip" title="Glyph for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
-                                <img id="{id}-glyph-img-item" src="" alt="Glyph"/>
-                                <img id="{id}-glyph-img-quality" src=""/>
-                                <img id="{id}-glyph-img-rarity" src=""/>
-                                <div id="{id}-glyph-label-level" class="label-level little border-standard">20</div>
+                                <img id="{id}-edit-glyph-img-item" src="" alt="Glyph"/>
+                                <img id="{id}-edit-glyph-img-quality" src=""/>
+                                <img id="{id}-edit-glyph-img-rarity" src=""/>
+                                <div id="{id}-edit-glyph-label-level" class="label-level little border-standard">20</div>
                             </a>
                         </td>
                         <td class="glyph-select">
-                            <select id="{id}-glyph-id" title="Please select stat">
+                            <select id="{id}-edit-glyph-id" title="Please select stat">
                                 <option value="none" selected="true">None</option>
                                 <option value="hit-rating">Accurate</option>
                                 <option value="critical-rating">Fierce</option>
@@ -119,9 +119,9 @@
                             {>qualityselect itemtype="glyph" pip1="Crude" pip2="Simple" pip3="Intricate"/}
                         </td>
                         <td class="stat-inSlot">
-                          <span id="{id}-glyph-stat-rating" class="stat-value">0</span>
+                          <span id="{id}-edit-glyph-stat-rating" class="stat-value">0</span>
                           <span> </span>
-                          <span id="{id}-glyph-stat-text"></span>
+                          <span id="{id}-edit-glyph-stat-text"></span>
                         </td>
                     </tr>
                     <tr>
@@ -131,21 +131,21 @@
                             <strong>Level :</strong>
                         </td>
                         <td class="upgrade-select level-select">
-                            <input id="{id}-glyph-level" type="range" min="1" max="20" value="20" class="level-slider">
+                            <input id="{id}-edit-glyph-level" type="range" min="1" max="20" value="20" class="level-slider">
                         </td>
                         <td class="ilvl lightgrey">
-                            <span id="{id}-glyph-ilvl">0</span>
+                            <span id="{id}-edit-glyph-ilvl">0</span>
                         </td>
                     </tr>
                 </table>
-                <table id="{id}-signets" class="table table-slots">
+                <table id="{id}-edit-signets" class="table table-slots">
                     {?is_weapon}
                     <tr>
                         <td class="item-title lightgrey" colspan="2">Suffix</td>
-                        <td id="{id}-signet-description" class="item-description" colspan="3" rowspan="2"></td>
+                        <td id="{id}-edit-signet-description" class="item-description" colspan="3" rowspan="2"></td>
                     <tr>
                         <td class="signet-select" colspan="2">
-                            <select id="{id}-signet-id" title="Please select signet"></select>
+                            <select id="{id}-edit-signet-id" title="Please select signet"></select>
                         </td>
                     </tr>
                     {:else}
@@ -157,27 +157,27 @@
                         <td class="upgrade-select rarity swlcalcselect">
                             {>rarityselect itemtype="signet"/}
                         </td>
-                        <td id="{id}-signet-description" class="item-description"></td>
+                        <td id="{id}-edit-signet-description" class="item-description"></td>
                     </tr>
                     <tr class="with-icon">
-                        <td id="{id}-signet-img-section" class="signet-img">
+                        <td id="{id}-edit-signet-img-section" class="signet-img">
                             <a href="#" class="signet-tooltip" data-toggle="tooltip" title="Signet for the {name} slot. Choose the rarity and type of signet.">
-                                <img id="{id}-signet-img-item" src="" alt="Signet"/>
-                                <img id="{id}-signet-img-rarity" src=""/>
-                                <div id="{id}-signet-label-level" class="label-level little border-standard">20</div>
+                                <img id="{id}-edit-signet-img-item" src="" alt="Signet"/>
+                                <img id="{id}-edit-signet-img-rarity" src=""/>
+                                <div id="{id}-edit-signet-label-level" class="label-level little border-standard">20</div>
                             </a>
                         </td>
                         <td class="signet-select">
-                            <select id="{id}-signet-id" title="Please select signet"></select>
+                            <select id="{id}-edit-signet-id" title="Please select signet"></select>
                         </td>
                         <td class="upgrade-label quality-label"> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
                             <strong>Level :</strong>
                         </td>
                         <td class="upgrade-select quality-select"> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
-                            <input id="{id}-signet-level" type="range" min="1" max="20" value="20" class="level-slider">
+                            <input id="{id}-edit-signet-level" type="range" min="1" max="20" value="20" class="level-slider">
                         </td>
                         <td class="ilvl lightgrey">
-                            <span id="{id}-signet-ilvl">0</span>
+                            <span id="{id}-edit-signet-ilvl">0</span>
                         </td>
                     </tr>
                     {/is_weapon}

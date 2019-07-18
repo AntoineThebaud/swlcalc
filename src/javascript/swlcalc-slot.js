@@ -117,8 +117,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
         }
         //To enable when all images will be present :
         //this.edit.equipmentImgItem(newImage);
-        this.edit.equipmentDescription(newDescription.replace(/%id/g, this.id));
-        // add "-recap" suffix here to avoid id collision
+        // add "-edit" suffix here to avoid id collision //TODO/REFACTOR better way to do this ?
+        this.edit.equipmentDescription(newDescription.replace(/%id/g, this.id + '-edit'));
+        // add "-recap" suffix here to avoid id collision //TODO/REFACTOR better way to do this ?
         this.recap.equipmentDescription(newDescription.replace(/%id/g, this.id + '-recap'));
         this.recap.equipmentItem(newName);
     };
@@ -294,11 +295,11 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.recap.glyphRarity(swlcalc.util.capitalize(newRarity));
 
         // refresh list of available qualities after change on glyph rarity :
-        var elaborateOptionExists = ($('#' + this.id + '-glyph-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
+        var elaborateOptionExists = ($('#' + this.id + '-edit-glyph-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
         if (swlcalc.data.rarity_mapping.to_num[this.edit.glyphRarity()] >= swlcalc.data.rarity_mapping.to_num['epic'] && !elaborateOptionExists) {
             this.edit.el.glyphQuality.append("<option value='4'>Elaborate</option>");
         } else if (swlcalc.data.rarity_mapping.to_num[this.edit.glyphRarity()] < swlcalc.data.rarity_mapping.to_num['epic'] && elaborateOptionExists) {
-            $('#' + this.id + '-glyph-quality option[value=4]').remove(); // TODO/REFACTOR to abstract access
+            $('#' + this.id + '-edit-glyph-quality option[value=4]').remove(); // TODO/REFACTOR to abstract access
             this.updateGlyphQuality();
         }
     };
@@ -388,7 +389,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.edit.signetImgItem(newImage);
 
         var newDescription = newSignet.description;
-        this.edit.signetDescription(newDescription.replace(/%id/g, this.id));
+        // add "-edit" suffix here to avoid id collision //TODO/REFACTOR better way to do this ?
+        this.edit.signetDescription(newDescription.replace(/%id/g, this.id + '-edit'));
+        // add "-recap" suffix here to avoid id collision //TODO/REFACTOR better way to do this ?
         this.recap.signetDescription(newDescription.replace(/%id/g, this.id + '-recap'));
         this.updateSignetBonus();
 
@@ -440,8 +443,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
                   signet.ratio[this.edit.signetRarity()].init[1] - signet.ratio[this.edit.signetRarity()].per_level[1] * (this.edit.signetLevel() - 1),
                   4
                 );
-                $('#' + this.id + '-signet-bonus').html(bonus1);
-                $('#' + this.id + '-signet-bonus2').html(bonus2);
+                $('#' + this.id + '-edit-signet-bonus').html(bonus1);
+                $('#' + this.id + '-edit-signet-bonus2').html(bonus2);
                 $('#' + this.id + '-recap-signet-bonus').html(bonus1);
                 $('#' + this.id + '-recap-signet-bonus2').html(bonus2);
                 return;
