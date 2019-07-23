@@ -10,6 +10,48 @@ QUnit.module("slots-edit-unit-tests", {
     }
 });
 
+QUnit.test("should have required components in the DOM", function(assert) {
+    for (var slotId in swlcalc.gear.slots) {
+        var slot = swlcalc.gear.slots[slotId];
+        assert.ok(slot.edit.el.div.length !== 0);
+        assert.ok(slot.edit.el.iLvl.length !== 0);
+        assert.ok(slot.edit.el.equipmentId.length !== 0);
+        assert.ok(slot.edit.el.equipmentRarity.length !== 0);
+        assert.ok(slot.edit.el.equipmentQuality.length !== 0);
+        assert.ok(slot.edit.el.equipmentLevel.length !== 0);
+        assert.ok(slot.edit.el.equipmentStatValue.length !== 0);
+        assert.ok(slot.edit.el.equipmentILvl.length !== 0);
+        assert.ok(slot.edit.el.equipmentImgItem.length !== 0);
+        assert.ok(slot.edit.el.equipmentImgRarity.length !== 0);
+        assert.ok(slot.edit.el.equipmentImgQuality.length !== 0);
+        assert.ok(slot.edit.el.equipmentLabelLevel.length !== 0);
+        assert.ok(slot.edit.el.equipmentDescription.length !== 0);
+        assert.ok(slot.edit.el.glyphId.length !== 0);
+        assert.ok(slot.edit.el.glyphRarity.length !== 0);
+        assert.ok(slot.edit.el.glyphQuality.length !== 0);
+        assert.ok(slot.edit.el.glyphLevel.length !== 0);
+        assert.ok(slot.edit.el.glyphStatRating.length !== 0);
+        assert.ok(slot.edit.el.glyphStatText.length !== 0);
+        assert.ok(slot.edit.el.glyphImgItem.length !== 0);
+        assert.ok(slot.edit.el.glyphImgRarity.length !== 0);
+        assert.ok(slot.edit.el.glyphImgQuality.length !== 0);
+        assert.ok(slot.edit.el.glyphLabelLevel.length !== 0);
+        assert.ok(slot.edit.el.glyphILvl.length !== 0);
+        assert.ok(slot.edit.el.signetId.length !== 0);
+        if (slot.type != "weapon") {
+            assert.ok(slot.edit.el.signetRarity.length !== 0);
+            assert.ok(slot.edit.el.signetLevel.length !== 0);
+            assert.ok(slot.edit.el.signetImgItem.length !== 0);
+            assert.ok(slot.edit.el.signetImgRarity.length !== 0);
+        }
+        assert.ok(slot.edit.el.signetDescription.length !== 0);
+        if (slot.type != "weapon") {
+            assert.ok(slot.edit.el.signetLabelLevel.length !== 0);
+            assert.ok(slot.edit.el.signetILvl.length !== 0);
+        }
+    }
+});
+
 QUnit.test("should get and set slot's total iLvl on edit view", function(assert) {
     assert.equal(swlcalc.gear.slots.head.edit.iLvl(), "480");
     swlcalc.gear.slots.head.edit.iLvl("9999");

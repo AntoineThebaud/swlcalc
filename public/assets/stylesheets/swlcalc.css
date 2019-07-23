@@ -133,10 +133,10 @@ div.container {
 .table-slots {
     border-top: 1px solid #ddd;
 }
-div[id$="-slot"] select {
+div[id$="-edit-div"] select {
     border-radius: 4px;
 }
-div[id$="-slot"] .table-slots td {
+div[id$="-edit-div"] .table-slots td {
     border: none;
     vertical-align: top;
     padding-top: 10px;
@@ -183,14 +183,14 @@ td.filler {
 }
 /******************************************************/
 /* rules relative to any kind of item (talisman, weapon, glyph or signet) */
-div[id$="-slot"] .table-slots td.item-title {
+div[id$="-edit-div"] .table-slots td.item-title {
     font-size: 15px;
     font-style: italic;
     font-weight: bold;
     vertical-align: middle;
     padding-left: 15px;
 }
-div[id$="-slot"] .table-slots td.item-description {
+div[id$="-edit-div"] .table-slots td.item-description {
     text-align: justify;
     line-height: 18px;
     vertical-align: top;
@@ -257,71 +257,71 @@ img[id$="-img-rarity"] {
 img[id$="-img-quality"] {
     z-index: 2;
 }
-div[id$="-slot"] .table-slots td.equipment-select {
+div[id$="-edit-div"] .table-slots td.equipment-select {
     width: 150px;
 }
-div[id$="-slot"] .table-slots td.equipment-select select {
+div[id$="-edit-div"] .table-slots td.equipment-select select {
     max-width: 140px;
 }
 /******************************************************/
 /* slot > glyph & signet */
-div[id$="-slot"] .table-slots td.glyph-select,
-div[id$="-slot"] .table-slots td.signet-select {
+div[id$="-edit-div"] .table-slots td.glyph-select,
+div[id$="-edit-div"] .table-slots td.signet-select {
     width: 160px;
 }
-div[id$="-slot"] .table-slots td.glyph-select select,
-div[id$="-slot"] .table-slots td.signet-select select {
+div[id$="-edit-div"] .table-slots td.glyph-select select,
+div[id$="-edit-div"] .table-slots td.signet-select select {
     max-width: 150px;
 }
 /******************************************************/
 /* slot > all > rarity+quality+level */
-div[id$="-slot"] .table-slots td.upgrade-label {
+div[id$="-edit-div"] .table-slots td.upgrade-label {
     width: 65px;
 }
-div[id$="-slot"] .table-slots td.upgrade-select {
+div[id$="-edit-div"] .table-slots td.upgrade-select {
     width: 100px;
 }
-div[id$="-slot"] .table-slots td.upgrade-select select {
+div[id$="-edit-div"] .table-slots td.upgrade-select select {
     width: 100%;
 }
 /******************************************************/
 /* slot > all > rarity */
-div[id$="-slot"] .table-slots td.rarity {
+div[id$="-edit-div"] .table-slots td.rarity {
 }
-div[id$="-slot"] .table-slots td.rarity.swlcalclabel {
+div[id$="-edit-div"] .table-slots td.rarity.swlcalclabel {
 }
-div[id$="-slot"] .table-slots td.rarity.swlcalclabel strong {
+div[id$="-edit-div"] .table-slots td.rarity.swlcalclabel strong {
     padding-top: 8px;
     display: inline-block; /* see https://stackoverflow.com/questions/14604541/padding-top-not-working */
 }
-div[id$="-slot"] .table-slots td.rarity.swlcalcselect {
+div[id$="-edit-div"] .table-slots td.rarity.swlcalcselect {
 }
-div[id$="-slot"] .table-slots td.rarity.select select {
+div[id$="-edit-div"] .table-slots td.rarity.select select {
 }
 /******************************************************/
 /* slot > all > quality */
-div[id$="-slot"] .table-slots td.quality-label {
+div[id$="-edit-div"] .table-slots td.quality-label {
 }
-div[id$="-slot"] .table-slots td.quality-label strong {
+div[id$="-edit-div"] .table-slots td.quality-label strong {
     padding-top: 8px;
     display: inline-block; /* see https://stackoverflow.com/questions/14604541/padding-top-not-working */
 }
-div[id$="-slot"] .table-slots td.quality-select {
+div[id$="-edit-div"] .table-slots td.quality-select {
 }
 table[id$="-signets"] td.quality-select {
     vertical-align: middle;
 }
-div[id$="-slot"] .table-slots td.quality-select select {
+div[id$="-edit-div"] .table-slots td.quality-select select {
 }
 /******************************************************/
 /* slot > all > level */
-div[id$="-slot"] .table-slots td.level-label {
+div[id$="-edit-div"] .table-slots td.level-label {
 }
-div[id$="-slot"] .table-slots td.level-select {
+div[id$="-edit-div"] .table-slots td.level-select {
 }
-div[id$="-slot"] .table-slots td.level-select select {
+div[id$="-edit-div"] .table-slots td.level-select select {
 }
-div[id$="-slot"] .table-slots input.level-slider {
+div[id$="-edit-div"] .table-slots input.level-slider {
     width: 100px;
 }
 /******************************************************/

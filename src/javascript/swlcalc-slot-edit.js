@@ -10,7 +10,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     this.group = slotData.group;
 
     this.el = {
-        div:                  $('#' + this.id + '-edit-slot'),
+        div:                  $('#' + this.id + '-edit-div'),
         iLvl:                 $('#' + this.id + '-edit-ilvl'),
         equipmentId:          $('#' + this.id + '-edit-equipment-id'),
         equipmentRarity:      $('#' + this.id + '-edit-equipment-rarity'),
