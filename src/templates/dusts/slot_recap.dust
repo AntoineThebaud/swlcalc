@@ -1,5 +1,5 @@
 <div id="{slot.id}-recap-section">
-    <div id="{slot.id}-slotrecap">
+    <div id="{slot.id}-recap-div">
         <table>
             <tr>
                 <td id="{slot.id}-recap-equipment-empty" hidden>

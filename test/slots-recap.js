@@ -10,6 +10,62 @@ QUnit.module("slots-recap-unit-tests", {
     }
 });
 
+QUnit.test("should have required components in the DOM", function(assert) {
+    for (var slotId in swlcalc.gear.slots) {
+        var slot = swlcalc.gear.slots[slotId];
+        assert.ok(slot.recap.el.section.length !== 0);
+        assert.ok(slot.recap.el.div.length !== 0);
+        assert.ok(slot.recap.el.editBtn.length !== 0);
+        assert.ok(slot.recap.el.editBtnImg.length !== 0);
+        if (slot.type == "weapon") {
+            assert.ok(slot.recap.el.weaponActive.length !== 0);
+        }
+        assert.ok(slot.recap.el.iLvl.length !== 0);
+        assert.ok(slot.recap.el.equipmentEmpty.length !== 0);
+        assert.ok(slot.recap.el.equipmentTitleSection.length !== 0);
+        assert.ok(slot.recap.el.equipmentTitle.length !== 0);
+        assert.ok(slot.recap.el.equipmentSubtitleSection.length !== 0);
+        assert.ok(slot.recap.el.equipmentItem.length !== 0);
+        assert.ok(slot.recap.el.equipmentRarity.length !== 0);
+        assert.ok(slot.recap.el.equipmentQuality.length !== 0);
+        assert.ok(slot.recap.el.equipmentLevel.length !== 0);
+        assert.ok(slot.recap.el.equipmentStatSection.length !== 0);
+        assert.ok(slot.recap.el.equipmentStatRawValue.length !== 0);
+        if (slot.type != "weapon") {
+            assert.ok(slot.recap.el.equipmentStatTransformedValue.length !== 0);
+            assert.ok(slot.recap.el.equipmentStatTransformedText.length !== 0);
+        }
+        assert.ok(slot.recap.el.equipmentImgSection.length !== 0);
+        assert.ok(slot.recap.el.equipmentImgItem.length !== 0);
+        assert.ok(slot.recap.el.equipmentImgRarity.length !== 0);
+        assert.ok(slot.recap.el.equipmentImgQuality.length !== 0);
+        assert.ok(slot.recap.el.equipmentDescription.length !== 0);
+        assert.ok(slot.recap.el.equipmentDescriptionSection.length !== 0);
+        assert.ok(slot.recap.el.equipmentLabelLevel.length !== 0);
+        assert.ok(slot.recap.el.glyphSection.length !== 0);
+        assert.ok(slot.recap.el.glyphEmpty.length !== 0);
+        assert.ok(slot.recap.el.glyphTitle.length !== 0);
+        assert.ok(slot.recap.el.glyphItem.length !== 0);
+        assert.ok(slot.recap.el.glyphRarity.length !== 0);
+        assert.ok(slot.recap.el.glyphQuality.length !== 0);
+        assert.ok(slot.recap.el.glyphLevel.length !== 0);
+        assert.ok(slot.recap.el.glyphStatRating.length !== 0);
+        assert.ok(slot.recap.el.glyphStatText.length !== 0);
+        assert.ok(slot.recap.el.signetSection.length !== 0);
+        assert.ok(slot.recap.el.signetEmpty.length !== 0);
+        assert.ok(slot.recap.el.signetTitle.length !== 0);
+        assert.ok(slot.recap.el.signetItem.length !== 0);
+        if (slot.type == "weapon") {
+            assert.ok(slot.recap.el.suffix.length !== 0);
+            assert.ok(slot.recap.el.suffixQuality.length !== 0);
+        } else {
+            assert.ok(slot.recap.el.signetRarity.length !== 0);
+            assert.ok(slot.recap.el.signetLevel.length !== 0);
+        }
+        assert.ok(slot.recap.el.signetDescription.length !== 0);
+    }
+});
+
 QUnit.test("should get and set slot's total iLvl on recap view", function(assert) {
     assert.equal(swlcalc.gear.slots.head.recap.iLvl(), "480");
     swlcalc.gear.slots.head.recap.iLvl("9999");
