@@ -81,6 +81,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-recap-suffix-quality").html(), "Mk III");
     assert.equal($("#weapon-edit-ilvl").html(), "400");
     assert.equal($("#weapon-edit-equipment-id").val(), "4");
+    assert.equal($("#weapon-edit-equipment-id option:selected").text(), "[Blood] Blood Magic Focus");
     assert.equal($("#weapon-edit-equipment-rarity").val(), "epic");
     assert.equal($("#weapon-edit-equipment-quality").val(), "3");
     assert.equal($("#weapon-edit-equipment-level").val(), "19");
@@ -152,6 +153,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-recap-suffix-quality").html(), "Mk II");
     assert.equal($("#weapon2-edit-ilvl").html(), "581");
     assert.equal($("#weapon2-edit-equipment-id").val(), "7");
+    assert.equal($("#weapon2-edit-equipment-id option:selected").text(), "[Shotgun] Shotgun");
     assert.equal($("#weapon2-edit-equipment-rarity").val(), "epic");
     assert.equal($("#weapon2-edit-equipment-quality").val(), "2");
     assert.equal($("#weapon2-edit-equipment-level").val(), "29");
@@ -222,6 +224,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-recap-suffix-quality").html(), undefined);
     assert.equal($("#head-edit-ilvl").html(), "487");
     assert.equal($("#head-edit-equipment-id").val(), "4");
+    assert.equal($("#head-edit-equipment-id option:selected").text(), "Ashes of Crushed Cities");
     assert.equal($("#head-edit-equipment-rarity").val(), "epic");
     assert.equal($("#head-edit-equipment-quality").val(), "2");
     assert.equal($("#head-edit-equipment-level").val(), "24");
@@ -292,6 +295,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#finger-recap-suffix-quality").html(), undefined);
     assert.equal($("#finger-edit-ilvl").html(), "571");
     assert.equal($("#finger-edit-equipment-id").val(), "2");
+    assert.equal($("#finger-edit-equipment-id option:selected").text(), "Rurikid Knot");
     assert.equal($("#finger-edit-equipment-rarity").val(), "superior");
     assert.equal($("#finger-edit-equipment-quality").val(), "1");
     assert.equal($("#finger-edit-equipment-level").val(), "20");
@@ -362,6 +366,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#neck-recap-suffix-quality").html(), undefined);
     assert.equal($("#neck-edit-ilvl").html(), "232");
     assert.equal($("#neck-edit-equipment-id").val(), "11");
+    assert.equal($("#neck-edit-equipment-id option:selected").text(), "Lycanthropic Essence");
     assert.equal($("#neck-edit-equipment-rarity").val(), "standard");
     assert.equal($("#neck-edit-equipment-quality").val(), "3");
     assert.equal($("#neck-edit-equipment-level").val(), "6");
@@ -432,6 +437,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#wrist-recap-suffix-quality").html(), undefined);
     assert.equal($("#wrist-edit-ilvl").html(), "1292");
     assert.equal($("#wrist-edit-equipment-id").val(), "2");
+    assert.equal($("#wrist-edit-equipment-id option:selected").text(), "Bone Timepiece");
     assert.equal($("#wrist-edit-equipment-rarity").val(), "legendary");
     assert.equal($("#wrist-edit-equipment-quality").val(), "2");
     assert.equal($("#wrist-edit-equipment-level").val(), "68");
@@ -502,6 +508,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#luck-recap-suffix-quality").html(), undefined);
     assert.equal($("#luck-edit-ilvl").html(), "136");
     assert.equal($("#luck-edit-equipment-id").val(), "1");
+    assert.equal($("#luck-edit-equipment-id option:selected").text(), "Dice");
     assert.equal($("#luck-edit-equipment-rarity").val(), "standard");
     assert.equal($("#luck-edit-equipment-quality").val(), "1");
     assert.equal($("#luck-edit-equipment-level").val(), "10");
@@ -572,6 +579,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#waist-recap-suffix-quality").html(), undefined);
     assert.equal($("#waist-edit-ilvl").html(), "846");
     assert.equal($("#waist-edit-equipment-id").val(), "11");
+    assert.equal($("#waist-edit-equipment-id option:selected").text(), "Brawler's Belt");
     assert.equal($("#waist-edit-equipment-rarity").val(), "legendary");
     assert.equal($("#waist-edit-equipment-quality").val(), "1");
     assert.equal($("#waist-edit-equipment-level").val(), "2");
@@ -642,6 +650,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#occult-recap-suffix-quality").html(), undefined);
     assert.equal($("#occult-edit-ilvl").html(), "540");
     assert.equal($("#occult-edit-equipment-id").val(), "7");
+    assert.equal($("#occult-edit-equipment-id option:selected").text(), "Whalebone Rune");
     assert.equal($("#occult-edit-equipment-rarity").val(), "standard");
     assert.equal($("#occult-edit-equipment-quality").val(), "3");
     assert.equal($("#occult-edit-equipment-level").val(), "19");
@@ -712,6 +721,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.ok($("#weapon-recap-signet-empty").is(":visible"));
     assert.equal($("#weapon-edit-ilvl").html(), "0");
     assert.equal($("#weapon-edit-equipment-id").val(), "none");
+    assert.equal($("#weapon-edit-equipment-id option:selected").text(), "None");
     assert.equal($("#weapon-edit-equipment-rarity").val(), "standard");
     assert.equal($("#weapon-edit-equipment-quality").val(), "1");
     assert.equal($("#weapon-edit-equipment-level").val(), "20");
@@ -756,6 +766,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.ok($("#weapon2-recap-signet-empty").is(":visible"));
     assert.equal($("#weapon2-edit-ilvl").html(), "0");
     assert.equal($("#weapon2-edit-equipment-id").val(), "none");
+    assert.equal($("#weapon2-edit-equipment-id option:selected").text(), "None");
     assert.equal($("#weapon2-edit-equipment-rarity").val(), "standard");
     assert.equal($("#weapon2-edit-equipment-quality").val(), "1");
     assert.equal($("#weapon2-edit-equipment-level").val(), "20");
@@ -799,6 +810,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.ok($("#head-recap-signet-empty").is(":visible"));
     assert.equal($("#head-edit-ilvl").html(), "0");
     assert.equal($("#head-edit-equipment-id").val(), "none");
+    assert.equal($("#head-edit-equipment-id option:selected").text(), "None");
     assert.equal($("#head-edit-equipment-rarity").val(), "standard");
     assert.equal($("#head-edit-equipment-quality").val(), "1");
     assert.equal($("#head-edit-equipment-level").val(), "20");
@@ -842,6 +854,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.ok($("#finger-recap-signet-empty").is(":visible"));
     assert.equal($("#finger-edit-ilvl").html(), "0");
     assert.equal($("#finger-edit-equipment-id").val(), "none");
+    assert.equal($("#finger-edit-equipment-id option:selected").text(), "None");
     assert.equal($("#finger-edit-equipment-rarity").val(), "standard");
     assert.equal($("#finger-edit-equipment-quality").val(), "1");
     assert.equal($("#finger-edit-equipment-level").val(), "20");
@@ -885,6 +898,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.ok($("#neck-recap-signet-empty").is(":visible"));
     assert.equal($("#neck-edit-ilvl").html(), "0");
     assert.equal($("#neck-edit-equipment-id").val(), "none");
+    assert.equal($("#neck-edit-equipment-id option:selected").text(), "None");
     assert.equal($("#neck-edit-equipment-rarity").val(), "standard");
     assert.equal($("#neck-edit-equipment-quality").val(), "1");
     assert.equal($("#neck-edit-equipment-level").val(), "20");
@@ -928,6 +942,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.ok($("#wrist-recap-signet-empty").is(":visible"));
     assert.equal($("#wrist-edit-ilvl").html(), "0");
     assert.equal($("#wrist-edit-equipment-id").val(), "none");
+    assert.equal($("#wrist-edit-equipment-id option:selected").text(), "None");
     assert.equal($("#wrist-edit-equipment-rarity").val(), "standard");
     assert.equal($("#wrist-edit-equipment-quality").val(), "1");
     assert.equal($("#wrist-edit-equipment-level").val(), "20");
@@ -971,6 +986,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.ok($("#luck-recap-signet-empty").is(":visible"));
     assert.equal($("#luck-edit-ilvl").html(), "0");
     assert.equal($("#luck-edit-equipment-id").val(), "none");
+    assert.equal($("#luck-edit-equipment-id option:selected").text(), "None");
     assert.equal($("#luck-edit-equipment-rarity").val(), "standard");
     assert.equal($("#luck-edit-equipment-quality").val(), "1");
     assert.equal($("#luck-edit-equipment-level").val(), "20");
@@ -1014,6 +1030,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.ok($("#waist-recap-signet-empty").is(":visible"));
     assert.equal($("#waist-edit-ilvl").html(), "0");
     assert.equal($("#waist-edit-equipment-id").val(), "none");
+    assert.equal($("#waist-edit-equipment-id option:selected").text(), "None");
     assert.equal($("#waist-edit-equipment-rarity").val(), "standard");
     assert.equal($("#waist-edit-equipment-quality").val(), "1");
     assert.equal($("#waist-edit-equipment-level").val(), "20");
@@ -1057,6 +1074,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.ok($("#occult-recap-signet-empty").is(":visible"));
     assert.equal($("#occult-edit-ilvl").html(), "0");
     assert.equal($("#occult-edit-equipment-id").val(), "none");
+    assert.equal($("#occult-edit-equipment-id option:selected").text(), "None");
     assert.equal($("#occult-edit-equipment-rarity").val(), "standard");
     assert.equal($("#occult-edit-equipment-quality").val(), "1");
     assert.equal($("#occult-edit-equipment-level").val(), "20");
