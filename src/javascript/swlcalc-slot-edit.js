@@ -4,10 +4,6 @@ swlcalc.gear = swlcalc.gear || {};
 swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     var self   = this;
     this.id    = slotData.id;
-    this.name  = slotData.name;
-    this.kind  = slotData.kind;
-    this.type  = slotData.type;
-    this.group = slotData.group;
 
     this.el = {
         div:                  $('#' + this.id + '-edit-div'),

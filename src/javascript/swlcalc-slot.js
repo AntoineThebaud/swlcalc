@@ -2,15 +2,15 @@ var swlcalc = swlcalc || {};
 swlcalc.gear = swlcalc.gear || {};
 
 swlcalc.gear.Slot = function Slot(slotData) {
-    var self   = this;
-    this.id    = slotData.id;
-    this.name  = slotData.name;
-    this.kind  = slotData.kind;
-    this.type  = slotData.type;
-    this.group = slotData.group;
-    this.edit = new swlcalc.gear.SlotEdit(slotData);
-    this.recap = new swlcalc.gear.SlotRecap(slotData);
-    this.active = true;
+    var self      = this;
+    this.id       = slotData.id;
+    this.name     = slotData.name;
+    this.kind     = slotData.kind;
+    this.group    = slotData.group;
+    this.subgroup = slotData.subgroup;
+    this.edit     = new swlcalc.gear.SlotEdit(slotData);
+    this.recap    = new swlcalc.gear.SlotRecap(slotData);
+    this.active   = true;
 
     // vars used to solve computation precision issues
     this.rawILvl = 0.0;
@@ -74,42 +74,34 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newDescription;
         var newName;
 
-        //TODO/FEATURE : reenable slot name display
-//      var wtype = $(this).val();
-//      if(wtype != 'none') {
-//          slotObj.name(': ' + swlcalc.util.capitalize(wtype));
-//      } else {
-//          slotObj.name('');
-//      }
-
         if (this.edit.equipmentId() == 'none') {
             newDescription = '';
             newName = 'Empty';
-            this.edit.equipmentImgItem('assets/images/icons/' + this.type + '/None.png');
-            this.recap.equipmentImgItem('assets/images/icons/' + this.type + '/None.png');
+            this.edit.equipmentImgItem('assets/images/icons/' + this.group + '/None.png');
+            this.recap.equipmentImgItem('assets/images/icons/' + this.group + '/None.png');
         } else {
             var newEquipmentData = swlcalc.data.equipments.slot[this.kind][this.edit.equipmentId() - 1];
 
             /**************************************< temporary code >*********************************************
              * TODO/FEATURE => to add all the missing equipment images to swlcalc
              * => This temporary code will be used as long as item images are not added to the resources. The final code will be :
-            this.edit.equipmentImgItem('assets/images/icons/' + this.type + '/' + newEquipmentData.name + '.png');
+            this.edit.equipmentImgItem('assets/images/icons/' + this.group + '/' + newEquipmentData.name + '.png');
              * => For now replaced by : */
             var image = new Image();
             image.onload = function() {
-                self.edit.equipmentImgItem('assets/images/icons/' + self.type + '/' + newEquipmentData.name + '.png');
-                self.recap.equipmentImgItem('assets/images/icons/' + self.type + '/' + newEquipmentData.name + '.png');
+                self.edit.equipmentImgItem('assets/images/icons/' + self.group + '/' + newEquipmentData.name + '.png');
+                self.recap.equipmentImgItem('assets/images/icons/' + self.group + '/' + newEquipmentData.name + '.png');
             }
             image.onerror = function() {
                 if (self.isWeapon()) {
-                    self.edit.equipmentImgItem('assets/images/icons/' + self.type + '/temp/' + newEquipmentData.type + '.png');
-                    self.recap.equipmentImgItem('assets/images/icons/' + self.type + '/temp/' + newEquipmentData.type + '.png');
+                    self.edit.equipmentImgItem('assets/images/icons/' + self.group + '/temp/' + newEquipmentData.type + '.png');
+                    self.recap.equipmentImgItem('assets/images/icons/' + self.group + '/temp/' + newEquipmentData.type + '.png');
                 } else {
-                    self.edit.equipmentImgItem('assets/images/icons/' + self.type + '/' + swlcalc.data.equipments.slot[self.id][0].name + '.png');
-                    self.recap.equipmentImgItem('assets/images/icons/' + self.type + '/' + swlcalc.data.equipments.slot[self.id][0].name + '.png');
+                    self.edit.equipmentImgItem('assets/images/icons/' + self.group + '/' + swlcalc.data.equipments.slot[self.id][0].name + '.png');
+                    self.recap.equipmentImgItem('assets/images/icons/' + self.group + '/' + swlcalc.data.equipments.slot[self.id][0].name + '.png');
                 }
             }
-            image.src = 'assets/images/icons/' + this.type + '/' + newEquipmentData.name + '.png';
+            image.src = 'assets/images/icons/' + this.group + '/' + newEquipmentData.name + '.png';
             /**************************************< temporary code />********************************************/
 
             newDescription = newEquipmentData.description;
@@ -155,7 +147,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.edit.equipmentImgQuality(img_path);
         this.recap.equipmentImgQuality(img_path);
 
-        var qualityName = swlcalc.data.quality_mapping[this.type].to_name[newQuality];
+        var qualityName = swlcalc.data.quality_mapping[this.group].to_name[newQuality];
         this.recap.equipmentQuality(qualityName);
         if (this.isWeapon()) {
             this.recap.suffixQuality(qualityName);
@@ -189,8 +181,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
             }
             // calculation rule for talismans
             else {
-                base_value = swlcalc.data.power_rating[this.group][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_init;
-                bonus_value = swlcalc.data.power_rating[this.group][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_per_level * (this.edit.equipmentLevel() - 1);
+                base_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_init;
+                bonus_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_per_level * (this.edit.equipmentLevel() - 1);
             }
         }
         var newValue = base_value + Math.round(bonus_value);

@@ -21,7 +21,7 @@ QUnit.test("should have required selects in the DOM", function(assert) {
         assert.ok(slot.edit.el.glyphQuality.length !== 0);
         assert.ok(slot.edit.el.glyphLevel.length !== 0);
         assert.ok(slot.edit.el.signetId.length !== 0);
-        if (slot.type != "weapon") {
+        if (slot.group != "weapon") {
             assert.ok(slot.edit.el.signetRarity.length !== 0);
             assert.ok(slot.edit.el.signetLevel.length !== 0);
         }
@@ -40,7 +40,7 @@ QUnit.test("should have required event listeners for change on selects in the DO
         assert.ok($._data(slot.edit.el.glyphQuality.get(0), "events").change instanceof Array);
         assert.ok($._data(slot.edit.el.glyphLevel.get(0), "events").change instanceof Array);
         assert.ok($._data(slot.edit.el.signetId.get(0), "events").change instanceof Array);
-        if (slot.type != "weapon") {
+        if (slot.group != "weapon") {
             assert.ok($._data(slot.edit.el.signetRarity.get(0), "events").change instanceof Array);
             assert.ok($._data(slot.edit.el.signetLevel.get(0), "events").change instanceof Array);
         }

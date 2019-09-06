@@ -8,7 +8,6 @@ swlcalc.data.template_data = {
             name: 'Primary Weapon',
             kind: 'weapon',
             group: 'weapon',
-            type: 'weapon',
             is_weapon: true,
             is_primary: true
         },
@@ -17,7 +16,6 @@ swlcalc.data.template_data = {
             name: 'Secondary Weapon',
             kind: 'weapon',
             group: 'weapon',
-            type: 'weapon',
             is_weapon: true,
             is_primary: false
         },
@@ -25,50 +23,50 @@ swlcalc.data.template_data = {
             id: 'head',
             name: 'Head Talisman',
             kind: 'head',
-            group: 'head',
-            type: 'talisman'
+            group: 'talisman',
+            subgroup: 'head'
         },
         {
             id: 'finger',
             name: 'Finger Talisman',
             kind: 'finger',
-            group: 'major',
-            type: 'talisman'
+            group: 'talisman',
+            subgroup: 'major'
         },
         {
             id: 'neck',
             name: 'Neck Talisman',
             kind: 'neck',
-            type: 'talisman',
-            group: 'major'
+            group: 'talisman',
+            subgroup: 'major'
         },
         {
             id: 'wrist',
             name: 'Wrist Talisman',
             kind: 'wrist',
-            type: 'talisman',
-            group: 'major'
+            group: 'talisman',
+            subgroup: 'major'
         },
         {
             id: 'luck',
             name: 'Luck Talisman',
             kind: 'luck',
-            type: 'talisman',
-            group: 'minor'
+            group: 'talisman',
+            subgroup: 'minor'
         },
         {
             id: 'waist',
             name: 'Waist Talisman',
             kind: 'waist',
-            type: 'talisman',
-            group: 'minor'
+            group: 'talisman',
+            subgroup: 'minor'
         },
         {
             id: 'occult',
             name: 'Occult Talisman',
             kind: 'occult',
-            type: 'talisman',
-            group: 'minor'
+            group: 'talisman',
+            subgroup: 'minor'
         }
     ]
 };

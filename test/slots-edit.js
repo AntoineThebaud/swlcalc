@@ -38,14 +38,14 @@ QUnit.test("should have required components in the DOM", function(assert) {
         assert.ok(slot.edit.el.glyphLabelLevel.length !== 0);
         assert.ok(slot.edit.el.glyphILvl.length !== 0);
         assert.ok(slot.edit.el.signetId.length !== 0);
-        if (slot.type != "weapon") {
+        if (slot.group != "weapon") {
             assert.ok(slot.edit.el.signetRarity.length !== 0);
             assert.ok(slot.edit.el.signetLevel.length !== 0);
             assert.ok(slot.edit.el.signetImgItem.length !== 0);
             assert.ok(slot.edit.el.signetImgRarity.length !== 0);
         }
         assert.ok(slot.edit.el.signetDescription.length !== 0);
-        if (slot.type != "weapon") {
+        if (slot.group != "weapon") {
             assert.ok(slot.edit.el.signetLabelLevel.length !== 0);
             assert.ok(slot.edit.el.signetILvl.length !== 0);
         }
@@ -291,7 +291,7 @@ QUnit.test("should get and set the slot's signet level label on edit view", func
 QUnit.test("should return undefined or empty for elements that don't exist for this slot", function(assert) {
     for (var slotId in swlcalc.gear.slots) {
         var slot = swlcalc.gear.slots[slotId];
-        if (slot.type == "weapon") {
+        if (slot.group == "weapon") {
             assert.equal(slot.edit.signetRarity(), undefined);
             assert.equal(slot.edit.signetLevel(), undefined);
             assert.equal(slot.edit.signetImgItem(), undefined);
