@@ -1,7 +1,7 @@
 var swlcalc = swlcalc || {};
-swlcalc.select = swlcalc.select || {};
+swlcalc.controller = swlcalc.controller || {};
 
-swlcalc.select.SelectHandler = function SelectHandler(slot) {
+swlcalc.controller.ControllerHandler = function ControllerHandler(slot) {
 
     var slotObj = swlcalc.gear.slots[slot.id];
 
@@ -12,7 +12,7 @@ swlcalc.select.SelectHandler = function SelectHandler(slot) {
     };
 
     /**
-     * Associates the right processing to each trigger.
+     * Associates the right processing to each controller.
      */
     this.bindEvents = function() {
         slotObj.edit.el.equipmentId.change(this.handleEquipmentItemChange);

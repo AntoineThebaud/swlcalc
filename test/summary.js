@@ -4,7 +4,7 @@ QUnit.module("summary-unit-tests", {
         renderSlots();
         renderSummary();
         initiateSummary();
-        initiateSelectHandlers();
+        initiateControllerHandlers();
         renderButtonbar();
         initiateButtonBar();
     }

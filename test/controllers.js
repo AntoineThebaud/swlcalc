@@ -1,15 +1,15 @@
 
-QUnit.module("selects-unit-tests", {
+QUnit.module("controllers-unit-tests", {
     beforeEach: function(assert) {
         renderSlots();
         renderButtonbar(); // TODO/REFACTOR this is needed otherwise anima allocation is undefined. to change ? Save anima allocation as attribute to gear maybe ?
         initiateButtonBar(); // see previous comment
-        initiateSelectHandlers();
+        initiateControllerHandlers();
         initiateSummary();
     }
 });
 
-QUnit.test("should have required selects in the DOM", function(assert) {
+QUnit.test("should have required all controllers in the DOM", function(assert) {
     for (var slotId in swlcalc.gear.slots) {
         var slot = swlcalc.gear.slots[slotId];
         assert.ok(slot.edit.el.equipmentId.length !== 0);
@@ -28,7 +28,7 @@ QUnit.test("should have required selects in the DOM", function(assert) {
     }
 });
 
-QUnit.test("should have required event listeners for change on selects in the DOM", function(assert) {
+QUnit.test("should have required event listeners for change on controllers in the DOM", function(assert) {
     for (var slotId in swlcalc.gear.slots) {
         var slot = swlcalc.gear.slots[slotId];
         assert.ok($._data(slot.edit.el.equipmentId.get(0), "events").change instanceof Array);

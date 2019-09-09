@@ -6,7 +6,7 @@ QUnit.module("import-unit-tests", {
         renderButtonbar(); // remove need of button bar in this unit test (= save anima allocation as attribute to gear maybe ?)
         initiateButtonBar();
         initiateSummary();
-        initiateSelectHandlers();
+        initiateControllerHandlers();
     }
 });
 

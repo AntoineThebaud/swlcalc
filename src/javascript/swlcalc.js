@@ -76,7 +76,7 @@ swlcalc = function() {
     var startSubModules = function() {
         swlcalc.gear.init();
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-            startSelectHandler(swlcalc.data.template_data.slots[i]);
+            startControllerHandler(swlcalc.data.template_data.slots[i]);
         }
         startSwapHandler('weapon');
         startSwapHandler('weapon2');
@@ -86,15 +86,15 @@ swlcalc = function() {
     };
 
     /**
-     * Create select handler for a slot.
+     * Create controller handler for a slot.
      */
-    var startSelectHandler = function(slot) {
-        swlcalc.select[slot.id] = new swlcalc.select.SelectHandler(slot);
-        swlcalc.select[slot.id].init();
+    var startControllerHandler = function(slot) {
+        swlcalc.controller[slot.id] = new swlcalc.controller.ControllerHandler(slot);
+        swlcalc.controller[slot.id].init();
     };
 
     /**
-     * Create button handler for a slot.
+     * Create swap button handler for a slot.
      */
     var startSwapHandler = function(slot) {
         swlcalc.swap[slot] = new swlcalc.swap.SwapHandler(slot);

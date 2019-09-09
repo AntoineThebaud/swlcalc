@@ -40,7 +40,7 @@ module.exports = function(grunt) {
             '<%= concat.build_dust.dest %>',
             '<%= dirs.src %>/<%= pkg.name %>.js',
             '<%= dirs.src %>/<%= pkg.name %>-summary.js',
-            '<%= dirs.src %>/<%= pkg.name %>-selects.js',
+            '<%= dirs.src %>/<%= pkg.name %>-controllers.js',
             '<%= dirs.src %>/<%= pkg.name %>-swap.js',
             '<%= dirs.src %>/<%= pkg.name %>-buttonbar.js',
             '<%= dirs.src %>/<%= pkg.name %>-export.js',
