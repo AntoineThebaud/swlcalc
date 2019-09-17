@@ -20,10 +20,10 @@
                         {:else}
                         <td class="item-title lightgrey" colspan="2">Talisman</td>
                         {/is_weapon}
-                        <td class="upgrade-label rarity swlcalclabel">
+                        <td class="upgrade-label rarity-label">
                             <strong>Rarity :</strong>
                         </td>
-                        <td class="upgrade-select rarity swlcalcselect">
+                        <td class="upgrade-select">
                             {>rarityselect itemtype="equipment"/}
                         </td>
                         <td class="stat-inSlot">
@@ -55,7 +55,7 @@
                         <td class="upgrade-label quality-label">
                             <strong>Quality :</strong>
                         </td>
-                        <td class="upgrade-select quality-select">
+                        <td class="upgrade-select">
                             {?is_weapon}
                             {>qualityselect itemtype="equipment" pip1="Mk I" pip2="Mk II" pip3="Mk III"/}
                             {:else}
@@ -72,7 +72,7 @@
                         <td rowspan="2" class="upgrade-label level-label">
                             <strong>Level :</strong>
                         </td>
-                        <td rowspan="2" class="upgrade-select level-select">
+                        <td rowspan="2" class="upgrade-select">
                             <input id="{id}-edit-equipment-level" type="range" min="1" max="20" value="20" class="level-slider">
                         </td>
                     </tr>
@@ -85,10 +85,10 @@
                 <table id="{id}-edit-glyphs" class="table table-slots">
                     <tr>
                         <td class="item-title lightgrey" colspan="2">Glyph</td>
-                        <td class="upgrade-label rarity swlcalclabel">
+                        <td class="upgrade-label rarity-label">
                             <strong>Rarity :</strong>
                         </td>
-                        <td class="upgrade-select rarity swlcalcselect">
+                        <td class="upgrade-select">
                             {>rarityselect itemtype="glyph"/}
                         </td>
                         <td class="filler"></td>
@@ -115,7 +115,7 @@
                         <td class="upgrade-label quality-label">
                             <strong>Quality :</strong>
                         </td>
-                        <td class="upgrade-select quality-select">
+                        <td class="upgrade-select">
                             {>qualityselect itemtype="glyph" pip1="Crude" pip2="Simple" pip3="Intricate"/}
                         </td>
                         <td class="stat-inSlot">
@@ -151,31 +151,35 @@
                     {:else}
                     <tr>
                         <td class="item-title lightgrey" colspan="2">Signet</td>
-                        <td class="upgrade-label rarity swlcalclabel">
+                        <td class="upgrade-label rarity-label">
                             <strong>Rarity :</strong>
                         </td>
-                        <td class="upgrade-select rarity swlcalcselect">
+                        <td class="upgrade-select">
                             {>rarityselect itemtype="signet"/}
                         </td>
-                        <td id="{id}-edit-signet-description" class="item-description"></td>
+                        <td rowspan="2" id="{id}-edit-signet-description" class="item-description">
+                        </td>
                     </tr>
-                    <tr class="with-icon">
-                        <td id="{id}-edit-signet-img-section" class="signet-img">
+                    <tr>
+                        <td rowspan="2" id="{id}-edit-signet-img-section" class="signet-img">
                             <a href="#" class="signet-tooltip" data-toggle="tooltip" title="Signet for the {name} slot. Choose the rarity and type of signet.">
                                 <img id="{id}-edit-signet-img-item" src="" alt="Signet"/>
                                 <img id="{id}-edit-signet-img-rarity" src=""/>
                                 <div id="{id}-edit-signet-label-level" class="label-level little border-standard">20</div>
                             </a>
                         </td>
-                        <td class="signet-select">
+                        <td rowspan="2" class="signet-select">
                             <select id="{id}-edit-signet-id" title="Please select signet"></select>
                         </td>
-                        <td class="upgrade-label quality-label"> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
+                        <td rowspan="2" class="upgrade-label quality-label"> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
                             <strong>Level :</strong>
                         </td>
-                        <td class="upgrade-select quality-select"> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
+                        <td rowspan="2" class="upgrade-select signetalign">
                             <input id="{id}-edit-signet-level" type="range" min="1" max="20" value="20" class="level-slider">
                         </td>
+
+                    </tr>
+                    <tr>
                         <td class="ilvl lightgrey">
                             <span id="{id}-edit-signet-ilvl">0</span>
                         </td>
