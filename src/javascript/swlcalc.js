@@ -18,7 +18,6 @@ swlcalc = function() {
         }
         // visual settings :
         activateToolTips();
-        $('#summary').scrollToFixed();
     };
 
     /**
