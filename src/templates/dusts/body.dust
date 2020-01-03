@@ -1,0 +1,17 @@
+{>navbar/}
+<div class="container">
+    {>exportmodal/}
+    <div class="row">
+        <div class="col-lg-9">
+            {>slots_recap/}
+            {>slots_edit/}
+        </div>
+        <div class="col-lg-3">
+            {>summary/}
+        </div>
+    </div>
+    <hr>
+    <div class="footer">
+        <p>swlcalc &copy; 2017-2020 Antoine THEBAUD. Version <a href="https://github.com/AntoineThebaud/swlcalc/tree/@@version" target="_new">@@version</a>. Hosted on Github Pages.</p>
+    </div>
+</div>

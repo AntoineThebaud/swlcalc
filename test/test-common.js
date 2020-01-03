@@ -16,7 +16,8 @@ function renderSummary() {
 }
 
 function renderButtonbar() {
-    renderTemplate("buttonbar", {});
+    renderTemplate("navbar", {});
+    renderTemplate("exportmodal", {});
 }
 
 function renderTemplate(template_name, data) {

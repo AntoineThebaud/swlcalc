@@ -1,0 +1,16 @@
+<!-- Pop-up window on [ Export ] -->
+<!-- TODO : Find a way to put this with the buttonbar like before. Could not be included in the navbar because modal display outside container is not working properly-->
+<div id="open-export-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Export</h4>
+            </div>
+            <div class="modal-body">
+                <p>Copy this and share :</p>
+                <input id="export-text" type="text" class="form-control"></input>
+            </div>
+        </div>
+    </div>
+</div>
