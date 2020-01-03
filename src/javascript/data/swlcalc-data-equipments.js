@@ -1010,7 +1010,80 @@ swlcalc.data.equipments = {
                 description: 'Whenever you reload Anima-Infused Shells or Dragon\'s Breath Shells, you and your group members gain a beneficial effect for <span class="bonus-val const">3</span> seconds which causes attacks to restore <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> health. The amount healed scales with each individual group member\'s Healing Power.</br>Whenever you reload Armor-Piercing or Depleted Uranium Shells, you and your group members gain a beneficial effect for <span class="bonus-val const">3</span> seconds which causes attacks to deal an additional <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage. The damage dealt scales with each individual group member\'s Combat Power.',
                 coefficients: [ 0.5, 0.5 ],
                 stats: [ 'Healing Power', 'Combat Power' ]
-            }
+            },
+            // TODO/REFACTOR : duplication in below code (all Third Age weapons have the same effect)
+            {
+                id: 145,
+                type: 'Blade',
+                name: 'Third Age Blade',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                coefficients: [ 0.85, 0.85 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
+            {
+                id: 146,
+                type: 'Hammer',
+                name: 'Third Age Hammer',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                coefficients: [ 0.85, 0.85 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
+            {
+                id: 147,
+                type: 'Fist',
+                name: 'Third Age Fist Weapon',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                coefficients: [ 0.85, 0.85 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
+            {
+                id: 148,
+                type: 'Blood',
+                name: 'Third Age Blood Magic Focus',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                coefficients: [ 0.85, 0.85 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
+            {
+                id: 149,
+                type: 'Chaos',
+                name: 'Third Age Chaos Focus',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                coefficients: [ 0.85, 0.85 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
+            {
+                id: 150,
+                type: 'Elementalism',
+                name: 'Anima-Touched Elementalism Focus',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                coefficients: [ 0.85, 0.85 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
+            {
+                id: 151,
+                type: 'Shotgun',
+                name: 'Third Age Shotgun',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                coefficients: [ 0.85, 0.85 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
+            {
+                id: 152,
+                type: 'Pistols',
+                name: 'Third Age Pistols',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                coefficients: [ 0.85, 0.85 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
+            {
+                id: 153,
+                type: 'Assault Rifle',
+                name: 'Third Age Assault Rifle',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                coefficients: [ 0.85, 0.85 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
         ],
         'head': [
             {
@@ -1096,6 +1169,13 @@ swlcalc.data.equipments = {
                 id: 14,
                 name: 'Tachyon Pigment',
                 description: 'Whenever you are hit <span class="bonus-val const">5</span> times in succession or whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, the duration of your currently running recharge timers on Special Abilities is reduced by <span class="bonus-val const">3%</span>.'
+            },
+            {
+                id: 15,
+                name: 'Ashes of Fate\'s Chosen',
+                description: 'Whenever you hit same enemy 3 times in succession, summon FATE to attack target for <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. This effect has a <span class="bonus-val const">20</span> second cooldown.',
+                coefficients: [ 6.8 ],
+                stats: [ 'Combat Power' ]
             }
         ],
         'finger': [
@@ -1139,6 +1219,13 @@ swlcalc.data.equipments = {
                 id: 7,
                 name: 'Recursive Circle',
                 description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, you reduce the remaining cooldown time on your abilities by <span class="bonus-val const">7%</span>.'
+            },
+            {
+                id: 8,
+                name: 'Ring of the Hollow Tree',
+                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, summon a Custodian to attack the target for <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. This effect has a <span class="bonus-val const">20</span> second cooldown.',
+                coefficients: [ 6.25 ],
+                stats: [ 'Combat Power' ]
             }
         ],
         'neck': [
@@ -1307,6 +1394,13 @@ swlcalc.data.equipments = {
                 id: 8,
                 name: 'Laundry Tokens',
                 description: 'Whenever you evade an attack or an attack glances you, you have a <span class="bonus-val const">50%</span> chance to gain <span class="bonus-val const">1</span> Energy for your currently active weapon.'
+            },
+            {
+                id: 9,
+                name: 'Anima-Infused Keepsake',
+                description: 'Whenever you critically hit you have <span class="bonus-val const">33%</span> chance to summon Gatekeeper to attack the target for <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. This effect has <span class="bonus-val const">20</span> sec cooldown.',
+                coefficients: [ 6.5 ],
+                stats: [ 'Combat Power' ]
             }
         ],
         'waist': [
