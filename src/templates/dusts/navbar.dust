@@ -81,16 +81,16 @@
                             <li><a class="export" href="#open-export-modal" data="url" data-toggle="modal">URL</a></li>
                         </ul>
                     </li>
-                    <!-- [ Github ] -->
-                    <li class="navbar-item">
-                        <a class="navbar-icon-a" href="https://github.com/AntoineThebaud/swlcalc" target="_blank">
-                            <img class="navbar-icon-img" src="assets/images/icons/github.png" />
-                        </a>
-                    </li>
                     <!-- [ Forum post ] -->
                     <li class="navbar-item">
                         <a class="navbar-icon-a" href="https://forums.funcom.com/t/swlcalc-gear-planner-for-swl/1908" target="_blank">
                             <img class="navbar-icon-img" src="assets/images/icons/funcomforum.png" />
+                        </a>
+                    </li>
+                    <!-- [ Github ] -->
+                    <li class="navbar-item">
+                        <a class="navbar-icon-a" href="https://github.com/AntoineThebaud/swlcalc" target="_blank">
+                            <img class="navbar-icon-img github" src="assets/images/icons/github.png" />
                         </a>
                     </li>
                 </ul>

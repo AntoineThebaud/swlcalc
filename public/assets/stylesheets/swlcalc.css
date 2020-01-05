@@ -41,6 +41,10 @@ div.container {
     margin-top: 8px;
     margin-bottom: 8px;
 }
+.navbar-icon-img.github {
+    width: 30px;
+    margin-top: 10px;
+}
 .navbar-item {
     margin-right: 5px;
 }
