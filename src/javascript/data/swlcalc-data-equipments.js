@@ -1011,6 +1011,7 @@ swlcalc.data.equipments = {
                 coefficients: [ 0.5, 0.5 ],
                 stats: [ 'Healing Power', 'Combat Power' ]
             },
+            // Third Age weapons :
             // TODO/REFACTOR : duplication in below code (all Third Age weapons have the same effect)
             {
                 id: 145,
@@ -1055,7 +1056,7 @@ swlcalc.data.equipments = {
             {
                 id: 150,
                 type: 'Elementalism',
-                name: 'Anima-Touched Elementalism Focus',
+                name: 'Third Age Elementalism Focus',
                 description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
