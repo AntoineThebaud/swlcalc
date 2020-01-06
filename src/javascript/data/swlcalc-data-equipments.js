@@ -1084,6 +1084,61 @@ swlcalc.data.equipments = {
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
+            // Oni War Cache weapons :
+            {
+                id: 154,
+                type: 'Blade',
+                name: 'Blade of Bloodied Silks',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you cast Spirit Blade with more Chi than your Spirit Blade can convert, the power of your Blade abilities is increased by <span class="bonus-val const">47%</span>. This effect lasts for <span class="bonus-val const">3</span> seconds.'
+            },
+            {
+                id: 155,
+                type: 'Hammer',
+                name: 'Hammer of the Red Road',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>You no longer generate Rage when you are attacked. Instead, you generate <span class="bonus-val const">6</span> additional rage when you hit with Hammer abilities.'
+            },
+            {
+                id: 156,
+                type: 'Fist',
+                name: 'Fist-in-Chains',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever your "Invigorating Wrath" or "Frenzied Wrath" effect expires, you gain additional Fury. If you were unable to activate as many Wrath abilities as you possibly could have activated, you gain more additional Fury.'
+            },
+            {
+                id: 157,
+                type: 'Blood',
+                name: 'Tome of the Void',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you gain a power increase from Martyrdom or Corruption, an orb of blood appears nearby for <span class="bonus-val const">60</span> seconds. When you touch this orb you are healed for <span class="bonus-val heal">350</span> and your Martyrdom or Corruption will be reduced by <span class="bonus-val const">50</span>. This effect can occur once every <span class="bonus-val const">10</span> seconds, and you can only have <span class="bonus-val const">3</span> orbs active at any given time.'
+            },
+            {
+                id: 158,
+                type: 'Chaos',
+                name: 'Focus of the Unwritten Talisman',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you reach <span class="bonus-val const">8</span> Paradoxes, the cooldown on Evulsion is reset and the next activation of Evulsion provides <span class="bonus-val const">2560</span> Protection for <span class="bonus-val const">8</span> seconds.'
+            },
+            {
+                id: 159,
+                type: 'Elementalism',
+                name: 'Effigy of Snakes and Smoke',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>If you hit a target within <span class="bonus-val const">5</span> meters, your heat is increased by <span class="bonus-val const">14</span>. If you hit a target further than <span class="bonus-val const">10</span> meters away, your heat is reduced by 10.'
+            },
+            {
+                id: 160,
+                type: 'Shotgun',
+                name: 'Shotgun of the Howling Dog',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Your Armor-Piercing Shells have a <span class="bonus-val const">100%</span> chance to apply Exposed when you hit. Anima-Infused shells will no longer be loaded.'
+            },
+            {
+                id: 161,
+                type: 'Pistols',
+                name: 'Pistol of Caged Birds',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>The damage bonus from a Blue set of chambers is increased by <span class="bonus-val const">50%</span> and the duration of the damage bonus from a Blue set of chambers is increased by <span class="bonus-val const">1</span> second.'
+            },
+            {
+                id: 162,
+                type: 'Assault Rifle',
+                name: 'Rifle of Sworn Revenge',
+                description: 'This weapon gains more Weapon Power when leveling up.</br>Your Assault Rifle Grenade Abilities have a <span class="bonus-val const">17%</span> chance to reset the cooldown of Assault Rifle Grenade Abilities and give you another grenade. Your Assault Rifle Grenade Ability damage and healing are increased by <span class="bonus-val const">10%</span> for <span class="bonus-val const">8</span> seconds.'
+            }
         ],
         'head': [
             {
