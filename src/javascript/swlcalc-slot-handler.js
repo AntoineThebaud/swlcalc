@@ -1,7 +1,8 @@
 var swlcalc = swlcalc || {};
-swlcalc.controller = swlcalc.controller || {};
+swlcalc.gear = swlcalc.gear || {};
+swlcalc.handler = swlcalc.handler || {};
 
-swlcalc.controller.ControllerHandler = function ControllerHandler(slot) {
+swlcalc.gear.SlotHandler = function SlotHandler(slot) {
 
     var slotObj = swlcalc.gear.slots[slot.id];
 

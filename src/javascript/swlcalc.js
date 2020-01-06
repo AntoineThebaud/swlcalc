@@ -75,7 +75,7 @@ swlcalc = function() {
     var startSubModules = function() {
         swlcalc.gear.init();
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-            startControllerHandler(swlcalc.data.template_data.slots[i]);
+            startSlotHandler(swlcalc.data.template_data.slots[i]);
         }
         startSwapHandler('weapon');
         startSwapHandler('weapon2');
@@ -85,11 +85,11 @@ swlcalc = function() {
     };
 
     /**
-     * Create controller handler for a slot.
+     * Create handler for a slot.
      */
-    var startControllerHandler = function(slot) {
-        swlcalc.controller[slot.id] = new swlcalc.controller.ControllerHandler(slot);
-        swlcalc.controller[slot.id].init();
+    var startSlotHandler = function(slot) {
+        swlcalc.handler[slot.id] = new swlcalc.gear.SlotHandler(slot);
+        swlcalc.handler[slot.id].init();
     };
 
     /**

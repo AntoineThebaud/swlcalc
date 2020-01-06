@@ -40,7 +40,6 @@ module.exports = function(grunt) {
             '<%= concat.build_dust.dest %>',
             '<%= dirs.src %>/<%= pkg.name %>.js',
             '<%= dirs.src %>/<%= pkg.name %>-summary.js',
-            '<%= dirs.src %>/<%= pkg.name %>-controllers.js',
             '<%= dirs.src %>/<%= pkg.name %>-swap.js',
             '<%= dirs.src %>/<%= pkg.name %>-buttonbar.js',
             '<%= dirs.src %>/<%= pkg.name %>-export.js',
@@ -49,7 +48,8 @@ module.exports = function(grunt) {
             '<%= dirs.src %>/<%= pkg.name %>-gear.js',
             '<%= dirs.src %>/<%= pkg.name %>-slot.js',
             '<%= dirs.src %>/<%= pkg.name %>-slot-edit.js',
-            '<%= dirs.src %>/<%= pkg.name %>-slot-recap.js'
+            '<%= dirs.src %>/<%= pkg.name %>-slot-recap.js',
+            '<%= dirs.src %>/<%= pkg.name %>-slot-handler.js'
         ],
         dest: '<%= dirs.build %>/assets/javascripts/<%= pkg.name %>.js'
       },

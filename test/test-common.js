@@ -49,8 +49,8 @@ function initiateSwapHandlers() {
 function initiateControllerHandlers() {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var slot = swlcalc.data.template_data.slots[ i ];
-        swlcalc.controller[slot.id] = new swlcalc.controller.ControllerHandler(slot);
-        swlcalc.controller[slot.id].init();
+        swlcalc.handler[slot.id] = new swlcalc.gear.SlotHandler(slot);
+        swlcalc.handler[slot.id].init();
     }
 }
 

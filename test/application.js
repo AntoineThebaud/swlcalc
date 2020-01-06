@@ -6,7 +6,7 @@ QUnit.test("should initate swlcalc submodules", function(assert) {
     assert.ok(swlcalc);
     assert.ok(swlcalc.data);
     assert.ok(swlcalc.swap);
-    assert.ok(swlcalc.controller);
+    assert.ok(swlcalc.handler);
     assert.ok(swlcalc.buttonBar);
     assert.ok(swlcalc.summary);
     assert.ok(swlcalc.export);
