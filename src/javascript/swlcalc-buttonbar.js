@@ -17,6 +17,7 @@ swlcalc.buttonBar = function() {
             btn_all_1_pip: $('#btn-all-1-pip'),
             btn_all_2_pip: $('#btn-all-2-pip'),
             btn_all_3_pip: $('#btn-all-3-pip'),
+            btn_all_4_pip: $('#btn-all-4-pip'),
 
             btn_all_lvl_min: $('#btn-all-lvl-min'),
             btn_all_lvl_max: $('#btn-all-lvl-max'),
@@ -45,6 +46,7 @@ swlcalc.buttonBar = function() {
         el.btn_all_1_pip.on('click', setQualityOnAllSlots);
         el.btn_all_2_pip.on('click', setQualityOnAllSlots);
         el.btn_all_3_pip.on('click', setQualityOnAllSlots);
+        el.btn_all_4_pip.on('click', setAllToMax); // TODO replace by setQualityOnAllSlots when possible
 
         el.btn_all_lvl_min.on('click', setMinLevelOnAllSlots);
         el.btn_all_lvl_max.on('click', setMaxLevelOnAllSlots);
@@ -98,6 +100,30 @@ swlcalc.buttonBar = function() {
             slot.edit.equipmentQuality(newQuality);
             slot.edit.el.equipmentQuality.change();
             slot.edit.glyphQuality(newQuality);
+            slot.edit.el.glyphQuality.change();
+        }
+        swlcalc.summary.updateAllStats(); //TODO maybe useless ?
+    };
+
+    /**
+     * Set all slots to rarity Legendary + Quality 4 pips (if possible) + Level 70
+     * TODO : This is a temporary function to be used as long as we are missing proper numbers for Resplendent quality
+     */
+    var setAllToMax = function(event) {
+        var maxRarity = "legendary";
+        for (var id in swlcalc.gear.slots) {
+            var slot = swlcalc.gear.slots[id];
+            slot.edit.equipmentRarity(maxRarity);
+            slot.edit.el.equipmentRarity.change();
+            slot.edit.glyphRarity(maxRarity);
+            slot.edit.el.glyphRarity.change();
+            slot.edit.signetRarity(maxRarity);
+            slot.edit.el.signetRarity.change();
+
+            var maxQuality = (slot.isWeapon() ? "3" : "4");
+            slot.edit.equipmentQuality(maxQuality);
+            slot.edit.el.equipmentQuality.change();
+            slot.edit.glyphQuality(maxQuality);
             slot.edit.el.glyphQuality.change();
         }
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?

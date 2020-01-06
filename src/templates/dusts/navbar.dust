@@ -41,6 +41,7 @@
                                 <li><a id="btn-all-1-pip"><span class="fix-link">All to 1 pip</span></a></li>
                                 <li><a id="btn-all-2-pip"><span class="fix-link">All to 2 pips</span></a></li>
                                 <li><a id="btn-all-3-pip"><span class="fix-link">All to 3 pips</span></a></li>
+                                <li><a id="btn-all-4-pip"><span class="fix-link">All to 4 pips</span></a></li>
                             </ul>
                         </li>
                         <!-- [ Set level v ] -->
