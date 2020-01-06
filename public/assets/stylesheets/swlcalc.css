@@ -328,7 +328,7 @@ td.stat-name {
 }
 .stat-value {
     font-weight: bold;
-    color: green;
+    color: #E3B10E;
 }
 td.stat-inSlot {
     text-align: center;
@@ -341,13 +341,13 @@ td.stat-inSummary {
     font-weight: bold;
 }
 .bonus-val.attack {
-    color: red;
+    color: #EB3D3D;;
 }
 .bonus-val.heal {
     color: green;
 }
 .bonus-val.const {
-    color: #FF7D00;
+    color: #E97F0E;
 }
 /******************************************************/
 .modal-dialog {
