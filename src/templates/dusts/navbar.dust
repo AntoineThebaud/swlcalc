@@ -81,10 +81,13 @@
                             <li><a class="export" href="#open-export-modal" data="url" data-toggle="modal">URL</a></li>
                         </ul>
                     </li>
-                    <!-- [ Forum post ] -->
+                    <!-- [ Forum ] -->
                     <li class="navbar-item">
-                        <a class="navbar-icon-a" href="https://forums.funcom.com/t/swlcalc-gear-planner-for-swl/1908" target="_blank">
-                            <img class="navbar-icon-img" src="assets/images/icons/funcomforum.png" />
+                        <a class="navbar-icon-a" role="button" href="https://forums.funcom.com/t/swlcalc-gear-planner-for-swl/1908" target="_blank">
+                            <button class="btn btn-info navbar-btn feedback">
+                                <img class="navbar-icon-img swl" src="assets/images/icons/funcomforum.png" />
+                                Feedback
+                            </button>
                         </a>
                     </li>
                     <!-- [ Github ] -->

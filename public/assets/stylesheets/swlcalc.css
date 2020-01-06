@@ -36,14 +36,21 @@ div.container {
     padding: 0 !important;
 }
 .navbar-icon-img {
-    max-width: 34px;
-    max-height: 34px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    max-width: 32px;
+    max-height: 32px;
 }
 .navbar-icon-img.github {
     width: 30px;
     margin-top: 10px;
+    margin-bottom: 8px;
+}
+.navbar-icon-img.swl {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 5px;
+}
+.navbar-btn.feedback {
+    padding: 0px 12px;
 }
 .navbar-item {
     margin-right: 5px;
