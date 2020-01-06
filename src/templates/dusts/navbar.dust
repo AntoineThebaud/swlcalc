@@ -7,7 +7,7 @@
                     <li class="navbar-item">
                         <img class="navbar-logo logo-swlcalc" src="assets/images/logos/swlcalc.png" />
                         <div class="logo-div navbar-logo">
-                            <span class="logo-slogan mediumgrey">A gear planner for </span>
+                            <span class="logo-slogan mediumgrey">A gear planner for</span>
                             <img class="logo-swl" src="assets/images/logos/swl.png"/>
                         </div>
                     </li>

@@ -55,25 +55,21 @@ div.container {
     margin-bottom: 8px;
 }
 .logo-div {
-    position: relative;
+    padding-top: 17px;
 }
 .logo-slogan {
     font-size: 12px;
     margin-left: 5px;
-    position: absolute;
-    bottom: 0;
-    width: 100px;
     line-height: 1.2;
+    margin-right: 5px;
+}
+.logo-swl {
+    width: 180px;
+    margin-top: 4px;
 }
 .logo-dg {
     width: 34px;
     margin-bottom: 5px;
-}
-.logo-swl {
-    width: 180px;
-    position: absolute;
-    bottom: 0;
-    left: 105px;
 }
 /******************************************************/
 .illuminati {
