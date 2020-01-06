@@ -36,10 +36,21 @@ div.container {
     padding: 0 !important;
 }
 .navbar-icon-img {
-    max-width: 34px;
-    max-height: 34px;
-    margin-top: 8px;
+    max-width: 32px;
+    max-height: 32px;
+}
+.navbar-icon-img.github {
+    width: 30px;
+    margin-top: 10px;
     margin-bottom: 8px;
+}
+.navbar-icon-img.swl {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 5px;
+}
+.navbar-btn.feedback {
+    padding: 0px 12px;
 }
 .navbar-item {
     margin-right: 5px;
@@ -51,25 +62,21 @@ div.container {
     margin-bottom: 8px;
 }
 .logo-div {
-    position: relative;
+    padding-top: 17px;
 }
 .logo-slogan {
     font-size: 12px;
     margin-left: 5px;
-    position: absolute;
-    bottom: 0;
-    width: 100px;
     line-height: 1.2;
+    margin-right: 5px;
+}
+.logo-swl {
+    width: 180px;
+    margin-top: 4px;
 }
 .logo-dg {
     width: 34px;
     margin-bottom: 5px;
-}
-.logo-swl {
-    width: 180px;
-    position: absolute;
-    bottom: 0;
-    left: 105px;
 }
 /******************************************************/
 .illuminati {
@@ -321,7 +328,7 @@ td.stat-name {
 }
 .stat-value {
     font-weight: bold;
-    color: green;
+    color: #E3A40E;
 }
 td.stat-inSlot {
     text-align: center;
@@ -334,13 +341,13 @@ td.stat-inSummary {
     font-weight: bold;
 }
 .bonus-val.attack {
-    color: red;
+    color: #EB3D3D;;
 }
 .bonus-val.heal {
     color: green;
 }
 .bonus-val.const {
-    color: #FF7D00;
+    color: #E97F0E;
 }
 /******************************************************/
 .modal-dialog {
@@ -462,7 +469,7 @@ div[id$="-recap-div"] .empty-slot {
     margin-top: 8px;
 }
 .empty-slot input[type="checkbox"] {
-    margin: 0;
+    margin: 1px 0 0 0;
     cursor: default;
 }
 .empty-slot span {
