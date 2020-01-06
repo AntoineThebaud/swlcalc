@@ -469,7 +469,7 @@ div[id$="-recap-div"] .empty-slot {
     margin-top: 8px;
 }
 .empty-slot input[type="checkbox"] {
-    margin: 0;
+    margin: 1px 0 0 0;
     cursor: default;
 }
 .empty-slot span {
