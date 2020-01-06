@@ -1282,6 +1282,11 @@ swlcalc.data.equipments = {
                 description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, summon a Custodian to attack the target for <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. This effect has a <span class="bonus-val const">20</span> second cooldown.',
                 coefficients: [ 6.25 ],
                 stats: [ 'Combat Power' ]
+            },
+            {
+                id: 9,
+                name: 'Cobra Ring',
+                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, you have a <span class="bonus-val const">75%</span> chance to gain <span class="bonus-val const">1</span> Energy for the weapon which triggered this effect.'
             }
         ],
         'neck': [
@@ -1402,6 +1407,11 @@ swlcalc.data.equipments = {
                 id: 8,
                 name: 'Wrist',
                 description: '',
+            },
+            {
+                id: 9,
+                name: 'Timeless Watch',
+                description: 'Whenever you heal an ally who does not have any active detrimental effects, you grant that ally an effect which increases all incoming healing by <span class="bonus-val const">15%</span> for <span class="bonus-val const">2.5</span> seconds. This effect is removed upon receiving another activated heal. This effect can only be applied once every <span class="bonus-val const">6</span> seconds.'
             }
         ],
         'luck': [
@@ -1616,6 +1626,11 @@ swlcalc.data.equipments = {
                 description: 'Whenever you or any of your group members defeat an enemy, you are healed for <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span>.',
                 coefficients: [ 0.833 ],
                 stats: [ 'Healing Power' ]
+            },
+            {
+                id: 9,
+                name: 'Cernunnos Antler Fragment',
+                description: 'Whenever you or any of your group members defeat a non-boss enemy, you gain a counter that increases damage against a boss enemy by <span class="bonus-val const">2%</span> per counter. The counters expire <span class="bonus-val const">6</span> minutes after the first counter is gained, or when a boss enemy is damaged.'
             }
         ]
     }
