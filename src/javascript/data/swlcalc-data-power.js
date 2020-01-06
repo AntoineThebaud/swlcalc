@@ -93,6 +93,9 @@ swlcalc.data.power_rating = {
             '3': {
                 power_rating_init: 2404,
                 power_rating_per_level: 1246/69 // == (3650 - 2404) / (70 - 1)
+            },
+            '4': { //TODO : get power_rating_init & power_rating_per_level values
+                power_rating_max: 4015
             }
         }
     },
@@ -165,6 +168,9 @@ swlcalc.data.power_rating = {
             '3': {
                 power_rating_init: 1442,
                 power_rating_per_level: 748/69 // == (2190 - 1442) / (70 - 1)
+            },
+            '4': { //TODO : get power_rating_init & power_rating_per_level values
+                power_rating_max: 2409
             }
         }
     },
@@ -237,6 +243,9 @@ swlcalc.data.power_rating = {
             '3': {
                 power_rating_init: 962,
                 power_rating_per_level: 498/69 // == (1460 - 962) / (70 - 1)
+            },
+            '4': { //TODO : get power_rating_init & power_rating_per_level values
+                power_rating_max: 1606
             }
         }
     }

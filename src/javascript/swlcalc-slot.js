@@ -165,10 +165,29 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.edit.equipmentLabelLevel(newLevel);
         this.recap.equipmentLevel(newLevel);
         this.recap.equipmentLabelLevel(newLevel);
+
+        this.handleResplendent();
     }
 
     /**
-     * Update elements related to equipement stat's rating (calculatations with stats data)
+     * Add or remove Resplendent to the list of available qualities for this talisman
+     * - add Resplendent quality only if rarity is set to Legendary + level is 70
+     * - TODO : This is a temporary function, needed as long as the numbers required for proper computation (from lvl 1 Epic to lvl 70 Legendary) are not known.
+     */
+    this.handleResplendent = function() {
+        if (this.isWeapon()) return;
+        var map = swlcalc.data.rarity_mapping.to_num
+        var resplendentOptionExists = ($('#' + this.id + '-edit-equipment-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
+        if (map[this.edit.equipmentRarity()] == map['legendary'] && this.edit.equipmentLevel() == "70" && !resplendentOptionExists) {
+            this.edit.el.equipmentQuality.append("<option value='4'>Resplendent</option>");
+        } else if ((map[this.edit.equipmentRarity()] != map['legendary'] || this.edit.equipmentLevel() != "70") && resplendentOptionExists) {
+            $('#' + this.id + '-edit-equipment-quality option[value=4]').remove(); // TODO/REFACTOR to abstract access
+            this.updateEquipmentQuality();
+        }
+    }
+
+    /**
+     * Update elements related to equipment stat's rating (calculatations with stats data)
      */
     this.updateEquipmentStatRating = function() {
         var base_value = 0;
@@ -181,8 +200,14 @@ swlcalc.gear.Slot = function Slot(slotData) {
             }
             // calculation rule for talismans
             else {
-                base_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_init;
-                bonus_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_per_level * (this.edit.equipmentLevel() - 1);
+                if (this.edit.equipmentQuality() == "4") {
+                    //TODO : temporary specific code to handle Resplendent quality (for which power_rating_init & power_rating_per_level are not known)
+                    base_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_max;
+                    bonus_value = 0;
+                } else {
+                    base_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_init;
+                    bonus_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_per_level * (this.edit.equipmentLevel() - 1);
+                }
             }
         }
         var newValue = base_value + Math.round(bonus_value);
@@ -214,7 +239,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     }
 
     /**
-     * Update elements related to equipement's ilvl
+     * Update elements related to equipment's ilvl
      */
     this.updateEquipmentILvl = function() {
         var newILvl = 0;

@@ -82,7 +82,8 @@ swlcalc.data.quality_mapping = {
         to_name: {
             1: 'Faded',
             2: 'Luminous',
-            3: 'Radiant'
+            3: 'Radiant',
+            4: 'Resplendent'
         }
     },
     'glyph': {
