@@ -1016,7 +1016,7 @@ swlcalc.data.equipments = {
             {
                 id: 145,
                 type: 'Blade',
-                name: 'Third Age Blade',
+                name: 'Third Age Brand',
                 description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
@@ -1024,7 +1024,7 @@ swlcalc.data.equipments = {
             {
                 id: 146,
                 type: 'Hammer',
-                name: 'Third Age Hammer',
+                name: 'Third Age Maul',
                 description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
@@ -1032,7 +1032,7 @@ swlcalc.data.equipments = {
             {
                 id: 147,
                 type: 'Fist',
-                name: 'Third Age Fist Weapon',
+                name: 'Third Age Eviscerators',
                 description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
@@ -1048,7 +1048,7 @@ swlcalc.data.equipments = {
             {
                 id: 149,
                 type: 'Chaos',
-                name: 'Third Age Chaos Focus',
+                name: 'Third Age Chancer',
                 description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
@@ -1056,7 +1056,7 @@ swlcalc.data.equipments = {
             {
                 id: 150,
                 type: 'Elementalism',
-                name: 'Third Age Elementalism Focus',
+                name: 'Third Age Channeler',
                 description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
@@ -1064,7 +1064,7 @@ swlcalc.data.equipments = {
             {
                 id: 151,
                 type: 'Shotgun',
-                name: 'Third Age Shotgun',
+                name: 'Third Age Persuader',
                 description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
@@ -1072,7 +1072,7 @@ swlcalc.data.equipments = {
             {
                 id: 152,
                 type: 'Pistols',
-                name: 'Third Age Pistols',
+                name: 'Third Age Burners',
                 description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
@@ -1080,7 +1080,7 @@ swlcalc.data.equipments = {
             {
                 id: 153,
                 type: 'Assault Rifle',
-                name: 'Third Age Assault Rifle',
+                name: 'Third Age Equalizer',
                 description: 'This weapon gains more Weapon Power when leveling up.</br>Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
