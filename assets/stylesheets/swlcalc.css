@@ -115,13 +115,13 @@ div.container {
     color: #E62C38;
 }
 /******************************************************/
-.color-dps {
+.dps {
     color: #E62C38;
 }
-.color-heal {
+.heal {
     color: #05B114;
 }
-.color-tank {
+.tank {
     color: #039BD9;
 }
 /******************************************************/
@@ -170,15 +170,26 @@ div[id$="-edit-div"] .table-slots td {
 }
 div[id="summary"] {
     position:fixed;
+    width: 175px;
 }
 div[id="summary"] .table-stats td {
     padding: 1px;
+    border-top: none;
+}
+div[id="summary"] .table-stats tr.separator {
+    border-bottom: 1px solid #ddd;
 }
 div[id="summary"] .table-stats th {
     padding-top: 5px;
     padding-bottom: 3px;
     padding-right: 5px;
     padding-left: 0px;
+    background-color: #F5F5F5;
+    font-size: 13px;
+    padding-left: 8px;
+}
+div[id="summary"] h4 {
+    font-weight: bold
 }
 #table-primary label {
    margin: 10px 0px 10px 0px;
@@ -328,6 +339,8 @@ td.stat-name {
 }
 .stat-value {
     font-weight: bold;
+}
+.stat-value.gear {
     color: #E3A40E;
 }
 td.stat-inSlot {
@@ -339,12 +352,6 @@ td.stat-inSummary {
 /******************************************************/
 .bonus-val {
     font-weight: bold;
-}
-.bonus-val.attack {
-    color: #EB3D3D;;
-}
-.bonus-val.heal {
-    color: green;
 }
 .bonus-val.const {
     color: #E97F0E;
@@ -365,10 +372,6 @@ td.stat-inSummary {
 .slot h4 {
     padding: 0px;
     display: inline;
-    font-weight: bold
-}
-
-div[id="summary"] h4 {
     font-weight: bold
 }
 /******************************************************/
