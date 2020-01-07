@@ -23,11 +23,11 @@ QUnit.test("should have required buttonbar buttons in DOM", function(assert) {
 
 QUnit.test("should update anima allocation accordingly", function(assert) {
     assert.equal(swlcalc.buttonBar.getAnimaAllocation(), "dps");
-    assert.equal($('#select-anima-allocation').attr('class'), 'anima-allocation-select color-dps');
+    assert.equal($('#select-anima-allocation').attr('class'), 'anima-allocation-select dps');
     $('#select-anima-allocation').val("tank");
     $('#select-anima-allocation').change();
     assert.equal(swlcalc.buttonBar.getAnimaAllocation(), "tank");
-    assert.equal($('#select-anima-allocation').attr('class'), 'anima-allocation-select color-tank');
+    assert.equal($('#select-anima-allocation').attr('class'), 'anima-allocation-select tank');
 });
 
 QUnit.test("should set anima allocation and affect stats correctly", function(assert) {

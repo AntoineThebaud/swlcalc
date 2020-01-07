@@ -24,7 +24,7 @@ swlcalc.data.signets = {
             {
                 id: 2,
                 name: 'Destruction',
-                description: 'This weapon deals <span id="%id-signet-bonus" class="bonus-val attack">%d</span> additional damage to enemies that are below <span class="bonus-val const">35%</span> health.',
+                description: 'This weapon deals <span id="%id-signet-bonus" class="bonus-val dps">%d</span> additional damage to enemies that are below <span class="bonus-val const">35%</span> health.',
                 quality: {
                     '1': 0.15,
                     '2': 0.30,
@@ -1470,7 +1470,7 @@ swlcalc.data.signets = {
                 id: 6,
                 name: 'Signet of Sadism',
                 type: 'All',
-                description: 'When you critically hit, your target is affected with a detrimental effect that deals <span id="%id-signet-bonus" class="bonus-val attack">%d</span> damage every second for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
+                description: 'When you critically hit, your target is affected with a detrimental effect that deals <span id="%id-signet-bonus" class="bonus-val dps">%d</span> damage every second for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {
@@ -1529,7 +1529,7 @@ swlcalc.data.signets = {
                 id: 8,
                 name: 'Signet of Thorns',
                 type: 'All',
-                description: 'When you critically hit, you are given a beneficial effect that damages attackers for <span id="%id-signet-bonus" class="bonus-val attack">%d</span> when they hit you for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
+                description: 'When you critically hit, you are given a beneficial effect that damages attackers for <span id="%id-signet-bonus" class="bonus-val dps">%d</span> when they hit you for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
                 cooldown: '',
                 ratio: {
                     'standard': {

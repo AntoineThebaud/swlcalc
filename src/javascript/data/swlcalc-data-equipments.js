@@ -63,7 +63,7 @@ swlcalc.data.equipments = {
                 id: 10,
                 type: 'Blade',
                 name: 'Anima-Touched Blade',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -71,7 +71,7 @@ swlcalc.data.equipments = {
                 id: 11,
                 type: 'Hammer',
                 name: 'Anima-Touched Hammer',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -79,7 +79,7 @@ swlcalc.data.equipments = {
                 id: 12,
                 type: 'Fist',
                 name: 'Anima-Touched Fist Weapon',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -87,7 +87,7 @@ swlcalc.data.equipments = {
                 id: 13,
                 type: 'Blood',
                 name: 'Anima-Touched Blood Magic Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -95,7 +95,7 @@ swlcalc.data.equipments = {
                 id: 14,
                 type: 'Chaos',
                 name: 'Anima-Touched Chaos Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -103,7 +103,7 @@ swlcalc.data.equipments = {
                 id: 15,
                 type: 'Elementalism',
                 name: 'Anima-Touched Elementalism Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -111,7 +111,7 @@ swlcalc.data.equipments = {
                 id: 16,
                 type: 'Shotgun',
                 name: 'Anima-Touched Shotgun',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -119,7 +119,7 @@ swlcalc.data.equipments = {
                 id: 17,
                 type: 'Pistols',
                 name: 'Anima-Touched Pistols',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -127,7 +127,7 @@ swlcalc.data.equipments = {
                 id: 18,
                 type: 'Assault Rifle',
                 name: 'Anima-Touched Assault Rifle',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -135,7 +135,7 @@ swlcalc.data.equipments = {
                 id: 19,
                 type: 'Blade',
                 name: 'Flame-Wreathed Blade',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">15%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to your target every second for <span class="bonus-val const">5</span> seconds.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">15%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to your target every second for <span class="bonus-val const">5</span> seconds.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -171,7 +171,7 @@ swlcalc.data.equipments = {
                 id: 24,
                 type: 'Elementalism',
                 name: 'Flame-Wreathed Elementalism Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">15%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to your target every second for <span class="bonus-val const">5</span> seconds.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">15%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to your target every second for <span class="bonus-val const">5</span> seconds.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -185,7 +185,7 @@ swlcalc.data.equipments = {
                 id: 26,
                 type: 'Pistols',
                 name: 'Flame-Wreathed Pistols',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">15%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to your target every second for <span class="bonus-val const">5</span> seconds.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">15%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to your target every second for <span class="bonus-val const">5</span> seconds.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -201,7 +201,7 @@ swlcalc.data.equipments = {
                 id: 28,
                 type: 'Blade',
                 name: 'Plasma-Forged Blade',
-                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -209,7 +209,7 @@ swlcalc.data.equipments = {
                 id: 29,
                 type: 'Hammer',
                 name: 'Plasma-Forged Hammer',
-                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -217,7 +217,7 @@ swlcalc.data.equipments = {
                 id: 30,
                 type: 'Fist',
                 name: 'Plasma-Forged Fist Weapon',
-                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -225,7 +225,7 @@ swlcalc.data.equipments = {
                 id: 31,
                 type: 'Blood',
                 name: 'Plasma-Forged Blood Magic Focus',
-                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -233,7 +233,7 @@ swlcalc.data.equipments = {
                 id: 32,
                 type: 'Chaos',
                 name: 'Plasma-Forged Chaos Focus',
-                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -241,7 +241,7 @@ swlcalc.data.equipments = {
                 id: 33,
                 type: 'Elementalism',
                 name: 'Plasma-Forged Elementalism Focus',
-                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -249,7 +249,7 @@ swlcalc.data.equipments = {
                 id: 34,
                 type: 'Shotgun',
                 name: 'Plasma-Forged Shotgun',
-                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -257,7 +257,7 @@ swlcalc.data.equipments = {
                 id: 35,
                 type: 'Pistols',
                 name: 'Plasma-Forged Pistols',
-                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -265,7 +265,7 @@ swlcalc.data.equipments = {
                 id: 36,
                 type: 'Assault Rifle',
                 name: 'Plasma-Forged Assault Rifle',
-                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -273,7 +273,7 @@ swlcalc.data.equipments = {
                 id: 37,
                 type: 'Blade',
                 name: 'Frost-Bound Blade',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
                 coefficients: [ 1.5 ],
                 stats: [ 'Combat Power' ],
             },
@@ -281,7 +281,7 @@ swlcalc.data.equipments = {
                 id: 38,
                 type: 'Hammer',
                 name: 'Frost-Bound Hammer',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
                 coefficients: [ 1.5 ],
                 stats: [ 'Combat Power' ],
             },
@@ -289,7 +289,7 @@ swlcalc.data.equipments = {
                 id: 39,
                 type: 'Fist',
                 name: 'Frost-Bound Fist Weapon',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
                 coefficients: [ 1.5 ],
                 stats: [ 'Combat Power' ],
             },
@@ -297,7 +297,7 @@ swlcalc.data.equipments = {
                 id: 40,
                 type: 'Blood',
                 name: 'Frost-Bound Blood Magic Focus',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
                 coefficients: [ 1.5 ],
                 stats: [ 'Combat Power' ],
             },
@@ -305,7 +305,7 @@ swlcalc.data.equipments = {
                 id: 41,
                 type: 'Chaos',
                 name: 'Frost-Bound Chaos Focus',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
                 coefficients: [ 1.5 ],
                 stats: [ 'Combat Power' ],
             },
@@ -313,7 +313,7 @@ swlcalc.data.equipments = {
                 id: 42,
                 type: 'Elementalism',
                 name: 'Frost-Bound Elementalism Focus',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
                 coefficients: [ 1.5 ],
                 stats: [ 'Combat Power' ],
             },
@@ -321,7 +321,7 @@ swlcalc.data.equipments = {
                 id: 43,
                 type: 'Shotgun',
                 name: 'Frost-Bound Shotgun',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
                 coefficients: [ 1.5 ],
                 stats: [ 'Combat Power' ],
             },
@@ -329,7 +329,7 @@ swlcalc.data.equipments = {
                 id: 44,
                 type: 'Pistols',
                 name: 'Frost-Bound Pistols',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
                 coefficients: [ 1.5 ],
                 stats: [ 'Combat Power' ],
             },
@@ -337,7 +337,7 @@ swlcalc.data.equipments = {
                 id: 45,
                 type: 'Assault Rifle',
                 name: 'Frost-Bound Assault Rifle',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
                 coefficients: [ 1.5 ],
                 stats: [ 'Combat Power' ],
             },
@@ -345,7 +345,7 @@ swlcalc.data.equipments = {
                 id: 46,
                 type: 'Blade',
                 name: 'Witch Doctor\'s Blade',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val attack">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val dps">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
                 coefficients: [ 0.15, 0.75, 0.095, 0.471 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -353,7 +353,7 @@ swlcalc.data.equipments = {
                 id: 47,
                 type: 'Hammer',
                 name: 'Witch Doctor\'s Hammer',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val attack">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val dps">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
                 coefficients: [ 0.15, 0.75, 0.095, 0.471 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -361,7 +361,7 @@ swlcalc.data.equipments = {
                 id: 48,
                 type: 'Fist',
                 name: 'Witch Doctor\'s Fist Weapon',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val attack">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val dps">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
                 coefficients: [ 0.15, 0.75, 0.095, 0.471 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -369,7 +369,7 @@ swlcalc.data.equipments = {
                 id: 49,
                 type: 'Blood',
                 name: 'Witch Doctor\'s Blood Magic Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val attack">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val dps">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
                 coefficients: [ 0.15, 0.75, 0.095, 0.471 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -377,7 +377,7 @@ swlcalc.data.equipments = {
                 id: 50,
                 type: 'Chaos',
                 name: 'Witch Doctor\'s Chaos Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val attack">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val dps">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
                 coefficients: [ 0.15, 0.75, 0.095, 0.471 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -385,7 +385,7 @@ swlcalc.data.equipments = {
                 id: 51,
                 type: 'Elementalism',
                 name: 'Witch Doctor\'s Elementalism Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val attack">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val dps">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
                 coefficients: [ 0.15, 0.75, 0.095, 0.471 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -393,7 +393,7 @@ swlcalc.data.equipments = {
                 id: 52,
                 type: 'Shotgun',
                 name: 'Witch Doctor\'s Shotgun',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val attack">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val dps">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
                 coefficients: [ 0.15, 0.75, 0.095, 0.471 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -401,7 +401,7 @@ swlcalc.data.equipments = {
                 id: 53,
                 type: 'Pistols',
                 name: 'Witch Doctor\'s Pistols',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val attack">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val dps">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
                 coefficients: [ 0.15, 0.75, 0.095, 0.471 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -409,7 +409,7 @@ swlcalc.data.equipments = {
                 id: 54,
                 type: 'Assault Rifle',
                 name: 'Witch Doctor\'s Assault Rifle',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val attack">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val attack">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val dps">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
                 coefficients: [ 0.15, 0.75, 0.095, 0.471 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power', 'Combat Power' ]
             },
@@ -417,7 +417,7 @@ swlcalc.data.equipments = {
                 id: 55,
                 type: 'Blade',
                 name: 'Shadow-Bound Blade',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 2.25 ],
                 stats: [ 'Combat Power' ]
             },
@@ -425,7 +425,7 @@ swlcalc.data.equipments = {
                 id: 56,
                 type: 'Hammer',
                 name: 'Shadow-Bound Hammer',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 2.25 ],
                 stats: [ 'Combat Power' ]
             },
@@ -433,7 +433,7 @@ swlcalc.data.equipments = {
                 id: 57,
                 type: 'Fist',
                 name: 'Shadow-Bound Fist Weapon',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 2.25 ],
                 stats: [ 'Combat Power' ]
             },
@@ -441,7 +441,7 @@ swlcalc.data.equipments = {
                 id: 58,
                 type: 'Blood',
                 name: 'Shadow-Bound Blood Magic Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 2.25 ],
                 stats: [ 'Combat Power' ]
             },
@@ -449,7 +449,7 @@ swlcalc.data.equipments = {
                 id: 59,
                 type: 'Chaos',
                 name: 'Shadow-Bound Chaos Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 2.25 ],
                 stats: [ 'Combat Power' ]
             },
@@ -457,7 +457,7 @@ swlcalc.data.equipments = {
                 id: 60,
                 type: 'Elementalism',
                 name: 'Shadow-Bound Elementalism Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 2.25 ],
                 stats: [ 'Combat Power' ]
             },
@@ -465,7 +465,7 @@ swlcalc.data.equipments = {
                 id: 61,
                 type: 'Shotgun',
                 name: 'Shadow-Bound Shotgun',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 2.25 ],
                 stats: [ 'Combat Power' ]
             },
@@ -473,7 +473,7 @@ swlcalc.data.equipments = {
                 id: 62,
                 type: 'Pistols',
                 name: 'Shadow-Bound Pistols',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 2.25 ],
                 stats: [ 'Combat Power' ]
             },
@@ -481,7 +481,7 @@ swlcalc.data.equipments = {
                 id: 63,
                 type: 'Assault Rifle',
                 name: 'Shadow-Bound Assault Rifle',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 2.25 ],
                 stats: [ 'Combat Power' ]
             },
@@ -501,7 +501,7 @@ swlcalc.data.equipments = {
                 id: 66,
                 type: 'Assault Rifle',
                 name: 'Hellfire Assault Launcher',
-                description: 'Your Assault Rifle Power Abilities will now consume any loaded grenade you have, dealing <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target and nearby enemies.',
+                description: 'Your Assault Rifle Power Abilities will now consume any loaded grenade you have, dealing <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and nearby enemies.',
                 coefficients: [ 3.0 ],
                 stats: [ 'Combat Power' ]
             },
@@ -527,7 +527,7 @@ swlcalc.data.equipments = {
                 id: 70,
                 type: 'Assault Rifle',
                 name: 'MIRV Launcher',
-                description: 'Whenever you launch a grenade, several secondary explosions go off near your target dealing <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you launch a grenade, several secondary explosions go off near your target dealing <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 1.24 ],
                 stats: [ 'Combat Power' ]
             },
@@ -579,7 +579,7 @@ swlcalc.data.equipments = {
                 id: 78,
                 type: 'Blade',
                 name: 'Shattered Hellblade',
-                description: 'You can no longer use the Spirit Blade ability to reforge an active Spirit Blade. Instead, when your Spirit Blade shatters, it deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage per Chi to nearby enemies.',
+                description: 'You can no longer use the Spirit Blade ability to reforge an active Spirit Blade. Instead, when your Spirit Blade shatters, it deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage per Chi to nearby enemies.',
                 coefficients: [ 1.78 ],
                 stats: [ 'Combat Power' ]
             },
@@ -631,7 +631,7 @@ swlcalc.data.equipments = {
                 id: 86,
                 type: 'Blood',
                 name: 'Grimoire of Foul Gods',
-                description: 'Whenever you hit with a Blood Magic Power ability while your Corruption level is higher than 90, your target is dealt an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> magical damage for every Blood Magic damage over time effect you have active on them.',
+                description: 'Whenever you hit with a Blood Magic Power ability while your Corruption level is higher than 90, your target is dealt an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> magical damage for every Blood Magic damage over time effect you have active on them.',
                 coefficients: [ 0.35 ],
                 stats: [ 'Combat Power' ],
             },
@@ -705,7 +705,7 @@ swlcalc.data.equipments = {
                 id: 98,
                 type: 'Chaos',
                 name: 'The Cause\'s Effect',
-                description: 'Whenever you deal damage divisible by 8, your Protection is increased by 850 for <span class="bonus-val const">4</span> seconds. Also, whenever you evade an attack, your next Chaos attack deals an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> magical damage.',
+                description: 'Whenever you deal damage divisible by 8, your Protection is increased by 850 for <span class="bonus-val const">4</span> seconds. Also, whenever you evade an attack, your next Chaos attack deals an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> magical damage.',
                 coefficients: [ 1.15 ],
                 stats: [ 'Combat Power' ]
             },
@@ -719,7 +719,7 @@ swlcalc.data.equipments = {
                 id: 100,
                 type: 'Elementalism',
                 name: 'Cryo-Charged Conduit',
-                description: 'Your Elemental cold abilities reduce your heat level by an additional <span class="bonus-val const">15</span> and cause any targets hit to become frostbitten for <span class="bonus-val const">6</span> seconds. Critically hitting a frostbitten enemy with an Elemental attack deals an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> magical damage.',
+                description: 'Your Elemental cold abilities reduce your heat level by an additional <span class="bonus-val const">15</span> and cause any targets hit to become frostbitten for <span class="bonus-val const">6</span> seconds. Critically hitting a frostbitten enemy with an Elemental attack deals an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> magical damage.',
                 coefficients: [ 3.45 ],
                 stats: [ 'Combat Power' ]
             },
@@ -757,7 +757,7 @@ swlcalc.data.equipments = {
                 id: 106,
                 type: 'Elementalism',
                 name: 'Totemic Hell Lord',
-                description: 'Your Elemental fire abilities apply a damage over time effect which deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> damage every second for <span class="bonus-val const">10</span> seconds, during which time it can stack up to <span class="bonus-val const">10</span> times. Also, your Elemental lightning abilities deal <span class="bonus-val const">13%</span> more critical damage and your Elemental cold abilities deal <span class="bonus-val const">32%</span> more damage and reduce your heat level by an additional 15.',
+                description: 'Your Elemental fire abilities apply a damage over time effect which deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second for <span class="bonus-val const">10</span> seconds, during which time it can stack up to <span class="bonus-val const">10</span> times. Also, your Elemental lightning abilities deal <span class="bonus-val const">13%</span> more critical damage and your Elemental cold abilities deal <span class="bonus-val const">32%</span> more damage and reduce your heat level by an additional 15.',
                 coefficients: [ 0.03 ],
                 stats: [ 'Combat Power' ]
             },
@@ -765,7 +765,7 @@ swlcalc.data.equipments = {
                 id: 107,
                 type: 'Elementalism',
                 name: 'Unstable Electron Core',
-                description: 'When your heat level is above 50, your Elemental fire and lightning abilities deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> magical damage to the target and nearby enemies.',
+                description: 'When your heat level is above 50, your Elemental fire and lightning abilities deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> magical damage to the target and nearby enemies.',
                 coefficients: [ 0.17 ],
                 stats: [ 'Combat Power' ]
             },
@@ -773,7 +773,7 @@ swlcalc.data.equipments = {
                 id: 108,
                 type: 'Elementalism',
                 name: 'Voltaic Shunt',
-                description: 'After naturally dissipating heat for <span class="bonus-val const">10</span> seconds, your next Elemental attack will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> magical damage.',
+                description: 'After naturally dissipating heat for <span class="bonus-val const">10</span> seconds, your next Elemental attack will deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> magical damage.',
                 coefficients: [ 3.0 ],
                 stats: [ 'Combat Power' ]
             },
@@ -793,7 +793,7 @@ swlcalc.data.equipments = {
                 id: 111,
                 type: 'Fist',
                 name: 'Infernal Manglers',
-                description: 'Whenever your Fury increases, the amount gained is tallied. Once you have gained 100 Fury, your next Fist Weapon attack within <span class="bonus-val const">5</span> seconds will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> damage.',
+                description: 'Whenever your Fury increases, the amount gained is tallied. Once you have gained 100 Fury, your next Fist Weapon attack within <span class="bonus-val const">5</span> seconds will deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage.',
                 coefficients: [ 6.0 ],
                 stats: [ 'Combat Power' ]
             },
@@ -831,7 +831,7 @@ swlcalc.data.equipments = {
                 id: 117,
                 type: 'Fist',
                 name: 'Threshing Claws',
-                description: 'While your "Frenzied Wrath" effect is active, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to nearby enemies every second.',
+                description: 'While your "Frenzied Wrath" effect is active, you deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to nearby enemies every second.',
                 coefficients: [ 0.69 ],
                 stats: [ 'Combat Power' ]
             },
@@ -845,7 +845,7 @@ swlcalc.data.equipments = {
                 id: 119,
                 type: 'Hammer',
                 name: 'Fuming Despoiler',
-                description: 'Your Rage consuming abilities deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target and nearby enemies.',
+                description: 'Your Rage consuming abilities deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and nearby enemies.',
                 coefficients: [ 0.825 ],
                 stats: [ 'Combat Power' ]
             },
@@ -931,7 +931,7 @@ swlcalc.data.equipments = {
                 id: 133,
                 type: 'Pistols',
                 name: 'Twin-Linked Blasters',
-                description: 'Whenever your damage bonus from a matching set of chambers expires, if you land on another matching set within <span class="bonus-val const">3</span> seconds your next Pistol attack will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to the target and nearby enemies.',
+                description: 'Whenever your damage bonus from a matching set of chambers expires, if you land on another matching set within <span class="bonus-val const">3</span> seconds your next Pistol attack will deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and nearby enemies.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -945,7 +945,7 @@ swlcalc.data.equipments = {
                 id: 135,
                 type: 'Pistols',
                 name: 'Soviet CB-3 Annihilators',
-                description: 'Whenever you critically hit with a Pistol ability while you have a matching set of chambers you deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you critically hit with a Pistol ability while you have a matching set of chambers you deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.86 ],
                 stats: [ 'Combat Power' ]
             },
@@ -953,7 +953,7 @@ swlcalc.data.equipments = {
                 id: 136,
                 type: 'Shotgun',
                 name: 'Bolstering Blaster',
-                description: 'Whenever an attack glances you, your next <span class="bonus-val const">3</span> Shotgun attacks will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever an attack glances you, your next <span class="bonus-val const">3</span> Shotgun attacks will deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.24 ],
                 stats: [ 'Combat Power' ]
             },
@@ -961,7 +961,7 @@ swlcalc.data.equipments = {
                 id: 137,
                 type: 'Shotgun',
                 name: 'Double Barrel',
-                description: 'Your Shotgun Power Abilities consume an additional Shell to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Your Shotgun Power Abilities consume an additional Shell to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.475 ],
                 stats: [ 'Combat Power' ]
             },
@@ -999,7 +999,7 @@ swlcalc.data.equipments = {
                 id: 143,
                 type: 'Shotgun',
                 name: 'SPES-C221',
-                description: 'Whenever you spend a Shell, you have a <span class="bonus-val const">20%</span> chance to cause your next Shotgun attack to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you spend a Shell, you have a <span class="bonus-val const">20%</span> chance to cause your next Shotgun attack to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 1.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1007,7 +1007,7 @@ swlcalc.data.equipments = {
                 id: 144,
                 type: 'Shotgun',
                 name: 'The Redeemer',
-                description: 'Whenever you reload Anima-Infused Shells or Dragon\'s Breath Shells, you and your group members gain a beneficial effect for <span class="bonus-val const">3</span> seconds which causes attacks to restore <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> health. The amount healed scales with each individual group member\'s Healing Power.</br>Whenever you reload Armor-Piercing or Depleted Uranium Shells, you and your group members gain a beneficial effect for <span class="bonus-val const">3</span> seconds which causes attacks to deal an additional <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage. The damage dealt scales with each individual group member\'s Combat Power.',
+                description: 'Whenever you reload Anima-Infused Shells or Dragon\'s Breath Shells, you and your group members gain a beneficial effect for <span class="bonus-val const">3</span> seconds which causes attacks to restore <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> health. The amount healed scales with each individual group member\'s Healing Power.</br>Whenever you reload Armor-Piercing or Depleted Uranium Shells, you and your group members gain a beneficial effect for <span class="bonus-val const">3</span> seconds which causes attacks to deal an additional <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage. The damage dealt scales with each individual group member\'s Combat Power.',
                 coefficients: [ 0.5, 0.5 ],
                 stats: [ 'Healing Power', 'Combat Power' ]
             },
@@ -1017,7 +1017,7 @@ swlcalc.data.equipments = {
                 id: 145,
                 type: 'Blade',
                 name: 'Third Age Brand',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1025,7 +1025,7 @@ swlcalc.data.equipments = {
                 id: 146,
                 type: 'Hammer',
                 name: 'Third Age Maul',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1033,7 +1033,7 @@ swlcalc.data.equipments = {
                 id: 147,
                 type: 'Fist',
                 name: 'Third Age Eviscerators',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1041,7 +1041,7 @@ swlcalc.data.equipments = {
                 id: 148,
                 type: 'Blood',
                 name: 'Third Age Blood Magic Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1049,7 +1049,7 @@ swlcalc.data.equipments = {
                 id: 149,
                 type: 'Chaos',
                 name: 'Third Age Chancer',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1057,7 +1057,7 @@ swlcalc.data.equipments = {
                 id: 150,
                 type: 'Elementalism',
                 name: 'Third Age Channeler',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1065,7 +1065,7 @@ swlcalc.data.equipments = {
                 id: 151,
                 type: 'Shotgun',
                 name: 'Third Age Persuader',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1073,7 +1073,7 @@ swlcalc.data.equipments = {
                 id: 152,
                 type: 'Pistols',
                 name: 'Third Age Burners',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1081,7 +1081,7 @@ swlcalc.data.equipments = {
                 id: 153,
                 type: 'Assault Rifle',
                 name: 'Third Age Equalizer',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1160,21 +1160,21 @@ swlcalc.data.equipments = {
             {
                 id: 4,
                 name: 'Ashes of Crushed Cities',
-                description: 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.375 ],
                 stats: [ 'Combat Power' ]
             },
             {
                 id: 5,
                 name: 'Revenant Ashes',
-                description: 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to that enemy and other nearby enemies.',
+                description: 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to that enemy and other nearby enemies.',
                 coefficients: [ 0.1875 ],
                 stats: [ 'Combat Power' ]
             },
             {
                 id: 6,
                 name: 'Ashes of Elder Things',
-                description: 'Whenever you hit the same enemy <span class="bonus-val const">6</span> times in succession, your next damaging Power Ability deals an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit the same enemy <span class="bonus-val const">6</span> times in succession, your next damaging Power Ability deals an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 1.05 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1212,7 +1212,7 @@ swlcalc.data.equipments = {
             {
                 id: 12,
                 name: 'Cosmic Pigment',
-                description: 'Whenever you are hit <span class="bonus-val const">5</span> times in succession, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.',
+                description: 'Whenever you are hit <span class="bonus-val const">5</span> times in succession, you deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.',
                 coefficients: [ 0.40 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1229,7 +1229,7 @@ swlcalc.data.equipments = {
             {
                 id: 15,
                 name: 'Ashes of Fate\'s Chosen',
-                description: 'Whenever you hit same enemy 3 times in succession, summon FATE to attack target for <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. This effect has a <span class="bonus-val const">20</span> second cooldown.',
+                description: 'Whenever you hit same enemy 3 times in succession, summon FATE to attack target for <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. This effect has a <span class="bonus-val const">20</span> second cooldown.',
                 coefficients: [ 6.8 ],
                 stats: [ 'Combat Power' ]
             }
@@ -1248,7 +1248,7 @@ swlcalc.data.equipments = {
             {
                 id: 3,
                 name: 'Skadi\'s Ring',
-                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, you deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.625 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1279,7 +1279,7 @@ swlcalc.data.equipments = {
             {
                 id: 8,
                 name: 'Ring of the Hollow Tree',
-                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, summon a Custodian to attack the target for <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. This effect has a <span class="bonus-val const">20</span> second cooldown.',
+                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, summon a Custodian to attack the target for <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. This effect has a <span class="bonus-val const">20</span> second cooldown.',
                 coefficients: [ 6.25 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1308,21 +1308,21 @@ swlcalc.data.equipments = {
             {
                 id: 4,
                 name: 'Choker of Shed Blood',
-                description: 'Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
             {
                 id: 5,
                 name: 'Egon Pendant',
-                description: 'Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you apply a damage over time effect that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage over <span class="bonus-val const">5</span> seconds. Your damage is increased by <span class="bonus-val const">4.5%</span> for each enemy affected by this effect.',
+                description: 'Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you apply a damage over time effect that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage over <span class="bonus-val const">5</span> seconds. Your damage is increased by <span class="bonus-val const">4.5%</span> for each enemy affected by this effect.',
                 coefficients: [ 0.15 ],
                 stats: [ 'Combat Power' ]
             },
             {
                 id: 6,
                 name: 'Spectral Essence',
-                description: 'This talisman gains more Attack Rating when leveling up.<br/>Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">33%</span> chance to summon a Spectre who will cast Unravel Soul. <span class="bonus-val const">10</span> second cooldown.<br/>Unravel Soul: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> magical damage.',
+                description: 'This talisman gains more Attack Rating when leveling up.<br/>Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">33%</span> chance to summon a Spectre who will cast Unravel Soul. <span class="bonus-val const">10</span> second cooldown.<br/>Unravel Soul: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> magical damage.',
                 coefficients: [ 2.2 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1377,7 +1377,7 @@ swlcalc.data.equipments = {
             {
                 id: 3,
                 name: 'Iron-Sulfur Bracelet',
-                description: 'Whenever you hit an enemy who is Exposed or Debilitated, you have a <span class="bonus-val const">25%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you hit an enemy who is Exposed or Debilitated, you have a <span class="bonus-val const">25%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1394,7 +1394,7 @@ swlcalc.data.equipments = {
             {
                 id: 6,
                 name: 'Bracer of Forgotten Horrors',
-                description: 'Whenever an Exposed or Debilitated enemy attacks you, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage back to them. This damage generates a large amount of hate.',
+                description: 'Whenever an Exposed or Debilitated enemy attacks you, you deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage back to them. This damage generates a large amount of hate.',
                 coefficients: [ 0.04 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1428,7 +1428,7 @@ swlcalc.data.equipments = {
             {
                 id: 3,
                 name: 'Gambler\'s Soul',
-                description: 'Whenever you critically hit, you additionally deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you critically hit, you additionally deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.25 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1452,7 +1452,7 @@ swlcalc.data.equipments = {
             {
                 id: 7,
                 name: 'Golden Coin',
-                description: 'Whenever you evade an attack or an attack glances you, you deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage back to the attacker. This damage generate a large amount of hate.',
+                description: 'Whenever you evade an attack or an attack glances you, you deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage back to the attacker. This damage generate a large amount of hate.',
                 coefficients: [ 0.2875 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1464,7 +1464,7 @@ swlcalc.data.equipments = {
             {
                 id: 9,
                 name: 'Anima-Infused Keepsake',
-                description: 'Whenever you critically hit you have <span class="bonus-val const">33%</span> chance to summon Gatekeeper to attack the target for <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage. This effect has <span class="bonus-val const">20</span> sec cooldown.',
+                description: 'Whenever you critically hit you have <span class="bonus-val const">33%</span> chance to summon Gatekeeper to attack the target for <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. This effect has <span class="bonus-val const">20</span> sec cooldown.',
                 coefficients: [ 6.5 ],
                 stats: [ 'Combat Power' ]
             }
@@ -1478,7 +1478,7 @@ swlcalc.data.equipments = {
             {
                 id: 2,
                 name: 'High Roller\'s Chain',
-                description: 'Whenever you roll a Double Blue or better set of matching chambers, your next Pistol attack deals an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you roll a Double Blue or better set of matching chambers, your next Pistol attack deals an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.9 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1520,7 +1520,7 @@ swlcalc.data.equipments = {
             {
                 id: 10,
                 name: 'Master\'s Chain',
-                description: 'Whenever you activate Spirit Blade, your next Blade attack will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> - <span id="%id-equipment-bonus2" class="bonus-val attack">%d</span> physical damage. The amount of damage dealt scales based on the amount of Chi you had when activating Spirit Blade.',
+                description: 'Whenever you activate Spirit Blade, your next Blade attack will deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> - <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage. The amount of damage dealt scales based on the amount of Chi you had when activating Spirit Blade.',
                 coefficients: [ 0.25, 1.25 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1532,14 +1532,14 @@ swlcalc.data.equipments = {
             {
                 id: 12,
                 name: 'Primal Rope Belt',
-                description: 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id="%id-equipment-bonus2" class="bonus-val heal">%d</span> health.',
+                description: 'Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id="%id-equipment-bonus2" class="bonus-val heal">%d</span> health.',
                 coefficients: [ 1.125, 1.125 ],
                 stats: [ 'Combat Power', 'Healing Power' ]
             },
             {
                 id: 13,
                 name: 'Pentacle Wrap',
-                description: 'Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class="bonus-val const">10%</span>. In addition, once you have lost <span class="bonus-val const">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> magical damage or your next healing Blood Magic ability will restore an additional <span id="%id-equipment-bonus2" class="bonus-val heal">%d</span> health.',
+                description: 'Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class="bonus-val const">10%</span>. In addition, once you have lost <span class="bonus-val const">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> magical damage or your next healing Blood Magic ability will restore an additional <span id="%id-equipment-bonus2" class="bonus-val heal">%d</span> health.',
                 coefficients: [ 0.425, 0.425 ],
                 stats: [ 'Combat Power', 'Healing Power' ]
             },
@@ -1551,14 +1551,14 @@ swlcalc.data.equipments = {
             {
                 id: 15,
                 name: 'Thermotic Cinch',
-                description: 'Whenever you overheat, your next Elemental cold ability will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> magical damage.',
+                description: 'Whenever you overheat, your next Elemental cold ability will deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> magical damage.',
                 coefficients: [ 1.25 ],
                 stats: [ 'Combat Power' ]
             },
             {
                 id: 16,
                 name: 'Tactical Belt',
-                description: 'Whenever you reload your Shotgun, your next Shotgun attack will deal an additional <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you reload your Shotgun, your next Shotgun attack will deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.875 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1570,7 +1570,7 @@ swlcalc.data.equipments = {
             {
                 id: 18,
                 name: 'Generalist\'s Belt',
-                description: '"Whenever you activate a Power ability, there is a <span class="bonus-val const">33%</span> chance that you will deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage or the target is healed for and additional <span id="%id-equipment-bonus2" class="bonus-val heal">%d</span>. Additional damage occurs when using damaging power abilities and additional healing occurs when using healing power abilities.',
+                description: '"Whenever you activate a Power ability, there is a <span class="bonus-val const">33%</span> chance that you will deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage or the target is healed for and additional <span id="%id-equipment-bonus2" class="bonus-val heal">%d</span>. Additional damage occurs when using damaging power abilities and additional healing occurs when using healing power abilities.',
                 coefficients: [ 0.375, 0.375 ],
                 stats: [ 'Combat Power', 'Healing Power' ]
             },
@@ -1589,7 +1589,7 @@ swlcalc.data.equipments = {
             {
                 id: 2,
                 name: 'Sigil of Ambition',
-                description: 'Whenever you or any of your group members defeat an enemy, your next attack will deal <span id="%id-equipment-bonus1" class="bonus-val attack">%d</span> physical damage.',
+                description: 'Whenever you or any of your group members defeat an enemy, your next attack will deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.833 ],
                 stats: [ 'Combat Power' ]
             },

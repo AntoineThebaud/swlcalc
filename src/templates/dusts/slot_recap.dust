@@ -55,7 +55,7 @@
         <hr>
         <div id="{slot.id}-recap-equipment-stat-section">
             <p>
-                <span id="{slot.id}-recap-equipment-stat-raw-value" class="stat-value"></span>
+                <span id="{slot.id}-recap-equipment-stat-raw-value" class="stat-value gear"></span>
                 <span> </span>
                 {?slot.is_weapon}
                 <span>Weapon Power</span>
@@ -67,7 +67,7 @@
             <div class="stat-transformed">
                 <p>With current Anima Allocation, you gain:</p>
                 <p>
-                    <span id="{slot.id}-recap-equipment-stat-transformed-value" class="stat-value"></span>
+                    <span id="{slot.id}-recap-equipment-stat-transformed-value" class="stat-value gear"></span>
                     <span> </span>
                     <span id="{slot.id}-recap-equipment-stat-transformed-text"></span>
                 <p>
@@ -104,7 +104,7 @@
                 <span>)</span>
             </p>
             <p>
-                <span id="{slot.id}-recap-glyph-stat-rating" class="stat-value"></span>
+                <span id="{slot.id}-recap-glyph-stat-rating" class="stat-value gear"></span>
                 <span> </span>
                 <span id="{slot.id}-recap-glyph-stat-text"></span>
             </p>

@@ -58,10 +58,10 @@
                         <!-- Anima allocation [ 100% DPS |V] -->
                         <li class="navbar-select anima-allocation-li">
                             <p class="anima-allocation-label">Anima allocation :</p>
-                            <select id="select-anima-allocation" class="anima-allocation-select color-dps">
-                                <option value="dps" class="color-dps" selected="true">100% Damage</option>
-                                <option value="heal" class="color-heal">100% Healing</option>
-                                <option value="tank" class="color-tank">100% Survivability</option>
+                            <select id="select-anima-allocation" class="anima-allocation-select dps">
+                                <option value="dps" class="dps" selected="true">100% Damage</option>
+                                <option value="heal" class="heal">100% Healing</option>
+                                <option value="tank" class="tank">100% Survivability</option>
                             </select>
                         </li>
                     </ul>

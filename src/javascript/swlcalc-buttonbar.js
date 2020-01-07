@@ -65,7 +65,7 @@ swlcalc.buttonBar = function() {
      * Cascade anima allocation change on whole gear
      */
     var handleAnimaAllocationChange = function(event) {
-        el.select_anima_allocation.attr('class', 'anima-allocation-select color-' + this.value); //TODO/REFACTOR : to abstract access ?
+        el.select_anima_allocation.attr('class', 'anima-allocation-select ' + this.value); //TODO/REFACTOR : to abstract access ?
 
         for (var id in swlcalc.gear.slots) {
             swlcalc.gear.slots[id].updateEquipmentStatValueTransformed();

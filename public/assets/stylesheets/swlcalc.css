@@ -115,13 +115,13 @@ div.container {
     color: #E62C38;
 }
 /******************************************************/
-.color-dps {
+.dps {
     color: #E62C38;
 }
-.color-heal {
+.heal {
     color: #05B114;
 }
-.color-tank {
+.tank {
     color: #039BD9;
 }
 /******************************************************/
@@ -328,6 +328,8 @@ td.stat-name {
 }
 .stat-value {
     font-weight: bold;
+}
+.stat-value.gear {
     color: #E3A40E;
 }
 td.stat-inSlot {
@@ -339,12 +341,6 @@ td.stat-inSummary {
 /******************************************************/
 .bonus-val {
     font-weight: bold;
-}
-.bonus-val.attack {
-    color: #EB3D3D;;
-}
-.bonus-val.heal {
-    color: #0CAC2C;
 }
 .bonus-val.const {
     color: #E97F0E;

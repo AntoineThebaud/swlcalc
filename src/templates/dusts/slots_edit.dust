@@ -27,7 +27,7 @@
                             {>rarityselect itemtype="equipment"/}
                         </td>
                         <td class="stat-inSlot">
-                            <span id="{id}-edit-equipment-stat-value" class="stat-value">0</span>
+                            <span id="{id}-edit-equipment-stat-value" class="stat-value gear">0</span>
                             <span> </span>
                             {?is_weapon}
                             <span>Weapon Power</span>
@@ -119,7 +119,7 @@
                             {>qualityselect itemtype="glyph" pip1="Crude" pip2="Simple" pip3="Intricate"/}
                         </td>
                         <td class="stat-inSlot">
-                          <span id="{id}-edit-glyph-stat-rating" class="stat-value">0</span>
+                          <span id="{id}-edit-glyph-stat-rating" class="stat-value gear">0</span>
                           <span> </span>
                           <span id="{id}-edit-glyph-stat-text"></span>
                         </td>
