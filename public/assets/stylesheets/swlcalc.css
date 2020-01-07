@@ -170,15 +170,26 @@ div[id$="-edit-div"] .table-slots td {
 }
 div[id="summary"] {
     position:fixed;
+    width: 175px;
 }
 div[id="summary"] .table-stats td {
     padding: 1px;
+    border-top: none;
+}
+div[id="summary"] .table-stats tr.separator {
+    border-bottom: 1px solid #ddd;
 }
 div[id="summary"] .table-stats th {
     padding-top: 5px;
     padding-bottom: 3px;
     padding-right: 5px;
     padding-left: 0px;
+    background-color: #F5F5F5;
+    font-size: 13px;
+    padding-left: 8px;
+}
+div[id="summary"] h4 {
+    font-weight: bold
 }
 #table-primary label {
    margin: 10px 0px 10px 0px;
@@ -361,10 +372,6 @@ td.stat-inSummary {
 .slot h4 {
     padding: 0px;
     display: inline;
-    font-weight: bold
-}
-
-div[id="summary"] h4 {
     font-weight: bold
 }
 /******************************************************/
