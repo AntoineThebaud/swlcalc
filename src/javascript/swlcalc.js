@@ -82,6 +82,7 @@ swlcalc = function() {
         swlcalc.buttonBar.init();
         swlcalc.summary.init();
         swlcalc.export.init();
+        swlcalc.themeSwitch.init();
     };
 
     /**

@@ -24,6 +24,11 @@
     --color-attribute: #E3A40E;
     --color-const: #E97F0E;
 }
+html[theme='classic'] {
+    /* keep default colors */
+}
+html[theme='sw'] {
+    --color-bg: #d8dde4; /* TODO : temporary color for first version of theme switch */
 }
 /******************************************************/
 body {
