@@ -1,7 +1,88 @@
+:root {
+/*  --color-illuminati: #435682;
+    --color-templar: #7E2D2F;
+    --color-dragon: #436329;*/
+
+    --color-lightgrey: #A7A7A7;
+    --color-darkgrey: #3F3F3F;
+
+    --color-standard: #05B114;
+    --color-superior: #039BD9;
+    --color-epic: #AE58FF;
+    --color-mythic: #E2A002;
+    --color-legendary: #E62C38;
+
+    --color-dps: #E62C38;
+    --color-heal: #05B114;
+    --color-tank: #039BD9;
+
+    --color-attribute: #E3A40E;
+    --color-const: #E97F0E;
+}
+html[theme='classic'] {
+    --color-mediumgrey: #717171;
+
+    --body-bg-img: unset;
+    --body-bg-color: white;
+    --container-bg-color: unset;
+
+    --slot-text-color: #333;
+    --slot-bg: #F5F5F5;
+    --slot-border: 2px solid #0000;
+    --slot-hr-color : var(--color-border);
+
+    --color-border: #DDD;
+    --img-filter: invert(0%);
+    --swlcalc-logo: url("../images/logos/swlcalc.png");
+    --bar-bg: #f8f8f8;
+    --summary-category-bg: var(--slot-bg);
+    --edit-border: none;
+    --edit-bg: var(--slot-bg);
+    --active-bg: #878787;
+    --active-text-color: #FFF;
+    --edit-select-bg: unset;
+    --aallocation-bg: white;
+    --aallocation-text-color: unset;
+    --not-functional: var(--color-lightgrey);
+}
+html[theme='sw'] {
+    --color-mediumgrey: #A1A1A1;
+
+    --body-bg-img: url("../images/sw_bg.png");
+    --body-bg-color: black;
+    --container-bg-color: rgba(30, 30, 30, 0.9);
+
+    --slot-text-color: #EEE;
+    --slot-bg: linear-gradient(to bottom, rgba(35,35,35,0.75), rgba(65,65,65,0.75));
+    --slot-border: 2px solid #EEE;
+    --slot-hr-color : rgba(255, 255, 255, 0.1);
+
+    --color-border: #939393;
+    --img-filter: invert(100%);
+    --swlcalc-logo: url("../images/logos/swlcalc_bright.png");
+    --bar-bg: linear-gradient(to top, rgb(20, 20, 20), rgb(65, 65, 65));
+    --summary-category-bg: none;
+    --edit-border : var(--slot-border);
+    --edit-bg : linear-gradient(to bottom, rgb(30, 30, 30), rgb(55, 55, 55));
+    --active-bg: #FFF;
+    --active-text-color: #333;
+    --edit-select-bg: #333;
+    --aallocation-bg: #111;
+    --aallocation-text-color: var(--slot-text-color);
+    --not-functional: var(--color-darkgrey);
+}
 /******************************************************/
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-right: 0px !important;
+    background-image: var(--body-bg-img);
+    background-color: var(--body-bg-color);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+nav {
+    padding-right: 0px !important;
 }
 select {
     font-size: 12px;
@@ -16,12 +97,19 @@ option:disabled {
 div.container {
     width: 1220px;
 }
+.section-gear {
+    background-color: var(--container-bg-color);
+    color: var(--slot-text-color);
+}
+.modal-open {
+    overflow-y: scroll;
+}
 /******************************************************/
 .masthead {
     margin-top: 10px;
 }
-.not-functionnal {
-    color: lightgray !important;
+.not-functional {
+    color: var(--not-functional) !important;
 }
 .fix-link {
     cursor: pointer;
@@ -43,6 +131,7 @@ div.container {
     width: 30px;
     margin-top: 10px;
     margin-bottom: 8px;
+    filter: var(--img-filter);
 }
 .navbar-icon-img.swl {
     margin-top: 0;
@@ -61,6 +150,10 @@ div.container {
     margin-top: 8px;
     margin-bottom: 8px;
 }
+.navbar-inverse {
+    background: var(--bar-bg);
+    border: none;
+}
 .logo-div {
     padding-top: 17px;
 }
@@ -72,73 +165,68 @@ div.container {
 }
 .logo-swl {
     width: 180px;
-    margin-top: 4px;
+    filter: var(--img-filter);
 }
 .logo-dg {
     width: 34px;
     margin-bottom: 5px;
 }
-/******************************************************/
-.illuminati {
-    color: #435682;
-}
-.templar {
-    color: #7E2D2F;
-}
-.dragon {
-    color: #436329;
+.logo-swlcalc {
+    background-image: var(--swlcalc-logo);
+    width: 176px;
+    background-size: 100%;
 }
 /******************************************************/
 .lightgrey {
-    color: #A7A7A7;
+    color: var(--color-lightgrey);
 }
 .mediumgrey {
-    color: #717171;
+    color: var(--color-mediumgrey);
 }
 .darkgrey {
-    color: #3F3F3F;
+    color: var(--color-darkgrey);
 }
 /******************************************************/
 .color-standard {
-    color: #05B114;
+    color: var(--color-standard) !important;
 }
 .color-superior {
-    color: #039BD9;
+    color: var(--color-superior) !important;
 }
 .color-epic {
-    color: #AE58FF;
+    color: var(--color-epic) !important;
 }
 .color-mythic {
-    color: #E2A002;
+    color: var(--color-mythic) !important;
 }
 .color-legendary {
-    color: #E62C38;
+    color: var(--color-legendary) !important;
 }
 /******************************************************/
 .dps {
-    color: #E62C38;
+    color: var(--color-dps) !important;
 }
 .heal {
-    color: #05B114;
+    color: var(--color-heal) !important;
 }
 .tank {
-    color: #039BD9;
+    color: var(--color-tank) !important;
 }
 /******************************************************/
 .border-standard {
-    border-color: #05B114 !important;
+    border-color: var(--color-standard) !important;
 }
 .border-superior {
-    border-color: #039BD9 !important;
+    border-color: var(--color-superior) !important;
 }
 .border-epic {
-    border-color: #AE58FF !important;
+    border-color: var(--color-epic) !important;
 }
 .border-mythic {
-    border-color: #E2A002 !important;
+    border-color: var(--color-mythic) !important;
 }
 .border-legendary {
-    border-color: #E62C38 !important;
+    border-color: var(--color-legendary) !important;
 }
 /******************************************************/
 .btn-group.setter {
@@ -156,10 +244,12 @@ div.container {
     vertical-align: middle;
 }
 .table-slots {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--color-border);
 }
 div[id$="-edit-div"] select {
     border-radius: 4px;
+    color: var(--slot-text-color);
+    background-color: var(--edit-select-bg);
 }
 div[id$="-edit-div"] .table-slots td {
     border: none;
@@ -170,23 +260,27 @@ div[id$="-edit-div"] .table-slots td {
 }
 div[id="summary"] {
     position:fixed;
-    width: 175px;
+    margin-left: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 200px;
+    background-color: var(--container-bg-color);
+    color: var(--slot-text-color);
 }
 div[id="summary"] .table-stats td {
     padding: 1px;
     border-top: none;
 }
 div[id="summary"] .table-stats tr.separator {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--color-border);
 }
 div[id="summary"] .table-stats th {
-    padding-top: 5px;
-    padding-bottom: 3px;
-    padding-right: 5px;
-    padding-left: 0px;
-    background-color: #F5F5F5;
+    padding-top: 3px;
+    padding-bottom: 0;
+    padding-left: 0;
+    background: var(--summary-category-bg);
     font-size: 13px;
-    padding-left: 8px;
+    border-bottom: 2px solid var(--color-border);
 }
 div[id="summary"] h4 {
     font-weight: bold
@@ -341,7 +435,7 @@ td.stat-name {
     font-weight: bold;
 }
 .stat-value.gear {
-    color: #E3A40E;
+    color: var(--color-attribute);
 }
 td.stat-inSlot {
     text-align: center;
@@ -354,7 +448,7 @@ td.stat-inSummary {
     font-weight: bold;
 }
 .bonus-val.const {
-    color: #E97F0E;
+    color: var(--color-const);
 }
 /******************************************************/
 .modal-dialog {
@@ -363,8 +457,9 @@ td.stat-inSummary {
     min-width: 700px;
 }
 .modal-body {
-    background-color: #F5F5F5;
+    background: var(--edit-bg);
     border-radius: 15px;
+    border: var(--edit-border);
 }
 .slot-name {
     font-weight: normal;
@@ -403,6 +498,8 @@ td.ilvl {
 }
 .anima-allocation-li {
     background-color: white;
+    background: var(--aallocation-bg);
+    color: var(--aallocation-text-color);
 }
 .anima-allocation-label {
     font-size: 14px;
@@ -414,8 +511,8 @@ td.ilvl {
 .anima-allocation-select {
     font-size: 14px;
     width: auto;
-    /* background-color: #F5F5F5; */
     border: 0px;
+    background: var(--aallocation-bg);
 }
 /******************************************************/
 /* slot > recap */
@@ -423,14 +520,14 @@ td.ilvl {
 div[id$="-recap-div"] {
     width: 275px;
     min-height: 300px;
-    background-color: #F5F5F5;
     display: inline-block;
     margin-top: 15px;
     margin-bottom: 15px;
-    margin-right: 15px;
-    margin-left: 15px;
     padding: 10px;
     border-radius: 10px;
+
+    background: var(--slot-bg);
+    border: var(--slot-border);
 }
 div[id$="-recap-div"] p {
     font-size: 11px;
@@ -447,7 +544,7 @@ div[id$="-recap-div"] h6 {
 div[id$="-recap-div"] hr {
     margin-top: 4px;
     margin-bottom: 4px;
-    border-top: 2px solid #ddd;
+    border-top: 2px solid var(--slot-hr-color);
 }
 /*----------------------------------------------------*/
 td[id$="-recap-equipment-title-section"] {
@@ -466,6 +563,7 @@ button[id$="-editbtn"] {
 }
 button[id$="-editbtn"] img {
     width: 25px;
+    filter: var(--img-filter);
 }
 /*----------------------------------------------------*/
 div[id$="-recap-div"] .empty-slot {
@@ -484,14 +582,13 @@ td[id$="-recap-equipment-empty"] {
 }
 /*----------------------------------------------------*/
 .weapon-active-p {
-    text-align: center;
-    margin-right: 15px;
-    margin-left: 15px;
     width: 100%;
-    background-color: #878787;
-    color: white;
-    border-radius: 0px 0px 10px 10px;
     font-size: 14px;
+    text-align: center;
+    color: var(--active-text-color);
+    background-color: var(--active-bg);
+    border-radius: 0px 0px 10px 10px;
+    margin-bottom: 20px;
 }
 .weapon-active-div {
     border-radius: 10px 10px 0px 0px !important;
@@ -507,4 +604,12 @@ div[id$="weapon2-recap-div"]{
 }
 td[id$="-recap-equipment-img-section"] {
     height: 60px;
+}
+.footer p {
+    margin-top: 25px;
+    margin-bottom: 0;
+    background: var(--bar-bg);
+    color: var(--color-mediumgrey);
+    padding: 10px 25px;
+    text-align: center;
 }
