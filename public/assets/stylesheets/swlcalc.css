@@ -1,12 +1,9 @@
 :root {
-    --color-border: #DDD;
-
 /*  --color-illuminati: #435682;
     --color-templar: #7E2D2F;
     --color-dragon: #436329;*/
 
     --color-lightgrey: #A7A7A7;
-    --color-mediumgrey: #717171;
     --color-darkgrey: #3F3F3F;
 
     --color-standard: #05B114;
@@ -21,6 +18,9 @@
 
     --color-attribute: #E3A40E;
     --color-const: #E97F0E;
+}
+html[theme='classic'] {
+    --color-mediumgrey: #717171;
 
     --body-bg-img: unset;
     --body-bg-color: white;
@@ -31,6 +31,7 @@
     --slot-border: 2px solid #0000;
     --slot-hr-color : var(--color-border);
 
+    --color-border: #DDD;
     --img-filter: invert(0%);
     --swlcalc-logo: url("../images/logos/swlcalc.png");
     --bar-bg: #f8f8f8;
@@ -43,12 +44,8 @@
     --aallocation-bg: white;
     --aallocation-text-color: unset;
 }
-html[theme='classic'] {
-    /* keep default colors */
-}
 html[theme='sw'] {
     --color-mediumgrey: #A1A1A1;
-    --color-border: #939393;
 
     --body-bg-img: url("../images/sw_bg.png");
     --body-bg-color: black;
@@ -59,6 +56,7 @@ html[theme='sw'] {
     --slot-border: 2px solid #EEE;
     --slot-hr-color : rgba(255, 255, 255, 0.1);
 
+    --color-border: #939393;
     --img-filter: invert(100%);
     --swlcalc-logo: url("../images/logos/swlcalc_bright.png");
     --bar-bg: linear-gradient(to top, rgb(20, 20, 20), rgb(65, 65, 65));
