@@ -156,7 +156,7 @@ swlcalc.summary = function() {
             'glance-chance': 0,
             'evade-rating': 753,              // amount brought by passives skills
             'evade-chance': 0,
-            //TODO/FEATURE : protection stats are not functionnal yet
+            //TODO/FEATURE : protection stats are not functional yet
             // 'physical-protection': 2259,   // amount brought by passives skills
             // 'magical-protection': 2259     // amount brought by passives skills
         };
@@ -180,7 +180,7 @@ swlcalc.summary = function() {
         sums['critical-power'] = sums['critical-power'].toFixed(0);
         sums['critical-power-percentage'] = sums['critical-power-percentage'].toFixed(1);
         sums['evade-chance'] = sums['evade-chance'].toFixed(1);
-        //TODO/FEATURE : prot stats are not functionnal yet
+        //TODO/FEATURE : prot stats are not functional yet
         // sums['magical-protection'] = parseInt(sums['magical-protection'].toFixed(0), 10);
         // sums['physical-protection'] = parseInt(sums['physical-protection'].toFixed(0), 10);
         return sums;

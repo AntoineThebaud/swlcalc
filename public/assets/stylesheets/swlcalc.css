@@ -43,6 +43,7 @@ html[theme='classic'] {
     --edit-select-bg: unset;
     --aallocation-bg: white;
     --aallocation-text-color: unset;
+    --not-functional: var(--color-lightgrey);
 }
 html[theme='sw'] {
     --color-mediumgrey: #A1A1A1;
@@ -68,6 +69,7 @@ html[theme='sw'] {
     --edit-select-bg: #333;
     --aallocation-bg: #111;
     --aallocation-text-color: var(--slot-text-color);
+    --not-functional: var(--color-darkgrey);
 }
 /******************************************************/
 body {
@@ -106,8 +108,8 @@ div.container {
 .masthead {
     margin-top: 10px;
 }
-.not-functionnal {
-    color: lightgray !important;
+.not-functional {
+    color: var(--not-functional) !important;
 }
 .fix-link {
     cursor: pointer;
