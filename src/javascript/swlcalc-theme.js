@@ -31,13 +31,13 @@ swlcalc.themeSwitch = function () {
        * Switch theme to the one selected.
        */
       var switchTheme = function(event) {
-          const newTheme = event.currentTarget.id.split('-')[2]; //TODO better way to retrieve this value maybe ?
+          var newTheme = event.currentTarget.id.split('-')[2]; //TODO better way to retrieve this value maybe ?
 
-          const htmlTag = $('html')[0];
+          var htmlTag = $('html')[0];
           htmlTag.setAttribute('theme', newTheme);
 
-          const newNavTheme = (newTheme == "classic" ? "navbar-default" : "navbar-inverse")
-          const navTag = $('nav')[0];
+          var newNavTheme = (newTheme == "classic" ? "navbar-default" : "navbar-inverse")
+          var navTag = $('nav')[0];
           navTag.className = navTag.className.replace(/navbar-(inverse|default)/g, newNavTheme);
       };
 
