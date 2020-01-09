@@ -18,6 +18,7 @@ swlcalc = function() {
         }
         // visual settings :
         activateToolTips();
+        window.addEventListener('resize', adjustPlacement, true)
     };
 
     /**
@@ -99,6 +100,15 @@ swlcalc = function() {
     var startSwapHandler = function(slot) {
         swlcalc.swap[slot] = new swlcalc.swap.SwapHandler(slot);
         swlcalc.swap[slot].init();
+    };
+
+    /**
+     * Adjusts placement of elements when window is resized.
+     */
+    var adjustPlacement = function(slot) {
+        // makes body top padding equal to navbar height
+        var navHeight = $("nav").height();
+        $("body").css("padding-top", navHeight + "px");
     };
 
     var oPublic = {
