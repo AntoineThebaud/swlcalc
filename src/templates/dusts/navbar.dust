@@ -2,7 +2,7 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-xs-4">
                 <ul class="nav navbar-nav">
                     <li class="navbar-item">
                         <div class="navbar-logo logo-swlcalc"/>
@@ -15,60 +15,57 @@
             </div>
 
             <!-- Button bar -->
-            <div class="col-lg-5">
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <!-- [ Set rarity v ] -->
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                Set rarity <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a id="btn-all-standard"><span class="fix-link">All to <span class="color-standard">Standard</span></span></a></li>
-                                <li><a id="btn-all-superior"><span class="fix-link">All to <span class="color-superior">Superior</span></span></a></li>
-                                <li><a id="btn-all-epic"><span class="fix-link">All to <span class="color-epic">Epic</span></span></a></li>
-                                <li><a id="btn-all-mythic" ><span class="fix-link">All to <span class="color-mythic">Mythic</span></span></a></li>
-                                <li><a id="btn-all-legendary"><span class="fix-link">All to <span class="color-legendary">Legendary</span></span></a></li>
-                            </ul>
-                        </li>
-                        <!-- [ Set quality v ] -->
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                Set quality <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a id="btn-all-1-pip"><span class="fix-link">All to 1 pip</span></a></li>
-                                <li><a id="btn-all-2-pip"><span class="fix-link">All to 2 pips</span></a></li>
-                                <li><a id="btn-all-3-pip"><span class="fix-link">All to 3 pips</span></a></li>
-                                <li><a id="btn-all-4-pip"><span class="fix-link">All to 4 pips</span></a></li>
-                            </ul>
-                        </li>
-                        <!-- [ Set level v ] -->
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                Set level <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a id="btn-all-lvl-min"><span class="fix-link">All to min</span></a></li>
-                                <li><a id="btn-all-lvl-max"><span class="fix-link">All to max</span></a></li>
-                            </ul>
-                        </li>
+            <div class="col-lg-4 col-xs-4">
+                <ul class="nav navbar-nav">
+                    <!-- [ Set rarity v ] -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Set rarity <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a id="btn-all-standard"><span class="fix-link">All to <span class="color-standard">Standard</span></span></a></li>
+                            <li><a id="btn-all-superior"><span class="fix-link">All to <span class="color-superior">Superior</span></span></a></li>
+                            <li><a id="btn-all-epic"><span class="fix-link">All to <span class="color-epic">Epic</span></span></a></li>
+                            <li><a id="btn-all-mythic" ><span class="fix-link">All to <span class="color-mythic">Mythic</span></span></a></li>
+                            <li><a id="btn-all-legendary"><span class="fix-link">All to <span class="color-legendary">Legendary</span></span></a></li>
+                        </ul>
+                    </li>
+                    <!-- [ Set quality v ] -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Set quality <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a id="btn-all-1-pip"><span class="fix-link">All to 1 pip</span></a></li>
+                            <li><a id="btn-all-2-pip"><span class="fix-link">All to 2 pips</span></a></li>
+                            <li><a id="btn-all-3-pip"><span class="fix-link">All to 3 pips</span></a></li>
+                            <li><a id="btn-all-4-pip"><span class="fix-link">All to 4 pips</span></a></li>
+                        </ul>
+                    </li>
+                    <!-- [ Set level v ] -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Set level <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a id="btn-all-lvl-min"><span class="fix-link">All to min</span></a></li>
+                            <li><a id="btn-all-lvl-max"><span class="fix-link">All to max</span></a></li>
+                        </ul>
+                    </li>
 
-                        <!-- Anima allocation [ 100% DPS |V] -->
-                        <li class="navbar-select anima-allocation-li">
-                            <p class="anima-allocation-label">Anima allocation :</p>
-                            <select id="select-anima-allocation" class="anima-allocation-select dps">
-                                <option value="dps" class="dps" selected="true">100% Damage</option>
-                                <option value="heal" class="heal">100% Healing</option>
-                                <option value="tank" class="tank">100% Survivability</option>
-                            </select>
-                        </li>
-                    </ul>
-                </div>
+                    <!-- Anima allocation [ 100% DPS |V] -->
+                    <li class="navbar-select anima-allocation-li">
+                        <p class="anima-allocation-label">Anima allocation :</p>
+                        <select id="select-anima-allocation" class="anima-allocation-select dps">
+                            <option value="dps" class="dps" selected="true">100% Damage</option>
+                            <option value="heal" class="heal">100% Healing</option>
+                            <option value="tank" class="tank">100% Survivability</option>
+                        </select>
+                    </li>
+                </ul>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-4 col-xs-4">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- [ Reset ] -->
                     <li class="navbar-item">
