@@ -18,7 +18,8 @@ swlcalc = function() {
         }
         // visual settings :
         activateToolTips();
-        window.addEventListener('resize', adjustPlacement, true)
+        adjustPlacement();
+        window.addEventListener('resize', adjustPlacement, true);
     };
 
     /**
