@@ -121,7 +121,7 @@ QUnit.test("should get and set the slot's equipment bonus value on edit view", f
 
 QUnit.test("should get and set the slot's equipment item image on edit view", function(assert) {
     //TODO/BUG : this one should finish in status ok !
-    //equal(swlcalc.gear.slots.head.edit.equipmentImgItem(), 'assets/images/icons/talisman/Ashes.png');
+    //equal(swlcalc.gear.slots.head.edit.equipmentImgItem(), 'assets/images/icons/talisman/head/Ashes.png');
     swlcalc.gear.slots.head.edit.equipmentImgItem("lorem/ipsum/dolor/sit/amet");
     assert.equal(swlcalc.gear.slots.head.edit.equipmentImgItem(), "lorem/ipsum/dolor/sit/amet");
 });

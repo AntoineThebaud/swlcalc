@@ -192,7 +192,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         if (arguments.length == 1) {
             this.el.equipmentImgItem.attr('src', arguments[0])
             // recap : hide whole section if img is None
-            if (arguments[0] == 'assets/images/icons/' + this.group + '/None.png') {
+            if (arguments[0] == 'assets/images/icons/equipment/None.png') {
                 this.el.equipmentImgSection.hide();
             } else if (this.el.equipmentImgSection.is(":hidden")) {
                 this.el.equipmentImgSection.show();

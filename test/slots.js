@@ -29,8 +29,8 @@ QUnit.test("should make slot inactive", function(assert) {
 
 //TODO/BUGGY testing equipment images is not working (maybe because of the image.onload stuff ?). Disabled for now
 QUnit.test("should update elements related to equipment's item/id accordingly", function(assert) {
-    // assert.equal(swlcalc.gear.slots.head.edit.equipmentImgItem(), "assets/images/icons/talisman/Ashes.png");
-    // assert.equal(swlcalc.gear.slots.head.recap.equipmentImgItem(), "assets/images/icons/talisman/Ashes.png");
+    // assert.equal(swlcalc.gear.slots.head.edit.equipmentImgItem(), "assets/images/icons/talisman/head/Ashes.png");
+    // assert.equal(swlcalc.gear.slots.head.recap.equipmentImgItem(), "assets/images/icons/talisman/head/Ashes.png");
     assert.equal(swlcalc.gear.slots.head.edit.equipmentDescription(), "");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentDescription(), "");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentItem(), "Ashes");
@@ -38,8 +38,8 @@ QUnit.test("should update elements related to equipment's item/id accordingly", 
     swlcalc.gear.slots.head.edit.equipmentId("12");
     swlcalc.gear.slots.head.updateEquipment();
 
-    // assert.equal(swlcalc.gear.slots.head.edit.equipmentImgItem(), 'assets/images/icons/talisman/Cosmic Pigment.png');
-    // assert.equal(swlcalc.gear.slots.head.recap.equipmentImgItem(), 'assets/images/icons/talisman/Cosmic Pigment.png');
+    // assert.equal(swlcalc.gear.slots.head.edit.equipmentImgItem(), 'assets/images/icons/talisman/head/Cosmic Pigment.png');
+    // assert.equal(swlcalc.gear.slots.head.recap.equipmentImgItem(), 'assets/images/icons/talisman/head/Cosmic Pigment.png');
     assert.equal(swlcalc.gear.slots.head.edit.equipmentDescription(), "Whenever you are hit <span class=\"bonus-val const\">5</span> times in succession, you deal <span id=\"head-edit-equipment-bonus1\" class=\"bonus-val dps\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentDescription(), "Whenever you are hit <span class=\"bonus-val const\">5</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentItem(), "Cosmic Pigment");
@@ -370,10 +370,10 @@ QUnit.test("should reset slot state", function(assert) {
         assert.equal(slot.edit.equipmentLevel(), "20");
         assert.equal(slot.recap.el.equipmentStatSection.is(":hidden"), true);
         if (slot.isWeapon()) {
-            assert.equal(slot.edit.equipmentImgItem(), "assets/images/icons/weapon/None.png");
+            assert.equal(slot.edit.equipmentImgItem(), "assets/images/icons/equipment/None.png");
             assert.equal(slot.edit.equipmentImgRarity(), "assets/images/icons/rarity/standard-42x42.png");
         } else {
-            assert.equal(slot.edit.equipmentImgItem(), "assets/images/icons/talisman/None.png");
+            assert.equal(slot.edit.equipmentImgItem(), "assets/images/icons/equipment/None.png");
             assert.equal(slot.edit.equipmentImgRarity(), "assets/images/icons/rarity/" + slot.id + "/standard-42x42.png");
         }
         assert.equal(slot.edit.equipmentImgQuality(), "assets/images/icons/quality/1.png");

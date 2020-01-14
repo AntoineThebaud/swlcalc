@@ -77,8 +77,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
         if (this.edit.equipmentId() == 'none') {
             newDescription = '';
             newName = 'Empty';
-            this.edit.equipmentImgItem('assets/images/icons/' + this.group + '/None.png');
-            this.recap.equipmentImgItem('assets/images/icons/' + this.group + '/None.png');
+            newImage = 'assets/images/icons/equipment/None.png';
+            this.edit.equipmentImgItem(newImage);
+            this.recap.equipmentImgItem(newImage);
         } else {
             var newEquipmentData = swlcalc.data.equipments.slot[this.kind][this.edit.equipmentId() - 1];
 
@@ -89,26 +90,28 @@ swlcalc.gear.Slot = function Slot(slotData) {
              * => For now replaced by : */
             var image = new Image();
             image.onload = function() {
-                self.edit.equipmentImgItem('assets/images/icons/' + self.group + '/' + newEquipmentData.name + '.png');
-                self.recap.equipmentImgItem('assets/images/icons/' + self.group + '/' + newEquipmentData.name + '.png');
+                newImage = 'assets/images/icons/equipment/' + self.kind + '/' + newEquipmentData.name + '.png';
+                self.edit.equipmentImgItem(newImage);
+                self.recap.equipmentImgItem(newImage);
             }
             image.onerror = function() {
                 if (self.isWeapon()) {
-                    self.edit.equipmentImgItem('assets/images/icons/' + self.group + '/temp/' + newEquipmentData.type + '.png');
-                    self.recap.equipmentImgItem('assets/images/icons/' + self.group + '/temp/' + newEquipmentData.type + '.png');
+                    newImage = 'assets/images/icons/equipment/' + self.kind + '/temp/' + newEquipmentData.type + '.png';
                 } else {
-                    self.edit.equipmentImgItem('assets/images/icons/' + self.group + '/' + swlcalc.data.equipments.slot[self.id][0].name + '.png');
-                    self.recap.equipmentImgItem('assets/images/icons/' + self.group + '/' + swlcalc.data.equipments.slot[self.id][0].name + '.png');
+                    newImage = 'assets/images/icons/equipment/' + self.kind + '/' + swlcalc.data.equipments.slot[self.id][0].name + '.png';
                 }
+                self.edit.equipmentImgItem(newImage);
+                self.recap.equipmentImgItem(newImage);
             }
-            image.src = 'assets/images/icons/' + this.group + '/' + newEquipmentData.name + '.png';
+            image.src = 'assets/images/icons/equipment/' + this.kind + '/' + newEquipmentData.name + '.png';
             /**************************************< temporary code />********************************************/
 
             newDescription = newEquipmentData.description;
             newName = newEquipmentData.name;
         }
         //To enable when all images will be present :
-        //this.edit.equipmentImgItem(newImage);
+        // this.edit.equipmentImgItem(newImage);
+        // this.recap.equipmentImgItem(newImage);
         // add "-edit" suffix here to avoid id collision //TODO/REFACTOR better way to do this ?
         this.edit.equipmentDescription(newDescription.replace(/%id/g, this.id + '-edit'));
         // add "-recap" suffix here to avoid id collision //TODO/REFACTOR better way to do this ?
