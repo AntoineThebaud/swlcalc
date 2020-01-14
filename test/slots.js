@@ -47,8 +47,8 @@ QUnit.test("should update elements related to equipment's item/id accordingly", 
 
 QUnit.test("should update elements related to equipment's rarity accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.head.recap.el.equipmentTitle.attr('class'), 'color-epic');
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentImgRarity(), "assets/images/icons/rarity/epic-42x42.png");
-    assert.equal(swlcalc.gear.slots.head.recap.equipmentImgRarity(), "assets/images/icons/rarity/epic-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.edit.equipmentImgRarity(), "assets/images/icons/rarity/head/epic-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentImgRarity(), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentRarity(), "Epic");
     assert.equal(swlcalc.gear.slots.head.edit.equipmentLevel(), "30");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentLevel(), "30");
@@ -61,8 +61,8 @@ QUnit.test("should update elements related to equipment's rarity accordingly", f
     swlcalc.gear.slots.head.updateEquipmentRarity();
 
     assert.equal(swlcalc.gear.slots.head.recap.el.equipmentTitle.attr('class'), 'color-legendary');
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentImgRarity(), "assets/images/icons/rarity/legendary-42x42.png");
-    assert.equal(swlcalc.gear.slots.head.recap.equipmentImgRarity(), "assets/images/icons/rarity/legendary-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.edit.equipmentImgRarity(), "assets/images/icons/rarity/head/legendary-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentImgRarity(), "assets/images/icons/rarity/head/legendary-42x42.png");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentRarity(), "Legendary");
     assert.equal(swlcalc.gear.slots.head.edit.equipmentLevel(), "70");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentLevel(), "70");
@@ -371,10 +371,11 @@ QUnit.test("should reset slot state", function(assert) {
         assert.equal(slot.recap.el.equipmentStatSection.is(":hidden"), true);
         if (slot.isWeapon()) {
             assert.equal(slot.edit.equipmentImgItem(), "assets/images/icons/weapon/None.png");
+            assert.equal(slot.edit.equipmentImgRarity(), "assets/images/icons/rarity/standard-42x42.png");
         } else {
             assert.equal(slot.edit.equipmentImgItem(), "assets/images/icons/talisman/None.png");
+            assert.equal(slot.edit.equipmentImgRarity(), "assets/images/icons/rarity/" + slot.id + "/standard-42x42.png");
         }
-        assert.equal(slot.edit.equipmentImgRarity(), "assets/images/icons/rarity/standard-42x42.png");
         assert.equal(slot.edit.equipmentImgQuality(), "assets/images/icons/quality/1.png");
         assert.equal(slot.edit.equipmentLabelLevel(), "20");
         assert.equal(slot.edit.equipmentDescription(), "");

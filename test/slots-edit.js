@@ -127,7 +127,7 @@ QUnit.test("should get and set the slot's equipment item image on edit view", fu
 });
 
 QUnit.test("should get and set the slot's equipment border image on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentImgRarity(), "assets/images/icons/rarity/epic-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.edit.equipmentImgRarity(), "assets/images/icons/rarity/head/epic-42x42.png");
     swlcalc.gear.slots.head.edit.equipmentImgRarity("lorem/ipsum/dolor/sit/amet");
     assert.equal(swlcalc.gear.slots.head.edit.equipmentImgRarity(), "lorem/ipsum/dolor/sit/amet");
 });

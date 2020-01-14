@@ -123,7 +123,12 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newRarity = this.edit.equipmentRarity();
 
         this.recap.el.equipmentTitle.attr('class', 'color-' + newRarity);
-        var img_path = 'assets/images/icons/rarity/' + newRarity + '-42x42.png';
+        var img_path = '';
+        if (this.isWeapon()) {
+            img_path = 'assets/images/icons/rarity/' + newRarity + '-42x42.png';
+        } else {
+            img_path = 'assets/images/icons/rarity/' + this.id + '/' + newRarity + '-42x42.png';
+        }
         this.edit.equipmentImgRarity(img_path);
         this.recap.equipmentImgRarity(img_path);
         this.edit.el.equipmentLabelLevel.attr('class', 'label-level big border-' + newRarity);

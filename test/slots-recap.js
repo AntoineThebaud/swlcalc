@@ -137,7 +137,7 @@ QUnit.test("should get and set the slot's equipment item image on recap view", f
 });
 
 QUnit.test("should get and set the slot's equipment border image on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.recap.equipmentImgRarity(), "assets/images/icons/rarity/epic-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentImgRarity(), "assets/images/icons/rarity/head/epic-42x42.png");
     swlcalc.gear.slots.head.recap.equipmentImgRarity("lorem/ipsum/dolor/sit/amet");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentImgRarity(), "lorem/ipsum/dolor/sit/amet");
 });
