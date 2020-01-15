@@ -456,7 +456,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         // coefficient in case CP or HP is used in the bonus computation
         var coef = 1
 
-        // TODO/REFACTOR : there should  a better way to handle the particular cases of Signet of Shoulder Tackle & Signet of Contortion
+        // TODO/REFACTOR : there should  a better way to handle the particular cases of non-standard signets
         if (this.edit.signetId() != 'none') {
             var signet = swlcalc.data.signets.slot[this.kind][this.edit.signetId() - 1]
 
@@ -476,6 +476,17 @@ swlcalc.gear.Slot = function Slot(slotData) {
             } else if (signet.name == "Signet of Contortion") {
                 newValue = signet.ratio[this.edit.signetRarity()].init
                            - signet.ratio[this.edit.signetRarity()].per_level * (this.edit.signetLevel() - 1)
+            } else if (signet.name == "Signet of Nemain") {
+                bonus1 = signet.ratio[this.edit.signetRarity()].init[0];
+                bonus2 = swlcalc.util.precisionRound(
+                  signet.ratio[this.edit.signetRarity()].init[1] + signet.ratio[this.edit.signetRarity()].per_level[1] * (this.edit.signetLevel() - 1),
+                  4
+                );
+                $('#' + this.id + '-edit-signet-bonus').html(bonus1);
+                $('#' + this.id + '-edit-signet-bonus2').html(bonus2);
+                $('#' + this.id + '-recap-signet-bonus').html(bonus1);
+                $('#' + this.id + '-recap-signet-bonus2').html(bonus2);
+                return;
             } else {
                 newValue = signet.ratio[this.edit.signetRarity()].init
                            + signet.ratio[this.edit.signetRarity()].per_level * (this.edit.signetLevel() - 1)

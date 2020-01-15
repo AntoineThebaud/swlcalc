@@ -1317,6 +1317,35 @@ swlcalc.data.signets = {
                         per_level: 8.60/19 // == (41.53 - 32.93) / (20 - 1)
                     }
                 }
+            },
+            {
+                id: 3,
+                name: 'Signet of Nemain',
+                type: 'All',
+                description: 'Increases the maximum number of targets hit by area abilities by <span id="%id-signet-bonus" class="bonus-val const">%d</span> and increases damage by <span id="%id-signet-bonus2" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                cooldown: '',
+                ratio: {
+                    'standard': {
+                        init: [ 1, 0.29 ],
+                        per_level: [ 0, 1.79/19 ] // == - | (2.08 - 0.29) / (20 - 1)
+                    },
+                    'superior': {
+                        init: [ 1, 2.63 ],
+                        per_level: [ 0, 3.12/19 ] // == - | (5.75 - 2.63) / (20 - 1)
+                    },
+                    'epic': {
+                        init: [ 2, 6.67 ],
+                        per_level: [ 0, 3.86/19 ] // == - | (10.53 - 6.67) / (20 - 1)
+                    },
+                    'mythic': {
+                        init: [ 2, 12.13 ],
+                        per_level: [ 0, 4.85/19 ] // == - | (16.98 - 12.13) / (20 - 1)
+                    },
+                    'legendary': {
+                        init: [ 3, 18.94 ],
+                        per_level: [ 0, 9.81/19 ] // == - | (28.75 - 18.94) / (20 - 1)
+                    }
+                }
             }
         ],
         'luck': [
