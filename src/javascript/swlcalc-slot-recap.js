@@ -4,6 +4,7 @@ swlcalc.gear = swlcalc.gear || {};
 swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     var self   = this;
     this.id    = slotData.id;
+    this.kind  = slotData.kind;
     this.group = slotData.group;
 
     this.el = {
@@ -192,7 +193,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         if (arguments.length == 1) {
             this.el.equipmentImgItem.attr('src', arguments[0])
             // recap : hide whole section if img is None
-            if (arguments[0] == 'assets/images/icons/equipment/None.png') {
+            if (arguments[0] == 'assets/images/icons/equipment/' + this.kind + '/None.png') {
                 this.el.equipmentImgSection.hide();
             } else if (this.el.equipmentImgSection.is(":hidden")) {
                 this.el.equipmentImgSection.show();

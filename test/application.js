@@ -159,7 +159,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-edit-equipment-level").val(), "29");
     assert.equal($("#weapon2-edit-equipment-stat-value").html(), "1809");
     assert.equal($("#weapon2-edit-equipment-ilvl").html(), "315");
-    // TODO/TEST : buggy, should be ok : assert.equal($("#weapon2-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    // TODO/TEST : buggy, should be ok : assert.equal($("#weapon2-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/weapon/None.png");
     assert.equal($("#weapon2-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/epic-42x42.png");
     assert.equal($("#weapon2-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
     assert.equal($("#weapon2-edit-equipment-label-level").html(), "29");
@@ -230,7 +230,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-edit-equipment-level").val(), "24");
     assert.equal($("#head-edit-equipment-stat-value").html(), "1113");
     assert.equal($("#head-edit-equipment-ilvl").html(), "252");
-    // TODO/TEST : buggy, should be ok : assert.equal($("#head-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    // TODO/TEST : buggy, should be ok : assert.equal($("#head-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/head/None.png");
     assert.equal($("#head-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal($("#head-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
     assert.equal($("#head-edit-equipment-label-level").html(), "24");
@@ -301,7 +301,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#finger-edit-equipment-level").val(), "20");
     assert.equal($("#finger-edit-equipment-stat-value").html(), "314");
     assert.equal($("#finger-edit-equipment-ilvl").html(), "113");
-    // TODO/TEST : buggy, should be ok : assert.equal($("#finger-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    // TODO/TEST : buggy, should be ok : assert.equal($("#finger-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/finger/None.png");
     assert.equal($("#finger-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/finger/superior-42x42.png");
     assert.equal($("#finger-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
     assert.equal($("#finger-edit-equipment-label-level").html(), "20");
@@ -372,7 +372,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#neck-edit-equipment-level").val(), "6");
     assert.equal($("#neck-edit-equipment-stat-value").html(), "70");
     assert.equal($("#neck-edit-equipment-ilvl").html(), "13");
-    // TODO/TEST : buggy, should be ok : assert.equal($("#neck-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    // TODO/TEST : buggy, should be ok : assert.equal($("#neck-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/neck/None.png");
     assert.equal($("#neck-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/neck/standard-42x42.png");
     assert.equal($("#neck-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/3.png");
     assert.equal($("#neck-edit-equipment-label-level").html(), "6");
@@ -443,7 +443,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#wrist-edit-equipment-level").val(), "68");
     assert.equal($("#wrist-edit-equipment-stat-value").html(), "1951");
     assert.equal($("#wrist-edit-equipment-ilvl").html(), "1026");
-    // TODO/TEST : buggy, should be ok : assert.equal($("#wrist-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    // TODO/TEST : buggy, should be ok : assert.equal($("#wrist-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/wrist/None.png");
     assert.equal($("#wrist-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/wrist/legendary-42x42.png");
     assert.equal($("#wrist-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
     assert.equal($("#wrist-edit-equipment-label-level").html(), "68");
@@ -514,7 +514,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#luck-edit-equipment-level").val(), "10");
     assert.equal($("#luck-edit-equipment-stat-value").html(), "53");
     assert.equal($("#luck-edit-equipment-ilvl").html(), "22");
-    // TODO/TEST : buggy, should be ok : assert.equal($("#luck-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    // TODO/TEST : buggy, should be ok : assert.equal($("#luck-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/luck/None.png");
     assert.equal($("#luck-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/luck/standard-42x42.png");
     assert.equal($("#luck-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
     assert.equal($("#luck-edit-equipment-label-level").html(), "10");
@@ -585,7 +585,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#waist-edit-equipment-level").val(), "2");
     assert.equal($("#waist-edit-equipment-stat-value").html(), "775");
     assert.equal($("#waist-edit-equipment-ilvl").html(), "591");
-    // TODO/TEST : buggy, should be ok : assert.equal($("#waist-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    // TODO/TEST : buggy, should be ok : assert.equal($("#waist-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/waist/None.png");
     assert.equal($("#waist-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/waist/legendary-42x42.png");
     assert.equal($("#waist-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
     assert.equal($("#waist-edit-equipment-label-level").html(), "2");
@@ -656,7 +656,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#occult-edit-equipment-level").val(), "19");
     assert.equal($("#occult-edit-equipment-stat-value").html(), "112");
     assert.equal($("#occult-edit-equipment-ilvl").html(), "42");
-    // TODO/TEST : buggy, should be ok : assert.equal($("#occult-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    // TODO/TEST : buggy, should be ok : assert.equal($("#occult-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/occult/None.png");
     assert.equal($("#occult-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/occult/standard-42x42.png");
     assert.equal($("#occult-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/3.png");
     assert.equal($("#occult-edit-equipment-label-level").html(), "19");
@@ -727,7 +727,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#weapon-edit-equipment-level").val(), "20");
     assert.equal($("#weapon-edit-equipment-stat-value").html(), "0");
     assert.equal($("#weapon-edit-equipment-ilvl").html(), "0");
-    assert.equal($("#weapon-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    assert.equal($("#weapon-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/weapon/None.png");
     assert.equal($("#weapon-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/standard-42x42.png");
     assert.equal($("#weapon-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
     assert.equal($("#weapon-edit-equipment-label-level").html(), "20");
@@ -772,7 +772,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#weapon2-edit-equipment-level").val(), "20");
     assert.equal($("#weapon2-edit-equipment-stat-value").html(), "0");
     assert.equal($("#weapon2-edit-equipment-ilvl").html(), "0");
-    assert.equal($("#weapon2-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    assert.equal($("#weapon2-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/weapon/None.png");
     assert.equal($("#weapon2-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/standard-42x42.png");
     assert.equal($("#weapon2-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
     assert.equal($("#weapon2-edit-equipment-label-level").html(), "20");
@@ -816,7 +816,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#head-edit-equipment-level").val(), "20");
     assert.equal($("#head-edit-equipment-stat-value").html(), "0");
     assert.equal($("#head-edit-equipment-ilvl").html(), "0");
-    assert.equal($("#head-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    assert.equal($("#head-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/head/None.png");
     assert.equal($("#head-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/head/standard-42x42.png");
     assert.equal($("#head-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
     assert.equal($("#head-edit-equipment-label-level").html(), "20");
@@ -860,7 +860,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#finger-edit-equipment-level").val(), "20");
     assert.equal($("#finger-edit-equipment-stat-value").html(), "0");
     assert.equal($("#finger-edit-equipment-ilvl").html(), "0");
-    assert.equal($("#finger-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    assert.equal($("#finger-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/finger/None.png");
     assert.equal($("#finger-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/finger/standard-42x42.png");
     assert.equal($("#finger-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
     assert.equal($("#finger-edit-equipment-label-level").html(), "20");
@@ -904,7 +904,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#neck-edit-equipment-level").val(), "20");
     assert.equal($("#neck-edit-equipment-stat-value").html(), "0");
     assert.equal($("#neck-edit-equipment-ilvl").html(), "0");
-    assert.equal($("#neck-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    assert.equal($("#neck-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/neck/None.png");
     assert.equal($("#neck-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/neck/standard-42x42.png");
     assert.equal($("#neck-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
     assert.equal($("#neck-edit-equipment-label-level").html(), "20");
@@ -948,7 +948,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#wrist-edit-equipment-level").val(), "20");
     assert.equal($("#wrist-edit-equipment-stat-value").html(), "0");
     assert.equal($("#wrist-edit-equipment-ilvl").html(), "0");
-    assert.equal($("#wrist-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    assert.equal($("#wrist-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/wrist/None.png");
     assert.equal($("#wrist-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/wrist/standard-42x42.png");
     assert.equal($("#wrist-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
     assert.equal($("#wrist-edit-equipment-label-level").html(), "20");
@@ -992,7 +992,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#luck-edit-equipment-level").val(), "20");
     assert.equal($("#luck-edit-equipment-stat-value").html(), "0");
     assert.equal($("#luck-edit-equipment-ilvl").html(), "0");
-    assert.equal($("#luck-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    assert.equal($("#luck-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/luck/None.png");
     assert.equal($("#luck-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/luck/standard-42x42.png");
     assert.equal($("#luck-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
     assert.equal($("#luck-edit-equipment-label-level").html(), "20");
@@ -1036,7 +1036,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#waist-edit-equipment-level").val(), "20");
     assert.equal($("#waist-edit-equipment-stat-value").html(), "0");
     assert.equal($("#waist-edit-equipment-ilvl").html(), "0");
-    assert.equal($("#waist-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    assert.equal($("#waist-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/waist/None.png");
     assert.equal($("#waist-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/waist/standard-42x42.png");
     assert.equal($("#waist-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
     assert.equal($("#waist-edit-equipment-label-level").html(), "20");
@@ -1080,7 +1080,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#occult-edit-equipment-level").val(), "20");
     assert.equal($("#occult-edit-equipment-stat-value").html(), "0");
     assert.equal($("#occult-edit-equipment-ilvl").html(), "0");
-    assert.equal($("#occult-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/None.png");
+    assert.equal($("#occult-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/occult/None.png");
     assert.equal($("#occult-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/occult/standard-42x42.png");
     assert.equal($("#occult-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
     assert.equal($("#occult-edit-equipment-label-level").html(), "20");

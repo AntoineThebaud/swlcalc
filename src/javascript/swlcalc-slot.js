@@ -77,7 +77,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         if (this.edit.equipmentId() == 'none') {
             newDescription = '';
             newName = 'Empty';
-            newImage = 'assets/images/icons/equipment/None.png';
+            newImage = 'assets/images/icons/equipment/' + this.kind + '/None.png';
             this.edit.equipmentImgItem(newImage);
             this.recap.equipmentImgItem(newImage);
         } else {

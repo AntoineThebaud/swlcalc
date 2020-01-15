@@ -369,11 +369,10 @@ QUnit.test("should reset slot state", function(assert) {
         assert.equal(slot.edit.equipmentStatValue(), "0");
         assert.equal(slot.edit.equipmentLevel(), "20");
         assert.equal(slot.recap.el.equipmentStatSection.is(":hidden"), true);
+        assert.equal(slot.edit.equipmentImgItem(), "assets/images/icons/equipment/" + slot.kind + "/None.png");
         if (slot.isWeapon()) {
-            assert.equal(slot.edit.equipmentImgItem(), "assets/images/icons/equipment/None.png");
             assert.equal(slot.edit.equipmentImgRarity(), "assets/images/icons/rarity/standard-42x42.png");
         } else {
-            assert.equal(slot.edit.equipmentImgItem(), "assets/images/icons/equipment/None.png");
             assert.equal(slot.edit.equipmentImgRarity(), "assets/images/icons/rarity/" + slot.id + "/standard-42x42.png");
         }
         assert.equal(slot.edit.equipmentImgQuality(), "assets/images/icons/quality/1.png");
