@@ -290,6 +290,7 @@ swlcalc.summary = function() {
             || statName == 'evade-chance'
             || statName == 'glance-chance';
     };
+    
     /**
      * Launch an update on each slot's description (in order to display the right bonus values)
      */

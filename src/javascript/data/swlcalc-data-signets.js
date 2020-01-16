@@ -14,7 +14,7 @@ swlcalc.data.signets = {
             {
                 id: 1,
                 name: 'Alacrity',
-                description: 'Increased your move speed by <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> while in combat.',
+                description: 'Increased your move speed by <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus">%d</span>%</span> while in combat.',
                 quality: {
                     '1': 10,
                     '2': 15,
@@ -24,7 +24,7 @@ swlcalc.data.signets = {
             {
                 id: 2,
                 name: 'Destruction',
-                description: 'This weapon deals <span id="%id-signet-bonus" class="bonus-val dps">%d</span> additional damage to enemies that are below <span class="bonus-val const">35%</span> health.',
+                description: 'This weapon deals <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus">%d</span></span> additional damage to enemies that are below 35% health.',
                 quality: {
                     '1': 0.15,
                     '2': 0.30,
@@ -35,7 +35,7 @@ swlcalc.data.signets = {
             {
                 id: 3,
                 name: 'Energy',
-                description: 'When you use a Power Ability with this weapon you have <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> of consuming one less Energy.',
+                description: 'When you use a Power Ability with this weapon you have <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus">%d</span>%</span> of consuming one less Energy.',
                 quality: {
                     '1': 11,
                     '2': 22,
@@ -45,7 +45,7 @@ swlcalc.data.signets = {
             {
                 id: 4,
                 name: 'Efficiency',
-                description: 'Your attacks and heals with this weapon have a <span class="bonus-val const">50%</span> chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Your attacks and heals with this weapon have a 50% chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus">%d</span>%</span>.',
                 quality: {
                     '1': 2,
                     '2': 3,
@@ -55,7 +55,7 @@ swlcalc.data.signets = {
             {
                 id: 5,
                 name: 'Havoc',
-                description: '+<span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> critical hit damage and critical healing.',
+                description: '<span id="%id-signet-bonus-wrapper">+<span id="%id-signet-bonus">%d</span>%</span> critical hit damage and critical healing.',
                 quality: {
                     '1': 2.5,
                     '2': 5,
@@ -65,7 +65,7 @@ swlcalc.data.signets = {
             {
                 id: 6,
                 name: 'Restoration',
-                description: 'When you hit or heal a target with this weapon you have a <span class="bonus-val const">50%</span> chance to restore <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> of your health.',
+                description: 'When you hit or heal a target with this weapon you have a 50% chance to restore <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus">%d</span>%</span> of your health.',
                 quality: {
                     '1': 0.75,
                     '2': 1.5,
@@ -75,7 +75,7 @@ swlcalc.data.signets = {
             {
                 id: 7,
                 name: 'Recovery',
-                description: 'You receive <span id="%id-signet-bonus" class="bonus-val const">%d</span><span class="bonus-val const">%</span> more health from incoming heals.',
+                description: 'You receive <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus">%d</span>%</span> more health from incoming heals.',
                 quality: {
                     '1': 1,
                     '2': 2,
@@ -85,7 +85,7 @@ swlcalc.data.signets = {
             {
                 id: 8,
                 name: 'Warding',
-                description: 'Increases Protection by <span id="%id-signet-bonus" class="bonus-val const">%d</span> while wielded.',
+                description: 'Increases Protection by <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus">%d</span></span> while wielded.',
                 quality: {
                     '1': 150,
                     '2': 300,

@@ -375,7 +375,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
 
     /**
      * Getter/Setter for #slot-recap-signet-bonus
-     * => not accessible through like this.el.signetBonus because this object doesnt exist at the beginning (like %-bonusN objects)
+     * => not accessible through like this.el.signetBonus because this element doesn't exist at application start
      */
     this.signetBonus = function() {
         if (arguments.length == 1) {
@@ -383,6 +383,14 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         } else {
             return $('#' + this.id + '-recap-signet-bonus').text();
         }
+    };
+
+    /**
+     * Getter for #slot-edit-signet-bonus-wrapper
+     * => not accessible through like this.el.signetBonusWrapper because this element doesn't exist at application start
+     */
+    this.signetBonusWrapper = function() {
+        return $('#' + this.id + '-recap-signet-bonus-wrapper');
     };
 
     /**

@@ -436,7 +436,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
 
     /**
      * Getter/Setter for #slot-signet-bonus
-     * => not accessible through like this.el.signetBonus because this object doesnt exist at the beginning (like %-bonusN objects)
+     * => not accessible through like this.el.signetBonus because this element doesn't exist at application start
      */
     this.signetBonus = function() {
         if (arguments.length == 1) {
@@ -444,6 +444,14 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         } else {
             return $('#' + this.id + '-edit-signet-bonus').text();
         }
+    };
+
+    /**
+     * Getter for #slot-edit-signet-bonus-wrapper
+     * => not accessible through like this.el.signetBonusWrapper because this element doesn't exist at application start
+     */
+    this.signetBonusWrapper = function() {
+        return $('#' + this.id + '-edit-signet-bonus-wrapper');
     };
 
     /**

@@ -75,7 +75,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#weapon-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon-edit-signet-level").val(), undefined);
     assert.equal($("#weapon-edit-signet-ilvl").html(), undefined);
-    assert.equal($("#weapon-edit-signet-description").html(), 'When you hit or heal a target with this weapon you have a <span class="bonus-val const">50%</span> chance to restore <span id="weapon-edit-signet-bonus" class="bonus-val const">0.75</span><span class="bonus-val const">%</span> of your health.');
+    assert.equal($("#weapon-edit-signet-description").html(), 'When you hit or heal a target with this weapon you have a 50% chance to restore <span id=\"weapon-edit-signet-bonus-wrapper\" class=\"bonus-val color-standard\"><span id=\"weapon-edit-signet-bonus\">0.75</span>%</span> of your health.');
 
     assert.equal($("#weapon2-edit-ilvl").html(), "353");
     assert.equal($("#weapon2-edit-equipment-id").val(), "2");
@@ -95,7 +95,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#weapon2-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon2-edit-signet-level").val(), undefined);
     assert.equal($("#weapon2-edit-signet-ilvl").html(), undefined);
-    assert.equal($("#weapon2-edit-signet-description").html(), 'This weapon deals <span id="weapon2-edit-signet-bonus" class="bonus-val dps">333.45</span> additional damage to enemies that are below <span class="bonus-val const">35%</span> health.');
+    assert.equal($("#weapon2-edit-signet-description").html(), 'This weapon deals <span id=\"weapon2-edit-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon2-edit-signet-bonus\">333.45</span></span> additional damage to enemies that are below 35% health.');
 
     assert.equal($("#head-edit-ilvl").html(), "480");
     assert.equal($("#head-edit-equipment-id").val(), "1");

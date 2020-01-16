@@ -461,7 +461,11 @@ swlcalc.gear.Slot = function Slot(slotData) {
             var signet = swlcalc.data.signets.slot[this.kind][this.edit.signetId() - 1]
 
             if (this.isWeapon()) {
-                newValue = signet.quality[this.edit.equipmentQuality()]
+                // update suffix bonus value + its color
+                newValue = signet.quality[this.edit.equipmentQuality()];
+                var newClass = 'bonus-val color-' + swlcalc.data.rarity_mapping.to_name[this.edit.equipmentQuality()];
+                this.edit.signetBonusWrapper().attr('class', newClass);
+                this.recap.signetBonusWrapper().attr('class', newClass);
             } else if (signet.name == "Signet of Shoulder Tackle") {
                 bonus1 = signet.ratio[this.edit.signetRarity()].init[0];
                 bonus2 = swlcalc.util.precisionRound(
