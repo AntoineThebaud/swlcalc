@@ -12,7 +12,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         div:                           $('#' + this.id + '-recap-div'),
         editBtn:                       $('#' + this.id + '-recap-editbtn'),
         editBtnImg:                    $('#' + this.id + '-recap-editbtn-img'),
-        weaponActive:                  $('#' + this.id + '-recap-active'), // TODO change name
+        weaponActive:                  $('#' + this.id + '-recap-active'),
         iLvl:                          $('#' + this.id + '-recap-ilvl'),
         equipmentEmpty:                $('#' + this.id + '-recap-equipment-empty'),
         equipmentTitleSection:         $('#' + this.id + '-recap-equipment-title-section'),

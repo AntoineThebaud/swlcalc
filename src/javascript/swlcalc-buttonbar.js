@@ -164,7 +164,6 @@ swlcalc.buttonBar = function() {
     /**
      * Set all slots to 'none'
      */
-    //TODO/REFACTOR : to define if "slot" is the right term here
     var resetGear = function(event) {
         swlcalc.gear.reset();
         swlcalc.summary.updateAllStats();

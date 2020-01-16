@@ -50,7 +50,7 @@ swlcalc.summary = function() {
         var sums = collectPrimaryStats();
 
         for (var stat in sums) {
-            if (sums.hasOwnProperty(stat)) { // TODO/REFACTOR this if could be removed ?
+            if (sums.hasOwnProperty(stat)) { // TODO/REFACTOR this "if" could be removed ?
                 updateOnePrimaryStat(stat, sums[stat]);
             }
         }
@@ -71,10 +71,11 @@ swlcalc.summary = function() {
             'power-rating': 0,
             'ilvl': 0
         };
+        var sumOfIlvl = 0;
 
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            sums['ilvl'] += parseInt(slot.edit.iLvl());
+            sumOfIlvl += parseInt(slot.edit.iLvl());
             if (slot.isWeapon() && !slot.active) {
                 continue;
             } else if (slot.isWeapon() && slot.edit.equipmentId() != 'none') {
@@ -96,7 +97,7 @@ swlcalc.summary = function() {
 
         sums['combat-power'] = computeCombatPower(sums['attack-rating'], sums['weapon-power']);
         sums['healing-power'] = computeHealingPower(sums['heal-rating'], sums['weapon-power']);
-        sums['ilvl'] = computeAverageILvl(sums['ilvl']); //TODO/REFACTOR : refactor (it's weird)
+        sums['ilvl'] = computeAverageILvl(sumOfIlvl);
 
         return sums;
     };
@@ -145,6 +146,7 @@ swlcalc.summary = function() {
      * Collects glyph stats by going through the whole gear
      */
     var collectSecondaryStats = function() {
+        //TODO/REFACTOR : moved these const values to swlcalc-data-stats maybe ?
         var sums = {
             'critical-rating': 756,           // amount brought by passives skills
             'critical-chance': 1,             // base percentage
@@ -156,7 +158,6 @@ swlcalc.summary = function() {
             'glance-chance': 0,
             'evade-rating': 753,              // amount brought by passives skills
             'evade-chance': 0,
-            //TODO/FEATURE : protection stats are not functional yet
             // 'physical-protection': 2259,   // amount brought by passives skills
             // 'magical-protection': 2259     // amount brought by passives skills
         };
@@ -290,7 +291,7 @@ swlcalc.summary = function() {
             || statName == 'evade-chance'
             || statName == 'glance-chance';
     };
-    
+
     /**
      * Launch an update on each slot's description (in order to display the right bonus values)
      */

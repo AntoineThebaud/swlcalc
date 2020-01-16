@@ -35,7 +35,6 @@ QUnit.test("gear should be fully reset", function(assert) {
     assert.equal($("#occult-edit-equipment-id").val(), "none");
 });
 
-//TODO/REFACTOR : to change the test logic ? should ensure all 9 slots are present (maybe test array length ?)
 QUnit.test("should collect all slot states", function(assert) {
     var slotStates = swlcalc.gear.state();
 
@@ -51,8 +50,6 @@ QUnit.test("should collect all slot states", function(assert) {
     assert.equal(slotStates.hasOwnProperty("occult"), true);
 });
 
-//TODO/REFACTOR : to harmnonize numerical values and strings (to have only one type ?)
-//TODO/REFACTOR : to change the test logic ? should ensure all 9 slots are present (maybe test array length ?)
 QUnit.test("should collect all mapped slot states", function(assert) {
     var slotStates = swlcalc.gear.mappedState();
 

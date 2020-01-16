@@ -67,7 +67,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      **********************************************************************************/
 
     /**
-     * Update equipment //TODO put description
+     * Update elements related to equipment's item (update icon image, description etc)
      */
     this.updateEquipment = function() {
         var newImage;
@@ -450,13 +450,12 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Update the dynamic bonus displayed in the signet's description (#slot-signet-bonus)
      */
-    // TODO to enhance
+    // TODO/REFACTOR : there should  a better way to handle the particular cases of non-standard signets
     this.updateSignetBonus = function(combatPower, healingPower){
         var newValue = 0;
         // coefficient in case CP or HP is used in the bonus computation
         var coef = 1
 
-        // TODO/REFACTOR : there should  a better way to handle the particular cases of non-standard signets
         if (this.edit.signetId() != 'none') {
             var signet = swlcalc.data.signets.slot[this.kind][this.edit.signetId() - 1]
 

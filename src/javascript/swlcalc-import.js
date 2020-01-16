@@ -4,7 +4,7 @@
  *                      Element                        |               Values
  *-----------------------------------------------------|------------------------------------
  *                  ____________ Equipment's Rarity     [1,2,3,4,5]
- *                 / ___________ Equipment's Type (ID)  [refer to swlcalc-data-equipments.js]
+ *                 / ___________ Equipment's ID         [refer to swlcalc-data-equipments.js]
  *                / / __________ Equipment's Quality    [1,2,3]
  *               / / / _________ Equipment's Level      [1->20/25/30/35/70]
  *              / / / / ________ Glyph's Rarity         [1,2,3,4,5]
@@ -12,7 +12,7 @@
  *            / / / / / / ______ Glyph's Quality        [1,2,3]
  *           / / / / / / / _____ Glyph's Level          [1->20]
  *          / / / / / / / /  ___ Signet's Rarity        [1,2,3,4,5]
- *         / / / / / / / /  / __ Signet's Type (ID)     [refer to swlcalc-data-signets.js]
+ *         / / / / / / / /  / __ Signet's ID            [refer to swlcalc-data-signets.js]
  *        / / / / / / / /  / / _ Signet's Level         [1->20]
  *       v v v v v v v v  v v v
  * wrist=4,1,4,3,4,4,0,3,5,85,3
@@ -38,7 +38,7 @@ swlcalc.import = function() {
     /**
      * Loads the slot informations from the hash and update GUI with it.
      */
-    //TODO/REFACTOR maybe there is a better way to update GUI than simulating change() ?
+    //TODO/REFACTOR maybe there is a better way to update GUI than simulating change() for each element ?
     var loadSlot = function(slotId, values) {
         var slotObj = swlcalc.gear.slots[slotId];
         // values[0] == Item's Rarity

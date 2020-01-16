@@ -12,8 +12,6 @@ QUnit.module("import-unit-tests", {
 
 //TODO/TEST : test to complete/enhance
 // - phys & mag protection (TODO/FEATURE)
-// - add real signets (TODO/FEATURE)
-// - add slot titles (TODO/FEATURE)
 QUnit.test("should import URL and set summary and slots", function(assert) {
     var vars = {
         head: "3,1,1,30,4,1,3,1,2,20,15",
