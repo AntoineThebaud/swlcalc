@@ -1040,7 +1040,7 @@ swlcalc.data.equipments = {
             {
                 id: 148,
                 type: 'Blood',
-                name: 'Third Age Blood Magic Focus',
+                name: 'Third Age Tome',
                 description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. When this damage critically hits, you hit again for <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 0.85, 0.85 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
