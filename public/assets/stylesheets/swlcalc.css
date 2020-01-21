@@ -21,6 +21,7 @@
 }
 html[theme='classic'] {
     --color-mediumgrey: #717171;
+    --color-highlightgrey: #ddd;
 
     --body-bg-img: unset;
     --body-bg-color: white;
@@ -40,13 +41,14 @@ html[theme='classic'] {
     --edit-bg: var(--slot-bg);
     --active-bg: #878787;
     --active-text-color: #FFF;
-    --edit-select-bg: unset;
+    --edit-select-bg: white;
     --aallocation-bg: white;
     --aallocation-text-color: unset;
     --not-functional: var(--color-lightgrey);
 }
 html[theme='sw'] {
     --color-mediumgrey: #A1A1A1;
+    --color-highlightgrey: #A1A1A1;
 
     --body-bg-img: url("../images/sw_bg.png");
     --body-bg-color: black;
@@ -617,4 +619,36 @@ td[id$="-recap-equipment-img-section"] {
     div[id="summary"] {
         position:fixed;
     }
+}
+/*---------------- rules for select2 ----------------*/
+.select2-container {
+    max-width: 140px;
+}
+.select2-dropdown {
+    background-color: var(--edit-select-bg) !important;
+    font-size: 12px !important;
+    width: 300px !important;
+}
+.select2-container--default .select2-selection--single {
+    border: 1px solid #ccc !important;
+    background-color: var(--edit-select-bg) !important;
+}
+.select2-container .select2-selection--single {
+    height: 32px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: unset !important;
+    line-height: 32px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 30px !important;
+}
+.select2-container--default .select2-results__option[aria-selected="true"] {
+    background-color: var(--color-highlightgrey) !important;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    color: var(--edit-select-bg) !important;
+}
+.select2-search__field {
+    background-color: var(--edit-select-bg) !important;
 }

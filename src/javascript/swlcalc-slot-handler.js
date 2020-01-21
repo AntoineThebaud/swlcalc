@@ -10,6 +10,13 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         this.bindEvents();
         this.addSignetsToSelect();
         this.addEquipmentsToSelect();
+
+        // replace weapon dropdowns by enhanced version (text search..)
+        if (slot.kind == "weapon") {
+            slotObj.edit.el.equipmentId.select2({
+              dropdownParent: $('#' + slot.id + '-edit-modal')
+            });
+        }
     };
 
     /**
