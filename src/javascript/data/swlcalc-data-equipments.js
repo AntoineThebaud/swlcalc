@@ -126,7 +126,7 @@ swlcalc.data.equipments = {
             {
                 id: 18,
                 type: 'Assault Rifle',
-                name: 'Anima-Touched Assault Rifle',
+                name: 'Anima-Touched Rifle',
                 description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
@@ -264,7 +264,7 @@ swlcalc.data.equipments = {
             {
                 id: 36,
                 type: 'Assault Rifle',
-                name: 'Plasma-Forged Assault Rifle',
+                name: 'Plasma-Forged Rifle',
                 description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
@@ -336,7 +336,7 @@ swlcalc.data.equipments = {
             {
                 id: 45,
                 type: 'Assault Rifle',
-                name: 'Frost-Bound Assault Rifle',
+                name: 'Frost-Bound Rifle',
                 description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
                 coefficients: [ 1.5 ],
                 stats: [ 'Combat Power' ],
@@ -408,7 +408,7 @@ swlcalc.data.equipments = {
             {
                 id: 54,
                 type: 'Assault Rifle',
-                name: 'Witch Doctor\'s Assault Rifle',
+                name: 'Witch Doctor\'s Rifle',
                 description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to hex your target and deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class="bonus-val const">5</span> times. This effect is guaranteed to trigger on critical hits.</br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span>-<span id="%id-equipment-bonus4" class="bonus-val dps">%d</span> magical damage, based on the number of times the damaging effect has been applied.',
                 coefficients: [ 0.15, 0.75, 0.095, 0.471 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power', 'Combat Power' ]
@@ -480,7 +480,7 @@ swlcalc.data.equipments = {
             {
                 id: 63,
                 type: 'Assault Rifle',
-                name: 'Shadow-Bound Assault Rifle',
+                name: 'Shadow-Bound Rifle',
                 description: 'Whenever you hit, you have a <span class="bonus-val const">20%</span> chance to summon a Revenant who will cast Raven Blade. <span class="bonus-val const">15</span> second cooldown.</br>Raven Blade: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
                 coefficients: [ 2.25 ],
                 stats: [ 'Combat Power' ]
