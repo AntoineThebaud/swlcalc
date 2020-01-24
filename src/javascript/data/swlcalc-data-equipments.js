@@ -1322,7 +1322,7 @@ swlcalc.data.equipments = {
             {
                 id: 6,
                 name: 'Spectral Essence',
-                description: 'This talisman gains more Attack Rating when leveling up.<br/>Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">33%</span> chance to summon a Spectre who will cast Unravel Soul. <span class="bonus-val const">10</span> second cooldown.<br/>Unravel Soul: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> magical damage.',
+                description: 'This talisman gains more Power Rating when leveling up.<br/>Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">33%</span> chance to summon a Spectre who will cast Unravel Soul. <span class="bonus-val const">10</span> second cooldown.<br/>Unravel Soul: An attack that deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> magical damage.',
                 coefficients: [ 2.2 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1339,7 +1339,7 @@ swlcalc.data.equipments = {
             {
                 id: 9,
                 name: 'Vampiric Essence',
-                description: 'This talisman gains more Heal Rating when leveling up.<br/>Whenever you heal an ally who is below <span class="bonus-val const">50%</span> of their maximum health, their damage is increased by <span class="bonus-val const">4.5%</span> and their attacks restore their health up to a maximum of <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> health restored for <span class="bonus-val const">3</span> seconds. This effect can only be applied once every <span class="bonus-val const">10</span> seconds.',
+                description: 'This talisman gains more Power Rating when leveling up.<br/>Whenever you heal an ally who is below <span class="bonus-val const">50%</span> of their maximum health, their damage is increased by <span class="bonus-val const">4.5%</span> and their attacks restore their health up to a maximum of <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> health restored for <span class="bonus-val const">3</span> seconds. This effect can only be applied once every <span class="bonus-val const">10</span> seconds.',
                 coefficients: [ 0.335 ],
                 stats: [ 'Healing Power' ]
             },
@@ -1353,7 +1353,7 @@ swlcalc.data.equipments = {
             {
                 id: 11,
                 name: 'Lycanthropic Essence',
-                description: 'This talisman gains more health when leveling up.</br>Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, your damage is increased by <span class="bonus-val const">17%</span> for <span class="bonus-val const">3</span> seconds and your next attack during this time will restore <span class="bonus-val const">4%</span> of your maximum health. This effect can only occur once every <span class="bonus-val const">10</span> seconds.'
+                description: 'This talisman gains more Power Rating when leveling up.</br>Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, your damage is increased by <span class="bonus-val const">17%</span> for <span class="bonus-val const">3</span> seconds and your next attack during this time will restore <span class="bonus-val const">4%</span> of your maximum health. This effect can only occur once every <span class="bonus-val const">10</span> seconds.'
             },
             {
                 id: 12,
