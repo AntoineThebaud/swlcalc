@@ -289,9 +289,6 @@ div[id="summary"] h4 {
 #table-primary label {
    margin: 10px 0px 10px 0px;
 }
-#table-primary .tooltip.left{
-    margin-left: -12px
-}
 .table-title {
     width: 100%;
 }

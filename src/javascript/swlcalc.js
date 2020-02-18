@@ -17,7 +17,6 @@ swlcalc = function() {
             triggerReset();
         }
         // visual settings :
-        activateToolTips();
         adjustPlacement();
         window.addEventListener('resize', adjustPlacement, true);
     };
@@ -27,18 +26,6 @@ swlcalc = function() {
      */
     var triggerReset = function() {
         $('#btn-reset').trigger('click');
-    };
-
-    /**
-     * Add tooltips for images (signets, glyphs, currencies..)
-     */
-    var activateToolTips = function() {
-        $('.equipment-tooltip, .glyph-tooltip, .signet-tooltip').tooltip({
-            placement: 'left'
-        });
-        $('#table-primary > label').tooltip({
-            placement: 'left'
-        });
     };
 
     /**

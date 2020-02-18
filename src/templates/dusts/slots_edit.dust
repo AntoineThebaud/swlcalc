@@ -95,12 +95,10 @@
                     </tr>
                     <tr class="with-icon">
                         <td id="{id}-edit-glyph-img-section" class="glyph-img">
-                            <a href="#" class="glyph-tooltip" data-toggle="tooltip" title="Glyph for the {name} slot. Choose which rarity, quality, level and stats it will have in your build.">
-                                <img id="{id}-edit-glyph-img-item" src="" alt="Glyph"/>
-                                <img id="{id}-edit-glyph-img-quality" src=""/>
-                                <img id="{id}-edit-glyph-img-rarity" src=""/>
-                                <div id="{id}-edit-glyph-label-level" class="label-level little border-standard">20</div>
-                            </a>
+                            <img id="{id}-edit-glyph-img-item" src="" alt="Glyph"/>
+                            <img id="{id}-edit-glyph-img-quality" src=""/>
+                            <img id="{id}-edit-glyph-img-rarity" src=""/>
+                            <div id="{id}-edit-glyph-label-level" class="label-level little border-standard">20</div>
                         </td>
                         <td class="glyph-select">
                             <select id="{id}-edit-glyph-id" title="Please select stat">
@@ -162,11 +160,9 @@
                     </tr>
                     <tr>
                         <td rowspan="2" id="{id}-edit-signet-img-section" class="signet-img">
-                            <a href="#" class="signet-tooltip" data-toggle="tooltip" title="Signet for the {name} slot. Choose the rarity and type of signet.">
-                                <img id="{id}-edit-signet-img-item" src="" alt="Signet"/>
-                                <img id="{id}-edit-signet-img-rarity" src=""/>
-                                <div id="{id}-edit-signet-label-level" class="label-level little border-standard">20</div>
-                            </a>
+                            <img id="{id}-edit-signet-img-item" src="" alt="Signet"/>
+                            <img id="{id}-edit-signet-img-rarity" src=""/>
+                            <div id="{id}-edit-signet-label-level" class="label-level little border-standard">20</div>
                         </td>
                         <td rowspan="2" class="signet-select">
                             <select id="{id}-edit-signet-id" title="Please select signet"></select>
