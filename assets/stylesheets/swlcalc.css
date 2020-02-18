@@ -289,9 +289,6 @@ div[id="summary"] h4 {
 #table-primary label {
    margin: 10px 0px 10px 0px;
 }
-#table-primary .tooltip.left{
-    margin-left: -12px
-}
 .table-title {
     width: 100%;
 }
@@ -461,6 +458,10 @@ td.stat-inSummary {
     background: var(--edit-bg);
     border-radius: 15px;
     border: var(--edit-border);
+}
+.modal-body.export {
+    border-radius: 0px;
+    border: none
 }
 .slot-name {
     font-weight: normal;
