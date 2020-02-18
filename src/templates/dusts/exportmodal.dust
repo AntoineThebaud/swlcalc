@@ -7,8 +7,8 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">Export</h4>
             </div>
-            <div class="modal-body">
-                <p>Copy this and share :</p>
+            <div class="modal-body export">
+                <p class="mediumgrey">Copy this and share :</p>
                 <input id="export-text" type="text" class="form-control"></input>
             </div>
         </div>

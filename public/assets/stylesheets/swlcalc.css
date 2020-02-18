@@ -462,6 +462,10 @@ td.stat-inSummary {
     border-radius: 15px;
     border: var(--edit-border);
 }
+.modal-body.export {
+    border-radius: 0px;
+    border: none
+}
 .slot-name {
     font-weight: normal;
 }
