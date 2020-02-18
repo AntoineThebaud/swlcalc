@@ -53,7 +53,7 @@ QUnit.test("should update all stats", function(assert) {
     assert.equal($("#stat-attack-rating").html(), "8052");
     assert.equal($("#stat-heal-rating").html(), "4310");
     assert.equal($("#stat-critical-rating").html(), "+841");
-    assert.equal($("#stat-critical-chance").html(), "13.8%");
+    assert.equal($("#stat-critical-chance").html(), "13.9%");
     assert.equal($("#stat-critical-power").html(), "+1008");
     assert.equal($("#stat-critical-power-percentage").html(), "90.6%");
     assert.equal($("#stat-hit-rating").html(), "+1244");
@@ -82,7 +82,7 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
     };
     var expectedSecondaryStats = {
         "critical-rating": "841",
-        "critical-chance": "13.8",
+        "critical-chance": "13.9",
         "critical-power": "1008",
         "critical-power-percentage": "90.6",
         "hit-rating": 1244,
@@ -170,7 +170,7 @@ QUnit.test("should collect secondary stats accordingly", function(assert) {
     var sums = swlcalc.summary.collectSecondaryStats();
 
     assert.equal(sums[ "critical-rating" ], 841);
-    assert.equal(sums[ "critical-chance" ], 13.8);
+    assert.equal(sums[ "critical-chance" ], 13.9);
     assert.equal(sums[ "critical-power" ], 1008);
     assert.equal(sums[ "critical-power-percentage" ], 90.6);
     assert.equal(sums[ "hit-rating" ], 1244);
@@ -187,26 +187,26 @@ QUnit.test("should collect secondary stats accordingly", function(assert) {
 
 QUnit.test("should compute critical chance", function(assert) {
     assert.equal(swlcalc.summary.computeCriticalChance(0), 7.5);
-    assert.equal(swlcalc.summary.computeCriticalChance(4000), 32.9);
-    assert.equal(swlcalc.summary.computeCriticalChance(8000), 51.1);
+    assert.equal(swlcalc.summary.computeCriticalChance(4000), 33.1);
+    assert.equal(swlcalc.summary.computeCriticalChance(8000), 54.4);
 });
 
 QUnit.test("should compute critical power", function(assert) {
     assert.equal(swlcalc.summary.computeCriticalPowerPercentage(0), 30);
     assert.equal(swlcalc.summary.computeCriticalPowerPercentage(2500), 118.3);
-    assert.equal(swlcalc.summary.computeCriticalPowerPercentage(5000), 157.9);
+    assert.equal(swlcalc.summary.computeCriticalPowerPercentage(5000), 178.5);
 });
 
 QUnit.test("should compute evade chance", function(assert) {
     assert.equal(swlcalc.summary.computeEvadeChance(0), 0);
     assert.equal(swlcalc.summary.computeEvadeChance(4000), 27.5);
-    assert.equal(swlcalc.summary.computeEvadeChance(5000), 29.8);
+    assert.equal(swlcalc.summary.computeEvadeChance(5000), 31.8);
 });
 
 QUnit.test("should compute glance chance", function(assert) {
     assert.equal(swlcalc.summary.computeGlanceChance(0), 0);
     assert.equal(swlcalc.summary.computeGlanceChance(4000), 39.3);
-    assert.equal(swlcalc.summary.computeGlanceChance(5000), 42.6);
+    assert.equal(swlcalc.summary.computeGlanceChance(5000), 45.6);
 });
 
 QUnit.test("should compute glance reduction", function(assert) {

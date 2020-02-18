@@ -187,17 +187,20 @@ swlcalc.summary = function() {
         return sums;
     };
 
-    /**
-     * Computes the critical chance given by the whole gear
-     * SWL formula for critical chances is like :
-     * -> Up to 6536 rating => 1% Critical Chance every 157.49 Rating
-     * -> After 6536 rating => 1% Critical Chance every 683.00 Rating
-     * The calculation includes weapon expertise
+    /*==========================================================================
+     * Glyph stats computation functions
+     *
+     * SWL formulas for glyph stats computation are always like :
+     * -> Up to {hardCap} => +1% in the considered stat every {softCapRatio}
+     * -> After {hardCap} => +1% in the considered stat every {hardCapRatio}
+     *
+     * The base amount includes capstone points + weapon expertise when relevant
      */
+    /*--------------------------------------------------------------------------*/
     var computeCriticalChance = function(critical_rating) {
-        var hardCap = 6536;
-        var softCapRatio = 157.49;
-        var hardCapRatio = 683.00;
+        var hardCap = 7116;
+        var softCapRatio = 156.05;
+        var hardCapRatio = 676.75;
         var expertise = 7.5;
 
         if (critical_rating < hardCap) {
@@ -206,16 +209,9 @@ swlcalc.summary = function() {
             return expertise + swlcalc.util.precisionRound(hardCap / softCapRatio + (critical_rating - hardCap) / hardCapRatio, 1);
         }
     };
-
-    /**
-     * Computes the % critical power given by the whole gear
-     * SWL formula for % critical power is like :
-     * -> Up to 3258 rating => 1% Critical Power every 28.31 Rating
-     * -> After 3258 rating => 1% Critical Power every 136.00 Rating
-     * The calculation includes weapon expertise (= 30% at max level)
-     */
+    /*--------------------------------------------------------------------------*/
     var computeCriticalPowerPercentage = function(critical_power) {
-        var hardCap = 3258;
+        var hardCap = 3996;
         var softCapRatio = 28.31;
         var hardCapRatio = 136.00;
         var expertise = 30;
@@ -226,15 +222,9 @@ swlcalc.summary = function() {
             return expertise + swlcalc.util.precisionRound(hardCap / softCapRatio + (critical_power - hardCap) / hardCapRatio, 1);
         }
     };
-
-    /**
-     * Computes the % evade chance given by the whole gear
-     * SWL formula for % evade chance is like :
-     * -> Up to 4221 rating => 1% Evade Chance every 145.55 Rating
-     * -> After 4221 rating => 1% Evade Chance every 977.40 Rating
-     */
+    /*--------------------------------------------------------------------------*/
     var computeEvadeChance = function(evade_rating) {
-        var hardCap = 4221;
+        var hardCap = 4569;
         var softCapRatio = 145.55;
         var hardCapRatio = 977.40;
 
@@ -244,15 +234,9 @@ swlcalc.summary = function() {
             return swlcalc.util.precisionRound(hardCap / softCapRatio + (evade_rating - hardCap) / hardCapRatio, 1);
         }
     };
-
-    /**
-     * Computes the % glance chance given by the whole gear
-     * SWL formula for % glance chance is like :
-     * -> Up to 4221 rating => 1% Evade Chance every 101.71 Rating
-     * -> After 4221 rating => 1% Evade Chance every 683.00 Rating
-     */
+    /*--------------------------------------------------------------------------*/
     var computeGlanceChance = function(defense_rating) {
-        var hardCap = 4221;
+        var hardCap = 4569;
         var softCapRatio = 101.71;
         var hardCapRatio = 683.00;
 
@@ -262,17 +246,14 @@ swlcalc.summary = function() {
             return swlcalc.util.precisionRound(hardCap / softCapRatio + (defense_rating - hardCap) / hardCapRatio, 1);
         }
     };
-
-    /**
-     * Computes the % glance reduction given by the whole gear
-     * SWL formula for % glance reduction is like :
-     * -> 1% Evade Chance every 50.85 Rating (no hard cap)
-     */
+    /*--------------------------------------------------------------------------*/
+    // /!\ No hard cap in the case of Glance reduction
     var computeGlanceReduction = function(hit_rating) {
         var ratio = 50.85;
 
         return swlcalc.util.precisionRound(hit_rating / ratio, 1);
     };
+    /*==========================================================================*/
 
     /**
      * Computes the average Item Power given by the whole gear

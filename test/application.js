@@ -27,7 +27,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#stat-combat-power").html(), "772");
     assert.equal($("#stat-healing-power").html(), "442");
     assert.equal($("#stat-critical-rating").html(), "+1598");
-    assert.equal($("#stat-critical-chance").html(), "18.6%");
+    assert.equal($("#stat-critical-chance").html(), "18.7%");
     assert.equal($("#stat-critical-power").html(), "+1858");
     assert.equal($("#stat-critical-power-percentage").html(), "120.6%");
     assert.equal($("#stat-hit-rating").html(), "+1539");

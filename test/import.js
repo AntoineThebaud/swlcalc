@@ -40,7 +40,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
 
     // --- Offensive Stats
     assert.equal($("#stat-critical-rating").html(), "+841");
-    assert.equal($("#stat-critical-chance").html(), "13.8%");
+    assert.equal($("#stat-critical-chance").html(), "13.9%");
     assert.equal($("#stat-critical-power").html(), "+1008");
     assert.equal($("#stat-critical-power-percentage").html(), "90.6%");
     assert.equal($("#stat-hit-rating").html(), "+1244");
