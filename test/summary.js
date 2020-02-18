@@ -132,18 +132,16 @@ QUnit.test("should collect primary stats accordingly", function(assert) {
     assert.equal(sums[ "healing-power" ], 461);
 });
 
-QUnit.test("should compute combat power", function(assert) {
-    assert.equal(swlcalc.summary.computeCombatPower(0, 0), 0);
-    assert.equal(swlcalc.summary.computeCombatPower(2500, 0), 188);
-    assert.equal(swlcalc.summary.computeCombatPower(0, 2500), 188);
-    assert.equal(swlcalc.summary.computeCombatPower(3049, 398), 259);
-});
+QUnit.test("should compute primary power", function(assert) {
+    assert.equal(swlcalc.summary.computePrimaryPower('ar', 0, 0), 0);
+    assert.equal(swlcalc.summary.computePrimaryPower('ar', 2500, 0), 188);
+    assert.equal(swlcalc.summary.computePrimaryPower('ar', 0, 2500), 188);
+    assert.equal(swlcalc.summary.computePrimaryPower('ar', 3049, 398), 259);
 
-QUnit.test("should compute healing power", function(assert) {
-    assert.equal(swlcalc.summary.computeHealingPower(0, 0), 0);
-    assert.equal(swlcalc.summary.computeHealingPower(2500, 0), 188);
-    assert.equal(swlcalc.summary.computeHealingPower(0, 2500), 188);
-    assert.equal(swlcalc.summary.computeHealingPower(3049, 398), 259);
+    assert.equal(swlcalc.summary.computePrimaryPower('hr', 0, 0), 0);
+    assert.equal(swlcalc.summary.computePrimaryPower('hr', 2500, 0), 188);
+    assert.equal(swlcalc.summary.computePrimaryPower('hr', 0, 2500), 188);
+    assert.equal(swlcalc.summary.computePrimaryPower('hr', 3049, 398), 259);
 });
 
 // TODO/TEST no test for updateSecondaryStats() (private function)
@@ -161,9 +159,6 @@ QUnit.test("should collect secondary stats accordingly", function(assert) {
     assert.equal(sums[ "glance-chance" ], 7.4);
     assert.equal(sums[ "evade-rating" ], 753);
     assert.equal(sums[ "evade-chance" ], 5.2);
-
-    //TODO/TEST equal(sums['physical-protection'], 300);
-    //TODO/TEST equal(sums['magical-protection'], 300);
 
     createTankBuild();
 
@@ -185,34 +180,26 @@ QUnit.test("should collect secondary stats accordingly", function(assert) {
     //TODO/TEST equal(sums['magical-protection'], 300);
 });
 
-QUnit.test("should compute critical chance", function(assert) {
-    assert.equal(swlcalc.summary.computeCriticalChance(0), 7.5);
-    assert.equal(swlcalc.summary.computeCriticalChance(4000), 33.1);
-    assert.equal(swlcalc.summary.computeCriticalChance(8000), 54.4);
-});
+QUnit.test("should compute secondary stats", function(assert) {
+    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 0), 8.5);
+    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 4000), 34.1);
+    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 8000), 55.4);
 
-QUnit.test("should compute critical power", function(assert) {
-    assert.equal(swlcalc.summary.computeCriticalPowerPercentage(0), 30);
-    assert.equal(swlcalc.summary.computeCriticalPowerPercentage(2500), 118.3);
-    assert.equal(swlcalc.summary.computeCriticalPowerPercentage(5000), 178.5);
-});
+    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 0), 55);
+    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 2500), 143.3);
+    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 5000), 203.5);
 
-QUnit.test("should compute evade chance", function(assert) {
-    assert.equal(swlcalc.summary.computeEvadeChance(0), 0);
-    assert.equal(swlcalc.summary.computeEvadeChance(4000), 27.5);
-    assert.equal(swlcalc.summary.computeEvadeChance(5000), 31.8);
-});
+    assert.equal(swlcalc.summary.computeSecondaryStat('evad', 0), 0);
+    assert.equal(swlcalc.summary.computeSecondaryStat('evad', 4000), 27.5);
+    assert.equal(swlcalc.summary.computeSecondaryStat('evad', 5000), 31.8);
 
-QUnit.test("should compute glance chance", function(assert) {
-    assert.equal(swlcalc.summary.computeGlanceChance(0), 0);
-    assert.equal(swlcalc.summary.computeGlanceChance(4000), 39.3);
-    assert.equal(swlcalc.summary.computeGlanceChance(5000), 45.6);
-});
+    assert.equal(swlcalc.summary.computeSecondaryStat('def', 0), 0);
+    assert.equal(swlcalc.summary.computeSecondaryStat('def', 4000), 39.3);
+    assert.equal(swlcalc.summary.computeSecondaryStat('def', 5000), 45.6);
 
-QUnit.test("should compute glance reduction", function(assert) {
-    assert.equal(swlcalc.summary.computeGlanceReduction(0), 0);
-    assert.equal(swlcalc.summary.computeGlanceReduction(2500), 49.2);
-    assert.equal(swlcalc.summary.computeGlanceReduction(5000), 98.3);
+    assert.equal(swlcalc.summary.computeSecondaryStat('hit', 0), 0);
+    assert.equal(swlcalc.summary.computeSecondaryStat('hit', 2500), 49.2);
+    assert.equal(swlcalc.summary.computeSecondaryStat('hit', 5000), 98.3);
 });
 
 QUnit.test("should compute average ilvl for whole gear", function(assert) {

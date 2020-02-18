@@ -60,16 +60,17 @@ swlcalc.summary = function() {
      * Collects primary stats by going through the whole gear
      */
     var collectPrimaryStats = function() {
+        var statsData = swlcalc.data.stats.computationFigures.primary;
         // initial values
         var sums = {
-            'combat-power': 0,
+            'combat-power':  0,
             'healing-power': 0,
-            'weapon-power': 0,
-            'hitpoints': 7512,     // = 3300 (base HP at lvl 50) + 2997 (amount brought by passives skills) + 1215 (capstone points)
-            'attack-rating': 4322, // = 2000 (base stat at lvl 50) + 1512 (amount brought by passives skills) + 810 (capstone points)
-            'heal-rating': 4310,   // = 2000 (base stat at lvl 50) + 1500 (amount brought by passives skills) + 810 (capstone points)
-            'power-rating': 0,
-            'ilvl': 0
+            'weapon-power':  0,
+            'hitpoints':     statsData['hp'].base + statsData['hp'].capstone + statsData['hp'].sp_passive,
+            'attack-rating': statsData['ar'].base + statsData['ar'].capstone + statsData['ar'].sp_passive,
+            'heal-rating':   statsData['hr'].base + statsData['hr'].capstone + statsData['hr'].sp_passive,
+            'power-rating':  0,
+            'ilvl':          0
         };
         var sumOfIlvl = 0;
 
@@ -84,46 +85,32 @@ swlcalc.summary = function() {
                 sums['power-rating'] += parseInt(slot.edit.equipmentStatValue());
             }
         }
+
         // first basic implementation of anima allocation
-        // TODO/FEATURE : add conversion to AR/HR/HP based on a ratio
         var animaAllocation = swlcalc.buttonBar.getAnimaAllocation();
         if (animaAllocation == 'dps') {
             sums['attack-rating'] += sums['power-rating'];
         } else if (animaAllocation == 'heal') {
             sums['heal-rating'] += sums['power-rating'];
         } else if (animaAllocation == 'tank') {
-            sums['hitpoints'] += Math.round(sums['power-rating'] * swlcalc.data.stats.hp_multiplier);
+            sums['hitpoints'] += Math.round(sums['power-rating'] * swlcalc.data.stats.hp_coefficient);
         }
 
-        sums['combat-power'] = computeCombatPower(sums['attack-rating'], sums['weapon-power']);
-        sums['healing-power'] = computeHealingPower(sums['heal-rating'], sums['weapon-power']);
-        sums['ilvl'] = computeAverageILvl(sumOfIlvl);
+        sums['combat-power']  = computePrimaryPower('ar', sums['attack-rating'], sums['weapon-power']);
+        sums['healing-power'] = computePrimaryPower('hr', sums['heal-rating'], sums['weapon-power']);
+        sums['ilvl']          = computeAverageILvl(sumOfIlvl);
 
         return sums;
     };
 
-    /**
-     * Computes the Combat Power for the given Attack Rating and Weapon Power values
-     * SWL formula for Combat Power is like :
-     * -> +1 Combat Power every 13.33 Attack Rating
-     * -> +1 Combat Power every 13.33 Weapon Power
+    /*
+     * Computes the Primary (= Combat or Healing) Power for the given Primary Stat Rating and Weapon Power values
+     * SWL formula for Primary Power is like :
+     * -> +1 Primary Power every {rate} of Primary Stat Rating
+     * -> +1 Primary Power every {rate} of Weapon Power
      */
-    var computeCombatPower = function(attack_rating, weapon_power) {
-        var ratio = 13 + 1/3;
-
-        return Math.round((attack_rating + weapon_power) / ratio);
-    };
-
-    /**
-     * Computes the Healing Power for the given Heal Rating and Weapon Power values
-     * SWL formula for Combat Power is like :
-     * -> +1 Healing Power every 13.33 Heal Rating
-     * -> +1 Healing Power every 13.33 Weapon Power
-     */
-    var computeHealingPower = function(heal_rating, weapon_power) {
-        var ratio = 13 + 1/3;
-
-        return Math.round((heal_rating + weapon_power) / ratio);
+    var computePrimaryPower = function(primaryStat, sumPrimaryStatPoints, weaponPower) {
+        return Math.round((sumPrimaryStatPoints + weaponPower) / swlcalc.data.stats.computationFigures.primary[primaryStat].rate);
     };
 
     /**
@@ -146,22 +133,21 @@ swlcalc.summary = function() {
      * Collects glyph stats by going through the whole gear
      */
     var collectSecondaryStats = function() {
-        //TODO/REFACTOR : moved these const values to swlcalc-data-stats maybe ?
+        var statsData = swlcalc.data.stats.computationFigures.secondary;
+        // initial values
         var sums = {
-            'critical-rating': 756,           // amount brought by passives skills
-            'critical-chance': 1,             // base percentage
-            'critical-power': 1008,           // amount brought by passives skills
-            'critical-power-percentage': 25,  // base percentage
-            'hit-rating': 756,                // amount brought by passives skills
-            'glance-reduction': 0,
-            'defense-rating': 753,            // amount brought by passives skills
-            'glance-chance': 0,
-            'evade-rating': 753,              // amount brought by passives skills
-            'evade-chance': 0,
-            // 'physical-protection': 2259,   // amount brought by passives skills
-            // 'magical-protection': 2259     // amount brought by passives skills
+            'critical-rating':           statsData['crit'].sp_passive_flat,
+            'critical-chance':           0,
+            'critical-power':            statsData['cpow'].sp_passive_flat,
+            'critical-power-percentage': 0,
+            'hit-rating':                statsData['hit'].sp_passive_flat,
+            'glance-reduction':          0,
+            'defense-rating':            statsData['def'].sp_passive_flat,
+            'glance-chance':             0,
+            'evade-rating':              statsData['evad'].sp_passive_flat,
+            'evade-chance':              0,
         };
-        // get flat stats
+        // retrieve flat stats
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
             if(slot.isWeapon() && !slot.active) {
@@ -169,91 +155,41 @@ swlcalc.summary = function() {
             }
             sums[slot.edit.glyphId()] += parseInt(slot.edit.glyphStatRating());
         }
-        // get ratio stats
-        sums['critical-chance'] += computeCriticalChance(sums['critical-rating']);
-        sums['critical-power-percentage'] += computeCriticalPowerPercentage(sums['critical-power']);
-        sums['glance-reduction'] = computeGlanceReduction(sums['hit-rating']);
-        sums['glance-chance'] = computeGlanceChance(sums['defense-rating']);
-        sums['evade-chance'] = computeEvadeChance(sums['evade-rating']);
+        // compute percentage stats
+        sums['critical-chance']           = computeSecondaryStat('crit', sums['critical-rating']);
+        sums['critical-power-percentage'] = computeSecondaryStat('cpow', sums['critical-power']);
+        sums['glance-reduction']          = computeSecondaryStat('hit', sums['hit-rating']);
+        sums['glance-chance']             = computeSecondaryStat('def', sums['defense-rating']);
+        sums['evade-chance']              = computeSecondaryStat('evad', sums['evade-rating']);
         // round values for display purpose
-        sums['critical-rating'] = sums['critical-rating'].toFixed(0);
-        sums['critical-chance'] = sums['critical-chance'].toFixed(1);
-        sums['critical-power'] = sums['critical-power'].toFixed(0);
+        sums['critical-rating']           = sums['critical-rating'].toFixed(0);
+        sums['critical-chance']           = sums['critical-chance'].toFixed(1);
+        sums['critical-power']            = sums['critical-power'].toFixed(0);
         sums['critical-power-percentage'] = sums['critical-power-percentage'].toFixed(1);
-        sums['evade-chance'] = sums['evade-chance'].toFixed(1);
-        //TODO/FEATURE : prot stats are not functional yet
-        // sums['magical-protection'] = parseInt(sums['magical-protection'].toFixed(0), 10);
-        // sums['physical-protection'] = parseInt(sums['physical-protection'].toFixed(0), 10);
+        sums['evade-chance']              = sums['evade-chance'].toFixed(1);
+
         return sums;
     };
 
-    /*==========================================================================
-     * Glyph stats computation functions
+    /*
+     * Glyph stats computation function
      *
      * SWL formulas for glyph stats computation are always like :
-     * -> Up to {hardCap} => +1% in the considered stat every {softCapRatio}
-     * -> After {hardCap} => +1% in the considered stat every {hardCapRatio}
+     * -> Up to {hardCap} => +1% in the considered stat every {softCapRate}
+     * -> After {hardCap} => +1% in the considered stat every {hardCapRate}
      *
      * The base amount includes capstone points + weapon expertise when relevant
      */
-    /*--------------------------------------------------------------------------*/
-    var computeCriticalChance = function(critical_rating) {
-        var hardCap = 7116;
-        var softCapRatio = 156.05;
-        var hardCapRatio = 676.75;
-        var expertise = 7.5;
+    var computeSecondaryStat = function(statName, sumGlyphPoints) {
+        var stat = swlcalc.data.stats.computationFigures.secondary[statName];
 
-        if (critical_rating < hardCap) {
-            return expertise + swlcalc.util.precisionRound(critical_rating / softCapRatio, 1);
-        } else {
-            return expertise + swlcalc.util.precisionRound(hardCap / softCapRatio + (critical_rating - hardCap) / hardCapRatio, 1);
-        }
+        return stat.sp_passive_percent
+               + stat.expertise
+               + swlcalc.util.precisionRound(
+                     Math.min(sumGlyphPoints, stat.hardCap) / stat.softCapRate
+                     + Math.max(sumGlyphPoints - stat.hardCap, 0) / stat.hardCapRate,
+                 1);
     };
-    /*--------------------------------------------------------------------------*/
-    var computeCriticalPowerPercentage = function(critical_power) {
-        var hardCap = 3996;
-        var softCapRatio = 28.31;
-        var hardCapRatio = 136.00;
-        var expertise = 30;
-
-        if (critical_power < hardCap) {
-            return expertise + swlcalc.util.precisionRound(critical_power / softCapRatio, 1);
-        } else {
-            return expertise + swlcalc.util.precisionRound(hardCap / softCapRatio + (critical_power - hardCap) / hardCapRatio, 1);
-        }
-    };
-    /*--------------------------------------------------------------------------*/
-    var computeEvadeChance = function(evade_rating) {
-        var hardCap = 4569;
-        var softCapRatio = 145.55;
-        var hardCapRatio = 977.40;
-
-        if (evade_rating < hardCap) {
-            return swlcalc.util.precisionRound(evade_rating / softCapRatio, 1);
-        } else {
-            return swlcalc.util.precisionRound(hardCap / softCapRatio + (evade_rating - hardCap) / hardCapRatio, 1);
-        }
-    };
-    /*--------------------------------------------------------------------------*/
-    var computeGlanceChance = function(defense_rating) {
-        var hardCap = 4569;
-        var softCapRatio = 101.71;
-        var hardCapRatio = 683.00;
-
-        if (defense_rating < hardCap) {
-            return swlcalc.util.precisionRound(defense_rating / softCapRatio, 1);
-        } else {
-            return swlcalc.util.precisionRound(hardCap / softCapRatio + (defense_rating - hardCap) / hardCapRatio, 1);
-        }
-    };
-    /*--------------------------------------------------------------------------*/
-    // /!\ No hard cap in the case of Glance reduction
-    var computeGlanceReduction = function(hit_rating) {
-        var ratio = 50.85;
-
-        return swlcalc.util.precisionRound(hit_rating / ratio, 1);
-    };
-    /*==========================================================================*/
 
     /**
      * Computes the average Item Power given by the whole gear
@@ -299,17 +235,12 @@ swlcalc.summary = function() {
 
     var oPublic = {
         init: init,
-        computeCriticalChance: computeCriticalChance,                   //TODO/REFACTOR : visibility relevant only for tests
-        computeCriticalPowerPercentage: computeCriticalPowerPercentage, //TODO/REFACTOR : visibility relevant only for tests
-        computeEvadeChance: computeEvadeChance,                         //TODO/REFACTOR : visibility relevant only for tests
-        computeGlanceChance: computeGlanceChance,                       //TODO/REFACTOR : visibility relevant only for tests
-        computeGlanceReduction: computeGlanceReduction,                 //TODO/REFACTOR : visibility relevant only for tests
-        computeCombatPower: computeCombatPower,                         //TODO/REFACTOR : visibility relevant only for tests
-        computeHealingPower: computeHealingPower,                       //TODO/REFACTOR : visibility relevant only for tests
-        computeAverageILvl: computeAverageILvl,                         //TODO/REFACTOR : visibility relevant only for tests
-        collectPrimaryStats: collectPrimaryStats,                       //TODO/REFACTOR : visibility relevant only for tests
-        collectSecondaryStats: collectSecondaryStats,                   //TODO/REFACTOR : visibility relevant only for tests
-        collectAllStats: collectAllStats,                               //TODO/REFACTOR : visibility relevant only for tests
+        computeSecondaryStat: computeSecondaryStat,    //TODO/REFACTOR : visibility relevant only for tests
+        computePrimaryPower: computePrimaryPower,      //TODO/REFACTOR : visibility relevant only for tests
+        computeAverageILvl: computeAverageILvl,        //TODO/REFACTOR : visibility relevant only for tests
+        collectPrimaryStats: collectPrimaryStats,      //TODO/REFACTOR : visibility relevant only for tests
+        collectSecondaryStats: collectSecondaryStats,  //TODO/REFACTOR : visibility relevant only for tests
+        collectAllStats: collectAllStats,              //TODO/REFACTOR : visibility relevant only for tests
         updateAllStats: updateAllStats,
         updateDescriptions: updateDescriptions
     };

@@ -238,7 +238,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
                 this.recap.equipmentStatTransformedText('Heal Rating');
                 break;
             case 'tank':
-                this.recap.equipmentStatTransformedValue('+' + Math.round(valueRaw * swlcalc.data.stats.hp_multiplier));
+                this.recap.equipmentStatTransformedValue('+' + Math.round(valueRaw * swlcalc.data.stats.hp_coefficient));
                 this.recap.equipmentStatTransformedText('Hit Points');
                 break;
             default:
@@ -254,7 +254,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         if (!(this.edit.equipmentId() == 'none')) {
             newILvl = this.computeItemILvl('equipment', this.edit.equipmentRarity(), this.edit.equipmentLevel());
             if (this.isWeapon()) {
-                newILvl = newILvl * swlcalc.data.stats.weapon_power_multiplier;
+                newILvl = newILvl * swlcalc.data.stats.weapon_power_coefficient;
             }
         }
         // register value before it is rounded (used to compute total ilvl precisely)
@@ -364,7 +364,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             var bonusValue = swlcalc.data.glyph[this.edit.glyphRarity()][this.edit.glyphQuality()].rating_per_level * (this.edit.glyphLevel() - 1);
             newValue = baseValue + Math.round(bonusValue);
             if (this.edit.glyphId() == 'critical-power') {
-                newValue = newValue * swlcalc.data.stats.pcrit_multiplier;
+                newValue = newValue * swlcalc.data.stats.pcrit_coefficient;
             }
             // remove decimals for display
             newValue = newValue.toFixed(0);
@@ -385,7 +385,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         if (this.edit.glyphId() != 'none') {
             newILvl = this.computeItemILvl('glyph', this.edit.glyphRarity(), this.edit.glyphLevel());
             if (this.isWeapon()) {
-                newILvl = newILvl * swlcalc.data.stats.glyph_in_weapon_multiplier;
+                newILvl = newILvl * swlcalc.data.stats.glyph_in_weapon_coefficient;
             }
         }
         //register value before it is rounded (used for #slot-total-ilvl)
