@@ -3,19 +3,29 @@ var swlcalc = swlcalc || {};
 swlcalc.gear = function() {
 
     /*
-     * Map object to store the Slot objects (see below)
+     * Map to store the Slot objects
      */
     var slots = {};
+
+    /*
+     * Array to store the Agent objects
+     */
+    var agents = [];
 
     /**
      * This method can only be called after the document is ready
      */
     var init = function() {
+        // add gear slots
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             var slotData = swlcalc.data.template_data.slots[i];
             this.slots[slotData.id] = new swlcalc.gear.Slot(slotData);
         }
         drawPrimaryWeapon();
+        // add agent slots
+        for (var i = 0; i < 3; i++) {
+            this.agents[i] = new swlcalc.gear.Agent();
+        }
     };
 
     /**
@@ -67,6 +77,7 @@ swlcalc.gear = function() {
 
     var oPublic = {
         slots: slots,
+        agents: agents,
         init: init,
         nbSlots: nbSlots,
         reset: reset,

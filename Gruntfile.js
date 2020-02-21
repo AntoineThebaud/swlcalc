@@ -51,6 +51,7 @@ module.exports = function(grunt) {
             '<%= dirs.src %>/<%= pkg.name %>-slot-recap.js',
             '<%= dirs.src %>/<%= pkg.name %>-slot-handler.js',
             '<%= dirs.src %>/<%= pkg.name %>-theme.js',
+            '<%= dirs.src %>/<%= pkg.name %>-agent.js',
         ],
         dest: '<%= dirs.build %>/assets/javascripts/<%= pkg.name %>.js'
       },
