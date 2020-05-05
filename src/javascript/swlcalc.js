@@ -63,8 +63,13 @@ swlcalc = function() {
      */
     var startSubModules = function() {
         swlcalc.gear.init();
+        // start slots handlers
         for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
             startSlotHandler(swlcalc.data.template_data.slots[i]);
+        }
+        // start handlers for agents slots
+        for (var i = 1; i <= 3; i++) {
+            startAgentSlotHandler(i);
         }
         startSwapHandler('weapon');
         startSwapHandler('weapon2');
@@ -80,6 +85,14 @@ swlcalc = function() {
     var startSlotHandler = function(slot) {
         swlcalc.handler[slot.id] = new swlcalc.gear.SlotHandler(slot);
         swlcalc.handler[slot.id].init();
+    };
+
+    /**
+     * Create handler for an agent slot
+     */
+    var startAgentSlotHandler = function(id) {
+        swlcalc.agenthandler[id] = new swlcalc.gear.AgentSlotHandler(id);
+        swlcalc.agenthandler[id].init();
     };
 
     /**

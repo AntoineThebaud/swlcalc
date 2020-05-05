@@ -52,11 +52,13 @@ module.exports = function(grunt) {
             '<%= dirs.src %>/<%= pkg.name %>-slot-handler.js',
             '<%= dirs.src %>/<%= pkg.name %>-theme.js',
             '<%= dirs.src %>/<%= pkg.name %>-agent.js',
+            '<%= dirs.src %>/<%= pkg.name %>-agent-handler.js',
         ],
         dest: '<%= dirs.build %>/assets/javascripts/<%= pkg.name %>.js'
       },
       build_data: {
         src: [
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-agents.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-slots.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-power.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-mappings.js',

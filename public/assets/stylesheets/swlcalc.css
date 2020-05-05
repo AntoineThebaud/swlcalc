@@ -93,6 +93,9 @@ select {
     background-color: #fff;
     border: 1px solid #ccc;
 }
+h4 {
+    font-weight: bold
+}
 option:disabled {
     display:none;
 }
@@ -283,9 +286,6 @@ div[id="summary"] .table-stats th {
     font-size: 13px;
     border-bottom: 2px solid var(--color-border);
 }
-div[id="summary"] h4 {
-    font-weight: bold
-}
 #table-primary label {
    margin: 10px 0px 10px 0px;
 }
@@ -469,7 +469,6 @@ td.stat-inSummary {
 .slot h4 {
     padding: 0px;
     display: inline;
-    font-weight: bold
 }
 /******************************************************/
 td.slot-ilvl {

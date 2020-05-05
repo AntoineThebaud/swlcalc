@@ -4,7 +4,8 @@ QUnit.module("buttonbar-unit-tests", {
         renderSummary();
         renderButtonbar();
         renderSlots();
-        initiateControllerHandlers();
+        renderAgents();
+        initiateHandlers();
         initiateButtonBar();
         initiateSummary();
         createTankBuild();

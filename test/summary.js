@@ -2,9 +2,10 @@
 QUnit.module("summary-unit-tests", {
     beforeEach: function(assert) {
         renderSlots();
+        renderAgents();
         renderSummary();
         initiateSummary();
-        initiateControllerHandlers();
+        initiateHandlers();
         renderButtonbar();
         initiateButtonBar();
     }

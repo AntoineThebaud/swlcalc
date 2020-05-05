@@ -55,7 +55,7 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         var equipments = swlcalc.data.equipments.slot[slot.kind].slice();
 
         if (slot.group == 'weapon') {
-            //sort alphabetically for a better ergonomy
+            //sort alphabetically on weapon type + name for a better ergonomy
             equipments.sort(function(a, b) {
                 return swlcalc.util.sortAsc(a.type + a.name.toLowerCase(), b.type + b.name.toLowerCase())
             });
@@ -66,6 +66,7 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
                 }));
             });
         } else {
+            //sort alphabetically on equipment name for a better ergonomy
             equipments.sort(function(a, b) {
                 return swlcalc.util.sortAsc(a.name.toLowerCase(), b.name.toLowerCase())
             });

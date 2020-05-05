@@ -11,6 +11,15 @@ function renderSlots() {
     swlcalc.gear.init();
 }
 
+
+function renderAgents() {
+    for (var i = 0; i < 3; i++) {
+        renderTemplate("agent", {
+            id: i
+        });
+    }
+}
+
 function renderSummary() {
     renderTemplate("summary", {});
 }
@@ -46,11 +55,23 @@ function initiateSwapHandlers() {
     swlcalc.swap['weapon2'].init();
 }
 
-function initiateControllerHandlers() {
+function initiateHandlers() {
+    initiateSlotHandlers()
+    initiateAgentHandlers()
+}
+
+function initiateSlotHandlers() {
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-        var slot = swlcalc.data.template_data.slots[ i ];
+        var slot = swlcalc.data.template_data.slots[i];
         swlcalc.handler[slot.id] = new swlcalc.gear.SlotHandler(slot);
         swlcalc.handler[slot.id].init();
+    }
+}
+
+function initiateAgentHandlers() {
+    for (var i = 1; i <= 4; i++) {
+        swlcalc.agenthandler[i] = new swlcalc.gear.AgentSlotHandler(i);
+        swlcalc.agenthandler[i].init();
     }
 }
 

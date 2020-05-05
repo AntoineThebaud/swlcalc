@@ -1,6 +1,6 @@
 <div id="summary">
     <div id="table-primary">
-        <h4>Gear stats</h4>
+        <h4>Summary</h4>
         <table class="table table-stats">
             <thead>
                 <th>Primary Stats</th>

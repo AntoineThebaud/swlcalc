@@ -23,8 +23,8 @@ swlcalc.gear = function() {
         }
         drawPrimaryWeapon();
         // add agent slots
-        for (var i = 0; i < 3; i++) {
-            this.agents[i] = new swlcalc.gear.Agent();
+        for (var i = 1; i <= 3; i++) {
+            this.agents[i] = new swlcalc.gear.Agent(i);
         }
     };
 
