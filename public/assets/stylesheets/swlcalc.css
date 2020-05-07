@@ -613,7 +613,6 @@ td[id$="-recap-equipment-img-section"] {
 @media only screen and (min-width: 1578px) {
     div[id="row-summary"] {
         position:fixed;
-        min-width: 300px;
     }
 }
 /*---------------- rules for select2 ----------------*/

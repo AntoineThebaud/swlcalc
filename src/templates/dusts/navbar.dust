@@ -2,7 +2,7 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-lg-4 col-xs-4">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 <ul class="nav navbar-nav">
                     <li class="navbar-item">
                         <div class="navbar-logo logo-swlcalc"/>
@@ -15,7 +15,7 @@
             </div>
 
             <!-- Button bar -->
-            <div class="col-lg-4 col-xs-4">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 <ul class="nav navbar-nav">
                     <!-- [ Set rarity v ] -->
                     <li class="dropdown">
@@ -65,7 +65,7 @@
                 </ul>
             </div>
 
-            <div class="col-lg-4 col-xs-4">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- [ Reset ] -->
                     <li class="navbar-item">
