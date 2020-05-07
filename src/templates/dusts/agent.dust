@@ -1,5 +1,4 @@
 <div id="agent{id}-div">
-    <p>this is the div for agent {id}</p>
     <select id="agent{id}-id" title="Please select agent">
     </select>
     <p id="agent{id}-text"></p>

@@ -92,6 +92,8 @@ select {
     width: 220px;
     background-color: #fff;
     border: 1px solid #ccc;
+    color: var(--slot-text-color);
+    background-color: var(--edit-select-bg);
 }
 h4 {
     font-weight: bold
@@ -102,9 +104,12 @@ option:disabled {
 div.container {
     width: 1220px;
 }
-.section-gear {
+.section {
     background-color: var(--container-bg-color);
     color: var(--slot-text-color);
+}
+.section.agents {
+    margin-top: 20px;
 }
 .modal-open {
     overflow-y: scroll;
@@ -253,8 +258,6 @@ div.container {
 }
 div[id$="-edit-div"] select {
     border-radius: 4px;
-    color: var(--slot-text-color);
-    background-color: var(--edit-select-bg);
 }
 div[id$="-edit-div"] .table-slots td {
     border: none;
@@ -262,14 +265,6 @@ div[id$="-edit-div"] .table-slots td {
     padding-bottom: 0px;
     padding-right: 0px;
     padding-left: 0px;
-}
-div[id="summary"] {
-    margin-left: 35px;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 200px;
-    background-color: var(--container-bg-color);
-    color: var(--slot-text-color);
 }
 div[id="summary"] .table-stats td {
     padding: 1px;
@@ -615,9 +610,10 @@ td[id$="-recap-equipment-img-section"] {
     text-align: center;
 }
 
-@media only screen and (min-width: 1200px) {
-    div[id="summary"] {
+@media only screen and (min-width: 1578px) {
+    div[id="row-summary"] {
         position:fixed;
+        min-width: 300px;
     }
 }
 /*---------------- rules for select2 ----------------*/
