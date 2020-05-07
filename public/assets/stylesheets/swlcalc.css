@@ -45,6 +45,9 @@ html[theme='classic'] {
     --aallocation-bg: white;
     --aallocation-text-color: unset;
     --not-functional: var(--color-lightgrey);
+
+    --btn-transparent-idle: #777;
+    --btn-transparent-active: #333;
 }
 html[theme='sw'] {
     --color-mediumgrey: #A1A1A1;
@@ -72,6 +75,9 @@ html[theme='sw'] {
     --aallocation-bg: #111;
     --aallocation-text-color: var(--slot-text-color);
     --not-functional: var(--color-darkgrey);
+
+    --btn-transparent-idle: #9d9d9d;
+    --btn-transparent-active: #fff;
 }
 /******************************************************/
 body {
@@ -126,10 +132,6 @@ div.container {
     pointer-events: none;
 }
 /******************************************************/
-.navbar-select {
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
 .navbar-icon-a {
     padding: 0 !important;
 }
@@ -139,8 +141,6 @@ div.container {
 }
 .navbar-icon-img.github {
     width: 30px;
-    margin-top: 10px;
-    margin-bottom: 8px;
     filter: var(--img-filter);
 }
 .navbar-icon-img.swl {
@@ -148,17 +148,21 @@ div.container {
     margin-bottom: 0;
     margin-right: 5px;
 }
-.navbar-btn.feedback {
+.feedback {
     padding: 0px 12px;
 }
 .navbar-item {
     margin-right: 5px;
 }
+.btn-toolbar {
+    margin-bottom: 8px;
+}
+.btn-group.toplvl {
+    margin-top: 8px;
+}
 .navbar-logo {
     float: left;
-    height: 34px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    height: 32px;
 }
 .navbar-inverse {
     background: var(--bar-bg);
@@ -178,13 +182,33 @@ div.container {
     filter: var(--img-filter);
 }
 .logo-dg {
-    width: 34px;
+    width: 32px;
     margin-bottom: 5px;
 }
 .logo-swlcalc {
     background-image: var(--swlcalc-logo);
     width: 176px;
     background-size: 100%;
+}
+.btn-group.right {
+    float: right;
+}
+.btn-transparent {
+    color: var(--btn-transparent-idle);
+    background-color: transparent;
+    border: none;
+}
+.btn-transparent.focus, .btn-transparent:focus {
+    color: var(--btn-transparent-active);
+}
+.btn-transparent:hover {
+    color: var(--btn-transparent-active);
+}
+.btn-transparent.active, .btn-transparent:active, .open > .dropdown-toggle.btn-transparent {
+    color: var(--btn-transparent-active);
+}
+.btn-transparent.active.focus, .btn-transparent.active:focus, .btn-transparent.active:hover, .btn-transparent:active.focus, .btn-transparent:active:focus, .btn-transparent:active:hover, .open > .dropdown-toggle.btn-transparent.focus, .open > .dropdown-toggle.btn-transparent:focus, .open > .dropdown-toggle.btn-transparent:hover {
+    color: var(--btn-transparent-active);
 }
 /******************************************************/
 .lightgrey {

@@ -1,112 +1,99 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
+        <div class="btn-toolbar" role="toolbar" aria-label="...">
 
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <ul class="nav navbar-nav">
-                    <li class="navbar-item">
-                        <div class="navbar-logo logo-swlcalc"/>
-                        <div class="logo-div navbar-logo">
-                            <span class="logo-slogan mediumgrey">A gear planner for</span>
-                            <img class="logo-swl" src="assets/images/logos/swl.png"/>
-                        </div>
-                    </li>
-                </ul>
+            <div class="btn-group toplvl" role="group">
+                <div class="navbar-logo logo-swlcalc"/>
+                <div class="logo-div navbar-logo">
+                    <span class="logo-slogan mediumgrey">A gear planner for</span>
+                    <img class="logo-swl" src="assets/images/logos/swl.png"/>
+                </div>
             </div>
 
-            <!-- Button bar -->
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <ul class="nav navbar-nav">
-                    <!-- [ Set rarity v ] -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Set rarity <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a id="btn-all-standard"><span class="fix-link">All to <span class="color-standard">Standard</span></span></a></li>
-                            <li><a id="btn-all-superior"><span class="fix-link">All to <span class="color-superior">Superior</span></span></a></li>
-                            <li><a id="btn-all-epic"><span class="fix-link">All to <span class="color-epic">Epic</span></span></a></li>
-                            <li><a id="btn-all-mythic" ><span class="fix-link">All to <span class="color-mythic">Mythic</span></span></a></li>
-                            <li><a id="btn-all-legendary"><span class="fix-link">All to <span class="color-legendary">Legendary</span></span></a></li>
-                        </ul>
-                    </li>
-                    <!-- [ Set quality v ] -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Set quality <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a id="btn-all-1-pip"><span class="fix-link">All to 1 pip</span></a></li>
-                            <li><a id="btn-all-2-pip"><span class="fix-link">All to 2 pips</span></a></li>
-                            <li><a id="btn-all-3-pip"><span class="fix-link">All to 3 pips</span></a></li>
-                            <li><a id="btn-all-4-pip"><span class="fix-link">All to 4 pips</span></a></li>
-                        </ul>
-                    </li>
-                    <!-- [ Set level v ] -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Set level <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a id="btn-all-lvl-min"><span class="fix-link">All to min</span></a></li>
-                            <li><a id="btn-all-lvl-max"><span class="fix-link">All to max</span></a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Anima allocation [ 100% DPS |V] -->
-                    <li class="navbar-select anima-allocation-li">
-                        <p class="anima-allocation-label">Anima allocation :</p>
-                        <select id="select-anima-allocation" class="anima-allocation-select dps">
-                            <option value="dps" class="dps" selected="true">100% Damage</option>
-                            <option value="heal" class="heal">100% Healing</option>
-                            <option value="tank" class="tank">100% Survivability</option>
-                        </select>
-                    </li>
-                </ul>
+            <div class="btn-group toplvl" role="group">
+                <!-- [ Set rarity v ] -->
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                        Set rarity <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a id="btn-all-standard"><span class="fix-link">All to <span class="color-standard">Standard</span></span></a></li>
+                        <li><a id="btn-all-superior"><span class="fix-link">All to <span class="color-superior">Superior</span></span></a></li>
+                        <li><a id="btn-all-epic"><span class="fix-link">All to <span class="color-epic">Epic</span></span></a></li>
+                        <li><a id="btn-all-mythic" ><span class="fix-link">All to <span class="color-mythic">Mythic</span></span></a></li>
+                        <li><a id="btn-all-legendary"><span class="fix-link">All to <span class="color-legendary">Legendary</span></span></a></li>
+                    </ul>
+                </div>
+                <!-- [ Set quality v ] -->
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                        Set quality <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a id="btn-all-1-pip"><span class="fix-link">All to 1 pip</span></a></li>
+                        <li><a id="btn-all-2-pip"><span class="fix-link">All to 2 pips</span></a></li>
+                        <li><a id="btn-all-3-pip"><span class="fix-link">All to 3 pips</span></a></li>
+                        <li><a id="btn-all-4-pip"><span class="fix-link">All to 4 pips</span></a></li>
+                    </ul>
+                </div>
+                <!-- [ Set level v ] -->
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                        Set level <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a id="btn-all-lvl-min"><span class="fix-link">All to min</span></a></li>
+                        <li><a id="btn-all-lvl-max"><span class="fix-link">All to max</span></a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- [ Reset ] -->
-                    <li class="navbar-item">
-                        <button id="btn-reset" class="btn btn-danger navbar-btn">Reset</button>
-                    </li>
-                    <!-- [ Export ] -->
-                    <li class="navbar-item">
-                        <button class="btn btn-primary navbar-btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            Export <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="export" href="#open-export-modal" data="url" data-toggle="modal">URL</a></li>
-                        </ul>
-                    </li>
-                    <!-- [ Forum ] -->
-                    <li class="navbar-item">
-                        <a class="navbar-icon-a" role="button" href="https://forums.funcom.com/t/swlcalc-gear-planner-for-swl/1908" target="_blank">
-                            <button class="btn btn-info navbar-btn feedback">
-                                <img class="navbar-icon-img swl" src="assets/images/icons/funcomforum.png" />
-                                Feedback
-                            </button>
-                        </a>
-                    </li>
-                    <!-- [ Theme v ] -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Theme <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a id="btn-theme-sw"><span class="fix-link">Secret World</span></a></li>
-                            <li><a id="btn-theme-classic"><span class="fix-link">Classic</span></a></li>
-                        </ul>
-                    </li>
-                    <!-- [ Github ] -->
-                    <li class="navbar-item">
-                        <a class="navbar-icon-a" href="https://github.com/AntoineThebaud/swlcalc" target="_blank">
-                            <img class="navbar-icon-img github" src="assets/images/icons/github.png" />
-                        </a>
-                    </li>
-                </ul>
+            <div class="btn-group toplvl" role="group">
+                <!-- Anima allocation [ 100% DPS |V] -->
+                <div class="btn-group anima-allocation-li">
+                    <p class="anima-allocation-label">Anima allocation :</p>
+                    <select id="select-anima-allocation" class="anima-allocation-select dps">
+                        <option value="dps" class="dps" selected="true">100% Damage</option>
+                        <option value="heal" class="heal">100% Healing</option>
+                        <option value="tank" class="tank">100% Survivability</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="btn-group right toplvl" role="group">
+                <!-- [ Reset ] -->
+                <button type="button" id="btn-reset" class="btn btn-danger">
+                    Reset
+                </button>
+                <!-- [ Export ] -->
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                        Export <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="export" href="#open-export-modal" data="url" data-toggle="modal">URL</a></li>
+                    </ul>
+                </div>
+                <!-- [ Feedback ] -->
+                <button type="button" class="btn btn-info feedback">
+                    <img class="navbar-icon-img swl" src="assets/images/icons/funcomforum.png" />
+                    Feedback
+                </button>
+                <!-- [ Theme v ] -->
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                        Theme <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a id="btn-theme-sw"><span class="fix-link">Secret World</span></a></li>
+                        <li><a id="btn-theme-classic"><span class="fix-link">Classic</span></a></li>
+                    </ul>
+                </div>
+                <!-- [ Github ] -->
+                <a class="navbar-icon-a" href="https://github.com/AntoineThebaud/swlcalc" target="_blank">
+                    <img class="navbar-icon-img github" src="assets/images/icons/github.png" />
+                </a>
             </div>
         </div>
-    </div><!-- /.container-fluid -->
+    </div>
 </nav>
