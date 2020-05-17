@@ -634,7 +634,7 @@ td[id$="-recap-equipment-img-section"] {
     text-align: center;
 }
 
-@media only screen and (min-width: 1578px) {
+@media only screen and (min-height: 630px) and (min-width: 1200px) {
     div[id="row-summary"] {
         position:fixed;
     }
