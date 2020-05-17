@@ -1,8 +1,7 @@
 
 QUnit.module("slots-edit-unit-tests", {
     beforeEach: function(assert) {
-        renderSlots();
-        renderAgents();
+        renderGear();
         renderSummary();
         renderButtonbar(); // TODO/REFACTOR this is needed otherwise anima allocation is undefined. to change ? Save anima allocation as attribute to gear maybe ?
         initiateButtonBar(); // see previous comment

@@ -1,8 +1,7 @@
 
 QUnit.module("summary-unit-tests", {
     beforeEach: function(assert) {
-        renderSlots();
-        renderAgents();
+        renderGear();
         renderSummary();
         initiateSummary();
         initiateHandlers();

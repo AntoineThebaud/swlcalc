@@ -1,6 +1,6 @@
 //TODO/REFACTOR : use these functions for each test module setup !
 
-function renderSlots() {
+function renderGear() {
     renderTemplate("slots_recap", {
         slots_recap: swlcalc.data.template_data.slots
     });
@@ -8,16 +8,13 @@ function renderSlots() {
         slots_edit: swlcalc.data.template_data.slots
     });
 
-    swlcalc.gear.init();
-}
-
-
-function renderAgents() {
     for (var i = 0; i < 3; i++) {
         renderTemplate("agent", {
             id: i
         });
     }
+
+    swlcalc.gear.init();
 }
 
 function renderSummary() {
@@ -69,7 +66,7 @@ function initiateSlotHandlers() {
 }
 
 function initiateAgentHandlers() {
-    for (var i = 1; i <= 4; i++) {
+    for (var i = 1; i <= 3; i++) {
         swlcalc.agenthandler[i] = new swlcalc.gear.AgentSlotHandler(i);
         swlcalc.agenthandler[i].init();
     }
