@@ -16,6 +16,7 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
      */
     this.bindEvents = function() {
         agentObj.el.agentId.change(this.handleAgentChange);
+        agentObj.el.agentLevel.change(this.handleAgentChange);
     };
 
     /**
@@ -43,7 +44,7 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
     };
 
     /**
-     * Handler for agent-#id-id
+     * Handler for agent#id-id & agent#id-level
      */
     this.handleAgentChange = function(event) {
         agentObj.updateAgent();
