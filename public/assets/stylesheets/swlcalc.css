@@ -549,7 +549,7 @@ div[id$="-recap-div"] {
     background: var(--slot-bg);
     border: var(--slot-border);
 }
-div[id$="-recap-div"] p {
+div[id$="-recap-div"] p, .agent-div > p {
     font-size: 11px;
     margin: 0;
 }
@@ -561,7 +561,7 @@ div[id$="-recap-div"] h6 {
     font-weight: bold;
     margin: 0;
 }
-div[id$="-recap-div"] hr {
+div[id$="-recap-div"] hr, .agent-div > hr {
     margin-top: 4px;
     margin-bottom: 4px;
     border-top: 2px solid var(--slot-hr-color);
@@ -682,6 +682,7 @@ td[id$="-recap-equipment-img-section"] {
 }
 .agent-table > tbody > tr > td {
     border: none;
+    padding: 5px;
 }
 .agent-table > tbody > tr > td.agent-title {
     text-align: center;
@@ -693,11 +694,15 @@ td[id$="-recap-equipment-img-section"] {
     vertical-align: middle;
 }
 .agent-name-select {
-    width: 150px;
+    /* width: 150px;*/
 }
 .agent-table > tbody > tr > td.agent-level-label {
     vertical-align: middle;
 }
+.agent-table > tbody > tr > td > select {
+    width: 100%;
+    border-radius: 4px;
+}
 .agent-level-select {
-    width: auto;
+    /* width: 150px; */
 }

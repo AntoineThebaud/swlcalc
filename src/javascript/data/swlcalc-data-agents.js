@@ -4,27 +4,35 @@ swlcalc.data = swlcalc.data || {};
 // TODO : add all agents
 swlcalc.data.agents = [
     {
+        id: 0,
+        name: 'None',
+        lvl25_type: '',
+        lvl25_value: 'Empty agent slot',
+        lvl50_type: '',
+        lvl50_value: '',
+    },
+    {
         id: 1,
         name: 'Roman Konstantinov',
-        lvl25_support_type: 'health',
-        lvl25_support_value: '490',
-        lvl50_support_type: 'health',
-        lvl50_support_value: '+1490',
+        lvl25_type: 'hitpoints',
+        lvl25_value: '490',
+        lvl50_type: 'miscellaneous',
+        lvl50_value: '+8% Elite Damage',
     },
     {
         id: 2,
         name: 'Warlawurru',
-        lvl25_support_type: 'health',
-        lvl25_support_value: '490',
-        lvl50_support_type: 'miscellaneous',
-        lvl50_support_value: '+8% Power Damage',
+        lvl25_type: 'hitpoints',
+        lvl25_value: '490',
+        lvl50_type: 'miscellaneous',
+        lvl50_value: '+8% Power Damage',
     },
     {
         id: 3,
         name: 'Carlos Peraza',
-        lvl25_support_type: 'health',
-        lvl25_support_value: '490',
-        lvl50_support_type: 'miscellaneous',
-        lvl50_support_value: '+20% Elite Damage',
+        lvl25_type: 'miscellaneous',
+        lvl25_value: '+20% Elite Damage',
+        lvl50_type: 'attack-rating',
+        lvl50_value: '999',
     }
 ]

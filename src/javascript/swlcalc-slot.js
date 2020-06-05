@@ -295,8 +295,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateGlyph = function() {
         var newId = this.edit.glyphId();
 
-        this.edit.glyphStatText(swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newId]);
-        this.recap.glyphStatText(swlcalc.data.glyph_stat_mapping.to_stat_GUIformat[newId]);
+        this.edit.glyphStatText(swlcalc.data.secondary_stat_mapping.to_pretty[newId]);
+        this.recap.glyphStatText(swlcalc.data.secondary_stat_mapping.to_pretty[newId]);
 
         var img_path = 'assets/images/icons/glyph/' + newId + '.png';
         this.edit.glyphImgItem(img_path);
@@ -304,7 +304,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         if (newId == 'none') {
             this.recap.glyphItem('');
         } else {
-            this.recap.glyphItem(swlcalc.data.glyph_stat_mapping.to_name[newId]);
+            this.recap.glyphItem(swlcalc.data.secondary_stat_mapping.to_name[newId]);
         }
     };
 
@@ -583,7 +583,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Mapping function for import/export feature
      */
     this.mappedState = function() {
-        var gmap  = swlcalc.data.glyph_stat_mapping.to_num;
+        var gmap  = swlcalc.data.secondary_stat_mapping.to_num;
         var rmap  = swlcalc.data.rarity_mapping.to_num;
         return {
             equipment_id:      this.stripContent(this.edit.equipmentId()),

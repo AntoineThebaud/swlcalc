@@ -51,4 +51,19 @@
             </tbody>
         </table>
     </div>
+    <div id="table-miscellaneous">
+        <table class="table table-stats">
+            <thead>
+                <th>Other Bonuses</th>
+            </thead>
+            <tbody>
+                <tr><td id="stat-agent1-l25bonus" class="stat-name"></td></tr>
+                <tr><td id="stat-agent1-l50bonus" class="stat-name"></td></tr>
+                <tr><td id="stat-agent2-l25bonus" class="stat-name"></td></tr>
+                <tr><td id="stat-agent2-l50bonus" class="stat-name"></td></tr>
+                <tr><td id="stat-agent3-l25bonus" class="stat-name"></td></tr>
+                <tr><td id="stat-agent3-l50bonus" class="stat-name"></td></tr>
+            </tbody>
+        </table>
+    </div>
 </div>

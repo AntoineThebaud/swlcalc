@@ -14,6 +14,7 @@ swlcalc.summary = function() {
     var updateAllStats = function() {
         updatePrimaryStats();
         updateSecondaryStats();
+        updateMiscellaneousBonuses();
         updateDescriptions();
         updateURL();
     };
@@ -83,6 +84,20 @@ swlcalc.summary = function() {
                 sums['weapon-power'] = parseInt(slot.edit.equipmentStatValue());
             } else if (!slot.isWeapon() && slot.edit.equipmentId() != 'none') {
                 sums['power-rating'] += parseInt(slot.edit.equipmentStatValue());
+            }
+        }
+
+        // sum bonuses brought by agents
+        for (var i = 1; i <= 3; i++) {
+            var l25t = swlcalc.gear.agents[i].agentData.lvl25_type
+            if (l25t != "miscellaneous" && l25t != "") {
+                sums[l25t] += parseInt(swlcalc.gear.agents[i].agentData.lvl25_value)
+            }
+            if (swlcalc.gear.agents[i].level() == 50) {
+                var l50t = swlcalc.gear.agents[i].agentData.lvl50_type
+                if (l50t != "miscellaneous" && l50t != "") {
+                    sums[l50t] += parseInt(swlcalc.gear.agents[i].agentData.lvl50_value)
+                }
             }
         }
 
@@ -190,6 +205,25 @@ swlcalc.summary = function() {
                      + Math.max(sumGlyphPoints - stat.hardCap, 0) / stat.hardCapRate,
                  1);
     };
+
+      /**
+       * Display any remaining miscellaneous bonus brought by agents
+       */
+      var updateMiscellaneousBonuses = function() {
+          for (var i = 1; i <= 3; i++) {
+              if (swlcalc.gear.agents[i].agentData.lvl25_type == "miscellaneous") {
+                  $('#stat-agent' + i + '-l25bonus').html(swlcalc.gear.agents[i].text25());
+              } else {
+                  $('#stat-agent' + i + '-l25bonus').html("");
+              }
+
+              if (swlcalc.gear.agents[i].agentData.lvl50_type == "miscellaneous") {
+                  $('#stat-agent' + i + '-l50bonus').html(swlcalc.gear.agents[i].text50());
+              } else {
+                  $('#stat-agent' + i + '-l50bonus').html("");
+              }
+          }
+      };
 
     /**
      * Computes the average Item Power given by the whole gear

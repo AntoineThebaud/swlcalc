@@ -1,7 +1,7 @@
 var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
-swlcalc.data.glyph_stat_mapping = {
+swlcalc.data.secondary_stat_mapping = {
     to_num: {
         'none': 0,
         'hit-rating': 1,
@@ -18,7 +18,7 @@ swlcalc.data.glyph_stat_mapping = {
         4: 'evade-rating',
         5: 'defense-rating',
     },
-    to_stat_GUIformat: {
+    to_pretty: {
         'none': '',
         'hit-rating': 'Hit Rating',
         'critical-rating': 'Critical Rating',
@@ -116,5 +116,14 @@ swlcalc.data.suffix_mapping = {
         6: 'restoration',
         7: 'recovery',
         8: 'warding'
+    }
+};
+
+swlcalc.data.primary_stat_mapping = {
+    to_pretty: {
+        'hitpoints': 'Hit Points',
+        'attack-rating': 'Attack Rating',
+        'heal-rating': 'Heal Rating',
+        'protection': 'Protection'
     }
 };

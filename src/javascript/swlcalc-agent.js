@@ -3,77 +3,85 @@ swlcalc.gear = swlcalc.gear || {};
 
 swlcalc.gear.Agent = function Agent(id) {
     this.id = id;
+    this.agentData = swlcalc.data.agents[0]
 
     this.el = {
-        agentId: $('#agent' + this.id + '-id'),
-        agentLevel: $('#agent' + this.id + '-level'),
-        agentText25: $('#agent' + this.id + '-text25'),
-        agentText50: $('#agent' + this.id + '-text50'),
+        id: $('#agent' + this.id + '-id'),
+        level: $('#agent' + this.id + '-level'),
+        text25: $('#agent' + this.id + '-text25'),
+        text50: $('#agent' + this.id + '-text50'),
     };
 
     /**
      * Update elements related to agent's id
      */
     this.updateAgent = function() {
-      var newId = this.agentId();
+        var newId = this.id();
+        this.agentData = swlcalc.data.agents[newId];
 
-      if (newId == 'none') {
-          this.agentText("empty agent slot");
-      } else {
-          var newAgentData = swlcalc.data.agents[newId - 1];
+        if (newId == '0') {
+            this.text25(this.agentData.lvl25_value);
+            this.text50(this.agentData.lvl50_value);
+        } else {
+            if (this.agentData.lvl25_type == "miscellaneous") {
+                this.text25(this.agentData.lvl25_value);
+            } else {
+                this.text25('<span class="stat-value gear">+' + this.agentData.lvl25_value + "</span> " + swlcalc.data.primary_stat_mapping.to_pretty[this.agentData.lvl25_type]);
+            }
 
-          this.agentText25(newAgentData.lvl25_support_value + " - " + newAgentData.lvl25_support_type);
-          if (this.agentLevel() == "50") {
-              this.el.agentText50.show();
-              this.agentText50(newAgentData.lvl50_support_value + " - " + newAgentData.lvl50_support_type);
-          } else {
-              this.el.agentText50.hide();
-              this.agentText50("");
-          }
-      }
+            if (this.level() == "50") {
+                if (this.agentData.lvl50_type == "miscellaneous") {
+                    this.text50(this.agentData.lvl50_value);
+                } else {
+                    this.text50('<span class="stat-value gear">+' + this.agentData.lvl50_value + "</span> " + swlcalc.data.primary_stat_mapping.to_pretty[this.agentData.lvl50_type]);
+                }
+            } else {
+                this.text50("");
+            }
+        }
     };
 
     /**
      * Getter/Setter for agent#id-id
      */
-    this.agentId = function() {
+    this.id = function() {
         if (arguments.length == 1) {
-            this.el.agentId.val(arguments[0]);
+            this.el.id.val(arguments[0]);
         } else {
-            return this.el.agentId.val();
+            return this.el.id.val();
         }
     };
 
     /**
      * Getter/Setter for agent#id-level
      */
-    this.agentLevel = function() {
+    this.level = function() {
         if (arguments.length == 1) {
-            this.el.agentLevel.val(arguments[0]);
+            this.el.level.val(arguments[0]);
         } else {
-            return this.el.agentLevel.val();
+            return this.el.level.val();
         }
     };
 
     /**
      * Getter/Setter for agent#id-text25
      */
-    this.agentText25 = function() {
+    this.text25 = function() {
         if (arguments.length == 1) {
-            this.el.agentText25.text(arguments[0]);
+            this.el.text25.html(arguments[0]);
         } else {
-            return this.el.agentText25.text();
+            return this.el.text25.html();
         }
     };
 
     /**
      * Getter/Setter for agent#id-text50
      */
-    this.agentText50 = function() {
+    this.text50 = function() {
         if (arguments.length == 1) {
-            this.el.agentText50.text(arguments[0]);
+            this.el.text50.html(arguments[0]);
         } else {
-            return this.el.agentText50.text();
+            return this.el.text50.html();
         }
     };
 };
