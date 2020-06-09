@@ -26,6 +26,14 @@ swlcalc.util = function() {
         else return -1;
     }
 
+    var isPrimaryStat = function(stat) {
+        return swlcalc.data.stat_mapping.primary_stats.includes(stat)
+    }
+
+    var isSecondaryStat = function(stat) {
+        return swlcalc.data.stat_mapping.secondary_stats.includes(stat)
+    }
+
     /**
      * Public interface
      */
@@ -33,7 +41,9 @@ swlcalc.util = function() {
         capitalize: capitalize,
         blankIfNone: blankIfNone,
         precisionRound: precisionRound,
-        sortAsc: sortAsc
+        sortAsc: sortAsc,
+        isPrimaryStat: isPrimaryStat,
+        isSecondaryStat: isSecondaryStat
     }
     return oPublic;
 }();

@@ -34,5 +34,13 @@ swlcalc.data.agents = [
         lvl25_value: '+20% Elite Damage',
         lvl50_type: 'attack-rating',
         lvl50_value: '999',
+    },
+    {
+        id: 4,
+        name: 'Jayesh Suresh',
+        lvl25_type: 'protection',
+        lvl25_value: '1000',
+        lvl50_type: 'defense-rating',
+        lvl50_value: '500',
     }
 ]

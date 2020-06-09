@@ -1,6 +1,34 @@
 var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
+swlcalc.data.stat_mapping = {
+  primary_stats : [
+    'attack-rating',
+    'heal-rating',
+    'hit-rating',
+    'protection'
+  ],
+  secondary_stats : [
+    'critical-rating',
+    'critical-power',
+    'evade-rating',
+    'defense-rating',
+    'hit-rating'
+  ],
+  to_pretty : {
+    'attack-rating': 'Attack Rating',
+    'critical-rating': 'Critical Rating',
+    'critical-power': 'Critical Power',
+    'evade-rating': 'Evade Rating',
+    'defense-rating': 'Defense Rating',
+    'heal-rating': 'Heal Rating',
+    'hitpoints': 'Hit Points',
+    'hit-rating': 'Hit Rating',
+    'none': '',
+    'protection': 'Protection'
+  }
+};
+
 swlcalc.data.secondary_stat_mapping = {
     to_num: {
         'none': 0,
@@ -17,14 +45,6 @@ swlcalc.data.secondary_stat_mapping = {
         3: 'critical-power',
         4: 'evade-rating',
         5: 'defense-rating',
-    },
-    to_pretty: {
-        'none': '',
-        'hit-rating': 'Hit Rating',
-        'critical-rating': 'Critical Rating',
-        'critical-power': 'Critical Power',
-        'evade-rating': 'Evade Rating',
-        'defense-rating': 'Defense Rating',
     },
     to_name: {
       'hit-rating': 'Accurate',
@@ -116,14 +136,5 @@ swlcalc.data.suffix_mapping = {
         6: 'restoration',
         7: 'recovery',
         8: 'warding'
-    }
-};
-
-swlcalc.data.primary_stat_mapping = {
-    to_pretty: {
-        'hitpoints': 'Hit Points',
-        'attack-rating': 'Attack Rating',
-        'heal-rating': 'Heal Rating',
-        'protection': 'Protection'
     }
 };

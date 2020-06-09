@@ -89,14 +89,14 @@ swlcalc.summary = function() {
 
         // sum bonuses brought by agents
         for (var i = 1; i <= 3; i++) {
-            var l25t = swlcalc.gear.agents[i].agentData.lvl25_type
-            if (l25t != "miscellaneous" && l25t != "") {
-                sums[l25t] += parseInt(swlcalc.gear.agents[i].agentData.lvl25_value)
+            var ad = swlcalc.gear.agents[i].agentData
+
+            if (swlcalc.util.isPrimaryStat(ad.lvl25_type)) {
+                sums[ad.lvl25_type] += parseInt(ad.lvl25_value)
             }
             if (swlcalc.gear.agents[i].level() == 50) {
-                var l50t = swlcalc.gear.agents[i].agentData.lvl50_type
-                if (l50t != "miscellaneous" && l50t != "") {
-                    sums[l50t] += parseInt(swlcalc.gear.agents[i].agentData.lvl50_value)
+                if (swlcalc.util.isPrimaryStat(ad.lvl50_type)) {
+                    sums[ad.lvl50_type] += parseInt(ad.lvl50_value)
                 }
             }
         }
@@ -162,6 +162,7 @@ swlcalc.summary = function() {
             'evade-rating':              statsData['evad'].sp_passive_flat,
             'evade-chance':              0,
         };
+
         // retrieve flat stats
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
@@ -170,6 +171,21 @@ swlcalc.summary = function() {
             }
             sums[slot.edit.glyphId()] += parseInt(slot.edit.glyphStatRating());
         }
+
+        // sum bonuses brought by agents
+        for (var i = 1; i <= 3; i++) {
+            var ad = swlcalc.gear.agents[i].agentData
+
+            if (swlcalc.util.isSecondaryStat(ad.lvl25_type)) {
+                sums[ad.lvl25_type] += parseInt(ad.lvl25_value)
+            }
+            if (swlcalc.gear.agents[i].level() == 50) {
+                if (swlcalc.util.isSecondaryStat(ad.lvl50_type)) {
+                    sums[ad.lvl50_type] += parseInt(ad.lvl50_value)
+                }
+            }
+        }
+        
         // compute percentage stats
         sums['critical-chance']           = computeSecondaryStat('crit', sums['critical-rating']);
         sums['critical-power-percentage'] = computeSecondaryStat('cpow', sums['critical-power']);

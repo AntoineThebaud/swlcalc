@@ -26,14 +26,14 @@ swlcalc.gear.Agent = function Agent(id) {
             if (this.agentData.lvl25_type == "miscellaneous") {
                 this.text25(this.agentData.lvl25_value);
             } else {
-                this.text25('<span class="stat-value gear">+' + this.agentData.lvl25_value + "</span> " + swlcalc.data.primary_stat_mapping.to_pretty[this.agentData.lvl25_type]);
+                this.text25('<span class="stat-value gear">+' + this.agentData.lvl25_value + "</span> " + swlcalc.data.stat_mapping.to_pretty[this.agentData.lvl25_type]);
             }
 
             if (this.level() == "50") {
                 if (this.agentData.lvl50_type == "miscellaneous") {
                     this.text50(this.agentData.lvl50_value);
                 } else {
-                    this.text50('<span class="stat-value gear">+' + this.agentData.lvl50_value + "</span> " + swlcalc.data.primary_stat_mapping.to_pretty[this.agentData.lvl50_type]);
+                    this.text50('<span class="stat-value gear">+' + this.agentData.lvl50_value + "</span> " + swlcalc.data.stat_mapping.to_pretty[this.agentData.lvl50_type]);
                 }
             } else {
                 this.text50("");

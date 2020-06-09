@@ -295,8 +295,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateGlyph = function() {
         var newId = this.edit.glyphId();
 
-        this.edit.glyphStatText(swlcalc.data.secondary_stat_mapping.to_pretty[newId]);
-        this.recap.glyphStatText(swlcalc.data.secondary_stat_mapping.to_pretty[newId]);
+        this.edit.glyphStatText(swlcalc.data.stat_mapping.to_pretty[newId]);
+        this.recap.glyphStatText(swlcalc.data.stat_mapping.to_pretty[newId]);
 
         var img_path = 'assets/images/icons/glyph/' + newId + '.png';
         this.edit.glyphImgItem(img_path);
