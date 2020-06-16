@@ -63,7 +63,11 @@ swlcalc.data.agents = [
         id: 7,
         name: 'Margot Crowley-Mathers',
         lvl25_type: 'miscellaneous',
-        lvl25_value: '0.1075CP Damage on Critical Hits',
+        lvl25_value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
+        lvl25_varbonus: {
+          coef: 0.1075,
+          stat: 'Combat Power'
+        },
         lvl50_type: 'attack-rating',
         lvl50_value: '650',
     },
@@ -71,7 +75,11 @@ swlcalc.data.agents = [
         id: 8,
         name: 'Calum MacLeod',
         lvl25_type: 'miscellaneous',
-        lvl25_value: '0.1075CP Damage on Critical Hits',
+        lvl25_value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
+        lvl25_varbonus: {
+          coef: 0.1075,
+          stat: 'Combat Power'
+        },
         lvl50_type: 'critical-power',
         lvl50_value: '300',
     },
@@ -89,7 +97,11 @@ swlcalc.data.agents = [
         lvl25_type: 'critical-power',
         lvl25_value: '150',
         lvl50_type: 'miscellaneous',
-        lvl50_value: '0.215CP Damage on Critical Hits',
+        lvl50_value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
+        lvl50_varbonus: {
+          coef: 0.215,
+          stat: 'Combat Power'
+        },
     },
     {
         id: 11,
@@ -97,7 +109,11 @@ swlcalc.data.agents = [
         lvl25_type: 'attack-rating',
         lvl25_value: '325',
         lvl50_type: 'miscellaneous',
-        lvl50_value: '0.215CP Damage on Critical Hits',
+        lvl50_value: '<span class="bonus-val dps">%d</span> physical damage Damage on Critical Hits',
+        lvl50_varbonus: {
+          coef: 0.215,
+          stat: 'Combat Power'
+        },
     },
     {
         id: 12,
@@ -129,13 +145,21 @@ swlcalc.data.agents = [
         lvl25_type: 'heal-rating',
         lvl25_value: '325',
         lvl50_type: 'miscellaneous',
-        lvl50_value: '0.215HP Healing on Critical Heals',
+        lvl50_value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
+        lvl50_varbonus: {
+          coef: 0.215,
+          stat: 'Healing Power'
+        },
     },
     {
         id: 16,
         name: 'Lama Lhakpa',
         lvl25_type: 'miscellaneous',
-        lvl25_value: '0.1075HP Healing on Critical Heals',
+        lvl25_value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
+        lvl25_varbonus: {
+          coef: 0.1075,
+          stat: 'Healing Power'
+        },
         lvl50_type: 'critical-power',
         lvl50_value: '300',
     },
@@ -143,7 +167,11 @@ swlcalc.data.agents = [
         id: 17,
         name: 'Siobhan Gowan',
         lvl25_type: 'miscellaneous',
-        lvl25_value: '0.1075HP Healing on Critical Heals',
+        lvl25_value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
+        lvl25_varbonus: {
+          coef: 0.1075,
+          stat: 'Healing Power'
+        },
         lvl50_type: 'heal-rating',
         lvl50_value: '650',
     },
@@ -153,7 +181,11 @@ swlcalc.data.agents = [
         lvl25_type: 'critical-power',
         lvl25_value: '150',
         lvl50_type: 'miscellaneous',
-        lvl50_value: '0.215HP Healing on Critical Heals',
+        lvl50_value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
+        lvl50_varbonus: {
+          coef: 0.215,
+          stat: 'Healing Power'
+        },
     },
     {
         id: 19,

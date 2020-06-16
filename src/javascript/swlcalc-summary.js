@@ -256,12 +256,26 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Launch an update on each slot's description (in order to display the right bonus values)
+     * Launch an update on each description (slot + agent), in order to display the right bonus values
      */
     var updateDescriptions = function() {
         for (var id in swlcalc.gear.slots) {
             swlcalc.gear.slots[id].updateEquipmentBonuses(combatPower(), healingPower());
             swlcalc.gear.slots[id].updateSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
+        }
+
+        for (var i = 1; i <= 3; i++) {
+            var ad = swlcalc.gear.agents[i].agentData
+
+            if (ad.lvl25_varbonus != undefined) {
+              var res = ad.lvl25_value.replace("%d", ad.lvl25_varbonus.stat == "Combat Power" ? combatPower() * ad.lvl25_varbonus.coef : healingPower() * ad.lvl25_varbonus.coef);
+              swlcalc.gear.agents[i].text25(res)
+              $('#stat-agent' + i + '-bonus').html(res);
+            } else if (ad.lvl50_varbonus != undefined) {
+              var res = ad.lvl50_value.replace("%d", ad.lvl50_varbonus.stat == "Combat Power" ? combatPower() * ad.lvl50_varbonus.coef : healingPower() * ad.lvl50_varbonus.coef);
+              swlcalc.gear.agents[i].text50(res)
+              $('#stat-agent' + i + '-bonus').html(res);
+            }
         }
     };
 
