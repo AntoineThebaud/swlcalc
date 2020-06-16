@@ -185,7 +185,7 @@ swlcalc.summary = function() {
                 }
             }
         }
-        
+
         // compute percentage stats
         sums['critical-chance']           = computeSecondaryStat('crit', sums['critical-rating']);
         sums['critical-power-percentage'] = computeSecondaryStat('cpow', sums['critical-power']);
@@ -227,17 +227,13 @@ swlcalc.summary = function() {
        */
       var updateMiscellaneousBonuses = function() {
           for (var i = 1; i <= 3; i++) {
+              var bonus = ""
               if (swlcalc.gear.agents[i].agentData.lvl25_type == "miscellaneous") {
-                  $('#stat-agent' + i + '-l25bonus').html(swlcalc.gear.agents[i].text25());
-              } else {
-                  $('#stat-agent' + i + '-l25bonus').html("");
+                  bonus = swlcalc.gear.agents[i].text25();
+              } else if (swlcalc.gear.agents[i].agentData.lvl50_type == "miscellaneous") {
+                  bonus = swlcalc.gear.agents[i].text50();
               }
-
-              if (swlcalc.gear.agents[i].agentData.lvl50_type == "miscellaneous") {
-                  $('#stat-agent' + i + '-l50bonus').html(swlcalc.gear.agents[i].text50());
-              } else {
-                  $('#stat-agent' + i + '-l50bonus').html("");
-              }
+              $('#stat-agent' + i + '-bonus').html(bonus);
           }
       };
 
