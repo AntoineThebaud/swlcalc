@@ -27,10 +27,8 @@ swlcalc.import = function() {
      */
     var start = function(vars) {
         for (var slotId in vars) {
-            if (vars.hasOwnProperty(slotId)) {
-                splitVars = vars[slotId].split(',');
-                loadSlot(slotId, splitVars);
-            }
+            splitVars = vars[slotId].split(',');
+            loadSlot(slotId, splitVars);
         }
         swlcalc.summary.updateAllStats();
     };

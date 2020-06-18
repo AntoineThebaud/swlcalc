@@ -51,9 +51,7 @@ swlcalc.summary = function() {
         var sums = collectPrimaryStats();
 
         for (var stat in sums) {
-            if (sums.hasOwnProperty(stat)) { // TODO/REFACTOR this "if" could be removed ?
-                updateOnePrimaryStat(stat, sums[stat]);
-            }
+            updateOnePrimaryStat(stat, sums[stat]);
         }
     };
 
@@ -134,12 +132,10 @@ swlcalc.summary = function() {
     var updateSecondaryStats = function() {
         var sums = collectSecondaryStats();
         for (var stat in sums) {
-            if (sums.hasOwnProperty(stat)) {
-                if (sums[stat] > 0) {
-                    $('#stat-' + stat).html(isStatPercentageBased(stat) ? sums[stat].toString() + "%" : '+' + sums[stat]);
-                } else {
-                    $('#stat-' + stat).html(isStatPercentageBased(stat) ? "0%" : "0");
-                }
+            if (sums[stat] > 0) {
+                $('#stat-' + stat).html(isStatPercentageBased(stat) ? sums[stat].toString() + "%" : '+' + sums[stat]);
+            } else {
+                $('#stat-' + stat).html(isStatPercentageBased(stat) ? "0%" : "0");
             }
         }
     };
