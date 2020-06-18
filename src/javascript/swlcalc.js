@@ -12,20 +12,10 @@ swlcalc = function() {
     var init = function() {
         renderBody();
         startSubModules();
-        if (!checkIfExported()) {
-            // if no parameters are present in the URL, trigger artificial reset to generate base parameters ("#weapon=0,0,0,0,0,4,0&weapon2=0,0,[...]")
-            triggerReset();
-        }
+        fillSlots();
         // visual settings :
         adjustPlacement();
         window.addEventListener('resize', adjustPlacement, true);
-    };
-
-    /**
-     * Trigger "Reset" button.
-     */
-    var triggerReset = function() {
-        $('#btn-reset').trigger('click');
     };
 
     /**
@@ -46,16 +36,16 @@ swlcalc = function() {
     };
 
     /**
-     * Check if parameters are present in the URL.
+     * Fill the slots : if parameters are present in the URL, import them, otherwise trigger an artificial reset to generate the default values .
      */
-    var checkIfExported = function() {
+    var fillSlots = function() {
         var vars = $.getUrlVars();
         // TODO/REFACTOR : currently we don't check if parameters for each slot are correct !
         if (!$.isEmptyObject(vars) && Object.keys(vars).length == 9) {
             swlcalc.import.start(vars);
-            return true;
+        } else {
+           $('#btn-reset').trigger('click');
         }
-        return false;
     };
 
     /**
