@@ -15,7 +15,7 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
      * Associates the right processing to each controller.
      */
     this.bindEvents = function() {
-        agentObj.el.id.change(this.handleAgentChange);
+        agentObj.el.agentId.change(this.handleAgentChange);
         agentObj.el.level.change(this.handleAgentChange);
     };
 
@@ -30,12 +30,12 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
             return swlcalc.util.sortAsc(a.name.toLowerCase(), b.name.toLowerCase())
         });
 
-        agentObj.el.id.append($('<option>', {
+        agentObj.el.agentId.append($('<option>', {
             value: swlcalc.data.agents[0].id,
             text:  swlcalc.data.agents[0].name
         }));
         agents.forEach(function(agent) {
-            agentObj.el.id.append($('<option>', {
+            agentObj.el.agentId.append($('<option>', {
                 value: agent.id,
                 text:  agent.name
             }));

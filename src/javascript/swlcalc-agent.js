@@ -6,7 +6,7 @@ swlcalc.gear.Agent = function Agent(id) {
     this.agentData = swlcalc.data.agents[0]
 
     this.el = {
-        id: $('#agent' + this.id + '-id'),
+        agentId: $('#agent' + this.id + '-agentId'),
         level: $('#agent' + this.id + '-level'),
         text25: $('#agent' + this.id + '-text25'),
         text50: $('#agent' + this.id + '-text50'),
@@ -16,7 +16,7 @@ swlcalc.gear.Agent = function Agent(id) {
      * Update elements related to agent's id
      */
     this.updateAgent = function() {
-        var newId = this.id();
+        var newId = this.agentId();
         this.agentData = swlcalc.data.agents[newId];
 
         if (newId == '0') {
@@ -42,13 +42,13 @@ swlcalc.gear.Agent = function Agent(id) {
     };
 
     /**
-     * Getter/Setter for agent#id-id
+     * Getter/Setter for agent#id-agentId
      */
-    this.id = function() {
+    this.agentId = function() {
         if (arguments.length == 1) {
-            this.el.id.val(arguments[0]);
+            this.el.agentId.val(arguments[0]);
         } else {
-            return this.el.id.val();
+            return this.el.agentId.val();
         }
     };
 
