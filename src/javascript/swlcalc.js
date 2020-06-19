@@ -58,7 +58,7 @@ swlcalc = function() {
             startSlotHandler(swlcalc.data.template_data.slots[i]);
         }
         // start handlers for agents slots
-        for (var i = 1; i <= 3; i++) {
+        for (var i = 0; i < 3; i++) {
             startAgentSlotHandler(i);
         }
         startSwapHandler('weapon');

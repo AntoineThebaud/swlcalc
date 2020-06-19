@@ -23,8 +23,8 @@ swlcalc.gear = function() {
         }
         drawPrimaryWeapon();
         // add agent slots
-        for (var i = 1; i <= 3; i++) {
-            this.agents[i] = new swlcalc.gear.Agent(i);
+        for (var i = 0; i < 3; i++) {
+            this.agents[i] = new swlcalc.gear.Agent(i + 1);
         }
     };
 
@@ -41,6 +41,13 @@ swlcalc.gear = function() {
      */
     var nbSlots = function() {
         return Object.keys(this.slots).length;
+    };
+
+    /**
+     * Returns the total number of agents in the gear
+     */
+    var nbAgents = function() {
+        return agents.length;
     };
 
     /**
@@ -80,6 +87,7 @@ swlcalc.gear = function() {
         agents: agents,
         init: init,
         nbSlots: nbSlots,
+        nbAgents: nbAgents,
         reset: reset,
         state: state,
         mappedState: mappedState

@@ -86,7 +86,7 @@ swlcalc.summary = function() {
         }
 
         // sum bonuses brought by agents
-        for (var i = 1; i <= 3; i++) {
+        for (var i = 0; i < 3; i++) {
             var ad = swlcalc.gear.agents[i].agentData
 
             if (swlcalc.util.isPrimaryStat(ad.lvl25_type)) {
@@ -169,7 +169,7 @@ swlcalc.summary = function() {
         }
 
         // sum bonuses brought by agents
-        for (var i = 1; i <= 3; i++) {
+        for (var i = 0; i < 3; i++) {
             var ad = swlcalc.gear.agents[i].agentData
 
             if (swlcalc.util.isSecondaryStat(ad.lvl25_type)) {
@@ -222,14 +222,14 @@ swlcalc.summary = function() {
        * Display any remaining miscellaneous bonus brought by agents
        */
       var updateMiscellaneousBonuses = function() {
-          for (var i = 1; i <= 3; i++) {
+          for (var i = 0; i < 3; i++) {
               var bonus = ""
               if (swlcalc.gear.agents[i].agentData.lvl25_type == "miscellaneous") {
                   bonus = swlcalc.gear.agents[i].text25();
               } else if (swlcalc.gear.agents[i].agentData.lvl50_type == "miscellaneous") {
                   bonus = swlcalc.gear.agents[i].text50();
               }
-              $('#stat-agent' + i + '-bonus').html(bonus);
+              $('#stat-agent' + (i + 1) + '-bonus').html(bonus);
           }
       };
 
@@ -260,17 +260,17 @@ swlcalc.summary = function() {
             swlcalc.gear.slots[id].updateSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
         }
 
-        for (var i = 1; i <= 3; i++) {
+        for (var i = 0; i < 3; i++) {
             var ad = swlcalc.gear.agents[i].agentData
 
             if (ad.lvl25_varbonus != undefined) {
               var res = ad.lvl25_value.replace("%d", Math.round(ad.lvl25_varbonus.stat == "Combat Power" ? combatPower() * ad.lvl25_varbonus.coef : healingPower() * ad.lvl25_varbonus.coef));
               swlcalc.gear.agents[i].text25(res)
-              $('#stat-agent' + i + '-bonus').html(res);
+              $('#stat-agent' + (i + 1) + '-bonus').html(res);
             } else if (swlcalc.gear.agents[i].level() == "50" && ad.lvl50_varbonus != undefined) {
               var res = ad.lvl50_value.replace("%d", Math.round(ad.lvl50_varbonus.stat == "Combat Power" ? combatPower() * ad.lvl50_varbonus.coef : healingPower() * ad.lvl50_varbonus.coef));
               swlcalc.gear.agents[i].text50(res)
-              $('#stat-agent' + i + '-bonus').html(res);
+              $('#stat-agent' + (i + 1) + '-bonus').html(res);
             }
         }
     };

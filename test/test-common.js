@@ -66,7 +66,7 @@ function initiateSlotHandlers() {
 }
 
 function initiateAgentHandlers() {
-    for (var i = 1; i <= 3; i++) {
+    for (var i = 0; i < 3; i++) {
         swlcalc.agenthandler[i] = new swlcalc.gear.AgentSlotHandler(i);
         swlcalc.agenthandler[i].init();
     }
