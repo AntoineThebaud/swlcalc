@@ -58,7 +58,7 @@ html[theme='sw'] {
     --container-bg-color: rgba(30, 30, 30, 0.9);
 
     --slot-text-color: #EEE;
-    --slot-bg: linear-gradient(to bottom, rgba(35,35,35,0.75), rgba(65,65,65,0.75));
+    --slot-bg: linear-gradient(to bottom, rgba(30,30,30,0.75), rgba(55,55,55,0.75));
     --slot-border: 2px solid #EEE;
     --slot-hr-color : rgba(255, 255, 255, 0.1);
 
