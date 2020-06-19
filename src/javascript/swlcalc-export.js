@@ -53,15 +53,23 @@ swlcalc.export = function() {
      */
     var createExportUrl = function() {
         var url = '';
-        var i = 0;
+
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
             url += createSlotUrl(slot, slot.mappedState());
-            if (i < swlcalc.gear.nbSlots() - 1) {
+            url += '&';
+        }
+
+        var i = 0;
+        for (var id in swlcalc.gear.agents) {
+            var agent = swlcalc.gear.agents[id];
+            url += createAgentUrl(agent);
+            if (i < swlcalc.gear.nbAgents() - 1) {
                 url += '&';
             }
             i++;
         }
+
         return url;
     };
 
@@ -93,9 +101,23 @@ swlcalc.export = function() {
         return slotUrl;
     };
 
+    /**
+     * Builds the subpart of the export URL for the submitted agent
+     */
+    var createAgentUrl = function(agent, state) {
+        // see swlcalc-import.js for the order
+
+        var agentUrl = 'agent' + agent.id + '='
+            + agent.agentId() + ','
+            + agent.level();
+
+        return agentUrl;
+    };
+
     var oPublic = {
         init: init,
         createSlotUrl: createSlotUrl,
+        createAgentUrl: createAgentUrl,
         createExportUrl: createExportUrl,
         startExportUrl: startExportUrl,
     };

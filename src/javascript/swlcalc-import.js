@@ -28,7 +28,11 @@ swlcalc.import = function() {
     var start = function(vars) {
         for (var slotId in vars) {
             splitVars = vars[slotId].split(',');
-            loadSlot(slotId, splitVars);
+            if (slotId.substring(0, 5) == 'agent') {
+                // todo loadAgent
+            } else {
+                loadSlot(slotId, splitVars);
+            }
         }
         swlcalc.summary.updateAllStats();
     };
