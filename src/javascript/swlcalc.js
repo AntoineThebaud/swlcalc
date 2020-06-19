@@ -41,7 +41,7 @@ swlcalc = function() {
     var fillSlots = function() {
         var vars = $.getUrlVars();
         // TODO/REFACTOR : currently we don't check if parameters for each slot are correct !
-        if (!$.isEmptyObject(vars) && Object.keys(vars).length == swlcalc.data.template_data.slots.length) {
+        if (!$.isEmptyObject(vars) && Object.keys(vars).length >= swlcalc.data.template_data.slots.length) {
             swlcalc.import.start(vars);
         } else {
            $('#btn-reset').trigger('click');
