@@ -267,7 +267,7 @@ swlcalc.summary = function() {
               var res = ad.lvl25_value.replace("%d", Math.round(ad.lvl25_varbonus.stat == "Combat Power" ? combatPower() * ad.lvl25_varbonus.coef : healingPower() * ad.lvl25_varbonus.coef));
               swlcalc.gear.agents[i].text25(res)
               $('#stat-agent' + i + '-bonus').html(res);
-            } else if (ad.lvl50_varbonus != undefined) {
+            } else if (swlcalc.gear.agents[i].level() == "50" && ad.lvl50_varbonus != undefined) {
               var res = ad.lvl50_value.replace("%d", Math.round(ad.lvl50_varbonus.stat == "Combat Power" ? combatPower() * ad.lvl50_varbonus.coef : healingPower() * ad.lvl50_varbonus.coef));
               swlcalc.gear.agents[i].text50(res)
               $('#stat-agent' + i + '-bonus').html(res);
