@@ -10,7 +10,7 @@ function renderGear() {
 
     for (var i = 0; i < 3; i++) {
         renderTemplate("agent", {
-            id: i
+            id: (i + 1)
         });
     }
 
