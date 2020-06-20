@@ -45,6 +45,9 @@ html[theme='classic'] {
     --aallocation-bg: white;
     --aallocation-text-color: unset;
     --not-functional: var(--color-lightgrey);
+
+    --btn-transparent-idle: #777;
+    --btn-transparent-active: #333;
 }
 html[theme='sw'] {
     --color-mediumgrey: #A1A1A1;
@@ -55,7 +58,7 @@ html[theme='sw'] {
     --container-bg-color: rgba(30, 30, 30, 0.9);
 
     --slot-text-color: #EEE;
-    --slot-bg: linear-gradient(to bottom, rgba(35,35,35,0.75), rgba(65,65,65,0.75));
+    --slot-bg: linear-gradient(to bottom, rgba(30,30,30,0.75), rgba(55,55,55,0.75));
     --slot-border: 2px solid #EEE;
     --slot-hr-color : rgba(255, 255, 255, 0.1);
 
@@ -72,6 +75,9 @@ html[theme='sw'] {
     --aallocation-bg: #111;
     --aallocation-text-color: var(--slot-text-color);
     --not-functional: var(--color-darkgrey);
+
+    --btn-transparent-idle: #9d9d9d;
+    --btn-transparent-active: #fff;
 }
 /******************************************************/
 body {
@@ -92,6 +98,11 @@ select {
     width: 220px;
     background-color: #fff;
     border: 1px solid #ccc;
+    color: var(--slot-text-color);
+    background-color: var(--edit-select-bg);
+}
+h4 {
+    font-weight: bold
 }
 option:disabled {
     display:none;
@@ -99,9 +110,12 @@ option:disabled {
 div.container {
     width: 1220px;
 }
-.section-gear {
+.section {
     background-color: var(--container-bg-color);
     color: var(--slot-text-color);
+}
+.section.agents {
+    margin-top: 20px;
 }
 .modal-open {
     overflow-y: scroll;
@@ -118,10 +132,6 @@ div.container {
     pointer-events: none;
 }
 /******************************************************/
-.navbar-select {
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
 .navbar-icon-a {
     padding: 0 !important;
 }
@@ -131,8 +141,6 @@ div.container {
 }
 .navbar-icon-img.github {
     width: 30px;
-    margin-top: 10px;
-    margin-bottom: 8px;
     filter: var(--img-filter);
 }
 .navbar-icon-img.swl {
@@ -140,17 +148,21 @@ div.container {
     margin-bottom: 0;
     margin-right: 5px;
 }
-.navbar-btn.feedback {
+.feedback {
     padding: 0px 12px;
 }
 .navbar-item {
     margin-right: 5px;
 }
+.btn-toolbar {
+    margin-bottom: 8px;
+}
+.btn-group.toplvl {
+    margin-top: 8px;
+}
 .navbar-logo {
     float: left;
-    height: 34px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    height: 32px;
 }
 .navbar-inverse {
     background: var(--bar-bg);
@@ -170,13 +182,33 @@ div.container {
     filter: var(--img-filter);
 }
 .logo-dg {
-    width: 34px;
+    width: 32px;
     margin-bottom: 5px;
 }
 .logo-swlcalc {
     background-image: var(--swlcalc-logo);
     width: 176px;
     background-size: 100%;
+}
+.btn-group.right {
+    float: right;
+}
+.btn-transparent {
+    color: var(--btn-transparent-idle);
+    background-color: transparent;
+    border: none;
+}
+.btn-transparent.focus, .btn-transparent:focus {
+    color: var(--btn-transparent-active);
+}
+.btn-transparent:hover {
+    color: var(--btn-transparent-active);
+}
+.btn-transparent.active, .btn-transparent:active, .open > .dropdown-toggle.btn-transparent {
+    color: var(--btn-transparent-active);
+}
+.btn-transparent.active.focus, .btn-transparent.active:focus, .btn-transparent.active:hover, .btn-transparent:active.focus, .btn-transparent:active:focus, .btn-transparent:active:hover, .open > .dropdown-toggle.btn-transparent.focus, .open > .dropdown-toggle.btn-transparent:focus, .open > .dropdown-toggle.btn-transparent:hover {
+    color: var(--btn-transparent-active);
 }
 /******************************************************/
 .lightgrey {
@@ -250,8 +282,6 @@ div.container {
 }
 div[id$="-edit-div"] select {
     border-radius: 4px;
-    color: var(--slot-text-color);
-    background-color: var(--edit-select-bg);
 }
 div[id$="-edit-div"] .table-slots td {
     border: none;
@@ -259,14 +289,6 @@ div[id$="-edit-div"] .table-slots td {
     padding-bottom: 0px;
     padding-right: 0px;
     padding-left: 0px;
-}
-div[id="summary"] {
-    margin-left: 35px;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 200px;
-    background-color: var(--container-bg-color);
-    color: var(--slot-text-color);
 }
 div[id="summary"] .table-stats td {
     padding: 1px;
@@ -282,9 +304,6 @@ div[id="summary"] .table-stats th {
     background: var(--summary-category-bg);
     font-size: 13px;
     border-bottom: 2px solid var(--color-border);
-}
-div[id="summary"] h4 {
-    font-weight: bold
 }
 #table-primary label {
    margin: 10px 0px 10px 0px;
@@ -469,7 +488,6 @@ td.stat-inSummary {
 .slot h4 {
     padding: 0px;
     display: inline;
-    font-weight: bold
 }
 /******************************************************/
 td.slot-ilvl {
@@ -531,7 +549,7 @@ div[id$="-recap-div"] {
     background: var(--slot-bg);
     border: var(--slot-border);
 }
-div[id$="-recap-div"] p {
+div[id$="-recap-div"] p, .agent-div > p {
     font-size: 11px;
     margin: 0;
 }
@@ -543,7 +561,7 @@ div[id$="-recap-div"] h6 {
     font-weight: bold;
     margin: 0;
 }
-div[id$="-recap-div"] hr {
+div[id$="-recap-div"] hr, .agent-div > hr {
     margin-top: 4px;
     margin-bottom: 4px;
     border-top: 2px solid var(--slot-hr-color);
@@ -616,8 +634,8 @@ td[id$="-recap-equipment-img-section"] {
     text-align: center;
 }
 
-@media only screen and (min-width: 1200px) {
-    div[id="summary"] {
+@media only screen and (min-height: 630px) and (min-width: 1200px) {
+    div[id="row-summary"] {
         position:fixed;
     }
 }
@@ -652,4 +670,39 @@ td[id$="-recap-equipment-img-section"] {
 }
 .select2-search__field {
     background-color: var(--edit-select-bg) !important;
+}
+/*----------------------------------------------------------*/
+.agent-div {
+    background: var(--slot-bg);
+    border: var(--slot-border);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+.agent-table > tbody > tr > td {
+    border: none;
+    padding: 5px;
+}
+.agent-table > tbody > tr > td.agent-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+}
+.agent-table > tbody > tr > td.agent-name-label {
+    vertical-align: middle;
+}
+.agent-name-select {
+    /* width: 150px;*/
+}
+.agent-table > tbody > tr > td.agent-level-label {
+    vertical-align: middle;
+}
+.agent-table > tbody > tr > td > select {
+    width: 100%;
+    border-radius: 4px;
+}
+.agent-level-select {
+    /* width: 150px; */
 }
