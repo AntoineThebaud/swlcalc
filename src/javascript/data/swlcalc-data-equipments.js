@@ -193,9 +193,9 @@ swlcalc.data.equipments = {
                 id: 27,
                 type: 'Assault Rifle',
                 name: 'Flame-Wreathed Rifle',
-                description: 'Whenever you heal yourself or an ally, you have a <span class="bonus-val const">10%</span> chance to apply a barrier which absorbs <span class="bonus-val const">100%</span> of incoming damage and dissipates after absorbing <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> damage. If a barrier already exists, they are instead healed for <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span>. This effect can only occur once every <span class="bonus-val const">5</span> seconds.',
-                coefficients: [ 3.75 ],
-                stats: [ 'Healing Power' ]
+                description: 'Whenever you heal yourself or an ally, you have a <span class="bonus-val const">10%</span> chance to apply a barrier which absorbs <span class="bonus-val const">100%</span> of incoming damage and dissipates after absorbing <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> damage. If a barrier already exists, they are instead healed for <span id="%id-equipment-bonus2" class="bonus-val heal">%d</span>. This effect can only occur once every <span class="bonus-val const">5</span> seconds.',
+                coefficients: [ 3.75, 3.75 ],
+                stats: [ 'Healing Power', 'Healing Power' ]
             },
             {
                 id: 28,
