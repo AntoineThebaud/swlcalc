@@ -75,10 +75,10 @@
                     </ul>
                 </div>
                 <!-- [ Feedback ] -->
-                <button type="button" class="btn btn-info feedback">
+                <a class="btn btn-info feedback" href="https://forums.funcom.com/t/swlcalc-gear-planner-for-swl/1908">
                     <img class="navbar-icon-img swl" src="assets/images/icons/funcomforum.png" />
                     Feedback
-                </button>
+                </a>
                 <!-- [ Theme v ] -->
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
