@@ -200,7 +200,7 @@ swlcalc.data.equipments = {
             {
                 id: 28,
                 type: 'Blade',
-                name: 'Plasma-Forged Blade',
+                name: 'Plasma Forged Blade',
                 description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
@@ -208,7 +208,7 @@ swlcalc.data.equipments = {
             {
                 id: 29,
                 type: 'Hammer',
-                name: 'Plasma-Forged Hammer',
+                name: 'Plasma Forged Hammer',
                 description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
@@ -216,7 +216,7 @@ swlcalc.data.equipments = {
             {
                 id: 30,
                 type: 'Fist',
-                name: 'Plasma-Forged Fist Weapon',
+                name: 'Plasma Forged Fist Weapon',
                 description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
@@ -224,7 +224,7 @@ swlcalc.data.equipments = {
             {
                 id: 31,
                 type: 'Blood',
-                name: 'Plasma-Forged Blood Magic Focus',
+                name: 'Plasma Forged Blood Magic Focus',
                 description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
@@ -232,7 +232,7 @@ swlcalc.data.equipments = {
             {
                 id: 32,
                 type: 'Chaos',
-                name: 'Plasma-Forged Chaos Focus',
+                name: 'Plasma Forged Chaos Focus',
                 description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
@@ -240,7 +240,7 @@ swlcalc.data.equipments = {
             {
                 id: 33,
                 type: 'Elementalism',
-                name: 'Plasma-Forged Elementalism Focus',
+                name: 'Plasma Forged Elementalism Focus',
                 description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
@@ -248,7 +248,7 @@ swlcalc.data.equipments = {
             {
                 id: 34,
                 type: 'Shotgun',
-                name: 'Plasma-Forged Shotgun',
+                name: 'Plasma Forged Shotgun',
                 description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
@@ -256,7 +256,7 @@ swlcalc.data.equipments = {
             {
                 id: 35,
                 type: 'Pistols',
-                name: 'Plasma-Forged Pistols',
+                name: 'Plasma Forged Pistols',
                 description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
@@ -264,7 +264,7 @@ swlcalc.data.equipments = {
             {
                 id: 36,
                 type: 'Assault Rifle',
-                name: 'Plasma-Forged Rifle',
+                name: 'Plasma Forged Rifle',
                 description: 'Whenever you hit you have a <span class="bonus-val const">25%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target. The amount of damage dealt increases to <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage the second time this effect triggers on the same target. The third time this effect triggers on the same target, the damage dealt is increased to <span id="%id-equipment-bonus3" class="bonus-val dps">%d</span> physical damage and the count of the number of times this effect has triggered is reset.',
                 coefficients: [ 0.565, 1.125, 2.81 ],
                 stats: [ 'Combat Power', 'Combat Power', 'Combat Power' ]
