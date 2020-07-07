@@ -46,7 +46,7 @@ swlcalc.buttonBar = function() {
         el.btn_all_1_pip.on('click', setQualityOnAllSlots);
         el.btn_all_2_pip.on('click', setQualityOnAllSlots);
         el.btn_all_3_pip.on('click', setQualityOnAllSlots);
-        el.btn_all_4_pip.on('click', setAllToMax); // TODO replace by setQualityOnAllSlots when possible
+        el.btn_all_4_pip.on('click', set4PipsOnAllSlots);
 
         el.btn_all_lvl_min.on('click', setMinLevelOnAllSlots);
         el.btn_all_lvl_max.on('click', setMaxLevelOnAllSlots);
@@ -91,7 +91,7 @@ swlcalc.buttonBar = function() {
     };
 
     /**
-     * Set the same chosen rarity to all equipments+glyphs+signets.
+     * Set the same chosen quality to all equipments + glyphs (signets not concerned here).
      */
     var setQualityOnAllSlots = function(event) {
         var newQuality = event.currentTarget.id.split('-')[2]; //TODO better way to retrieve this value maybe ?
@@ -107,23 +107,28 @@ swlcalc.buttonBar = function() {
 
     /**
      * Set all slots to rarity Legendary + Quality 4 pips (if possible) + Level 70
-     * TODO : This is a temporary function to be used as long as we are missing proper numbers for Resplendent quality
+     * -> Dedicated function for the 4th quality (instead of relying on setQualityOnAllSlots) because
+     * of specific behaviors : increase rarity if it is too "low", set weapon to 3 pip instead, etc..
      */
-    var setAllToMax = function(event) {
-        var maxRarity = "legendary";
+    var set4PipsOnAllSlots = function(event) {
+        var map = swlcalc.data.rarity_mapping.to_num
+        var upgradedRarity = 'epic'
+        var fourPips = "4"
+
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            slot.edit.equipmentRarity(maxRarity);
-            slot.edit.el.equipmentRarity.change();
-            slot.edit.glyphRarity(maxRarity);
-            slot.edit.el.glyphRarity.change();
-            slot.edit.signetRarity(maxRarity);
-            slot.edit.el.signetRarity.change();
-
-            var maxQuality = (slot.isWeapon() ? "3" : "4");
-            slot.edit.equipmentQuality(maxQuality);
+            if (map[slot.edit.equipmentRarity()] < map[upgradedRarity] && !slot.isWeapon()) {
+                slot.edit.equipmentRarity(upgradedRarity);
+                slot.edit.el.equipmentRarity.change();
+            }
+            slot.edit.equipmentQuality(slot.isWeapon() ? '3' : fourPips);
             slot.edit.el.equipmentQuality.change();
-            slot.edit.glyphQuality(maxQuality);
+
+            if (map[slot.edit.glyphRarity()] < map[upgradedRarity]) {
+                slot.edit.glyphRarity(upgradedRarity);
+                slot.edit.el.glyphRarity.change();
+            }
+            slot.edit.glyphQuality(fourPips);
             slot.edit.el.glyphQuality.change();
         }
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
