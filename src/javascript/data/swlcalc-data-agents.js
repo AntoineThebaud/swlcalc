@@ -1,7 +1,6 @@
 var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
-// TODO : add all agents
 swlcalc.data.agents = [
     {
         id: 0,

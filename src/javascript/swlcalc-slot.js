@@ -138,12 +138,31 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.recap.el.equipmentLabelLevel.attr('class', 'label-level big border-' + newRarity);
         this.recap.equipmentRarity(swlcalc.util.capitalize(newRarity));
 
+        // refresh the list of available qualities after a change on rarity
+        this.handleResplendent();
+
         // update max available level for equipment :
         var maxLvl = swlcalc.data.rarity_mapping.to_max_level[newRarity];
         this.edit.equipmentLevelMax(maxLvl)
         this.edit.equipmentLevel(maxLvl);
         this.updateEquipmentLevel();
     };
+
+    /**
+     * Add or remove Resplendent to the list of available qualities for this talisman
+     * - Resplendent quality is available starting from Epic rarity, level 1
+     */
+    this.handleResplendent = function() {
+        if (this.isWeapon()) return;
+        var map = swlcalc.data.rarity_mapping.to_num
+        var resplendentOptionExists = ($('#' + this.id + '-edit-equipment-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
+        if (map[this.edit.equipmentRarity()] >= map['epic'] && !resplendentOptionExists) {
+            this.edit.el.equipmentQuality.append("<option value='4'>Resplendent</option>");
+        } else if (map[this.edit.equipmentRarity()] < map['epic'] && resplendentOptionExists) {
+            $('#' + this.id + '-edit-equipment-quality option[value=4]').remove(); // TODO/REFACTOR to abstract access
+            this.updateEquipmentQuality();
+        }
+    }
 
     /**
      * Update elements related to equipment's quality
@@ -173,25 +192,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.edit.equipmentLabelLevel(newLevel);
         this.recap.equipmentLevel(newLevel);
         this.recap.equipmentLabelLevel(newLevel);
-
-        this.handleResplendent();
-    }
-
-    /**
-     * Add or remove Resplendent to the list of available qualities for this talisman
-     * - add Resplendent quality only if rarity is set to Legendary + level is 70
-     * - TODO : This is a temporary function, needed as long as the numbers required for proper computation (from lvl 1 Epic to lvl 70 Legendary) are not known.
-     */
-    this.handleResplendent = function() {
-        if (this.isWeapon()) return;
-        var map = swlcalc.data.rarity_mapping.to_num
-        var resplendentOptionExists = ($('#' + this.id + '-edit-equipment-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
-        if (map[this.edit.equipmentRarity()] == map['legendary'] && this.edit.equipmentLevel() == "70" && !resplendentOptionExists) {
-            this.edit.el.equipmentQuality.append("<option value='4'>Resplendent</option>");
-        } else if ((map[this.edit.equipmentRarity()] != map['legendary'] || this.edit.equipmentLevel() != "70") && resplendentOptionExists) {
-            $('#' + this.id + '-edit-equipment-quality option[value=4]').remove(); // TODO/REFACTOR to abstract access
-            this.updateEquipmentQuality();
-        }
     }
 
     /**
@@ -208,14 +208,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
             }
             // calculation rule for talismans
             else {
-                if (this.edit.equipmentQuality() == "4") {
-                    //TODO : temporary specific code to handle Resplendent quality (for which power_rating_init & power_rating_per_level are not known)
-                    base_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_max;
-                    bonus_value = 0;
-                } else {
-                    base_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_init;
-                    bonus_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_per_level * (this.edit.equipmentLevel() - 1);
-                }
+                base_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_init;
+                bonus_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_per_level * (this.edit.equipmentLevel() - 1);
             }
         }
         var newValue = base_value + Math.round(bonus_value);
@@ -319,15 +313,24 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.edit.el.glyphLabelLevel.attr('class', 'label-level little border-' + newRarity);
         this.recap.glyphRarity(swlcalc.util.capitalize(newRarity));
 
-        // refresh list of available qualities after change on glyph rarity :
+        // refresh the list of available qualities after a change on rarity
+        this.handleElaborate();
+    };
+
+    /**
+     * Add or remove Elaborate to the list of available qualities for this glyph
+     * - Elaborate quality is available starting from Epic rarity, level 1
+     */
+    this.handleElaborate = function() {
+        var map = swlcalc.data.rarity_mapping.to_num
         var elaborateOptionExists = ($('#' + this.id + '-edit-glyph-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
-        if (swlcalc.data.rarity_mapping.to_num[this.edit.glyphRarity()] >= swlcalc.data.rarity_mapping.to_num['epic'] && !elaborateOptionExists) {
+        if (map[this.edit.glyphRarity()] >= map['epic'] && !elaborateOptionExists) {
             this.edit.el.glyphQuality.append("<option value='4'>Elaborate</option>");
-        } else if (swlcalc.data.rarity_mapping.to_num[this.edit.glyphRarity()] < swlcalc.data.rarity_mapping.to_num['epic'] && elaborateOptionExists) {
+        } else if (map[this.edit.glyphRarity()] < map['epic'] && elaborateOptionExists) {
             $('#' + this.id + '-edit-glyph-quality option[value=4]').remove(); // TODO/REFACTOR to abstract access
             this.updateGlyphQuality();
         }
-    };
+    }
 
     /**
      * Update elements related to glyph's quality

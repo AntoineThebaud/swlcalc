@@ -65,6 +65,10 @@ swlcalc.data.power_rating = {
             '3': {
                 power_rating_init: 847,
                 power_rating_per_level: 490/29 // == (1337 - 847) / (30 - 1)
+            },
+            '4': {
+                power_rating_init: 931,
+                power_rating_per_level: 540/29 // == (1471 - 931) / (30 - 1)
             }
         },
         'mythic': {
@@ -79,6 +83,10 @@ swlcalc.data.power_rating = {
             '3': {
                 power_rating_init: 1540,
                 power_rating_per_level: 616/34 // == (2156 - 1540) / (35 - 1)
+            },
+            '4': {
+                power_rating_init: 1694,
+                power_rating_per_level: 678/34 // == (2372 - 1694) / (35 - 1)
             }
         },
         'legendary': {
@@ -94,8 +102,9 @@ swlcalc.data.power_rating = {
                 power_rating_init: 2404,
                 power_rating_per_level: 1246/69 // == (3650 - 2404) / (70 - 1)
             },
-            '4': { //TODO : get power_rating_init & power_rating_per_level values
-                power_rating_max: 4015
+            '4': {
+                power_rating_init: 2644,
+                power_rating_per_level: 1371/69 // == (4015 - 2644) / (70 - 1)
             }
         }
     },
@@ -140,6 +149,10 @@ swlcalc.data.power_rating = {
             '3': {
                 power_rating_init: 508,
                 power_rating_per_level: 294/29 // == (802 - 508) / (30 - 1)
+            },
+            '4': {
+                power_rating_init: 559,
+                power_rating_per_level: 324/29 // == (883 - 559) / (30 - 1)
             }
         },
         'mythic': {
@@ -154,6 +167,10 @@ swlcalc.data.power_rating = {
             '3': {
                 power_rating_init: 924,
                 power_rating_per_level: 370/34 // == (1294 - 924) / (35 - 1)
+            },
+            '4': {
+                power_rating_init: 1016,
+                power_rating_per_level: 407/34 // == (1423 - 1016) / (35 - 1)
             }
         },
         'legendary': {
@@ -169,8 +186,9 @@ swlcalc.data.power_rating = {
                 power_rating_init: 1442,
                 power_rating_per_level: 748/69 // == (2190 - 1442) / (70 - 1)
             },
-            '4': { //TODO : get power_rating_init & power_rating_per_level values
-                power_rating_max: 2409
+            '4': {
+                power_rating_init: 1587,
+                power_rating_per_level: 822/69 // == (2409 - 1587) / (70 - 1)
             }
         }
     },
@@ -215,6 +233,10 @@ swlcalc.data.power_rating = {
             '3': {
                 power_rating_init: 339,
                 power_rating_per_level: 196/29 // == (535 - 339) / (30 - 1)
+            },
+            '4': {
+                power_rating_init: 373,
+                power_rating_per_level: 215/29 // == (588 - 373) / (30 - 1)
             }
         },
         'mythic': {
@@ -229,6 +251,10 @@ swlcalc.data.power_rating = {
             '3': {
                 power_rating_init: 616,
                 power_rating_per_level: 246/34 // == (862 - 616) / (35 - 1)
+            },
+            '4': {
+                power_rating_init: 678,
+                power_rating_per_level: 271/34 // == (949 - 678) / (35 - 1)
             }
         },
         'legendary': {
@@ -244,8 +270,9 @@ swlcalc.data.power_rating = {
                 power_rating_init: 962,
                 power_rating_per_level: 498/69 // == (1460 - 962) / (70 - 1)
             },
-            '4': { //TODO : get power_rating_init & power_rating_per_level values
-                power_rating_max: 1606
+            '4': {
+                power_rating_init: 1058,
+                power_rating_per_level: 548/69 // == (1606 - 1058) / (70 - 1)
             }
         }
     }
