@@ -142,6 +142,7 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
     this.handleEquipmentQualityChange = function(event) {
         slotObj.updateEquipmentQuality();
         slotObj.updateEquipmentStatRating();
+        slotObj.updateEquipmentILvl();
         swlcalc.summary.updateAllStats();
     };
 
@@ -187,6 +188,7 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
     this.handleGlyphQualityChange = function(event) {
         slotObj.updateGlyphQuality();
         slotObj.updateGlyphRating();
+        slotObj.updateGlyphILvl();
         swlcalc.summary.updateAllStats();
     };
 

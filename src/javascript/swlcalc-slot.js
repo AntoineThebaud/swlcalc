@@ -246,7 +246,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateEquipmentILvl = function() {
         var newILvl = 0;
         if (!(this.edit.equipmentId() == 'none')) {
-            newILvl = this.computeItemILvl('equipment', this.edit.equipmentRarity(), this.edit.equipmentLevel());
+            newILvl = this.computeItemILvlWithQuality('equipment', this.edit.equipmentRarity(), this.edit.equipmentQuality(), this.edit.equipmentLevel());
             if (this.isWeapon()) {
                 newILvl = newILvl * swlcalc.data.stats.weapon_power_coefficient;
             }
@@ -386,7 +386,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateGlyphILvl = function() {
         var newILvl = 0;
         if (this.edit.glyphId() != 'none') {
-            newILvl = this.computeItemILvl('glyph', this.edit.glyphRarity(), this.edit.glyphLevel());
+            newILvl = this.computeItemILvlWithQuality('glyph', this.edit.glyphRarity(), this.edit.glyphQuality(), this.edit.glyphLevel());
             if (this.isWeapon()) {
                 newILvl = newILvl * swlcalc.data.stats.glyph_in_weapon_coefficient;
             }
@@ -519,7 +519,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateSignetILvl = function() {
         var newILvl = 0;
         if (this.edit.signetId() != 'none') {
-            newILvl = this.computeItemILvl('signet', this.edit.signetRarity(), this.edit.signetLevel());
+            newILvl = this.computeItemILvlWithoutQuality('signet', this.edit.signetRarity(), this.edit.signetLevel());
         }
         //register value before it is rounded (used for #slot-total-ilvl)
         this.rawSignetILvl = newILvl;
@@ -618,10 +618,18 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Calculates item power for the given item (talisman, weapon, glyph or signet)
+     * Calculates item power for the given item that has quality attribute (= talisman, weapon or glyph)
      */
-    this.computeItemILvl = function(element, rarity, level) {
-        var dataToUse = swlcalc.data.ilvl.gear[element].rarity[rarity];
+    this.computeItemILvlWithQuality = function(element, rarity, quality, level) {
+        var dataToUse = dataToUse = swlcalc.data.ilvl[element][rarity][quality];
+        return dataToUse.ilvl_init + dataToUse.ilvl_per_level * (level - 1);
+    }
+
+    /**
+     * Calculates item power for the given item that doesn't have quality attribute (= signets)
+     */
+    this.computeItemILvlWithoutQuality = function(element, rarity, level) {
+        var dataToUse = swlcalc.data.ilvl[element][rarity];
         return dataToUse.ilvl_init + dataToUse.ilvl_per_level * (level - 1);
     }
 };
