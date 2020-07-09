@@ -136,7 +136,7 @@ QUnit.test("should update elements related to equipment's transformed stat value
 });
 
 QUnit.test("should update elements related to equipment's ilvl accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.wrist.edit.equipmentILvl(), "150");
+    assert.equal(swlcalc.gear.slots.wrist.edit.equipmentILvl(), "121");
 
     swlcalc.gear.slots.wrist.edit.equipmentRarity("standard");
     swlcalc.gear.slots.wrist.updateEquipmentILvl()
@@ -146,7 +146,7 @@ QUnit.test("should update elements related to equipment's ilvl accordingly", fun
     swlcalc.gear.slots.wrist.edit.equipmentLevel("5");
     swlcalc.gear.slots.wrist.updateEquipmentILvl()
 
-    assert.equal(swlcalc.gear.slots.wrist.edit.equipmentILvl(), "11");
+    assert.equal(swlcalc.gear.slots.wrist.edit.equipmentILvl(), "9");
 
     swlcalc.gear.slots.wrist.edit.equipmentId("none");
     swlcalc.gear.slots.wrist.updateEquipmentILvl()

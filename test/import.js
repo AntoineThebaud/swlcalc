@@ -29,7 +29,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
 
     // Summary
     // --- Primary Stats
-    assert.equal($("#stat-ilvl").html(), "377");
+    assert.equal($("#stat-ilvl").html(), "336");
     assert.equal($("#stat-power-rating").html(), "3730");
     assert.equal($("#stat-weapon-power").html(), "1832");
     assert.equal($("#stat-attack-rating").html(), "8052");
@@ -55,13 +55,13 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     //TODO/TEST equal($('#stat-physical-protection').html(), '+660');
     //TODO/TEST equal($('#stat-magical-protection').html(), '+300');
 
-    assert.equal($("#weapon-edit-ilvl").html(), "353");
+    assert.equal($("#weapon-edit-ilvl").html(), "290");
     assert.equal($("#weapon-edit-equipment-id").val(), "1");
     assert.equal($("#weapon-edit-equipment-rarity").val(), "epic");
     assert.equal($("#weapon-edit-equipment-quality").val(), "1");
     assert.equal($("#weapon-edit-equipment-level").val(), "30");
     assert.equal($("#weapon-edit-equipment-stat-value").html(), "1832");
-    assert.equal($("#weapon-edit-equipment-ilvl").html(), "320");
+    assert.equal($("#weapon-edit-equipment-ilvl").html(), "256");
     assert.equal($("#weapon-edit-glyph-id").val(), "critical-rating");
     assert.equal($("#weapon-edit-glyph-rarity").val(), "superior");
     assert.equal($("#weapon-edit-glyph-quality").val(), "1");
@@ -75,7 +75,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#weapon-edit-signet-ilvl").html(), undefined);
     assert.equal($("#weapon-edit-signet-description").html(), 'When you hit or heal a target with this weapon you have a 50% chance to restore <span id=\"weapon-edit-signet-bonus-wrapper\" class=\"bonus-val color-standard\"><span id=\"weapon-edit-signet-bonus\">0.75</span>%</span> of your health.');
 
-    assert.equal($("#weapon2-edit-ilvl").html(), "353");
+    assert.equal($("#weapon2-edit-ilvl").html(), "354");
     assert.equal($("#weapon2-edit-equipment-id").val(), "2");
     assert.equal($("#weapon2-edit-equipment-rarity").val(), "epic");
     assert.equal($("#weapon2-edit-equipment-quality").val(), "3");
@@ -95,13 +95,13 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#weapon2-edit-signet-ilvl").html(), undefined);
     assert.equal($("#weapon2-edit-signet-description").html(), 'This weapon deals <span id=\"weapon2-edit-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon2-edit-signet-bonus\">333.45</span></span> additional damage to enemies that are below 35% health.');
 
-    assert.equal($("#head-edit-ilvl").html(), "480");
+    assert.equal($("#head-edit-ilvl").html(), "425");
     assert.equal($("#head-edit-equipment-id").val(), "1");
     assert.equal($("#head-edit-equipment-rarity").val(), "epic");
     assert.equal($("#head-edit-equipment-quality").val(), "1");
     assert.equal($("#head-edit-equipment-level").val(), "30");
     assert.equal($("#head-edit-equipment-stat-value").html(), "1070");
-    assert.equal($("#head-edit-equipment-ilvl").html(), "278");
+    assert.equal($("#head-edit-equipment-ilvl").html(), "223");
     assert.equal($("#head-edit-glyph-id").val(), "hit-rating");
     assert.equal($("#head-edit-glyph-rarity").val(), "mythic");
     assert.equal($("#head-edit-glyph-quality").val(), "3");
@@ -115,13 +115,13 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#head-edit-signet-ilvl").html(), "26");
     assert.equal($("#head-edit-signet-description").html(), 'Reduces the cooldown of all Elite Abilities by <span id="head-edit-signet-bonus" class="bonus-val const">7.0286</span><span class="bonus-val const">%</span>.');
 
-    assert.equal($("#finger-edit-ilvl").html(), "411");
+    assert.equal($("#finger-edit-ilvl").html(), "356");
     assert.equal($("#finger-edit-equipment-id").val(), "1");
     assert.equal($("#finger-edit-equipment-rarity").val(), "epic");
     assert.equal($("#finger-edit-equipment-quality").val(), "1");
     assert.equal($("#finger-edit-equipment-level").val(), "30");
     assert.equal($("#finger-edit-equipment-stat-value").html(), "642");
-    assert.equal($("#finger-edit-equipment-ilvl").html(), "278");
+    assert.equal($("#finger-edit-equipment-ilvl").html(), "223");
     assert.equal($("#finger-edit-glyph-id").val(), "defense-rating");
     assert.equal($("#finger-edit-glyph-rarity").val(), "epic");
     assert.equal($("#finger-edit-glyph-quality").val(), "2");
@@ -135,13 +135,13 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#finger-edit-signet-ilvl").html(), "5");
     assert.equal($("#finger-edit-signet-description").html(), 'Increases the damage and healing of all Basic Abilities by <span id="finger-edit-signet-bonus" class="bonus-val const">2.1011</span><span class="bonus-val const">%</span>.');
 
-    assert.equal($("#neck-edit-ilvl").html(), "421");
+    assert.equal($("#neck-edit-ilvl").html(), "366");
     assert.equal($("#neck-edit-equipment-id").val(), "1");
     assert.equal($("#neck-edit-equipment-rarity").val(), "epic");
     assert.equal($("#neck-edit-equipment-quality").val(), "1");
     assert.equal($("#neck-edit-equipment-level").val(), "30");
     assert.equal($("#neck-edit-equipment-stat-value").html(), "642");
-    assert.equal($("#neck-edit-equipment-ilvl").html(), "278");
+    assert.equal($("#neck-edit-equipment-ilvl").html(), "223");
     assert.equal($("#neck-edit-glyph-id").val(), "defense-rating");
     assert.equal($("#neck-edit-glyph-rarity").val(), "epic");
     assert.equal($("#neck-edit-glyph-quality").val(), "2");
@@ -155,13 +155,13 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#neck-edit-signet-ilvl").html(), "16");
     assert.equal($("#neck-edit-signet-description").html(), 'Increases the damage and healing of all Power Abilities by <span id="neck-edit-signet-bonus" class="bonus-val const">1.6271</span><span class="bonus-val const">%</span>.');
 
-    assert.equal($("#wrist-edit-ilvl").html(), "286");
+    assert.equal($("#wrist-edit-ilvl").html(), "257");
     assert.equal($("#wrist-edit-equipment-id").val(), "1");
     assert.equal($("#wrist-edit-equipment-rarity").val(), "epic");
     assert.equal($("#wrist-edit-equipment-quality").val(), "1");
     assert.equal($("#wrist-edit-equipment-level").val(), "1");
     assert.equal($("#wrist-edit-equipment-stat-value").html(), "406");
-    assert.equal($("#wrist-edit-equipment-ilvl").html(), "150");
+    assert.equal($("#wrist-edit-equipment-ilvl").html(), "121");
     assert.equal($("#wrist-edit-glyph-id").val(), "defense-rating");
     assert.equal($("#wrist-edit-glyph-rarity").val(), "epic");
     assert.equal($("#wrist-edit-glyph-quality").val(), "2");
@@ -175,13 +175,13 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#wrist-edit-signet-ilvl").html(), "8");
     assert.equal($("#wrist-edit-signet-description").html(), 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="wrist-edit-signet-bonus" class="bonus-val const">2.6362</span><span class="bonus-val const">%</span>.');
 
-    assert.equal($("#luck-edit-ilvl").html(), "325");
+    assert.equal($("#luck-edit-ilvl").html(), "296");
     assert.equal($("#luck-edit-equipment-id").val(), "1");
     assert.equal($("#luck-edit-equipment-rarity").val(), "epic");
     assert.equal($("#luck-edit-equipment-quality").val(), "1");
     assert.equal($("#luck-edit-equipment-level").val(), "1");
     assert.equal($("#luck-edit-equipment-stat-value").html(), "271");
-    assert.equal($("#luck-edit-equipment-ilvl").html(), "150");
+    assert.equal($("#luck-edit-equipment-ilvl").html(), "121");
     assert.equal($("#luck-edit-glyph-id").val(), "evade-rating");
     assert.equal($("#luck-edit-glyph-rarity").val(), "epic");
     assert.equal($("#luck-edit-glyph-quality").val(), "2");
@@ -195,13 +195,13 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#luck-edit-signet-ilvl").html(), "47");
     assert.equal($("#luck-edit-signet-description").html(), 'When you critically hit, you are given a beneficial effect that damages attackers for <span id="luck-edit-signet-bonus" class="bonus-val dps">69.7008</span> when they hit you for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.');
 
-    assert.equal($("#waist-edit-ilvl").html(), "428");
+    assert.equal($("#waist-edit-ilvl").html(), "373");
     assert.equal($("#waist-edit-equipment-id").val(), "1");
     assert.equal($("#waist-edit-equipment-rarity").val(), "epic");
     assert.equal($("#waist-edit-equipment-quality").val(), "1");
     assert.equal($("#waist-edit-equipment-level").val(), "30");
     assert.equal($("#waist-edit-equipment-stat-value").html(), "428");
-    assert.equal($("#waist-edit-equipment-ilvl").html(), "278");
+    assert.equal($("#waist-edit-equipment-ilvl").html(), "223");
     assert.equal($("#waist-edit-glyph-id").val(), "evade-rating");
     assert.equal($("#waist-edit-glyph-rarity").val(), "epic");
     assert.equal($("#waist-edit-glyph-quality").val(), "2");
@@ -215,13 +215,13 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#waist-edit-signet-ilvl").html(), "23");
     assert.equal($("#waist-edit-signet-description").html(), 'Reduces the cooldown of Gadgets by <span id="waist-edit-signet-bonus" class="bonus-val const">17.5547</span><span class="bonus-val const">%</span>.');
 
-    assert.equal($("#occult-edit-ilvl").html(), "339");
+    assert.equal($("#occult-edit-ilvl").html(), "310");
     assert.equal($("#occult-edit-equipment-id").val(), "1");
     assert.equal($("#occult-edit-equipment-rarity").val(), "epic");
     assert.equal($("#occult-edit-equipment-quality").val(), "1");
     assert.equal($("#occult-edit-equipment-level").val(), "1");
     assert.equal($("#occult-edit-equipment-stat-value").html(), "271");
-    assert.equal($("#occult-edit-equipment-ilvl").html(), "150");
+    assert.equal($("#occult-edit-equipment-ilvl").html(), "121");
     assert.equal($("#occult-edit-glyph-id").val(), "evade-rating");
     assert.equal($("#occult-edit-glyph-rarity").val(), "epic");
     assert.equal($("#occult-edit-glyph-quality").val(), "2");

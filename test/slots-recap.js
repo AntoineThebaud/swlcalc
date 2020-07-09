@@ -67,7 +67,7 @@ QUnit.test("should have required components in the DOM", function(assert) {
 });
 
 QUnit.test("should get and set slot's total iLvl on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.recap.iLvl(), "480");
+    assert.equal(swlcalc.gear.slots.head.recap.iLvl(), "425");
     swlcalc.gear.slots.head.recap.iLvl("9999");
     assert.equal(swlcalc.gear.slots.head.recap.iLvl(), "9999");
 });

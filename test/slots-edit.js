@@ -53,7 +53,7 @@ QUnit.test("should have required components in the DOM", function(assert) {
 });
 
 QUnit.test("should get and set slot's total iLvl on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.iLvl(), "480");
+    assert.equal(swlcalc.gear.slots.head.edit.iLvl(), "425");
     swlcalc.gear.slots.head.edit.iLvl("9999");
     assert.equal(swlcalc.gear.slots.head.edit.iLvl(), "9999");
 });
@@ -101,7 +101,7 @@ QUnit.test("should get and set the slot's equipment stat value on edit view", fu
 });
 
 QUnit.test("should get and set the slot's equipment iLvl on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentILvl(), "278");
+    assert.equal(swlcalc.gear.slots.head.edit.equipmentILvl(), "223");
     swlcalc.gear.slots.head.edit.equipmentILvl("800000000000");
     assert.equal(swlcalc.gear.slots.head.edit.equipmentILvl(), "800000000000");
 });

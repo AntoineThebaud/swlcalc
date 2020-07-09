@@ -18,7 +18,7 @@ QUnit.test("should import from hash", function(assert) {
     swlcalc.init();
 
     // Summary
-    assert.equal($("#stat-ilvl").html(), "565");
+    assert.equal($("#stat-ilvl").html(), "531");
     assert.equal($("#stat-power-rating").html(), "4388");
     assert.equal($("#stat-weapon-power").html(), "1577");
     assert.equal($("#stat-attack-rating").html(), "8710");
@@ -113,7 +113,7 @@ QUnit.test("should import from hash", function(assert) {
 
 
     assert.ok($("#weapon2-recap-active").is(":hidden"));
-    assert.equal($("#weapon2-recap-ilvl").text(), "581");
+    assert.equal($("#weapon2-recap-ilvl").text(), "549");
     assert.ok($("#weapon2-recap-equipment-empty").is(":hidden"));
     assert.ok($("#weapon2-recap-equipment-title-section").is(":visible"));
     assert.equal($("#weapon2-recap-equipment-title").text(), "Shotgun of Warding Mk II");
@@ -151,14 +151,14 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-recap-signet-description").html(), "Increases Protection by <span id=\"weapon2-recap-signet-bonus-wrapper\" class=\"bonus-val color-superior\"><span id=\"weapon2-recap-signet-bonus\">300</span></span> while wielded.");
     assert.equal($("#weapon2-recap-suffix").html(), "of Warding");
     assert.equal($("#weapon2-recap-suffix-quality").html(), "Mk II");
-    assert.equal($("#weapon2-edit-ilvl").html(), "581");
+    assert.equal($("#weapon2-edit-ilvl").html(), "549");
     assert.equal($("#weapon2-edit-equipment-id").val(), "7");
     assert.equal($("#weapon2-edit-equipment-id option:selected").text(), "[Shotgun] Shotgun");
     assert.equal($("#weapon2-edit-equipment-rarity").val(), "epic");
     assert.equal($("#weapon2-edit-equipment-quality").val(), "2");
     assert.equal($("#weapon2-edit-equipment-level").val(), "29");
     assert.equal($("#weapon2-edit-equipment-stat-value").html(), "1809");
-    assert.equal($("#weapon2-edit-equipment-ilvl").html(), "315");
+    assert.equal($("#weapon2-edit-equipment-ilvl").html(), "283");
     // TODO/TEST : buggy, should be ok : assert.equal($("#weapon2-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/weapon/None.png");
     assert.equal($("#weapon2-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/epic-42x42.png");
     assert.equal($("#weapon2-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
@@ -184,7 +184,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-edit-signet-ilvl").html(), undefined);
 
 
-    assert.equal($("#head-recap-ilvl").text(), "487");
+    assert.equal($("#head-recap-ilvl").text(), "462");
     assert.ok($("#head-recap-equipment-empty").is(":hidden"));
     assert.ok($("#head-recap-equipment-title-section").is(":visible"));
     assert.equal($("#head-recap-equipment-title").text(), "Luminous Ashes of Crushed Cities");
@@ -222,14 +222,14 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-recap-signet-description").html(), "Increases the damage and healing of Pistols Elite Abilities by <span id=\"head-recap-signet-bonus\" class=\"bonus-val const\">3.4495</span><span class=\"bonus-val const\">%</span>.");
     assert.equal($("#head-recap-suffix").html(), undefined);
     assert.equal($("#head-recap-suffix-quality").html(), undefined);
-    assert.equal($("#head-edit-ilvl").html(), "487");
+    assert.equal($("#head-edit-ilvl").html(), "462");
     assert.equal($("#head-edit-equipment-id").val(), "4");
     assert.equal($("#head-edit-equipment-id option:selected").text(), "Ashes of Crushed Cities");
     assert.equal($("#head-edit-equipment-rarity").val(), "epic");
     assert.equal($("#head-edit-equipment-quality").val(), "2");
     assert.equal($("#head-edit-equipment-level").val(), "24");
     assert.equal($("#head-edit-equipment-stat-value").html(), "1113");
-    assert.equal($("#head-edit-equipment-ilvl").html(), "252");
+    assert.equal($("#head-edit-equipment-ilvl").html(), "226");
     // TODO/TEST : buggy, should be ok : assert.equal($("#head-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/head/None.png");
     assert.equal($("#head-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal($("#head-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
@@ -255,7 +255,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-edit-signet-ilvl").html(), "10");
 
 
-    assert.equal($("#finger-recap-ilvl").text(), "571");
+    assert.equal($("#finger-recap-ilvl").text(), "549");
     assert.ok($("#finger-recap-equipment-empty").is(":hidden"));
     assert.ok($("#finger-recap-equipment-title-section").is(":visible"));
     assert.equal($("#finger-recap-equipment-title").text(), "Faded Rurikid Knot");
@@ -293,14 +293,14 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#finger-recap-signet-description").html(), "Increases the damage and healing of Pistols Basic Abilities by <span id=\"finger-recap-signet-bonus\" class=\"bonus-val const\">47.9079</span><span class=\"bonus-val const\">%</span>.");
     assert.equal($("#finger-recap-suffix").html(), undefined);
     assert.equal($("#finger-recap-suffix-quality").html(), undefined);
-    assert.equal($("#finger-edit-ilvl").html(), "571");
+    assert.equal($("#finger-edit-ilvl").html(), "549");
     assert.equal($("#finger-edit-equipment-id").val(), "2");
     assert.equal($("#finger-edit-equipment-id option:selected").text(), "Rurikid Knot");
     assert.equal($("#finger-edit-equipment-rarity").val(), "superior");
     assert.equal($("#finger-edit-equipment-quality").val(), "1");
     assert.equal($("#finger-edit-equipment-level").val(), "20");
     assert.equal($("#finger-edit-equipment-stat-value").html(), "314");
-    assert.equal($("#finger-edit-equipment-ilvl").html(), "113");
+    assert.equal($("#finger-edit-equipment-ilvl").html(), "91");
     // TODO/TEST : buggy, should be ok : assert.equal($("#finger-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/finger/None.png");
     assert.equal($("#finger-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/finger/superior-42x42.png");
     assert.equal($("#finger-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
@@ -371,7 +371,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#neck-edit-equipment-quality").val(), "3");
     assert.equal($("#neck-edit-equipment-level").val(), "6");
     assert.equal($("#neck-edit-equipment-stat-value").html(), "70");
-    assert.equal($("#neck-edit-equipment-ilvl").html(), "13");
+    assert.equal($("#neck-edit-equipment-ilvl").html(), "14");
     // TODO/TEST : buggy, should be ok : assert.equal($("#neck-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/neck/None.png");
     assert.equal($("#neck-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/neck/standard-42x42.png");
     assert.equal($("#neck-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/3.png");
@@ -397,7 +397,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#neck-edit-signet-ilvl").html(), "91");
 
 
-    assert.equal($("#wrist-recap-ilvl").text(), "1292");
+    assert.equal($("#wrist-recap-ilvl").text(), "1190");
     assert.ok($("#wrist-recap-equipment-empty").is(":hidden"));
     assert.ok($("#wrist-recap-equipment-title-section").is(":visible"));
     assert.equal($("#wrist-recap-equipment-title").text(), "Luminous Bone Timepiece");
@@ -435,14 +435,14 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#wrist-recap-signet-description").html(), "Increases the rate at which your Ultimate Ability recharges on ability activation by <span id=\"wrist-recap-signet-bonus\" class=\"bonus-val const\">36.1004</span><span class=\"bonus-val const\">%</span>.");
     assert.equal($("#wrist-recap-suffix").html(), undefined);
     assert.equal($("#wrist-recap-suffix-quality").html(), undefined);
-    assert.equal($("#wrist-edit-ilvl").html(), "1292");
+    assert.equal($("#wrist-edit-ilvl").html(), "1190");
     assert.equal($("#wrist-edit-equipment-id").val(), "2");
     assert.equal($("#wrist-edit-equipment-id option:selected").text(), "Bone Timepiece");
     assert.equal($("#wrist-edit-equipment-rarity").val(), "legendary");
     assert.equal($("#wrist-edit-equipment-quality").val(), "2");
     assert.equal($("#wrist-edit-equipment-level").val(), "68");
     assert.equal($("#wrist-edit-equipment-stat-value").html(), "1951");
-    assert.equal($("#wrist-edit-equipment-ilvl").html(), "1026");
+    assert.equal($("#wrist-edit-equipment-ilvl").html(), "924");
     // TODO/TEST : buggy, should be ok : assert.equal($("#wrist-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/wrist/None.png");
     assert.equal($("#wrist-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/wrist/legendary-42x42.png");
     assert.equal($("#wrist-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
@@ -468,7 +468,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#wrist-edit-signet-ilvl").html(), "172");
 
 
-    assert.equal($("#luck-recap-ilvl").text(), "136");
+    assert.equal($("#luck-recap-ilvl").text(), "132");
     assert.ok($("#luck-recap-equipment-empty").is(":hidden"));
     assert.ok($("#luck-recap-equipment-title-section").is(":visible"));
     assert.equal($("#luck-recap-equipment-title").text(), "Faded Dice");
@@ -506,14 +506,14 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#luck-recap-signet-description").html(), "When you critically heal, you gain a beneficial effect that grants you a <span id=\"luck-recap-signet-bonus\" class=\"bonus-val heal\">17.8511</span><span class=\"bonus-val heal\">%</span> bonus to healing for <span class=\"bonus-val const\">5</span> seconds. This ability can only occur once every <span class=\"bonus-val const\">15</span> seconds.");
     assert.equal($("#luck-recap-suffix").html(), undefined);
     assert.equal($("#luck-recap-suffix-quality").html(), undefined);
-    assert.equal($("#luck-edit-ilvl").html(), "136");
+    assert.equal($("#luck-edit-ilvl").html(), "132");
     assert.equal($("#luck-edit-equipment-id").val(), "1");
     assert.equal($("#luck-edit-equipment-id option:selected").text(), "Dice");
     assert.equal($("#luck-edit-equipment-rarity").val(), "standard");
     assert.equal($("#luck-edit-equipment-quality").val(), "1");
     assert.equal($("#luck-edit-equipment-level").val(), "10");
     assert.equal($("#luck-edit-equipment-stat-value").html(), "53");
-    assert.equal($("#luck-edit-equipment-ilvl").html(), "22");
+    assert.equal($("#luck-edit-equipment-ilvl").html(), "18");
     // TODO/TEST : buggy, should be ok : assert.equal($("#luck-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/luck/None.png");
     assert.equal($("#luck-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/luck/standard-42x42.png");
     assert.equal($("#luck-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
@@ -539,7 +539,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#luck-edit-signet-ilvl").html(), "55");
 
 
-    assert.equal($("#waist-recap-ilvl").text(), "846");
+    assert.equal($("#waist-recap-ilvl").text(), "728");
     assert.ok($("#waist-recap-equipment-empty").is(":hidden"));
     assert.ok($("#waist-recap-equipment-title-section").is(":visible"));
     assert.equal($("#waist-recap-equipment-title").text(), "Faded Brawler's Belt");
@@ -577,14 +577,14 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#waist-recap-signet-description").html(), "Reduces the cooldown of Gadgets by <span id=\"waist-recap-signet-bonus\" class=\"bonus-val const\">32.7158</span><span class=\"bonus-val const\">%</span>.");
     assert.equal($("#waist-recap-suffix").html(), undefined);
     assert.equal($("#waist-recap-suffix-quality").html(), undefined);
-    assert.equal($("#waist-edit-ilvl").html(), "846");
+    assert.equal($("#waist-edit-ilvl").html(), "728");
     assert.equal($("#waist-edit-equipment-id").val(), "11");
     assert.equal($("#waist-edit-equipment-id option:selected").text(), "Brawler's Belt");
     assert.equal($("#waist-edit-equipment-rarity").val(), "legendary");
     assert.equal($("#waist-edit-equipment-quality").val(), "1");
     assert.equal($("#waist-edit-equipment-level").val(), "2");
     assert.equal($("#waist-edit-equipment-stat-value").html(), "775");
-    assert.equal($("#waist-edit-equipment-ilvl").html(), "591");
+    assert.equal($("#waist-edit-equipment-ilvl").html(), "472");
     // TODO/TEST : buggy, should be ok : assert.equal($("#waist-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/waist/None.png");
     assert.equal($("#waist-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/waist/legendary-42x42.png");
     assert.equal($("#waist-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/1.png");
@@ -655,7 +655,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#occult-edit-equipment-quality").val(), "3");
     assert.equal($("#occult-edit-equipment-level").val(), "19");
     assert.equal($("#occult-edit-equipment-stat-value").html(), "112");
-    assert.equal($("#occult-edit-equipment-ilvl").html(), "42");
+    assert.equal($("#occult-edit-equipment-ilvl").html(), "43");
     // TODO/TEST : buggy, should be ok : assert.equal($("#occult-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/occult/None.png");
     assert.equal($("#occult-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/occult/standard-42x42.png");
     assert.equal($("#occult-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/3.png");
