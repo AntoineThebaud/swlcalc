@@ -852,7 +852,7 @@ swlcalc.data.equipments = {
             {
                 id: 120,
                 type: 'Hammer',
-                name: 'Hell Forged Warhammer',
+                name: 'Hell-Forged War Hammer',
                 description: 'Consecutive Hammer ability uses generate increased Rage. The amount of bonus Rage generated increases with each Hammer ability use and is reset when a non-Hammer ability is used.'
             },
             {
@@ -1101,7 +1101,7 @@ swlcalc.data.equipments = {
             {
                 id: 156,
                 type: 'Fist',
-                name: 'Fist-in-Chains',
+                name: 'Fists-in-Chains',
                 description: 'Whenever your "Invigorating Wrath" or "Frenzied Wrath" effect expires, you gain additional Fury. If you were unable to activate as many Wrath abilities as you possibly could have activated, you gain more additional Fury.'
             },
             {
@@ -1131,7 +1131,7 @@ swlcalc.data.equipments = {
             {
                 id: 161,
                 type: 'Pistols',
-                name: 'Pistol of Caged Birds',
+                name: 'Pistols of Caged Birds',
                 description: 'The damage bonus from a Blue set of chambers is increased by <span class="bonus-val const">50%</span> and the duration of the damage bonus from a Blue set of chambers is increased by <span class="bonus-val const">1</span> second.'
             },
             {
