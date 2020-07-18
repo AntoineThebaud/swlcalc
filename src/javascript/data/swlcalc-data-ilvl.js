@@ -89,44 +89,44 @@ swlcalc.data.ilvl = {
     'glyph': {
         'standard': {
             '1': {
-                ilvl_init: 1.2727,  //TODO/BUG : Wrong number ! This is valid for 3rd quality only
-                ilvl_per_level: 1.2 //TODO/BUG : Wrong number ! This is valid for 3rd quality only
+                ilvl_init: 2,
+                ilvl_per_level: 18/19 // == (20 - 2) / (20 - 1)
             },
             '2': {
-                ilvl_init: 1.2727,  //TODO/BUG : Wrong number ! This is valid for 3rd quality only
-                ilvl_per_level: 1.2 //TODO/BUG : Wrong number ! This is valid for 3rd quality only
+                ilvl_init: 2,
+                ilvl_per_level: 20/19 // == (22 - 2) / (20 - 1)
             },
             '3': {
-                ilvl_init: 1.2727,
-                ilvl_per_level: 1.2
+                ilvl_init: 2,
+                ilvl_per_level: 23/19 // == (25 - 2) / (20 - 1)
             }
         },
         'superior': {
             '1': {
-                ilvl_init: 27.6364, //TODO/BUG : Wrong number ! This is valid for 3rd quality only
-                ilvl_per_level: 1.8 //TODO/BUG : Wrong number ! This is valid for 3rd quality only
+                ilvl_init: 23,
+                ilvl_per_level: 27/19 // == (50 - 23) / (20 - 1)
             },
             '2': {
-                ilvl_init: 27.6364, //TODO/BUG : Wrong number ! This is valid for 3rd quality only
-                ilvl_per_level: 1.8 //TODO/BUG : Wrong number ! This is valid for 3rd quality only
+                ilvl_init: 26,
+                ilvl_per_level: 30/19 // == (56 - 26) / (20 - 1)
             },
             '3': {
-                ilvl_init: 27.6364,
-                ilvl_per_level: 1.8
+                ilvl_init: 28,
+                ilvl_per_level: 35/19 // == (63 - 28) / (20 - 1)
             }
         },
         'epic': {
             '1': {
-                ilvl_init: 82,      //TODO/BUG : Wrong number ! This is valid for 3rd quality only
-                ilvl_per_level: 2.4 //TODO/BUG : Wrong number ! This is valid for 3rd quality only
+                ilvl_init: 66,
+                ilvl_per_level: 37/19 // == (103 - 66) / (20 - 1)
             },
             '2': {
-                ilvl_init: 82,      //TODO/BUG : Wrong number ! This is valid for 3rd quality only
-                ilvl_per_level: 2.4 //TODO/BUG : Wrong number ! This is valid for 3rd quality only
+                ilvl_init: 74,
+                ilvl_per_level: 41/19 // == (115 - 74) / (20 - 1)
             },
             '3': {
-                ilvl_init: 82,
-                ilvl_per_level: 2.4
+                ilvl_init: 83,
+                ilvl_per_level: 45/19 // == (128 - 83) / (20 - 1)
             },
             '4': {
                 ilvl_init: 90,
@@ -135,16 +135,16 @@ swlcalc.data.ilvl = {
         },
         'mythic': {
             '1': {
-                ilvl_init: 175.2727, //TODO/BUG : Wrong number ! This is valid for 3rd quality only
-                ilvl_per_level: 3    //TODO/BUG : Wrong number ! This is valid for 3rd quality only
+                ilvl_init: 141,
+                ilvl_per_level: 45/19 // == (186 - 141) / (20 - 1)
             },
             '2': {
-                ilvl_init: 175.2727, //TODO/BUG : Wrong number ! This is valid for 3rd quality only
-                ilvl_per_level: 3    //TODO/BUG : Wrong number ! This is valid for 3rd quality only
+                ilvl_init: 158,
+                ilvl_per_level: 52/19 // == (210 - 158) / (20 - 1)
             },
             '3': {
-                ilvl_init: 175.2727,
-                ilvl_per_level: 3
+                ilvl_init: 176,
+                ilvl_per_level: 57/19 // == (233 - 176) / (20 - 1)
             },
             '4': {
                 ilvl_init: 193,
@@ -153,16 +153,16 @@ swlcalc.data.ilvl = {
         },
         'legendary': {
             '1': {
-                ilvl_init: 318.5455, //TODO/BUG : Wrong number ! This is valid for 3rd quality only
-                ilvl_per_level: 3.6  //TODO/BUG : Wrong number ! This is valid for 3rd quality only
+                ilvl_init: 255,
+                ilvl_per_level: 55/19 // == (310 - 255) / (20 - 1)
             },
             '2': {
-                ilvl_init: 318.5455, //TODO/BUG : Wrong number ! This is valid for 3rd quality only
-                ilvl_per_level: 3.6  //TODO/BUG : Wrong number ! This is valid for 3rd quality only
+                ilvl_init: 287,
+                ilvl_per_level: 62/19 // == (349 - 287) / (20 - 1)
             },
             '3': {
-                ilvl_init: 318.5455,
-                ilvl_per_level: 3.6
+                ilvl_init: 319,
+                ilvl_per_level: 68/19 // == (387 - 319) / (20 - 1)
             },
             '4': {
                 ilvl_init: 350,
