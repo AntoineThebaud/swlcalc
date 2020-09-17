@@ -193,7 +193,7 @@ QUnit.test("should get and set the slot's glyph stat text on edit view", functio
 });
 
 QUnit.test("should get and set the slot's glyph iLvl on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.neck.edit.glyphILvl(), 128);
+    assert.equal(swlcalc.gear.slots.neck.edit.glyphILvl(), 115);
     swlcalc.gear.slots.neck.edit.glyphILvl(666);
     assert.equal(swlcalc.gear.slots.neck.edit.glyphILvl(), 666);
 });

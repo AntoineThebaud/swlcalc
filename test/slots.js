@@ -244,17 +244,17 @@ QUnit.test("should update elements related to glyph's stat rating accordingly", 
 });
 
 QUnit.test("should update elements related to glyph's ilvl accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.weapon2.edit.glyphILvl(), "34");
+    assert.equal(swlcalc.gear.slots.weapon2.edit.glyphILvl(), "28");
 
     swlcalc.gear.slots.weapon2.edit.glyphRarity("mythic");
     swlcalc.gear.slots.weapon2.updateGlyphILvl();
 
-    assert.equal(swlcalc.gear.slots.weapon2.edit.glyphILvl(), "215");
+    assert.equal(swlcalc.gear.slots.weapon2.edit.glyphILvl(), "173");
 
     swlcalc.gear.slots.weapon2.edit.glyphLevel("8");
     swlcalc.gear.slots.weapon2.updateGlyphILvl();
 
-    assert.equal(swlcalc.gear.slots.weapon2.edit.glyphILvl(), "240");
+    assert.equal(swlcalc.gear.slots.weapon2.edit.glyphILvl(), "193");
 
     swlcalc.gear.slots.weapon2.edit.glyphId("none");
     swlcalc.gear.slots.weapon2.updateGlyphILvl();

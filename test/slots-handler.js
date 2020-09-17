@@ -77,7 +77,7 @@ QUnit.test("should set a non-zero ilvl value when selecting a glyph and then set
     assert.equal(swlcalc.gear.slots.occult.edit.glyphILvl(), 0);
     swlcalc.gear.slots.occult.edit.glyphId("critical-rating");
     swlcalc.gear.slots.occult.edit.el.glyphId.change();
-    assert.equal(swlcalc.gear.slots.occult.edit.glyphILvl(), 24);
+    assert.equal(swlcalc.gear.slots.occult.edit.glyphILvl(), 20);
     swlcalc.gear.slots.occult.edit.glyphId("none");
     swlcalc.gear.slots.occult.edit.el.glyphId.change();
     assert.equal(swlcalc.gear.slots.occult.edit.glyphILvl(), 0);

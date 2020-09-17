@@ -78,7 +78,7 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
         "attack-rating": 8052,
         "heal-rating": 4310,
         "power-rating": 3730,
-        "ilvl": 336
+        "ilvl": 327
     };
     var expectedSecondaryStats = {
         "critical-rating": "841",
@@ -122,7 +122,7 @@ QUnit.test("should collect primary stats accordingly", function(assert) {
 
     var sums = swlcalc.summary.collectPrimaryStats();
 
-    assert.equal(sums[ "ilvl" ], 336);
+    assert.equal(sums[ "ilvl" ], 327);
     assert.equal(sums[ "power-rating" ], 3730);
     assert.equal(sums[ "weapon-power" ], 1832);
     assert.equal(sums[ "attack-rating" ], 8052);
