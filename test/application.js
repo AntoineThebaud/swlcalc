@@ -24,8 +24,8 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#stat-attack-rating").html(), "8710");
     assert.equal($("#stat-heal-rating").html(), "4310");
     assert.equal($("#stat-hitpoints").html(), "7512");
-    assert.equal($("#stat-combat-power").html(), "772");
-    assert.equal($("#stat-healing-power").html(), "442");
+    assert.equal($("#stat-combat-power").html(), "771.5");
+    assert.equal($("#stat-healing-power").html(), "441.5");
     assert.equal($("#stat-critical-rating").html(), "+1598");
     assert.equal($("#stat-critical-chance").html(), "18.7%");
     assert.equal($("#stat-critical-power").html(), "+1858");
@@ -76,7 +76,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-recap-signet-item").text(), "Destruction");
     assert.equal($("#weapon-recap-signet-rarity").html(), undefined);
     assert.equal($("#weapon-recap-signet-level").html(), undefined);
-    assert.equal($("#weapon-recap-signet-description").html(), "This weapon deals <span id=\"weapon-recap-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-recap-signet-bonus\">347.4</span></span> additional damage to enemies that are below 35% health.");
+    assert.equal($("#weapon-recap-signet-description").html(), "This weapon deals <span id=\"weapon-recap-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-recap-signet-bonus\">346.95</span></span> additional damage to enemies that are below 35% health.");
     assert.equal($("#weapon-recap-suffix").html(), "of Destruction");
     assert.equal($("#weapon-recap-suffix-quality").html(), "Mk III");
     assert.equal($("#weapon-edit-ilvl").html(), "387");
@@ -107,7 +107,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon-edit-signet-level").val(), undefined);
     assert.equal($("#weapon-edit-signet-img-rarity").attr('src'), undefined);
-    assert.equal($("#weapon-edit-signet-description").html(), 'This weapon deals <span id=\"weapon-edit-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-edit-signet-bonus\">347.4</span></span> additional damage to enemies that are below 35% health.');
+    assert.equal($("#weapon-edit-signet-description").html(), 'This weapon deals <span id=\"weapon-edit-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-edit-signet-bonus\">346.95</span></span> additional damage to enemies that are below 35% health.');
     assert.equal($("#weapon-edit-signet-label-level").html(), undefined);
     assert.equal($("#weapon-edit-signet-ilvl").html(), undefined);
 
@@ -201,7 +201,7 @@ QUnit.test("should import from hash", function(assert) {
     // TODO/TEST : buggy, should be ok : assert.equal($("#head-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#head-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal($("#head-recap-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
-    assert.equal($("#head-recap-equipment-description").html(), "Whenever you hit the same enemy <span class=\"bonus-val const\">3</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">290</span> physical damage.");
+    assert.equal($("#head-recap-equipment-description").html(), "Whenever you hit the same enemy <span class=\"bonus-val const\">3</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">289</span> physical damage.");
     assert.ok($("#head-recap-equipment-description-section").is(":visible"));
     assert.equal($("#head-recap-equipment-label-level").text(), "24");
     assert.ok($("#head-recap-glyph-section").is(":visible"));
@@ -234,7 +234,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal($("#head-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
     assert.equal($("#head-edit-equipment-label-level").html(), "24");
-    assert.equal($("#head-edit-equipment-description").html(), 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="head-edit-equipment-bonus1" class="bonus-val dps">290</span> physical damage.');
+    assert.equal($("#head-edit-equipment-description").html(), 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="head-edit-equipment-bonus1" class="bonus-val dps">289</span> physical damage.');
     assert.equal($("#head-edit-glyph-id").val(), "critical-power");
     assert.equal($("#head-edit-glyph-rarity").val(), "mythic");
     assert.equal($("#head-edit-glyph-quality").val(), "2");
@@ -692,8 +692,8 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#stat-attack-rating").html(), "4322");
     assert.equal($("#stat-heal-rating").html(), "4310");
     assert.equal($("#stat-hitpoints").html(), "7512");
-    assert.equal($("#stat-combat-power").html(), "324");
-    assert.equal($("#stat-healing-power").html(), "323");
+    assert.equal($("#stat-combat-power").html(), "324.2");
+    assert.equal($("#stat-healing-power").html(), "323.3");
     assert.equal($("#stat-critical-rating").html(), "+756");
     assert.equal($("#stat-critical-chance").html(), "13.3%");
     assert.equal($("#stat-critical-power").html(), "+1008");

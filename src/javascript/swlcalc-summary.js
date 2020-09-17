@@ -123,7 +123,8 @@ swlcalc.summary = function() {
      * -> +1 Primary Power every {rate} of Weapon Power
      */
     var computePrimaryPower = function(primaryStat, sumPrimaryStatPoints, weaponPower) {
-        return Math.round((sumPrimaryStatPoints + weaponPower) / swlcalc.data.stats.computationFigures.primary[primaryStat].rate);
+        var result = (sumPrimaryStatPoints + weaponPower) / swlcalc.data.stats.computationFigures.primary[primaryStat].rate
+        return swlcalc.util.precisionRound(result, 1)
     };
 
     /**
