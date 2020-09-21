@@ -84,4 +84,15 @@ swlcalc.gear.Agent = function Agent(id) {
             return this.el.text50.html();
         }
     };
+
+    /**
+     * Reset the agent by setting default values for each select
+     */
+    this.reset = function() {
+        this.el.agentId.prop("selectedIndex", 0);
+        this.el.level.prop("selectedIndex", 0);
+
+        this.el.agentId.change();
+        this.el.level.change();
+    };
 };

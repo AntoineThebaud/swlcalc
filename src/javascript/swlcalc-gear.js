@@ -58,6 +58,10 @@ swlcalc.gear = function() {
         for (var id in this.slots) {
             this.slots[id].reset();
         }
+
+        for (var i = 0; i < this.nbAgents(); i++) {
+            this.agents[i].reset();
+        }
     };
 
     /**
