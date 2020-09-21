@@ -88,10 +88,9 @@ QUnit.test("should set quality on all slots", function(assert) {
     }
 });
 
-QUnit.test("should set level on all slots", function(assert) {
-      $('#btn-all-mythic').click();
-
+QUnit.test("should set min level on all slots", function(assert) {
       $("#btn-all-lvl-min").click();
+
       for (var slotId in swlcalc.gear.slots){
           var slot = swlcalc.gear.slots[slotId];
           assert.equal(slot.edit.equipmentLevel(), "1");
@@ -100,7 +99,17 @@ QUnit.test("should set level on all slots", function(assert) {
               assert.equal(slot.edit.signetLevel(), "1");
           }
       }
+      for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {
+          var agent = swlcalc.gear.agents[i];
+          assert.equal(agent.level(), "25");
+      }
+});
+
+QUnit.test("should set max level on all slots", function(assert) {
+      $('#btn-all-mythic').click();
+
       $("#btn-all-lvl-max").click();
+
       for (var slotId in swlcalc.gear.slots){
           var slot = swlcalc.gear.slots[slotId];
           assert.equal(slot.edit.equipmentLevel(), "35");
@@ -108,6 +117,10 @@ QUnit.test("should set level on all slots", function(assert) {
           if (slot.id != "weapon" && slot.id != "weapon2") {
               assert.equal(slot.edit.signetLevel(), "20");
           }
+      }
+      for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {
+          var agent = swlcalc.gear.agents[i];
+          assert.equal(agent.level(), "50");
       }
 });
 

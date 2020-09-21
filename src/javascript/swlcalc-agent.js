@@ -95,4 +95,19 @@ swlcalc.gear.Agent = function Agent(id) {
         this.el.agentId.change();
         this.el.level.change();
     };
+
+    /**
+     * Returns the minimum level available for this agent
+     */
+    this.minLvl = function() {
+        return this.el.level[0].options[0].value;
+    };
+
+    /**
+     * Returns the maximum level available for this agent
+     */
+    this.maxLvl = function() {
+        var dropdownRows = this.el.level[0].options
+        return dropdownRows[dropdownRows.length - 1].value;
+    };
 };

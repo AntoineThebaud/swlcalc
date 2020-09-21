@@ -135,7 +135,7 @@ swlcalc.buttonBar = function() {
     };
 
     /**
-     * Set the min level to all equipments+glyphs+signets.
+     * Set the min level to all equipments + glyphs + signets + agents.
      */
     var setMinLevelOnAllSlots = function(event) {
         for (var id in swlcalc.gear.slots) {
@@ -147,11 +147,18 @@ swlcalc.buttonBar = function() {
             slot.edit.signetLevel(slot.edit.signetLevelMin());
             slot.edit.el.signetLevel.change();
         }
+
+        for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {
+            var agent = swlcalc.gear.agents[i];
+            agent.level(agent.minLvl());
+            agent.el.level.change();
+        }
+
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
     };
 
     /**
-     * Set the max level to all equipments+glyphs+signets.
+     * Set the max level to all equipments + glyphs + signets + agents.
      */
     var setMaxLevelOnAllSlots = function(event) {
         for (var id in swlcalc.gear.slots) {
@@ -163,6 +170,13 @@ swlcalc.buttonBar = function() {
             slot.edit.signetLevel(slot.edit.signetLevelMax());
             slot.edit.el.signetLevel.change();
         }
+
+        for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {
+            var agent = swlcalc.gear.agents[i];
+            agent.level(agent.maxLvl());
+            agent.el.level.change();
+        }
+
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
     };
 
