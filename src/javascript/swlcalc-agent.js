@@ -15,29 +15,23 @@ swlcalc.gear.Agent = function Agent(id) {
     /**
      * Update elements related to agent's id
      */
-    this.updateAgent = function() {
+    this.updateAgentId = function() {
         var newId = this.agentId();
         this.agentData = swlcalc.data.agents[newId];
 
-        if (newId == '0') {
-            this.text25(this.agentData.lvl25_value);
-            this.text50(this.agentData.lvl50_value);
-        } else {
-            if (this.agentData.lvl25_type == "miscellaneous") {
-                this.text25(this.agentData.lvl25_value);
-            } else {
-                this.text25('<span class="stat-value gear">+' + this.agentData.lvl25_value + "</span> " + swlcalc.data.stat_mapping.to_pretty[this.agentData.lvl25_type]);
-            }
+        this.text25(this.displayBonus(this.agentData, "25"));
 
-            if (this.level() == "50") {
-                if (this.agentData.lvl50_type == "miscellaneous") {
-                    this.text50(this.agentData.lvl50_value);
-                } else {
-                    this.text50('<span class="stat-value gear">+' + this.agentData.lvl50_value + "</span> " + swlcalc.data.stat_mapping.to_pretty[this.agentData.lvl50_type]);
-                }
-            } else {
-                this.text50("");
-            }
+        this.updateAgentLevel();
+    };
+
+    /**
+     * Update elements related to agent's level
+     */
+    this.updateAgentLevel = function() {
+        if (this.level() == "50") {
+            this.text50(this.displayBonus(this.agentData, "50"));
+        } else {
+            this.text50("");
         }
     };
 
@@ -109,5 +103,13 @@ swlcalc.gear.Agent = function Agent(id) {
     this.maxLvl = function() {
         var dropdownRows = this.el.level[0].options
         return dropdownRows[dropdownRows.length - 1].value;
+    };
+
+    this.displayBonus = function(agentData, level) {
+        if (agentData.levels[level].type == "miscellaneous" || agentData.levels[level].type == "empty") {
+            return agentData.levels[level].value;
+        } else {
+            return '<span class="stat-value gear">+' + agentData.levels[level].value + "</span> " + swlcalc.data.stat_mapping.to_pretty[agentData.levels[level].type];
+        }
     };
 };

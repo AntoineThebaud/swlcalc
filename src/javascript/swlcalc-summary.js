@@ -86,15 +86,15 @@ swlcalc.summary = function() {
         }
 
         // sum bonuses brought by agents
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {
             var ad = swlcalc.gear.agents[i].agentData
 
-            if (swlcalc.util.isPrimaryStat(ad.lvl25_type)) {
-                sums[ad.lvl25_type] += parseInt(ad.lvl25_value)
+            if (swlcalc.util.isPrimaryStat(ad.levels["25"].type)) {
+                sums[ad.levels["25"].type] += parseInt(ad.levels["25"].value)
             }
             if (swlcalc.gear.agents[i].level() == 50) {
-                if (swlcalc.util.isPrimaryStat(ad.lvl50_type)) {
-                    sums[ad.lvl50_type] += parseInt(ad.lvl50_value)
+                if (swlcalc.util.isPrimaryStat(ad.levels["50"].type)) {
+                    sums[ad.levels["50"].type] += parseInt(ad.levels["50"].value)
                 }
             }
         }
@@ -170,15 +170,15 @@ swlcalc.summary = function() {
         }
 
         // sum bonuses brought by agents
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {
             var ad = swlcalc.gear.agents[i].agentData
 
-            if (swlcalc.util.isSecondaryStat(ad.lvl25_type)) {
-                sums[ad.lvl25_type] += parseInt(ad.lvl25_value)
+            if (swlcalc.util.isSecondaryStat(ad.levels["25"].type)) {
+                sums[ad.levels["25"].type] += parseInt(ad.levels["25"].value)
             }
             if (swlcalc.gear.agents[i].level() == 50) {
-                if (swlcalc.util.isSecondaryStat(ad.lvl50_type)) {
-                    sums[ad.lvl50_type] += parseInt(ad.lvl50_value)
+                if (swlcalc.util.isSecondaryStat(ad.levels["50"].type)) {
+                    sums[ad.levels["50"].type] += parseInt(ad.levels["50"].value)
                 }
             }
         }
@@ -223,11 +223,11 @@ swlcalc.summary = function() {
        * Display any remaining miscellaneous bonus brought by agents
        */
       var updateMiscellaneousBonuses = function() {
-          for (var i = 0; i < 3; i++) {
+          for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {
               var bonus = ""
-              if (swlcalc.gear.agents[i].agentData.lvl25_type == "miscellaneous") {
+              if (swlcalc.gear.agents[i].agentData.levels["25"].type == "miscellaneous") {
                   bonus = swlcalc.gear.agents[i].text25();
-              } else if (swlcalc.gear.agents[i].agentData.lvl50_type == "miscellaneous") {
+              } else if (swlcalc.gear.agents[i].agentData.levels["50"].type == "miscellaneous") {
                   bonus = swlcalc.gear.agents[i].text50();
               }
               $('#stat-agent' + (i + 1) + '-bonus').html(bonus);
@@ -261,15 +261,16 @@ swlcalc.summary = function() {
             swlcalc.gear.slots[id].updateSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
         }
 
-        for (var i = 0; i < 3; i++) {
-            var ad = swlcalc.gear.agents[i].agentData
+        for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {
+            var l25 = swlcalc.gear.agents[i].agentData.levels["25"];
+            var l50 = swlcalc.gear.agents[i].agentData.levels["50"];
 
-            if (ad.lvl25_varbonus != undefined) {
-              var res = ad.lvl25_value.replace("%d", Math.round(ad.lvl25_varbonus.stat == "Combat Power" ? combatPower() * ad.lvl25_varbonus.coef : healingPower() * ad.lvl25_varbonus.coef));
+            if (l25.varbonus != undefined) {
+              var res = l25.value.replace("%d", Math.round(l25.varbonus.stat == "Combat Power" ? combatPower() * l25.varbonus.coef : healingPower() * l25.varbonus.coef));
               swlcalc.gear.agents[i].text25(res)
               $('#stat-agent' + (i + 1) + '-bonus').html(res);
-            } else if (swlcalc.gear.agents[i].level() == "50" && ad.lvl50_varbonus != undefined) {
-              var res = ad.lvl50_value.replace("%d", Math.round(ad.lvl50_varbonus.stat == "Combat Power" ? combatPower() * ad.lvl50_varbonus.coef : healingPower() * ad.lvl50_varbonus.coef));
+            } else if (swlcalc.gear.agents[i].level() == "50" && l50.varbonus != undefined) {
+              var res = l50.value.replace("%d", Math.round(l50.varbonus.stat == "Combat Power" ? combatPower() * l50.varbonus.coef : healingPower() * l50.varbonus.coef));
               swlcalc.gear.agents[i].text50(res)
               $('#stat-agent' + (i + 1) + '-bonus').html(res);
             }

@@ -15,8 +15,8 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
      * Associates the right processing to each controller.
      */
     this.bindEvents = function() {
-        agentObj.el.agentId.change(this.handleAgentChange);
-        agentObj.el.level.change(this.handleAgentChange);
+        agentObj.el.agentId.change(this.handleIdChange);
+        agentObj.el.level.change(this.handleLevelChange);
     };
 
     /**
@@ -43,10 +43,18 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
     };
 
     /**
-     * Handler for agent#id-id & agent#id-level
+     * Handler for agent#id-id
      */
-    this.handleAgentChange = function(event) {
-        agentObj.updateAgent();
+    this.handleIdChange = function(event) {
+        agentObj.updateAgentId();
+        swlcalc.summary.updateAllStats();
+    };
+
+    /**
+     * Handler for agent#id-level
+     */
+    this.handleLevelChange = function(event) {
+        agentObj.updateAgentLevel();
         swlcalc.summary.updateAllStats();
     };
 };

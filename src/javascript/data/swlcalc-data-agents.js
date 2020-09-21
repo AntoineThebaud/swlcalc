@@ -5,569 +5,971 @@ swlcalc.data.agents = [
     {
         id: 0,
         name: 'None',
-        lvl25_type: '',
-        lvl25_value: 'Empty agent slot',
-        lvl50_type: '',
-        lvl50_value: '',
+        levels: {
+            "25": {
+                type: 'empty',
+                value: 'Empty agent slot'
+            },
+            "50": {
+                type: 'empty',
+                value: ''
+            }
+        }
     },
     {
         id: 1,
         name: 'Faction Recruit',
-        lvl25_type: 'protection',
-        lvl25_value: '1000',
-        lvl50_type: 'hitpoints',
-        lvl50_value: '980',
+        levels: {
+            "25": {
+                type: 'protection',
+                value: '1000',
+            },
+            "50": {
+                type: 'hitpoints',
+                value: '980'
+            }
+        }
     },
     {
         id: 2,
         name: 'Jayesh Suresh',
-        lvl25_type: 'protection',
-        lvl25_value: '1000',
-        lvl50_type: 'defence-rating',
-        lvl50_value: '500',
+        levels: {
+            "25": {
+                type: 'protection',
+                value: '1000'
+            },
+            "50": {
+                type: 'defense-rating',
+                value: '500'
+            }
+        }
     },
     {
         id: 3,
         name: 'Christina Del Rio',
-        lvl25_type: 'protection',
-        lvl25_value: '1000',
-        lvl50_type: 'evade-rating',
-        lvl50_value: '500',
+        levels: {
+            "25": {
+                type: 'protection',
+                value: '1000'
+            },
+            "50": {
+                type: 'evade-rating',
+                value: '500'
+            }
+        }
     },
     {
         id: 4,
         name: 'Roman Konstantinov',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+28% Basic Damage',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+28% Basic Damage'
+            }
+        }
     },
     {
         id: 5,
         name: 'Warlawurru',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+8% Power Damage',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+8% Power Damage'
+            }
+        }
     },
     {
         id: 6,
         name: 'Carlos Peraza',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+20% Elite Damage',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+20% Elite Damage'
+            }
+        }
     },
     {
         id: 7,
         name: 'Margot Crowley-Mathers',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
-        lvl25_varbonus: {
-          coef: 0.1075,
-          stat: 'Combat Power'
-        },
-        lvl50_type: 'attack-rating',
-        lvl50_value: '650',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
+                varbonus: {
+                    coef: 0.1075,
+                    stat: 'Combat Power'
+                }
+            },
+            "50": {
+                type: 'attack-rating',
+                value: '650'
+            }
+        }
     },
     {
         id: 8,
         name: 'Calum MacLeod',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
-        lvl25_varbonus: {
-          coef: 0.1075,
-          stat: 'Combat Power'
-        },
-        lvl50_type: 'critical-power',
-        lvl50_value: '300',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
+                varbonus: {
+                    coef: 0.1075,
+                    stat: 'Combat Power'
+                }
+            },
+            "50": {
+                type: 'critical-power',
+                value: '300'
+            }
+        }
     },
     {
         id: 9,
         name: 'Lydia Darling',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'critical-power',
-        lvl50_value: '300',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325',
+            },
+            "50": {
+                type: 'critical-power',
+                value: '300'
+            }
+        }
     },
     {
         id: 10,
         name: 'Aleksey Volkov',
-        lvl25_type: 'critical-power',
-        lvl25_value: '150',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
-        lvl50_varbonus: {
-          coef: 0.215,
-          stat: 'Combat Power'
-        },
+        levels: {
+            "25": {
+                type: 'critical-power',
+                value: '150'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
+                varbonus: {
+                    coef: 0.215,
+                    stat: 'Combat Power'
+                }
+            }
+        }
     },
     {
         id: 11,
         name: 'Cveta Stojanovic',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '<span class="bonus-val dps">%d</span> physical damage Damage on Critical Hits',
-        lvl50_varbonus: {
-          coef: 0.215,
-          stat: 'Combat Power'
-        },
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '<span class="bonus-val dps">%d</span> physical damage Damage on Critical Hits',
+                varbonus: {
+                    coef: 0.215,
+                    stat: 'Combat Power'
+                }
+            }
+        }
     },
     {
         id: 12,
         name: 'Virgil',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+28% Basic Damage',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+28% Basic Damage'
+            }
+        }
     },
     {
         id: 13,
         name: 'Sarah Skelly',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+8% Power Damage',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+8% Power Damage'
+            }
+        }
     },
     {
         id: 14,
         name: 'Pierre Delacroix',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+20% Elite Damage',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+20% Elite Damage'
+            }
+        }
     },
     {
         id: 15,
         name: 'Wu Liang-Zhi',
-        lvl25_type: 'heal-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
-        lvl50_varbonus: {
-          coef: 0.215,
-          stat: 'Healing Power'
-        },
+        levels: {
+            "25": {
+                type: 'heal-rating',
+                value: '325'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
+                varbonus: {
+                    coef: 0.215,
+                    stat: 'Healing Power'
+                }
+            }
+        }
     },
     {
         id: 16,
         name: 'Lama Lhakpa',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
-        lvl25_varbonus: {
-          coef: 0.1075,
-          stat: 'Healing Power'
-        },
-        lvl50_type: 'critical-power',
-        lvl50_value: '300',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
+                varbonus: {
+                    coef: 0.1075,
+                    stat: 'Healing Power'
+                }
+            },
+            "50": {
+                type: 'critical-power',
+                value: '300'
+            }
+        }
     },
     {
         id: 17,
         name: 'Siobhan Gowan',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
-        lvl25_varbonus: {
-          coef: 0.1075,
-          stat: 'Healing Power'
-        },
-        lvl50_type: 'heal-rating',
-        lvl50_value: '650',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
+                varbonus: {
+                    coef: 0.1075,
+                    stat: 'Healing Power'
+                }
+            },
+            "50": {
+                type: 'heal-rating',
+                value: '650'
+            }
+        }
     },
     {
         id: 18,
         name: 'Tiana Cardoza',
-        lvl25_type: 'critical-power',
-        lvl25_value: '150',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
-        lvl50_varbonus: {
-          coef: 0.215,
-          stat: 'Healing Power'
-        },
+        levels: {
+            "25": {
+                type: 'critical-power',
+                value: '150'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
+                varbonus: {
+                    coef: 0.215,
+                    stat: 'Healing Power'
+                }
+            }
+        }
     },
     {
         id: 19,
         name: 'Ibrahim de la Fuente',
-        lvl25_type: 'heal-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+28% Basic Damage',
+        levels: {
+            "25": {
+                type: 'heal-rating',
+                value: '325'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+28% Basic Damage'
+            }
+        }
     },
     {
         id: 20,
         name: 'Terry Laputo',
-        lvl25_type: 'heal-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+8% Power Damage',
+        levels: {
+            "25": {
+                type: 'heal-rating',
+                value: '325'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+8% Power Damage'
+            }
+        }
     },
     {
         id: 21,
         name: 'Alessandro Luzio IV',
-        lvl25_type: 'heal-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+20% Elite Damage',
+        levels: {
+            "25": {
+                type: 'heal-rating',
+                value: '325'
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+20% Elite Damage'
+            }
+        }
     },
     {
         id: 22,
         name: 'Dax Reagan',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+2.5% Damage',
-        lvl50_type: 'hitpoints',
-        lvl50_value: '980',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '+2.5% Damage',
+            },
+            "50": {
+                type: 'hitpoints',
+                value: '980',
+            }
+        }
     },
     {
         id: 23,
         name: 'Oleg Yablokov',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+2.5% Damage',
-        lvl50_type: 'attack-rating',
-        lvl50_value: '650',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '+2.5% Damage'
+            },
+            "50": {
+                type: 'attack-rating',
+                value: '650'
+            }
+        }
     },
     {
         id: 24,
         name: 'Dae-Su',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+2.5% Damage',
-        lvl50_type: 'critical-power',
-        lvl50_value: '300',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '+2.5% Damage'
+            },
+            "50": {
+                type: 'critical-power',
+                value: '300'
+            }
+        }
     },
     {
         id: 25,
         name: 'Liam Callahan',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+3.5% Assault Rifle Damage',
-        lvl50_type: 'hitpoints',
-        lvl50_value: '980',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '+3.5% Assault Rifle Damage',
+            },
+            "50": {
+                type: 'hitpoints',
+                value: '980',
+            }
+        }
     },
     {
         id: 26,
         name: 'Lee Chung',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+3.5% Blade Damage',
-        lvl50_type: 'hitpoints',
-        lvl50_value: '980',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '+3.5% Blade Damage',
+            },
+            "50": {
+                type: 'hitpoints',
+                value: '980',
+            }
+        }
     },
     {
         id: 27,
         name: 'Giovanni Bellanova',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+3.5% Blood Damage',
-        lvl50_type: 'hitpoints',
-        lvl50_value: '980',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '+3.5% Blood Damage',
+            },
+            "50": {
+                type: 'hitpoints',
+                value: '980',
+            }
+        }
     },
     {
         id: 28,
         name: 'Martin Espina',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+3.5% Chaos Magic Damage',
-        lvl50_type: 'hitpoints',
-        lvl50_value: '980',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '+3.5% Chaos Magic Damage',
+            },
+            "50": {
+                type: 'hitpoints',
+                value: '980',
+            }
+        }
     },
     {
         id: 29,
         name: 'Maxwell Chandler',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+3.5% Dual Pistols Damage',
-        lvl50_type: 'hitpoints',
-        lvl50_value: '980',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '+3.5% Dual Pistols Damage',
+            },
+            "50": {
+                type: 'hitpoints',
+                value: '980',
+            }
+        }
     },
     {
         id: 30,
         name: 'Astrid Mikkelsen',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+3.5% Elementalism Damage',
-        lvl50_type: 'hitpoints',
-        lvl50_value: '980',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '+3.5% Elementalism Damage',
+            },
+            "50": {
+                type: 'hitpoints',
+                value: '980',
+            }
+        }
     },
     {
         id: 31,
         name: 'Saenchai Khamsing',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+3.5% Fist Weapons Damage',
-        lvl50_type: 'hitpoints',
-        lvl50_value: '980',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '+3.5% Fist Weapons Damage',
+            },
+            "50": {
+                type: 'hitpoints',
+                value: '980',
+            }
+        }
     },
     {
         id: 32,
         name: 'Thomas Grady',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+3.5% Hammer Damage',
-        lvl50_type: 'hitpoints',
-        lvl50_value: '980',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '+3.5% Hammer Damage',
+            },
+            "50": {
+                type: 'hitpoints',
+                value: '980',
+            }
+        }
     },
     {
         id: 33,
         name: 'Daniel Martinez',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+3.5% Shotgun Damage',
-        lvl50_type: 'hitpoints',
-        lvl50_value: '980',
+        levels: {
+            "25": {
+                type: 'miscellaneous',
+                value: '+3.5% Shotgun Damage',
+            },
+            "50": {
+                type: 'hitpoints',
+                value: '980',
+            }
+        }
     },
     {
         id: 34,
         name: 'Callie James',
-        lvl25_type: 'protection',
-        lvl25_value: '1000',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+5% Damage',
+        levels: {
+            "25": {
+                type: 'protection',
+                value: '1000',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+5% Damage',
+            }
+        }
     },
     {
         id: 35,
         name: 'Nassir',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Assault Rifle Damage',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Assault Rifle Damage',
+            }
+        }
     },
     {
         id: 36,
         name: 'Montgomery de la Roche',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Blade Damage',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Blade Damage',
+            }
+        }
     },
     {
         id: 37,
         name: 'Carter',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Blood Damage',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Blood Damage',
+            }
+        }
     },
     {
         id: 38,
         name: 'Hayden J. Montag',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Chaos Magic Damage',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Chaos Magic Damage',
+            }
+        }
     },
     {
         id: 39,
         name: 'Deputy Andy Gardener',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Dual Pistols Damage',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Dual Pistols Damage',
+            }
+        }
     },
     {
         id: 40,
         name: 'Amir',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Elementalism Damage',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Elementalism Damage',
+            }
+        }
     },
     {
         id: 41,
         name: 'Mihas Blaga',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Fist Weapons Damage',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Fist Weapons Damage',
+            }
+        }
     },
     {
         id: 42,
         name: 'Petru',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Hammer Damage',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Hammer Damage',
+            }
+        }
     },
     {
         id: 43,
         name: 'Aurélie',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Shotgun Damage',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Shotgun Damage',
+            }
+        }
     },
     {
         id: 44,
         name: 'Mesilande Gwinyai',
-        lvl25_type: 'critical-power',
-        lvl25_value: '150',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Assault Rifle Damage',
+        levels: {
+            "25": {
+                type: 'critical-power',
+                value: '150',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Assault Rifle Damage',
+            }
+        }
     },
     {
         id: 45,
         name: 'Victor Cromely',
-        lvl25_type: 'critical-power',
-        lvl25_value: '150',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Blade Damage',
+        levels: {
+            "25": {
+                type: 'critical-power',
+                value: '150',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Blade Damage',
+            }
+        }
     },
     {
         id: 46,
         name: 'Aliya Zenhar',
-        lvl25_type: 'critical-power',
-        lvl25_value: '150',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Blood Damage',
+        levels: {
+            "25": {
+                type: 'critical-power',
+                value: '150',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Blood Damage',
+            }
+        }
     },
     {
         id: 47,
         name: 'Ann Thophora',
-        lvl25_type: 'critical-power',
-        lvl25_value: '150',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Chaos Magic Damage',
+        levels: {
+            "25": {
+                type: 'critical-power',
+                value: '150',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Chaos Magic Damage',
+            }
+        }
     },
     {
         id: 48,
         name: 'Wekesa Ikande',
-        lvl25_type: 'critical-power',
-        lvl25_value: '150',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Dual Pistols Damage',
+        levels: {
+            "25": {
+                type: 'critical-power',
+                value: '150',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Dual Pistols Damage',
+            }
+        }
     },
     {
         id: 49,
         name: 'Mehmet Muzaffer',
-        lvl25_type: 'critical-power',
-        lvl25_value: '150',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Elementalism Damage',
+        levels: {
+            "25": {
+                type: 'critical-power',
+                value: '150',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Elementalism Damage',
+            }
+        }
     },
     {
         id: 50,
         name: 'Che Garcia Hansson',
-        lvl25_type: 'critical-power',
-        lvl25_value: '150',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Fist Weapons Damage',
+        levels: {
+            "25": {
+                type: 'critical-power',
+                value: '150',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Fist Weapons Damage',
+            }
+        }
     },
     {
         id: 51,
         name: 'Queen Ranavanlona IV',
-        lvl25_type: 'critical-power',
-        lvl25_value: '150',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Hammer Damage',
+        levels: {
+            "25": {
+                type: 'critical-power',
+                value: '150',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Hammer Damage',
+            }
+        }
     },
     {
         id: 52,
         name: 'Dennis Masuhlo',
-        lvl25_type: 'critical-power',
-        lvl25_value: '150',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+7% Shotgun Damage',
+        levels: {
+            "25": {
+                type: 'critical-power',
+                value: '150',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+7% Shotgun Damage',
+            }
+        }
     },
     {
         id: 53,
         name: 'Kwanele',
-        lvl25_type: 'critical-power',
-        lvl25_value: '150',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+5% Damage and Healing',
+        levels: {
+            "25": {
+                type: 'critical-power',
+                value: '150',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+5% Damage and Healing',
+            }
+        }
     },
     {
         id: 54,
         name: 'Faction Quartermaster',
-        lvl25_type: 'miscellaneous',
-        lvl25_value: '+2.5% Damage',
-        lvl50_type: 'critical-power',
-        lvl50_value: '300',
+        levels: {
+            "25": {
+                value: '+2.5% Damage',
+                type: 'miscellaneous',
+            },
+            "50": {
+                value: '300',
+                type: 'critical'
+            }
+        }
     },
     {
         id: 55,
         name: 'Jack Boone',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'protection',
-        lvl50_value: '2000',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490',
+            },
+            "50": {
+                type: 'protection',
+                value: '2000',
+            }
+        }
     },
     {
         id: 56,
         name: 'Jeronimo de Montejo',
-        lvl25_type: 'hitpoints',
-        lvl25_value: '490',
-        lvl50_type: 'protection',
-        lvl50_value: '2000',
+        levels: {
+            "25": {
+                type: 'hitpoints',
+                value: '490',
+            },
+            "50": {
+                type: 'protection',
+                value: '2000',
+            }
+        }
     },
     {
         id: 57,
         name: 'Lady of the Mists',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+10% Damage Versus Humans',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+10% Damage Versus Humans',
+            }
+        }
     },
     {
         id: 58,
         name: 'Fearghas Abernathy',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+10% Damage Versus Cybernetic',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+10% Damage Versus Cybernetic',
+            }
+        }
     },
     {
         id: 59,
         name: 'Brann Mac Diarmoda',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+10% Damage Versus Aquatic Creatures',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+10% Damage Versus Aquatic Creatures',
+            }
+        }
     },
     {
         id: 60,
         name: 'Nuala Magorian',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+10% Damage Versus Constructs',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+10% Damage Versus Constructs',
+            }
+        }
     },
     {
         id: 61,
         name: 'Amelia Bindings',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+10% Damage Versus Spirits',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+10% Damage Versus Spirits',
+            }
+        }
     },
     {
         id: 62,
         name: 'Francis Rowan',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+10% Damage Versus Filth',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+10% Damage Versus Filth',
+            }
+        }
     },
     {
         id: 63,
         name: 'Laughing Jenny',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+10% Damage Versus Demons',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+10% Damage Versus Demons',
+            }
+        }
     },
     {
         id: 64,
         name: 'Finn Mulligan',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+10% Damage Versus Animals',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+10% Damage Versus Animals',
+            }
+        }
     },
     {
         id: 65,
         name: 'Sif Minervudottir',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+10% Damage Versus Supernatural Beings',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+10% Damage Versus Supernatural Beings',
+            }
+        }
     },
     {
         id: 66,
         name: 'Lynch',
-        lvl25_type: 'attack-rating',
-        lvl25_value: '325',
-        lvl50_type: 'miscellaneous',
-        lvl50_value: '+10% Damage Versus Undead',
+        levels: {
+            "25": {
+                type: 'attack-rating',
+                value: '325',
+            },
+            "50": {
+                type: 'miscellaneous',
+                value: '+10% Damage Versus Undead',
+            }
+        }
     }
 ]
