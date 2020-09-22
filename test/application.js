@@ -14,17 +14,17 @@ QUnit.test("should initate swlcalc submodules", function(assert) {
 });
 
 QUnit.test("should import from hash", function(assert) {
-    location.hash = "weapon=3,4,3,19,3,2,2,13,0,2,0&weapon2=3,7,2,29,4,3,1,15,0,8,0&head=3,4,2,24,4,3,2,18,1,1,16&finger=2,2,1,20,5,4,3,15,4,1,2&neck=1,11,3,6,3,2,1,20,4,1,3&wrist=5,2,2,68,3,3,2,6,5,1,8&luck=1,1,1,10,2,2,1,18,3,1,13&waist=5,11,1,2,4,5,3,8,3,3,16&occult=1,7,3,19,5,1,3,2,5,2,10";
+    location.hash = "weapon=3,4,3,19,3,2,2,13,0,2,0&weapon2=3,7,2,29,4,3,1,15,0,8,0&head=3,4,2,24,4,3,2,18,1,1,16&finger=2,2,1,20,5,4,4,15,4,1,2&neck=4,11,4,11,3,2,1,20,4,1,3&wrist=5,2,2,68,3,3,2,6,5,1,8&luck=1,1,1,10,2,2,1,18,3,1,13&waist=5,11,1,2,4,5,3,8,3,3,16&occult=1,7,3,19,5,1,3,2,5,2,10";
     swlcalc.init();
 
     // Summary
-    assert.equal($("#stat-ilvl").html(), "517");
-    assert.equal($("#stat-power-rating").html(), "4388");
+    assert.equal($("#stat-ilvl").html(), "565");
+    assert.equal($("#stat-power-rating").html(), "5454");
     assert.equal($("#stat-weapon-power").html(), "1577");
-    assert.equal($("#stat-attack-rating").html(), "8710");
+    assert.equal($("#stat-attack-rating").html(), "9776");
     assert.equal($("#stat-heal-rating").html(), "4310");
     assert.equal($("#stat-hitpoints").html(), "7512");
-    assert.equal($("#stat-combat-power").html(), "771.5");
+    assert.equal($("#stat-combat-power").html(), "851.5");
     assert.equal($("#stat-healing-power").html(), "441.5");
     assert.equal($("#stat-critical-rating").html(), "+1598");
     assert.equal($("#stat-critical-chance").html(), "18.7%");
@@ -34,8 +34,8 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#stat-glance-reduction").html(), "30.3%");
     assert.equal($("#stat-defense-rating").html(), "+1313");
     assert.equal($("#stat-glance-chance").html(), "12.9%");
-    assert.equal($("#stat-evade-rating").html(), "+1805");
-    assert.equal($("#stat-evade-chance").html(), "12.4%");
+    assert.equal($("#stat-evade-rating").html(), "+1911");
+    assert.equal($("#stat-evade-chance").html(), "13.1%");
     // Equal($("#stat-physical-protection').html(), '+660');
     // equal($("#stat-magical-protection').html(), '+300');
 
@@ -76,7 +76,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-recap-signet-item").text(), "Destruction");
     assert.equal($("#weapon-recap-signet-rarity").html(), undefined);
     assert.equal($("#weapon-recap-signet-level").html(), undefined);
-    assert.equal($("#weapon-recap-signet-description").html(), "This weapon deals <span id=\"weapon-recap-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-recap-signet-bonus\">346.95</span></span> additional damage to enemies that are below 35% health.");
+    assert.equal($("#weapon-recap-signet-description").html(), "This weapon deals <span id=\"weapon-recap-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-recap-signet-bonus\">382.95</span></span> additional damage to enemies that are below 35% health.");
     assert.equal($("#weapon-recap-suffix").html(), "of Destruction");
     assert.equal($("#weapon-recap-suffix-quality").html(), "Mk III");
     assert.equal($("#weapon-edit-ilvl").html(), "387");
@@ -107,7 +107,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon-edit-signet-level").val(), undefined);
     assert.equal($("#weapon-edit-signet-img-rarity").attr('src'), undefined);
-    assert.equal($("#weapon-edit-signet-description").html(), 'This weapon deals <span id=\"weapon-edit-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-edit-signet-bonus\">346.95</span></span> additional damage to enemies that are below 35% health.');
+    assert.equal($("#weapon-edit-signet-description").html(), 'This weapon deals <span id=\"weapon-edit-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-edit-signet-bonus\">382.95</span></span> additional damage to enemies that are below 35% health.');
     assert.equal($("#weapon-edit-signet-label-level").html(), undefined);
     assert.equal($("#weapon-edit-signet-ilvl").html(), undefined);
 
@@ -201,7 +201,7 @@ QUnit.test("should import from hash", function(assert) {
     // TODO/TEST : buggy, should be ok : assert.equal($("#head-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#head-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal($("#head-recap-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
-    assert.equal($("#head-recap-equipment-description").html(), "Whenever you hit the same enemy <span class=\"bonus-val const\">3</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">289</span> physical damage.");
+    assert.equal($("#head-recap-equipment-description").html(), "Whenever you hit the same enemy <span class=\"bonus-val const\">3</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">319</span> physical damage.");
     assert.ok($("#head-recap-equipment-description-section").is(":visible"));
     assert.equal($("#head-recap-equipment-label-level").text(), "24");
     assert.ok($("#head-recap-glyph-section").is(":visible"));
@@ -234,7 +234,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal($("#head-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
     assert.equal($("#head-edit-equipment-label-level").html(), "24");
-    assert.equal($("#head-edit-equipment-description").html(), 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="head-edit-equipment-bonus1" class="bonus-val dps">289</span> physical damage.');
+    assert.equal($("#head-edit-equipment-description").html(), 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="head-edit-equipment-bonus1" class="bonus-val dps">319</span> physical damage.');
     assert.equal($("#head-edit-glyph-id").val(), "critical-power");
     assert.equal($("#head-edit-glyph-rarity").val(), "mythic");
     assert.equal($("#head-edit-glyph-quality").val(), "2");
@@ -255,7 +255,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-edit-signet-ilvl").html(), "10");
 
 
-    assert.equal($("#finger-recap-ilvl").text(), "549");
+    assert.equal($("#finger-recap-ilvl").text(), "585");
     assert.ok($("#finger-recap-equipment-empty").is(":hidden"));
     assert.ok($("#finger-recap-equipment-title-section").is(":visible"));
     assert.equal($("#finger-recap-equipment-title").text(), "Faded Rurikid Knot");
@@ -277,12 +277,12 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#finger-recap-equipment-label-level").text(), "20");
     assert.ok($("#finger-recap-glyph-section").is(":visible"));
     assert.ok($("#finger-recap-glyph-empty").is(":hidden"));
-    assert.equal($("#finger-recap-glyph-title").text(), "Intricate Elusive Glyph");
+    assert.equal($("#finger-recap-glyph-title").text(), "Elaborate Elusive Glyph");
     assert.equal($("#finger-recap-glyph-item").text(), "Elusive");
     assert.equal($("#finger-recap-glyph-rarity").text(), "Legendary");
-    assert.equal($("#finger-recap-glyph-quality").text(), "Intricate");
+    assert.equal($("#finger-recap-glyph-quality").text(), "Elaborate");
     assert.equal($("#finger-recap-glyph-level").text(), "15");
-    assert.equal($("#finger-recap-glyph-stat-rating").text(), "+1052");
+    assert.equal($("#finger-recap-glyph-stat-rating").text(), "+1158");
     assert.equal($("#finger-recap-glyph-stat-text").text(), "Evade Rating");
     assert.ok($("#finger-recap-signet-section").is(":visible"));
     assert.ok($("#finger-recap-signet-empty").is(":hidden"));
@@ -293,7 +293,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#finger-recap-signet-description").html(), "Increases the damage and healing of Pistols Basic Abilities by <span id=\"finger-recap-signet-bonus\" class=\"bonus-val const\">47.9079</span><span class=\"bonus-val const\">%</span>.");
     assert.equal($("#finger-recap-suffix").html(), undefined);
     assert.equal($("#finger-recap-suffix-quality").html(), undefined);
-    assert.equal($("#finger-edit-ilvl").html(), "549");
+    assert.equal($("#finger-edit-ilvl").html(), "585");
     assert.equal($("#finger-edit-equipment-id").val(), "2");
     assert.equal($("#finger-edit-equipment-id option:selected").text(), "Rurikid Knot");
     assert.equal($("#finger-edit-equipment-rarity").val(), "superior");
@@ -308,15 +308,15 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#finger-edit-equipment-description").html(), 'Whenever you purge a beneficial effect from an enemy\'s ability, your Protection is increased by <span class="bonus-val const">1530</span> for <span class="bonus-val const">4</span> seconds.');
     assert.equal($("#finger-edit-glyph-id").val(), "evade-rating");
     assert.equal($("#finger-edit-glyph-rarity").val(), "legendary");
-    assert.equal($("#finger-edit-glyph-quality").val(), "3");
+    assert.equal($("#finger-edit-glyph-quality").val(), "4");
     assert.equal($("#finger-edit-glyph-level").val(), "15");
-    assert.equal($("#finger-edit-glyph-stat-rating").html(), "+1052");
+    assert.equal($("#finger-edit-glyph-stat-rating").html(), "+1158");
     assert.equal($("#finger-edit-glyph-stat-text").html(), "Evade Rating");
     assert.equal($("#finger-edit-glyph-img-item").attr('src'), "assets/images/icons/glyph/evade-rating.png");
     assert.equal($("#finger-edit-glyph-img-rarity").attr('src'), "assets/images/icons/rarity/legendary-42x42.png");
-    assert.equal($("#finger-edit-glyph-img-quality").attr('src'), "assets/images/icons/quality/3.png");
+    assert.equal($("#finger-edit-glyph-img-quality").attr('src'), "assets/images/icons/quality/4.png");
     assert.equal($("#finger-edit-glyph-label-level").html(), "15");
-    assert.equal($("#finger-edit-glyph-ilvl").html(), "369");
+    assert.equal($("#finger-edit-glyph-ilvl").html(), "405");
     assert.equal($("#finger-edit-signet-id").val(), "1");
     assert.equal($("#finger-edit-signet-rarity").val(), "mythic");
     assert.equal($("#finger-edit-signet-level").val(), "2");
@@ -326,26 +326,26 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#finger-edit-signet-ilvl").html(), "89");
 
 
-    assert.equal($("#neck-recap-ilvl").text(), "208");
+    assert.equal($("#neck-recap-ilvl").text(), "608");
     assert.ok($("#neck-recap-equipment-empty").is(":hidden"));
     assert.ok($("#neck-recap-equipment-title-section").is(":visible"));
-    assert.equal($("#neck-recap-equipment-title").text(), "Radiant Lycanthropic Essence");
+    assert.equal($("#neck-recap-equipment-title").text(), "Resplendent Lycanthropic Essence");
     assert.ok($("#neck-recap-equipment-subtitle-section").is(":visible"));
     assert.equal($("#neck-recap-equipment-item").text(), "Lycanthropic Essence");
-    assert.equal($("#neck-recap-equipment-rarity").text(), "Standard");
-    assert.equal($("#neck-recap-equipment-quality").text(), "Radiant");
-    assert.equal($("#neck-recap-equipment-level").text(), "6");
+    assert.equal($("#neck-recap-equipment-rarity").text(), "Mythic");
+    assert.equal($("#neck-recap-equipment-quality").text(), "Resplendent");
+    assert.equal($("#neck-recap-equipment-level").text(), "11");
     assert.ok($("#neck-recap-equipment-stat-section").is(":visible"));
-    assert.equal($("#neck-recap-equipment-stat-raw-value").text(), "70");
-    assert.equal($("#neck-recap-equipment-stat-transformed-value").html(), "+70");
+    assert.equal($("#neck-recap-equipment-stat-raw-value").text(), "1136");
+    assert.equal($("#neck-recap-equipment-stat-transformed-value").html(), "+1136");
     assert.equal($("#neck-recap-equipment-stat-transformed-text").html(), "Attack Rating");
     assert.ok($("#neck-recap-equipment-img-section").is(":visible"));
     // TODO/TEST : buggy, should be ok : assert.equal($("#neck-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
-    assert.equal($("#neck-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/neck/standard-42x42.png");
-    assert.equal($("#neck-recap-equipment-img-quality").attr('src'), "assets/images/icons/quality/3.png");
+    assert.equal($("#neck-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/neck/mythic-42x42.png");
+    assert.equal($("#neck-recap-equipment-img-quality").attr('src'), "assets/images/icons/quality/4.png");
     assert.equal($("#neck-recap-equipment-description").html(), "This talisman gains more Power Rating when leveling up.<br>Whenever you lose health while below <span class=\"bonus-val const\">50%</span> of your maximum health, your damage is increased by <span class=\"bonus-val const\">17%</span> for <span class=\"bonus-val const\">3</span> seconds and your next attack during this time will restore <span class=\"bonus-val const\">4%</span> of your maximum health. This effect can only occur once every <span class=\"bonus-val const\">10</span> seconds.");
     assert.ok($("#neck-recap-equipment-description-section").is(":visible"));
-    assert.equal($("#neck-recap-equipment-label-level").text(), "6");
+    assert.equal($("#neck-recap-equipment-label-level").text(), "11");
     assert.ok($("#neck-recap-glyph-section").is(":visible"));
     assert.ok($("#neck-recap-glyph-empty").is(":hidden"));
     assert.equal($("#neck-recap-glyph-title").text(), "Crude Fierce Glyph");
@@ -364,18 +364,18 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#neck-recap-signet-description").html(), "Increases the damage and healing of Pistols Power Abilities by <span id=\"neck-recap-signet-bonus\" class=\"bonus-val const\">12.6405</span><span class=\"bonus-val const\">%</span>.");
     assert.equal($("#neck-recap-suffix").html(), undefined);
     assert.equal($("#neck-recap-suffix-quality").html(), undefined);
-    assert.equal($("#neck-edit-ilvl").html(), "208");
+    assert.equal($("#neck-edit-ilvl").html(), "608");
     assert.equal($("#neck-edit-equipment-id").val(), "11");
     assert.equal($("#neck-edit-equipment-id option:selected").text(), "Lycanthropic Essence");
-    assert.equal($("#neck-edit-equipment-rarity").val(), "standard");
-    assert.equal($("#neck-edit-equipment-quality").val(), "3");
-    assert.equal($("#neck-edit-equipment-level").val(), "6");
-    assert.equal($("#neck-edit-equipment-stat-value").html(), "70");
-    assert.equal($("#neck-edit-equipment-ilvl").html(), "14");
+    assert.equal($("#neck-edit-equipment-rarity").val(), "mythic");
+    assert.equal($("#neck-edit-equipment-quality").val(), "4");
+    assert.equal($("#neck-edit-equipment-level").val(), "11");
+    assert.equal($("#neck-edit-equipment-stat-value").html(), "1136");
+    assert.equal($("#neck-edit-equipment-ilvl").html(), "415");
     // TODO/TEST : buggy, should be ok : assert.equal($("#neck-edit-equipment-img-item").attr('src'), "assets/images/icons/equipment/neck/None.png");
-    assert.equal($("#neck-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/neck/standard-42x42.png");
-    assert.equal($("#neck-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/3.png");
-    assert.equal($("#neck-edit-equipment-label-level").html(), "6");
+    assert.equal($("#neck-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/neck/mythic-42x42.png");
+    assert.equal($("#neck-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/4.png");
+    assert.equal($("#neck-edit-equipment-label-level").html(), "11");
     assert.equal($("#neck-edit-equipment-description").html(), 'This talisman gains more Power Rating when leveling up.<br>Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, your damage is increased by <span class="bonus-val const">17%</span> for <span class="bonus-val const">3</span> seconds and your next attack during this time will restore <span class="bonus-val const">4%</span> of your maximum health. This effect can only occur once every <span class="bonus-val const">10</span> seconds.');
     assert.equal($("#neck-edit-glyph-id").val(), "critical-rating");
     assert.equal($("#neck-edit-glyph-rarity").val(), "epic");

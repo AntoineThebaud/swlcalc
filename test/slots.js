@@ -77,12 +77,12 @@ QUnit.test("should update elements related to equipment's quality accordingly", 
     assert.equal(swlcalc.gear.slots.head.recap.equipmentImgQuality(), "assets/images/icons/quality/1.png");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentQuality(), "Faded");
 
-    swlcalc.gear.slots.head.edit.equipmentQuality("3");
+    swlcalc.gear.slots.head.edit.equipmentQuality("4");
     swlcalc.gear.slots.head.updateEquipmentQuality();
 
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentImgQuality(), "assets/images/icons/quality/3.png");
-    assert.equal(swlcalc.gear.slots.head.recap.equipmentImgQuality(), "assets/images/icons/quality/3.png");
-    assert.equal(swlcalc.gear.slots.head.recap.equipmentQuality(), "Radiant");
+    assert.equal(swlcalc.gear.slots.head.edit.equipmentImgQuality(), "assets/images/icons/quality/4.png");
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentImgQuality(), "assets/images/icons/quality/4.png");
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentQuality(), "Resplendent");
 });
 
 QUnit.test("should update elements related to equipment's quality accordingly (particular case of weapons) ", function(assert) {
@@ -200,11 +200,11 @@ QUnit.test("should update elements related to glyph's quality accordingly", func
     assert.equal(swlcalc.gear.slots.luck.recap.glyphQuality(), "Simple");
     assert.equal(swlcalc.gear.slots.luck.edit.glyphImgQuality(), "assets/images/icons/quality/2.png");
 
-    swlcalc.gear.slots.luck.edit.glyphQuality("1");
+    swlcalc.gear.slots.luck.edit.glyphQuality("4");
     swlcalc.gear.slots.luck.updateGlyphQuality();
 
-    assert.equal(swlcalc.gear.slots.luck.recap.glyphQuality(), "Crude");
-    assert.equal(swlcalc.gear.slots.luck.edit.glyphImgQuality(), "assets/images/icons/quality/1.png");
+    assert.equal(swlcalc.gear.slots.luck.recap.glyphQuality(), "Elaborate");
+    assert.equal(swlcalc.gear.slots.luck.edit.glyphImgQuality(), "assets/images/icons/quality/4.png");
 });
 
 QUnit.test("should update elements related to glyph's level accordingly", function(assert) {

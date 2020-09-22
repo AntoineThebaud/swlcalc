@@ -72,8 +72,8 @@ QUnit.test("should get and set the slot's equipment rarity on edit view", functi
 
 QUnit.test("should get and set the slot's equipment quality on edit view", function(assert) {
     assert.equal(swlcalc.gear.slots.head.edit.equipmentQuality(), "1");
-    swlcalc.gear.slots.head.edit.equipmentQuality("3");
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentQuality(), "3");
+    swlcalc.gear.slots.head.edit.equipmentQuality("4");
+    assert.equal(swlcalc.gear.slots.head.edit.equipmentQuality(), "4");
 });
 
 QUnit.test("should get and set the slot's equipment level on edit view", function(assert) {
