@@ -178,7 +178,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val dps">%d</span> physical damage Damage on Critical Hits',
+                value: '<span class="bonus-val dps">%d</span> Physical Damage on Critical Hits',
                 varbonus: {
                     coef: 0.215,
                     stat: 'Combat Power'
