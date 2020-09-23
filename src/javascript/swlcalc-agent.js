@@ -1,22 +1,22 @@
 var swlcalc = swlcalc || {};
 swlcalc.gear = swlcalc.gear || {};
 
-swlcalc.gear.Agent = function Agent(id) {
-    this.id = id;
+swlcalc.gear.Agent = function Agent(index) {
+    this.index = index;
     this.agentData = swlcalc.data.agents[0]
 
     this.el = {
-        agentId: $('#agent' + this.id + '-agentId'),
-        level: $('#agent' + this.id + '-level'),
-        text25: $('#agent' + this.id + '-text25'),
-        text50: $('#agent' + this.id + '-text50'),
+        id: $('#agent' + this.index + '-id'),
+        level: $('#agent' + this.index + '-level'),
+        text25: $('#agent' + this.index + '-text25'),
+        text50: $('#agent' + this.index + '-text50'),
     };
 
     /**
      * Update elements related to agent's id
      */
-    this.updateAgentId = function() {
-        var newId = this.agentId();
+    this.updateId = function() {
+        var newId = this.id();
         this.agentData = swlcalc.data.agents[newId];
 
         this.text25(this.displayBonus(this.agentData, "25"));
@@ -36,18 +36,18 @@ swlcalc.gear.Agent = function Agent(id) {
     };
 
     /**
-     * Getter/Setter for agent#id-agentId
+     * Getter/Setter for agent#index-id
      */
-    this.agentId = function() {
+    this.id = function() {
         if (arguments.length == 1) {
-            this.el.agentId.val(arguments[0]);
+            this.el.id.val(arguments[0]);
         } else {
-            return this.el.agentId.val();
+            return this.el.id.val();
         }
     };
 
     /**
-     * Getter/Setter for agent#id-level
+     * Getter/Setter for agent#index-level
      */
     this.level = function() {
         if (arguments.length == 1) {
@@ -58,7 +58,7 @@ swlcalc.gear.Agent = function Agent(id) {
     };
 
     /**
-     * Getter/Setter for agent#id-text25
+     * Getter/Setter for agent#index-text25
      */
     this.text25 = function() {
         if (arguments.length == 1) {
@@ -69,7 +69,7 @@ swlcalc.gear.Agent = function Agent(id) {
     };
 
     /**
-     * Getter/Setter for agent#id-text50
+     * Getter/Setter for agent#index-text50
      */
     this.text50 = function() {
         if (arguments.length == 1) {
@@ -83,10 +83,10 @@ swlcalc.gear.Agent = function Agent(id) {
      * Reset the agent by setting default values for each select
      */
     this.reset = function() {
-        this.el.agentId.prop("selectedIndex", 0);
+        this.el.id.prop("selectedIndex", 0);
         this.el.level.prop("selectedIndex", 0);
 
-        this.el.agentId.change();
+        this.el.id.change();
         this.el.level.change();
     };
 

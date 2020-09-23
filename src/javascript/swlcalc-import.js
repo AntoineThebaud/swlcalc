@@ -29,8 +29,8 @@ swlcalc.import = function() {
         for (var slotId in vars) {
             splitVars = vars[slotId].split(',');
             if (slotId.substring(0, 5) == 'agent') {
-                var id = parseInt(slotId.substring(5, 6)) - 1; // either equal to 0, 1 or 2
-                loadAgent(id, splitVars)
+                var index = parseInt(slotId.substring(5, 6)) - 1; // either equal to 0, 1 or 2
+                loadAgent(index, splitVars)
             } else {
                 loadSlot(slotId, splitVars);
             }
@@ -88,11 +88,11 @@ swlcalc.import = function() {
      * Loads the agent informations from the hash and update GUI with it.
      */
     //TODO/REFACTOR maybe there is a better way to update GUI than simulating change() for each element ?
-    var loadAgent = function(id, values) {
-        var agentObj = swlcalc.gear.agents[id];
+    var loadAgent = function(index, values) {
+        var agentObj = swlcalc.gear.agents[index];
         // values[0] == Agent's ID
-        agentObj.agentId(values[0]);
-        agentObj.el.agentId.change();
+        agentObj.id(values[0]);
+        agentObj.el.id.change();
         // values[1] == Agent's Level
         agentObj.level(values[1]);
         agentObj.el.level.change();

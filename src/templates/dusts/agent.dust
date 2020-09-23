@@ -10,7 +10,7 @@
                 <strong>Agent :</strong>
             </td>
             <td>
-                <select id="agent{id}-agentId" class="agent-name-select" title="Please select agent">
+                <select id="agent{id}-id" class="agent-name-select" title="Please select agent">
                 </select>
             </td>
         </tr>

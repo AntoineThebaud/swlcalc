@@ -80,9 +80,9 @@ swlcalc = function() {
     /**
      * Create handler for an agent slot
      */
-    var startAgentSlotHandler = function(id) {
-        swlcalc.agenthandler[id] = new swlcalc.gear.AgentSlotHandler(id);
-        swlcalc.agenthandler[id].init();
+    var startAgentSlotHandler = function(index) {
+        swlcalc.agenthandler[index] = new swlcalc.gear.AgentSlotHandler(index);
+        swlcalc.agenthandler[index].init();
     };
 
     /**

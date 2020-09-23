@@ -61,8 +61,8 @@ swlcalc.export = function() {
         }
 
         var i = 0;
-        for (var id in swlcalc.gear.agents) {
-            var agent = swlcalc.gear.agents[id];
+        for (var index in swlcalc.gear.agents) {
+            var agent = swlcalc.gear.agents[index];
             url += createAgentUrl(agent);
             if (i < swlcalc.gear.nbAgents() - 1) {
                 url += '&';
@@ -107,8 +107,8 @@ swlcalc.export = function() {
     var createAgentUrl = function(agent, state) {
         // see swlcalc-import.js for the order
 
-        var agentUrl = 'agent' + agent.id + '='
-            + agent.agentId() + ','
+        var agentUrl = 'agent' + agent.index + '='
+            + agent.id() + ','
             + agent.level();
 
         return agentUrl;
