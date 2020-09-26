@@ -25,7 +25,7 @@ swlcalc.data.stats = {
             },
             'hp': {
                 base: 3300,
-                capstone: 1215,
+                capstone: 81 * 30, // = 2430 with all (81) capstones unlocked
                 sp_passive: 2997
             }
         },
