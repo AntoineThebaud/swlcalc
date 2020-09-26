@@ -83,11 +83,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
         } else {
             var newEquipmentData = swlcalc.data.equipments.slot[this.kind][this.edit.equipmentId() - 1];
 
-            /**************************************< temporary code >*********************************************
-             * TODO/FEATURE => to add all the missing equipment images to swlcalc
-             * => This temporary code will be used as long as item images are not added to the resources. The final code will be :
-            this.edit.equipmentImgItem('assets/images/icons/' + this.group + '/' + newEquipmentData.name + '.png');
-             * => For now replaced by : */
             var image = new Image();
             image.onload = function() {
                 newImage = 'assets/images/icons/equipment/' + self.kind + '/' + newEquipmentData.name + '.png';
@@ -104,7 +99,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
                 self.recap.equipmentImgItem(newImage);
             }
             image.src = 'assets/images/icons/equipment/' + this.kind + '/' + newEquipmentData.name + '.png';
-            /**************************************< temporary code />********************************************/
 
             newDescription = newEquipmentData.description;
             newName = newEquipmentData.name;

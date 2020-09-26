@@ -1141,7 +1141,62 @@ swlcalc.data.equipments = {
                 type: 'Assault Rifle',
                 name: 'Rifle of Sworn Revenge',
                 description: 'Your Assault Rifle Grenade Abilities have a <span class="bonus-val const">17%</span> chance to reset the cooldown of Assault Rifle Grenade Abilities and give you another grenade. Your Assault Rifle Grenade Ability damage and healing are increased by <span class="bonus-val const">10%</span> for <span class="bonus-val const">8</span> seconds.'
-            }
+            },
+            // Arsenal Cache weapons :
+            {
+                id: 163,
+                type: 'Blade',
+                name: 'Dark Precipice',
+                description: 'Grants Master\'s Focus, Keen Edge, Resonance.'
+            },
+            {
+                id: 164,
+                type: 'Hammer',
+                name: 'Torturer\'s Instrument',
+                description: 'Grants Juggernaut, Outrage, Die Hard.'
+            },
+            {
+                id: 165,
+                type: 'Fist',
+                name: 'Recluses\'s Fangs',
+                description: 'Grants Killer Instinct, Wild Burst, Bloody Mist.'
+            },
+            {
+                id: 166,
+                type: 'Blood',
+                name: 'Lost Tome of Lies',
+                description: 'Grants Desolate, Contaminate, Crimson Pulse.'
+            },
+            {
+                id: 167,
+                type: 'Chaos',
+                name: 'Dark Mysteries',
+                description: 'Grants X Factor, Out of Phase, Long Term Chaos.'
+            },
+            {
+                id: 168,
+                type: 'Elementalism',
+                name: 'Sanity Siphon',
+                description: 'Grants Frigid Tempest, Volatile Current, Cryoblast.'
+            },
+            {
+                id: 169,
+                type: 'Shotgun',
+                name: 'Thundering Demise',
+                description: 'Grants Withering Salvo, Fire at Will, Munitions Expert.'
+            },
+            {
+                id: 170,
+                type: 'Pistols',
+                name: 'Calamitous Inspiration',
+                description: 'Grants Bamboozle, Bullet Echo, Flechette Rounds.'
+            },
+            {
+                id: 171,
+                type: 'Assault Rifle',
+                name: 'Whispered Desires',
+                description: 'Grants Permeate, Lingering Essence, Overclocked Loader.'
+            },
         ],
         'head': [
             {
