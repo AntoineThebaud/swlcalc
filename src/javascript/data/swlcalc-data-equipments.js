@@ -955,9 +955,7 @@ swlcalc.data.equipments = {
                 id: 136,
                 type: 'Shotgun',
                 name: 'Bolstering Blaster',
-                description: 'Whenever an attack glances you, your next <span class="bonus-val const">3</span> Shotgun attacks will deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage.',
-                coefficients: [ 0.24 ],
-                stats: [ 'Combat Power' ]
+                description: 'When you are glanced, reduce the remaining cooldown of Kneecapper and Bombardment (if you have the Supremacy passive equipped) by <span class="bonus-val const">2</span> seconds.'
             },
             {
                 id: 137,
@@ -1183,7 +1181,7 @@ swlcalc.data.equipments = {
                 id: 169,
                 type: 'Shotgun',
                 name: 'Thundering Demise',
-                description: 'Grants Withering Salvo, Fire at Will, Munitions Expert.'
+                description: 'Grants All Eyes on Me, Munitions Expert, Supremacy.'
             },
             {
                 id: 170,
