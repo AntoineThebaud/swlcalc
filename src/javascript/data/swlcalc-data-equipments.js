@@ -63,7 +63,7 @@ swlcalc.data.equipments = {
                 id: 10,
                 type: 'Blade',
                 name: 'Anima-Touched Blade',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -71,7 +71,7 @@ swlcalc.data.equipments = {
                 id: 11,
                 type: 'Hammer',
                 name: 'Anima-Touched Hammer',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -79,7 +79,7 @@ swlcalc.data.equipments = {
                 id: 12,
                 type: 'Fist',
                 name: 'Anima-Touched Fist Weapon',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -87,7 +87,7 @@ swlcalc.data.equipments = {
                 id: 13,
                 type: 'Blood',
                 name: 'Anima-Touched Blood Magic Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -95,7 +95,7 @@ swlcalc.data.equipments = {
                 id: 14,
                 type: 'Chaos',
                 name: 'Anima-Touched Chaos Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -103,7 +103,7 @@ swlcalc.data.equipments = {
                 id: 15,
                 type: 'Elementalism',
                 name: 'Anima-Touched Elementalism Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -111,7 +111,7 @@ swlcalc.data.equipments = {
                 id: 16,
                 type: 'Shotgun',
                 name: 'Anima-Touched Shotgun',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -119,7 +119,7 @@ swlcalc.data.equipments = {
                 id: 17,
                 type: 'Pistols',
                 name: 'Anima-Touched Pistols',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -127,7 +127,7 @@ swlcalc.data.equipments = {
                 id: 18,
                 type: 'Assault Rifle',
                 name: 'Anima-Touched Rifle',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">100%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -273,72 +273,72 @@ swlcalc.data.equipments = {
                 id: 37,
                 type: 'Blade',
                 name: 'Frost-Bound Blade',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
-                coefficients: [ 1.5 ],
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">4%</span> for <span class="bonus-val const">6</span> seconds.',
+                coefficients: [ 1.875 ],
                 stats: [ 'Combat Power' ],
             },
             {
                 id: 38,
                 type: 'Hammer',
                 name: 'Frost-Bound Hammer',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
-                coefficients: [ 1.5 ],
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">4%</span> for <span class="bonus-val const">6</span> seconds.',
+                coefficients: [ 1.875 ],
                 stats: [ 'Combat Power' ],
             },
             {
                 id: 39,
                 type: 'Fist',
                 name: 'Frost-Bound Fist Weapon',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
-                coefficients: [ 1.5 ],
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">4%</span> for <span class="bonus-val const">6</span> seconds.',
+                coefficients: [ 1.875 ],
                 stats: [ 'Combat Power' ],
             },
             {
                 id: 40,
                 type: 'Blood',
                 name: 'Frost-Bound Blood Magic Focus',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
-                coefficients: [ 1.5 ],
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">4%</span> for <span class="bonus-val const">6</span> seconds.',
+                coefficients: [ 1.875 ],
                 stats: [ 'Combat Power' ],
             },
             {
                 id: 41,
                 type: 'Chaos',
                 name: 'Frost-Bound Chaos Focus',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
-                coefficients: [ 1.5 ],
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">4%</span> for <span class="bonus-val const">6</span> seconds.',
+                coefficients: [ 1.875 ],
                 stats: [ 'Combat Power' ],
             },
             {
                 id: 42,
                 type: 'Elementalism',
                 name: 'Frost-Bound Elementalism Focus',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
-                coefficients: [ 1.5 ],
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">4%</span> for <span class="bonus-val const">6</span> seconds.',
+                coefficients: [ 1.875 ],
                 stats: [ 'Combat Power' ],
             },
             {
                 id: 43,
                 type: 'Shotgun',
                 name: 'Frost-Bound Shotgun',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
-                coefficients: [ 1.5 ],
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">4%</span> for <span class="bonus-val const">6</span> seconds.',
+                coefficients: [ 1.875 ],
                 stats: [ 'Combat Power' ],
             },
             {
                 id: 44,
                 type: 'Pistols',
                 name: 'Frost-Bound Pistols',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
-                coefficients: [ 1.5 ],
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">4%</span> for <span class="bonus-val const">6</span> seconds.',
+                coefficients: [ 1.875 ],
                 stats: [ 'Combat Power' ],
             },
             {
                 id: 45,
                 type: 'Assault Rifle',
                 name: 'Frost-Bound Rifle',
-                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">7.5%</span> for <span class="bonus-val const">6</span> seconds.',
-                coefficients: [ 1.5 ],
+                description: 'Whenever you hit you have a <span class="bonus-val const">20%</span> chance to deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage to the target and reduce the amount of damage you receive by <span class="bonus-val const">4%</span> for <span class="bonus-val const">6</span> seconds.',
+                coefficients: [ 1.875 ],
                 stats: [ 'Combat Power' ],
             },
             {
@@ -1207,7 +1207,7 @@ swlcalc.data.equipments = {
             {
                 id: 11,
                 name: 'Pigment from Beyond',
-                description: 'Whenever you are hit <span class="bonus-val const">5</span> times in succession, your Protection is increased by <span class="bonus-val const">640</span> for <span class="bonus-val const">3</span> seconds.'
+                description: 'Whenever you evade <span class="bonus-val const">2</span> times in succession or are hit <span class="bonus-val const">5</span> times in succession, your Protection is increased by <span class="bonus-val const">640</span> for <span class="bonus-val const">3</span> seconds.'
             },
             {
                 id: 12,
@@ -1219,12 +1219,12 @@ swlcalc.data.equipments = {
             {
                 id: 13,
                 name: 'Mark of the Starspawn',
-                description: 'Whenever you are hit <span class="bonus-val const">5</span> times in succession, you regain <span class="bonus-val const">4.5%</span> of your maximum health.'
+                description: 'Whenever you evade <span class="bonus-val const">2</span> times in succession or are hit <span class="bonus-val const">5</span> times in succession, you regain <span class="bonus-val const">4.5%</span> of your missing health.'
             },
             {
                 id: 14,
                 name: 'Tachyon Pigment',
-                description: 'Whenever you are hit <span class="bonus-val const">5</span> times in succession or whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, the duration of your currently running recharge timers on Special Abilities is reduced by <span class="bonus-val const">3%</span>.'
+                description: 'Whenever you evade <span class="bonus-val const">2</span> times in succession, are hit <span class="bonus-val const">5</span> times in succession or hit the same enemy <span class="bonus-val const">3</span> times in succession, the duration of your currently running recharge timers on Special Abilities is reduced by <span class="bonus-val const">3%</span>.'
             },
             {
                 id: 15,
@@ -1353,7 +1353,7 @@ swlcalc.data.equipments = {
             {
                 id: 11,
                 name: 'Lycanthropic Essence',
-                description: 'This talisman gains more Power Rating when leveling up.</br>Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, your damage is increased by <span class="bonus-val const">17%</span> for <span class="bonus-val const">3</span> seconds and your next attack during this time will restore <span class="bonus-val const">4%</span> of your maximum health. This effect can only occur once every <span class="bonus-val const">10</span> seconds.'
+                description: 'This talisman gains more Power Rating when leveling up.</br>Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, your damage is increased by <span class="bonus-val const">17%</span> for <span class="bonus-val const">3</span> seconds and your next attack during this time will restore <span class="bonus-val const">4%</span> of your missing health. This effect can only occur once every <span class="bonus-val const">10</span> seconds.'
             },
             {
                 id: 12,
@@ -1485,7 +1485,7 @@ swlcalc.data.equipments = {
             {
                 id: 3,
                 name: 'Black Sash',
-                description: 'Whenever you hit an enemy who is facing towards you, the enemy gains increased hate towards you.'
+                description: 'Whenever you hit an enemy who is facing towards you, your global threat generation is increased by <span class="bonus-val const">20%</span> for <span class="bonus-val const">5</span> seconds. This effect can occur once every <span class="bonus-val const">30</span> seconds against the same target.'
             },
             {
                 id: 4,
@@ -1505,7 +1505,7 @@ swlcalc.data.equipments = {
             {
                 id: 7,
                 name: 'Serum Pouch',
-                description: 'Whenever you heal an ally who is less than <span class="bonus-val const">7</span> metres away from you, you generate <span class="bonus-val const">15%</span> less hate for <span class="bonus-val const">2</span> seconds.'
+                description: 'Whenever you heal an ally who is less than <span class="bonus-val const">7</span> metres away from you, you generate <span class="bonus-val const">30%</span> less hate for <span class="bonus-val const">5</span> seconds. Additionally, if you take damage while the hate decrease effect is active, you are healed and the hate decrease effect is removed. This effect can only occur once every <span class="bonus-val const">5</span> seconds.'
             },
             {
                 id: 8,

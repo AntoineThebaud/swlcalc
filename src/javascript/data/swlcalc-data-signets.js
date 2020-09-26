@@ -86,9 +86,9 @@ swlcalc.data.signets = {
                 name: 'Warding',
                 description: 'Increases Protection by <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus">%d</span></span> while wielded.',
                 quality: {
-                    '1': 150,
-                    '2': 300,
-                    '3': 450
+                    '1': 525,
+                    '2': 1050,
+                    '3': 1575
                 }
             }
         ],
@@ -1479,7 +1479,7 @@ swlcalc.data.signets = {
                 id: 7,
                 name: 'Signet of Thirst',
                 type: 'All',
-                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="%id-signet-bonus" class="bonus-val heal">%d</span><span class="bonus-val heal">%</span> leech effect for <span class="bonus-val const">5</span> seconds. This effect can heal up to y damage before being removed, and can only occur once every <span class="bonus-val const">15</span> seconds.',
+                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="%id-signet-bonus" class="bonus-val heal">%d</span><span class="bonus-val heal">%</span> leech effect for <span class="bonus-val const">5</span> seconds. This effect can heal up to <span class="bonus-val const">2248</span> damage before being removed, and can only occur once every <span class="bonus-val const">15</span> seconds.',
                 ratio: {
                     'standard': {
                         init: 8,

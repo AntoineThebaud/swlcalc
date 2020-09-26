@@ -151,7 +151,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-recap-signet-item").text(), "Warding");
     assert.equal($("#weapon2-recap-signet-rarity").html(), undefined);
     assert.equal($("#weapon2-recap-signet-level").html(), undefined);
-    assert.equal($("#weapon2-recap-signet-description").html(), "Increases Protection by <span id=\"weapon2-recap-signet-bonus-wrapper\" class=\"bonus-val color-superior\"><span id=\"weapon2-recap-signet-bonus\">300</span></span> while wielded.");
+    assert.equal($("#weapon2-recap-signet-description").html(), "Increases Protection by <span id=\"weapon2-recap-signet-bonus-wrapper\" class=\"bonus-val color-superior\"><span id=\"weapon2-recap-signet-bonus\">1050</span></span> while wielded.");
     assert.equal($("#weapon2-recap-suffix").html(), "of Warding");
     assert.equal($("#weapon2-recap-suffix-quality").html(), "Mk II");
     assert.equal($("#weapon2-edit-ilvl").html(), "496");
@@ -182,7 +182,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon2-edit-signet-level").val(), undefined);
     assert.equal($("#weapon2-edit-signet-img-rarity").attr('src'), undefined);
-    assert.equal($("#weapon2-edit-signet-description").html(), 'Increases Protection by <span id=\"weapon2-edit-signet-bonus-wrapper\" class=\"bonus-val color-superior\"><span id=\"weapon2-edit-signet-bonus\">300</span></span> while wielded.');
+    assert.equal($("#weapon2-edit-signet-description").html(), 'Increases Protection by <span id=\"weapon2-edit-signet-bonus-wrapper\" class=\"bonus-val color-superior\"><span id=\"weapon2-edit-signet-bonus\">1050</span></span> while wielded.');
     assert.equal($("#weapon2-edit-signet-label-level").html(), undefined);
     assert.equal($("#weapon2-edit-signet-ilvl").html(), undefined);
 
@@ -346,7 +346,7 @@ QUnit.test("should import from hash", function(assert) {
     // TODO/TEST : buggy, should be ok : assert.equal($("#neck-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#neck-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/neck/mythic-42x42.png");
     assert.equal($("#neck-recap-equipment-img-quality").attr('src'), "assets/images/icons/quality/4.png");
-    assert.equal($("#neck-recap-equipment-description").html(), "This talisman gains more Power Rating when leveling up.<br>Whenever you lose health while below <span class=\"bonus-val const\">50%</span> of your maximum health, your damage is increased by <span class=\"bonus-val const\">17%</span> for <span class=\"bonus-val const\">3</span> seconds and your next attack during this time will restore <span class=\"bonus-val const\">4%</span> of your maximum health. This effect can only occur once every <span class=\"bonus-val const\">10</span> seconds.");
+    assert.equal($("#neck-recap-equipment-description").html(), "This talisman gains more Power Rating when leveling up.<br>Whenever you lose health while below <span class=\"bonus-val const\">50%</span> of your maximum health, your damage is increased by <span class=\"bonus-val const\">17%</span> for <span class=\"bonus-val const\">3</span> seconds and your next attack during this time will restore <span class=\"bonus-val const\">4%</span> of your missing health. This effect can only occur once every <span class=\"bonus-val const\">10</span> seconds.");
     assert.ok($("#neck-recap-equipment-description-section").is(":visible"));
     assert.equal($("#neck-recap-equipment-label-level").text(), "11");
     assert.ok($("#neck-recap-glyph-section").is(":visible"));
@@ -379,7 +379,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#neck-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/neck/mythic-42x42.png");
     assert.equal($("#neck-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/4.png");
     assert.equal($("#neck-edit-equipment-label-level").html(), "11");
-    assert.equal($("#neck-edit-equipment-description").html(), 'This talisman gains more Power Rating when leveling up.<br>Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, your damage is increased by <span class="bonus-val const">17%</span> for <span class="bonus-val const">3</span> seconds and your next attack during this time will restore <span class="bonus-val const">4%</span> of your maximum health. This effect can only occur once every <span class="bonus-val const">10</span> seconds.');
+    assert.equal($("#neck-edit-equipment-description").html(), 'This talisman gains more Power Rating when leveling up.<br>Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, your damage is increased by <span class="bonus-val const">17%</span> for <span class="bonus-val const">3</span> seconds and your next attack during this time will restore <span class="bonus-val const">4%</span> of your missing health. This effect can only occur once every <span class="bonus-val const">10</span> seconds.');
     assert.equal($("#neck-edit-glyph-id").val(), "critical-rating");
     assert.equal($("#neck-edit-glyph-rarity").val(), "epic");
     assert.equal($("#neck-edit-glyph-quality").val(), "1");
