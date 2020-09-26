@@ -695,7 +695,7 @@ swlcalc.data.equipments = {
                 id: 96,
                 type: 'Chaos',
                 name: 'Sanity\'s Aphelion',
-                description: 'Whenever you are hit you have a <span class="bonus-val const">6%</span> - <span class="bonus-val const">4%</span> chance to summon an Extradimensional Defender with <span class="bonus-val const">30%</span> of your maximum health to intercept <span class="bonus-val const">80%</span> of incoming damage. The chance is based on the number of Paradoxes you have, and is at its highest when you have <span class="bonus-val const">0</span> Paradoxes.'
+                description: 'Whenever you are hit you have a <span class="bonus-val const">6%</span> - <span class="bonus-val const">4%</span> chance to summon an Extradimensional Defender with <span class="bonus-val heal">30%</span> of your maximum health to intercept <span class="bonus-val heal">80%</span> of incoming damage. The chance is based on the number of Paradoxes you have, and is at its highest when you have <span class="bonus-val const">0</span> Paradoxes.'
             },
             {
                 id: 97,
