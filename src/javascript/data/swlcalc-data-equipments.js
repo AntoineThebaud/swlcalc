@@ -561,26 +561,26 @@ swlcalc.data.equipments = {
                 id: 75,
                 type: 'Blade',
                 name: 'Mantric Blade',
-                description: 'The amount of health restored by Chi Overflow is doubled.'
+                description: 'Whenever your Spirit Blade shatters, recite a mantra for <span class="bonus-val const">3%</span> seconds that increases your chance to generate Chi by <span class="bonus-val const">30%</span> for <span class="bonus-val const">3</span> seconds.'
             },
             {
                 id: 76,
                 type: 'Blade',
                 name: 'Razor\'s Edge',
-                description: 'Whenever you critically hit with a Blade ability, you have a <span class="bonus-val const">50%</span> chance to gain <span class="bonus-val const">1</span> Chi.'
+                description: 'Chance to generate Chi increased to <span class="bonus-val const">50%</span> on crit.'
             },
             {
                 id: 77,
                 type: 'Blade',
                 name: 'Rhythmic Blade',
-                description: 'When increasing the number of attacks remaining on your Spirit Blade, you have a chance to increase the number of attacks gained by an additional amount. The chance and amount gained increase based on the number of attacks gained.'
+                description: 'While your Spirit Blade is forged, you generate an additional Spirit Blade attack every <span class="bonus-val const">4</span> seconds.'
             },
             {
                 id: 78,
                 type: 'Blade',
                 name: 'Shattered Hellblade',
-                description: 'You can no longer use the Spirit Blade ability to reforge an active Spirit Blade. Instead, when your Spirit Blade shatters, it deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage per Chi to nearby enemies.',
-                coefficients: [ 1.78 ],
+                description: 'When your Spirit Blade shatters, deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage to nearby enemies.',
+                coefficients: [ 4.5 ],
                 stats: [ 'Combat Power' ]
             },
             {
@@ -593,13 +593,15 @@ swlcalc.data.equipments = {
                 id: 80,
                 type: 'Blade',
                 name: 'Soviet Techsword',
-                description: 'Your Spirit Blade is automatically forged upon reaching <span class="bonus-val const">5</span> Chi. While your Spirit Blade is forged, all Chi gained is immediately converted into Spirit Blade attacks.'
+                description: 'Whenever you hit with a Blade ability, you deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> extra damage. Whenever you hit with a non-Blade ability, you have an <span class="bonus-val const">28%</span> chance to generate <span class="bonus-val const">1</span> Chi.',
+                coefficients: [ 0.25 ],
+                stats: [ 'Combat Power' ]
             },
             {
                 id: 81,
                 type: 'Blade',
                 name: 'Stormbringer',
-                description: 'Whenever you enter combat, you gain <span class="bonus-val const">3</span> Chi. While in combat, you gain <span class="bonus-val const">1</span> Chi every <span class="bonus-val const">10</span> seconds.'
+                description: 'Whenever you enter combat, you gain <span class="bonus-val const">2</span> Chi. While in combat, you gain <span class="bonus-val const">1</span> Chi every <span class="bonus-val const">4</span> seconds.'
             },
             {
                 id: 82,
@@ -1090,7 +1092,7 @@ swlcalc.data.equipments = {
                 id: 154,
                 type: 'Blade',
                 name: 'Blade of Bloodied Silks',
-                description: 'Whenever you cast Spirit Blade with more Chi than your Spirit Blade can convert, the power of your Blade abilities is increased by <span class="bonus-val const">47%</span>. This effect lasts for <span class="bonus-val const">3</span> seconds.'
+                description: 'The cooldown of “Crushing Tide” is reduced by <span class="bonus-val const">4</span> seconds.'
             },
             {
                 id: 155,
@@ -1520,9 +1522,9 @@ swlcalc.data.equipments = {
             {
                 id: 10,
                 name: 'Master\'s Chain',
-                description: 'Whenever you activate Spirit Blade, your next Blade attack will deal an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> - <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> physical damage. The amount of damage dealt scales based on the amount of Chi you had when activating Spirit Blade.',
-                coefficients: [ 0.25, 1.25 ],
-                stats: [ 'Combat Power', 'Combat Power' ]
+                description: 'When you reach <span class="bonus-val const">5</span> Chi, your next Blade attack deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> additional damage.',
+                coefficients: [ 1.25 ],
+                stats: [ 'Combat Power' ]
             },
             {
                 id: 11,
