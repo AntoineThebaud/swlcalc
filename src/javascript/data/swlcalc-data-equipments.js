@@ -495,7 +495,7 @@ swlcalc.data.equipments = {
                 id: 65,
                 type: 'Assault Rifle',
                 name: 'Auxiliary Loader',
-                description: 'Whenever you use an Assault Rifle Power ability and do not load a grenade, your chance to load a grenade with your next Assault Rifle Power ability is increased.'
+                description: 'You load <span class="bonus-val const">3</span> more Grenades per minute.'
             },
             {
                 id: 66,
