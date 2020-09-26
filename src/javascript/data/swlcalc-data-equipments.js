@@ -1274,7 +1274,7 @@ swlcalc.data.equipments = {
             {
                 id: 13,
                 name: 'Mark of the Starspawn',
-                description: 'Whenever you evade <span class="bonus-val const">2</span> times in succession or are hit <span class="bonus-val const">5</span> times in succession, you regain <span class="bonus-val const">4.5%</span> of your missing health.'
+                description: 'Whenever you evade <span class="bonus-val const">2</span> times in succession or are hit <span class="bonus-val const">5</span> times in succession, you regain <span class="bonus-val heal">4.5%</span> of your missing health.'
             },
             {
                 id: 14,
@@ -1408,7 +1408,7 @@ swlcalc.data.equipments = {
             {
                 id: 11,
                 name: 'Lycanthropic Essence',
-                description: 'This talisman gains more Power Rating when leveling up.</br>Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, your damage is increased by <span class="bonus-val const">17%</span> for <span class="bonus-val const">3</span> seconds and your next attack during this time will restore <span class="bonus-val const">4%</span> of your missing health. This effect can only occur once every <span class="bonus-val const">10</span> seconds.'
+                description: 'This talisman gains more Power Rating when leveling up.</br>Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, your damage is increased by <span class="bonus-val const">17%</span> for <span class="bonus-val const">3</span> seconds and your next attack during this time will restore <span class="bonus-val heal">4%</span> of your missing health. This effect can only occur once every <span class="bonus-val const">10</span> seconds.'
             },
             {
                 id: 12,
