@@ -740,8 +740,8 @@ swlcalc.data.equipments = {
             {
                 id: 103,
                 type: 'Elementalism',
-                name: 'Orochi Thermal Inverter',
-                description: 'Your Thermotic meter is inverted, causing you to deal increased damage when at lower heat levels and reduced damage at higher heat levels.'
+                name: 'Orochi Thermal Capacitor',
+                description: 'Your elemental damage is calculated as though you have <span class="bonus-val const">100</span> heat. This effect lasts for <span class="bonus-val const">3.5</span> seconds after dealing elemental damage. After this effect ends, it will automatically return after <span class="bonus-val const">25</span> seconds.'
             },
             {
                 id: 104,
