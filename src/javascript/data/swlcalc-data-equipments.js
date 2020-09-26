@@ -1101,7 +1101,7 @@ swlcalc.data.equipments = {
             {
                 id: 156,
                 type: 'Fist',
-                name: 'Fists-in-Chains',
+                name: 'Fist-in-Chains',
                 description: 'Whenever your "Invigorating Wrath" or "Frenzied Wrath" effect expires, you gain additional Fury. If you were unable to activate as many Wrath abilities as you possibly could have activated, you gain more additional Fury.'
             },
             {
