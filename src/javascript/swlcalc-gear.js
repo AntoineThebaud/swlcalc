@@ -59,8 +59,8 @@ swlcalc.gear = function() {
             this.slots[id].reset();
         }
 
-        for (var i = 0; i < this.nbAgents(); i++) {
-            this.agents[i].reset();
+        for (var index in this.agents) {
+            this.agents[index].reset();
         }
     };
 

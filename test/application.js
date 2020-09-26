@@ -14,17 +14,17 @@ QUnit.test("should initate swlcalc submodules", function(assert) {
 });
 
 QUnit.test("should import from hash", function(assert) {
-    location.hash = "weapon=3,4,3,19,3,2,2,13,0,2,0&weapon2=3,7,2,29,4,3,1,15,0,8,0&head=3,4,2,24,4,3,2,18,1,1,16&finger=2,2,1,20,5,4,4,15,4,1,2&neck=4,11,4,11,3,2,1,20,4,1,3&wrist=5,2,2,68,3,3,2,6,5,1,8&luck=1,1,1,10,2,2,1,18,3,1,13&waist=5,11,1,2,4,5,3,8,3,3,16&occult=1,7,3,19,5,1,3,2,5,2,10";
+    location.hash = "weapon=3,4,3,19,3,2,2,13,0,2,0&weapon2=3,7,2,29,4,3,1,15,0,8,0&head=3,4,2,24,4,3,2,18,1,1,16&finger=2,2,1,20,5,4,4,15,4,1,2&neck=4,11,4,11,3,2,1,20,4,1,3&wrist=5,2,2,68,3,3,2,6,5,1,8&luck=1,1,1,10,2,2,1,18,3,1,13&waist=5,11,1,2,4,5,3,8,3,3,16&occult=1,7,3,19,5,1,3,2,5,2,10&agent1=11,50&agent2=0,50&agent3=28,25";
     swlcalc.init();
 
     // Summary
     assert.equal($("#stat-ilvl").html(), "565");
     assert.equal($("#stat-power-rating").html(), "5454");
     assert.equal($("#stat-weapon-power").html(), "1577");
-    assert.equal($("#stat-attack-rating").html(), "9776");
+    assert.equal($("#stat-attack-rating").html(), "10101");
     assert.equal($("#stat-heal-rating").html(), "4310");
     assert.equal($("#stat-hitpoints").html(), "7512");
-    assert.equal($("#stat-combat-power").html(), "851.5");
+    assert.equal($("#stat-combat-power").html(), "875.9");
     assert.equal($("#stat-healing-power").html(), "441.5");
     assert.equal($("#stat-critical-rating").html(), "+1598");
     assert.equal($("#stat-critical-chance").html(), "18.7%");
@@ -38,6 +38,9 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#stat-evade-chance").html(), "13.1%");
     // Equal($("#stat-physical-protection').html(), '+660');
     // equal($("#stat-magical-protection').html(), '+300');
+    assert.equal($("#stat-agent1-bonus").html(), '<span class="bonus-val dps">188</span> Physical Damage on Critical Hits');
+    assert.equal($("#stat-agent2-bonus").html(), '');
+    assert.equal($("#stat-agent3-bonus").html(), '+3.5% Chaos Magic Damage');
 
 
     assert.ok($("#weapon-recap-active").is(":visible"));
@@ -76,7 +79,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-recap-signet-item").text(), "Destruction");
     assert.equal($("#weapon-recap-signet-rarity").html(), undefined);
     assert.equal($("#weapon-recap-signet-level").html(), undefined);
-    assert.equal($("#weapon-recap-signet-description").html(), "This weapon deals <span id=\"weapon-recap-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-recap-signet-bonus\">382.95</span></span> additional damage to enemies that are below 35% health.");
+    assert.equal($("#weapon-recap-signet-description").html(), "This weapon deals <span id=\"weapon-recap-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-recap-signet-bonus\">393.75</span></span> additional damage to enemies that are below 35% health.");
     assert.equal($("#weapon-recap-suffix").html(), "of Destruction");
     assert.equal($("#weapon-recap-suffix-quality").html(), "Mk III");
     assert.equal($("#weapon-edit-ilvl").html(), "387");
@@ -107,7 +110,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon-edit-signet-level").val(), undefined);
     assert.equal($("#weapon-edit-signet-img-rarity").attr('src'), undefined);
-    assert.equal($("#weapon-edit-signet-description").html(), 'This weapon deals <span id=\"weapon-edit-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-edit-signet-bonus\">382.95</span></span> additional damage to enemies that are below 35% health.');
+    assert.equal($("#weapon-edit-signet-description").html(), 'This weapon deals <span id=\"weapon-edit-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-edit-signet-bonus\">393.75</span></span> additional damage to enemies that are below 35% health.');
     assert.equal($("#weapon-edit-signet-label-level").html(), undefined);
     assert.equal($("#weapon-edit-signet-ilvl").html(), undefined);
 
@@ -201,7 +204,7 @@ QUnit.test("should import from hash", function(assert) {
     // TODO/TEST : buggy, should be ok : assert.equal($("#head-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#head-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal($("#head-recap-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
-    assert.equal($("#head-recap-equipment-description").html(), "Whenever you hit the same enemy <span class=\"bonus-val const\">3</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">319</span> physical damage.");
+    assert.equal($("#head-recap-equipment-description").html(), "Whenever you hit the same enemy <span class=\"bonus-val const\">3</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">328</span> physical damage.");
     assert.ok($("#head-recap-equipment-description-section").is(":visible"));
     assert.equal($("#head-recap-equipment-label-level").text(), "24");
     assert.ok($("#head-recap-glyph-section").is(":visible"));
@@ -234,7 +237,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal($("#head-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
     assert.equal($("#head-edit-equipment-label-level").html(), "24");
-    assert.equal($("#head-edit-equipment-description").html(), 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="head-edit-equipment-bonus1" class="bonus-val dps">319</span> physical damage.');
+    assert.equal($("#head-edit-equipment-description").html(), 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="head-edit-equipment-bonus1" class="bonus-val dps">328</span> physical damage.');
     assert.equal($("#head-edit-glyph-id").val(), "critical-power");
     assert.equal($("#head-edit-glyph-rarity").val(), "mythic");
     assert.equal($("#head-edit-glyph-quality").val(), "2");
@@ -679,6 +682,21 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#occult-edit-signet-description").html(), 'Active dodges break movement hindering effects, but also have their cooldown increased by <span id="occult-edit-signet-bonus" class="bonus-val const">56.4684</span><span class="bonus-val const">%</span>.');
     assert.equal($("#occult-edit-signet-label-level").html(), "10");
     assert.equal($("#occult-edit-signet-ilvl").html(), "175");
+
+    assert.equal($("#agent1-id").val(), '11');
+    assert.equal($("#agent1-level").val(), '50');
+    assert.equal($("#agent1-text25").html(), '<span class="stat-value gear">+325</span> Attack Rating');
+    assert.equal($("#agent1-text50").html(), '<span class="bonus-val dps">188</span> Physical Damage on Critical Hits');
+
+    assert.equal($("#agent2-id").val(), '0');
+    assert.equal($("#agent2-level").val(), '50');
+    assert.equal($("#agent2-text25").html(), 'Empty agent slot');
+    assert.equal($("#agent2-text50").html(), '');
+
+    assert.equal($("#agent3-id").val(), '28');
+    assert.equal($("#agent3-level").val(), '25');
+    assert.equal($("#agent3-text25").html(), '+3.5% Chaos Magic Damage');
+    assert.equal($("#agent3-text50").html(), '');
 });
 
 QUnit.test("should set default values with an empty hash", function(assert) {
@@ -706,6 +724,9 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#stat-evade-chance").html(), "5.2%");
     // Equal($("#stat-physical-protection').html(), '+660');
     // equal($("#stat-magical-protection').html(), '+300');
+    assert.equal($("#stat-agent1-bonus").html(), '');
+    assert.equal($("#stat-agent2-bonus").html(), '');
+    assert.equal($("#stat-agent3-bonus").html(), '');
 
 
     assert.ok($("#weapon-recap-active").is(":visible"));
@@ -1104,4 +1125,19 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#occult-edit-signet-label-level").html(), "20");
     assert.equal($("#occult-edit-signet-ilvl").html(), "0");
     assert.equal($("#occult-edit-signet-bonus").val(), undefined);
+
+    assert.equal($("#agent1-id").val(), '0');
+    assert.equal($("#agent1-level").val(), '25');
+    assert.equal($("#agent1-text25").html(), 'Empty agent slot');
+    assert.equal($("#agent1-text50").html(), '');
+
+    assert.equal($("#agent2-id").val(), '0');
+    assert.equal($("#agent2-level").val(), '25');
+    assert.equal($("#agent2-text25").html(), 'Empty agent slot');
+    assert.equal($("#agent2-text50").html(), '');
+
+    assert.equal($("#agent3-id").val(), '0');
+    assert.equal($("#agent3-level").val(), '25');
+    assert.equal($("#agent3-text25").html(), 'Empty agent slot');
+    assert.equal($("#agent3-text50").html(), '');
 });

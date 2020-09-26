@@ -22,15 +22,15 @@ QUnit.test("should create slot url for weapon, head and wrist", function(assert)
 
 QUnit.test("should create slot url for agent", function(assert) {
     var slotUrl = swlcalc.export.createAgentUrl(swlcalc.gear.agents[1]);
-    assert.equal(slotUrl, "agent2=0,25");
+    assert.equal(slotUrl, "agent2=42,50");
 });
 
 QUnit.test("should create export url", function(assert) {
     var url = swlcalc.export.createExportUrl();
-    assert.deepEqual(url, "weapon=3,1,1,30,2,2,1,1,0,6,0&weapon2=3,2,3,30,2,2,1,1,0,2,0&head=3,1,1,30,4,1,3,1,2,20,15&finger=3,1,1,30,3,5,2,20,1,10,9&neck=3,1,1,30,3,5,2,20,2,10,3&wrist=3,1,1,1,3,5,2,20,1,1,14&luck=3,1,1,1,3,4,2,20,3,8,6&waist=3,13,1,30,3,4,2,20,2,3,11&occult=3,1,1,1,3,4,2,20,3,4,18&agent1=0,25&agent2=0,25&agent3=0,25");
+    assert.deepEqual(url, "weapon=3,1,1,30,2,2,1,1,0,6,0&weapon2=3,2,3,30,2,2,1,1,0,2,0&head=3,1,1,30,4,1,3,1,2,20,15&finger=3,1,1,30,3,5,2,20,1,10,9&neck=3,1,1,30,3,5,2,20,2,10,3&wrist=3,1,1,1,3,5,2,20,1,1,14&luck=3,1,1,1,3,4,2,20,3,8,6&waist=3,13,1,30,3,4,2,20,2,3,11&occult=3,1,1,1,3,4,2,20,3,4,18&agent1=2,25&agent2=42,50&agent3=0,25");
 });
 
 QUnit.test("should start export url and set in textfield", function(assert) {
     swlcalc.export.startExportUrl();
-    assert.equal($("#export-text").val(), location.origin + location.pathname + "#weapon=3,1,1,30,2,2,1,1,0,6,0&weapon2=3,2,3,30,2,2,1,1,0,2,0&head=3,1,1,30,4,1,3,1,2,20,15&finger=3,1,1,30,3,5,2,20,1,10,9&neck=3,1,1,30,3,5,2,20,2,10,3&wrist=3,1,1,1,3,5,2,20,1,1,14&luck=3,1,1,1,3,4,2,20,3,8,6&waist=3,13,1,30,3,4,2,20,2,3,11&occult=3,1,1,1,3,4,2,20,3,4,18&agent1=0,25&agent2=0,25&agent3=0,25");
+    assert.equal($("#export-text").val(), location.origin + location.pathname + "#weapon=3,1,1,30,2,2,1,1,0,6,0&weapon2=3,2,3,30,2,2,1,1,0,2,0&head=3,1,1,30,4,1,3,1,2,20,15&finger=3,1,1,30,3,5,2,20,1,10,9&neck=3,1,1,30,3,5,2,20,2,10,3&wrist=3,1,1,1,3,5,2,20,1,1,14&luck=3,1,1,1,3,4,2,20,3,8,6&waist=3,13,1,30,3,4,2,20,2,3,11&occult=3,1,1,1,3,4,2,20,3,4,18&agent1=2,25&agent2=42,50&agent3=0,25");
 });

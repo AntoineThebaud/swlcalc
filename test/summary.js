@@ -38,6 +38,11 @@ QUnit.test("should have required summary in DOM", function(assert) {
     assert.ok($("#stat-evade-chance").length !== 0, "stat-evade-chance exists");
     assert.ok($("#stat-physical-protection").length !== 0, "stat-physical-protection exists");
     assert.ok($("#stat-magical-protection").length !== 0, "stat-magical-protection exists");
+
+    // Check all Other bonuses exist
+    assert.ok($("#stat-agent1-bonus").length !== 0, "stat-agent1-bonus exists");
+    assert.ok($("#stat-agent2-bonus").length !== 0, "stat-agent2-bonus exists");
+    assert.ok($("#stat-agent3-bonus").length !== 0, "stat-agent3-bonus exists");
 });
 
 QUnit.test("should update all stats", function(assert) {
@@ -49,7 +54,7 @@ QUnit.test("should update all stats", function(assert) {
     assert.equal($("#stat-weapon-power").html(), "1832");
     assert.equal($("#stat-combat-power").html(), "741.3");
     assert.equal($("#stat-healing-power").html(), "460.7");
-    assert.equal($("#stat-hitpoints").html(), "7512");
+    assert.equal($("#stat-hitpoints").html(), "8002");
     assert.equal($("#stat-attack-rating").html(), "8052");
     assert.equal($("#stat-heal-rating").html(), "4310");
     assert.equal($("#stat-critical-rating").html(), "+841");
@@ -60,6 +65,9 @@ QUnit.test("should update all stats", function(assert) {
     assert.equal($("#stat-defense-rating").html(), "+1896");
     assert.equal($("#stat-evade-rating").html(), "+1896");
     assert.equal($("#stat-evade-chance").html(), "13.0%");
+    assert.equal($("#stat-agent1-bonus").html(), "");
+    assert.equal($("#stat-agent2-bonus").html(), "+7% Hammer Damage");
+    assert.equal($("#stat-agent3-bonus").html(), "");
 
     //TODO/TEST equal($('#stat-physical-protection').html(), '+660');
     //TODO/TEST equal($('#stat-magical-protection').html(), '+300');
@@ -74,11 +82,13 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
         "combat-power": 741.3,
         "healing-power": 460.7,
         "weapon-power": 1832,
-        "hitpoints": 7512,
+        "hitpoints": 8002,
         "attack-rating": 8052,
         "heal-rating": 4310,
         "power-rating": 3730,
         "ilvl": 327
+        //TODO/TEST 'physical-protection': 660,
+        //TODO/TEST 'magical-protection': 300
     };
     var expectedSecondaryStats = {
         "critical-rating": "841",
@@ -91,9 +101,6 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
         "glance-chance": 18.6,
         "evade-rating": 1896,
         "evade-chance": "13.0",
-
-        //TODO/TEST 'physical-protection': 660,
-        //TODO/TEST 'magical-protection': 300
     };
 
     var allSums = swlcalc.summary.collectAllStats();
@@ -109,6 +116,7 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
 QUnit.test("should collect primary stats accordingly", function(assert) {
     var sums = swlcalc.summary.collectPrimaryStats();
 
+    // base values :
     assert.equal(sums[ "combat-power" ], 324.2);
     assert.equal(sums[ "healing-power" ], 323.3);
     assert.equal(sums[ "weapon-power" ], 0);
@@ -127,7 +135,7 @@ QUnit.test("should collect primary stats accordingly", function(assert) {
     assert.equal(sums[ "weapon-power" ], 1832);
     assert.equal(sums[ "attack-rating" ], 8052);
     assert.equal(sums[ "heal-rating" ], 4310);
-    assert.equal(sums[ "hitpoints" ], 7512);
+    assert.equal(sums[ "hitpoints" ], 8002);
     assert.equal(sums[ "combat-power" ], 741.3);
     assert.equal(sums[ "healing-power" ], 460.7);
 });

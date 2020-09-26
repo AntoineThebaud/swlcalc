@@ -7,7 +7,7 @@ swlcalc.data.stat_mapping = {
     'heal-rating',
     'hit-rating',
     'hitpoints',
-    'protection'
+    //'protection'
   ],
   secondary_stats : [
     'critical-rating',

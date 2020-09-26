@@ -13,6 +13,10 @@ QUnit.test("gear should contain 9 slots", function(assert) {
     assert.equal(swlcalc.gear.nbSlots(), 9);
 });
 
+QUnit.test("gear should contain 3 agents", function(assert) {
+    assert.equal(swlcalc.gear.nbAgents(), 3);
+});
+
 QUnit.test("gear should be fully reset", function(assert) {
     assert.equal($("#weapon-edit-equipment-id").val(), "1");
     assert.equal($("#weapon2-edit-equipment-id").val(), "2");
@@ -23,7 +27,12 @@ QUnit.test("gear should be fully reset", function(assert) {
     assert.equal($("#luck-edit-equipment-id").val(), "1");
     assert.equal($("#waist-edit-equipment-id").val(), "13");
     assert.equal($("#occult-edit-equipment-id").val(), "1");
+    assert.equal($("#agent1-id").val(), "2");
+    assert.equal($("#agent2-id").val(), "42");
+    assert.equal($("#agent3-id").val(), "0");
+
     swlcalc.gear.reset();
+
     assert.equal($("#weapon-edit-equipment-id").val(), "none");
     assert.equal($("#weapon2-edit-equipment-id").val(), "none");
     assert.equal($("#head-edit-equipment-id").val(), "none");
@@ -33,6 +42,9 @@ QUnit.test("gear should be fully reset", function(assert) {
     assert.equal($("#luck-edit-equipment-id").val(), "none");
     assert.equal($("#waist-edit-equipment-id").val(), "none");
     assert.equal($("#occult-edit-equipment-id").val(), "none");
+    assert.equal($("#agent1-id").val(), "0");
+    assert.equal($("#agent2-id").val(), "0");
+    assert.equal($("#agent3-id").val(), "0");
 });
 
 QUnit.test("should collect all slot states", function(assert) {

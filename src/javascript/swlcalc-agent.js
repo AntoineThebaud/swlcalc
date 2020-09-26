@@ -13,29 +13,6 @@ swlcalc.gear.Agent = function Agent(index) {
     };
 
     /**
-     * Update elements related to agent's id
-     */
-    this.updateId = function() {
-        var newId = this.id();
-        this.agentData = swlcalc.data.agents[newId];
-
-        this.text25(this.displayBonus(this.agentData, "25"));
-
-        this.updateAgentLevel();
-    };
-
-    /**
-     * Update elements related to agent's level
-     */
-    this.updateAgentLevel = function() {
-        if (this.level() == "50") {
-            this.text50(this.displayBonus(this.agentData, "50"));
-        } else {
-            this.text50("");
-        }
-    };
-
-    /**
      * Getter/Setter for agent#index-id
      */
     this.id = function() {
@@ -80,6 +57,29 @@ swlcalc.gear.Agent = function Agent(index) {
     };
 
     /**
+     * Update elements related to agent's id
+     */
+    this.updateId = function() {
+        var newId = this.id();
+        this.agentData = swlcalc.data.agents[newId];
+
+        this.text25(this.prettifyBonus(this.agentData, "25"));
+
+        this.updateLevel();
+    };
+
+    /**
+     * Update elements related to agent's level
+     */
+    this.updateLevel = function() {
+        if (this.level() == "50") {
+            this.text50(this.prettifyBonus(this.agentData, "50"));
+        } else {
+            this.text50("");
+        }
+    };
+
+    /**
      * Reset the agent by setting default values for each select
      */
     this.reset = function() {
@@ -91,21 +91,24 @@ swlcalc.gear.Agent = function Agent(index) {
     };
 
     /**
-     * Returns the minimum level available for this agent
+     * Return the minimum level available for this agent
      */
     this.minLvl = function() {
         return this.el.level[0].options[0].value;
     };
 
     /**
-     * Returns the maximum level available for this agent
+     * Return the maximum level available for this agent
      */
     this.maxLvl = function() {
         var dropdownRows = this.el.level[0].options
         return dropdownRows[dropdownRows.length - 1].value;
     };
 
-    this.displayBonus = function(agentData, level) {
+    /**
+     * Prettify the given agent bonus based on its type
+     */
+    this.prettifyBonus = function(agentData, level) {
         if (agentData.levels[level].type == "miscellaneous" || agentData.levels[level].type == "empty") {
             return agentData.levels[level].value;
         } else {

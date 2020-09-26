@@ -14,15 +14,18 @@ QUnit.module("import-unit-tests", {
 // - phys & mag protection (TODO/FEATURE)
 QUnit.test("should import URL and set summary and slots", function(assert) {
     var vars = {
+        agent3: "0,25",
         head: "3,1,1,30,4,1,3,1,2,20,15",
         luck: "3,1,1,1,3,4,2,20,3,8,6",
         neck: "3,1,1,30,3,5,2,20,2,10,3",
         occult: "3,1,1,1,3,4,2,20,3,4,18",
+        agent1: "2,25",
         finger: "3,1,1,30,3,5,2,20,1,10,9",
         waist: "3,1,1,30,3,4,2,20,2,3,11",
         weapon: "3,1,1,30,2,2,1,1,0,6,0",
         weapon2: "3,2,3,30,2,2,1,1,0,2,0",
-        wrist: "3,1,1,1,3,5,2,20,1,1,14"
+        wrist: "3,1,1,1,3,5,2,20,1,1,14",
+        agent2: "42,50"
     };
 
     swlcalc.import.start(vars);
@@ -34,7 +37,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#stat-weapon-power").html(), "1832");
     assert.equal($("#stat-attack-rating").html(), "8052");
     assert.equal($("#stat-heal-rating").html(), "4310");
-    assert.equal($("#stat-hitpoints").html(), "7512");
+    assert.equal($("#stat-hitpoints").html(), "8002");
     assert.equal($("#stat-combat-power").html(), "741.3");
     assert.equal($("#stat-healing-power").html(), "460.7");
 
@@ -234,4 +237,19 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#occult-edit-signet-level").val(), "18");
     assert.equal($("#occult-edit-signet-ilvl").html(), "61");
     assert.equal($("#occult-edit-signet-description").html(), 'After using Active Dodge, you receive a speed bonus of <span id="occult-edit-signet-bonus" class="bonus-val const">26.1579</span><span class="bonus-val const">%</span> for <span class="bonus-val const">4</span> seconds.');
+
+    assert.equal($("#agent1-id").val(), '2');
+    assert.equal($("#agent1-level").val(), '25');
+    assert.equal($("#agent1-text25").html(), '<span class="stat-value gear">+1000</span> Protection');
+    assert.equal($("#agent1-text50").html(), '');
+
+    assert.equal($("#agent2-id").val(), '42');
+    assert.equal($("#agent2-level").val(), '50');
+    assert.equal($("#agent2-text25").html(), '<span class="stat-value gear">+490</span> Hit Points');
+    assert.equal($("#agent2-text50").html(), '+7% Hammer Damage');
+
+    assert.equal($("#agent3-id").val(), '0');
+    assert.equal($("#agent3-level").val(), '25');
+    assert.equal($("#agent3-text25").html(), 'Empty agent slot');
+    assert.equal($("#agent3-text50").html(), '');
 });

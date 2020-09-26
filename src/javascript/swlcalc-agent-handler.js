@@ -54,7 +54,7 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
      * Handler for agent#id-level
      */
     this.handleLevelChange = function(event) {
-        agentObj.updateAgentLevel();
+        agentObj.updateLevel();
         swlcalc.summary.updateAllStats();
     };
 };

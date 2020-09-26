@@ -1,6 +1,6 @@
 /**
  * Creates tank build
- * -> equivalent to : weapon=3,1,1,30,2,2,1,1,0,6,0&weapon2=3,2,3,30,2,2,1,1,0,2,0&head=3,1,1,30,4,1,3,1,2,20,15&finger=3,1,1,30,3,5,2,20,1,10,9&neck=3,1,1,30,3,5,2,20,2,10,3&wrist=3,1,1,1,3,5,2,20,1,1,14&luck=3,1,1,1,3,4,2,20,3,8,6&waist=3,13,1,30,3,4,2,20,2,3,11&occult=3,1,1,1,3,4,2,20,3,4,18
+ * -> equivalent to : weapon=3,1,1,30,2,2,1,1,0,6,0&weapon2=3,2,3,30,2,2,1,1,0,2,0&head=3,1,1,30,4,1,3,1,2,20,15&finger=3,1,1,30,3,5,2,20,1,10,9&neck=3,1,1,30,3,5,2,20,2,10,3&wrist=3,1,1,1,3,5,2,20,1,1,14&luck=3,1,1,1,3,4,2,20,3,8,6&waist=3,13,1,30,3,4,2,20,2,3,11&occult=3,1,1,1,3,4,2,20,3,4,18&agent1=2,25&agent2=42,50&agent3=0,25
  */
 function createTankBuild() {
     $("#weapon-edit-equipment-id").val("1");
@@ -199,4 +199,19 @@ function createTankBuild() {
     $("#occult-edit-signet-rarity").change();
     $("#occult-edit-signet-level").val("18");
     $("#occult-edit-signet-level").change();
+
+    $("#agent1-id").val("2");
+    $("#agent1-id").change();
+    $("#agent1-level").val("25");
+    $("#agent1-level").change();
+
+    $("#agent2-id").val("42");
+    $("#agent2-id").change();
+    $("#agent2-level").val("50");
+    $("#agent2-level").change();
+
+    $("#agent3-id").val("0");
+    $("#agent3-id").change();
+    $("#agent3-level").val("25");
+    $("#agent3-level").change();
 }

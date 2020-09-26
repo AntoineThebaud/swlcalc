@@ -35,28 +35,28 @@ QUnit.test("should set anima allocation and affect stats correctly", function(as
     assert.equal($("#stat-healing-power").html(), "460.7");
     assert.equal($("#stat-attack-rating").html(), "8052");
     assert.equal($("#stat-heal-rating").html(), "4310");
-    assert.equal($("#stat-hitpoints").html(), "7512");
+    assert.equal($("#stat-hitpoints").html(), "8002");
     $("#select-anima-allocation").val("heal");
     $("#select-anima-allocation").change();
     assert.equal($("#stat-combat-power").html(), "461.6");
     assert.equal($("#stat-healing-power").html(), "740.4");
     assert.equal($("#stat-attack-rating").html(), "4322");
     assert.equal($("#stat-heal-rating").html(), "8040");
-    assert.equal($("#stat-hitpoints").html(), "7512");
+    assert.equal($("#stat-hitpoints").html(), "8002");
     $("#select-anima-allocation").val("tank");
     $("#select-anima-allocation").change();
     assert.equal($("#stat-combat-power").html(), "461.6");
     assert.equal($("#stat-healing-power").html(), "460.7");
     assert.equal($("#stat-attack-rating").html(), "4322");
     assert.equal($("#stat-heal-rating").html(), "4310");
-    assert.equal($("#stat-hitpoints").html(), "12837");
+    assert.equal($("#stat-hitpoints").html(), "13327");
     $("#select-anima-allocation").val("dps");
     $("#select-anima-allocation").change();
     assert.equal($("#stat-combat-power").html(), "741.3");
     assert.equal($("#stat-healing-power").html(), "460.7");
     assert.equal($("#stat-attack-rating").html(), "8052");
     assert.equal($("#stat-heal-rating").html(), "4310");
-    assert.equal($("#stat-hitpoints").html(), "7512");
+    assert.equal($("#stat-hitpoints").html(), "8002");
 });
 
 QUnit.test("should set rarity on all slots", function(assert) {
@@ -99,8 +99,8 @@ QUnit.test("should set min level on all slots", function(assert) {
               assert.equal(slot.edit.signetLevel(), "1");
           }
       }
-      for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {
-          var agent = swlcalc.gear.agents[i];
+      for (var index in swlcalc.gear.agents) {
+          var agent = swlcalc.gear.agents[index];
           assert.equal(agent.level(), "25");
       }
 });
@@ -118,8 +118,8 @@ QUnit.test("should set max level on all slots", function(assert) {
               assert.equal(slot.edit.signetLevel(), "20");
           }
       }
-      for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {
-          var agent = swlcalc.gear.agents[i];
+      for (var index in swlcalc.gear.agents) {
+          var agent = swlcalc.gear.agents[index];
           assert.equal(agent.level(), "50");
       }
 });
@@ -136,5 +136,9 @@ QUnit.test("should reset all slots", function(assert) {
         assert.equal(slot.edit.equipmentId(), "none");
         assert.equal(slot.edit.glyphId(), "none");
         assert.equal(slot.edit.signetId(), "none");
+    }
+    for (var index in swlcalc.gear.agents) {
+        var agent = swlcalc.gear.agents[index];
+        assert.equal(agent.id(), "0");
     }
 });

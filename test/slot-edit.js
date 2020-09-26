@@ -1,5 +1,5 @@
 
-QUnit.module("slots-edit-unit-tests", {
+QUnit.module("slot-edit-unit-tests", {
     beforeEach: function(assert) {
         renderGear();
         renderSummary();

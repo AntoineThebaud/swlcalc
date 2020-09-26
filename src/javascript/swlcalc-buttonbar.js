@@ -148,8 +148,8 @@ swlcalc.buttonBar = function() {
             slot.edit.el.signetLevel.change();
         }
 
-        for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {
-            var agent = swlcalc.gear.agents[i];
+        for (var index in swlcalc.gear.agents) {
+            var agent = swlcalc.gear.agents[index];
             agent.level(agent.minLvl());
             agent.el.level.change();
         }
@@ -171,8 +171,8 @@ swlcalc.buttonBar = function() {
             slot.edit.el.signetLevel.change();
         }
 
-        for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {
-            var agent = swlcalc.gear.agents[i];
+        for (var index in swlcalc.gear.agents) {
+            var agent = swlcalc.gear.agents[index];
             agent.level(agent.maxLvl());
             agent.el.level.change();
         }
