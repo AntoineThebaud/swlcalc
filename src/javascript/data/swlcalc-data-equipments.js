@@ -665,13 +665,13 @@ swlcalc.data.equipments = {
                 id: 91,
                 type: 'Chaos',
                 name: 'Enigmatic Apparatus',
-                description: 'You are more likely to generate Chaotic Enigmas when reaching <span class="bonus-val const">8</span> Paradoxes. In addition, your Chaotic Enigmas are more potent.'
+                description: 'Your Aegis of Parallelism delays an additional <span class="bonus-val const">5%</span> incoming damage. Additionally, when you reach <span class="bonus-val const">8</span> Paradoxes you become immune to damage delayed by Aegis of Parallelism for <span class="bonus-val const">2</span> seconds. This effect can happen once every <span class="bonus-val const">9</span> seconds.'
             },
             {
                 id: 92,
                 type: 'Chaos',
                 name: 'Incalculable Abacus',
-                description: 'If you generate <span class="bonus-val const">8</span> Paradoxes within <span class="bonus-val const">6</span> seconds of the last time you generated <span class="bonus-val const">8</span> Paradoxes, your Protection is increased by 4350 for <span class="bonus-val const">4</span> seconds.'
+                description: 'Whenever you evade, you generate <span class="bonus-val const">2</span>-<span class="bonus-val const">3</span> Paradoxes. This effect has a <span class="bonus-val const">3</span> second cooldown.'
             },
             {
                 id: 93,
@@ -695,7 +695,7 @@ swlcalc.data.equipments = {
                 id: 96,
                 type: 'Chaos',
                 name: 'Sanity\'s Aphelion',
-                description: 'Your protection is increased by up to 880. The value of Protection gained is based on your current Paradoxes and is at its highest when you have 0 Paradoxes.'
+                description: 'Whenever you are hit you have a <span class="bonus-val const">6%</span> - <span class="bonus-val const">4%</span> chance to summon an Extradimensional Defender with <span class="bonus-val const">30%</span> of your maximum health to intercept <span class="bonus-val const">80%</span> of incoming damage. The chance is based on the number of Paradoxes you have, and is at its highest when you have <span class="bonus-val const">0</span> Paradoxes.'
             },
             {
                 id: 97,
@@ -707,7 +707,7 @@ swlcalc.data.equipments = {
                 id: 98,
                 type: 'Chaos',
                 name: 'The Cause\'s Effect',
-                description: 'Whenever you deal damage divisible by 8, your Protection is increased by 850 for <span class="bonus-val const">4</span> seconds. Also, whenever you evade an attack, your next Chaos attack deals an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> magical damage.',
+                description: 'Whenever you deal damage divisible by 8, your Evade Chance is increased by <span class="bonus-val const">4.5%</span> for <span class="bonus-val const">4</span> seconds. Also, whenever you evade an attack, your next Chaos attack deals an additional <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> magical damage.',
                 coefficients: [ 1.15 ],
                 stats: [ 'Combat Power' ]
             },
@@ -1548,7 +1548,7 @@ swlcalc.data.equipments = {
             {
                 id: 14,
                 name: 'Tumultuous Sash',
-                description: 'Whenever your Paradox counts resets, you gain <span class="bonus-val const">1</span> - <span class="bonus-val const">2</span> Paradoxes.'
+                description: 'Whenever your Paradox counts resets, you gain <span class="bonus-val const">1</span> Paradox.'
             },
             {
                 id: 15,
