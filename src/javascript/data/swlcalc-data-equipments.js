@@ -867,7 +867,7 @@ swlcalc.data.equipments = {
                 id: 122,
                 type: 'Hammer',
                 name: 'Manticore Riot Suppressor',
-                description: 'While you are protected by the Hammer abilities "Enter the Fray," "Thick Skin," "Raging Volcano," "Juggernaut," or "Die Hard" your Hammer abilities deal <span class="bonus-val const">8.5%</span> more damage and attacks against you generate <span class="bonus-val const">2</span> more Rage.'
+                description: 'While protected by “Enter the Fray”, “Blazing Fury”, “Raging Volcano”, “Juggernaut”, or “Die Hard” you generate <span class="bonus-val const">2</span> Rage every time you are hit, and <span class="bonus-val const">1</span> stack of Fortifying every second. On reaching <span class="bonus-val const">20</span> stacks, Fortifying is removed and your Protection is increased by <span class="bonus-val const">22500</span> for <span class="bonus-val const">5</span> seconds.'
             },
             {
                 id: 123,
