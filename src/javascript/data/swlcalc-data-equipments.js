@@ -63,7 +63,7 @@ swlcalc.data.equipments = {
                 id: 10,
                 type: 'Blade',
                 name: 'Anima-Touched Blade',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val heal">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -71,7 +71,7 @@ swlcalc.data.equipments = {
                 id: 11,
                 type: 'Hammer',
                 name: 'Anima-Touched Hammer',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val heal">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -79,7 +79,7 @@ swlcalc.data.equipments = {
                 id: 12,
                 type: 'Fist',
                 name: 'Anima-Touched Fist Weapon',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val heal">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -87,7 +87,7 @@ swlcalc.data.equipments = {
                 id: 13,
                 type: 'Blood',
                 name: 'Anima-Touched Blood Magic Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val heal">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -95,7 +95,7 @@ swlcalc.data.equipments = {
                 id: 14,
                 type: 'Chaos',
                 name: 'Anima-Touched Chaos Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val heal">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -103,7 +103,7 @@ swlcalc.data.equipments = {
                 id: 15,
                 type: 'Elementalism',
                 name: 'Anima-Touched Elementalism Focus',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val heal">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -111,7 +111,7 @@ swlcalc.data.equipments = {
                 id: 16,
                 type: 'Shotgun',
                 name: 'Anima-Touched Shotgun',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val heal">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -119,7 +119,7 @@ swlcalc.data.equipments = {
                 id: 17,
                 type: 'Pistols',
                 name: 'Anima-Touched Pistols',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val heal">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
@@ -127,7 +127,7 @@ swlcalc.data.equipments = {
                 id: 18,
                 type: 'Assault Rifle',
                 name: 'Anima-Touched Rifle',
-                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val const">35%</span> of the damage dealt.',
+                description: 'Whenever you hit, you have a <span class="bonus-val const">33%</span> chance to deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. You are healed for <span class="bonus-val heal">35%</span> of the damage dealt.',
                 coefficients: [ 0.5 ],
                 stats: [ 'Combat Power' ]
             },
