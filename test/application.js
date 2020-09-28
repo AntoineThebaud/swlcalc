@@ -346,7 +346,7 @@ QUnit.test("should import from hash", function(assert) {
     // TODO/TEST : buggy, should be ok : assert.equal($("#neck-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#neck-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/neck/mythic-42x42.png");
     assert.equal($("#neck-recap-equipment-img-quality").attr('src'), "assets/images/icons/quality/4.png");
-    assert.equal($("#neck-recap-equipment-description").html(), "This talisman gains more Power Rating when leveling up.<br>Whenever you lose health while below <span class=\"bonus-val const\">50%</span> of your maximum health, your damage is increased by <span class=\"bonus-val const\">17%</span> for <span class=\"bonus-val const\">3</span> seconds and your next attack during this time will restore <span class=\"bonus-val const\">4%</span> of your missing health. This effect can only occur once every <span class=\"bonus-val const\">10</span> seconds.");
+    assert.equal($("#neck-recap-equipment-description").html(), "This talisman gains more Power Rating when leveling up.<br>Whenever you lose health while below <span class=\"bonus-val const\">50%</span> of your maximum health, your damage is increased by <span class=\"bonus-val const\">17%</span> for <span class=\"bonus-val const\">3</span> seconds and your next attack during this time will restore <span class=\"bonus-val heal\">4%</span> of your missing health. This effect can only occur once every <span class=\"bonus-val const\">10</span> seconds.");
     assert.ok($("#neck-recap-equipment-description-section").is(":visible"));
     assert.equal($("#neck-recap-equipment-label-level").text(), "11");
     assert.ok($("#neck-recap-glyph-section").is(":visible"));
@@ -379,7 +379,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#neck-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/neck/mythic-42x42.png");
     assert.equal($("#neck-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/4.png");
     assert.equal($("#neck-edit-equipment-label-level").html(), "11");
-    assert.equal($("#neck-edit-equipment-description").html(), 'This talisman gains more Power Rating when leveling up.<br>Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, your damage is increased by <span class="bonus-val const">17%</span> for <span class="bonus-val const">3</span> seconds and your next attack during this time will restore <span class="bonus-val const">4%</span> of your missing health. This effect can only occur once every <span class="bonus-val const">10</span> seconds.');
+    assert.equal($("#neck-edit-equipment-description").html(), 'This talisman gains more Power Rating when leveling up.<br>Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, your damage is increased by <span class="bonus-val const">17%</span> for <span class="bonus-val const">3</span> seconds and your next attack during this time will restore <span class="bonus-val heal">4%</span> of your missing health. This effect can only occur once every <span class="bonus-val const">10</span> seconds.');
     assert.equal($("#neck-edit-glyph-id").val(), "critical-rating");
     assert.equal($("#neck-edit-glyph-rarity").val(), "epic");
     assert.equal($("#neck-edit-glyph-quality").val(), "1");
