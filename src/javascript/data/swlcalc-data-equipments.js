@@ -1287,6 +1287,21 @@ swlcalc.data.equipments = {
                 description: 'Whenever you hit same enemy 3 times in succession, summon FATE to attack target for <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. This effect has a <span class="bonus-val const">20</span> second cooldown.',
                 coefficients: [ 6.8 ],
                 stats: [ 'Combat Power' ]
+            },
+            {
+                id: 16,
+                name: 'The Strong Force',
+                description: 'Whenever you hit the same enemy <span class="bonus-val const">10</span> times in succession, you deal <span class="bonus-val const">10%</span> more damage for <span class="bonus-val const">4</span> seconds.'
+            },
+            {
+                id: 17,
+                name: 'Crimson Ochre',
+                description: 'Whenever you heal the same target <span class="bonus-val const">5</span> times, you increase their chance to be Glanced by <span class="bonus-val const">7%</span> or chance to Evade by <span class="bonus-val const">5%</span> for <span class="bonus-val const">5</span> seconds. The ally gains whichever bonus is more beneficial.'
+            },
+            {
+                id: 18,
+                name: 'Leanashe\'s Pigment',
+                description: 'Whenever you evade <span class="bonus-val const">2</span> times in succession or are hit <span class="bonus-val const">5</span> times in succession, you generate <span class="bonus-val const">1 - 2</span> energy.'
             }
         ],
         'finger': [
@@ -1342,6 +1357,23 @@ swlcalc.data.equipments = {
                 id: 9,
                 name: 'Cobra Ring',
                 description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, you have a <span class="bonus-val const">75%</span> chance to gain <span class="bonus-val const">1</span> Energy for the weapon which triggered this effect.'
+            },
+            {
+                id: 10,
+                name: 'Serpent Venom Ring',
+                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, you apply <span class="bonus-val const">1 - 2</span> stacks of Sap Vitality. Sap Vitality deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second and stacks up to <span class="bonus-val const">20</span> times. On reaching <span class="bonus-val const">20</span> stacks, all stacks are consumed to cause Hemorrhage, dealing <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> damage.',
+                coefficients: [ 0.016, 4.5 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
+            {
+                id: 11,
+                name: 'Commitment Band',
+                description: 'Whenever you attempt to cleanse, your defensive target receives <span class="bonus-val const">7%</span> more healing for <span class="bonus-val const">5</span> seconds.'
+            },
+            {
+                id: 12,
+                name: 'Naonomi\'s Promise',
+                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, increase the chance the enemy\'s next attack will miss by <span class="bonus-val const">20%</span>. This effect has a <span class="bonus-val const">20</span> second cooldown.'
             }
         ],
         'neck': [
@@ -1414,6 +1446,23 @@ swlcalc.data.equipments = {
                 id: 12,
                 name: 'Amulet',
                 description: ''
+            },
+            {
+                id: 13,
+                name: 'Lady Margaret\'s Tackle',
+                description: 'Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">33%</span> chance to apply <span class="bonus-val const">1</span> stack of Sap Vitality. Sap Vitality deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second and stacks up to <span class="bonus-val const">20</span> times. On reaching <span class="bonus-val const">20</span> stacks, all stacks are consumed to cause Hemorrhage, dealing <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> damage.',
+                coefficients: [ 0.016, 4.5 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
+            {
+                id: 14,
+                name: 'Tree Amulet',
+                description: 'Whenever you heal an ally who is below <span class="bonus-val const">50%</span> of their maximum health, your healing done is increased by <span class="bonus-val heal">20%</span> for <span class="bonus-val const">5</span> seconds. This effect has a <span class="bonus-val const">10</span> second cooldown.'
+            },
+            {
+                id: 15,
+                name: 'Quantum Shift',
+                description: 'Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, you receive <span class="bonus-val heal">10%</span> more healing for <span class="bonus-val const">5</span> seconds. This effect has a <span class="bonus-val const">10</span> second cooldown.'
             }
         ],
         'wrist': [
@@ -1467,6 +1516,23 @@ swlcalc.data.equipments = {
                 id: 9,
                 name: 'Timeless Watch',
                 description: 'Whenever you heal an ally who does not have any active detrimental effects, you grant that ally an effect which increases all incoming healing by <span class="bonus-val const">15%</span> for <span class="bonus-val const">2.5</span> seconds. This effect is removed upon receiving another activated heal. This effect can only be applied once every <span class="bonus-val const">6</span> seconds.'
+            },
+            {
+                id: 10,
+                name: 'Cat\'s Eye Bracelet',
+                description: 'Whenever you hit an enemy who is Exposed and has at least <span class="bonus-val const">6</span> seconds of Exposed remaining, you have a <span class="bonus-val const">15%</span> chance to consume <span class="bonus-val const">3</span> seconds of Exposed and deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage. If you applied Exposed to this enemy in the last <span class="bonus-val const">3</span> seconds, the chance is increased to <span class="bonus-val const">30%</span>.',
+                coefficients: [ 0.72 ],
+                stats: [ 'Combat Power' ]
+            },
+            {
+                id: 11,
+                name: 'Accelerating Chronometer',
+                description: 'Whenever you heal an ally who does not have any active detrimental effects, increase that ally\'s movement speed by <span class="bonus-val const">10%</span> for <span class="bonus-val const">5</span> seconds. An ally can be affected by this effect once every <span class="bonus-val const">10</span> seconds.'
+            },
+            {
+                id: 12,
+                name: 'Tactician\'s Guard',
+                description: 'Whenever a Debilitated enemy attacks you, you have a <span class="bonus-val const">12%</span> chance to convert up to <span class="bonus-val const">3</span> seconds of Exposed into Debilitated.'
             }
         ],
         'luck': [
@@ -1522,6 +1588,23 @@ swlcalc.data.equipments = {
                 description: 'Whenever you critically hit you have <span class="bonus-val const">33%</span> chance to summon Gatekeeper to attack the target for <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage. This effect has <span class="bonus-val const">20</span> sec cooldown.',
                 coefficients: [ 6.5 ],
                 stats: [ 'Combat Power' ]
+            },
+            {
+                id: 10,
+                name: 'Snake Eyes',
+                description: 'Whenever you critically hit, you have a <span class="bonus-val const">50%</span> chance to apply <span class="bonus-val const">1</span> stack of Sap Vitality. Sap Vitality deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second and stacks up to <span class="bonus-val const">20</span> times. On reaching <span class="bonus-val const">20</span> stacks, all stacks are consumed to cause Hemorrhage, dealing <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> damage.',
+                coefficients: [ 0.016, 4.5 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
+            {
+                id: 11,
+                name: 'Pocket Pair',
+                description: 'Whenever you critically heal, increase your healing done by <span class="bonus-val heal">7.5%</span> for <span class="bonus-val const">3</span> seconds. This effect has a <span class="bonus-val const">9</span> second cooldown.'
+            },
+            {
+                id: 12,
+                name: 'Liberty Coins',
+                description: 'Whenever you evade an attack or an attack glances you, your movement speed is increased by <span class="bonus-val const">8%</span> for <span class="bonus-val const">3</span> seconds.'
             }
         ],
         'waist': [
@@ -1625,7 +1708,7 @@ swlcalc.data.equipments = {
             {
                 id: 18,
                 name: 'Generalist\'s Belt',
-                description: '"Whenever you activate a Power ability, there is a <span class="bonus-val const">33%</span> chance that you will deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage or the target is healed for and additional <span id="%id-equipment-bonus2" class="bonus-val heal">%d</span>. Additional damage occurs when using damaging power abilities and additional healing occurs when using healing power abilities.',
+                description: 'Whenever you activate a Power ability, there is a <span class="bonus-val const">33%</span> chance that you will deal <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> physical damage or the target is healed for and additional <span id="%id-equipment-bonus2" class="bonus-val heal">%d</span>. Additional damage occurs when using damaging power abilities and additional healing occurs when using healing power abilities.',
                 coefficients: [ 0.375, 0.375 ],
                 stats: [ 'Combat Power', 'Healing Power' ]
             },
@@ -1633,6 +1716,23 @@ swlcalc.data.equipments = {
                 id: 19,
                 name: 'Buckle',
                 description: ''
+            },
+            {
+                id: 20,
+                name: 'Clostridium Tetani Chain',
+                description: 'Whenever you hit an enemy who is facing away from you, you have a <span class="bonus-val const">33%</span> chance to apply <span class="bonus-val const">1</span> stack of Sap Vitality. Sap Vitality deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second and stacks up to <span class="bonus-val const">20</span> times. On reaching <span class="bonus-val const">20</span> stacks, all stacks are consumed to cause Hemorrhage, dealing <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> damage.',
+                coefficients: [ 0.016, 4.5 ],
+                stats: [ 'Combat Power', 'Combat Power' ]
+            },
+            {
+                id: 21,
+                name: 'Royal Blue Belt',
+                description: 'Whenever you heal an ally who less than <span class="bonus-val const">7</span> metres away from you, you become immune to new crowd control effects for <span class="bonus-val const">3</span> seconds. This effect has a <span class="bonus-val const">15</span> second cooldown.'
+            },
+            {
+                id: 22,
+                name: 'Waistguard',
+                description: 'Whenever you hit an enemy who is facing towards you, you have a <span class="bonus-val const">20%</span> chance to increase your Evade chance by <span class="bonus-val const">2.5%</span>, or chance to be Glanced by <span class="bonus-val const">3.3%</span> for <span class="bonus-val const">5</span> seconds, whichever is more beneficial.'
             }
         ],
         'occult': [
@@ -1686,6 +1786,23 @@ swlcalc.data.equipments = {
                 id: 9,
                 name: 'Cernunnos Antler Fragment',
                 description: 'Whenever you or any of your group members defeat a non-boss enemy, you gain a counter that increases damage against a boss enemy by <span class="bonus-val const">2%</span> per counter. The counters expire <span class="bonus-val const">6</span> minutes after the first counter is gained, or when a boss enemy is damaged.'
+            },
+            {
+                id: 10,
+                name: 'Bonfire Effigy',
+                description: 'Whenever you or any of your group members defeat an enemy, gain a shield absorbing <span id="%id-equipment-bonus1" class="bonus-val heal">%d</span> that scales with your heal power. This effect has a <span class="bonus-val const">15</span> second cooldown.',
+                coefficients: [ 0.39 ],
+                stats: [ 'Healing Power' ]
+            },
+            {
+                id: 11,
+                name: 'Charm of Unfettered Flesh',
+                description: 'Whenever you or any of your group members defeat an enemy, you have a <span class="bonus-val const">50%</span> chance to cleanse <span class="bonus-val const">2</span> hostile effects. This effect has a <span class="bonus-val const">5</span> second cooldown.'
+            },
+            {
+                id: 12,
+                name: '1,000,000 Likes',
+                description: 'Whenever you or any of your group members defeat an enemy, you have a <span class="bonus-val const">30%</span> chance to increase your Critical Power by <span class="bonus-val const">12%</span> for <span class="bonus-val const">5</span> seconds.'
             }
         ]
     }
