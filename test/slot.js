@@ -131,7 +131,7 @@ QUnit.test("should update elements related to equipment's transformed stat value
   $('#select-anima-allocation').val("heal");
   swlcalc.gear.slots.finger.updateEquipmentStatValueTransformed();
 
-  assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatTransformedValue(), "+9876");
+  assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatTransformedValue(), "+7901");
   assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatTransformedText(), "Heal Rating");
 });
 

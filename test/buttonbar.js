@@ -39,9 +39,9 @@ QUnit.test("should set anima allocation and affect stats correctly", function(as
     $("#select-anima-allocation").val("heal");
     $("#select-anima-allocation").change();
     assert.equal($("#stat-combat-power").html(), "461.6");
-    assert.equal($("#stat-healing-power").html(), "740.4");
+    assert.equal($("#stat-healing-power").html(), "684.4");
     assert.equal($("#stat-attack-rating").html(), "4322");
-    assert.equal($("#stat-heal-rating").html(), "8040");
+    assert.equal($("#stat-heal-rating").html(), "7294");
     assert.equal($("#stat-hitpoints").html(), "9217");
     $("#select-anima-allocation").val("tank");
     $("#select-anima-allocation").change();
@@ -49,7 +49,7 @@ QUnit.test("should set anima allocation and affect stats correctly", function(as
     assert.equal($("#stat-healing-power").html(), "460.7");
     assert.equal($("#stat-attack-rating").html(), "4322");
     assert.equal($("#stat-heal-rating").html(), "4310");
-    assert.equal($("#stat-hitpoints").html(), "14542");
+    assert.equal($("#stat-hitpoints").html(), "19866");
     $("#select-anima-allocation").val("dps");
     $("#select-anima-allocation").change();
     assert.equal($("#stat-combat-power").html(), "741.3");

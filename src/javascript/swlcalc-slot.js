@@ -218,11 +218,11 @@ swlcalc.gear.Slot = function Slot(slotData) {
 
         switch (animaAllocation) {
             case 'dps':
-                this.recap.equipmentStatTransformedValue('+' + valueRaw);
+                this.recap.equipmentStatTransformedValue('+' + Math.round(valueRaw * swlcalc.data.stats.ar_coefficient));
                 this.recap.equipmentStatTransformedText('Attack Rating');
                 break;
             case 'heal':
-                this.recap.equipmentStatTransformedValue('+' + valueRaw);
+                this.recap.equipmentStatTransformedValue('+' + Math.round(valueRaw * swlcalc.data.stats.hr_coefficient));
                 this.recap.equipmentStatTransformedText('Heal Rating');
                 break;
             case 'tank':
