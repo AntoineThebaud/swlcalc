@@ -800,7 +800,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 value: '300',
-                type: 'critical'
+                type: 'critical-power'
             }
         }
     },
