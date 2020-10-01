@@ -33,8 +33,8 @@ swlcalc.data.stats = {
         },
         secondary: {
             'hit': {
-                sp_passive_flat: 756,  // Amount brought to the flat stat (e.g Critical Power, Evade rating...) by the passive skills
-                sp_passive_percent: 0, // Amount brought to the %chance stat (e.g Critical Chance, Glance reduction...) by the passive skills
+                sp_passive_flat: 756,  // Amount brought to the flat stat (e.g Hit Rating, Evade rating...) by the passive skills
+                sp_passive_percent: 0, // Amount brought to the %chance stat (e.g Glance reduction, Evade chance...) by the passive skills
                 expertise: 0,          // Amount brought by weapon expertise
                 hardCap: 0,            // hard cap for this stat
                 softCapRate: 50.85,    // Rate at which %chance stat increases when below hard cap
@@ -44,33 +44,33 @@ swlcalc.data.stats = {
                 sp_passive_flat: 756,
                 sp_passive_percent: 1,
                 expertise: 7.5,
-                hardCap: 7116,
-                softCapRate: 156.05,
-                hardCapRate: 676.75,
+                hardCap: 7000,
+                softCapRate: 157.38,
+                hardCapRate: 693.77,
             },
             'cpow': {
                 sp_passive_flat: 1008,
                 sp_passive_percent: 25,
                 expertise: 30,
-                hardCap: 3996,
-                softCapRate: 28.31,
-                hardCapRate: 136.00,
+                hardCap: 3950,
+                softCapRate: 28.26,
+                hardCapRate: 135.00,
             },
             'def': {
                 sp_passive_flat: 753,
                 sp_passive_percent: 0,
                 expertise: 0,
-                hardCap: 4569,
-                softCapRate: 101.71,
-                hardCapRate: 683.00,
+                hardCap: 4565,
+                softCapRate: 101.66,
+                hardCapRate: 680.13,
             },
             'evad': {
                 sp_passive_flat: 753,
                 sp_passive_percent: 0,
                 expertise: 0,
-                hardCap: 4569,
-                softCapRate: 145.55,
-                hardCapRate: 977.40,
+                hardCap: 5000,
+                softCapRate: 145.47,
+                hardCapRate: 963.58,
             }
         }
     }

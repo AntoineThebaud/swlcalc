@@ -58,9 +58,9 @@ QUnit.test("should update all stats", function(assert) {
     assert.equal($("#stat-attack-rating").html(), "8052");
     assert.equal($("#stat-heal-rating").html(), "4310");
     assert.equal($("#stat-critical-rating").html(), "+841");
-    assert.equal($("#stat-critical-chance").html(), "13.9%");
+    assert.equal($("#stat-critical-chance").html(), "13.8%");
     assert.equal($("#stat-critical-power").html(), "+1008");
-    assert.equal($("#stat-critical-power-percentage").html(), "90.6%");
+    assert.equal($("#stat-critical-power-percentage").html(), "90.7%");
     assert.equal($("#stat-hit-rating").html(), "+1244");
     assert.equal($("#stat-defense-rating").html(), "+1896");
     assert.equal($("#stat-evade-rating").html(), "+1896");
@@ -92,13 +92,13 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
     };
     var expectedSecondaryStats = {
         "critical-rating": "841",
-        "critical-chance": "13.9",
+        "critical-chance": "13.8",
         "critical-power": "1008",
-        "critical-power-percentage": "90.6",
+        "critical-power-percentage": "90.7",
         "hit-rating": 1244,
         "glance-reduction": 24.5,
         "defense-rating": 1896,
-        "glance-chance": 18.6,
+        "glance-chance": 18.7,
         "evade-rating": 1896,
         "evade-chance": "13.0",
     };
@@ -160,7 +160,7 @@ QUnit.test("should collect secondary stats accordingly", function(assert) {
     assert.equal(sums[ "critical-rating" ], 756);
     assert.equal(sums[ "critical-chance" ], 13.3);
     assert.equal(sums[ "critical-power" ], 1008);
-    assert.equal(sums[ "critical-power-percentage" ], 90.6);
+    assert.equal(sums[ "critical-power-percentage" ], 90.7);
     assert.equal(sums[ "hit-rating" ], 756);
     assert.equal(sums[ "glance-reduction" ], 14.9);
     assert.equal(sums[ "defense-rating" ], 753);
@@ -173,14 +173,14 @@ QUnit.test("should collect secondary stats accordingly", function(assert) {
     var sums = swlcalc.summary.collectSecondaryStats();
 
     assert.equal(sums[ "critical-rating" ], 841);
-    assert.equal(sums[ "critical-chance" ], 13.9);
+    assert.equal(sums[ "critical-chance" ], 13.8);
     assert.equal(sums[ "critical-power" ], 1008);
-    assert.equal(sums[ "critical-power-percentage" ], 90.6);
+    assert.equal(sums[ "critical-power-percentage" ], 90.7);
     assert.equal(sums[ "hit-rating" ], 1244);
     assert.equal(sums[ "glance-reduction" ], 24.5);
 
     assert.equal(sums[ "defense-rating" ], 1896);
-    assert.equal(sums[ "glance-chance" ], 18.6);
+    assert.equal(sums[ "glance-chance" ], 18.7);
     assert.equal(sums[ "evade-rating" ], 1896);
     assert.equal(sums[ "evade-chance" ], 13.0);
 
@@ -190,20 +190,20 @@ QUnit.test("should collect secondary stats accordingly", function(assert) {
 
 QUnit.test("should compute secondary stats", function(assert) {
     assert.equal(swlcalc.summary.computeSecondaryStat('crit', 0), 8.5);
-    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 4000), 34.1);
-    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 8000), 55.4);
+    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 4000), 33.9);
+    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 8000), 54.4);
 
     assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 0), 55);
-    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 2500), 143.3);
-    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 5000), 203.5);
+    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 2500), 143.5);
+    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 5000), 202.6);
 
     assert.equal(swlcalc.summary.computeSecondaryStat('evad', 0), 0);
     assert.equal(swlcalc.summary.computeSecondaryStat('evad', 4000), 27.5);
-    assert.equal(swlcalc.summary.computeSecondaryStat('evad', 5000), 31.8);
+    assert.equal(swlcalc.summary.computeSecondaryStat('evad', 5000), 34.4);
 
     assert.equal(swlcalc.summary.computeSecondaryStat('def', 0), 0);
     assert.equal(swlcalc.summary.computeSecondaryStat('def', 4000), 39.3);
-    assert.equal(swlcalc.summary.computeSecondaryStat('def', 5000), 45.6);
+    assert.equal(swlcalc.summary.computeSecondaryStat('def', 5000), 45.5);
 
     assert.equal(swlcalc.summary.computeSecondaryStat('hit', 0), 0);
     assert.equal(swlcalc.summary.computeSecondaryStat('hit', 2500), 49.2);
