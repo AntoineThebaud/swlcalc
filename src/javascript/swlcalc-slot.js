@@ -411,11 +411,10 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.edit.signetImgItem(newImage);
 
         var newDescription = newSignet.description;
-        // add "-edit" suffix here to avoid id collision //TODO/REFACTOR better way to do this ?
+        // add "-edit" suffix here to avoid id collision with slot-recap //TODO/REFACTOR better way to do this ?
         this.edit.signetDescription(newDescription.replace(/%id/g, this.id + '-edit'));
-        // add "-recap" suffix here to avoid id collision //TODO/REFACTOR better way to do this ?
+        // add "-recap" suffix here to avoid id collision with slot-edit //TODO/REFACTOR better way to do this ?
         this.recap.signetDescription(newDescription.replace(/%id/g, this.id + '-recap'));
-        this.updateSignetBonus();
 
         this.recap.signetItem(newSignet.name);
         if (this.isWeapon()) this.recap.suffix(newSignet.name);
@@ -445,65 +444,44 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Update the dynamic bonus displayed in the signet's description (#slot-signet-bonus)
+     * Update the dynamic bonus displayed in the signet's description
      */
-    // TODO/REFACTOR : there should  a better way to handle the particular cases of non-standard signets
     this.updateSignetBonus = function(combatPower, healingPower){
-        var newValue = 0;
+        if (this.edit.signetId() == 'none') return;
+
+        var signet = swlcalc.data.signets.slot[this.kind][this.edit.signetId() - 1]
+        var levelMultiplier = this.edit.signetLevel() - 1;
         // coefficient in case CP or HP is used in the bonus computation
         var coef = 1
+        if (signet.stat == 'Combat Power') {
+            coef = combatPower;
+        } else if (signet.stat == 'Healing Power') {
+            coef = healingPower;
+        }
 
-        if (this.edit.signetId() != 'none') {
-            var signet = swlcalc.data.signets.slot[this.kind][this.edit.signetId() - 1]
+        if (this.isWeapon()) {
+            var signetData = signet.quality[this.edit.equipmentQuality()];
 
-            if (this.isWeapon()) {
-                // update suffix bonus value + its color
-                newValue = signet.quality[this.edit.equipmentQuality()];
-                var newClass = 'bonus-val color-' + swlcalc.data.rarity_mapping.to_name[this.edit.equipmentQuality()];
-                this.edit.signetBonusWrapper().attr('class', newClass);
-                this.recap.signetBonusWrapper().attr('class', newClass);
-            } else if (signet.name == "Signet of Shoulder Tackle") {
-                bonus1 = signet.ratio[this.edit.signetRarity()].init[0];
-                bonus2 = swlcalc.util.precisionRound(
-                  signet.ratio[this.edit.signetRarity()].init[1] - signet.ratio[this.edit.signetRarity()].per_level[1] * (this.edit.signetLevel() - 1),
-                  4
-                );
-                $('#' + this.id + '-edit-signet-bonus').html(bonus1);
-                $('#' + this.id + '-edit-signet-bonus2').html(bonus2);
-                $('#' + this.id + '-recap-signet-bonus').html(bonus1);
-                $('#' + this.id + '-recap-signet-bonus2').html(bonus2);
-                return;
-            } else if (signet.name == "Signet of Contortion") {
-                newValue = signet.ratio[this.edit.signetRarity()].init
-                           - signet.ratio[this.edit.signetRarity()].per_level * (this.edit.signetLevel() - 1)
-            } else if (signet.name == "Signet of Nemain") {
-                bonus1 = signet.ratio[this.edit.signetRarity()].init[0];
-                bonus2 = swlcalc.util.precisionRound(
-                  signet.ratio[this.edit.signetRarity()].init[1] + signet.ratio[this.edit.signetRarity()].per_level[1] * (this.edit.signetLevel() - 1),
-                  4
-                );
-                $('#' + this.id + '-edit-signet-bonus').html(bonus1);
-                $('#' + this.id + '-edit-signet-bonus2').html(bonus2);
-                $('#' + this.id + '-recap-signet-bonus').html(bonus1);
-                $('#' + this.id + '-recap-signet-bonus2').html(bonus2);
-                return;
-            } else {
-                newValue = signet.ratio[this.edit.signetRarity()].init
-                           + signet.ratio[this.edit.signetRarity()].per_level * (this.edit.signetLevel() - 1)
+            for (i = 0; i < signetData.length; i++) {
+                var newBonusVal = signetData[i] * coef;
+                this.edit.signetBonusN(i + 1, newBonusVal);
+                this.recap.signetBonusN(i + 1, newBonusVal);
             }
 
-            if (signet.stat != undefined) {
-                if (signet.stat == 'Combat Power') {
-                    coef = combatPower;
-                } else if (signet.stat == 'Healing Power') {
-                    coef = healingPower;
-                }
+            // update suffix bonus's color (will do nothing if signet-wrapper doesnt exist)
+            // not part of the above loop because, for the moment, there can be only one value at a time for which this coloring applies
+            var newClass = 'bonus-val color-' + swlcalc.data.rarity_mapping.to_name[this.edit.equipmentQuality()];
+            this.edit.signetBonusWrapper().attr('class', newClass);
+            this.recap.signetBonusWrapper().attr('class', newClass);
+        } else {
+            var signetData = signet.ratio[this.edit.signetRarity()];
+
+            for (i = 0; i < signetData.init.length; i++) {
+                var newBonusVal = swlcalc.util.precisionRound((signetData.init[i] + signetData.per_level[i] * levelMultiplier) * coef, signet.decimals[i]);
+                this.edit.signetBonusN(i + 1, newBonusVal);
+                this.recap.signetBonusN(i + 1, newBonusVal);
             }
         }
-        newValue *= coef
-        newValue = swlcalc.util.precisionRound(newValue, 4)
-        this.edit.signetBonus(newValue);
-        this.recap.signetBonus(newValue);
     };
 
     /**

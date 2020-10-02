@@ -76,7 +76,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#weapon-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon-edit-signet-level").val(), undefined);
     assert.equal($("#weapon-edit-signet-ilvl").html(), undefined);
-    assert.equal($("#weapon-edit-signet-description").html(), 'When you hit or heal a target with this weapon you have a <span class=\"bonus-val const\">50%</span> chance to restore <span id=\"weapon-edit-signet-bonus-wrapper\" class=\"bonus-val color-standard\"><span id=\"weapon-edit-signet-bonus\">0.75</span>%</span> of your health.');
+    assert.equal($("#weapon-edit-signet-description").html(), 'When you hit or heal a target with this weapon you have a <span class=\"bonus-val const\">50%</span> chance to restore <span id=\"weapon-edit-signet-bonus-wrapper\" class=\"bonus-val color-standard\"><span id=\"weapon-edit-signet-bonus1\">0.75</span>%</span> of your health (up to <span id=\"weapon-edit-signet-bonus2\" class=\"bonus-val heal\">150</span>).');
 
     assert.equal($("#weapon2-edit-ilvl").html(), "348");
     assert.equal($("#weapon2-edit-equipment-id").val(), "2");
@@ -96,7 +96,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#weapon2-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon2-edit-signet-level").val(), undefined);
     assert.equal($("#weapon2-edit-signet-ilvl").html(), undefined);
-    assert.equal($("#weapon2-edit-signet-description").html(), 'This weapon deals <span id=\"weapon2-edit-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon2-edit-signet-bonus\">333.45</span></span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.');
+    assert.equal($("#weapon2-edit-signet-description").html(), 'This weapon deals <span id=\"weapon2-edit-signet-bonus1\" class=\"bonus-val dps\">333.45</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.');
 
     assert.equal($("#head-edit-ilvl").html(), "425");
     assert.equal($("#head-edit-equipment-id").val(), "1");
@@ -116,7 +116,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#head-edit-signet-rarity").val(), "superior");
     assert.equal($("#head-edit-signet-level").val(), "15");
     assert.equal($("#head-edit-signet-ilvl").html(), "26");
-    assert.equal($("#head-edit-signet-description").html(), 'Reduces the cooldown of all Elite Abilities by <span id="head-edit-signet-bonus" class="bonus-val const">7.0286</span><span class="bonus-val const">%</span>.');
+    assert.equal($("#head-edit-signet-description").html(), 'Reduces the cooldown of all Elite Abilities by <span id="head-edit-signet-bonus1" class="bonus-val const">7.0286</span><span class="bonus-val const">%</span>.');
 
     assert.equal($("#finger-edit-ilvl").html(), "343");
     assert.equal($("#finger-edit-equipment-id").val(), "1");
@@ -136,7 +136,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#finger-edit-signet-rarity").val(), "standard");
     assert.equal($("#finger-edit-signet-level").val(), "9");
     assert.equal($("#finger-edit-signet-ilvl").html(), "5");
-    assert.equal($("#finger-edit-signet-description").html(), 'Increases the damage and healing of all Basic Abilities by <span id="finger-edit-signet-bonus" class="bonus-val const">2.1011</span><span class="bonus-val const">%</span>.');
+    assert.equal($("#finger-edit-signet-description").html(), 'Increases the damage and healing of all Basic Abilities by <span id="finger-edit-signet-bonus1" class="bonus-val const">2.1011</span><span class="bonus-val const">%</span>.');
 
     assert.equal($("#neck-edit-ilvl").html(), "354");
     assert.equal($("#neck-edit-equipment-id").val(), "1");
@@ -156,7 +156,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#neck-edit-signet-rarity").val(), "superior");
     assert.equal($("#neck-edit-signet-level").val(), "3");
     assert.equal($("#neck-edit-signet-ilvl").html(), "16");
-    assert.equal($("#neck-edit-signet-description").html(), 'Increases the damage and healing of all Power Abilities by <span id="neck-edit-signet-bonus" class="bonus-val const">1.6271</span><span class="bonus-val const">%</span>.');
+    assert.equal($("#neck-edit-signet-description").html(), 'Increases the damage and healing of all Power Abilities by <span id="neck-edit-signet-bonus1" class="bonus-val const">1.6271</span><span class="bonus-val const">%</span>.');
 
     assert.equal($("#wrist-edit-ilvl").html(), "244");
     assert.equal($("#wrist-edit-equipment-id").val(), "1");
@@ -176,7 +176,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#wrist-edit-signet-rarity").val(), "standard");
     assert.equal($("#wrist-edit-signet-level").val(), "14");
     assert.equal($("#wrist-edit-signet-ilvl").html(), "8");
-    assert.equal($("#wrist-edit-signet-description").html(), 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="wrist-edit-signet-bonus" class="bonus-val const">2.6362</span><span class="bonus-val const">%</span>.');
+    assert.equal($("#wrist-edit-signet-description").html(), 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="wrist-edit-signet-bonus1" class="bonus-val const">2.6362</span><span class="bonus-val const">%</span>.');
 
     assert.equal($("#luck-edit-ilvl").html(), "283");
     assert.equal($("#luck-edit-equipment-id").val(), "1");
@@ -196,7 +196,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#luck-edit-signet-rarity").val(), "epic");
     assert.equal($("#luck-edit-signet-level").val(), "6");
     assert.equal($("#luck-edit-signet-ilvl").html(), "47");
-    assert.equal($("#luck-edit-signet-description").html(), 'When you critically hit, you are given a beneficial effect that damages attackers for <span id="luck-edit-signet-bonus" class="bonus-val dps">69.7008</span> when they hit you for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.');
+    assert.equal($("#luck-edit-signet-description").html(), 'When you critically hit, you are given a beneficial effect that damages attackers for <span id="luck-edit-signet-bonus1" class="bonus-val dps">69.7008</span> when they hit you for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.');
 
     assert.equal($("#waist-edit-ilvl").html(), "361");
     assert.equal($("#waist-edit-equipment-id").val(), "1");
@@ -216,7 +216,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#waist-edit-signet-rarity").val(), "superior");
     assert.equal($("#waist-edit-signet-level").val(), "11");
     assert.equal($("#waist-edit-signet-ilvl").html(), "23");
-    assert.equal($("#waist-edit-signet-description").html(), 'Reduces the cooldown of Gadgets by <span id="waist-edit-signet-bonus" class="bonus-val const">17.5547</span><span class="bonus-val const">%</span>.');
+    assert.equal($("#waist-edit-signet-description").html(), 'Reduces the cooldown of Gadgets by <span id="waist-edit-signet-bonus1" class="bonus-val const">17.5547</span><span class="bonus-val const">%</span>.');
 
     assert.equal($("#occult-edit-ilvl").html(), "297");
     assert.equal($("#occult-edit-equipment-id").val(), "1");
@@ -236,7 +236,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#occult-edit-signet-rarity").val(), "epic");
     assert.equal($("#occult-edit-signet-level").val(), "18");
     assert.equal($("#occult-edit-signet-ilvl").html(), "61");
-    assert.equal($("#occult-edit-signet-description").html(), 'After using Active Dodge, you receive a speed bonus of <span id="occult-edit-signet-bonus" class="bonus-val const">26.1579</span><span class="bonus-val const">%</span> for <span class="bonus-val const">4</span> seconds.');
+    assert.equal($("#occult-edit-signet-description").html(), 'After using Active Dodge, you receive a speed bonus of <span id="occult-edit-signet-bonus1" class="bonus-val const">26.1579</span><span class="bonus-val const">%</span> for <span class="bonus-val const">4</span> seconds.');
 
     assert.equal($("#agent1-id").val(), '2');
     assert.equal($("#agent1-level").val(), '25');

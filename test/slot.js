@@ -264,8 +264,8 @@ QUnit.test("should update elements related to glyph's ilvl accordingly", functio
 
 QUnit.test("should update elements related to signet's item/id accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.head.edit.signetImgItem(), 'assets/images/icons/signet/head.png');
-    assert.equal(swlcalc.gear.slots.head.edit.signetDescription(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-edit-signet-bonus\" class=\"bonus-val const\">7.0286</span><span class=\"bonus-val const\">%</span>.");
-    assert.equal(swlcalc.gear.slots.head.recap.signetDescription(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-recap-signet-bonus\" class=\"bonus-val const\">7.0286</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.head.edit.signetDescription(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"bonus-val const\">7.0286</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.head.recap.signetDescription(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-recap-signet-bonus1\" class=\"bonus-val const\">7.0286</span><span class=\"bonus-val const\">%</span>.");
     assert.equal(swlcalc.gear.slots.head.recap.signetItem(), "Signet of the Ascendant");
 
     swlcalc.gear.slots.head.edit.signetId("none");
@@ -313,21 +313,21 @@ QUnit.test("should update elements related to signet's level accordingly", funct
 });
 
 QUnit.test("should update elements related to signet's bonus accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonus(), "69.7008");
+    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "69.7008");
 
     swlcalc.gear.slots.luck.updateSignetBonus(9999,0);
 
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonus(), "940.5375");
+    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "940.5375");
 
     swlcalc.gear.slots.luck.edit.signetRarity("mythic");
     swlcalc.gear.slots.luck.updateSignetBonus(9999,0);
 
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonus(), "1632.6262");
+    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "1632.6262");
 
     swlcalc.gear.slots.luck.edit.signetLevel("18");
     swlcalc.gear.slots.luck.updateSignetBonus(9999,0);
 
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonus(), "2006.4835");
+    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "2006.4835");
 });
 
 QUnit.test("should update elements related to signet's ilvl accordingly", function(assert) {

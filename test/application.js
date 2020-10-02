@@ -79,7 +79,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-recap-signet-item").text(), "Destruction");
     assert.equal($("#weapon-recap-signet-rarity").html(), undefined);
     assert.equal($("#weapon-recap-signet-level").html(), undefined);
-    assert.equal($("#weapon-recap-signet-description").html(), "This weapon deals <span id=\"weapon-recap-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-recap-signet-bonus\">393.75</span></span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.");
+    assert.equal($("#weapon-recap-signet-description").html(), "This weapon deals <span id=\"weapon-recap-signet-bonus1\" class=\"bonus-val dps\">393.75</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.");
     assert.equal($("#weapon-recap-suffix").html(), "of Destruction");
     assert.equal($("#weapon-recap-suffix-quality").html(), "Mk III");
     assert.equal($("#weapon-edit-ilvl").html(), "387");
@@ -110,7 +110,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon-edit-signet-level").val(), undefined);
     assert.equal($("#weapon-edit-signet-img-rarity").attr('src'), undefined);
-    assert.equal($("#weapon-edit-signet-description").html(), 'This weapon deals <span id=\"weapon-edit-signet-bonus-wrapper\" class=\"bonus-val color-epic\"><span id=\"weapon-edit-signet-bonus\">393.75</span></span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.');
+    assert.equal($("#weapon-edit-signet-description").html(), 'This weapon deals <span id=\"weapon-edit-signet-bonus1\" class=\"bonus-val dps\">393.75</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.');
     assert.equal($("#weapon-edit-signet-label-level").html(), undefined);
     assert.equal($("#weapon-edit-signet-ilvl").html(), undefined);
 
@@ -151,7 +151,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-recap-signet-item").text(), "Warding");
     assert.equal($("#weapon2-recap-signet-rarity").html(), undefined);
     assert.equal($("#weapon2-recap-signet-level").html(), undefined);
-    assert.equal($("#weapon2-recap-signet-description").html(), "Increases Protection by <span id=\"weapon2-recap-signet-bonus-wrapper\" class=\"bonus-val color-superior\"><span id=\"weapon2-recap-signet-bonus\">1050</span></span> while wielded.");
+    assert.equal($("#weapon2-recap-signet-description").html(), "Increases Protection by <span id=\"weapon2-recap-signet-bonus-wrapper\" class=\"bonus-val color-superior\"><span id=\"weapon2-recap-signet-bonus1\">1050</span></span> while wielded.");
     assert.equal($("#weapon2-recap-suffix").html(), "of Warding");
     assert.equal($("#weapon2-recap-suffix-quality").html(), "Mk II");
     assert.equal($("#weapon2-edit-ilvl").html(), "496");
@@ -182,7 +182,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon2-edit-signet-level").val(), undefined);
     assert.equal($("#weapon2-edit-signet-img-rarity").attr('src'), undefined);
-    assert.equal($("#weapon2-edit-signet-description").html(), 'Increases Protection by <span id=\"weapon2-edit-signet-bonus-wrapper\" class=\"bonus-val color-superior\"><span id=\"weapon2-edit-signet-bonus\">1050</span></span> while wielded.');
+    assert.equal($("#weapon2-edit-signet-description").html(), 'Increases Protection by <span id=\"weapon2-edit-signet-bonus-wrapper\" class=\"bonus-val color-superior\"><span id=\"weapon2-edit-signet-bonus1\">1050</span></span> while wielded.');
     assert.equal($("#weapon2-edit-signet-label-level").html(), undefined);
     assert.equal($("#weapon2-edit-signet-ilvl").html(), undefined);
 
@@ -222,7 +222,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-recap-signet-item").text(), "Signet of the Gunslinger");
     assert.equal($("#head-recap-signet-rarity").html(), "Standard");
     assert.equal($("#head-recap-signet-level").html(), "16");
-    assert.equal($("#head-recap-signet-description").html(), "Increases the damage and healing of Pistols Elite Abilities by <span id=\"head-recap-signet-bonus\" class=\"bonus-val const\">3.4495</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal($("#head-recap-signet-description").html(), "Increases the damage and healing of Pistols Elite Abilities by <span id=\"head-recap-signet-bonus1\" class=\"bonus-val const\">3.4495</span><span class=\"bonus-val const\">%</span>.");
     assert.equal($("#head-recap-suffix").html(), undefined);
     assert.equal($("#head-recap-suffix-quality").html(), undefined);
     assert.equal($("#head-edit-ilvl").html(), "441");
@@ -253,7 +253,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-edit-signet-rarity").val(), "standard");
     assert.equal($("#head-edit-signet-level").val(), "16");
     assert.equal($("#head-edit-signet-img-rarity").attr('src'), "assets/images/icons/rarity/standard-42x42.png");
-    assert.equal($("#head-edit-signet-description").html(), 'Increases the damage and healing of Pistols Elite Abilities by <span id="head-edit-signet-bonus" class="bonus-val const">3.4495</span><span class="bonus-val const">%</span>.');
+    assert.equal($("#head-edit-signet-description").html(), 'Increases the damage and healing of Pistols Elite Abilities by <span id="head-edit-signet-bonus1" class="bonus-val const">3.4495</span><span class="bonus-val const">%</span>.');
     assert.equal($("#head-edit-signet-label-level").html(), "16");
     assert.equal($("#head-edit-signet-ilvl").html(), "10");
 
@@ -293,7 +293,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#finger-recap-signet-item").text(), "Signet of the Gambler");
     assert.equal($("#finger-recap-signet-rarity").html(), "Mythic");
     assert.equal($("#finger-recap-signet-level").html(), "2");
-    assert.equal($("#finger-recap-signet-description").html(), "Increases the damage and healing of Pistols Basic Abilities by <span id=\"finger-recap-signet-bonus\" class=\"bonus-val const\">47.9079</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal($("#finger-recap-signet-description").html(), "Increases the damage and healing of Pistols Basic Abilities by <span id=\"finger-recap-signet-bonus1\" class=\"bonus-val const\">47.9079</span><span class=\"bonus-val const\">%</span>.");
     assert.equal($("#finger-recap-suffix").html(), undefined);
     assert.equal($("#finger-recap-suffix-quality").html(), undefined);
     assert.equal($("#finger-edit-ilvl").html(), "585");
@@ -324,7 +324,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#finger-edit-signet-rarity").val(), "mythic");
     assert.equal($("#finger-edit-signet-level").val(), "2");
     assert.equal($("#finger-edit-signet-img-rarity").attr('src'), "assets/images/icons/rarity/mythic-42x42.png");
-    assert.equal($("#finger-edit-signet-description").html(), 'Increases the damage and healing of Pistols Basic Abilities by <span id="finger-edit-signet-bonus" class="bonus-val const">47.9079</span><span class="bonus-val const">%</span>.');
+    assert.equal($("#finger-edit-signet-description").html(), 'Increases the damage and healing of Pistols Basic Abilities by <span id="finger-edit-signet-bonus1" class="bonus-val const">47.9079</span><span class="bonus-val const">%</span>.');
     assert.equal($("#finger-edit-signet-label-level").html(), "2");
     assert.equal($("#finger-edit-signet-ilvl").html(), "89");
 
@@ -364,7 +364,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#neck-recap-signet-item").text(), "Signet of the Outlaw");
     assert.equal($("#neck-recap-signet-rarity").html(), "Mythic");
     assert.equal($("#neck-recap-signet-level").html(), "3");
-    assert.equal($("#neck-recap-signet-description").html(), "Increases the damage and healing of Pistols Power Abilities by <span id=\"neck-recap-signet-bonus\" class=\"bonus-val const\">12.6405</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal($("#neck-recap-signet-description").html(), "Increases the damage and healing of Pistols Power Abilities by <span id=\"neck-recap-signet-bonus1\" class=\"bonus-val const\">12.6405</span><span class=\"bonus-val const\">%</span>.");
     assert.equal($("#neck-recap-suffix").html(), undefined);
     assert.equal($("#neck-recap-suffix-quality").html(), undefined);
     assert.equal($("#neck-edit-ilvl").html(), "608");
@@ -395,7 +395,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#neck-edit-signet-rarity").val(), "mythic");
     assert.equal($("#neck-edit-signet-level").val(), "3");
     assert.equal($("#neck-edit-signet-img-rarity").attr('src'), "assets/images/icons/rarity/mythic-42x42.png");
-    assert.equal($("#neck-edit-signet-description").html(), 'Increases the damage and healing of Pistols Power Abilities by <span id="neck-edit-signet-bonus" class="bonus-val const">12.6405</span><span class="bonus-val const">%</span>.');
+    assert.equal($("#neck-edit-signet-description").html(), 'Increases the damage and healing of Pistols Power Abilities by <span id="neck-edit-signet-bonus1" class="bonus-val const">12.6405</span><span class="bonus-val const">%</span>.');
     assert.equal($("#neck-edit-signet-label-level").html(), "3");
     assert.equal($("#neck-edit-signet-ilvl").html(), "91");
 
@@ -435,7 +435,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#wrist-recap-signet-item").text(), "Signet of Condensed Anima");
     assert.equal($("#wrist-recap-signet-rarity").html(), "Legendary");
     assert.equal($("#wrist-recap-signet-level").html(), "8");
-    assert.equal($("#wrist-recap-signet-description").html(), "Increases the rate at which your Ultimate Ability recharges on ability activation by <span id=\"wrist-recap-signet-bonus\" class=\"bonus-val const\">36.1004</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal($("#wrist-recap-signet-description").html(), "Increases the rate at which your Ultimate Ability recharges on ability activation by <span id=\"wrist-recap-signet-bonus1\" class=\"bonus-val const\">36.1004</span><span class=\"bonus-val const\">%</span>.");
     assert.equal($("#wrist-recap-suffix").html(), undefined);
     assert.equal($("#wrist-recap-suffix-quality").html(), undefined);
     assert.equal($("#wrist-edit-ilvl").html(), "1181");
@@ -466,7 +466,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#wrist-edit-signet-rarity").val(), "legendary");
     assert.equal($("#wrist-edit-signet-level").val(), "8");
     assert.equal($("#wrist-edit-signet-img-rarity").attr('src'), "assets/images/icons/rarity/legendary-42x42.png");
-    assert.equal($("#wrist-edit-signet-description").html(), 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="wrist-edit-signet-bonus" class="bonus-val const">36.1004</span><span class="bonus-val const">%</span>.');
+    assert.equal($("#wrist-edit-signet-description").html(), 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="wrist-edit-signet-bonus1" class="bonus-val const">36.1004</span><span class="bonus-val const">%</span>.');
     assert.equal($("#wrist-edit-signet-label-level").html(), "8");
     assert.equal($("#wrist-edit-signet-ilvl").html(), "172");
 
@@ -506,7 +506,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#luck-recap-signet-item").text(), "Signet of Amelioration");
     assert.equal($("#luck-recap-signet-rarity").html(), "Epic");
     assert.equal($("#luck-recap-signet-level").html(), "13");
-    assert.equal($("#luck-recap-signet-description").html(), "When you critically heal, you gain a beneficial effect that grants you a <span id=\"luck-recap-signet-bonus\" class=\"bonus-val heal\">17.8511</span><span class=\"bonus-val heal\">%</span> bonus to healing for <span class=\"bonus-val const\">5</span> seconds. This ability can only occur once every <span class=\"bonus-val const\">15</span> seconds.");
+    assert.equal($("#luck-recap-signet-description").html(), "When you critically heal, you gain a beneficial effect that grants you a <span id=\"luck-recap-signet-bonus1\" class=\"bonus-val heal\">17.8511</span><span class=\"bonus-val heal\">%</span> bonus to healing for <span class=\"bonus-val const\">5</span> seconds. This ability can only occur once every <span class=\"bonus-val const\">15</span> seconds.");
     assert.equal($("#luck-recap-suffix").html(), undefined);
     assert.equal($("#luck-recap-suffix-quality").html(), undefined);
     assert.equal($("#luck-edit-ilvl").html(), "121");
@@ -537,7 +537,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#luck-edit-signet-rarity").val(), "epic");
     assert.equal($("#luck-edit-signet-level").val(), "13");
     assert.equal($("#luck-edit-signet-img-rarity").attr('src'), "assets/images/icons/rarity/epic-42x42.png");
-    assert.equal($("#luck-edit-signet-description").html(), 'When you critically heal, you gain a beneficial effect that grants you a <span id="luck-edit-signet-bonus" class="bonus-val heal">17.8511</span><span class="bonus-val heal">%</span> bonus to healing for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.');
+    assert.equal($("#luck-edit-signet-description").html(), 'When you critically heal, you gain a beneficial effect that grants you a <span id="luck-edit-signet-bonus1" class="bonus-val heal">17.8511</span><span class="bonus-val heal">%</span> bonus to healing for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.');
     assert.equal($("#luck-edit-signet-label-level").html(), "13");
     assert.equal($("#luck-edit-signet-ilvl").html(), "55");
 
@@ -577,7 +577,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#waist-recap-signet-item").text(), "Signet of Time and Space Alteration");
     assert.equal($("#waist-recap-signet-rarity").html(), "Epic");
     assert.equal($("#waist-recap-signet-level").html(), "16");
-    assert.equal($("#waist-recap-signet-description").html(), "Reduces the cooldown of Gadgets by <span id=\"waist-recap-signet-bonus\" class=\"bonus-val const\">32.7158</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal($("#waist-recap-signet-description").html(), "Reduces the cooldown of Gadgets by <span id=\"waist-recap-signet-bonus1\" class=\"bonus-val const\">32.7158</span><span class=\"bonus-val const\">%</span>.");
     assert.equal($("#waist-recap-suffix").html(), undefined);
     assert.equal($("#waist-recap-suffix-quality").html(), undefined);
     assert.equal($("#waist-edit-ilvl").html(), "728");
@@ -608,7 +608,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#waist-edit-signet-rarity").val(), "epic");
     assert.equal($("#waist-edit-signet-level").val(), "16");
     assert.equal($("#waist-edit-signet-img-rarity").attr('src'), "assets/images/icons/rarity/epic-42x42.png");
-    assert.equal($("#waist-edit-signet-description").html(), 'Reduces the cooldown of Gadgets by <span id="waist-edit-signet-bonus" class="bonus-val const">32.7158</span><span class="bonus-val const">%</span>.');
+    assert.equal($("#waist-edit-signet-description").html(), 'Reduces the cooldown of Gadgets by <span id="waist-edit-signet-bonus1" class="bonus-val const">32.7158</span><span class="bonus-val const">%</span>.');
     assert.equal($("#waist-edit-signet-label-level").html(), "16");
     assert.equal($("#waist-edit-signet-ilvl").html(), "59");
 
@@ -648,7 +648,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#occult-recap-signet-item").text(), "Signet of Contortion");
     assert.equal($("#occult-recap-signet-rarity").html(), "Legendary");
     assert.equal($("#occult-recap-signet-level").html(), "10");
-    assert.equal($("#occult-recap-signet-description").html(), "Active dodges break movement hindering effects, but also have their cooldown increased by <span id=\"occult-recap-signet-bonus\" class=\"bonus-val const\">56.4684</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal($("#occult-recap-signet-description").html(), "Active dodges break movement hindering effects, but also have their cooldown increased by <span id=\"occult-recap-signet-bonus1\" class=\"bonus-val const\">56.4684</span><span class=\"bonus-val const\">%</span>.");
     assert.equal($("#occult-recap-suffix").html(), undefined);
     assert.equal($("#occult-recap-suffix-quality").html(), undefined);
     assert.equal($("#occult-edit-ilvl").html(), "541");
@@ -679,7 +679,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#occult-edit-signet-rarity").val(), "legendary");
     assert.equal($("#occult-edit-signet-level").val(), "10");
     assert.equal($("#occult-edit-signet-img-rarity").attr('src'), "assets/images/icons/rarity/legendary-42x42.png");
-    assert.equal($("#occult-edit-signet-description").html(), 'Active dodges break movement hindering effects, but also have their cooldown increased by <span id="occult-edit-signet-bonus" class="bonus-val const">56.4684</span><span class="bonus-val const">%</span>.');
+    assert.equal($("#occult-edit-signet-description").html(), 'Active dodges break movement hindering effects, but also have their cooldown increased by <span id="occult-edit-signet-bonus1" class="bonus-val const">56.4684</span><span class="bonus-val const">%</span>.');
     assert.equal($("#occult-edit-signet-label-level").html(), "10");
     assert.equal($("#occult-edit-signet-ilvl").html(), "175");
 
@@ -771,7 +771,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#weapon-edit-signet-description").html(), "");
     assert.equal($("#weapon-edit-signet-label-level").html(), undefined);
     assert.equal($("#weapon-edit-signet-ilvl").html(), undefined);
-    assert.equal($("#weapon-edit-signet-bonus").val(), undefined);
+    assert.equal($("#weapon-edit-signet-bonus1").val(), undefined);
 
 
     assert.ok($("#weapon2-recap-active").is(":hidden"));
@@ -816,7 +816,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#weapon2-edit-signet-description").html(), "");
     assert.equal($("#weapon2-edit-signet-label-level").html(), undefined);
     assert.equal($("#weapon2-edit-signet-ilvl").html(), undefined);
-    assert.equal($("#weapon2-edit-signet-bonus").val(), undefined);
+    assert.equal($("#weapon2-edit-signet-bonus1").val(), undefined);
 
 
     assert.ok($("#head-recap-equipment-empty").is(":visible"));
@@ -860,7 +860,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#head-edit-signet-description").html(), "");
     assert.equal($("#head-edit-signet-label-level").html(), "20");
     assert.equal($("#head-edit-signet-ilvl").html(), "0");
-    assert.equal($("#head-edit-signet-bonus").val(), undefined);
+    assert.equal($("#head-edit-signet-bonus1").val(), undefined);
 
 
     assert.ok($("#finger-recap-equipment-empty").is(":visible"));
@@ -904,7 +904,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#finger-edit-signet-description").html(), "");
     assert.equal($("#finger-edit-signet-label-level").html(), "20");
     assert.equal($("#finger-edit-signet-ilvl").html(), "0");
-    assert.equal($("#finger-edit-signet-bonus").val(), undefined);
+    assert.equal($("#finger-edit-signet-bonus1").val(), undefined);
 
 
     assert.ok($("#neck-recap-equipment-empty").is(":visible"));
@@ -948,7 +948,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#neck-edit-signet-description").html(), "");
     assert.equal($("#neck-edit-signet-label-level").html(), "20");
     assert.equal($("#neck-edit-signet-ilvl").html(), "0");
-    assert.equal($("#neck-edit-signet-bonus").val(), undefined);
+    assert.equal($("#neck-edit-signet-bonus1").val(), undefined);
 
 
     assert.ok($("#wrist-recap-equipment-empty").is(":visible"));
@@ -992,7 +992,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#wrist-edit-signet-description").html(), "");
     assert.equal($("#wrist-edit-signet-label-level").html(), "20");
     assert.equal($("#wrist-edit-signet-ilvl").html(), "0");
-    assert.equal($("#wrist-edit-signet-bonus").val(), undefined);
+    assert.equal($("#wrist-edit-signet-bonus1").val(), undefined);
 
 
     assert.ok($("#luck-recap-equipment-empty").is(":visible"));
@@ -1036,7 +1036,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#luck-edit-signet-description").html(), "");
     assert.equal($("#luck-edit-signet-label-level").html(), "20");
     assert.equal($("#luck-edit-signet-ilvl").html(), "0");
-    assert.equal($("#luck-edit-signet-bonus").val(), undefined);
+    assert.equal($("#luck-edit-signet-bonus1").val(), undefined);
 
 
     assert.ok($("#waist-recap-equipment-empty").is(":visible"));
@@ -1080,7 +1080,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#waist-edit-signet-description").html(), "");
     assert.equal($("#waist-edit-signet-label-level").html(), "20");
     assert.equal($("#waist-edit-signet-ilvl").html(), "0");
-    assert.equal($("#waist-edit-signet-bonus").val(), undefined);
+    assert.equal($("#waist-edit-signet-bonus1").val(), undefined);
 
 
     assert.ok($("#occult-recap-equipment-empty").is(":visible"));
@@ -1124,7 +1124,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#occult-edit-signet-description").html(), "");
     assert.equal($("#occult-edit-signet-label-level").html(), "20");
     assert.equal($("#occult-edit-signet-ilvl").html(), "0");
-    assert.equal($("#occult-edit-signet-bonus").val(), undefined);
+    assert.equal($("#occult-edit-signet-bonus1").val(), undefined);
 
     assert.equal($("#agent1-id").val(), '0');
     assert.equal($("#agent1-level").val(), '25');

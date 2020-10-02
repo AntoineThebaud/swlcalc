@@ -213,15 +213,15 @@ QUnit.test("should get and set the slot's signet level on recap view", function(
 });
 
 QUnit.test("should get and set the slot's signet description on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.finger.recap.signetDescription(), "Increases the damage and healing of all Basic Abilities by <span id=\"finger-recap-signet-bonus\" class=\"bonus-val const\">2.1011</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.finger.recap.signetDescription(), "Increases the damage and healing of all Basic Abilities by <span id=\"finger-recap-signet-bonus1\" class=\"bonus-val const\">2.1011</span><span class=\"bonus-val const\">%</span>.");
     swlcalc.gear.slots.finger.recap.signetDescription("Lorem ipsum dolor sit amet");
     assert.equal(swlcalc.gear.slots.finger.recap.signetDescription(), "Lorem ipsum dolor sit amet");
 });
 
 QUnit.test("should get and set the slot's signet bonus value on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.recap.signetBonus(), "69.7008");
-    swlcalc.gear.slots.luck.recap.signetBonus("1992.0804");
-    assert.equal(swlcalc.gear.slots.luck.recap.signetBonus(), "1992.0804");
+    assert.equal(swlcalc.gear.slots.luck.recap.signetBonusN(1), "69.7008");
+    swlcalc.gear.slots.luck.recap.signetBonusN(1, "1992.0804");
+    assert.equal(swlcalc.gear.slots.luck.recap.signetBonusN(1), "1992.0804");
 });
 
 QUnit.test("should get and set the slot's suffix on recap view", function(assert) {

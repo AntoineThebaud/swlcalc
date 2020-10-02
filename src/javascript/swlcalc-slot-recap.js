@@ -372,16 +372,16 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
             return this.el.signetDescription.html();
         }
     };
-
+    
     /**
-     * Getter/Setter for #slot-recap-signet-bonus
-     * => not accessible through like this.el.signetBonus because this element doesn't exist at application start
+     * Getter/Setter for any #slot-recap-signet-bonusN object
+     * => not accessible through like this.el.signetBonus1 because this element doesn't exist at application start
      */
-    this.signetBonus = function() {
-        if (arguments.length == 1) {
-            $('#' + this.id + '-recap-signet-bonus').text(arguments[0]);
+    this.signetBonusN = function(index) {
+        if (arguments.length == 2) {
+            $('#' + this.id + '-recap-signet-bonus' + index).text(arguments[1]);
         } else {
-            return $('#' + this.id + '-recap-signet-bonus').text();
+            return $('#' + this.id + '-recap-signet-bonus' + index).text();
         }
     };
 

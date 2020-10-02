@@ -57,7 +57,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      **********************************************************************************/
 
     /**
-     * Getter/Setter for #slot-equipment-id
+     * Getter/Setter for #slot-edit-equipment-id
      */
     this.equipmentId = function() {
         if (arguments.length == 1) {
@@ -68,7 +68,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-equipment-rarity
+     * Getter/Setter for #slot-edit-equipment-rarity
      */
     this.equipmentRarity = function() {
         if (arguments.length == 1) {
@@ -79,7 +79,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-equipment-quality
+     * Getter/Setter for #slot-edit-equipment-quality
      */
     this.equipmentQuality = function() {
         if (arguments.length == 1) {
@@ -90,7 +90,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-equipment-level
+     * Getter/Setter for #slot-edit-equipment-level
      */
     this.equipmentLevel = function() {
         if (arguments.length == 1) {
@@ -100,7 +100,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         }
     };
     /**
-     * Getter/Setter for #slot-equipment-level (min attribute)
+     * Getter/Setter for #slot-edit-equipment-level (min attribute)
      */
     this.equipmentLevelMin = function() {
         if (arguments.length == 1) {
@@ -110,7 +110,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         }
     };
     /**
-     * Getter/Setter for #slot-equipment-level (max attribute)
+     * Getter/Setter for #slot-edit-equipment-level (max attribute)
      */
     this.equipmentLevelMax = function() {
         if (arguments.length == 1) {
@@ -121,7 +121,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-equipment-stat-value
+     * Getter/Setter for #slot-edit-equipment-stat-value
      */
     this.equipmentStatValue = function() {
         if (arguments.length == 1) {
@@ -132,7 +132,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-equipment-iLvl
+     * Getter/Setter for #slot-edit-equipment-iLvl
      */
     this.equipmentILvl = function() {
         if (arguments.length == 1) {
@@ -143,7 +143,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-equipment-description
+     * Getter/Setter for #slot-edit-equipment-description
      */
     this.equipmentDescription = function() {
         if (arguments.length == 1) {
@@ -154,7 +154,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for any #slot-equipment-bonusN object
+     * Getter/Setter for any #slot-edit-equipment-bonusN object
      */
     this.equipmentBonusN = function(index) {
         if (arguments.length == 2) {
@@ -165,7 +165,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-equipment-img-item
+     * Getter/Setter for #slot-edit-equipment-img-item
      */
     this.equipmentImgItem = function() {
         if (arguments.length == 1) {
@@ -176,7 +176,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-equipment-img-rarity
+     * Getter/Setter for #slot-edit-equipment-img-rarity
      */
     this.equipmentImgRarity = function() {
         if (arguments.length == 1) {
@@ -187,7 +187,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-equipment-img-quality
+     * Getter/Setter for #slot-edit-equipment-img-quality
      */
     this.equipmentImgQuality = function() {
         if (arguments.length == 1) {
@@ -198,7 +198,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-equipment-label-level
+     * Getter/Setter for #slot-edit-equipment-label-level
      */
     this.equipmentLabelLevel = function() {
         if (arguments.length == 1) {
@@ -214,7 +214,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      **********************************************************************************/
 
     /**
-     * Getter/Setter for #slot-glyph
+     * Getter/Setter for #slot-edit-glyph
      */
     this.glyphId = function() {
         if (arguments.length == 1) {
@@ -225,7 +225,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-glyph-rarity
+     * Getter/Setter for #slot-edit-glyph-rarity
      */
     this.glyphRarity = function() {
         if (arguments.length == 1) {
@@ -236,7 +236,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-glyph-quality
+     * Getter/Setter for #slot-edit-glyph-quality
      */
     this.glyphQuality = function() {
         if (arguments.length == 1) {
@@ -247,7 +247,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-glyph-level
+     * Getter/Setter for #slot-edit-glyph-level
      */
     this.glyphLevel = function() {
         if (arguments.length == 1) {
@@ -257,7 +257,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         }
     };
     /**
-     * Getter/Setter for #slot-glyph-level (min attribute)
+     * Getter/Setter for #slot-edit-glyph-level (min attribute)
      */
     this.glyphLevelMin = function() {
         if (arguments.length == 1) {
@@ -267,7 +267,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         }
     };
     /**
-     * Getter/Setter for #slot-glyph-level (max attribute)
+     * Getter/Setter for #slot-edit-glyph-level (max attribute)
      */
     this.glyphLevelMax = function() {
         if (arguments.length == 1) {
@@ -278,7 +278,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-glyph-stat-rating
+     * Getter/Setter for #slot-edit-glyph-stat-rating
      */
     this.glyphStatRating = function() {
         if (arguments.length == 1) {
@@ -289,7 +289,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-glyph-stat-text
+     * Getter/Setter for #slot-edit-glyph-stat-text
      */
     this.glyphStatText = function() {
         if (arguments.length == 1) {
@@ -300,7 +300,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-glyph-iLvl
+     * Getter/Setter for #slot-edit-glyph-iLvl
      */
     this.glyphILvl = function() {
         if (arguments.length == 1) {
@@ -311,7 +311,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-glyph-img-item
+     * Getter/Setter for #slot-edit-glyph-img-item
      */
     this.glyphImgItem = function() {
         if (arguments.length == 1) {
@@ -322,7 +322,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-glyph-img-rarity
+     * Getter/Setter for #slot-edit-glyph-img-rarity
      */
     this.glyphImgRarity = function() {
         if (arguments.length == 1) {
@@ -333,7 +333,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-glyph-img-quality
+     * Getter/Setter for #slot-edit-glyph-img-quality
      */
     this.glyphImgQuality = function() {
         if (arguments.length == 1) {
@@ -344,7 +344,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-glyph-label-level
+     * Getter/Setter for #slot-edit-glyph-label-level
      */
     this.glyphLabelLevel = function() {
         if (arguments.length == 1) {
@@ -360,7 +360,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      **********************************************************************************/
 
     /**
-     * Getter/Setter for #slot-signet
+     * Getter/Setter for #slot-edit-signet
      */
     this.signetId = function() {
         if (arguments.length == 1) {
@@ -371,7 +371,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-signet-rarity
+     * Getter/Setter for #slot-edit-signet-rarity
      */
     this.signetRarity = function() {
         if (arguments.length == 1) {
@@ -382,7 +382,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-signet-level
+     * Getter/Setter for #slot-edit-signet-level
      */
     this.signetLevel = function() {
         if (arguments.length == 1) {
@@ -392,7 +392,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         }
     };
     /**
-     * Getter/Setter for #slot-signet-level (min attribute)
+     * Getter/Setter for #slot-edit-signet-level (min attribute)
      */
     this.signetLevelMin = function() {
         if (arguments.length == 1) {
@@ -402,7 +402,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         }
     };
     /**
-     * Getter/Setter for #slot-signet-level (max attribute)
+     * Getter/Setter for #slot-edit-signet-level (max attribute)
      */
     this.signetLevelMax = function() {
         if (arguments.length == 1) {
@@ -413,7 +413,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-signet-ilvl
+     * Getter/Setter for #slot-edit-signet-ilvl
      */
     this.signetILvl = function() {
         if (arguments.length == 1) {
@@ -424,7 +424,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-signet-description
+     * Getter/Setter for #slot-edit-signet-description
      */
     this.signetDescription = function() {
         if (arguments.length == 1) {
@@ -435,14 +435,14 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-signet-bonus
-     * => not accessible through like this.el.signetBonus because this element doesn't exist at application start
+     * Getter/Setter for any #slot-edit-signet-bonusN object
+     * => not accessible through like this.el.signetBonus1 because this element doesn't exist at application start
      */
-    this.signetBonus = function() {
-        if (arguments.length == 1) {
-            $('#' + this.id + '-edit-signet-bonus').text(arguments[0]);
+    this.signetBonusN = function(index) {
+        if (arguments.length == 2) {
+            $('#' + this.id + '-edit-signet-bonus' + index).text(arguments[1]);
         } else {
-            return $('#' + this.id + '-edit-signet-bonus').text();
+            return $('#' + this.id + '-edit-signet-bonus' + index).text();
         }
     };
 
@@ -455,7 +455,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-signet-img-item
+     * Getter/Setter for #slot-edit-signet-img-item
      */
     this.signetImgItem = function() {
         if (arguments.length == 1) {
@@ -466,7 +466,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-signet-img-rarity
+     * Getter/Setter for #slot-edit-signet-img-rarity
      */
     this.signetImgRarity = function() {
         if (arguments.length == 1) {
@@ -477,7 +477,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-signet-label-level
+     * Getter/Setter for #slot-edit-signet-label-level
      */
     this.signetLabelLevel = function() {
         if (arguments.length == 1) {
