@@ -1145,55 +1145,55 @@ swlcalc.data.equipments = {
                 id: 163,
                 type: 'Blade',
                 name: 'Dark Precipice',
-                description: 'Grants Master\'s Focus, Keen Edge, Resonance.'
+                description: 'Gain the effects of the following passives:</br></br><b>Master\'s Focus:</b></br>Whenever you gain Chi, you reduce the remaining cooldown time on "Supreme Harmony".</br></br><b>Keen Edge:</b></br>Increases the damage of your critical hits while "Hone" is active.</br></br><b>Resonance:</b></br>Whenever you gain Chi, you gain a buff that causes your next Blade hit to deal additional damage.'
             },
             {
                 id: 164,
                 type: 'Hammer',
                 name: 'Torturer\'s Instrument',
-                description: 'Grants Juggernaut, Outrage, Die Hard.'
+                description: 'Gain the effects of the following passives:</br></br><b>Juggernaut:</b></br>Unstoppable Force now has no resource cost, provides damage reduction, and increases healing received. Unstoppable Force has a 60 sec cooldown.</br></br><b>Rock Hard:</b></br>When using Blazing Fury you apply Debilitated and gain Protection.</br></br><b>Die Hard:</b></br>When you drop below 35% hp you gain a large mitigation boost and receive more healing, but your rage constantly drains. Expires when your rage runs out or you are healed above 40% hp.'
             },
             {
                 id: 165,
                 type: 'Fist',
                 name: 'Recluses\'s Fangs',
-                description: 'Grants Killer Instinct, Wild Burst, Bloody Mist.'
+                description: 'Gain the effects of the following passives:</br></br><b>Killer instinct:</b></br>Your "Primal Instinct" increases the critical damage of your heal over time and damage over time effects.</br></br><b>Wild Burst:</b></br>Your "Wild Surge" deals additional damage and healing to enemies and allies when the ground area expires.</br></br><b>Bloody Mist:</b></br>Critical hits with fist weapon abilities deal additional damage.'
             },
             {
                 id: 166,
                 type: 'Blood',
                 name: 'Lost Tome of Lies',
-                description: 'Grants Desolate, Contaminate, Crimson Pulse.'
+                description: 'Gain the effects of the following passives:</br></br><b>Desolate:</b></br>Your "Eldritch Scourge" deals more damage and heals for more.</br></br><b>Contaminate:</b></br>Your "Reap" deals increased damage based on your Corruption level when it was cast.</br></br><b>Crimson Pulse:</b></br>Whenever you critically hit or heal with a blood magic ability, you apply a damage over time effect or a heal over time effect.'
             },
             {
                 id: 167,
                 type: 'Chaos',
                 name: 'Dark Mysteries',
-                description: 'Grants X Factor, Out of Phase, Long Term Chaos.'
+                description: 'Gain the effects of the following passives:</br></br><b>X Factor:</b></br>"Anomaly" has a longer cooldown, increases your Evade chance for more and several seconds longer, applies Debilitated, and deals damage to targets when they stand back up.</br></br><b>Out of Phase:</b></br>"Twist Fate" applies Debilitated, and you gain a short duration effect that increases the amount of damage delayed by <i>Aegis of Parallelism</i> and increased evade chance.</br></br><b>Long Term Chaos:</b></br>Your <i>Aegis of Parallelism</i> delays damage over a longer period of time, delayed damage is reduced and your Extradimensional Defenders have increased health.'
             },
             {
                 id: 168,
                 type: 'Elementalism',
                 name: 'Sanity Siphon',
-                description: 'Grants Frigid Tempest, Volatile Current, Cryoblast.'
+                description: 'Gain the effects of the following passives:</br></br><b>Frigid Tempest:</b></br>"Blizzard" deals increased damage and enemies damaged by "Blizzard" are now immediately immobilised. In addition, standing in the area reduces your heat.</br></br><b>Volatile Current:</b></br>When you land near ennemies when using "Flicker" they are stunned and take additional damage.</br></br><b>Cryoblast:</b></br>"Flash Freeze" now roots damaged enemies. In addition, if "Flash Freeze" was used when above 30 heat, your Elemental damage is increased for a short time.'
             },
             {
                 id: 169,
                 type: 'Shotgun',
                 name: 'Thundering Demise',
-                description: 'Grants All Eyes on Me, Munitions Expert, Supremacy.'
+                description: 'Gain the effects of the following passives:</br></br><b>Supremacy:</b></br>"Bombardment" deals more damage and becomes a safe area, reducing damage you take while standing in it, and increasing allies\' Protection when they stand in it. "Bombardment" now has a 60 second cooldown and doesn\'t consume shotgun shells.</br></br><b>All Eyes On Me:</b></br>"Sonic Blast" silences the din and focuses everyone\'s attention on you, increasing your maximum health for a long time and causing attacks that glance you to increase your Protection.</br></br><b>Munitions Expert:</b></br>Whenever you are offered reload options, you are more likely to see Dragon\'s Breath Shells, Depleted Uranium Shells, and Armor-Piercing Shells. As a tank, you are more likely to see Anima-Infused Shells and Armor-Piercing Shells.'
             },
             {
                 id: 170,
                 type: 'Pistols',
                 name: 'Calamitous Inspiration',
-                description: 'Grants Bamboozle, Bullet Echo, Flechette Rounds.'
+                description: 'Gain the effects of the following passives:</br></br><b>Bamboozle:</b></br>Enemies damaged by "Trick Shot" are purged, then randomly stunned, rooted, or snared and take additional damage.</br></br><b>Bullet Echo:</b></br>When "Ricochet" expires, you gain a benefical effect that causes your pistol attacks to chain to enemies, dealing additional damage for a short time.</br></br><b>Flechette Rounds:</b></br>Your pistol attacks while you have a set of matched chambers deal additional damage to nearby enemies.'
             },
             {
                 id: 171,
                 type: 'Assault Rifle',
                 name: 'Whispered Desires',
-                description: 'Grants Permeate, Lingering Essence, Overclocked Loader.'
+                description: 'Gain the effects of the following passives:</br></br><b>Permeate:</b></br>"Anima Suffusion" increases the amount of healing your target receives.</br></br><b>Lingering Essence:</b></br>Your "Essence Grenades" leave behind a healing area for a short time.</br></br><b>Overclocked Loader:</b></br>Your chance to load grenades is increased.'
             },
         ],
         'head': [
