@@ -96,7 +96,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#weapon2-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon2-edit-signet-level").val(), undefined);
     assert.equal($("#weapon2-edit-signet-ilvl").html(), undefined);
-    assert.equal($("#weapon2-edit-signet-description").html(), 'This weapon deals <span id=\"weapon2-edit-signet-bonus1\" class=\"bonus-val dps\">333.45</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.');
+    assert.equal($("#weapon2-edit-signet-description").html(), 'This weapon deals <span id=\"weapon2-edit-signet-bonus1\" class=\"bonus-val dps\">795.093</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.');
 
     assert.equal($("#head-edit-ilvl").html(), "425");
     assert.equal($("#head-edit-equipment-id").val(), "1");
@@ -196,7 +196,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#luck-edit-signet-rarity").val(), "epic");
     assert.equal($("#luck-edit-signet-level").val(), "6");
     assert.equal($("#luck-edit-signet-ilvl").html(), "47");
-    assert.equal($("#luck-edit-signet-description").html(), 'When you critically hit, you are given a beneficial effect that damages attackers for <span id="luck-edit-signet-bonus1" class="bonus-val dps">69.7008</span> when they hit you for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.');
+    assert.equal($("#luck-edit-signet-description").html(), 'When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id="luck-edit-signet-bonus1" class="bonus-val dps">0</span> when they hit you for <span class="bonus-val const">5</span> seconds. This damage scales with your Maximum Health.');
 
     assert.equal($("#waist-edit-ilvl").html(), "361");
     assert.equal($("#waist-edit-equipment-id").val(), "1");

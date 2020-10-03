@@ -25,9 +25,9 @@ swlcalc.data.signets = {
                 name: 'Destruction',
                 description: 'This weapon deals <span id="%id-signet-bonus1" class="bonus-val dps">%d</span> additional damage to enemies that are below <span class="bonus-val const">35%</span> health.',
                 quality: {
-                    '1': [ 0.15 ],
-                    '2': [ 0.30 ],
-                    '3': [ 0.45 ]
+                    '1': [ 0.358 ],
+                    '2': [ 0.715 ],
+                    '3': [ 1.073 ]
                 },
                 stat: 'Combat Power'
             },
@@ -1557,28 +1557,28 @@ swlcalc.data.signets = {
                 id: 8,
                 name: 'Signet of Thorns',
                 type: 'All',
-                description: 'When you critically hit, you are given a beneficial effect that damages attackers for <span id="%id-signet-bonus1" class="bonus-val dps">%d</span> when they hit you for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
-                decimals: [ 4 ],
+                description: 'When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id="%id-signet-bonus1" class="bonus-val dps">??</span> when they hit you for <span class="bonus-val const">5</span> seconds. This damage scales with your Maximum Health.', // TODO : to be filled when ratios known
+                decimals: [ 0 ],
                 ratio: {
                     'standard': {
-                        init: [ 0.004 ],
-                        per_level: [ 0.0226/19 ] // == (0.0266 - 0.004) / (20 - 1)
+                        init: [ 0 ],
+                        per_level: [ 0 ]
                     },
                     'superior': {
-                        init: [ 0.0333 ],
-                        per_level: [ 0.0372/19 ] // == (0.0705 - 0.0333) / (20 - 1)
+                        init: [ 0 ],
+                        per_level: [ 0 ]
                     },
                     'epic': {
-                        init: [ 0.0818 ],
-                        per_level: [ 0.0466/19 ] // == (0.1284 - 0.0818) / (20 - 1)
+                        init: [ 0 ],
+                        per_level: [ 0 ]
                     },
                     'mythic': {
-                        init: [ 0.1477 ],
-                        per_level: [ 0.0592/19 ] // == (0.2069 - 0.1477) / (20 - 1)
+                        init: [ 0 ],
+                        per_level: [ 0 ]
                     },
                     'legendary': {
                         init: [ 0.2309 ],
-                        per_level: [ 0.1191/19 ] // == (0.35 - 0.2309) / (20 - 1)
+                        per_level: [ 0 ]
                     }
                 },
                 stat: 'Combat Power'

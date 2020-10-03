@@ -264,8 +264,9 @@ QUnit.test("should get and set the slot's signet description on edit view", func
     assert.equal(swlcalc.gear.slots.finger.edit.signetDescription(), "Lorem ipsum dolor sit amet");
 });
 
+// TODO : to update when new Thorn signet is known
 QUnit.test("should get and set the slot's signet bonus value on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "69.7008");
+    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "0");
     swlcalc.gear.slots.luck.edit.signetBonusN(1, "1992.0804");
     assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "1992.0804");
 });

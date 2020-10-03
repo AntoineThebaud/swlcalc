@@ -729,7 +729,7 @@ swlcalc.data.equipments = {
                 id: 101,
                 type: 'Elementalism',
                 name: 'Frozen Figurine',
-                description: 'You no longer dissipate heat naturally while in combat. However, your Elemental cold abilities reduce your heat level by an additional <span class="bonus-val const">60</span> when activated and deal <span class="bonus-val const">71%</span> more damage.'
+                description: 'You no longer dissipate heat naturally while in combat. However, your Elemental cold abilities reduce your heat level by an additional <span class="bonus-val const">50</span> when activated and deal <span class="bonus-val const">71%</span> more damage.'
             },
             {
                 id: 102,
@@ -1291,7 +1291,7 @@ swlcalc.data.equipments = {
             {
                 id: 16,
                 name: 'The Strong Force',
-                description: 'Whenever you hit the same enemy <span class="bonus-val const">10</span> times in succession, you deal <span class="bonus-val const">10%</span> more damage for <span class="bonus-val const">4</span> seconds.'
+                description: 'Whenever you hit the same enemy <span class="bonus-val const">14</span> times in succession, you deal <span class="bonus-val const">10%</span> more damage for <span class="bonus-val const">4</span> seconds.'
             },
             {
                 id: 17,
@@ -1361,14 +1361,14 @@ swlcalc.data.equipments = {
             {
                 id: 10,
                 name: 'Serpent Venom Ring',
-                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, you apply <span class="bonus-val const">1 - 2</span> stacks of Sap Vitality. Sap Vitality deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second and stacks up to <span class="bonus-val const">20</span> times. On reaching <span class="bonus-val const">20</span> stacks, all stacks are consumed to cause Hemorrhage, dealing <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> damage.',
+                description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, you apply <span class="bonus-val const">1 - 2</span> stacks of <b>Sap Vitality</b>.</br></br><b>Sap Vitality</b> deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second and stacks up to <span class="bonus-val const">20</span> times. On reaching <span class="bonus-val const">20</span> stacks, all stacks are consumed to cause Hemorrhage, dealing <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> damage.',
                 coefficients: [ 0.016, 4.5 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
             {
                 id: 11,
                 name: 'Commitment Band',
-                description: 'Whenever you attempt to cleanse, your defensive target receives <span class="bonus-val const">7%</span> more healing for <span class="bonus-val const">5</span> seconds.'
+                description: 'Whenever you attempt to cleanse, your defensive target receives <span class="bonus-val heal">7%</span> more healing for <span class="bonus-val const">5</span> seconds.'
             },
             {
                 id: 12,
@@ -1450,7 +1450,7 @@ swlcalc.data.equipments = {
             {
                 id: 13,
                 name: 'Lady Margaret\'s Tackle',
-                description: 'Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">33%</span> chance to apply <span class="bonus-val const">1</span> stack of Sap Vitality. Sap Vitality deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second and stacks up to <span class="bonus-val const">20</span> times. On reaching <span class="bonus-val const">20</span> stacks, all stacks are consumed to cause Hemorrhage, dealing <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> damage.',
+                description: 'Whenever you hit an enemy who is below <span class="bonus-val const">50%</span> of their maximum health, you have a <span class="bonus-val const">33%</span> chance to apply <span class="bonus-val const">1</span> stack of <b>Sap Vitality</b>.</br></br><b>Sap Vitality</b> deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second and stacks up to <span class="bonus-val const">20</span> times. On reaching <span class="bonus-val const">20</span> stacks, all stacks are consumed to cause Hemorrhage, dealing <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> damage.',
                 coefficients: [ 0.016, 4.5 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1592,7 +1592,7 @@ swlcalc.data.equipments = {
             {
                 id: 10,
                 name: 'Snake Eyes',
-                description: 'Whenever you critically hit, you have a <span class="bonus-val const">50%</span> chance to apply <span class="bonus-val const">1</span> stack of Sap Vitality. Sap Vitality deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second and stacks up to <span class="bonus-val const">20</span> times. On reaching <span class="bonus-val const">20</span> stacks, all stacks are consumed to cause Hemorrhage, dealing <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> damage.',
+                description: 'Whenever you critically hit, you have a <span class="bonus-val const">50%</span> chance to apply <span class="bonus-val const">1</span> stack of <b>Sap Vitality</b>.</br></br><b>Sap Vitality</b> deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second and stacks up to <span class="bonus-val const">20</span> times. On reaching <span class="bonus-val const">20</span> stacks, all stacks are consumed to cause Hemorrhage, dealing <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> damage.',
                 coefficients: [ 0.016, 4.5 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1720,7 +1720,7 @@ swlcalc.data.equipments = {
             {
                 id: 20,
                 name: 'Clostridium Tetani Chain',
-                description: 'Whenever you hit an enemy who is facing away from you, you have a <span class="bonus-val const">33%</span> chance to apply <span class="bonus-val const">1</span> stack of Sap Vitality. Sap Vitality deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second and stacks up to <span class="bonus-val const">20</span> times. On reaching <span class="bonus-val const">20</span> stacks, all stacks are consumed to cause Hemorrhage, dealing <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> damage.',
+                description: 'Whenever you hit an enemy who is facing away from you, you have a <span class="bonus-val const">33%</span> chance to apply <span class="bonus-val const">1</span> stack of <b>Sap Vitality</b>.</br></br><b>Sap Vitality</b> deals <span id="%id-equipment-bonus1" class="bonus-val dps">%d</span> damage every second and stacks up to <span class="bonus-val const">20</span> times. On reaching <span class="bonus-val const">20</span> stacks, all stacks are consumed to cause Hemorrhage, dealing <span id="%id-equipment-bonus2" class="bonus-val dps">%d</span> damage.',
                 coefficients: [ 0.016, 4.5 ],
                 stats: [ 'Combat Power', 'Combat Power' ]
             },
@@ -1802,7 +1802,7 @@ swlcalc.data.equipments = {
             {
                 id: 12,
                 name: '1,000,000 Likes',
-                description: 'Whenever you or any of your group members defeat an enemy, you have a <span class="bonus-val const">30%</span> chance to increase your Critical Power by <span class="bonus-val const">12%</span> for <span class="bonus-val const">5</span> seconds.'
+                description: 'Whenever you or any of your group members defeat an enemy, you have a <span class="bonus-val const">30%</span> chance to increase your Critical Damage by <span class="bonus-val const">12%</span> for <span class="bonus-val const">5</span> seconds.'
             }
         ]
     }
