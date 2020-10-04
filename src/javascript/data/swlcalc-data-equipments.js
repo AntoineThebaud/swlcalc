@@ -1156,7 +1156,7 @@ swlcalc.data.equipments = {
             {
                 id: 165,
                 type: 'Fist',
-                name: 'Recluses\'s Fangs',
+                name: 'Recluse\'s Fangs',
                 description: 'Gain the effects of the following passives:</br></br><b>Killer instinct:</b></br>Your "Primal Instinct" increases the critical damage of your heal over time and damage over time effects.</br></br><b>Wild Burst:</b></br>Your "Wild Surge" deals additional damage and healing to enemies and allies when the ground area expires.</br></br><b>Bloody Mist:</b></br>Critical hits with fist weapon abilities deal additional damage.'
             },
             {
