@@ -1302,6 +1302,11 @@ swlcalc.data.equipments = {
                 id: 18,
                 name: 'Leanashe\'s Pigment',
                 description: 'Whenever you evade <span class="bonus-val const">2</span> times in succession or are hit <span class="bonus-val const">5</span> times in succession, you generate <span class="bonus-val const">1 - 2</span> energy.'
+            },
+            {
+                id: 19,
+                name: 'Blood',
+                description: ''
             }
         ],
         'finger': [
@@ -1374,6 +1379,16 @@ swlcalc.data.equipments = {
                 id: 12,
                 name: 'Naonomi\'s Promise',
                 description: 'Whenever you purge a beneficial effect from an enemy or interrupt an enemy\'s ability, increase the chance the enemy\'s next attack will miss by <span class="bonus-val const">20%</span>. This effect has a <span class="bonus-val const">20</span> second cooldown.'
+            },
+            {
+                id: 13,
+                name: 'Band',
+                description: ''
+            },
+            {
+                id: 14,
+                name: 'Knot',
+                description: ''
             }
         ],
         'neck': [
@@ -1463,6 +1478,11 @@ swlcalc.data.equipments = {
                 id: 15,
                 name: 'Quantum Shift',
                 description: 'Whenever you lose health while below <span class="bonus-val const">50%</span> of your maximum health, you receive <span class="bonus-val heal">10%</span> more healing for <span class="bonus-val const">5</span> seconds. This effect has a <span class="bonus-val const">10</span> second cooldown.'
+            },
+            {
+                id: 16,
+                name: 'Pendant',
+                description: ''
             }
         ],
         'wrist': [
@@ -1509,7 +1529,7 @@ swlcalc.data.equipments = {
             },
             {
                 id: 8,
-                name: 'Wrist',
+                name: 'Timepiece',
                 description: '',
             },
             {
@@ -1533,7 +1553,12 @@ swlcalc.data.equipments = {
                 id: 12,
                 name: 'Tactician\'s Guard',
                 description: 'Whenever a Debilitated enemy attacks you, you have a <span class="bonus-val const">12%</span> chance to convert up to <span class="bonus-val const">3</span> seconds of Exposed into Debilitated.'
-            }
+            },
+            {
+                id: 13,
+                name: 'Bracer',
+                description: '',
+            },
         ],
         'luck': [
             {
@@ -1605,6 +1630,16 @@ swlcalc.data.equipments = {
                 id: 12,
                 name: 'Liberty Coins',
                 description: 'Whenever you evade an attack or an attack glances you, your movement speed is increased by <span class="bonus-val const">8%</span> for <span class="bonus-val const">3</span> seconds.'
+            },
+            {
+                id: 13,
+                name: 'Cards',
+                description: ''
+            },
+            {
+                id: 14,
+                name: 'Coins',
+                description: ''
             }
         ],
         'waist': [
@@ -1733,6 +1768,11 @@ swlcalc.data.equipments = {
                 id: 22,
                 name: 'Waistguard',
                 description: 'Whenever you hit an enemy who is facing towards you, you have a <span class="bonus-val const">20%</span> chance to increase your Evade chance by <span class="bonus-val const">2.5%</span>, or chance to be Glanced by <span class="bonus-val const">3.3%</span> for <span class="bonus-val const">5</span> seconds, whichever is more beneficial.'
+            },
+            {
+                id: 23,
+                name: 'Belt',
+                description: ''
             }
         ],
         'occult': [
@@ -1803,6 +1843,16 @@ swlcalc.data.equipments = {
                 id: 12,
                 name: '1,000,000 Likes',
                 description: 'Whenever you or any of your group members defeat an enemy, you have a <span class="bonus-val const">30%</span> chance to increase your Critical Damage by <span class="bonus-val const">12%</span> for <span class="bonus-val const">5</span> seconds.'
+            },
+            {
+                id: 13,
+                name: 'Bone',
+                description: ''
+            },
+            {
+                id: 14,
+                name: 'Charm',
+                description: ''
             }
         ]
     }
