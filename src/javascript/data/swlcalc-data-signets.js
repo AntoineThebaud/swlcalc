@@ -1383,26 +1383,26 @@ swlcalc.data.signets = {
                 type: 'All',
                 description: 'When you critically hit, you are healed for <span id="%id-signet-bonus1" class="bonus-val heal">%d</span>.',
                 decimals: [ 4 ],
-                ratio: {
+                ratio: { // TODO : estimated values here
                     'standard': {
-                        init: [ 14 ],
-                        per_level: [ 91/19 ] // == (105 - 14) / (20 - 1)
+                        init: [ 5 ],
+                        per_level: [ 30/19 ]
                     },
                     'superior': {
-                        init: [ 132 ],
-                        per_level: [ 158/19 ] // == (280 - 132) / (20 - 1)
+                        init: [ 43 ],
+                        per_level: [ 53/19 ]
                     },
                     'epic': {
-                        init: [ 325 ],
-                        per_level: [ 288/19 ] // == (513 - 325) / (20 - 1)
+                        init: [ 108 ],
+                        per_level: [ 96/19 ]
                     },
                     'mythic': {
-                        init: [ 591 ],
-                        per_level: [ 236/19 ] // == (827 - 591) / (20 - 1)
+                        init: [ 197 ],
+                        per_level: [ 79/19 ]
                     },
                     'legendary': {
-                        init: [ 922 ],
-                        per_level: [ 478/19 ] // == (1400 - 922) / (20 - 1)
+                        init: [ 307 ],
+                        per_level: [ 159/19 ]
                     }
                 }
             },
