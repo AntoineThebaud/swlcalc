@@ -196,7 +196,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#luck-edit-signet-rarity").val(), "epic");
     assert.equal($("#luck-edit-signet-level").val(), "6");
     assert.equal($("#luck-edit-signet-ilvl").html(), "47");
-    assert.equal($("#luck-edit-signet-description").html(), 'When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id="luck-edit-signet-bonus1" class="bonus-val dps">0</span> when they hit you for <span class="bonus-val const">5</span> seconds. This damage scales with your Maximum Health.');
+    assert.equal($("#luck-edit-signet-description").html(), 'When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id="luck-edit-signet-bonus1" class="bonus-val dps">70</span> when they hit you for <span class="bonus-val const">5</span> seconds. This damage scales with your Maximum Health.');
 
     assert.equal($("#waist-edit-ilvl").html(), "361");
     assert.equal($("#waist-edit-equipment-id").val(), "1");

@@ -319,21 +319,21 @@ QUnit.test("should update elements related to signet's level accordingly", funct
 
 // TODO : to update when new Thorn signet is known
 QUnit.test("should update elements related to signet's bonus accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "0");
+    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "70");
 
     swlcalc.gear.slots.luck.updateSignetBonus(9999,0);
 
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "0");
+    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "941");
 
     swlcalc.gear.slots.luck.edit.signetRarity("mythic");
     swlcalc.gear.slots.luck.updateSignetBonus(9999,0);
 
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "0");
+    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "1633");
 
     swlcalc.gear.slots.luck.edit.signetLevel("18");
     swlcalc.gear.slots.luck.updateSignetBonus(9999,0);
 
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "0");
+    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "2006");
 });
 
 QUnit.test("should update elements related to signet's ilvl accordingly", function(assert) {

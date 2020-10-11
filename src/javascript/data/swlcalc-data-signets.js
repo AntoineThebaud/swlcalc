@@ -1565,28 +1565,28 @@ swlcalc.data.signets = {
                 id: 8,
                 name: 'Signet of Thorns',
                 type: 'All',
-                description: 'When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id="%id-signet-bonus1" class="bonus-val dps">??</span> when they hit you for <span class="bonus-val const">5</span> seconds. This damage scales with your Maximum Health.', // TODO : to be filled when ratios known
+                description: 'When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id="%id-signet-bonus1" class="bonus-val dps">%d</span> when they hit you for <span class="bonus-val const">5</span> seconds. This damage scales with your Maximum Health.',
                 decimals: [ 0 ],
                 ratio: {
                     'standard': {
-                        init: [ 0 ],
-                        per_level: [ 0 ]
+                        init: [ 0.004 ],
+                        per_level: [ 0.0226/19 ] // == (0.0266 - 0.004) / (20 - 1)
                     },
                     'superior': {
-                        init: [ 0 ],
-                        per_level: [ 0 ]
+                        init: [ 0.0333 ],
+                        per_level: [ 0.0372/19 ] // == (0.0705 - 0.0333) / (20 - 1)
                     },
                     'epic': {
-                        init: [ 0 ],
-                        per_level: [ 0 ]
+                        init: [ 0.0818 ],
+                        per_level: [ 0.0466/19 ] // == (0.1284 - 0.0818) / (20 - 1)
                     },
                     'mythic': {
-                        init: [ 0 ],
-                        per_level: [ 0 ]
+                        init: [ 0.1477 ],
+                        per_level: [ 0.0592/19 ] // == (0.2069 - 0.1477) / (20 - 1)
                     },
                     'legendary': {
                         init: [ 0.2309 ],
-                        per_level: [ 0 ]
+                        per_level: [ 0.1191/19 ] // == (0.35 - 0.2309) / (20 - 1)
                     }
                 },
                 stat: 'Combat Power'
