@@ -6,6 +6,7 @@ QUnit.module("summary-unit-tests", {
         initiateSummary();
         initiateHandlers();
         renderButtonbar();
+        renderAnimaAllocation();
         initiateButtonBar();
     }
 });

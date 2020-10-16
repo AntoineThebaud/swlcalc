@@ -17,6 +17,10 @@ function renderGear() {
     swlcalc.gear.init();
 }
 
+function renderAnimaAllocation() {
+    renderTemplate("anima_allocation", {});
+}
+
 function renderSummary() {
     renderTemplate("summary", {});
 }

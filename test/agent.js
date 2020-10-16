@@ -3,6 +3,7 @@ QUnit.module("agent-unit-tests", {
     beforeEach: function(assert) {
         renderGear();
         renderSummary();
+        renderAnimaAllocation(); // TODO/REFACTOR this is needed otherwise anima allocation is undefined. to change ? Save anima allocation as attribute to gear maybe ?
         renderButtonbar(); // TODO/REFACTOR this is needed otherwise anima allocation is undefined. to change ? Save anima allocation as attribute to gear maybe ?
         initiateButtonBar(); // see previous comment
         initiateHandlers();

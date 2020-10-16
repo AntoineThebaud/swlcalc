@@ -3,6 +3,7 @@ QUnit.module("buttonbar-unit-tests", {
     beforeEach: function(assert) {
         renderSummary();
         renderButtonbar();
+        renderAnimaAllocation();
         renderGear();
         initiateHandlers();
         initiateButtonBar();

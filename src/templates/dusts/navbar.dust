@@ -48,18 +48,6 @@
                 </div>
             </div>
 
-            <div class="btn-group toplvl" role="group">
-                <!-- Anima allocation [ 100% DPS |V] -->
-                <div class="btn-group anima-allocation-li">
-                    <p class="anima-allocation-label">Anima allocation :</p>
-                    <select id="select-anima-allocation" class="anima-allocation-select dps">
-                        <option value="dps" class="dps" selected="true">100% Damage</option>
-                        <option value="heal" class="heal">100% Healing</option>
-                        <option value="tank" class="tank">100% Survivability</option>
-                    </select>
-                </div>
-            </div>
-
             <div class="btn-group right toplvl" role="group">
                 <!-- [ Reset ] -->
                 <button type="button" id="btn-reset" class="btn btn-danger">
