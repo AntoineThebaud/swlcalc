@@ -2,18 +2,18 @@
 QUnit.module("buttonbar-unit-tests", {
     beforeEach: function(assert) {
         renderSummary();
+        initiateSummary();
         renderButtonbar();
+        initiateButtonBar();
         renderAnimaAllocation();
+        initiateAnimaAllocation();
         renderGear();
         initiateHandlers();
-        initiateButtonBar();
-        initiateSummary();
         createTankBuild();
     }
 });
 
 QUnit.test("should have required buttonbar buttons in DOM", function(assert) {
-    assert.ok($("#select-anima-allocation").length !== 0, "select-anima-allocation dropdown exists");
     assert.ok($("#btn-all-standard").length !== 0, "all-standard button exists");
     assert.ok($("#btn-all-superior").length !== 0, "all-superior button exists");
     assert.ok($("#btn-all-epic").length !== 0, "all-epic button exists");

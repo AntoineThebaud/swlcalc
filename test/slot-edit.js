@@ -3,9 +3,8 @@ QUnit.module("slot-edit-unit-tests", {
     beforeEach: function(assert) {
         renderGear();
         renderSummary();
-        renderButtonbar(); // TODO/REFACTOR this is needed otherwise anima allocation is undefined. to change ? Save anima allocation as attribute to gear maybe ?
         renderAnimaAllocation();
-        initiateButtonBar(); // see previous comment
+        initiateAnimaAllocation();
         initiateHandlers();
         createTankBuild();
     }
@@ -114,8 +113,8 @@ QUnit.test("should get and set the slot's equipment description on edit view", f
 });
 
 QUnit.test("should get and set the slot's equipment bonus value on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.waist.edit.equipmentBonusN(1), "315");
-    assert.equal(swlcalc.gear.slots.waist.edit.equipmentBonusN(2), "196");
+    assert.equal(swlcalc.gear.slots.waist.edit.equipmentBonusN(1), "275");
+    assert.equal(swlcalc.gear.slots.waist.edit.equipmentBonusN(2), "248");
     swlcalc.gear.slots.waist.edit.equipmentBonusN(1, "19920804");
     assert.equal(swlcalc.gear.slots.waist.edit.equipmentBonusN(1), "19920804");
 });

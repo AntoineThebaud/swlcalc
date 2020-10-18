@@ -3,9 +3,8 @@ QUnit.module("slot-recap-unit-tests", {
     beforeEach: function(assert) {
         renderGear();
         renderSummary();
-        renderButtonbar(); // TODO/REFACTOR this is needed otherwise anima allocation is undefined. to change ? Save anima allocation as attribute to gear maybe ?
         renderAnimaAllocation();
-        initiateButtonBar(); // see previous comment
+        initiateAnimaAllocation();
         initiateHandlers();
         createTankBuild();
     }
@@ -33,8 +32,9 @@ QUnit.test("should have required components in the DOM", function(assert) {
         assert.ok(slot.recap.el.equipmentStatSection.length !== 0);
         assert.ok(slot.recap.el.equipmentStatRawValue.length !== 0);
         if (slot.group != "weapon") {
-            assert.ok(slot.recap.el.equipmentStatTransformedValue.length !== 0);
-            assert.ok(slot.recap.el.equipmentStatTransformedText.length !== 0);
+            assert.ok(slot.recap.el.equipmentStatHPValue.length !== 0);
+            assert.ok(slot.recap.el.equipmentStatARValue.length !== 0);
+            assert.ok(slot.recap.el.equipmentStatHRValue.length !== 0);
         }
         assert.ok(slot.recap.el.equipmentImgSection.length !== 0);
         assert.ok(slot.recap.el.equipmentImgItem.length !== 0);
@@ -105,16 +105,22 @@ QUnit.test("should get and set the slot's equipment stat raw value on recap view
     assert.equal(swlcalc.gear.slots.head.recap.equipmentStatRawValue(), "8");
 });
 
-QUnit.test("should get and set the slot's equipment stat transformed value on recap view", function(assert) {
-    // TODO/TEST assert.equal(swlcalc.gear.slots.head.recap.equipmentStatTransformedValue(), "1070");
-    swlcalc.gear.slots.head.recap.equipmentStatTransformedValue("8");
-    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatTransformedValue(), "8");
+QUnit.test("should get and set the slot's equipment stat HP value on recap view", function(assert) {
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatHPValue(), "+1344");
+    swlcalc.gear.slots.head.recap.equipmentStatHPValue("+8");
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatHPValue(), "+8");
 });
 
-QUnit.test("should get and set the slot's equipment stat transformed text on recap view", function(assert) {
-    // TODO/TEST assert.equal(swlcalc.gear.slots.head.recap.equipmentStatTransformedText(), "1070");
-    swlcalc.gear.slots.head.recap.equipmentStatTransformedText("Decele Rating");
-    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatTransformedText(), "Decele Rating");
+QUnit.test("should get and set the slot's equipment stat AR value on recap view", function(assert) {
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatARValue(), "+706");
+    swlcalc.gear.slots.head.recap.equipmentStatARValue("+8");
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatARValue(), "+8");
+});
+
+QUnit.test("should get and set the slot's equipment stat HR value on recap view", function(assert) {
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatHRValue(), "+471");
+    swlcalc.gear.slots.head.recap.equipmentStatHRValue("+8");
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatHRValue(), "+8");
 });
 
 QUnit.test("should get and set the slot's equipment description on recap view", function(assert) {
@@ -124,8 +130,8 @@ QUnit.test("should get and set the slot's equipment description on recap view", 
 });
 
 QUnit.test("should get and set the slot's equipment bonus value on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(1), "315");
-    assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(2), "196");
+    assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(1), "275");
+    assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(2), "248");
     swlcalc.gear.slots.waist.recap.equipmentBonusN(1, "19920804");
     assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(1), "19920804");
 });

@@ -3,9 +3,8 @@ QUnit.module("slot-unit-tests", {
     beforeEach: function(assert) {
         renderGear();
         renderSummary();
-        renderButtonbar(); // TODO/REFACTOR this is needed otherwise anima allocation is undefined. to change ? Save anima allocation as attribute to gear maybe ?
         renderAnimaAllocation();
-        initiateButtonBar(); // see previous comment
+        initiateAnimaAllocation();
         initiateHandlers();
         createTankBuild();
     }
@@ -114,26 +113,28 @@ QUnit.test("should update elements related to equipment's level accordingly", fu
 QUnit.test("should update elements related to equipment's stat rating accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.finger.edit.equipmentStatValue(), "642");
     assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatRawValue(), "642");
-    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatTransformedValue(), "+642");
 
     swlcalc.gear.slots.finger.edit.equipmentRarity("legendary");
     swlcalc.gear.slots.finger.updateEquipmentStatRating();
 
     assert.equal(swlcalc.gear.slots.finger.edit.equipmentStatValue(), "1405");
     assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatRawValue(), "1405");
-    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatTransformedValue(), "+1405");
 });
 
-QUnit.test("should update elements related to equipment's transformed stat value accordingly", function(assert) {
-  assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatTransformedValue(), "+642");
-  assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatTransformedText(), "Attack Rating");
+QUnit.test("should update elements related to equipment's \"transformed\" stat value accordingly", function(assert) {
+    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHPValue(), "+806");
+    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatARValue(), "+424");
+    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHRValue(), "+282");
 
-  swlcalc.gear.slots.finger.edit.equipmentStatValue("9876");
-  $('#select-anima-allocation').val("heal");
-  swlcalc.gear.slots.finger.updateEquipmentStatValues();
+    swlcalc.gear.slots.finger.edit.equipmentStatValue("9876");
+    $('#anima-allocation-damage-range').val(100);
+    $('#anima-allocation-healing-range').val(0);
+    $('#anima-allocation-survivability-range').val(100);
+    swlcalc.gear.slots.finger.updateEquipmentStatValues();
 
-  assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatTransformedValue(), "+7901");
-  assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatTransformedText(), "Heal Rating");
+    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHPValue(), "+28196");
+    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatARValue(), "+9876");
+    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHRValue(), "+0");
 });
 
 QUnit.test("should update elements related to equipment's ilvl accordingly", function(assert) {
@@ -156,7 +157,7 @@ QUnit.test("should update elements related to equipment's ilvl accordingly", fun
 });
 
 QUnit.test("should update every bonus values present in equipment's description (both edit & recap) accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class=\"bonus-val const\">10%</span>. In addition, once you have lost <span class=\"bonus-val const\">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">315</span> magical damage or your next healing Blood Magic ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">196</span> health.");
+    assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class=\"bonus-val const\">10%</span>. In addition, once you have lost <span class=\"bonus-val const\">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">275</span> magical damage or your next healing Blood Magic ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">248</span> health.");
 
     swlcalc.gear.slots.waist.updateEquipmentBonuses(9999,2222);
 

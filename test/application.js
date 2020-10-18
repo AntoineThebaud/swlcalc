@@ -14,18 +14,18 @@ QUnit.test("should initate swlcalc submodules", function(assert) {
 });
 
 QUnit.test("should import from hash", function(assert) {
-    location.hash = "weapon=3,4,3,19,3,2,2,13,0,2,0&weapon2=3,7,2,29,4,3,1,15,0,8,0&head=3,4,2,24,4,3,2,18,1,1,16&finger=2,2,1,20,5,4,4,15,4,1,2&neck=4,11,4,11,3,2,1,20,4,1,3&wrist=5,2,2,68,3,3,2,6,5,1,8&luck=1,1,1,10,2,2,1,18,3,1,13&waist=5,11,1,2,4,5,3,8,3,3,16&occult=1,7,3,19,5,1,3,2,5,2,10&agent1=11,50&agent2=0,50&agent3=28,25";
+    location.hash = "weapon=3,4,3,19,3,2,2,13,0,2,0&weapon2=3,7,2,29,4,3,1,15,0,8,0&head=3,4,2,24,4,3,2,18,1,1,16&finger=2,2,1,20,5,4,4,15,4,1,2&neck=4,11,4,11,3,2,1,20,4,1,3&wrist=5,2,2,68,3,3,2,6,5,1,8&luck=1,1,1,10,2,2,1,18,3,1,13&waist=5,11,1,2,4,5,3,8,3,3,16&occult=1,7,3,19,5,1,3,2,5,2,10&agent1=11,50&agent2=0,50&agent3=28,25&aa=66,55,44";
     swlcalc.init();
 
     // Summary
     assert.equal($("#stat-ilvl").html(), "565");
     assert.equal($("#stat-power-rating").html(), "5454");
     assert.equal($("#stat-weapon-power").html(), "1577");
-    assert.equal($("#stat-attack-rating").html(), "10101");
-    assert.equal($("#stat-heal-rating").html(), "4310");
-    assert.equal($("#stat-hit-points").html(), "8727");
-    assert.equal($("#stat-combat-power").html(), "875.9");
-    assert.equal($("#stat-healing-power").html(), "441.5");
+    assert.equal($("#stat-attack-rating").html(), "8247");
+    assert.equal($("#stat-heal-rating").html(), "6710");
+    assert.equal($("#stat-hit-points").html(), "15578");
+    assert.equal($("#stat-combat-power").html(), "736.8");
+    assert.equal($("#stat-healing-power").html(), "621.5");
     assert.equal($("#stat-critical-rating").html(), "+1598");
     assert.equal($("#stat-critical-chance").html(), "18.7%");
     assert.equal($("#stat-critical-power").html(), "+1858");
@@ -38,7 +38,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#stat-evade-chance").html(), "13.1%");
     // Equal($("#stat-physical-protection').html(), '+660');
     // equal($("#stat-magical-protection').html(), '+300');
-    assert.equal($("#stat-agent1-bonus").html(), '<span class="bonus-val dps">188</span> Physical Damage on Critical Hits');
+    assert.equal($("#stat-agent1-bonus").html(), '<span class="bonus-val dps">158</span> Physical Damage on Critical Hits');
     assert.equal($("#stat-agent2-bonus").html(), '');
     assert.equal($("#stat-agent3-bonus").html(), '+3.5% Chaos Magic Damage');
 
@@ -55,8 +55,6 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-recap-equipment-level").text(), "19");
     assert.ok($("#weapon-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#weapon-recap-equipment-stat-raw-value").text(), "1577");
-    assert.equal($("#weapon-recap-equipment-stat-transformed-value").html(), undefined);
-    assert.equal($("#weapon-recap-equipment-stat-transformed-text").html(), undefined);
     assert.ok($("#weapon-recap-equipment-img-section").is(":visible"));
     // TODO/TEST : buggy, should be ok : assert.equal($("#weapon-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#weapon-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/epic-42x42.png");
@@ -79,7 +77,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-recap-signet-item").text(), "Destruction");
     assert.equal($("#weapon-recap-signet-rarity").html(), undefined);
     assert.equal($("#weapon-recap-signet-level").html(), undefined);
-    assert.equal($("#weapon-recap-signet-description").html(), "This weapon deals <span id=\"weapon-recap-signet-bonus1\" class=\"bonus-val dps\">938.875</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.");
+    assert.equal($("#weapon-recap-signet-description").html(), "This weapon deals <span id=\"weapon-recap-signet-bonus1\" class=\"bonus-val dps\">789.728</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.");
     assert.equal($("#weapon-recap-suffix").html(), "of Destruction");
     assert.equal($("#weapon-recap-suffix-quality").html(), "Mk III");
     assert.equal($("#weapon-edit-ilvl").html(), "387");
@@ -110,7 +108,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon-edit-signet-level").val(), undefined);
     assert.equal($("#weapon-edit-signet-img-rarity").attr('src'), undefined);
-    assert.equal($("#weapon-edit-signet-description").html(), 'This weapon deals <span id=\"weapon-edit-signet-bonus1\" class=\"bonus-val dps\">938.875</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.');
+    assert.equal($("#weapon-edit-signet-description").html(), 'This weapon deals <span id=\"weapon-edit-signet-bonus1\" class=\"bonus-val dps\">789.728</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.');
     assert.equal($("#weapon-edit-signet-label-level").html(), undefined);
     assert.equal($("#weapon-edit-signet-ilvl").html(), undefined);
 
@@ -127,8 +125,6 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-recap-equipment-level").text(), "29");
     assert.ok($("#weapon2-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#weapon2-recap-equipment-stat-raw-value").text(), "1809");
-    assert.equal($("#weapon2-recap-equipment-stat-transformed-value").html(), undefined);
-    assert.equal($("#weapon2-recap-equipment-stat-transformed-text").html(), undefined);
     assert.ok($("#weapon2-recap-equipment-img-section").is(":visible"));
     // TODO/TEST : buggy, should be ok : assert.equal($("#weapon2-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#weapon2-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/epic-42x42.png");
@@ -198,13 +194,14 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-recap-equipment-level").text(), "24");
     assert.ok($("#head-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#head-recap-equipment-stat-raw-value").text(), "1113");
-    assert.equal($("#head-recap-equipment-stat-transformed-value").html(), "+1113");
-    assert.equal($("#head-recap-equipment-stat-transformed-text").html(), "Attack Rating");
+    assert.equal($("#head-recap-equipment-stat-hp-value").html(), "+1398");
+    assert.equal($("#head-recap-equipment-stat-ar-value").html(), "+735");
+    assert.equal($("#head-recap-equipment-stat-hr-value").html(), "+490");
     assert.ok($("#head-recap-equipment-img-section").is(":visible"));
     // TODO/TEST : buggy, should be ok : assert.equal($("#head-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#head-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal($("#head-recap-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
-    assert.equal($("#head-recap-equipment-description").html(), "Whenever you hit the same enemy <span class=\"bonus-val const\">3</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">328</span> physical damage.");
+    assert.equal($("#head-recap-equipment-description").html(), "Whenever you hit the same enemy <span class=\"bonus-val const\">3</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">276</span> physical damage.");
     assert.ok($("#head-recap-equipment-description-section").is(":visible"));
     assert.equal($("#head-recap-equipment-label-level").text(), "24");
     assert.ok($("#head-recap-glyph-section").is(":visible"));
@@ -237,7 +234,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#head-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal($("#head-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
     assert.equal($("#head-edit-equipment-label-level").html(), "24");
-    assert.equal($("#head-edit-equipment-description").html(), 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="head-edit-equipment-bonus1" class="bonus-val dps">328</span> physical damage.');
+    assert.equal($("#head-edit-equipment-description").html(), 'Whenever you hit the same enemy <span class="bonus-val const">3</span> times in succession, you deal <span id="head-edit-equipment-bonus1" class="bonus-val dps">276</span> physical damage.');
     assert.equal($("#head-edit-glyph-id").val(), "critical-power");
     assert.equal($("#head-edit-glyph-rarity").val(), "mythic");
     assert.equal($("#head-edit-glyph-quality").val(), "2");
@@ -269,8 +266,9 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#finger-recap-equipment-level").text(), "20");
     assert.ok($("#finger-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#finger-recap-equipment-stat-raw-value").text(), "314");
-    assert.equal($("#finger-recap-equipment-stat-transformed-value").html(), "+314");
-    assert.equal($("#finger-recap-equipment-stat-transformed-text").html(), "Attack Rating");
+    assert.equal($("#finger-recap-equipment-stat-hp-value").html(), "+394");
+    assert.equal($("#finger-recap-equipment-stat-ar-value").html(), "+207");
+    assert.equal($("#finger-recap-equipment-stat-hr-value").html(), "+138");
     assert.ok($("#finger-recap-equipment-img-section").is(":visible"));
     // TODO/TEST : buggy, should be ok : assert.equal($("#finger-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#finger-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/finger/superior-42x42.png");
@@ -340,8 +338,9 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#neck-recap-equipment-level").text(), "11");
     assert.ok($("#neck-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#neck-recap-equipment-stat-raw-value").text(), "1136");
-    assert.equal($("#neck-recap-equipment-stat-transformed-value").html(), "+1136");
-    assert.equal($("#neck-recap-equipment-stat-transformed-text").html(), "Attack Rating");
+    assert.equal($("#neck-recap-equipment-stat-hp-value").html(), "+1427");
+    assert.equal($("#neck-recap-equipment-stat-ar-value").html(), "+750");
+    assert.equal($("#neck-recap-equipment-stat-hr-value").html(), "+500");
     assert.ok($("#neck-recap-equipment-img-section").is(":visible"));
     // TODO/TEST : buggy, should be ok : assert.equal($("#neck-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#neck-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/neck/mythic-42x42.png");
@@ -411,13 +410,14 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#wrist-recap-equipment-level").text(), "68");
     assert.ok($("#wrist-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#wrist-recap-equipment-stat-raw-value").text(), "1951");
-    assert.equal($("#wrist-recap-equipment-stat-transformed-value").html(), "+1951");
-    assert.equal($("#wrist-recap-equipment-stat-transformed-text").html(), "Attack Rating");
+    assert.equal($("#wrist-recap-equipment-stat-hp-value").html(), "+2451");
+    assert.equal($("#wrist-recap-equipment-stat-ar-value").html(), "+1288");
+    assert.equal($("#wrist-recap-equipment-stat-hr-value").html(), "+858");
     assert.ok($("#wrist-recap-equipment-img-section").is(":visible"));
     // TODO/TEST : buggy, should be ok : assert.equal($("#wrist-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#wrist-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/wrist/legendary-42x42.png");
     assert.equal($("#wrist-recap-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
-    assert.equal($("#wrist-recap-equipment-description").html(), "Whenever you heal an ally who does not have any active detrimental effects, you have a <span class=\"bonus-val const\">25%</span> chance to restore <span id=\"wrist-recap-equipment-bonus1\" class=\"bonus-val heal\">221</span> health to that ally.");
+    assert.equal($("#wrist-recap-equipment-description").html(), "Whenever you heal an ally who does not have any active detrimental effects, you have a <span class=\"bonus-val const\">25%</span> chance to restore <span id=\"wrist-recap-equipment-bonus1\" class=\"bonus-val heal\">311</span> health to that ally.");
     assert.ok($("#wrist-recap-equipment-description-section").is(":visible"));
     assert.equal($("#wrist-recap-equipment-label-level").text(), "68");
     assert.ok($("#wrist-recap-glyph-section").is(":visible"));
@@ -450,7 +450,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#wrist-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/wrist/legendary-42x42.png");
     assert.equal($("#wrist-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
     assert.equal($("#wrist-edit-equipment-label-level").html(), "68");
-    assert.equal($("#wrist-edit-equipment-description").html(), 'Whenever you heal an ally who does not have any active detrimental effects, you have a <span class="bonus-val const">25%</span> chance to restore <span id="wrist-edit-equipment-bonus1" class="bonus-val heal">221</span> health to that ally.');
+    assert.equal($("#wrist-edit-equipment-description").html(), 'Whenever you heal an ally who does not have any active detrimental effects, you have a <span class="bonus-val const">25%</span> chance to restore <span id="wrist-edit-equipment-bonus1" class="bonus-val heal">311</span> health to that ally.');
     assert.equal($("#wrist-edit-glyph-id").val(), "critical-power");
     assert.equal($("#wrist-edit-glyph-rarity").val(), "epic");
     assert.equal($("#wrist-edit-glyph-quality").val(), "2");
@@ -482,8 +482,9 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#luck-recap-equipment-level").text(), "10");
     assert.ok($("#luck-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#luck-recap-equipment-stat-raw-value").text(), "53");
-    assert.equal($("#luck-recap-equipment-stat-transformed-value").html(), "+53");
-    assert.equal($("#luck-recap-equipment-stat-transformed-text").html(), "Attack Rating");
+    assert.equal($("#luck-recap-equipment-stat-hp-value").html(), "+67");
+    assert.equal($("#luck-recap-equipment-stat-ar-value").html(), "+35");
+    assert.equal($("#luck-recap-equipment-stat-hr-value").html(), "+23");
     assert.ok($("#luck-recap-equipment-img-section").is(":visible"));
     // TODO/TEST : buggy, should be ok : assert.equal($("#luck-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#luck-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/luck/standard-42x42.png");
@@ -553,8 +554,9 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#waist-recap-equipment-level").text(), "2");
     assert.ok($("#waist-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#waist-recap-equipment-stat-raw-value").text(), "775");
-    assert.equal($("#waist-recap-equipment-stat-transformed-value").html(), "+775");
-    assert.equal($("#waist-recap-equipment-stat-transformed-text").html(), "Attack Rating");
+    assert.equal($("#waist-recap-equipment-stat-hp-value").html(), "+974");
+    assert.equal($("#waist-recap-equipment-stat-ar-value").html(), "+512");
+    assert.equal($("#waist-recap-equipment-stat-hr-value").html(), "+341");
     assert.ok($("#waist-recap-equipment-img-section").is(":visible"));
     // TODO/TEST : buggy, should be ok : assert.equal($("#waist-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#waist-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/waist/legendary-42x42.png");
@@ -624,8 +626,9 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#occult-recap-equipment-level").text(), "19");
     assert.ok($("#occult-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#occult-recap-equipment-stat-raw-value").text(), "112");
-    assert.equal($("#occult-recap-equipment-stat-transformed-value").html(), "+112");
-    assert.equal($("#occult-recap-equipment-stat-transformed-text").html(), "Attack Rating");
+    assert.equal($("#occult-recap-equipment-stat-hp-value").html(), "+141");
+    assert.equal($("#occult-recap-equipment-stat-ar-value").html(), "+74");
+    assert.equal($("#occult-recap-equipment-stat-hr-value").html(), "+49");
     assert.ok($("#occult-recap-equipment-img-section").is(":visible"));
     // TODO/TEST : buggy, should be ok : assert.equal($("#occult-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#occult-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/occult/standard-42x42.png");
@@ -686,7 +689,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#agent1-id").val(), '11');
     assert.equal($("#agent1-level").val(), '50');
     assert.equal($("#agent1-text25").html(), '<span class="stat-value gear">+325</span> Attack Rating');
-    assert.equal($("#agent1-text50").html(), '<span class="bonus-val dps">188</span> Physical Damage on Critical Hits');
+    assert.equal($("#agent1-text50").html(), '<span class="bonus-val dps">158</span> Physical Damage on Critical Hits');
 
     assert.equal($("#agent2-id").val(), '0');
     assert.equal($("#agent2-level").val(), '50');

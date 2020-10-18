@@ -80,6 +80,10 @@ function initiateButtonBar() {
     swlcalc.buttonBar.init();
 }
 
+function initiateAnimaAllocation() {
+    swlcalc.animaAllocation.init();
+}
+
 function initiateExport() {
     swlcalc.export.init();
 }
