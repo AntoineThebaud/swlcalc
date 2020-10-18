@@ -24,8 +24,12 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         equipmentLevel:                $('#' + this.id + '-recap-equipment-level'),
         equipmentStatSection:          $('#' + this.id + '-recap-equipment-stat-section'),
         equipmentStatRawValue:         $('#' + this.id + '-recap-equipment-stat-raw-value'),
-        equipmentStatTransformedValue: $('#' + this.id + '-recap-equipment-stat-transformed-value'),
-        equipmentStatTransformedText:  $('#' + this.id + '-recap-equipment-stat-transformed-text'),
+        equipmentStatHPSection:        $('#' + this.id + '-recap-equipment-stat-hp-section'),
+        equipmentStatARSection:        $('#' + this.id + '-recap-equipment-stat-ar-section'),
+        equipmentStatHRSection:        $('#' + this.id + '-recap-equipment-stat-hr-section'),
+        equipmentStatHPValue:          $('#' + this.id + '-recap-equipment-stat-hp-value'),
+        equipmentStatARValue:          $('#' + this.id + '-recap-equipment-stat-ar-value'),
+        equipmentStatHRValue:          $('#' + this.id + '-recap-equipment-stat-hr-value'),
         equipmentImgSection:           $('#' + this.id + '-recap-equipment-img-section'),
         equipmentImgItem:              $('#' + this.id + '-recap-equipment-img-item'),
         equipmentImgRarity:            $('#' + this.id + '-recap-equipment-img-rarity'),
@@ -137,24 +141,50 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-recap-equipment-stat-transformed-value
+     * Getter/Setter for #slot-recap-equipment-stat-hp-value
      */
-    this.equipmentStatTransformedValue = function() {
+    this.equipmentStatHPValue = function() {
         if (arguments.length == 1) {
-            this.el.equipmentStatTransformedValue.text(arguments[0]);
+            this.el.equipmentStatHPValue.text(arguments[0]);
+            if (arguments[0] == 0) {
+                this.el.equipmentStatHPSection.hide();
+            } else if (this.el.equipmentStatHPSection.is(":hidden")) {
+                this.el.equipmentStatHPSection.show();
+            }
         } else {
-            return this.el.equipmentStatTransformedValue.text();
+            return this.el.equipmentStatHPValue.text();
         }
     };
 
     /**
-     * Getter/Setter for #slot-recap-equipment-stat-transformed-text
+     * Getter/Setter for #slot-recap-equipment-stat-ar-value
      */
-    this.equipmentStatTransformedText = function() {
+    this.equipmentStatARValue = function() {
         if (arguments.length == 1) {
-            this.el.equipmentStatTransformedText.text(arguments[0]);
+            this.el.equipmentStatARValue.text(arguments[0]);
+            if (arguments[0] == 0) {
+                this.el.equipmentStatARSection.hide();
+            } else if (this.el.equipmentStatARSection.is(":hidden")) {
+                this.el.equipmentStatARSection.show();
+            }
         } else {
-            return this.el.equipmentStatTransformedText.text();
+            return this.el.equipmentStatARValue.text();
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-recap-equipment-stat-hr-value
+     */
+    this.equipmentStatHRValue = function() {
+        if (arguments.length == 1) {
+            this.el.equipmentStatHRValue.text(arguments[0]);
+            if (arguments[0] == 0) {
+                this.el.equipmentStatHRSection.hide();
+            } else if (this.el.equipmentStatHRSection.is(":hidden")) {
+                this.el.equipmentStatHRSection.show();
+            }
+        } else {
+            return this.el.equipmentStatHRValue.text();
         }
     };
 
@@ -372,7 +402,7 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
             return this.el.signetDescription.html();
         }
     };
-    
+
     /**
      * Getter/Setter for any #slot-recap-signet-bonusN object
      * => not accessible through like this.el.signetBonus1 because this element doesn't exist at application start

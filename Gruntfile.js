@@ -41,6 +41,7 @@ module.exports = function(grunt) {
             '<%= dirs.src %>/<%= pkg.name %>.js',
             '<%= dirs.src %>/<%= pkg.name %>-summary.js',
             '<%= dirs.src %>/<%= pkg.name %>-swap.js',
+            '<%= dirs.src %>/<%= pkg.name %>-anima-allocation.js',
             '<%= dirs.src %>/<%= pkg.name %>-buttonbar.js',
             '<%= dirs.src %>/<%= pkg.name %>-export.js',
             '<%= dirs.src %>/<%= pkg.name %>-import.js',

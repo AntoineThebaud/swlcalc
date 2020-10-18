@@ -1,12 +1,47 @@
 <div id="anima_allocation">
     <div>
         <h4>Anima allocation</h4>
-        <div class="btn-group anima-allocation-li">
-            <select id="select-anima-allocation" class="anima-allocation-select dps">
-                <option value="dps" class="dps" selected="true">100% Damage</option>
-                <option value="heal" class="heal">100% Healing</option>
-                <option value="tank" class="tank">100% Survivability</option>
-            </select>
-        </div>
+
+        <table class="table anima-allocation-table">
+            <tr>
+                <td>
+                    <input id="anima-allocation-damage-range" type="range" min="0" max="100" value="100">
+                </td>
+                <td>
+                    <div class="stat-value dps">
+                        <span id="anima-allocation-damage-val">100</span>
+                        <span>%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="anima-allocation-healing-range" type="range" min="0" max="100" value="0">
+                </td>
+                <td>
+                    <div class="stat-value heal">
+                        <span id="anima-allocation-healing-val">0</span>
+                        <span>%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="anima-allocation-survivability-range" type="range" min="0" max="100" value="0">
+                </td>
+                <td>
+                    <div class="stat-value tank">
+                        <span id="anima-allocation-survivability-val">0</span>
+                        <span>%</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <!-- <select id="select-anima-allocation" class="anima-allocation-select dps">
+            <option value="dps" class="dps" selected="true">100% Damage</option>
+            <option value="heal" class="heal">100% Healing</option>
+            <option value="tank" class="tank">100% Survivability</option>
+        </select> -->
     </div>
 </div>

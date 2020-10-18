@@ -66,11 +66,18 @@
             {^slot.is_weapon}
             <div class="stat-transformed">
                 <p>With current Anima Allocation, you gain:</p>
-                <p>
-                    <span id="{slot.id}-recap-equipment-stat-transformed-value" class="stat-value gear"></span>
-                    <span> </span>
-                    <span id="{slot.id}-recap-equipment-stat-transformed-text"></span>
-                <p>
+                <p id="{slot.id}-recap-equipment-stat-hp-section">
+                    <span id="{slot.id}-recap-equipment-stat-hp-value" class="stat-value gear"></span>
+                    <span> Hit Points</span>
+                </p>
+                <p id="{slot.id}-recap-equipment-stat-ar-section">
+                    <span id="{slot.id}-recap-equipment-stat-ar-value" class="stat-value gear"></span>
+                    <span> Attack Rating</span>
+                </p>
+                <p id="{slot.id}-recap-equipment-stat-hr-section">
+                    <span id="{slot.id}-recap-equipment-stat-hr-value" class="stat-value gear"></span>
+                    <span> Heal Rating</span>
+                </p>
             </div>
             {/slot.is_weapon}
             <hr>

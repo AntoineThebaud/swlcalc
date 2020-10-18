@@ -18,7 +18,7 @@ swlcalc.export = function() {
     };
 
     /**
-     * Associates the right process to each trigger.
+     * Associates the right processing to each trigger.
      */
     var bindEvents = function() {
         el.export_btn.on('click', function(event) {

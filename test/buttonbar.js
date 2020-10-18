@@ -22,44 +22,6 @@ QUnit.test("should have required buttonbar buttons in DOM", function(assert) {
     assert.ok($("#btn-reset").length !== 0, "reset button exists");
 });
 
-QUnit.test("should update anima allocation accordingly", function(assert) {
-    assert.equal(swlcalc.buttonBar.getAnimaAllocation(), "dps");
-    assert.equal($('#select-anima-allocation').attr('class'), 'anima-allocation-select dps');
-    $('#select-anima-allocation').val("tank");
-    $('#select-anima-allocation').change();
-    assert.equal(swlcalc.buttonBar.getAnimaAllocation(), "tank");
-    assert.equal($('#select-anima-allocation').attr('class'), 'anima-allocation-select tank');
-});
-
-QUnit.test("should set anima allocation and affect stats correctly", function(assert) {
-    assert.equal($("#stat-combat-power").html(), "741.3");
-    assert.equal($("#stat-healing-power").html(), "460.7");
-    assert.equal($("#stat-attack-rating").html(), "8052");
-    assert.equal($("#stat-heal-rating").html(), "4310");
-    assert.equal($("#stat-hitpoints").html(), "9217");
-    $("#select-anima-allocation").val("heal");
-    $("#select-anima-allocation").change();
-    assert.equal($("#stat-combat-power").html(), "461.6");
-    assert.equal($("#stat-healing-power").html(), "684.4");
-    assert.equal($("#stat-attack-rating").html(), "4322");
-    assert.equal($("#stat-heal-rating").html(), "7294");
-    assert.equal($("#stat-hitpoints").html(), "9217");
-    $("#select-anima-allocation").val("tank");
-    $("#select-anima-allocation").change();
-    assert.equal($("#stat-combat-power").html(), "461.6");
-    assert.equal($("#stat-healing-power").html(), "460.7");
-    assert.equal($("#stat-attack-rating").html(), "4322");
-    assert.equal($("#stat-heal-rating").html(), "4310");
-    assert.equal($("#stat-hitpoints").html(), "19866");
-    $("#select-anima-allocation").val("dps");
-    $("#select-anima-allocation").change();
-    assert.equal($("#stat-combat-power").html(), "741.3");
-    assert.equal($("#stat-healing-power").html(), "460.7");
-    assert.equal($("#stat-attack-rating").html(), "8052");
-    assert.equal($("#stat-heal-rating").html(), "4310");
-    assert.equal($("#stat-hitpoints").html(), "9217");
-});
-
 QUnit.test("should set rarity on all slots", function(assert) {
     var mixedRarities = ["epic", "standard", "legendary", "superior", "mythic"];
 

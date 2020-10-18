@@ -99,17 +99,12 @@ swlcalc.summary = function() {
             }
         }
 
-        // first basic implementation of anima allocation
-        var animaAllocation = swlcalc.buttonBar.getAnimaAllocation();
-        if (animaAllocation == 'dps') {
-          
-            sums['attack-rating'] += Math.round(sums['power-rating'] * swlcalc.data.stats.ar_coefficient);
-        } else if (animaAllocation == 'heal') {
-            sums['heal-rating'] += Math.round(sums['power-rating'] * swlcalc.data.stats.hr_coefficient);
-        } else if (animaAllocation == 'tank') {
-            sums['hitpoints'] += Math.round(sums['power-rating'] * swlcalc.data.stats.hp_coefficient);
-        }
+        // Increment HP/AR/HR based on anima allocation repartition
+        sums['attack-rating'] += Math.round(sums['power-rating'] * swlcalc.data.stats.ar_coefficient * swlcalc.animaAllocation.getDamageRatio());
+        sums['heal-rating']   += Math.round(sums['power-rating'] * swlcalc.data.stats.hr_coefficient * swlcalc.animaAllocation.getHealingRatio());
+        sums['hitpoints']     += Math.round(sums['power-rating'] * swlcalc.data.stats.hp_coefficient * swlcalc.animaAllocation.getSurvivabilityRatio());
 
+        // Main, "head" stats are computed at the end when all required underlying stats have been computed
         sums['combat-power']  = computePrimaryPower('ar', sums['attack-rating'], sums['weapon-power']);
         sums['healing-power'] = computePrimaryPower('hr', sums['heal-rating'], sums['weapon-power']);
         sums['ilvl']          = computeAverageILvl(sumOfIlvl);

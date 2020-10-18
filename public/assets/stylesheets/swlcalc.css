@@ -16,6 +16,10 @@
     --color-heal: #05B114;
     --color-tank: #039BD9;
 
+    --color-dps-darker: #c92631;
+    --color-heal-darker: #049111;
+    --color-tank-darker: #0285ba;
+
     --color-attribute: #E3A40E;
     --color-const: #E97F0E;
 }
@@ -513,24 +517,6 @@ td.ilvl {
     min-width: auto;
 }
 /******************************************************/
-.anima-allocation-span {
-    position: relative;
-}
-.anima-allocation-li {
-    background-color: white;
-    background: var(--aallocation-bg);
-    color: var(--aallocation-text-color);
-}
-.anima-allocation-select {
-    font-size: 14px;
-    width: auto;
-    border: 0px;
-    background: var(--aallocation-bg);
-}
-div[id="row-anima-allocation"] {
-    margin-bottom: 25px;
-}
-/******************************************************/
 /* slot > recap */
 
 div[id$="-recap-div"] {
@@ -635,7 +621,7 @@ td[id$="-recap-equipment-img-section"] {
         position: fixed;
     }
     div[id="row-summary"] {
-        top: 150px;
+        top: 200px;
     }
 }
 
@@ -709,4 +695,16 @@ div[id="row-anima-allocation"], div[id="row-summary"] {
 }
 .agent-level-select {
     /* width: 150px; */
+}
+/*----------------------------------------------------------*/
+div[id="row-anima-allocation"] {
+    margin-bottom: 25px;
+}
+.anima-allocation-table > tbody > tr > td {
+    border: none;
+    padding: 0px;
+    text-align: right;
+}
+.anima-allocation-val {
+    padding-right: 5px;
 }

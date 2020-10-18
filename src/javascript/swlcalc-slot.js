@@ -209,29 +209,18 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newValue = base_value + Math.round(bonus_value);
         this.edit.equipmentStatValue(newValue);
         this.recap.equipmentStatRawValue(newValue);
-        this.updateEquipmentStatValueTransformed();
+        this.updateEquipmentStatValues();
     };
 
-    this.updateEquipmentStatValueTransformed = function() {
-        var animaAllocation = swlcalc.buttonBar.getAnimaAllocation();
+    /**
+     * Update the "transformed" equipment stat values (i.e hp, ar, hr), based on Power rating and Anima Allocation
+     */
+    this.updateEquipmentStatValues = function() {
         var valueRaw = this.edit.equipmentStatValue();
 
-        switch (animaAllocation) {
-            case 'dps':
-                this.recap.equipmentStatTransformedValue('+' + Math.round(valueRaw * swlcalc.data.stats.ar_coefficient));
-                this.recap.equipmentStatTransformedText('Attack Rating');
-                break;
-            case 'heal':
-                this.recap.equipmentStatTransformedValue('+' + Math.round(valueRaw * swlcalc.data.stats.hr_coefficient));
-                this.recap.equipmentStatTransformedText('Heal Rating');
-                break;
-            case 'tank':
-                this.recap.equipmentStatTransformedValue('+' + Math.round(valueRaw * swlcalc.data.stats.hp_coefficient));
-                this.recap.equipmentStatTransformedText('Hit Points');
-                break;
-            default:
-                throw "animaAllocation value \"" + animaAllocation + "\" is not valid.";
-        }
+        this.recap.equipmentStatHPValue('+' + Math.round(valueRaw * swlcalc.data.stats.hp_coefficient * swlcalc.animaAllocation.getSurvivabilityRatio()));
+        this.recap.equipmentStatARValue('+' + Math.round(valueRaw * swlcalc.data.stats.ar_coefficient * swlcalc.animaAllocation.getDamageRatio()));
+        this.recap.equipmentStatHRValue('+' + Math.round(valueRaw * swlcalc.data.stats.hr_coefficient * swlcalc.animaAllocation.getHealingRatio()));
     }
 
     /**

@@ -20,7 +20,7 @@ swlcalc.themeSwitch = function () {
       };
 
       /**
-       * Associates the right process to each trigger.
+       * Associates the right processing to each trigger.
        */
       var bindEvents = function() {
           el.btn_theme_classic.on('click', switchTheme);

@@ -6,8 +6,6 @@ swlcalc.buttonBar = function() {
 
     var elInit = function() {
         return {
-            select_anima_allocation: $('#select-anima-allocation'),
-
             btn_all_standard: $('#btn-all-standard'),
             btn_all_superior: $('#btn-all-superior'),
             btn_all_epic: $('#btn-all-epic'),
@@ -32,11 +30,9 @@ swlcalc.buttonBar = function() {
     };
 
     /**
-     * Associates the right process to each trigger.
+     * Associates the right processing to each trigger.
      */
     var bindEvents = function() {
-        el.select_anima_allocation.on('change', handleAnimaAllocationChange);
-
         el.btn_all_standard.on('click', setRarityOnAllSlots);
         el.btn_all_superior.on('click', setRarityOnAllSlots);
         el.btn_all_epic.on('click', setRarityOnAllSlots);
@@ -53,26 +49,6 @@ swlcalc.buttonBar = function() {
 
         el.btn_reset.on('click', resetGear);
     };
-
-    /**
-     * Get current anima allocation
-     */
-    var getAnimaAllocation = function() {
-        return el.select_anima_allocation.val();
-    }
-
-    /**
-     * Cascade anima allocation change on whole gear
-     */
-    var handleAnimaAllocationChange = function(event) {
-        el.select_anima_allocation.attr('class', 'anima-allocation-select ' + this.value); //TODO/REFACTOR : to abstract access ?
-
-        for (var id in swlcalc.gear.slots) {
-            swlcalc.gear.slots[id].updateEquipmentStatValueTransformed();
-        }
-        swlcalc.summary.updateAllStats();
-    };
-
     /**
      * Set the same chosen rarity to all equipments+glyphs+signets.
      */
@@ -191,8 +167,7 @@ swlcalc.buttonBar = function() {
     var oPublic = {
         el: el,
         init: init,
-        resetGear: resetGear,
-        getAnimaAllocation: getAnimaAllocation
+        resetGear: resetGear
     };
 
     return oPublic;

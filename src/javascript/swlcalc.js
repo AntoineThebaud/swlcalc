@@ -64,6 +64,7 @@ swlcalc = function() {
         startSwapHandler('weapon');
         startSwapHandler('weapon2');
         swlcalc.buttonBar.init();
+        swlcalc.animaAllocation.init();
         swlcalc.summary.init();
         swlcalc.export.init();
         swlcalc.themeSwitch.init();
