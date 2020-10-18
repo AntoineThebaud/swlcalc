@@ -1,5 +1,5 @@
-/*========================================================================================
- *                                        SWLCALC HASH STRUCTURE :
+/*==========================================================================================
+ *                                        SWLCALC HASH STRUCTURE (for gear slots):
  *=====================================================|====================================
  *                      Element                        |               Values
  *-----------------------------------------------------|------------------------------------
@@ -16,7 +16,7 @@
  *        / / / / / / / /  / / _ Signet's Level         [1->20]
  *       v v v v v v v v  v v v
  * wrist=4,1,4,3,4,4,0,3,5,85,3
- *===================================================|====================================*/
+ *=====================================================|====================================*/
 
 var swlcalc = swlcalc || {};
 
@@ -25,14 +25,16 @@ swlcalc.import = function() {
     /**
      * Imports a (compatible) URL into swlcalc
      */
-    var start = function(vars) {
-        for (var slotId in vars) {
-            splitVars = vars[slotId].split(',');
-            if (slotId.substring(0, 5) == 'agent') {
-                var index = parseInt(slotId.substring(5, 6)) - 1; // either equal to 0, 1 or 2
-                loadAgent(index, splitVars)
+    var start = function(urlVars) {
+        for (var urlVar in urlVars) {
+            paramsArray = urlVars[urlVar].split(',');
+            if (urlVar == 'aa') {
+                loadAnimaAllocation(paramsArray);
+            } else if (urlVar.substring(0, 5) == 'agent') {
+                var index = parseInt(urlVar.substring(5, 6)) - 1; // either equal to 0, 1 or 2
+                loadAgent(index, paramsArray);
             } else {
-                loadSlot(slotId, splitVars);
+                loadSlot(urlVar, paramsArray);
             }
         }
         swlcalc.summary.updateAllStats();
@@ -96,6 +98,18 @@ swlcalc.import = function() {
         // values[1] == Agent's Level
         agentObj.level(values[1]);
         agentObj.el.level.change();
+    };
+
+    /**
+     * Loads the anima allocation ratios from the hash and update GUI with it.
+     */
+    var loadAnimaAllocation = function(values) {
+        // values[0] == Damage percentage
+        swlcalc.animaAllocation.setDamagePercentage(values[0]);
+        // values[1] == Healing percentage
+        swlcalc.animaAllocation.setHealingPercentage(values[1]);
+        // values[2] == Survivability percentage
+        swlcalc.animaAllocation.setSurvivabilityPercentage(values[2]);
     };
 
     var oPublic = {

@@ -60,15 +60,13 @@ swlcalc.export = function() {
             url += '&';
         }
 
-        var i = 0;
         for (var index in swlcalc.gear.agents) {
             var agent = swlcalc.gear.agents[index];
             url += createAgentUrl(agent);
-            if (i < swlcalc.gear.nbAgents() - 1) {
-                url += '&';
-            }
-            i++;
+            url += '&';
         }
+
+        url += createAnimaAllocationUrl();
 
         return url;
     };
@@ -114,10 +112,25 @@ swlcalc.export = function() {
         return agentUrl;
     };
 
+    /**
+     * Builds the subpart of the export URL for the anima allocation
+     */
+    var createAnimaAllocationUrl = function(agent, state) {
+        // see swlcalc-import.js for the order
+
+        var animaAllocationUrl = 'aa='
+            + swlcalc.animaAllocation.getDamagePercentage() + ','
+            + swlcalc.animaAllocation.getHealingPercentage() + ','
+            + swlcalc.animaAllocation.getSurvivabilityPercentage()
+
+        return animaAllocationUrl;
+    };
+
     var oPublic = {
         init: init,
         createSlotUrl: createSlotUrl,
         createAgentUrl: createAgentUrl,
+        createAnimaAllocationUrl: createAnimaAllocationUrl,
         createExportUrl: createExportUrl,
         startExportUrl: startExportUrl,
     };

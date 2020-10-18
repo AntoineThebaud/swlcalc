@@ -64,32 +64,83 @@ swlcalc.animaAllocation = function() {
     }
 
     /**
+     * Get current anima allocation percentage for Damage part
+     */
+    var getDamagePercentage = function() {
+        return el.rangeDamage.val();
+    }
+
+    /**
+     * Get current anima allocation percentage for Healing part
+     */
+    var getHealingPercentage = function() {
+        return el.rangeHealing.val();
+    }
+
+    /**
+     * Get current anima allocation percentage for Survivability part
+     */
+    var getSurvivabilityPercentage = function() {
+        return el.rangeSurvivability.val();
+    }
+
+    /**
      * Get current anima allocation ratio for Damage part
      */
     var getDamageRatio = function() {
-        return el.rangeDamage.val() / 100;
+        return getDamagePercentage() / 100;
     }
 
     /**
      * Get current anima allocation ratio for Healing part
      */
     var getHealingRatio = function() {
-        return el.rangeHealing.val() / 100;
+        return getHealingPercentage() / 100;
     }
 
     /**
      * Get current anima allocation ratio for Survivability part
      */
     var getSurvivabilityRatio = function() {
-        return el.rangeSurvivability.val() / 100;
+        return getSurvivabilityPercentage() / 100;
+    }
+
+    /**
+     * Set current anima allocation percentage for Damage part
+     */
+    var setDamagePercentage = function(value) {
+        el.rangeDamage.val(value);
+        el.rangeDamage.change();
+    }
+
+    /**
+     * Set current anima allocation percentage for Healing part
+     */
+    var setHealingPercentage = function(value) {
+        el.rangeHealing.val(value);
+        el.rangeHealing.change();
+    }
+
+    /**
+     * Set current anima allocation percentage for Survivability part
+     */
+    var setSurvivabilityPercentage = function(value) {
+        el.rangeSurvivability.val(value);
+        el.rangeSurvivability.change();
     }
 
     var oPublic = {
         el: el,
         init: init,
+        getDamagePercentage: getDamagePercentage,
+        getHealingPercentage: getHealingPercentage,
+        getSurvivabilityPercentage: getSurvivabilityPercentage,
         getDamageRatio: getDamageRatio,
         getHealingRatio: getHealingRatio,
-        getSurvivabilityRatio: getSurvivabilityRatio
+        getSurvivabilityRatio: getSurvivabilityRatio,
+        setDamagePercentage: setDamagePercentage,
+        setHealingPercentage: setHealingPercentage,
+        setSurvivabilityPercentage: setSurvivabilityPercentage
     };
 
     return oPublic;
