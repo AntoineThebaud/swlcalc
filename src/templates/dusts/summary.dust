@@ -12,7 +12,7 @@
                 <tr class="separator"><td class="stat-name">Weapon Power</td><td id="stat-weapon-power" class="stat-value stat-inSummary">0</td></tr>
                 <tr><td class="stat-name">Attack Rating</td><td id="stat-attack-rating" class="stat-value dps stat-inSummary">0</td></tr>
                 <tr><td class="stat-name">Heal Rating</td><td id="stat-heal-rating" class="stat-value heal stat-inSummary">0</td></tr>
-                <tr class="separator"><td class="stat-name">Hitpoints</td><td id="stat-hitpoints" class="stat-value tank stat-inSummary">0</td></tr>
+                <tr class="separator"><td class="stat-name">Hit Points</td><td id="stat-hit-points" class="stat-value tank stat-inSummary">0</td></tr>
                 <tr><td class="stat-name">Combat Power</td><td id="stat-combat-power" class="stat-value dps stat-inSummary">0</td></tr>
                 <tr><td class="stat-name">Healing Power</td><td id="stat-healing-power" class="stat-value heal stat-inSummary">0</td></tr>
             </tbody>

@@ -20,7 +20,7 @@ QUnit.test("should have required summary in DOM", function(assert) {
     assert.ok($("#stat-weapon-power").length !== 0, "stat-weapon-power exists");
     assert.ok($("#stat-combat-power").length !== 0, "stat-combat-power exists");
     assert.ok($("#stat-healing-power").length !== 0, "stat-healing-power exists");
-    assert.ok($("#stat-hitpoints").length !== 0, "stat-hitpoints exists");
+    assert.ok($("#stat-hit-points").length !== 0, "stat-hit-points exists");
     assert.ok($("#stat-attack-rating").length !== 0, "stat-attack-rating exists");
     assert.ok($("#stat-heal-rating").length !== 0, "stat-heal-rating exists");
 
@@ -55,7 +55,7 @@ QUnit.test("should update all stats", function(assert) {
     assert.equal($("#stat-weapon-power").html(), "1832");
     assert.equal($("#stat-combat-power").html(), "741.3");
     assert.equal($("#stat-healing-power").html(), "460.7");
-    assert.equal($("#stat-hitpoints").html(), "9217");
+    assert.equal($("#stat-hit-points").html(), "9217");
     assert.equal($("#stat-attack-rating").html(), "8052");
     assert.equal($("#stat-heal-rating").html(), "4310");
     assert.equal($("#stat-critical-rating").html(), "+841");
@@ -83,7 +83,7 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
         "combat-power": 741.3,
         "healing-power": 460.7,
         "weapon-power": 1832,
-        "hitpoints": 9217,
+        "hit-points": 9217,
         "attack-rating": 8052,
         "heal-rating": 4310,
         "power-rating": 3730,
@@ -123,7 +123,7 @@ QUnit.test("should collect primary stats accordingly", function(assert) {
     assert.equal(sums[ "weapon-power" ], 0);
     assert.equal(sums[ "attack-rating" ], 4322);
     assert.equal(sums[ "heal-rating" ], 4310);
-    assert.equal(sums[ "hitpoints" ], 8727);
+    assert.equal(sums[ "hit-points" ], 8727);
     assert.equal(sums[ "power-rating" ], 0);
     assert.equal(sums[ "ilvl" ], 0);
 
@@ -136,7 +136,7 @@ QUnit.test("should collect primary stats accordingly", function(assert) {
     assert.equal(sums[ "weapon-power" ], 1832);
     assert.equal(sums[ "attack-rating" ], 8052);
     assert.equal(sums[ "heal-rating" ], 4310);
-    assert.equal(sums[ "hitpoints" ], 9217);
+    assert.equal(sums[ "hit-points" ], 9217);
     assert.equal(sums[ "combat-power" ], 741.3);
     assert.equal(sums[ "healing-power" ], 460.7);
 });

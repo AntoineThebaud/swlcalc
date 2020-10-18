@@ -65,7 +65,7 @@ swlcalc.summary = function() {
             'combat-power':  0,
             'healing-power': 0,
             'weapon-power':  0,
-            'hitpoints':     statsData['hp'].base + statsData['hp'].capstone + statsData['hp'].sp_passive,
+            'hit-points':     statsData['hp'].base + statsData['hp'].capstone + statsData['hp'].sp_passive,
             'attack-rating': statsData['ar'].base + statsData['ar'].capstone + statsData['ar'].sp_passive,
             'heal-rating':   statsData['hr'].base + statsData['hr'].capstone + statsData['hr'].sp_passive,
             'power-rating':  0,
@@ -102,7 +102,7 @@ swlcalc.summary = function() {
         // Increment HP/AR/HR based on anima allocation repartition
         sums['attack-rating'] += Math.round(sums['power-rating'] * swlcalc.data.stats.ar_coefficient * swlcalc.animaAllocation.getDamageRatio());
         sums['heal-rating']   += Math.round(sums['power-rating'] * swlcalc.data.stats.hr_coefficient * swlcalc.animaAllocation.getHealingRatio());
-        sums['hitpoints']     += Math.round(sums['power-rating'] * swlcalc.data.stats.hp_coefficient * swlcalc.animaAllocation.getSurvivabilityRatio());
+        sums['hit-points']     += Math.round(sums['power-rating'] * swlcalc.data.stats.hp_coefficient * swlcalc.animaAllocation.getSurvivabilityRatio());
 
         // Main, "head" stats are computed at the end when all required underlying stats have been computed
         sums['combat-power']  = computePrimaryPower('ar', sums['attack-rating'], sums['weapon-power']);

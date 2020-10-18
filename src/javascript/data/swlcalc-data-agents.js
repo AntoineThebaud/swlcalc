@@ -25,7 +25,7 @@ swlcalc.data.agents = [
                 value: '1000',
             },
             "50": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '980'
             }
         }
@@ -63,7 +63,7 @@ swlcalc.data.agents = [
         name: 'Roman Konstantinov',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490'
             },
             "50": {
@@ -77,7 +77,7 @@ swlcalc.data.agents = [
         name: 'Warlawurru',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490'
             },
             "50": {
@@ -91,7 +91,7 @@ swlcalc.data.agents = [
         name: 'Carlos Peraza',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490'
             },
             "50": {
@@ -351,7 +351,7 @@ swlcalc.data.agents = [
                 value: '+2.5% Damage',
             },
             "50": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '980',
             }
         }
@@ -393,7 +393,7 @@ swlcalc.data.agents = [
                 value: '+3.5% Assault Rifle Damage',
             },
             "50": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '980',
             }
         }
@@ -407,7 +407,7 @@ swlcalc.data.agents = [
                 value: '+3.5% Blade Damage',
             },
             "50": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '980',
             }
         }
@@ -421,7 +421,7 @@ swlcalc.data.agents = [
                 value: '+3.5% Blood Damage',
             },
             "50": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '980',
             }
         }
@@ -435,7 +435,7 @@ swlcalc.data.agents = [
                 value: '+3.5% Chaos Magic Damage',
             },
             "50": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '980',
             }
         }
@@ -449,7 +449,7 @@ swlcalc.data.agents = [
                 value: '+3.5% Dual Pistols Damage',
             },
             "50": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '980',
             }
         }
@@ -463,7 +463,7 @@ swlcalc.data.agents = [
                 value: '+3.5% Elementalism Damage',
             },
             "50": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '980',
             }
         }
@@ -477,7 +477,7 @@ swlcalc.data.agents = [
                 value: '+3.5% Fist Weapons Damage',
             },
             "50": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '980',
             }
         }
@@ -491,7 +491,7 @@ swlcalc.data.agents = [
                 value: '+3.5% Hammer Damage',
             },
             "50": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '980',
             }
         }
@@ -505,7 +505,7 @@ swlcalc.data.agents = [
                 value: '+3.5% Shotgun Damage',
             },
             "50": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '980',
             }
         }
@@ -529,7 +529,7 @@ swlcalc.data.agents = [
         name: 'Nassir',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490',
             },
             "50": {
@@ -543,7 +543,7 @@ swlcalc.data.agents = [
         name: 'Montgomery de la Roche',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490',
             },
             "50": {
@@ -557,7 +557,7 @@ swlcalc.data.agents = [
         name: 'Carter',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490',
             },
             "50": {
@@ -571,7 +571,7 @@ swlcalc.data.agents = [
         name: 'Hayden J. Montag',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490',
             },
             "50": {
@@ -585,7 +585,7 @@ swlcalc.data.agents = [
         name: 'Deputy Andy Gardener',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490',
             },
             "50": {
@@ -599,7 +599,7 @@ swlcalc.data.agents = [
         name: 'Amir',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490',
             },
             "50": {
@@ -613,7 +613,7 @@ swlcalc.data.agents = [
         name: 'Mihas Blaga',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490',
             },
             "50": {
@@ -627,7 +627,7 @@ swlcalc.data.agents = [
         name: 'Petru',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490',
             },
             "50": {
@@ -641,7 +641,7 @@ swlcalc.data.agents = [
         name: 'Aurélie',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490',
             },
             "50": {
@@ -809,7 +809,7 @@ swlcalc.data.agents = [
         name: 'Jack Boone',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490',
             },
             "50": {
@@ -823,7 +823,7 @@ swlcalc.data.agents = [
         name: 'Jeronimo de Montejo',
         levels: {
             "25": {
-                type: 'hitpoints',
+                type: 'hit-points',
                 value: '490',
             },
             "50": {

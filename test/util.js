@@ -17,11 +17,11 @@ QUnit.test("should return correctly-rounded value", function(assert) {
 });
 
 QUnit.test("should identify a primary stat", function(assert) {
-    assert.equal(swlcalc.util.isPrimaryStat('hitpoints'), true);
+    assert.equal(swlcalc.util.isPrimaryStat('hit-points'), true);
     assert.equal(swlcalc.util.isPrimaryStat('critical-rating'), false);
 });
 
 QUnit.test("should identify a secondary stat", function(assert) {
-    assert.equal(swlcalc.util.isSecondaryStat('hitpoints'), false);
+    assert.equal(swlcalc.util.isSecondaryStat('hit-points'), false);
     assert.equal(swlcalc.util.isSecondaryStat('critical-rating'), true);
 });

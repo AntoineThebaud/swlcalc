@@ -23,7 +23,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#stat-weapon-power").html(), "1577");
     assert.equal($("#stat-attack-rating").html(), "10101");
     assert.equal($("#stat-heal-rating").html(), "4310");
-    assert.equal($("#stat-hitpoints").html(), "8727");
+    assert.equal($("#stat-hit-points").html(), "8727");
     assert.equal($("#stat-combat-power").html(), "875.9");
     assert.equal($("#stat-healing-power").html(), "441.5");
     assert.equal($("#stat-critical-rating").html(), "+1598");
@@ -709,7 +709,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#stat-weapon-power").html(), "0");
     assert.equal($("#stat-attack-rating").html(), "4322");
     assert.equal($("#stat-heal-rating").html(), "4310");
-    assert.equal($("#stat-hitpoints").html(), "8727");
+    assert.equal($("#stat-hit-points").html(), "8727");
     assert.equal($("#stat-combat-power").html(), "324.2");
     assert.equal($("#stat-healing-power").html(), "323.3");
     assert.equal($("#stat-critical-rating").html(), "+756");

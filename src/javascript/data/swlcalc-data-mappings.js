@@ -6,7 +6,7 @@ swlcalc.data.stat_mapping = {
     'attack-rating',
     'heal-rating',
     'hit-rating',
-    'hitpoints',
+    'hit-points',
     //'protection'
   ],
   secondary_stats : [
@@ -23,7 +23,7 @@ swlcalc.data.stat_mapping = {
     'evade-rating': 'Evade Rating',
     'defense-rating': 'Defense Rating',
     'heal-rating': 'Heal Rating',
-    'hitpoints': 'Hit Points',
+    'hit-points': 'Hit Points',
     'hit-rating': 'Hit Rating',
     'none': '',
     'protection': 'Protection'
