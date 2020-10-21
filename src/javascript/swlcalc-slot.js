@@ -171,7 +171,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var qualityName = swlcalc.data.quality_mapping[this.group].to_name[newQuality];
         this.recap.equipmentQuality(qualityName);
         if (this.isWeapon()) {
-            this.recap.suffixQuality(qualityName);
+            this.recap.affixQuality(qualityName);
             // little hack here : use quality's index in rarity mapping to display the right color
             this.recap.el.signetTitle.attr('class', 'color-' + swlcalc.data.rarity_mapping.to_name[newQuality]);
         }
@@ -406,7 +406,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.recap.signetDescription(newDescription.replace(/%id/g, this.id + '-recap'));
 
         this.recap.signetItem(newSignet.name);
-        if (this.isWeapon()) this.recap.suffix(newSignet.name);
+        if (this.isWeapon()) this.recap.affix(newSignet.name);
     };
 
 
@@ -457,7 +457,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
                 this.recap.signetBonusN(i + 1, newBonusVal);
             }
 
-            // update suffix bonus's color (will do nothing if signet-wrapper doesnt exist)
+            // update affix bonus's color (will do nothing if signet-wrapper doesnt exist)
             // not part of the above loop because, for the moment, there can be only one value at a time for which this coloring applies
             var newClass = 'bonus-val color-' + swlcalc.data.rarity_mapping.to_name[this.edit.equipmentQuality()];
             this.edit.signetBonusWrapper().attr('class', newClass);

@@ -57,8 +57,8 @@ QUnit.test("should have required components in the DOM", function(assert) {
         assert.ok(slot.recap.el.signetTitle.length !== 0);
         assert.ok(slot.recap.el.signetItem.length !== 0);
         if (slot.group == "weapon") {
-            assert.ok(slot.recap.el.suffix.length !== 0);
-            assert.ok(slot.recap.el.suffixQuality.length !== 0);
+            assert.ok(slot.recap.el.affix.length !== 0);
+            assert.ok(slot.recap.el.affixQuality.length !== 0);
         } else {
             assert.ok(slot.recap.el.signetRarity.length !== 0);
             assert.ok(slot.recap.el.signetLevel.length !== 0);
@@ -232,24 +232,24 @@ QUnit.test("should get and set the slot's signet bonus value on recap view", fun
     assert.equal(swlcalc.gear.slots.luck.recap.signetBonusN(1), "1992.0804");
 });
 
-QUnit.test("should get and set the slot's suffix on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.weapon2.recap.suffix(), "of Destruction");
-    swlcalc.gear.slots.weapon2.recap.suffix("Solution");
-    assert.equal(swlcalc.gear.slots.weapon2.recap.suffix(), "of Solution");
+QUnit.test("should get and set the slot's affix on recap view", function(assert) {
+    assert.equal(swlcalc.gear.slots.weapon2.recap.affix(), "of Destruction");
+    swlcalc.gear.slots.weapon2.recap.affix("Solution");
+    assert.equal(swlcalc.gear.slots.weapon2.recap.affix(), "of Solution");
 });
 
-QUnit.test("should get and set the slot's suffix quality on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.weapon.recap.suffixQuality(), "Mk I");
-    swlcalc.gear.slots.weapon.recap.suffixQuality("Mk X");
-    assert.equal(swlcalc.gear.slots.weapon.recap.suffixQuality(), "Mk X");
+QUnit.test("should get and set the slot's affix quality on recap view", function(assert) {
+    assert.equal(swlcalc.gear.slots.weapon.recap.affixQuality(), "Mk I");
+    swlcalc.gear.slots.weapon.recap.affixQuality("Mk X");
+    assert.equal(swlcalc.gear.slots.weapon.recap.affixQuality(), "Mk X");
 });
 
 QUnit.test("should return undefined or empty for elements that don't exist for this slot", function(assert) {
     for (var slotId in swlcalc.gear.slots) {
         var slot = swlcalc.gear.slots[slotId];
         if (slot.group == "talisman") {
-            assert.equal(slot.recap.suffix(), "");
-            assert.equal(slot.recap.suffixQuality(), "");
+            assert.equal(slot.recap.affix(), "");
+            assert.equal(slot.recap.affixQuality(), "");
         } else if (slot.group == "weapon") {
             assert.equal(slot.recap.signetRarity(), "");
             assert.equal(slot.recap.signetLevel(), "");

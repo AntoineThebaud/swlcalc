@@ -139,7 +139,7 @@
                 <table id="{id}-edit-signets" class="table table-slots">
                     {?is_weapon}
                     <tr>
-                        <td class="item-title lightgrey" colspan="2">Suffix</td>
+                        <td class="item-title lightgrey" colspan="2">Affix</td>
                         <td id="{id}-edit-signet-description" class="item-description" colspan="3" rowspan="2"></td>
                     <tr>
                         <td class="signet-select" colspan="2">

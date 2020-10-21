@@ -53,8 +53,8 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         signetRarity:                  $('#' + this.id + '-recap-signet-rarity'),
         signetLevel:                   $('#' + this.id + '-recap-signet-level'),
         signetDescription:             $('#' + this.id + '-recap-signet-description'),
-        suffix:                        $('#' + this.id + '-recap-suffix'),
-        suffixQuality:                 $('#' + this.id + '-recap-suffix-quality')
+        affix:                         $('#' + this.id + '-recap-affix'),
+        affixQuality:                  $('#' + this.id + '-recap-affix-quality')
     };
 
     /**
@@ -424,29 +424,29 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-recap-suffix
+     * Getter/Setter for #slot-recap-affix
      */
-    this.suffix = function() {
+    this.affix = function() {
         if (arguments.length == 1) {
-            this.el.suffix.text('of '+ arguments[0]);
+            this.el.affix.text('of '+ arguments[0]);
             if (arguments[0] == '') {
-                this.el.suffix.hide();
-            } else if (this.el.suffix.is(":hidden")) {
-                this.el.suffix.show();
+                this.el.affix.hide();
+            } else if (this.el.affix.is(":hidden")) {
+                this.el.affix.show();
             }
         } else {
-            return this.el.suffix.text();
+            return this.el.affix.text();
         }
     };
 
     /**
-     * Getter/Setter for #slot-recap-suffix-quality
+     * Getter/Setter for #slot-recap-affix-quality
      */
-    this.suffixQuality = function() {
+    this.affixQuality = function() {
         if (arguments.length == 1) {
-            this.el.suffixQuality.text(arguments[0]);
+            this.el.affixQuality.text(arguments[0]);
         } else {
-            return this.el.suffixQuality.text();
+            return this.el.affixQuality.text();
         }
     };
 };

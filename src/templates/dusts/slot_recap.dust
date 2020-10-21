@@ -19,7 +19,7 @@
                         {?slot.is_weapon}
                         <span id="{slot.id}-recap-equipment-item"></span>
                         <span> </span>
-                        <span id="{slot.id}-recap-suffix"></span>
+                        <span id="{slot.id}-recap-affix"></span>
                         <span> </span>
                         <span id="{slot.id}-recap-equipment-quality"></span>
                         {:else}
@@ -126,7 +126,7 @@
                 <span id="{slot.id}-recap-signet-item"></span>
                 {?slot.is_weapon}
                 <span> </span>
-                <span id="{slot.id}-recap-suffix-quality"></span>
+                <span id="{slot.id}-recap-affix-quality"></span>
                 {/slot.is_weapon}
             </h6>
             {^slot.is_weapon}

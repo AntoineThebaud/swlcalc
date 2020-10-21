@@ -117,7 +117,7 @@ swlcalc.data.quality_mapping = {
     }
 };
 
-swlcalc.data.suffix_mapping = {
+swlcalc.data.affix_mapping = {
     to_num: {
         'alacrity': 1,
         'destruction': 2,

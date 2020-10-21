@@ -87,13 +87,13 @@ QUnit.test("should update elements related to equipment's quality accordingly", 
 
 QUnit.test("should update elements related to equipment's quality accordingly (particular case of weapons) ", function(assert) {
     assert.equal(swlcalc.gear.slots.weapon2.edit.equipmentQuality(), "3");
-    assert.equal(swlcalc.gear.slots.weapon2.recap.suffixQuality(), "Mk III");
+    assert.equal(swlcalc.gear.slots.weapon2.recap.affixQuality(), "Mk III");
     assert.equal(swlcalc.gear.slots.weapon2.recap.el.signetTitle.attr('class'), 'color-epic');
 
     swlcalc.gear.slots.weapon2.edit.equipmentQuality("1");
     swlcalc.gear.slots.weapon2.updateEquipmentQuality();
 
-    assert.equal(swlcalc.gear.slots.weapon2.recap.suffixQuality(), "Mk I");
+    assert.equal(swlcalc.gear.slots.weapon2.recap.affixQuality(), "Mk I");
     assert.equal(swlcalc.gear.slots.weapon2.recap.el.signetTitle.attr('class'), 'color-standard');
 });
 
@@ -280,12 +280,12 @@ QUnit.test("should update elements related to signet's item/id accordingly", fun
 });
 
 QUnit.test("should update elements related to signet's item/id accordingly (particular case of weapons) ", function(assert) {
-    assert.equal(swlcalc.gear.slots.weapon.recap.suffix(), 'of Restoration');
+    assert.equal(swlcalc.gear.slots.weapon.recap.affix(), 'of Restoration');
 
     swlcalc.gear.slots.weapon.edit.signetId("2");
     swlcalc.gear.slots.weapon.updateSignet();
 
-    assert.equal(swlcalc.gear.slots.weapon.recap.suffix(), 'of Destruction');
+    assert.equal(swlcalc.gear.slots.weapon.recap.affix(), 'of Destruction');
 });
 
 QUnit.test("should update elements related to signet's rarity accordingly", function(assert) {
