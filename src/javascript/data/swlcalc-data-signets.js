@@ -1590,6 +1590,64 @@ swlcalc.data.signets = {
                     }
                 },
                 stat: 'Combat Power'
+            },
+            {
+                id: 9,
+                name: 'Signet of Vitalization',
+                type: 'All',
+                description: 'When you activate a Signature ability, gain <span id="%id-signet-bonus1" class="bonus-val heal">%d</span> temporary health for <span class="bonus-val const">5</span> seconds.',
+                decimals: [ 0 ],
+                ratio: {
+                    'standard': {
+                        init: [ 59 ],
+                        per_level: [ 378/19 ] // == (437 - 59) / (20 - 1)
+                    },
+                    'superior': {
+                        init: [ 550 ],
+                        per_level: [ 613/19 ] // == (1163 - 550) / (20 - 1)
+                    },
+                    'epic': {
+                        init: [ 1344 ],
+                        per_level: [ 783/19 ] // == (2127 - 1344) / (20 - 1)
+                    },
+                    'mythic': {
+                        init: [ 2434 ],
+                        per_level: [ 982/19 ] // == (3416 - 2434) / (20 - 1)
+                    },
+                    'legendary': {
+                        init: [ 3778 ],
+                        per_level: [ 1987/19 ] // == (5765 - 3778) / (20 - 1)
+                    }
+                }
+            },
+            {
+                id: 10,
+                name: 'Signet of Resilience',
+                type: 'All',
+                description: 'When you activate a Signature ability, gain <span id="%id-signet-bonus1" class="bonus-val const">%d</span> Protection for <span class="bonus-val const">3</span> seconds.',
+                decimals: [ 0 ],
+                ratio: {
+                    'standard': {
+                        init: [ 23 ],
+                        per_level: [ 149/19 ] // == (172 - 23) / (20 - 1)
+                    },
+                    'superior': {
+                        init: [ 218 ],
+                        per_level: [ 242/19 ] // == (460 - 218) / (20 - 1)
+                    },
+                    'epic': {
+                        init: [ 541 ],
+                        per_level: [ 307/19 ] // == (848 - 541) / (20 - 1)
+                    },
+                    'mythic': {
+                        init: [ 996 ],
+                        per_level: [ 386/19 ] // == (1382 - 996) / (20 - 1)
+                    },
+                    'legendary': {
+                        init: [ 1582 ],
+                        per_level: [ 783/19 ] // == (2365 - 1582) / (20 - 1)
+                    }
+                }
             }
         ],
         'waist': [
