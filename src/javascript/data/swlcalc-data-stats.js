@@ -17,13 +17,13 @@ swlcalc.data.stats = {
                 base: 2000,       // Base amount at level 50
                 capstone: 810,    // Amount brought by Capstone points
                 sp_passive: 1512, // Amount brought by the passives skills
-                rate: 13 + 1/3
+                coef: 0.075
             },
             'hr': {
                 base: 2000,
                 capstone: 810,
                 sp_passive: 1500,
-                rate: 13 + 1/3
+                coef: 0.02
             },
             'hp': {
                 base: 3300,

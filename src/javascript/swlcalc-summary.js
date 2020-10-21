@@ -115,11 +115,10 @@ swlcalc.summary = function() {
     /*
      * Computes the Primary (= Combat or Healing) Power for the given Primary Stat Rating and Weapon Power values
      * SWL formula for Primary Power is like :
-     * -> +1 Primary Power every {rate} of Primary Stat Rating
-     * -> +1 Primary Power every {rate} of Weapon Power
+     * -> Primary Power = (Primary Stat Rating + Weapon Power) * coef
      */
     var computePrimaryPower = function(primaryStat, sumPrimaryStatPoints, weaponPower) {
-        var result = (sumPrimaryStatPoints + weaponPower) / swlcalc.data.stats.computationFigures.primary[primaryStat].rate
+        var result = (sumPrimaryStatPoints + weaponPower) * swlcalc.data.stats.computationFigures.primary[primaryStat].coef
         return swlcalc.util.precisionRound(result, 1)
     };
 
