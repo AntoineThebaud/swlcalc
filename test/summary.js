@@ -53,7 +53,7 @@ QUnit.test("should update all stats", function(assert) {
     assert.equal($("#stat-power-rating").html(), "3730");
     assert.equal($("#stat-weapon-power").html(), "1832");
     assert.equal($("#stat-combat-power").html(), "646.2");
-    assert.equal($("#stat-healing-power").html(), "583.7");
+    assert.equal($("#stat-healing-power").html(), "155.7");
     assert.equal($("#stat-hit-points").html(), "13903");
     assert.equal($("#stat-attack-rating").html(), "6784");
     assert.equal($("#stat-heal-rating").html(), "5951");
@@ -80,7 +80,7 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
 
     var expectedPrimaryStats = {
         "combat-power": 646.2,
-        "healing-power": 583.7,
+        "healing-power": 155.7,
         "weapon-power": 1832,
         "hit-points": 13903,
         "attack-rating": 6784,
@@ -118,7 +118,7 @@ QUnit.test("should collect primary stats accordingly", function(assert) {
 
     // base values :
     assert.equal(sums[ "combat-power" ], 324.2);
-    assert.equal(sums[ "healing-power" ], 323.3);
+    assert.equal(sums[ "healing-power" ], 86.2);
     assert.equal(sums[ "weapon-power" ], 0);
     assert.equal(sums[ "attack-rating" ], 4322);
     assert.equal(sums[ "heal-rating" ], 4310);
@@ -137,7 +137,7 @@ QUnit.test("should collect primary stats accordingly", function(assert) {
     assert.equal(sums[ "heal-rating" ], 5951);
     assert.equal(sums[ "hit-points" ], 13903);
     assert.equal(sums[ "combat-power" ], 646.2);
-    assert.equal(sums[ "healing-power" ], 583.7);
+    assert.equal(sums[ "healing-power" ], 155.7);
 });
 
 QUnit.test("should compute primary power", function(assert) {
@@ -147,9 +147,9 @@ QUnit.test("should compute primary power", function(assert) {
     assert.equal(swlcalc.summary.computePrimaryPower('ar', 3049, 398), 258.5);
 
     assert.equal(swlcalc.summary.computePrimaryPower('hr', 0, 0), 0);
-    assert.equal(swlcalc.summary.computePrimaryPower('hr', 2500, 0), 187.5);
-    assert.equal(swlcalc.summary.computePrimaryPower('hr', 0, 2500), 187.5);
-    assert.equal(swlcalc.summary.computePrimaryPower('hr', 3049, 398), 258.5);
+    assert.equal(swlcalc.summary.computePrimaryPower('hr', 2500, 0), 50);
+    assert.equal(swlcalc.summary.computePrimaryPower('hr', 0, 2500), 50);
+    assert.equal(swlcalc.summary.computePrimaryPower('hr', 3049, 398), 68.9);
 });
 
 // TODO/TEST no test for updateSecondaryStats() (private function)
@@ -220,14 +220,14 @@ QUnit.test("should set combat power + healing power and affect any talisman and 
     createTankBuild();
     $("#waist-edit-equipment-id").val("12");
     $("#waist-edit-equipment-id").change();
-    assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">727</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">656</span> health.");
+    assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">727</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">174</span> health.");
     $("#weapon2-edit-equipment-id").val("53");
     $("#weapon2-edit-equipment-id").change();
     assert.equal(swlcalc.gear.slots.weapon2.edit.equipmentDescription(), "Whenever you hit, you have a <span class=\"bonus-val const\">33%</span> chance to hex your target and deal an additional <span id=\"weapon2-edit-equipment-bonus1\" class=\"bonus-val dps\">97</span>-<span id=\"weapon2-edit-equipment-bonus2\" class=\"bonus-val dps\">485</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class=\"bonus-val const\">5</span> times. This effect is guaranteed to trigger on critical hits.<br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id=\"weapon2-edit-equipment-bonus3\" class=\"bonus-val dps\">61</span>-<span id=\"weapon2-edit-equipment-bonus4\" class=\"bonus-val dps\">304</span> magical damage, based on the number of times the damaging effect has been applied.");
 
     $("#stat-combat-power").html("1000");
     swlcalc.summary.updateDescriptions();
-    assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">1125</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">656</span> health.");
+    assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">1125</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">174</span> health.");
     assert.equal(swlcalc.gear.slots.weapon2.edit.equipmentDescription(), "Whenever you hit, you have a <span class=\"bonus-val const\">33%</span> chance to hex your target and deal an additional <span id=\"weapon2-edit-equipment-bonus1\" class=\"bonus-val dps\">150</span>-<span id=\"weapon2-edit-equipment-bonus2\" class=\"bonus-val dps\">750</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class=\"bonus-val const\">5</span> times. This effect is guaranteed to trigger on critical hits.<br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id=\"weapon2-edit-equipment-bonus3\" class=\"bonus-val dps\">95</span>-<span id=\"weapon2-edit-equipment-bonus4\" class=\"bonus-val dps\">471</span> magical damage, based on the number of times the damaging effect has been applied.");
 
     $("#stat-healing-power").html("1000");
@@ -235,12 +235,12 @@ QUnit.test("should set combat power + healing power and affect any talisman and 
     assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">1125</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">1125</span> health.");
 
     swlcalc.summary.updateAllStats();
-    assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">727</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">656</span> health.");
+    assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">727</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">174</span> health.");
     assert.equal(swlcalc.gear.slots.weapon2.edit.equipmentDescription(), "Whenever you hit, you have a <span class=\"bonus-val const\">33%</span> chance to hex your target and deal an additional <span id=\"weapon2-edit-equipment-bonus1\" class=\"bonus-val dps\">97</span>-<span id=\"weapon2-edit-equipment-bonus2\" class=\"bonus-val dps\">485</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class=\"bonus-val const\">5</span> times. This effect is guaranteed to trigger on critical hits.<br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id=\"weapon2-edit-equipment-bonus3\" class=\"bonus-val dps\">61</span>-<span id=\"weapon2-edit-equipment-bonus4\" class=\"bonus-val dps\">304</span> magical damage, based on the number of times the damaging effect has been applied.");
 
     $("#select-anima-allocation").val("heal");
     $("#select-anima-allocation").change();
-    assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">727</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">656</span> health.");
+    assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">727</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">174</span> health.");
     assert.equal(swlcalc.gear.slots.weapon2.edit.equipmentDescription(), "Whenever you hit, you have a <span class=\"bonus-val const\">33%</span> chance to hex your target and deal an additional <span id=\"weapon2-edit-equipment-bonus1\" class=\"bonus-val dps\">97</span>-<span id=\"weapon2-edit-equipment-bonus2\" class=\"bonus-val dps\">485</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class=\"bonus-val const\">5</span> times. This effect is guaranteed to trigger on critical hits.<br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id=\"weapon2-edit-equipment-bonus3\" class=\"bonus-val dps\">61</span>-<span id=\"weapon2-edit-equipment-bonus4\" class=\"bonus-val dps\">304</span> magical damage, based on the number of times the damaging effect has been applied.");
 });
 

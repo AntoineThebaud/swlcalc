@@ -25,7 +25,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#stat-heal-rating").html(), "6710");
     assert.equal($("#stat-hit-points").html(), "15578");
     assert.equal($("#stat-combat-power").html(), "736.8");
-    assert.equal($("#stat-healing-power").html(), "621.5");
+    assert.equal($("#stat-healing-power").html(), "165.7");
     assert.equal($("#stat-critical-rating").html(), "+1598");
     assert.equal($("#stat-critical-chance").html(), "18.7%");
     assert.equal($("#stat-critical-power").html(), "+1858");
@@ -417,7 +417,7 @@ QUnit.test("should import from hash", function(assert) {
     // TODO/TEST : buggy, should be ok : assert.equal($("#wrist-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#wrist-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/wrist/legendary-42x42.png");
     assert.equal($("#wrist-recap-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
-    assert.equal($("#wrist-recap-equipment-description").html(), "Whenever you heal an ally who does not have any active detrimental effects, you have a <span class=\"bonus-val const\">25%</span> chance to restore <span id=\"wrist-recap-equipment-bonus1\" class=\"bonus-val heal\">311</span> health to that ally.");
+    assert.equal($("#wrist-recap-equipment-description").html(), "Whenever you heal an ally who does not have any active detrimental effects, you have a <span class=\"bonus-val const\">25%</span> chance to restore <span id=\"wrist-recap-equipment-bonus1\" class=\"bonus-val heal\">83</span> health to that ally.");
     assert.ok($("#wrist-recap-equipment-description-section").is(":visible"));
     assert.equal($("#wrist-recap-equipment-label-level").text(), "68");
     assert.ok($("#wrist-recap-glyph-section").is(":visible"));
@@ -450,7 +450,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#wrist-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/wrist/legendary-42x42.png");
     assert.equal($("#wrist-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/2.png");
     assert.equal($("#wrist-edit-equipment-label-level").html(), "68");
-    assert.equal($("#wrist-edit-equipment-description").html(), 'Whenever you heal an ally who does not have any active detrimental effects, you have a <span class="bonus-val const">25%</span> chance to restore <span id="wrist-edit-equipment-bonus1" class="bonus-val heal">311</span> health to that ally.');
+    assert.equal($("#wrist-edit-equipment-description").html(), 'Whenever you heal an ally who does not have any active detrimental effects, you have a <span class="bonus-val const">25%</span> chance to restore <span id="wrist-edit-equipment-bonus1" class="bonus-val heal">83</span> health to that ally.');
     assert.equal($("#wrist-edit-glyph-id").val(), "critical-power");
     assert.equal($("#wrist-edit-glyph-rarity").val(), "epic");
     assert.equal($("#wrist-edit-glyph-quality").val(), "2");
@@ -714,7 +714,7 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#stat-heal-rating").html(), "4310");
     assert.equal($("#stat-hit-points").html(), "8727");
     assert.equal($("#stat-combat-power").html(), "324.2");
-    assert.equal($("#stat-healing-power").html(), "323.3");
+    assert.equal($("#stat-healing-power").html(), "86.2");
     assert.equal($("#stat-critical-rating").html(), "+756");
     assert.equal($("#stat-critical-chance").html(), "13.3%");
     assert.equal($("#stat-critical-power").html(), "+1008");

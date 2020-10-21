@@ -39,7 +39,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#stat-heal-rating").html(), "4310");
     assert.equal($("#stat-hit-points").html(), "9217");
     assert.equal($("#stat-combat-power").html(), "741.3");
-    assert.equal($("#stat-healing-power").html(), "460.7");
+    assert.equal($("#stat-healing-power").html(), "122.8");
 
     // --- Offensive Stats
     assert.equal($("#stat-critical-rating").html(), "+841");

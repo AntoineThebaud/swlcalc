@@ -42,25 +42,25 @@ QUnit.test("should set & get anima allocation accordingly", function(assert) {
 
 QUnit.test("should set anima allocation and affect stats correctly", function(assert) {
     assert.equal($("#stat-combat-power").html(), "646.2");
-    assert.equal($("#stat-healing-power").html(), "583.7");
+    assert.equal($("#stat-healing-power").html(), "155.7");
     assert.equal($("#stat-attack-rating").html(), "6784");
     assert.equal($("#stat-heal-rating").html(), "5951");
     assert.equal($("#stat-hit-points").html(), "13903");
     swlcalc.animaAllocation.setDamagePercentage("100");
     assert.equal($("#stat-combat-power").html(), "741.3");
-    assert.equal($("#stat-healing-power").html(), "583.7");
+    assert.equal($("#stat-healing-power").html(), "155.7");
     assert.equal($("#stat-attack-rating").html(), "8052");
     assert.equal($("#stat-heal-rating").html(), "5951");
     assert.equal($("#stat-hit-points").html(), "13903");
     swlcalc.animaAllocation.setHealingPercentage("100");
     assert.equal($("#stat-combat-power").html(), "741.3");
-    assert.equal($("#stat-healing-power").html(), "684.4");
+    assert.equal($("#stat-healing-power").html(), "182.5");
     assert.equal($("#stat-attack-rating").html(), "8052");
     assert.equal($("#stat-heal-rating").html(), "7294");
     assert.equal($("#stat-hit-points").html(), "13903");
     swlcalc.animaAllocation.setSurvivabilityPercentage("100");
     assert.equal($("#stat-combat-power").html(), "741.3");
-    assert.equal($("#stat-healing-power").html(), "684.4");
+    assert.equal($("#stat-healing-power").html(), "182.5");
     assert.equal($("#stat-attack-rating").html(), "8052");
     assert.equal($("#stat-heal-rating").html(), "7294");
     assert.equal($("#stat-hit-points").html(), "19866");

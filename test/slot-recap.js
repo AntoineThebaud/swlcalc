@@ -131,7 +131,7 @@ QUnit.test("should get and set the slot's equipment description on recap view", 
 
 QUnit.test("should get and set the slot's equipment bonus value on recap view", function(assert) {
     assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(1), "275");
-    assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(2), "248");
+    assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(2), "66");
     swlcalc.gear.slots.waist.recap.equipmentBonusN(1, "19920804");
     assert.equal(swlcalc.gear.slots.waist.recap.equipmentBonusN(1), "19920804");
 });

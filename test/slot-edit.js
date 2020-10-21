@@ -114,7 +114,7 @@ QUnit.test("should get and set the slot's equipment description on edit view", f
 
 QUnit.test("should get and set the slot's equipment bonus value on edit view", function(assert) {
     assert.equal(swlcalc.gear.slots.waist.edit.equipmentBonusN(1), "275");
-    assert.equal(swlcalc.gear.slots.waist.edit.equipmentBonusN(2), "248");
+    assert.equal(swlcalc.gear.slots.waist.edit.equipmentBonusN(2), "66");
     swlcalc.gear.slots.waist.edit.equipmentBonusN(1, "19920804");
     assert.equal(swlcalc.gear.slots.waist.edit.equipmentBonusN(1), "19920804");
 });
