@@ -452,7 +452,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             var signetData = signet.quality[this.edit.equipmentQuality()];
 
             for (i = 0; i < signetData.length; i++) {
-                var newBonusVal = signetData[i] * coef;
+                var newBonusVal = swlcalc.util.precisionRound(signetData[i] * coef, signet.decimals[i]);
                 this.edit.signetBonusN(i + 1, newBonusVal);
                 this.recap.signetBonusN(i + 1, newBonusVal);
             }
