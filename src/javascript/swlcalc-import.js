@@ -37,7 +37,9 @@ swlcalc.import = function() {
                 loadSlot(urlVar, paramsArray);
             }
         }
+
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateAllDescriptions();
     };
 
     /**

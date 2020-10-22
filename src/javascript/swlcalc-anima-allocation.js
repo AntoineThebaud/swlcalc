@@ -61,6 +61,7 @@ swlcalc.animaAllocation = function() {
             swlcalc.gear.slots[id].updateEquipmentStatValues();
         }
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateAllDescriptions();
     }
 
     /**

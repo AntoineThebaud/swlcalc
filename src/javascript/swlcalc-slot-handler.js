@@ -23,20 +23,20 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
      * Associates the right processing to each controller.
      */
     this.bindEvents = function() {
-        slotObj.edit.el.equipmentId.change(this.handleEquipmentItemChange);
+        slotObj.edit.el.equipmentId.change(this.handleEquipmentIdChange);
         slotObj.edit.el.equipmentRarity.change(this.handleEquipmentRarityChange);
         slotObj.edit.el.equipmentQuality.change(this.handleEquipmentQualityChange);
         slotObj.edit.el.equipmentLevel.change(this.handleEquipmentLevelChange);
 
-        slotObj.edit.el.glyphId.change(this.handleGlyphChange);
+        slotObj.edit.el.glyphId.change(this.handleGlyphIdChange);
         slotObj.edit.el.glyphRarity.change(this.handleGlyphRarityChange);
         slotObj.edit.el.glyphQuality.change(this.handleGlyphQualityChange);
         slotObj.edit.el.glyphLevel.change(this.handleGlyphLevelChange);
 
         if (slot.kind == "weapon") {
-            slotObj.edit.el.signetId.change(this.handleSuffixChange);
+            slotObj.edit.el.signetId.change(this.handleAffixIdChange);
         } else {
-            slotObj.edit.el.signetId.change(this.handleSignetChange);
+            slotObj.edit.el.signetId.change(this.handleSignetIdChange);
             slotObj.edit.el.signetRarity.change(this.handleSignetRarityChange);
             slotObj.edit.el.signetLevel.change(this.handleSignetLevelChange);
         }
@@ -116,44 +116,52 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
      **********************************************************************************/
 
     /**
-     * Handler for #slot-itemId
+     * Handler for #slot-equipment-id
      */
-    this.handleEquipmentItemChange = function(event) {
+    this.handleEquipmentIdChange = function(event) {
         slotObj.updateEquipment();
         slotObj.updateEquipmentStatRating();
         slotObj.updateEquipmentILvl();
+
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateAllDescriptions();
     };
 
     /**
-     * Handler for #slot-rarity
+     * Handler for #slot-equipment-rarity
      */
     this.handleEquipmentRarityChange = function(event) {
         updateTextColor(this);
         slotObj.updateEquipmentRarity();
         slotObj.updateEquipmentStatRating();
         slotObj.updateEquipmentILvl();
+
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateAllDescriptions();
     };
 
     /**
-     * Handler for #slot-quality
+     * Handler for #slot-equipment-quality
      */
     this.handleEquipmentQualityChange = function(event) {
         slotObj.updateEquipmentQuality();
         slotObj.updateEquipmentStatRating();
         slotObj.updateEquipmentILvl();
+
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateAllDescriptions();
     };
 
     /**
-     * Handler for #slot-level
+     * Handler for #slot-equipment-level
      */
     this.handleEquipmentLevelChange = function(event) {
         slotObj.updateEquipmentLevel();
         slotObj.updateEquipmentStatRating();
         slotObj.updateEquipmentILvl();
+
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateAllDescriptions();
     };
 
     /**********************************************************************************
@@ -162,12 +170,13 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
      **********************************************************************************/
 
     /**
-     * Handler for #slot-glyph
+     * Handler for #slot-glyph-id
      */
-    this.handleGlyphChange = function(event) {
+    this.handleGlyphIdChange = function(event) {
         slotObj.updateGlyph();
         slotObj.updateGlyphRating();
         slotObj.updateGlyphILvl();
+
         swlcalc.summary.updateAllStats();
     };
 
@@ -179,6 +188,7 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateGlyphRarity();
         slotObj.updateGlyphRating();
         slotObj.updateGlyphILvl();
+
         swlcalc.summary.updateAllStats();
     };
 
@@ -189,6 +199,7 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateGlyphQuality();
         slotObj.updateGlyphRating();
         slotObj.updateGlyphILvl();
+
         swlcalc.summary.updateAllStats();
     };
 
@@ -199,6 +210,7 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateGlyphLevel();
         slotObj.updateGlyphRating();
         slotObj.updateGlyphILvl();
+
         swlcalc.summary.updateAllStats();
     }
 
@@ -207,21 +219,25 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
      *                         V
      **********************************************************************************/
 
-     /**
-      * Handler for #slot-signet for weapons
-      */
-     this.handleSuffixChange = function(event) {
-         slotObj.updateSignet();
-         swlcalc.summary.updateAllStats();
-     };
+    /**
+     * Handler for #slot-signet-id for weapons
+     */
+    this.handleAffixIdChange = function(event) {
+        slotObj.updateSignet();
+
+        swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateSignetsBonuses();
+    };
 
     /**
-     * Handler for #slot-signet for talismans
+     * Handler for #slot-signet-id for talismans
      */
-    this.handleSignetChange = function(event) {
+    this.handleSignetIdChange = function(event) {
         slotObj.updateSignet();
         slotObj.updateSignetILvl();
+
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateSignetsBonuses();
     };
 
     /**
@@ -231,7 +247,9 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         updateTextColor(this);
         slotObj.updateSignetRarity();
         slotObj.updateSignetILvl();
+
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateSignetsBonuses();
     };
 
     /**
@@ -240,6 +258,8 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
     this.handleSignetLevelChange = function(event) {
         slotObj.updateSignetLevel();
         slotObj.updateSignetILvl();
+
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateSignetsBonuses();
     };
 };

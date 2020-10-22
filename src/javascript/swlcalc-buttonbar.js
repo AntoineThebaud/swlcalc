@@ -49,6 +49,7 @@ swlcalc.buttonBar = function() {
 
         el.btn_reset.on('click', resetGear);
     };
+
     /**
      * Set the same chosen rarity to all equipments+glyphs+signets.
      */
@@ -63,7 +64,9 @@ swlcalc.buttonBar = function() {
             slot.edit.signetRarity(newRarity);
             slot.edit.el.signetRarity.change();
         }
+
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
+        swlcalc.gear.updateAllDescriptions();
     };
 
     /**
@@ -78,7 +81,9 @@ swlcalc.buttonBar = function() {
             slot.edit.glyphQuality(newQuality);
             slot.edit.el.glyphQuality.change();
         }
+
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
+        swlcalc.gear.updateAllDescriptions();
     };
 
     /**
@@ -107,7 +112,9 @@ swlcalc.buttonBar = function() {
             slot.edit.glyphQuality(fourPips);
             slot.edit.el.glyphQuality.change();
         }
+
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
+        swlcalc.gear.updateAllDescriptions();
     };
 
     /**
@@ -131,6 +138,7 @@ swlcalc.buttonBar = function() {
         }
 
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
+        swlcalc.gear.updateAllDescriptions();
     };
 
     /**
@@ -154,6 +162,7 @@ swlcalc.buttonBar = function() {
         }
 
         swlcalc.summary.updateAllStats(); //TODO maybe useless ?
+        swlcalc.gear.updateAllDescriptions();
     };
 
     /**
@@ -162,6 +171,7 @@ swlcalc.buttonBar = function() {
     var resetGear = function(event) {
         swlcalc.gear.reset();
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateAllDescriptions();
     };
 
     var oPublic = {

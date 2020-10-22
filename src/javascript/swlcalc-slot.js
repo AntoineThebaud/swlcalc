@@ -244,16 +244,16 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Update every bonus values present in equipment's description (both edit & recap)
      */
-    this.updateEquipmentBonuses = function(combatPower, healingPower) {
+    this.updateEquipmentBonuses = function() {
         if (this.edit.equipmentBonusN(1) === undefined) return;
         var equipmentData = swlcalc.data.equipments.slot[this.kind][this.edit.equipmentId() - 1];
         var statForComputation = 0;
 
         for (i = 0; i < equipmentData.coefficients.length; i++) {
             if (equipmentData.stats[i] == 'Combat Power') {
-                statForComputation = combatPower;
+                statForComputation = swlcalc.summary.combatPower();
             } else if (equipmentData.stats[i] == 'Healing Power') {
-                statForComputation = healingPower;
+                statForComputation = swlcalc.summary.healingPower();
             }
             var newBonusVal = Math.round(equipmentData.coefficients[i] * statForComputation)
             this.edit.equipmentBonusN(i + 1, newBonusVal);
@@ -435,7 +435,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Update the dynamic bonus displayed in the signet's description
      */
-    this.updateSignetBonus = function(combatPower, healingPower){
+    this.updateSignetBonus = function() {
         if (this.edit.signetId() == 'none') return;
 
         var signet = swlcalc.data.signets.slot[this.kind][this.edit.signetId() - 1]
@@ -443,9 +443,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
         // coefficient in case CP or HP is used in the bonus computation
         var coef = 1
         if (signet.stat == 'Combat Power') {
-            coef = combatPower;
+            coef = swlcalc.summary.combatPower();
         } else if (signet.stat == 'Healing Power') {
-            coef = healingPower;
+            coef = swlcalc.summary.healingPower();
         }
 
         if (this.isWeapon()) {

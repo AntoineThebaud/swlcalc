@@ -48,6 +48,7 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
     this.handleIdChange = function(event) {
         agentObj.updateId();
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateAllDescriptions();
     };
 
     /**
@@ -56,5 +57,6 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
     this.handleLevelChange = function(event) {
         agentObj.updateLevel();
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateAllDescriptions();
     };
 };

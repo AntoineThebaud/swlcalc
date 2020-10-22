@@ -24,6 +24,7 @@ swlcalc.swap.SwapHandler = function SwapHandler(slotId) {
         swlcalc.gear.slots[self.otherWeapon()].sheath();
 
         swlcalc.summary.updateAllStats();
+        swlcalc.gear.updateAllDescriptions();
     };
 
     this.otherWeapon = function() {

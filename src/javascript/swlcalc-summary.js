@@ -15,7 +15,6 @@ swlcalc.summary = function() {
         updatePrimaryStats();
         updateSecondaryStats();
         updateMiscellaneousBonuses();
-        updateDescriptions();
         updateURL();
     };
 
@@ -250,31 +249,6 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Launch an update on each description (slot + agent), in order to display the right bonus values
-     */
-    var updateDescriptions = function() {
-        for (var id in swlcalc.gear.slots) {
-            swlcalc.gear.slots[id].updateEquipmentBonuses(combatPower(), healingPower());
-            swlcalc.gear.slots[id].updateSignetBonus(combatPower(), healingPower()); //TODO : should be a better way to handle this, here it will be useful in like 1% of the cases..
-        }
-
-        for (var index in swlcalc.gear.agents) {
-            var l25 = swlcalc.gear.agents[index].agentData.levels["25"];
-            var l50 = swlcalc.gear.agents[index].agentData.levels["50"];
-
-            if (l25.varbonus != undefined) {
-              var res = l25.value.replace("%d", Math.round(l25.varbonus.stat == "Combat Power" ? combatPower() * l25.varbonus.coef : healingPower() * l25.varbonus.coef));
-              swlcalc.gear.agents[index].text25(res)
-              $('#stat-agent' + (parseInt(index) + 1) + '-bonus').html(res);
-            } else if (swlcalc.gear.agents[index].level() == "50" && l50.varbonus != undefined) {
-              var res = l50.value.replace("%d", Math.round(l50.varbonus.stat == "Combat Power" ? combatPower() * l50.varbonus.coef : healingPower() * l50.varbonus.coef));
-              swlcalc.gear.agents[index].text50(res)
-              $('#stat-agent' + (parseInt(index) + 1) + '-bonus').html(res);
-            }
-        }
-    };
-
-    /**
      * Getter for Combat Power
      */
     var combatPower = function() {
@@ -290,14 +264,15 @@ swlcalc.summary = function() {
 
     var oPublic = {
         init: init,
+        combatPower: combatPower,
+        healingPower: healingPower,
         computeSecondaryStat: computeSecondaryStat,    //TODO/REFACTOR : visibility relevant only for tests
         computePrimaryPower: computePrimaryPower,      //TODO/REFACTOR : visibility relevant only for tests
         computeAverageILvl: computeAverageILvl,        //TODO/REFACTOR : visibility relevant only for tests
         collectPrimaryStats: collectPrimaryStats,      //TODO/REFACTOR : visibility relevant only for tests
         collectSecondaryStats: collectSecondaryStats,  //TODO/REFACTOR : visibility relevant only for tests
         collectAllStats: collectAllStats,              //TODO/REFACTOR : visibility relevant only for tests
-        updateAllStats: updateAllStats,
-        updateDescriptions: updateDescriptions
+        updateAllStats: updateAllStats
     };
 
     return oPublic;
