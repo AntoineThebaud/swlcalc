@@ -1536,28 +1536,28 @@ swlcalc.data.signets = {
                 id: 7,
                 name: 'Signet of Thirst',
                 type: 'All',
-                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="%id-signet-bonus1" class="bonus-val heal">%d</span><span class="bonus-val heal">%</span> leech effect for <span class="bonus-val const">5</span> seconds. This effect can heal up to <span class="bonus-val const">2248</span> damage before being removed, and can only occur once every <span class="bonus-val const">15</span> seconds.',
-                decimals: [ 4 ],
+                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="%id-signet-bonus1" class="bonus-val heal">%d</span><span class="bonus-val heal">%</span> leech effect for <span class="bonus-val const">5</span> seconds. This effect can heal up to <span id="%id-signet-bonus2" class="bonus-val const">2248</span> damage before being removed, and can only occur once every <span class="bonus-val const">15</span> seconds.',
+                decimals: [ 4, 0 ],
                 ratio: {
                     'standard': {
-                        init: [ 8 ],
-                        per_level: [ 1/19 ] // == (9 - 8) / (20 - 1)
+                        init: [ 8, 105 ],
+                        per_level: [ 1/19, 682/19 ] // == (9 - 8) / (20 - 1) ; (787 - 105) / (20 - 1)
                     },
                     'superior': {
-                        init: [ 10 ],
-                        per_level: [ 1/19 ] // == (11 - 10) / (20 - 1)
+                        init: [ 10, 992 ],
+                        per_level: [ 1/19, 1108/19 ] // == (11 - 10) / (20 - 1) ; (2100 - 992) / (20 - 1)
                     },
                     'epic': {
-                        init: [ 12 ],
-                        per_level: [ 1/19 ] // == (13 - 12) / (20 - 1)
+                        init: [ 12, 2436 ],
+                        per_level: [ 1/19, 1411/19 ] // == (13 - 12) / (20 - 1) ; (3847 - 2436) / (20 - 1)
                     },
                     'mythic': {
-                        init: [ 14 ],
-                        per_level: [ 1/19 ] // == (15 - 14) / (20 - 1)
+                        init: [ 14, 4430 ],
+                        per_level: [ 1/19, 1773/19 ] // == (15 - 14) / (20 - 1) ; (6203 - 4430) / (20 - 1)
                     },
                     'legendary': {
-                        init: [ 16 ],
-                        per_level: [ 1/19 ] // == (17 - 16) / (20 - 1)
+                        init: [ 16, 6916 ],
+                        per_level: [ 1/19, 3584/19 ] // == (17 - 16) / (20 - 1) ; (10500 - 6916) / (20 - 1)
                     }
                 }
             },
