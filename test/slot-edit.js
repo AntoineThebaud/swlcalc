@@ -265,7 +265,7 @@ QUnit.test("should get and set the slot's signet description on edit view", func
 });
 
 QUnit.test("should get and set the slot's signet bonus value on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "70");
+    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "61");
     swlcalc.gear.slots.luck.edit.signetBonusN(1, "1992.0804");
     assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "1992.0804");
 });

@@ -161,7 +161,7 @@ QUnit.test("should update every bonus values present in equipment's description 
 
     $("#stat-combat-power").html("9999");
     $("#stat-healing-power").html("2222");
-    
+
     swlcalc.gear.slots.waist.updateEquipmentBonuses();
 
     assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class=\"bonus-val const\">10%</span>. In addition, once you have lost <span class=\"bonus-val const\">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">4250</span> magical damage or your next healing Blood Magic ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">944</span> health.");
@@ -319,20 +319,18 @@ QUnit.test("should update elements related to signet's level accordingly", funct
 
 // TODO : to update when new Thorn signet is known
 QUnit.test("should update elements related to signet's bonus accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "70");
+    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "61");
 
-    swlcalc.gear.slots.luck.updateSignetBonus(9999,0);
-
+    $("#stat-combat-power").html("9999");
+    swlcalc.gear.slots.luck.updateSignetBonus();
     assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "941");
 
     swlcalc.gear.slots.luck.edit.signetRarity("mythic");
-    swlcalc.gear.slots.luck.updateSignetBonus(9999,0);
-
+    swlcalc.gear.slots.luck.updateSignetBonus();
     assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "1633");
 
     swlcalc.gear.slots.luck.edit.signetLevel("18");
-    swlcalc.gear.slots.luck.updateSignetBonus(9999,0);
-
+    swlcalc.gear.slots.luck.updateSignetBonus();
     assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "2006");
 });
 

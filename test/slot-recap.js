@@ -226,7 +226,7 @@ QUnit.test("should get and set the slot's signet description on recap view", fun
 });
 
 QUnit.test("should get and set the slot's signet bonus value on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.recap.signetBonusN(1), "70");
+    assert.equal(swlcalc.gear.slots.luck.recap.signetBonusN(1), "61");
     swlcalc.gear.slots.luck.recap.signetBonusN(1, "1992.0804");
     assert.equal(swlcalc.gear.slots.luck.recap.signetBonusN(1), "1992.0804");
 });
