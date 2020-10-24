@@ -317,7 +317,6 @@ QUnit.test("should update elements related to signet's level accordingly", funct
     assert.equal(swlcalc.gear.slots.wrist.recap.signetLevel(), "5");
 });
 
-// TODO : to update when new Thorn signet is known
 QUnit.test("should update elements related to signet's bonus accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "61");
 

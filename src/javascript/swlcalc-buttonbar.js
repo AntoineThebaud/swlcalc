@@ -89,7 +89,7 @@ swlcalc.buttonBar = function() {
     /**
      * Set all slots to rarity Legendary + Quality 4 pips (if possible) + Level 70
      * -> Dedicated function for the 4th quality (instead of relying on setQualityOnAllSlots) because
-     * of specific behaviors : increase rarity if it is too "low", set weapon to 3 pip instead, etc..
+     * of a specific behavior : increase rarity if it is too "low"
      */
     var set4PipsOnAllSlots = function(event) {
         var map = swlcalc.data.rarity_mapping.to_num
@@ -98,11 +98,11 @@ swlcalc.buttonBar = function() {
 
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            if (map[slot.edit.equipmentRarity()] < map[upgradedRarity] && !slot.isWeapon()) {
+            if (map[slot.edit.equipmentRarity()] < map[upgradedRarity]) {
                 slot.edit.equipmentRarity(upgradedRarity);
                 slot.edit.el.equipmentRarity.change();
             }
-            slot.edit.equipmentQuality(slot.isWeapon() ? '3' : fourPips);
+            slot.edit.equipmentQuality(fourPips);
             slot.edit.el.equipmentQuality.change();
 
             if (map[slot.edit.glyphRarity()] < map[upgradedRarity]) {

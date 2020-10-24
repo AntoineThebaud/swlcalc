@@ -58,7 +58,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     //TODO/TEST equal($('#stat-physical-protection').html(), '+660');
     //TODO/TEST equal($('#stat-magical-protection').html(), '+300');
 
-    assert.equal($("#weapon-edit-ilvl").html(), "285");
+    assert.equal($("#weapon-edit-ilvl").html(), "284");
     assert.equal($("#weapon-edit-equipment-id").val(), "1");
     assert.equal($("#weapon-edit-equipment-rarity").val(), "epic");
     assert.equal($("#weapon-edit-equipment-quality").val(), "1");
@@ -96,7 +96,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#weapon2-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon2-edit-signet-level").val(), undefined);
     assert.equal($("#weapon2-edit-signet-ilvl").html(), undefined);
-    assert.equal($("#weapon2-edit-signet-description").html(), 'This weapon deals <span id=\"weapon2-edit-signet-bonus1\" class=\"bonus-val dps\">795</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.');
+    assert.equal($("#weapon2-edit-signet-description").html(), 'This weapon deals <span id=\"weapon2-edit-signet-bonus1\" class=\"bonus-val dps\">793</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.');
 
     assert.equal($("#head-edit-ilvl").html(), "425");
     assert.equal($("#head-edit-equipment-id").val(), "1");

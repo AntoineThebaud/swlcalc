@@ -77,7 +77,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-recap-signet-item").text(), "Destruction");
     assert.equal($("#weapon-recap-signet-rarity").html(), undefined);
     assert.equal($("#weapon-recap-signet-level").html(), undefined);
-    assert.equal($("#weapon-recap-signet-description").html(), "This weapon deals <span id=\"weapon-recap-signet-bonus1\" class=\"bonus-val dps\">790</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.");
+    assert.equal($("#weapon-recap-signet-description").html(), "This weapon deals <span id=\"weapon-recap-signet-bonus1\" class=\"bonus-val dps\">788</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.");
     assert.equal($("#weapon-recap-affix").html(), "of Destruction");
     assert.equal($("#weapon-recap-affix-quality").html(), "Mk III");
     assert.equal($("#weapon-edit-ilvl").html(), "387");
@@ -87,7 +87,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-edit-equipment-quality").val(), "3");
     assert.equal($("#weapon-edit-equipment-level").val(), "19");
     assert.equal($("#weapon-edit-equipment-stat-value").html(), "1577");
-    assert.equal($("#weapon-edit-equipment-ilvl").html(), "264");
+    assert.equal($("#weapon-edit-equipment-ilvl").html(), "265");
     // TODO/TEST : buggy, should be ok : assert.equal($("#weapon-edit-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#weapon-edit-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/epic-42x42.png");
     assert.equal($("#weapon-edit-equipment-img-quality").attr('src'), "assets/images/icons/quality/3.png");
@@ -108,13 +108,13 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon-edit-signet-level").val(), undefined);
     assert.equal($("#weapon-edit-signet-img-rarity").attr('src'), undefined);
-    assert.equal($("#weapon-edit-signet-description").html(), 'This weapon deals <span id=\"weapon-edit-signet-bonus1\" class=\"bonus-val dps\">790</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.');
+    assert.equal($("#weapon-edit-signet-description").html(), 'This weapon deals <span id=\"weapon-edit-signet-bonus1\" class=\"bonus-val dps\">788</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.');
     assert.equal($("#weapon-edit-signet-label-level").html(), undefined);
     assert.equal($("#weapon-edit-signet-ilvl").html(), undefined);
 
 
     assert.ok($("#weapon2-recap-active").is(":hidden"));
-    assert.equal($("#weapon2-recap-ilvl").text(), "496");
+    assert.equal($("#weapon2-recap-ilvl").text(), "497");
     assert.ok($("#weapon2-recap-equipment-empty").is(":hidden"));
     assert.ok($("#weapon2-recap-equipment-title-section").is(":visible"));
     assert.equal($("#weapon2-recap-equipment-title").text(), "Shotgun of Warding Mk II");
@@ -150,7 +150,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-recap-signet-description").html(), "Increases Protection by <span id=\"weapon2-recap-signet-bonus-wrapper\" class=\"bonus-val color-superior\"><span id=\"weapon2-recap-signet-bonus1\">1050</span></span> while wielded.");
     assert.equal($("#weapon2-recap-affix").html(), "of Warding");
     assert.equal($("#weapon2-recap-affix-quality").html(), "Mk II");
-    assert.equal($("#weapon2-edit-ilvl").html(), "496");
+    assert.equal($("#weapon2-edit-ilvl").html(), "497");
     assert.equal($("#weapon2-edit-equipment-id").val(), "7");
     assert.equal($("#weapon2-edit-equipment-id option:selected").text(), "[Shotgun] Shotgun");
     assert.equal($("#weapon2-edit-equipment-rarity").val(), "epic");

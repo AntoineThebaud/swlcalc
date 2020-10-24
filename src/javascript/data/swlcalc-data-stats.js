@@ -3,7 +3,6 @@ swlcalc.data = swlcalc.data || {};
 
 swlcalc.data.stats = {
     // Various coefficients
-    weapon_power_coefficient: 1.15,     // Weapons are worth ~15% more Item Power than talismans.
     glyph_in_weapon_coefficient: 1.225, // Glyphs in weapons are worth ~22.5% more Item Power than glyphs in talismans.
     ar_coefficient: 1,                  // Power rating fully converts into Attack Rating.
     hr_coefficient: 0.8,                // Power rating gives lower amount when converting into Heal Rating /!\ approximated value of the real IG multiplier.

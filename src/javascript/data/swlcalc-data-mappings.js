@@ -96,7 +96,8 @@ swlcalc.data.quality_mapping = {
         to_name: {
             1: 'Mk I',
             2: 'Mk II',
-            3: 'Mk III'
+            3: 'Mk III',
+            4: 'Mk IV'
         }
     },
     'talisman': {

@@ -18,7 +18,8 @@ swlcalc.data.signets = {
                 quality: {
                     '1': [ 10 ],
                     '2': [ 15 ],
-                    '3': [ 20 ]
+                    '3': [ 20 ],
+                    '4': [ 22 ]
                 }
             },
             {
@@ -27,9 +28,10 @@ swlcalc.data.signets = {
                 description: 'This weapon deals <span id="%id-signet-bonus1" class="bonus-val dps">%d</span> additional damage to enemies that are below <span class="bonus-val const">35%</span> health.',
                 decimals: [ 0 ],
                 quality: {
-                    '1': [ 0.358 ],
-                    '2': [ 0.715 ],
-                    '3': [ 1.073 ]
+                    '1': [ 0.36 ],
+                    '2': [ 0.71 ],
+                    '3': [ 1.07 ],
+                    '4': [ 1.43 ]
                 },
                 stat: 'Combat Power'
             },
@@ -41,18 +43,20 @@ swlcalc.data.signets = {
                 quality: {
                     '1': [ 11 ],
                     '2': [ 22 ],
-                    '3': [ 33 ]
+                    '3': [ 33 ],
+                    '4': [ 44 ]
                 }
             },
             {
                 id: 4,
                 name: 'Efficiency',
                 description: 'Your attacks and heals with this weapon have a <span class="bonus-val const">50%</span> chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span>.',
-                decimals: [ 0 ],
+                decimals: [ 1 ],
                 quality: {
                     '1': [ 2 ],
                     '2': [ 3 ],
-                    '3': [ 5 ]
+                    '3': [ 5 ],
+                    '4': [ 6.5 ]
                 }
             },
             {
@@ -63,7 +67,8 @@ swlcalc.data.signets = {
                 quality: {
                     '1': [ 2.5 ],
                     '2': [ 5 ],
-                    '3': [ 7.5 ]
+                    '3': [ 7.5 ],
+                    '4': [ 10 ]
                 }
             },
             {
@@ -74,18 +79,20 @@ swlcalc.data.signets = {
                 quality: {
                     '1': [ 0.75, 150 ],
                     '2': [ 1.5, 300 ],
-                    '3': [ 2.25, 450 ]
+                    '3': [ 2.25, 450 ],
+                    '4': [ 3, 600 ]
                 }
             },
             {
                 id: 7,
                 name: 'Recovery',
                 description: 'You receive <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span> more health from incoming heals.',
-                decimals: [ 0 ],
+                decimals: [ 1 ],
                 quality: {
-                    '1': [ 1 ],
-                    '2': [ 2 ],
-                    '3': [ 3 ]
+                    '1': [ 2.5 ],
+                    '2': [ 5 ],
+                    '3': [ 7.5 ],
+                    '4': [ 10 ]
                 }
             },
             {
@@ -96,7 +103,8 @@ swlcalc.data.signets = {
                 quality: {
                     '1': [ 525 ],
                     '2': [ 1050 ],
-                    '3': [ 1575 ]
+                    '3': [ 1575 ],
+                    '4': [ 2100 ]
                 }
             }
         ],

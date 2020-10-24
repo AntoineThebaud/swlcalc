@@ -121,7 +121,7 @@ QUnit.test("should update all signets bonuses correctly", function(assert) {
     assert.equal(swlcalc.gear.slots.weapon2.edit.signetDescription(), "This weapon deals <span id=\"weapon2-edit-signet-bonus1\" class=\"bonus-val dps\">0</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.");
     $("#stat-combat-power").html("1000");
     swlcalc.gear.updateSignetsBonuses();
-    assert.equal(swlcalc.gear.slots.weapon2.edit.signetDescription(), "This weapon deals <span id=\"weapon2-edit-signet-bonus1\" class=\"bonus-val dps\">1073</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.");
+    assert.equal(swlcalc.gear.slots.weapon2.edit.signetDescription(), "This weapon deals <span id=\"weapon2-edit-signet-bonus1\" class=\"bonus-val dps\">1070</span> additional damage to enemies that are below <span class=\"bonus-val const\">35%</span> health.");
 });
 
 QUnit.test("should update all agents bonuses correctly", function(assert) {

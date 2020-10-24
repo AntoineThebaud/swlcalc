@@ -109,30 +109,23 @@ QUnit.test("should update any #slot-edit-equipment-quality dropdowns when its as
     for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
         var id = swlcalc.data.template_data.slots[i].id;
         assert.equal($("#" + id + "-edit-equipment-quality > option").length, 3);
+
         swlcalc.gear.slots[id].edit.equipmentRarity("legendary");
         swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
-        if (swlcalc.gear.slots[id].group == "weapon") {
-            assert.equal($("#" + id + "-edit-equipment-quality > option").length, 3);
-        } else {
-            assert.equal($("#" + id + "-edit-equipment-quality > option").length, 4);
-        }
+        assert.equal($("#" + id + "-edit-equipment-quality > option").length, 4);
+
         swlcalc.gear.slots[id].edit.equipmentRarity("superior");
         swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
         assert.equal($("#" + id + "-edit-equipment-quality > option").length, 3);
+
         swlcalc.gear.slots[id].edit.equipmentRarity("epic");
         swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
-        if (swlcalc.gear.slots[id].group == "weapon") {
-            assert.equal($("#" + id + "-edit-equipment-quality > option").length, 3);
-        } else {
-            assert.equal($("#" + id + "-edit-equipment-quality > option").length, 4);
-        }
+        assert.equal($("#" + id + "-edit-equipment-quality > option").length, 4);
+
         swlcalc.gear.slots[id].edit.equipmentRarity("mythic");
         swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
-        if (swlcalc.gear.slots[id].group == "weapon") {
-            assert.equal($("#" + id + "-edit-equipment-quality > option").length, 3);
-        } else {
-            assert.equal($("#" + id + "-edit-equipment-quality > option").length, 4);
-        }
+        assert.equal($("#" + id + "-edit-equipment-quality > option").length, 4);
+        
         swlcalc.gear.slots[id].edit.equipmentRarity("standard");
         swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
         assert.equal($("#" + id + "-edit-equipment-quality > option").length, 3);

@@ -2,7 +2,7 @@ var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
 swlcalc.data.ilvl = {
-    'equipment': {
+    'talisman': {
         'standard': {
             '1': {
                 ilvl_init: 2,
@@ -83,6 +83,90 @@ swlcalc.data.ilvl = {
             '4': {
                 ilvl_init: 643,
                 ilvl_per_level: 500/69 // == (1143 - 643) / (70 - 1)
+            }
+        }
+    },
+    'weapon': { // Weapons are worth ~15% more Item Power than talismans + don't have ilvl increased when upgraded to 4-pip
+        'standard': {
+            '1': {
+                ilvl_init: 2,
+                ilvl_per_level: 39/19 // == (41 - 2) / (20 - 1)
+            },
+            '2': {
+                ilvl_init: 2,
+                ilvl_per_level: 44/19 // == (46 - 2) / (20 - 1)
+            },
+            '3': {
+                ilvl_init: 3,
+                ilvl_per_level: 49/19 // == (52 - 3) / (20 - 1)
+            }
+        },
+        'superior': {
+            '1': {
+                ilvl_init: 47,
+                ilvl_per_level: 73/24 // == (120 - 47) / (25 - 1)
+            },
+            '2': {
+                ilvl_init: 53,
+                ilvl_per_level: 82/24 // == (135 - 53) / (25 - 1)
+            },
+            '3': {
+                ilvl_init: 59,
+                ilvl_per_level: 91/24 // == (150 - 59) / (25 - 1)
+            }
+        },
+        'epic': {
+            '1': {
+                ilvl_init: 139,
+                ilvl_per_level: 117/29 // == (256 - 139) / (30 - 1)
+            },
+            '2': {
+                ilvl_init: 156,
+                ilvl_per_level: 132/29 // == (288 - 156) / (30 - 1)
+            },
+            '3': {
+                ilvl_init: 174,
+                ilvl_per_level: 146/29 // == (320 - 174) / (30 - 1)
+            },
+            '4': {
+                ilvl_init: 174,
+                ilvl_per_level: 146/29 // == (320 - 174) / (30 - 1)
+            }
+        },
+        'mythic': {
+            '1': {
+                ilvl_init: 296,
+                ilvl_per_level: 172/34 // == (468 - 296) / (35 - 1)
+            },
+            '2': {
+                ilvl_init: 334,
+                ilvl_per_level: 193/34 // == (527 - 334) / (35 - 1)
+            },
+            '3': {
+                ilvl_init: 370,
+                ilvl_per_level: 215/34 // == (585 - 370) / (35 - 1)
+            },
+            '4': {
+                ilvl_init: 370,
+                ilvl_per_level: 215/34 // == (585 - 370) / (35 - 1)
+            }
+        },
+        'legendary': {
+            '1': {
+                ilvl_init: 537,
+                ilvl_per_level: 420/69 // == (957 - 537) / (70 - 1)
+            },
+            '2': {
+                ilvl_init: 605,
+                ilvl_per_level: 471/69 // == (1076 - 605) / (70 - 1)
+            },
+            '3': {
+                ilvl_init: 672,
+                ilvl_per_level: 524/69 // == (1196 - 672) / (70 - 1)
+            },
+            '4': {
+                ilvl_init: 672,
+                ilvl_per_level: 524/69 // == (1196 - 672) / (70 - 1)
             }
         }
     },

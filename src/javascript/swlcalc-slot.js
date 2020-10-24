@@ -133,7 +133,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.recap.equipmentRarity(swlcalc.util.capitalize(newRarity));
 
         // refresh the list of available qualities after a change on rarity
-        this.handleResplendent();
+        this.handle4pipQuality();
 
         // update max available level for equipment :
         var maxLvl = swlcalc.data.rarity_mapping.to_max_level[newRarity];
@@ -143,16 +143,21 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Add or remove Resplendent to the list of available qualities for this talisman
-     * - Resplendent quality is available starting from Epic rarity, level 1
+     * Add or remove 4-pip quality ("Resplendent" or "MK IV") to the list of available qualities for this equipment
+     * - 4-pip quality is available starting from Epic rarity, level 1 //TODO to be confirmed for weapons
      */
-    this.handleResplendent = function() {
-        if (this.isWeapon()) return;
+    this.handle4pipQuality = function() {
+        var newQuality = "";
+        if (this.isWeapon()) {
+            newQuality = "MK IV"
+        } else {
+            newQuality = "Resplendent"
+        }
         var map = swlcalc.data.rarity_mapping.to_num
-        var resplendentOptionExists = ($('#' + this.id + '-edit-equipment-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
-        if (map[this.edit.equipmentRarity()] >= map['epic'] && !resplendentOptionExists) {
-            this.edit.el.equipmentQuality.append("<option value='4'>Resplendent</option>");
-        } else if (map[this.edit.equipmentRarity()] < map['epic'] && resplendentOptionExists) {
+        var optionExists = ($('#' + this.id + '-edit-equipment-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
+        if (map[this.edit.equipmentRarity()] >= map['epic'] && !optionExists) {
+            this.edit.el.equipmentQuality.append("<option value='4'>" + newQuality + "</option>");
+        } else if (map[this.edit.equipmentRarity()] < map['epic'] && optionExists) {
             $('#' + this.id + '-edit-equipment-quality option[value=4]').remove(); // TODO/REFACTOR to abstract access
             this.updateEquipmentQuality();
         }
@@ -229,9 +234,10 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateEquipmentILvl = function() {
         var newILvl = 0;
         if (!(this.edit.equipmentId() == 'none')) {
-            newILvl = this.computeItemILvlWithQuality('equipment', this.edit.equipmentRarity(), this.edit.equipmentQuality(), this.edit.equipmentLevel());
             if (this.isWeapon()) {
-                newILvl = newILvl * swlcalc.data.stats.weapon_power_coefficient;
+                newILvl = this.computeItemILvlWithQuality('weapon', this.edit.equipmentRarity(), this.edit.equipmentQuality(), this.edit.equipmentLevel());
+            } else {
+                newILvl = this.computeItemILvlWithQuality('talisman', this.edit.equipmentRarity(), this.edit.equipmentQuality(), this.edit.equipmentLevel());
             }
         }
         // register value before it is rounded (used to compute total ilvl precisely)
