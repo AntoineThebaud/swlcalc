@@ -14,7 +14,7 @@ swlcalc.summary = function() {
     var updateAllStats = function() {
         updatePrimaryStats();
         updateSecondaryStats();
-        updateMiscellaneousBonuses();
+        updateOtherBonuses();
         updateURL();
     };
 
@@ -215,18 +215,27 @@ swlcalc.summary = function() {
 
     /**
      * Display any remaining miscellaneous bonus brought by agents
+     * TODO : improve show/hide + abstract access
      */
-    var updateMiscellaneousBonuses = function() {
+    var updateOtherBonuses = function() {
         for (var index in swlcalc.gear.agents) {
             var agent = swlcalc.gear.agents[index];
 
-            var bonus = "";
             if (agent.agentData.levels["25"].type == "miscellaneous") {
-                bonus = agent.text25();
-            } else if (agent.agentData.levels["50"].type == "miscellaneous") {
-                bonus = agent.text50();
+                $('#stat-agent' + (parseInt(index) + 1) + '-bonus25').html(agent.text25());
+                $('#stat-agent' + (parseInt(index) + 1) + '-bonus25').show();
+            } else {
+                $('#stat-agent' + (parseInt(index) + 1) + '-bonus25').html("");
+                $('#stat-agent' + (parseInt(index) + 1) + '-bonus25').hide();
             }
-            $('#stat-agent' + (parseInt(index) + 1) + '-bonus').html(bonus);
+
+            if (agent.level() == "50" && agent.agentData.levels["50"].type == "miscellaneous") {
+                $('#stat-agent' + (parseInt(index) + 1) + '-bonus50').html(agent.text50());
+                $('#stat-agent' + (parseInt(index) + 1) + '-bonus50').show();
+            } else {
+                $('#stat-agent' + (parseInt(index) + 1) + '-bonus50').html("");
+                $('#stat-agent' + (parseInt(index) + 1) + '-bonus50').hide();
+            }
         }
     };
 

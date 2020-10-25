@@ -36,13 +36,15 @@ QUnit.test("should have required summary in DOM", function(assert) {
     assert.ok($("#stat-glance-chance").length !== 0, "stat-glance-chance exists");
     assert.ok($("#stat-evade-rating").length !== 0, "stat-evade-rating exists");
     assert.ok($("#stat-evade-chance").length !== 0, "stat-evade-chance exists");
-    assert.ok($("#stat-physical-protection").length !== 0, "stat-physical-protection exists");
-    assert.ok($("#stat-magical-protection").length !== 0, "stat-magical-protection exists");
+    assert.ok($("#stat-protection").length !== 0, "stat-protection exists");
 
     // Check all Other bonuses exist
-    assert.ok($("#stat-agent1-bonus").length !== 0, "stat-agent1-bonus exists");
-    assert.ok($("#stat-agent2-bonus").length !== 0, "stat-agent2-bonus exists");
-    assert.ok($("#stat-agent3-bonus").length !== 0, "stat-agent3-bonus exists");
+    assert.ok($("#stat-agent1-bonus25").length !== 0, "stat-agent1-bonus25 exists");
+    assert.ok($("#stat-agent1-bonus50").length !== 0, "stat-agent1-bonus50 exists");
+    assert.ok($("#stat-agent2-bonus25").length !== 0, "stat-agent2-bonus25 exists");
+    assert.ok($("#stat-agent2-bonus50").length !== 0, "stat-agent2-bonus50 exists");
+    assert.ok($("#stat-agent3-bonus25").length !== 0, "stat-agent3-bonus25 exists");
+    assert.ok($("#stat-agent3-bonus50").length !== 0, "stat-agent3-bonus50 exists");
 });
 
 QUnit.test("should update all stats", function(assert) {
@@ -65,12 +67,14 @@ QUnit.test("should update all stats", function(assert) {
     assert.equal($("#stat-defense-rating").html(), "+1896");
     assert.equal($("#stat-evade-rating").html(), "+1896");
     assert.equal($("#stat-evade-chance").html(), "13.0%");
-    assert.equal($("#stat-agent1-bonus").html(), "");
-    assert.equal($("#stat-agent2-bonus").html(), "+7% Hammer Damage");
-    assert.equal($("#stat-agent3-bonus").html(), "");
+    assert.equal($("#stat-agent1-bonus25").html(), "");
+    assert.equal($("#stat-agent1-bonus25").html(), "");
+    assert.equal($("#stat-agent2-bonus25").html(), "");
+    assert.equal($("#stat-agent2-bonus50").html(), "<span class=\"bonus-val const\">+7%</span> Hammer Damage");
+    assert.equal($("#stat-agent3-bonus25").html(), "");
+    assert.equal($("#stat-agent3-bonus50").html(), "");
 
-    //TODO/TEST equal($('#stat-physical-protection').html(), '+660');
-    //TODO/TEST equal($('#stat-magical-protection').html(), '+300');
+    //TODO/TEST equal($('#stat-protection').html(), '+660');
 });
 
 // TODO/TEST no test for updateURL() (private function)

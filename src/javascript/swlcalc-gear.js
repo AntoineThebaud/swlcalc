@@ -119,12 +119,10 @@ swlcalc.gear = function() {
 
             if (l25.varbonus != undefined) {
               var res = l25.value.replace("%d", Math.round(l25.varbonus.stat == "Combat Power" ? cp * l25.varbonus.coef : hp * l25.varbonus.coef));
-              agents[index].text25(res)
-              $('#stat-agent' + (parseInt(index) + 1) + '-bonus').html(res);
+              agents[index].text25(res);
             } else if (agents[index].level() == "50" && l50.varbonus != undefined) {
               var res = l50.value.replace("%d", Math.round(l50.varbonus.stat == "Combat Power" ? cp * l50.varbonus.coef : hp * l50.varbonus.coef));
-              agents[index].text50(res)
-              $('#stat-agent' + (parseInt(index) + 1) + '-bonus').html(res);
+              agents[index].text50(res);
             }
         }
     };

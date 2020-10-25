@@ -16,6 +16,7 @@ swlcalc = function() {
         // visual settings :
         adjustPlacement();
         window.addEventListener('resize', adjustPlacement, true);
+        adjustSidebar();
     };
 
     /**
@@ -102,6 +103,72 @@ swlcalc = function() {
         var navHeight = $("nav").height();
         $("body").css("padding-top", navHeight + "px");
     };
+
+    /**
+     * Adjusts the placement of the sidebar (stick when scrolling).
+     * taken from https://stackoverflow.com/a/12577363
+     */
+    var adjustSidebar = function() {
+        var lastScrollTop = $(window).scrollTop();
+        var wasScrollingDown = true;
+        var sidebar = $("#sidebar");
+        var navbarHeight = 50; //TODO : to retrieve real height of element instead
+
+        var initialSidebarTop = sidebar.position().top;
+
+        $(window).scroll(function(event) {
+            var windowHeight = $(window).height();
+            var sidebarHeight = sidebar.outerHeight();
+
+            var scrollTop = $(window).scrollTop();
+            var scrollBottom = scrollTop + windowHeight;
+
+            var sidebarTop = sidebar.position().top;
+            var sidebarBottom = sidebarTop + sidebarHeight;
+
+            var heightDelta = Math.abs(windowHeight - sidebarHeight);
+            var scrollDelta = lastScrollTop - scrollTop;
+
+            var isScrollingDown = (scrollTop > lastScrollTop);
+            // FIX : added 3 more pixels, otherwise it sometimes consider than windowHeight is high enough even if it's not the case
+            var isWindowLarger = (windowHeight > sidebarHeight + 3);
+
+            if ((isWindowLarger && scrollTop > initialSidebarTop) || (!isWindowLarger && scrollTop > initialSidebarTop + heightDelta)) {
+                sidebar.addClass('fixed');
+            } else if (!isScrollingDown && scrollTop <= initialSidebarTop) {
+                sidebar.removeClass('fixed');
+            }
+            // console.log("sidebarBottom == " + sidebarBottom);
+            // console.log("scrollBottom == " + scrollBottom);
+            var dragBottomDown = (sidebarBottom <= scrollBottom && isScrollingDown);
+            var dragTopUp = (sidebarTop >= navbarHeight && !isScrollingDown);
+
+            if (dragBottomDown) {
+                // stick to bottom
+                if (isWindowLarger) {
+                    sidebar.css('top', navbarHeight);
+                } else {
+                    sidebar.css('top', -heightDelta);
+                }
+            } else if (dragTopUp) {
+                // stick to top
+                sidebar.css('top', navbarHeight);
+            } else if (sidebar.hasClass('fixed')) {
+                // scroll normaly (intermediary position)
+                var currentTop = parseInt(sidebar.css('top'), 10);
+
+                var minTop = -heightDelta;
+                var scrolledTop = currentTop + scrollDelta
+
+                var isPageAtBottom = (scrollTop + windowHeight >= $(document).height());
+                var newTop = (isPageAtBottom) ? minTop : scrolledTop;
+                sidebar.css('top', newTop);
+            }
+
+            lastScrollTop = scrollTop;
+            wasScrollingDown = isScrollingDown;
+        });
+    }
 
     var oPublic = {
         init: init

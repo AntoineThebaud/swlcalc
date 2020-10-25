@@ -246,7 +246,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
     assert.equal($("#agent2-id").val(), '42');
     assert.equal($("#agent2-level").val(), '50');
     assert.equal($("#agent2-text25").html(), '<span class="stat-value gear">+490</span> Hit Points');
-    assert.equal($("#agent2-text50").html(), '+7% Hammer Damage');
+    assert.equal($("#agent2-text50").html(), '<span class=\"bonus-val const\">+7%</span> Hammer Damage');
 
     assert.equal($("#agent3-id").val(), '0');
     assert.equal($("#agent3-level").val(), '25');

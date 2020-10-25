@@ -36,11 +36,13 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#stat-glance-chance").html(), "12.9%");
     assert.equal($("#stat-evade-rating").html(), "+1911");
     assert.equal($("#stat-evade-chance").html(), "13.1%");
-    // Equal($("#stat-physical-protection').html(), '+660');
-    // equal($("#stat-magical-protection').html(), '+300');
-    assert.equal($("#stat-agent1-bonus").html(), '<span class="bonus-val dps">158</span> Physical Damage on Critical Hits');
-    assert.equal($("#stat-agent2-bonus").html(), '');
-    assert.equal($("#stat-agent3-bonus").html(), '+3.5% Chaos Magic Damage');
+    // Equal($("#stat-protection').html(), '+660');
+    assert.equal($("#stat-agent1-bonus25").html(), '');
+    assert.equal($("#stat-agent1-bonus50").html(), '<span class="bonus-val dps">158</span> Physical Damage on Critical Hits');
+    assert.equal($("#stat-agent2-bonus25").html(), '');
+    assert.equal($("#stat-agent2-bonus50").html(), '');
+    assert.equal($("#stat-agent3-bonus25").html(), '<span class="bonus-val const">+3.5%</span> Chaos Magic Damage');
+    assert.equal($("#stat-agent3-bonus50").html(), '');
 
 
     assert.ok($("#weapon-recap-active").is(":visible"));
@@ -698,7 +700,7 @@ QUnit.test("should import from hash", function(assert) {
 
     assert.equal($("#agent3-id").val(), '28');
     assert.equal($("#agent3-level").val(), '25');
-    assert.equal($("#agent3-text25").html(), '+3.5% Chaos Magic Damage');
+    assert.equal($("#agent3-text25").html(), '<span class=\"bonus-val const\">+3.5%</span> Chaos Magic Damage');
     assert.equal($("#agent3-text50").html(), '');
 });
 
@@ -725,11 +727,13 @@ QUnit.test("should set default values with an empty hash", function(assert) {
     assert.equal($("#stat-glance-chance").html(), "7.4%");
     assert.equal($("#stat-evade-rating").html(), "+753");
     assert.equal($("#stat-evade-chance").html(), "5.2%");
-    // Equal($("#stat-physical-protection').html(), '+660');
-    // equal($("#stat-magical-protection').html(), '+300');
-    assert.equal($("#stat-agent1-bonus").html(), '');
-    assert.equal($("#stat-agent2-bonus").html(), '');
-    assert.equal($("#stat-agent3-bonus").html(), '');
+    // Equal($("#stat-protection').html(), '+660');
+    assert.equal($("#stat-agent1-bonus25").html(), '');
+    assert.equal($("#stat-agent1-bonus50").html(), '');
+    assert.equal($("#stat-agent2-bonus25").html(), '');
+    assert.equal($("#stat-agent2-bonus50").html(), '');
+    assert.equal($("#stat-agent3-bonus25").html(), '');
+    assert.equal($("#stat-agent3-bonus50").html(), '');
 
 
     assert.ok($("#weapon-recap-active").is(":visible"));

@@ -9,6 +9,8 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
     this.init = function() {
         this.bindEvents();
         this.addAgentsToSelect();
+        // replace agent dropdown by enhanced version (text search..)
+        agentObj.el.id.select2();
     };
 
     /**
