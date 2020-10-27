@@ -675,6 +675,7 @@ td[id$="-recap-equipment-img-section"] {
 }
 .agent-table > tbody > tr > td.agent-name-label {
     vertical-align: middle;
+    width: 55px;
 }
 .agent-name-select {
     /* width: 150px;*/
