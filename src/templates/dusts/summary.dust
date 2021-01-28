@@ -41,11 +41,12 @@
                 <th></th>
             </thead>
             <tbody>
+                <tr><td class="stat-name">Protection</td><td id="stat-protection" class="stat-value stat-inSummary">0</td></tr>
+                <tr class="separator"><td class="stat-name">Damage Mitigation</td><td id="stat-damage-mitigation" class="stat-value stat-inSummary">0%</td></tr>
                 <tr><td class="stat-name">Defense Rating</td><td id="stat-defense-rating" class="stat-value stat-inSummary">0</td></tr>
                 <tr class="separator"><td class="stat-name">Glance Chance %</td><td id="stat-glance-chance" class="stat-value stat-inSummary">0%</td></tr>
                 <tr><td class="stat-name">Evade Rating</td><td id="stat-evade-rating" class="stat-value stat-inSummary">0</td></tr>
-                <tr class="separator"><td class="stat-name">Evade Chance %</td><td id="stat-evade-chance" class="stat-value stat-inSummary">0%</td></tr>
-                <tr><td class="stat-name not-functional">Protection</td><td id="stat-protection" class="not-functional stat-value stat-inSummary">249</td></tr>
+                <tr><td class="stat-name">Evade Chance %</td><td id="stat-evade-chance" class="stat-value stat-inSummary">0%</td></tr>
             </tbody>
         </table>
     </div>
