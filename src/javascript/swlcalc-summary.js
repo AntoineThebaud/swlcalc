@@ -213,6 +213,18 @@ swlcalc.summary = function() {
                  1);
     };
 
+    /*
+     * Damage mitigation function, based on protection
+     *
+     * SWL formula for damage mitigation is :
+     * (Protection rating * 100) / (Protection rating + CONST)
+     *
+     * Protection rating includes points brought by passives + gear ()
+     */
+    var computeDamageMitigation = function(sumProtectionPoints) {
+        // TODO
+    };
+
     /**
      * Display any remaining miscellaneous bonus brought by agents
      * TODO : improve show/hide + abstract access
