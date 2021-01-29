@@ -9,11 +9,6 @@ swlcalc.data.stats = {
     hp_coefficient: 2.855,              // Power rating gives greater amount when converting into Hit points /!\ approximated value of the real IG multiplier. // TODO move to computationFigures object ?
     pcrit_coefficient: 0.973,           // Crit Power glyphs give 97.3% of the value of other glyphs.
 
-    // TODO move to computationFigures object ?
-    protection_sp_passive: 2259,
-    protection_increase_per_survivability_point_coef: 2.082,
-    protection_const: 24538, // TODO find better name ?
-
     // Data to build Summary table
     // TODO : choose between camelCase and snake_case...
     computationFigures: {
@@ -34,6 +29,11 @@ swlcalc.data.stats = {
                 base: 3300,
                 capstone: 81 * 30, // = 2430 with all (81) capstones unlocked
                 sp_passive: 2997
+            },
+            protection: {
+                sp_passive: 2259,
+                increasePerSurvivabilityPointCoef: 2.082,
+                constDivisor: 24538
             }
         },
         secondary: {

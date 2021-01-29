@@ -60,31 +60,35 @@ swlcalc.summary = function() {
     var collectPrimaryStats = function() {
         var statsData = swlcalc.data.stats.computationFigures.primary;
         // initial values
-        var sums = {
-            'combat-power':  0,
-            'healing-power': 0,
-            'weapon-power':  0,
-            'hit-points':     statsData['hp'].base + statsData['hp'].capstone + statsData['hp'].sp_passive,
-            'attack-rating': statsData['ar'].base + statsData['ar'].capstone + statsData['ar'].sp_passive,
-            'heal-rating':   statsData['hr'].base + statsData['hr'].capstone + statsData['hr'].sp_passive,
-            'power-rating':  0,
-            'ilvl':          0
+        var sums = { // TODO "sums" is actually bad wording here
+            'combat-power':      0,
+            'healing-power':     0,
+            'weapon-power':      0,
+            'hit-points':        computePrimaryStatInitialAmount('hp'),
+            'attack-rating':     computePrimaryStatInitialAmount('ar'),
+            'heal-rating':       computePrimaryStatInitialAmount('hr'),
+            'power-rating':      0,
+            'ilvl':              0,
+            // TODO 'protection':        0,
+            // TODO 'damage-mitigation': 0
         };
         var sumOfIlvl = 0;
 
+        // collect amount brought by gear slots
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
             sumOfIlvl += parseInt(slot.edit.iLvl());
-            if (slot.isWeapon() && !slot.active) {
+            if (slot.isWeapon() && !slot.active || slot.edit.equipmentId() == 'none') {
                 continue;
-            } else if (slot.isWeapon() && slot.edit.equipmentId() != 'none') {
+            } else if (slot.isWeapon()) {
                 sums['weapon-power'] = parseInt(slot.edit.equipmentStatValue());
-            } else if (!slot.isWeapon() && slot.edit.equipmentId() != 'none') {
+            } else if (!slot.isWeapon()) {
                 sums['power-rating'] += parseInt(slot.edit.equipmentStatValue());
+                // TODO sums['protection'] += parseInt([...]);
             }
         }
 
-        // sum bonuses brought by agents
+        // collect amount brought by agents
         for (var index in swlcalc.gear.agents) {
             var ad = swlcalc.gear.agents[index].agentData
 
@@ -101,7 +105,7 @@ swlcalc.summary = function() {
         // Increment HP/AR/HR based on anima allocation repartition
         sums['attack-rating'] += Math.round(sums['power-rating'] * swlcalc.data.stats.ar_coefficient * swlcalc.animaAllocation.getDamageRatio());
         sums['heal-rating']   += Math.round(sums['power-rating'] * swlcalc.data.stats.hr_coefficient * swlcalc.animaAllocation.getHealingRatio());
-        sums['hit-points']     += Math.round(sums['power-rating'] * swlcalc.data.stats.hp_coefficient * swlcalc.animaAllocation.getSurvivabilityRatio());
+        sums['hit-points']    += Math.round(sums['power-rating'] * swlcalc.data.stats.hp_coefficient * swlcalc.animaAllocation.getSurvivabilityRatio());
 
         // Main, "head" stats are computed at the end when all required underlying stats have been computed
         sums['combat-power']  = computePrimaryPower('ar', sums['attack-rating'], sums['weapon-power']);
@@ -112,6 +116,16 @@ swlcalc.summary = function() {
     };
 
     /*
+     * Computes the initial amount for primary stats.
+     * The formula for this is simply summing the amounts brought by base stats, capstones and SP passives
+     */
+    var computePrimaryStatInitialAmount = function(primaryStat) {
+        var statData = swlcalc.data.stats.computationFigures.primary[primaryStat];
+
+        return statData.base + statData.capstone + statData.sp_passive;
+    };
+
+    /*
      * Computes the Primary (= Combat or Healing) Power for the given Primary Stat Rating and Weapon Power values
      * SWL formula for Primary Power is like :
      * -> Primary Power = (Primary Stat Rating + Weapon Power) * coef
@@ -119,6 +133,18 @@ swlcalc.summary = function() {
     var computePrimaryPower = function(primaryStat, sumPrimaryStatPoints, weaponPower) {
         var result = (sumPrimaryStatPoints + weaponPower) * swlcalc.data.stats.computationFigures.primary[primaryStat].coef
         return swlcalc.util.precisionRound(result, 1)
+    };
+
+    /*
+     * Damage mitigation function, based on protection
+     *
+     * SWL formula for damage mitigation is :
+     * (Protection rating * 100) / (Protection rating + const divisor)
+     */
+    var computeDamageMitigation = function(sumProtectionPoints) {
+        var protectionFigures = swlcalc.data.stats.computationFigures.protection;
+
+        return Math.round((sumProtectionPoints * 100) / (sumProtectionPoints + protectionFigures.constDivisor))
     };
 
     /**
@@ -141,7 +167,7 @@ swlcalc.summary = function() {
     var collectSecondaryStats = function() {
         var statsData = swlcalc.data.stats.computationFigures.secondary;
         // initial values
-        var sums = {
+        var sums = { // TODO "sums" is actually bad wording here
             'critical-rating':           statsData['crit'].sp_passive_flat,
             'critical-chance':           0,
             'critical-power':            statsData['cpow'].sp_passive_flat,
@@ -211,18 +237,6 @@ swlcalc.summary = function() {
                      Math.min(sumGlyphPoints, stat.hardCap) / stat.softCapRate
                      + Math.max(sumGlyphPoints - stat.hardCap, 0) / stat.hardCapRate,
                  1);
-    };
-
-    /*
-     * Damage mitigation function, based on protection
-     *
-     * SWL formula for damage mitigation is :
-     * (Protection rating * 100) / (Protection rating + CONST)
-     *
-     * Protection rating includes points brought by passives + gear ()
-     */
-    var computeDamageMitigation = function(sumProtectionPoints) {
-        // TODO
     };
 
     /**
