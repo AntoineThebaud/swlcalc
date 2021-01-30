@@ -17,20 +17,22 @@ swlcalc.data.stats = {
                 base: 2000,       // Base amount at level 50
                 capstone: 810,    // Amount brought by Capstone points
                 sp_passive: 1512, // Amount brought by the passives skills
-                coef: 0.075
+                coef: 0.075 // TODO difference between ar_coefficient above and this one is not clear
             },
             'hr': {
                 base: 2000,
                 capstone: 810,
                 sp_passive: 1500,
-                coef: 0.02
+                coef: 0.02 // TODO difference between hr_coefficient above and this one is not clear
             },
             'hp': {
                 base: 3300,
                 capstone: 81 * 30, // = 2430 with all (81) capstones unlocked
                 sp_passive: 2997
             },
-            protection: {
+            'protection': {
+                base: 0,
+                capstone: 0,
                 sp_passive: 2259,
                 increasePerSurvivabilityPointCoef: 2.082,
                 constDivisor: 24538

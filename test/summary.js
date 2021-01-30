@@ -90,9 +90,9 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
         "attack-rating": 6784,
         "heal-rating": 5951,
         "power-rating": 3730,
-        "ilvl": 327
-        //TODO/TEST 'physical-protection': 660,
-        //TODO/TEST 'magical-protection': 300
+        "ilvl": 327,
+        "protection": 2259,
+        "damage-mitigation": 8.4
     };
     var expectedSecondaryStats = {
         "critical-rating": "841",
@@ -112,8 +112,6 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
     assert.deepEqual(allSums.primary, expectedPrimaryStats);
     assert.deepEqual(allSums.secondary, expectedSecondaryStats);
 });
-
-// TODO/TEST no test for updateOnePrimaryStat() (private function)
 
 // TODO/TEST no test for updatePrimaryStats() (private function)
 

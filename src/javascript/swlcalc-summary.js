@@ -37,20 +37,13 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Updates the chosen primary stat in the summary
-     */
-    var updateOnePrimaryStat = function(stat, value) {
-        $('#stat-' + stat).text(value);
-    };
-
-    /**
      * Updates all primary stats in the summary
      */
     var updatePrimaryStats = function() {
         var sums = collectPrimaryStats();
 
         for (var stat in sums) {
-            updateOnePrimaryStat(stat, sums[stat]);
+            $('#stat-' + stat).text(sums[stat] + (isStatPercentageBased(stat) ? "%" : ""));
         }
     };
 
@@ -58,7 +51,6 @@ swlcalc.summary = function() {
      * Collects primary stats by going through the whole gear
      */
     var collectPrimaryStats = function() {
-        var statsData = swlcalc.data.stats.computationFigures.primary;
         // initial values
         var sums = { // TODO "sums" is actually bad wording here
             'combat-power':      0,
@@ -69,8 +61,8 @@ swlcalc.summary = function() {
             'heal-rating':       computePrimaryStatInitialAmount('hr'),
             'power-rating':      0,
             'ilvl':              0,
-            // TODO 'protection':        0,
-            // TODO 'damage-mitigation': 0
+            'protection':        computePrimaryStatInitialAmount('protection'),
+            'damage-mitigation': 0
         };
         var sumOfIlvl = 0;
 
@@ -112,6 +104,8 @@ swlcalc.summary = function() {
         sums['healing-power'] = computePrimaryPower('hr', sums['heal-rating'], sums['weapon-power']);
         sums['ilvl']          = computeAverageILvl(sumOfIlvl);
 
+        sums['damage-mitigation'] = computeDamageMitigation(sums['protection'])
+
         return sums;
     };
 
@@ -142,9 +136,9 @@ swlcalc.summary = function() {
      * (Protection rating * 100) / (Protection rating + const divisor)
      */
     var computeDamageMitigation = function(sumProtectionPoints) {
-        var protectionFigures = swlcalc.data.stats.computationFigures.protection;
+        var protectionFigures = swlcalc.data.stats.computationFigures.primary['protection'];
 
-        return Math.round((sumProtectionPoints * 100) / (sumProtectionPoints + protectionFigures.constDivisor))
+        return swlcalc.util.precisionRound((sumProtectionPoints * 100) / (sumProtectionPoints + protectionFigures.constDivisor), 1);
     };
 
     /**
@@ -280,7 +274,8 @@ swlcalc.summary = function() {
             || statName == 'critical-chance'
             || statName == 'glance-reduction'
             || statName == 'evade-chance'
-            || statName == 'glance-chance';
+            || statName == 'glance-chance'
+            || statName == 'damage-mitigation';
     };
 
     /**
