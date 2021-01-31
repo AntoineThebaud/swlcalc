@@ -51,6 +51,14 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
         agentObj.updateId();
         swlcalc.summary.updateAllStats();
         swlcalc.gear.updateAllDescriptions();
+         /* TODO : calling swlcalc.summary.updateOtherBonuses() a is workaround to solve a display bug in the summary (%d shown instead of computed value).
+          * Let's take worst case scenario (even if dont exist) : an agent that brings AR bonus + Proc damage effect affected by CP.
+          * In such case we need to : update the summary to compute total AR and new CP, then compute the final value for proc damage for the agent slot,
+          * then propagate this other bonus to the "Other bonuses" section of the Summary.
+          * I.e in short : 1) update Summary -> 2) update Agent slot -> 3) update Summary
+          * The best workaround found for now was to call "only" swlcalc.summary.updateOtherBonuses() for the step 3).
+          */
+        swlcalc.summary.updateOtherBonuses();
     };
 
     /**
@@ -60,5 +68,6 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
         agentObj.updateLevel();
         swlcalc.summary.updateAllStats();
         swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses(); // TODO : workaround, see previous comment in handleIdChange()
     };
 };

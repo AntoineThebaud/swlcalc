@@ -302,7 +302,8 @@ swlcalc.summary = function() {
         collectPrimaryStats: collectPrimaryStats,      //TODO/REFACTOR : visibility relevant only for tests
         collectSecondaryStats: collectSecondaryStats,  //TODO/REFACTOR : visibility relevant only for tests
         collectAllStats: collectAllStats,              //TODO/REFACTOR : visibility relevant only for tests
-        updateAllStats: updateAllStats
+        updateAllStats: updateAllStats,
+        updateOtherBonuses: updateOtherBonuses
     };
 
     return oPublic;
