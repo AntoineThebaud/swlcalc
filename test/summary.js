@@ -83,25 +83,25 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
     createTankBuild();
 
     var expectedPrimaryStats = {
-        "combat-power": 646.2,
-        "healing-power": 155.7,
-        "weapon-power": 1832,
-        "hit-points": 13903,
         "attack-rating": 6784,
+        "damage-mitigation": 16.6,
+        "combat-power": 646.2,
         "heal-rating": 5951,
-        "power-rating": 3730,
+        "healing-power": 155.7,
+        "hit-points": 13903,
         "ilvl": 327,
-        "protection": 2259,
-        "damage-mitigation": 8.4
+        "power-rating": 3730,
+        "protection": 4895,
+        "weapon-power": 1832,
     };
     var expectedSecondaryStats = {
-        "critical-rating": "841",
         "critical-chance": "13.8",
         "critical-power": "1008",
         "critical-power-percentage": "90.7",
+        "critical-rating": "841",
+        "defense-rating": 1896,
         "hit-rating": 1244,
         "glance-reduction": 24.5,
-        "defense-rating": 1896,
         "glance-chance": 18.7,
         "evade-rating": 1896,
         "evade-chance": "13.0",

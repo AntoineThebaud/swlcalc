@@ -76,7 +76,7 @@ swlcalc.summary = function() {
                 sums['weapon-power'] = parseInt(slot.edit.equipmentStatPowerValue());
             } else if (!slot.isWeapon()) {
                 sums['power-rating'] += parseInt(slot.edit.equipmentStatPowerValue());
-                // TODO sums['protection'] += parseInt([...]);
+                sums['protection']   += parseInt(slot.edit.equipmentStatProtValue());
             }
         }
 
