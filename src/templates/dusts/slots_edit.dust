@@ -27,12 +27,20 @@
                             {>rarityselect itemtype="equipment"/}
                         </td>
                         <td class="stat-inSlot">
-                            <span id="{id}-edit-equipment-stat-value" class="stat-value gear">0</span>
-                            <span> </span>
-                            {?is_weapon}
-                            <span>Weapon Power</span>
-                            {:else}
-                            <span>Power Rating</span>
+                            <p class="thin-p">
+                                <span id="{id}-edit-equipment-stat-power-value" class="stat-value gear">0</span>
+                                <span> </span>
+                                {?is_weapon}
+                                <span>Weapon Power</span>
+                                {:else}
+                                <span>Power Rating</span>
+                                {/is_weapon}
+                            </p>
+                            {^is_weapon}
+                            <p class="thin-p">
+                                <span id="{id}-edit-equipment-stat-prot-value" class="stat-value gear">0</span>
+                                <span> Protection</span>
+                            </p>
                             {/is_weapon}
                         </td>
                     </tr>

@@ -73,9 +73,9 @@ swlcalc.summary = function() {
             if (slot.isWeapon() && !slot.active || slot.edit.equipmentId() == 'none') {
                 continue;
             } else if (slot.isWeapon()) {
-                sums['weapon-power'] = parseInt(slot.edit.equipmentStatValue());
+                sums['weapon-power'] = parseInt(slot.edit.equipmentStatPowerValue());
             } else if (!slot.isWeapon()) {
-                sums['power-rating'] += parseInt(slot.edit.equipmentStatValue());
+                sums['power-rating'] += parseInt(slot.edit.equipmentStatPowerValue());
                 // TODO sums['protection'] += parseInt([...]);
             }
         }

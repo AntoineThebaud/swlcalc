@@ -55,7 +55,7 @@
         <hr>
         <div id="{slot.id}-recap-equipment-stat-section">
             <p>
-                <span id="{slot.id}-recap-equipment-stat-raw-value" class="stat-value gear"></span>
+                <span id="{slot.id}-recap-equipment-stat-power-value" class="stat-value gear"></span>
                 <span> </span>
                 {?slot.is_weapon}
                 <span>Weapon Power</span>
@@ -77,6 +77,10 @@
                 <p id="{slot.id}-recap-equipment-stat-hr-section">
                     <span id="{slot.id}-recap-equipment-stat-hr-value" class="stat-value gear"></span>
                     <span> Heal Rating</span>
+                </p>
+                <p id="{slot.id}-recap-equipment-stat-prot-section">
+                    <span id="{slot.id}-recap-equipment-stat-prot-value" class="stat-value gear"></span>
+                    <span> Protection</span>
                 </p>
             </div>
             {/slot.is_weapon}

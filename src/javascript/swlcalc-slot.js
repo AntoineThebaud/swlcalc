@@ -201,31 +201,42 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var bonus_value = 0;
         if (this.edit.equipmentId() != 'none') {
             // calculation rule for weapons
+            // TODO rewrite in the style of getRawProtValue() below
             if (this.isWeapon()) {
                 base_value = swlcalc.data.power_rating.weapon[this.edit.equipmentRarity()].weapon_power_init;
                 bonus_value = swlcalc.data.power_rating.weapon[this.edit.equipmentRarity()].weapon_power_per_level * (this.edit.equipmentLevel() - 1);
             }
             // calculation rule for talismans
+            // TODO rewrite in the style of getRawProtValue() below
             else {
                 base_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_init;
                 bonus_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_per_level * (this.edit.equipmentLevel() - 1);
             }
         }
         var newValue = base_value + Math.round(bonus_value);
-        this.edit.equipmentStatValue(newValue);
-        this.recap.equipmentStatRawValue(newValue);
-        this.updateEquipmentStatValues();
+        this.edit.equipmentStatPowerValue(newValue);
+        this.recap.equipmentStatPowerValue(newValue);
+
+        if (!this.isWeapon()) {
+            this.updateTalismanStatValues();
+        }
     };
 
     /**
-     * Update the "transformed" equipment stat values (i.e hp, ar, hr), based on Power rating and Anima Allocation
+     * Update the "transformed" equipment stat values (for talismans only) :
+     * - HP, AR and HR, based on Power rating and Anima Allocation
+     * - Protection, based on raw protection value and Anima Allocation
      */
-    this.updateEquipmentStatValues = function() {
-        var valueRaw = this.edit.equipmentStatValue();
+    this.updateTalismanStatValues = function() {
+        var valuePowerRaw = this.edit.equipmentStatPowerValue();
+        this.recap.equipmentStatHPValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hp_coefficient * swlcalc.animaAllocation.getSurvivabilityRatio()));
+        this.recap.equipmentStatARValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.ar_coefficient * swlcalc.animaAllocation.getDamageRatio()));
+        this.recap.equipmentStatHRValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hr_coefficient * swlcalc.animaAllocation.getHealingRatio()));
 
-        this.recap.equipmentStatHPValue('+' + Math.round(valueRaw * swlcalc.data.stats.hp_coefficient * swlcalc.animaAllocation.getSurvivabilityRatio()));
-        this.recap.equipmentStatARValue('+' + Math.round(valueRaw * swlcalc.data.stats.ar_coefficient * swlcalc.animaAllocation.getDamageRatio()));
-        this.recap.equipmentStatHRValue('+' + Math.round(valueRaw * swlcalc.data.stats.hr_coefficient * swlcalc.animaAllocation.getHealingRatio()));
+        var valueProtRaw = this.getRawProtValue();
+        var newValue = '+' + Math.round(valueProtRaw + valueProtRaw * swlcalc.data.stats.protIncreasePerSurvivabilityPointCoef * swlcalc.animaAllocation.getSurvivabilityRatio());
+        this.edit.equipmentStatProtValue(newValue);
+        this.recap.equipmentStatProtValue(newValue);
     }
 
     /**
@@ -584,19 +595,31 @@ swlcalc.gear.Slot = function Slot(slotData) {
         }
     };
 
+    // TODO : uniformized computeItemILvlWithQuality and computeItemILvlWithoutQuality with getRawProtValue : pass parameters or retrieve data itself ?
+
     /**
      * Calculates item power for the given item that has quality attribute (= talisman, weapon or glyph)
      */
     this.computeItemILvlWithQuality = function(element, rarity, quality, level) {
-        var dataToUse = dataToUse = swlcalc.data.ilvl[element][rarity][quality];
-        return dataToUse.ilvl_init + dataToUse.ilvl_per_level * (level - 1);
-    }
+        var data = swlcalc.data.ilvl[element][rarity][quality];
+        return data.ilvl_init + data.ilvl_per_level * (level - 1);
+    };
 
     /**
      * Calculates item power for the given item that doesn't have quality attribute (= signets)
      */
     this.computeItemILvlWithoutQuality = function(element, rarity, level) {
-        var dataToUse = swlcalc.data.ilvl[element][rarity];
-        return dataToUse.ilvl_init + dataToUse.ilvl_per_level * (level - 1);
-    }
+        var data = swlcalc.data.ilvl[element][rarity];
+        return data.ilvl_init + data.ilvl_per_level * (level - 1);
+    };
+
+    /**
+     * Retrieve "raw" protection value for this slot (i.e without AA applied)
+     */
+    this.getRawProtValue = function() {
+        var data = swlcalc.data.protection[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()];
+        var lvl  = this.edit.equipmentLevel() - 1;
+
+        return data.init + Math.round(data.per_level * lvl);
+    };
 };

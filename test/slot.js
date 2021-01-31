@@ -111,14 +111,14 @@ QUnit.test("should update elements related to equipment's level accordingly", fu
 });
 
 QUnit.test("should update elements related to equipment's stat rating accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.finger.edit.equipmentStatValue(), "642");
-    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatRawValue(), "642");
+    assert.equal(swlcalc.gear.slots.finger.edit.equipmentStatPowerValue(), "642");
+    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatPowerValue(), "642");
 
     swlcalc.gear.slots.finger.edit.equipmentRarity("legendary");
     swlcalc.gear.slots.finger.updateEquipmentStatRating();
 
-    assert.equal(swlcalc.gear.slots.finger.edit.equipmentStatValue(), "1405");
-    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatRawValue(), "1405");
+    assert.equal(swlcalc.gear.slots.finger.edit.equipmentStatPowerValue(), "1405");
+    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatPowerValue(), "1405");
 });
 
 QUnit.test("should update elements related to equipment's \"transformed\" stat value accordingly", function(assert) {
@@ -126,11 +126,11 @@ QUnit.test("should update elements related to equipment's \"transformed\" stat v
     assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatARValue(), "+424");
     assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHRValue(), "+282");
 
-    swlcalc.gear.slots.finger.edit.equipmentStatValue("9876");
+    swlcalc.gear.slots.finger.edit.equipmentStatPowerValue("9876");
     $('#anima-allocation-damage-range').val(100);
     $('#anima-allocation-healing-range').val(0);
     $('#anima-allocation-survivability-range').val(100);
-    swlcalc.gear.slots.finger.updateEquipmentStatValues();
+    swlcalc.gear.slots.finger.updateTalismanStatValues();
 
     assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHPValue(), "+28196");
     assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatARValue(), "+9876");
@@ -369,7 +369,7 @@ QUnit.test("should reset slot state", function(assert) {
         assert.equal(slot.edit.equipmentId(), "none");
         assert.equal(slot.edit.equipmentRarity(), "standard");
         assert.equal(slot.edit.equipmentQuality(), "1");
-        assert.equal(slot.edit.equipmentStatValue(), "0");
+        assert.equal(slot.edit.equipmentStatPowerValue(), "0");
         assert.equal(slot.edit.equipmentLevel(), "20");
         assert.equal(slot.recap.el.equipmentStatSection.is(":hidden"), true);
         assert.equal(slot.edit.equipmentImgItem(), "assets/images/icons/equipment/" + slot.kind + "/None.png");

@@ -60,13 +60,14 @@ module.exports = function(grunt) {
       build_data: {
         src: [
             '<%= dirs.src %>/data/<%= pkg.name %>-data-agents.js',
-            '<%= dirs.src %>/data/<%= pkg.name %>-data-slots.js',
-            '<%= dirs.src %>/data/<%= pkg.name %>-data-power.js',
-            '<%= dirs.src %>/data/<%= pkg.name %>-data-mappings.js',
-            '<%= dirs.src %>/data/<%= pkg.name %>-data-signets.js',
-            '<%= dirs.src %>/data/<%= pkg.name %>-data-glyphs.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-equipments.js',
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-glyphs.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-ilvl.js',
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-mappings.js',
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-power.js',
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-protection.js',
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-signets.js',
+            '<%= dirs.src %>/data/<%= pkg.name %>-data-slots.js',
             '<%= dirs.src %>/data/<%= pkg.name %>-data-stats.js'
         ],
         dest: '<%= dirs.build %>/assets/javascripts/<%= pkg.name %>-data.js'

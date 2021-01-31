@@ -30,7 +30,7 @@ QUnit.test("should have required components in the DOM", function(assert) {
         assert.ok(slot.recap.el.equipmentQuality.length !== 0);
         assert.ok(slot.recap.el.equipmentLevel.length !== 0);
         assert.ok(slot.recap.el.equipmentStatSection.length !== 0);
-        assert.ok(slot.recap.el.equipmentStatRawValue.length !== 0);
+        assert.ok(slot.recap.el.equipmentStatPowerValue.length !== 0);
         if (slot.group != "weapon") {
             assert.ok(slot.recap.el.equipmentStatHPValue.length !== 0);
             assert.ok(slot.recap.el.equipmentStatARValue.length !== 0);
@@ -100,9 +100,9 @@ QUnit.test("should get and set the slot's equipment level on recap view", functi
 });
 
 QUnit.test("should get and set the slot's equipment stat raw value on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatRawValue(), "1070");
-    swlcalc.gear.slots.head.recap.equipmentStatRawValue("8");
-    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatRawValue(), "8");
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatPowerValue(), "1070");
+    swlcalc.gear.slots.head.recap.equipmentStatPowerValue("8");
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatPowerValue(), "8");
 });
 
 QUnit.test("should get and set the slot's equipment stat HP value on recap view", function(assert) {

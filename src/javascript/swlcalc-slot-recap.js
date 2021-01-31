@@ -8,53 +8,55 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     this.group = slotData.group;
 
     this.el = {
-        section:                       $('#' + this.id + '-recap-section'),
-        div:                           $('#' + this.id + '-recap-div'),
-        editBtn:                       $('#' + this.id + '-recap-editbtn'),
-        editBtnImg:                    $('#' + this.id + '-recap-editbtn-img'),
-        weaponActive:                  $('#' + this.id + '-recap-active'),
-        iLvl:                          $('#' + this.id + '-recap-ilvl'),
-        equipmentEmpty:                $('#' + this.id + '-recap-equipment-empty'),
-        equipmentTitleSection:         $('#' + this.id + '-recap-equipment-title-section'),
-        equipmentTitle:                $('#' + this.id + '-recap-equipment-title'),
-        equipmentSubtitleSection:      $('#' + this.id + '-recap-equipment-subtitle-section'),
-        equipmentItem:                 $('#' + this.id + '-recap-equipment-item'),
-        equipmentRarity:               $('#' + this.id + '-recap-equipment-rarity'),
-        equipmentQuality:              $('#' + this.id + '-recap-equipment-quality'),
-        equipmentLevel:                $('#' + this.id + '-recap-equipment-level'),
-        equipmentStatSection:          $('#' + this.id + '-recap-equipment-stat-section'),
-        equipmentStatRawValue:         $('#' + this.id + '-recap-equipment-stat-raw-value'),
-        equipmentStatHPSection:        $('#' + this.id + '-recap-equipment-stat-hp-section'),
-        equipmentStatARSection:        $('#' + this.id + '-recap-equipment-stat-ar-section'),
-        equipmentStatHRSection:        $('#' + this.id + '-recap-equipment-stat-hr-section'),
-        equipmentStatHPValue:          $('#' + this.id + '-recap-equipment-stat-hp-value'),
-        equipmentStatARValue:          $('#' + this.id + '-recap-equipment-stat-ar-value'),
-        equipmentStatHRValue:          $('#' + this.id + '-recap-equipment-stat-hr-value'),
-        equipmentImgSection:           $('#' + this.id + '-recap-equipment-img-section'),
-        equipmentImgItem:              $('#' + this.id + '-recap-equipment-img-item'),
-        equipmentImgRarity:            $('#' + this.id + '-recap-equipment-img-rarity'),
-        equipmentImgQuality:           $('#' + this.id + '-recap-equipment-img-quality'),
-        equipmentDescription:          $('#' + this.id + '-recap-equipment-description'),
-        equipmentDescriptionSection:   $('#' + this.id + '-recap-equipment-description-section'),
-        equipmentLabelLevel:           $('#' + this.id + '-recap-equipment-label-level'),
-        glyphSection:                  $('#' + this.id + '-recap-glyph-section'),
-        glyphEmpty:                    $('#' + this.id + '-recap-glyph-empty'),
-        glyphTitle:                    $('#' + this.id + '-recap-glyph-title'),
-        glyphItem:                     $('#' + this.id + '-recap-glyph-item'),
-        glyphRarity:                   $('#' + this.id + '-recap-glyph-rarity'),
-        glyphQuality:                  $('#' + this.id + '-recap-glyph-quality'),
-        glyphLevel:                    $('#' + this.id + '-recap-glyph-level'),
-        glyphStatRating:               $('#' + this.id + '-recap-glyph-stat-rating'),
-        glyphStatText:                 $('#' + this.id + '-recap-glyph-stat-text'),
-        signetSection:                 $('#' + this.id + '-recap-signet-section'),
-        signetEmpty:                   $('#' + this.id + '-recap-signet-empty'),
-        signetTitle:                   $('#' + this.id + '-recap-signet-title'),
-        signetItem:                    $('#' + this.id + '-recap-signet-item'),
-        signetRarity:                  $('#' + this.id + '-recap-signet-rarity'),
-        signetLevel:                   $('#' + this.id + '-recap-signet-level'),
-        signetDescription:             $('#' + this.id + '-recap-signet-description'),
-        affix:                         $('#' + this.id + '-recap-affix'),
-        affixQuality:                  $('#' + this.id + '-recap-affix-quality')
+        section:                     $('#' + this.id + '-recap-section'),
+        div:                         $('#' + this.id + '-recap-div'),
+        editBtn:                     $('#' + this.id + '-recap-editbtn'),
+        editBtnImg:                  $('#' + this.id + '-recap-editbtn-img'),
+        weaponActive:                $('#' + this.id + '-recap-active'),
+        iLvl:                        $('#' + this.id + '-recap-ilvl'),
+        equipmentEmpty:              $('#' + this.id + '-recap-equipment-empty'),
+        equipmentTitleSection:       $('#' + this.id + '-recap-equipment-title-section'),
+        equipmentTitle:              $('#' + this.id + '-recap-equipment-title'),
+        equipmentSubtitleSection:    $('#' + this.id + '-recap-equipment-subtitle-section'),
+        equipmentItem:               $('#' + this.id + '-recap-equipment-item'),
+        equipmentRarity:             $('#' + this.id + '-recap-equipment-rarity'),
+        equipmentQuality:            $('#' + this.id + '-recap-equipment-quality'),
+        equipmentLevel:              $('#' + this.id + '-recap-equipment-level'),
+        equipmentStatSection:        $('#' + this.id + '-recap-equipment-stat-section'),
+        equipmentStatPowerValue:     $('#' + this.id + '-recap-equipment-stat-power-value'),
+        equipmentStatHPSection:      $('#' + this.id + '-recap-equipment-stat-hp-section'),
+        equipmentStatARSection:      $('#' + this.id + '-recap-equipment-stat-ar-section'),
+        equipmentStatHRSection:      $('#' + this.id + '-recap-equipment-stat-hr-section'),
+        equipmentStatProtSection:    $('#' + this.id + '-recap-equipment-stat-prot-section'),
+        equipmentStatHPValue:        $('#' + this.id + '-recap-equipment-stat-hp-value'),
+        equipmentStatARValue:        $('#' + this.id + '-recap-equipment-stat-ar-value'),
+        equipmentStatHRValue:        $('#' + this.id + '-recap-equipment-stat-hr-value'),
+        equipmentStatProtValue:      $('#' + this.id + '-recap-equipment-stat-prot-value'),
+        equipmentImgSection:         $('#' + this.id + '-recap-equipment-img-section'),
+        equipmentImgItem:            $('#' + this.id + '-recap-equipment-img-item'),
+        equipmentImgRarity:          $('#' + this.id + '-recap-equipment-img-rarity'),
+        equipmentImgQuality:         $('#' + this.id + '-recap-equipment-img-quality'),
+        equipmentDescription:        $('#' + this.id + '-recap-equipment-description'),
+        equipmentDescriptionSection: $('#' + this.id + '-recap-equipment-description-section'),
+        equipmentLabelLevel:         $('#' + this.id + '-recap-equipment-label-level'),
+        glyphSection:                $('#' + this.id + '-recap-glyph-section'),
+        glyphEmpty:                  $('#' + this.id + '-recap-glyph-empty'),
+        glyphTitle:                  $('#' + this.id + '-recap-glyph-title'),
+        glyphItem:                   $('#' + this.id + '-recap-glyph-item'),
+        glyphRarity:                 $('#' + this.id + '-recap-glyph-rarity'),
+        glyphQuality:                $('#' + this.id + '-recap-glyph-quality'),
+        glyphLevel:                  $('#' + this.id + '-recap-glyph-level'),
+        glyphStatRating:             $('#' + this.id + '-recap-glyph-stat-rating'),
+        glyphStatText:               $('#' + this.id + '-recap-glyph-stat-text'),
+        signetSection:               $('#' + this.id + '-recap-signet-section'),
+        signetEmpty:                 $('#' + this.id + '-recap-signet-empty'),
+        signetTitle:                 $('#' + this.id + '-recap-signet-title'),
+        signetItem:                  $('#' + this.id + '-recap-signet-item'),
+        signetRarity:                $('#' + this.id + '-recap-signet-rarity'),
+        signetLevel:                 $('#' + this.id + '-recap-signet-level'),
+        signetDescription:           $('#' + this.id + '-recap-signet-description'),
+        affix:                       $('#' + this.id + '-recap-affix'),
+        affixQuality:                $('#' + this.id + '-recap-affix-quality')
     };
 
     /**
@@ -130,13 +132,13 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /**
-     * Getter/Setter for #slot-recap-equipment-stat-raw-value
+     * Getter/Setter for #slot-recap-equipment-stat-power-value
      */
-    this.equipmentStatRawValue = function() {
+    this.equipmentStatPowerValue = function() {
         if (arguments.length == 1) {
-            this.el.equipmentStatRawValue.text(arguments[0]);
+            this.el.equipmentStatPowerValue.text(arguments[0]);
         } else {
-            return this.el.equipmentStatRawValue.text();
+            return this.el.equipmentStatPowerValue.text();
         }
     };
 
@@ -185,6 +187,22 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
             }
         } else {
             return this.el.equipmentStatHRValue.text();
+        }
+    };
+
+    /**
+     * Getter/Setter for #slot-recap-equipment-stat-prot-value
+     */
+    this.equipmentStatProtValue = function() {
+        if (arguments.length == 1) {
+            this.el.equipmentStatProtValue.text(arguments[0]);
+            if (arguments[0] == 0) {
+                this.el.equipmentStatProtSection.hide();
+            } else if (this.el.equipmentStatProtSection.is(":hidden")) {
+                this.el.equipmentStatProtSection.show();
+            }
+        } else {
+            return this.el.equipmentStatProtValue.text();
         }
     };
 

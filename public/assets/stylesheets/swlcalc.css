@@ -716,3 +716,8 @@ div[id="sidebar"] {
     width: 200px;
     margin-left: 25px;
 }
+
+.thin-p {
+    margin-bottom: 0px;
+    line-height: 1.2;
+}

@@ -57,8 +57,11 @@ swlcalc.animaAllocation = function() {
      * Apply the anima allocation to gear + summary
      */
     var applyAnimaAllocation = function() {
-        for (var id in swlcalc.gear.slots) {
-            swlcalc.gear.slots[id].updateEquipmentStatValues();
+        for (var slotId in swlcalc.gear.slots) {
+            slot = swlcalc.gear.slots[slotId]
+            if(!slot.isWeapon()) {
+                slot.updateTalismanStatValues();
+            }
         }
         swlcalc.summary.updateAllStats();
         swlcalc.gear.updateAllDescriptions();
