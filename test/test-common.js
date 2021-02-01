@@ -2,10 +2,10 @@
 
 function renderGear() {
     renderTemplate("slots_recap", {
-        slots_recap: swlcalc.data.template_data.slots
+        slots_recap: swlcalc.data.templateData.slots
     });
     renderTemplate("slots_edit", {
-        slots_edit: swlcalc.data.template_data.slots
+        slots_edit: swlcalc.data.templateData.slots
     });
 
     for (var i = 0; i < 3; i++) {
@@ -62,8 +62,8 @@ function initiateHandlers() {
 }
 
 function initiateSlotHandlers() {
-    for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-        var slot = swlcalc.data.template_data.slots[i];
+    for (var i = 0; i < swlcalc.data.templateData.slots.length; i++) {
+        var slot = swlcalc.data.templateData.slots[i];
         swlcalc.handler[slot.id] = new swlcalc.gear.SlotHandler(slot);
         swlcalc.handler[slot.id].init();
     }

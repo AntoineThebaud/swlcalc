@@ -9,8 +9,8 @@ swlcalc.themeSwitch = function () {
 
     var elInit = function() {
         return {
-            btn_theme_classic: $('#btn-theme-classic'),
-            btn_theme_sw:      $('#btn-theme-sw')
+            btnThemeClassic: $('#btn-theme-classic'),
+            btnThemeSw:      $('#btn-theme-sw')
         };
     };
 
@@ -23,8 +23,8 @@ swlcalc.themeSwitch = function () {
     * Associates the right processing to each trigger.
     */
     var bindEvents = function() {
-        el.btn_theme_classic.on('click', switchTheme);
-        el.btn_theme_sw.on('click', switchTheme);
+        el.btnThemeClassic.on('click', switchTheme);
+        el.btnThemeSw.on('click', switchTheme);
     };
 
     /**

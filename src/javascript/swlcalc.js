@@ -24,8 +24,9 @@ swlcalc = function() {
      */
     var renderBody = function() {
         dust.render('body', {
-            slots_recap: swlcalc.data.template_data.slots,
-            slots_edit: swlcalc.data.template_data.slots
+            // TODO : useless to have 2 different vars here since we use swlcalc.data.templateData.slots in both cases ?
+            slots_recap: swlcalc.data.templateData.slots,
+            slots_edit: swlcalc.data.templateData.slots
         },
 
         function(err, out) {
@@ -42,7 +43,7 @@ swlcalc = function() {
     var fillSlots = function() {
         var vars = $.getUrlVars();
         // TODO/REFACTOR : currently we don't check if parameters for each slot are correct !
-        if (!$.isEmptyObject(vars) && Object.keys(vars).length >= swlcalc.data.template_data.slots.length) {
+        if (!$.isEmptyObject(vars) && Object.keys(vars).length >= swlcalc.data.templateData.slots.length) {
             swlcalc.import.start(vars);
         } else {
            $('#btn-reset').trigger('click');
@@ -55,8 +56,8 @@ swlcalc = function() {
     var startSubModules = function() {
         swlcalc.gear.init();
         // start slots handlers
-        for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-            startSlotHandler(swlcalc.data.template_data.slots[i]);
+        for (var i = 0; i < swlcalc.data.templateData.slots.length; i++) {
+            startSlotHandler(swlcalc.data.templateData.slots[i]);
         }
         // start handlers for agents slots
         for (var i = 0; i < swlcalc.gear.nbAgents(); i++) {

@@ -6,21 +6,21 @@ swlcalc.buttonBar = function() {
 
     var elInit = function() {
         return {
-            btn_all_standard: $('#btn-all-standard'),
-            btn_all_superior: $('#btn-all-superior'),
-            btn_all_epic: $('#btn-all-epic'),
-            btn_all_mythic: $('#btn-all-mythic'),
-            btn_all_legendary: $('#btn-all-legendary'),
+            btnAllStandard: $('#btn-all-standard'),
+            btnAllSuperior: $('#btn-all-superior'),
+            btnAllEpic: $('#btn-all-epic'),
+            btnAllMythic: $('#btn-all-mythic'),
+            btnAllLegendary: $('#btn-all-legendary'),
 
-            btn_all_1_pip: $('#btn-all-1-pip'),
-            btn_all_2_pip: $('#btn-all-2-pip'),
-            btn_all_3_pip: $('#btn-all-3-pip'),
-            btn_all_4_pip: $('#btn-all-4-pip'),
+            btnAll1Pip: $('#btn-all-1-pip'),
+            btnAll2Pip: $('#btn-all-2-pip'),
+            btnAll3Pip: $('#btn-all-3-pip'),
+            btnAll4Pip: $('#btn-all-4-pip'),
 
-            btn_all_lvl_min: $('#btn-all-lvl-min'),
-            btn_all_lvl_max: $('#btn-all-lvl-max'),
+            btnAllLvlMin: $('#btn-all-lvl-min'),
+            btnAllLvlMax: $('#btn-all-lvl-max'),
 
-            btn_reset: $('#btn-reset')
+            btnReset: $('#btn-reset')
         };
     };
 
@@ -33,21 +33,21 @@ swlcalc.buttonBar = function() {
      * Associates the right processing to each trigger.
      */
     var bindEvents = function() {
-        el.btn_all_standard.on('click', setRarityOnAllSlots);
-        el.btn_all_superior.on('click', setRarityOnAllSlots);
-        el.btn_all_epic.on('click', setRarityOnAllSlots);
-        el.btn_all_mythic.on('click', setRarityOnAllSlots);
-        el.btn_all_legendary.on('click', setRarityOnAllSlots);
+        el.btnAllStandard.on('click', setRarityOnAllSlots);
+        el.btnAllSuperior.on('click', setRarityOnAllSlots);
+        el.btnAllEpic.on('click', setRarityOnAllSlots);
+        el.btnAllMythic.on('click', setRarityOnAllSlots);
+        el.btnAllLegendary.on('click', setRarityOnAllSlots);
 
-        el.btn_all_1_pip.on('click', setQualityOnAllSlots);
-        el.btn_all_2_pip.on('click', setQualityOnAllSlots);
-        el.btn_all_3_pip.on('click', setQualityOnAllSlots);
-        el.btn_all_4_pip.on('click', set4PipsOnAllSlots);
+        el.btnAll1Pip.on('click', setQualityOnAllSlots);
+        el.btnAll2Pip.on('click', setQualityOnAllSlots);
+        el.btnAll3Pip.on('click', setQualityOnAllSlots);
+        el.btnAll4Pip.on('click', set4PipsOnAllSlots);
 
-        el.btn_all_lvl_min.on('click', setMinLevelOnAllSlots);
-        el.btn_all_lvl_max.on('click', setMaxLevelOnAllSlots);
+        el.btnAllLvlMin.on('click', setMinLevelOnAllSlots);
+        el.btnAllLvlMax.on('click', setMaxLevelOnAllSlots);
 
-        el.btn_reset.on('click', resetGear);
+        el.btnReset.on('click', resetGear);
     };
 
     /**
@@ -92,7 +92,7 @@ swlcalc.buttonBar = function() {
      * of a specific behavior : increase rarity if it is too "low"
      */
     var set4PipsOnAllSlots = function(event) {
-        var map = swlcalc.data.rarity_mapping.to_num
+        var map = swlcalc.data.rarityMapping.toNum
         var upgradedRarity = 'epic'
         var fourPips = "4"
 

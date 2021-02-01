@@ -120,14 +120,14 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newRarity = this.edit.equipmentRarity();
 
         this.recap.el.equipmentTitle.attr('class', 'color-' + newRarity);
-        var img_path = '';
+        var imgPath = '';
         if (this.isWeapon()) {
-            img_path = 'assets/images/icons/rarity/' + newRarity + '-42x42.png';
+            imgPath = 'assets/images/icons/rarity/' + newRarity + '-42x42.png';
         } else {
-            img_path = 'assets/images/icons/rarity/' + this.id + '/' + newRarity + '-42x42.png';
+            imgPath = 'assets/images/icons/rarity/' + this.id + '/' + newRarity + '-42x42.png';
         }
-        this.edit.equipmentImgRarity(img_path);
-        this.recap.equipmentImgRarity(img_path);
+        this.edit.equipmentImgRarity(imgPath);
+        this.recap.equipmentImgRarity(imgPath);
         this.edit.el.equipmentLabelLevel.attr('class', 'label-level big border-' + newRarity);
         this.recap.el.equipmentLabelLevel.attr('class', 'label-level big border-' + newRarity);
         this.recap.equipmentRarity(swlcalc.util.capitalize(newRarity));
@@ -136,7 +136,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.handle4pipQuality();
 
         // update max available level for equipment :
-        var maxLvl = swlcalc.data.rarity_mapping.to_max_level[newRarity];
+        var maxLvl = swlcalc.data.rarityMapping.toMaxLevel[newRarity];
         this.edit.equipmentLevelMax(maxLvl)
         this.edit.equipmentLevel(maxLvl);
         this.updateEquipmentLevel();
@@ -153,7 +153,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         } else {
             newQuality = "Resplendent"
         }
-        var map = swlcalc.data.rarity_mapping.to_num
+        var map = swlcalc.data.rarityMapping.toNum
         var optionExists = ($('#' + this.id + '-edit-equipment-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
         if (map[this.edit.equipmentRarity()] >= map['epic'] && !optionExists) {
             this.edit.el.equipmentQuality.append("<option value='4'>" + newQuality + "</option>");
@@ -169,16 +169,16 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateEquipmentQuality = function() {
         var newQuality = this.edit.equipmentQuality();
 
-        var img_path = 'assets/images/icons/quality/' + newQuality + '.png';
-        this.edit.equipmentImgQuality(img_path);
-        this.recap.equipmentImgQuality(img_path);
+        var imgPath = 'assets/images/icons/quality/' + newQuality + '.png';
+        this.edit.equipmentImgQuality(imgPath);
+        this.recap.equipmentImgQuality(imgPath);
 
-        var qualityName = swlcalc.data.quality_mapping[this.group].to_name[newQuality];
+        var qualityName = swlcalc.data.qualityMapping[this.group].toName[newQuality];
         this.recap.equipmentQuality(qualityName);
         if (this.isWeapon()) {
             this.recap.affixQuality(qualityName);
             // little hack here : use quality's index in rarity mapping to display the right color
-            this.recap.el.signetTitle.attr('class', 'color-' + swlcalc.data.rarity_mapping.to_name[newQuality]);
+            this.recap.el.signetTitle.attr('class', 'color-' + swlcalc.data.rarityMapping.toName[newQuality]);
         }
     };
 
@@ -197,23 +197,23 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Update elements related to equipment stat's rating (calculatations with stats data)
      */
     this.updateEquipmentStatRating = function() {
-        var base_value = 0;
-        var bonus_value = 0;
+        var baseValue = 0;
+        var bonusValue = 0;
         if (this.edit.equipmentId() != 'none') {
             // calculation rule for weapons
             // TODO rewrite in the style of getRawProtValue() below
             if (this.isWeapon()) {
-                base_value = swlcalc.data.power_rating.weapon[this.edit.equipmentRarity()].weapon_power_init;
-                bonus_value = swlcalc.data.power_rating.weapon[this.edit.equipmentRarity()].weapon_power_per_level * (this.edit.equipmentLevel() - 1);
+                baseValue = swlcalc.data.powerRating.weapon[this.edit.equipmentRarity()].init;
+                bonusValue = swlcalc.data.powerRating.weapon[this.edit.equipmentRarity()].perLevel * (this.edit.equipmentLevel() - 1);
             }
             // calculation rule for talismans
             // TODO rewrite in the style of getRawProtValue() below
             else {
-                base_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_init;
-                bonus_value = swlcalc.data.power_rating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].power_rating_per_level * (this.edit.equipmentLevel() - 1);
+                baseValue = swlcalc.data.powerRating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].init;
+                bonusValue = swlcalc.data.powerRating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].perLevel * (this.edit.equipmentLevel() - 1);
             }
         }
-        var newValue = base_value + Math.round(bonus_value);
+        var newValue = baseValue + Math.round(bonusValue);
         this.edit.equipmentStatPowerValue(newValue);
         this.recap.equipmentStatPowerValue(newValue);
 
@@ -229,9 +229,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.updateTalismanStatValues = function() {
         var valuePowerRaw = this.edit.equipmentStatPowerValue();
-        this.recap.equipmentStatHPValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hp_coefficient * swlcalc.animaAllocation.getSurvivabilityRatio()));
-        this.recap.equipmentStatARValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.ar_coefficient * swlcalc.animaAllocation.getDamageRatio()));
-        this.recap.equipmentStatHRValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hr_coefficient * swlcalc.animaAllocation.getHealingRatio()));
+        this.recap.equipmentStatHPValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hpCoefficient * swlcalc.animaAllocation.getSurvivabilityRatio()));
+        this.recap.equipmentStatARValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.arCoefficient * swlcalc.animaAllocation.getDamageRatio()));
+        this.recap.equipmentStatHRValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hrCoefficient * swlcalc.animaAllocation.getHealingRatio()));
 
         var valueProtRaw = this.getRawProtValue();
         var newValue = '+' + Math.round(valueProtRaw + valueProtRaw * swlcalc.data.stats.protIncreasePerSurvivabilityPointCoef * swlcalc.animaAllocation.getSurvivabilityRatio());
@@ -289,16 +289,16 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateGlyph = function() {
         var newId = this.edit.glyphId();
 
-        this.edit.glyphStatText(swlcalc.data.stat_mapping.to_pretty[newId]);
-        this.recap.glyphStatText(swlcalc.data.stat_mapping.to_pretty[newId]);
+        this.edit.glyphStatText(swlcalc.data.statMapping.toPretty[newId]);
+        this.recap.glyphStatText(swlcalc.data.statMapping.toPretty[newId]);
 
-        var img_path = 'assets/images/icons/glyph/' + newId + '.png';
-        this.edit.glyphImgItem(img_path);
+        var imgPath = 'assets/images/icons/glyph/' + newId + '.png';
+        this.edit.glyphImgItem(imgPath);
 
         if (newId == 'none') {
             this.recap.glyphItem('');
         } else {
-            this.recap.glyphItem(swlcalc.data.secondary_stat_mapping.to_name[newId]);
+            this.recap.glyphItem(swlcalc.data.secondaryStatMapping.toName[newId]);
         }
     };
 
@@ -322,11 +322,11 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * - Elaborate quality is available starting from Epic rarity, level 1
      */
     this.handleElaborate = function() {
-        var map = swlcalc.data.rarity_mapping.to_num
+        var rmap = swlcalc.data.rarityMapping.toNum
         var elaborateOptionExists = ($('#' + this.id + '-edit-glyph-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
-        if (map[this.edit.glyphRarity()] >= map['epic'] && !elaborateOptionExists) {
+        if (rmap[this.edit.glyphRarity()] >= rmap['epic'] && !elaborateOptionExists) {
             this.edit.el.glyphQuality.append("<option value='4'>Elaborate</option>");
-        } else if (map[this.edit.glyphRarity()] < map['epic'] && elaborateOptionExists) {
+        } else if (rmap[this.edit.glyphRarity()] < rmap['epic'] && elaborateOptionExists) {
             $('#' + this.id + '-edit-glyph-quality option[value=4]').remove(); // TODO/REFACTOR to abstract access
             this.updateGlyphQuality();
         }
@@ -338,10 +338,10 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateGlyphQuality = function() {
         var newQuality = this.edit.glyphQuality();
 
-        var img_path = 'assets/images/icons/quality/' + newQuality + '.png';
-        this.edit.glyphImgQuality(img_path);
+        var imgPath = 'assets/images/icons/quality/' + newQuality + '.png';
+        this.edit.glyphImgQuality(imgPath);
 
-        this.recap.glyphQuality(swlcalc.data.quality_mapping['glyph'].to_name[newQuality]);
+        this.recap.glyphQuality(swlcalc.data.qualityMapping['glyph'].toName[newQuality]);
     }
 
     /**
@@ -363,11 +363,11 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.updateGlyphRating = function() {
         var newValue = 0;
         if (this.edit.glyphId() != 'none') {
-            var baseValue = swlcalc.data.glyph[this.edit.glyphRarity()][this.edit.glyphQuality()].rating_init;
-            var bonusValue = swlcalc.data.glyph[this.edit.glyphRarity()][this.edit.glyphQuality()].rating_per_level * (this.edit.glyphLevel() - 1);
+            var baseValue = swlcalc.data.glyphRating[this.edit.glyphRarity()][this.edit.glyphQuality()].init;
+            var bonusValue = swlcalc.data.glyphRating[this.edit.glyphRarity()][this.edit.glyphQuality()].perLevel * (this.edit.glyphLevel() - 1);
             newValue = baseValue + Math.round(bonusValue);
             if (this.edit.glyphId() == 'critical-power') {
-                newValue = newValue * swlcalc.data.stats.pcrit_coefficient;
+                newValue = newValue * swlcalc.data.stats.pcritCoefficient;
             }
             // remove decimals for display
             newValue = newValue.toFixed(0);
@@ -388,7 +388,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         if (this.edit.glyphId() != 'none') {
             newILvl = this.computeItemILvlWithQuality('glyph', this.edit.glyphRarity(), this.edit.glyphQuality(), this.edit.glyphLevel());
             if (this.isWeapon()) {
-                newILvl = newILvl * swlcalc.data.stats.glyph_in_weapon_coefficient;
+                newILvl = newILvl * swlcalc.data.stats.glyphInWeaponCoefficient;
             }
         }
         //register value before it is rounded (used for #slot-total-ilvl)
@@ -476,14 +476,14 @@ swlcalc.gear.Slot = function Slot(slotData) {
 
             // update affix bonus's color (will do nothing if signet-wrapper doesnt exist)
             // not part of the above loop because, for the moment, there can be only one value at a time for which this coloring applies
-            var newClass = 'bonus-val color-' + swlcalc.data.rarity_mapping.to_name[this.edit.equipmentQuality()];
+            var newClass = 'bonus-val color-' + swlcalc.data.rarityMapping.toName[this.edit.equipmentQuality()];
             this.edit.signetBonusWrapper().attr('class', newClass);
             this.recap.signetBonusWrapper().attr('class', newClass);
         } else {
             var signetData = signet.ratio[this.edit.signetRarity()];
 
             for (i = 0; i < signetData.init.length; i++) {
-                var newBonusVal = swlcalc.util.precisionRound((signetData.init[i] + signetData.per_level[i] * levelMultiplier) * coef, signet.decimals[i]);
+                var newBonusVal = swlcalc.util.precisionRound((signetData.init[i] + signetData.perLevel[i] * levelMultiplier) * coef, signet.decimals[i]);
                 this.edit.signetBonusN(i + 1, newBonusVal);
                 this.recap.signetBonusN(i + 1, newBonusVal);
             }
@@ -547,16 +547,16 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.state = function() {
         return {
-            equipment_rarity:  this.edit.equipmentRarity(),
-            equipment_quality: this.edit.equipmentQuality(),
-            equipment_level:   this.edit.equipmentLevel(),
-            glyph_id:          this.edit.glyphId(),
-            glyph_rarity:      this.edit.glyphRarity(),
-            glyph_quality:     this.edit.glyphQuality(),
-            glyph_level:       this.edit.glyphLevel(),
-            signet_id:         this.edit.signetId(),
-            signet_rarity:     this.edit.signetRarity(),
-            signet_level:      this.edit.signetLevel(),
+            equipmentRarity:  this.edit.equipmentRarity(),
+            equipmentQuality: this.edit.equipmentQuality(),
+            equipmentLevel:   this.edit.equipmentLevel(),
+            glyphId:          this.edit.glyphId(),
+            glyphRarity:      this.edit.glyphRarity(),
+            glyphQuality:     this.edit.glyphQuality(),
+            glyphLevel:       this.edit.glyphLevel(),
+            signetId:         this.edit.signetId(),
+            signetRarity:     this.edit.signetRarity(),
+            signetLevel:      this.edit.signetLevel(),
         };
     };
 
@@ -564,20 +564,20 @@ swlcalc.gear.Slot = function Slot(slotData) {
      * Mapping function for import/export feature
      */
     this.mappedState = function() {
-        var gmap  = swlcalc.data.secondary_stat_mapping.to_num;
-        var rmap  = swlcalc.data.rarity_mapping.to_num;
+        var gmap  = swlcalc.data.secondaryStatMapping.toNum;
+        var rmap  = swlcalc.data.rarityMapping.toNum;
         return {
-            equipment_id:      this.stripContent(this.edit.equipmentId()),
-            equipment_rarity:  this.stripContent(this.edit.equipmentRarity(), rmap),
-            equipment_quality: this.edit.equipmentQuality(),
-            equipment_level:   this.edit.equipmentLevel(),
-            glyph_id:          this.stripContent(this.edit.glyphId(), gmap),
-            glyph_rarity:      this.stripContent(this.edit.glyphRarity(), rmap),
-            glyph_quality:     this.edit.glyphQuality(),
-            glyph_level:       this.edit.glyphLevel(),
-            signet_id:         this.stripContent(this.edit.signetId()),
-            signet_rarity:     this.stripContent(this.edit.signetRarity(), rmap),
-            signet_level:      this.stripContent(this.edit.signetLevel())
+            equipmentId:      this.stripContent(this.edit.equipmentId()),
+            equipmentRarity:  this.stripContent(this.edit.equipmentRarity(), rmap),
+            equipmentQuality: this.edit.equipmentQuality(),
+            equipmentLevel:   this.edit.equipmentLevel(),
+            glyphId:          this.stripContent(this.edit.glyphId(), gmap),
+            glyphRarity:      this.stripContent(this.edit.glyphRarity(), rmap),
+            glyphQuality:     this.edit.glyphQuality(),
+            glyphLevel:       this.edit.glyphLevel(),
+            signetId:         this.stripContent(this.edit.signetId()),
+            signetRarity:     this.stripContent(this.edit.signetRarity(), rmap),
+            signetLevel:      this.stripContent(this.edit.signetLevel())
         };
     };
 
@@ -602,7 +602,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.computeItemILvlWithQuality = function(element, rarity, quality, level) {
         var data = swlcalc.data.ilvl[element][rarity][quality];
-        return data.ilvl_init + data.ilvl_per_level * (level - 1);
+        return data.init + data.perLevel * (level - 1);
     };
 
     /**
@@ -610,7 +610,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.computeItemILvlWithoutQuality = function(element, rarity, level) {
         var data = swlcalc.data.ilvl[element][rarity];
-        return data.ilvl_init + data.ilvl_per_level * (level - 1);
+        return data.init + data.perLevel * (level - 1);
     };
 
     /**
@@ -620,6 +620,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var data = swlcalc.data.protection[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()];
         var lvl  = this.edit.equipmentLevel() - 1;
 
-        return data.init + Math.round(data.per_level * lvl);
+        return data.init + Math.round(data.perLevel * lvl);
     };
 };

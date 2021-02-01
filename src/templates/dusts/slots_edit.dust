@@ -15,11 +15,11 @@
                 </table>
                 <table class="table table-slots">
                     <tr>
-                        {?is_weapon}
+                        {?isWeapon}
                         <td class="item-title lightgrey" colspan="2">Weapon</td>
                         {:else}
                         <td class="item-title lightgrey" colspan="2">Talisman</td>
-                        {/is_weapon}
+                        {/isWeapon}
                         <td class="upgrade-label rarity-label">
                             <strong>Rarity :</strong>
                         </td>
@@ -30,18 +30,18 @@
                             <p class="thin-p">
                                 <span id="{id}-edit-equipment-stat-power-value" class="stat-value gear">0</span>
                                 <span> </span>
-                                {?is_weapon}
+                                {?isWeapon}
                                 <span>Weapon Power</span>
                                 {:else}
                                 <span>Power Rating</span>
-                                {/is_weapon}
+                                {/isWeapon}
                             </p>
-                            {^is_weapon}
+                            {^isWeapon}
                             <p class="thin-p">
                                 <span id="{id}-edit-equipment-stat-prot-value" class="stat-value gear">0</span>
                                 <span> Protection</span>
                             </p>
-                            {/is_weapon}
+                            {/isWeapon}
                         </td>
                     </tr>
                     <tr class="with-icon">
@@ -52,23 +52,23 @@
                             <div id="{id}-edit-equipment-label-level" class="label-level big border-standard">20</div>
                         </td>
                         <td class="equipment-select">
-                            {?is_weapon}
+                            {?isWeapon}
                             <select id="{id}-edit-equipment-id" title="Please select weapon">
                             </select>
                             {:else}
                             <select id="{id}-edit-equipment-id" title="Please select talisman">
                             </select>
-                            {/is_weapon}
+                            {/isWeapon}
                         </td>
                         <td class="upgrade-label quality-label">
                             <strong>Quality :</strong>
                         </td>
                         <td class="upgrade-select">
-                            {?is_weapon}
+                            {?isWeapon}
                             {>qualityselect itemtype="equipment" pip1="Mk I" pip2="Mk II" pip3="Mk III"/}
                             {:else}
                             {>qualityselect itemtype="equipment" pip1="Faded" pip2="Luminous" pip3="Radiant"/}
-                            {/is_weapon}
+                            {/isWeapon}
                         </td>
                         <td rowspan="2" class="item-description">
                             <span id="{id}-edit-equipment-description"></span>
@@ -145,7 +145,7 @@
                     </tr>
                 </table>
                 <table id="{id}-edit-signets" class="table table-slots">
-                    {?is_weapon}
+                    {?isWeapon}
                     <tr>
                         <td class="item-title lightgrey" colspan="2">Affix</td>
                         <td id="{id}-edit-signet-description" class="item-description" colspan="3" rowspan="2"></td>
@@ -188,7 +188,7 @@
                             <span id="{id}-edit-signet-ilvl">0</span>
                         </td>
                     </tr>
-                    {/is_weapon}
+                    {/isWeapon}
                 </table>
             </div>
         </div>

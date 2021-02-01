@@ -84,8 +84,8 @@ QUnit.test("should set a non-zero ilvl value when selecting a glyph and then set
 });
 
 QUnit.test("should update any #slot-edit-equipment-level sliders when its associated rarity is changed", function(assert) {
-    for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-        var id = swlcalc.data.template_data.slots[i].id;
+    for (var i = 0; i < swlcalc.data.templateData.slots.length; i++) {
+        var id = swlcalc.data.templateData.slots[i].id;
         assert.equal($("#" + id + "-edit-equipment-level").attr("max"), 20);
         swlcalc.gear.slots[id].edit.equipmentRarity("superior");
         swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
@@ -106,8 +106,8 @@ QUnit.test("should update any #slot-edit-equipment-level sliders when its associ
 });
 
 QUnit.test("should update any #slot-edit-equipment-quality dropdowns when its associated rarity is changed", function(assert) {
-    for (var i = 0; i < swlcalc.data.template_data.slots.length; i++) {
-        var id = swlcalc.data.template_data.slots[i].id;
+    for (var i = 0; i < swlcalc.data.templateData.slots.length; i++) {
+        var id = swlcalc.data.templateData.slots[i].id;
         assert.equal($("#" + id + "-edit-equipment-quality > option").length, 3);
 
         swlcalc.gear.slots[id].edit.equipmentRarity("legendary");

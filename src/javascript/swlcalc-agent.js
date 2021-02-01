@@ -112,7 +112,7 @@ swlcalc.gear.Agent = function Agent(index) {
         if (agentData.levels[level].type == "miscellaneous" || agentData.levels[level].type == "empty") {
             return agentData.levels[level].value;
         } else {
-            return '<span class="stat-value gear">+' + agentData.levels[level].value + "</span> " + swlcalc.data.stat_mapping.to_pretty[agentData.levels[level].type];
+            return '<span class="stat-value gear">+' + agentData.levels[level].value + "</span> " + swlcalc.data.statMapping.toPretty[agentData.levels[level].type];
         }
     };
 };

@@ -49,7 +49,7 @@ swlcalc.import = function() {
     var loadSlot = function(slotId, values) {
         var slotObj = swlcalc.gear.slots[slotId];
         // values[0] == Item's Rarity
-        slotObj.edit.equipmentRarity(swlcalc.data.rarity_mapping.to_name[values[0]]);
+        slotObj.edit.equipmentRarity(swlcalc.data.rarityMapping.toName[values[0]]);
         slotObj.edit.el.equipmentRarity.change();
         // values[1] == Item's Type (ID)
         slotObj.edit.equipmentId(values[1] == '0' ? 'none' : values[1]);
@@ -61,10 +61,10 @@ swlcalc.import = function() {
         slotObj.edit.equipmentLevel(values[3]);
         slotObj.edit.el.equipmentLevel.change();
         // values[4] == Glyph's Rarity
-        slotObj.edit.glyphRarity(swlcalc.data.rarity_mapping.to_name[values[4]]);
+        slotObj.edit.glyphRarity(swlcalc.data.rarityMapping.toName[values[4]]);
         slotObj.edit.el.glyphRarity.change();
         // values[5] == Glyph's Stat
-        slotObj.edit.glyphId(swlcalc.data.secondary_stat_mapping.to_stat[values[5]]);
+        slotObj.edit.glyphId(swlcalc.data.secondaryStatMapping.toStat[values[5]]);
         slotObj.edit.el.glyphId.change();
         // values[6] == Glyph's Quality
         slotObj.edit.glyphQuality(values[6]);
@@ -77,7 +77,7 @@ swlcalc.import = function() {
         && typeof values[9] !== 'undefined' && values[9] !== "999"
         && typeof values[10] !== 'undefined') {
             // values[8] == Signet's Rarity
-            slotObj.edit.signetRarity(swlcalc.data.rarity_mapping.to_name[values[8]]);
+            slotObj.edit.signetRarity(swlcalc.data.rarityMapping.toName[values[8]]);
             slotObj.edit.el.signetRarity.change();
             // values[9] == Signet's Type (ID)
             slotObj.edit.signetId((values[9] != '0' ? values[9] : 'none'));

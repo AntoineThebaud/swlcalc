@@ -410,30 +410,30 @@ QUnit.test("should reset slot state", function(assert) {
 QUnit.test("should collect current slot state", function(assert) {
     var slotState = swlcalc.gear.slots.head.state();
 
-    assert.deepEqual(slotState.equipment_rarity, "epic");
-    assert.deepEqual(slotState.equipment_quality, "1");
-    assert.deepEqual(slotState.equipment_level, "30");
-    assert.deepEqual(slotState.glyph_id, "hit-rating");
-    assert.deepEqual(slotState.glyph_rarity, "mythic");
-    assert.deepEqual(slotState.glyph_quality, "3");
-    assert.deepEqual(slotState.glyph_level, "1");
-    assert.deepEqual(slotState.signet_id, "20");
-    assert.deepEqual(slotState.signet_rarity, "superior");
-    assert.deepEqual(slotState.signet_level, "15");
+    assert.deepEqual(slotState.equipmentRarity, "epic");
+    assert.deepEqual(slotState.equipmentQuality, "1");
+    assert.deepEqual(slotState.equipmentLevel, "30");
+    assert.deepEqual(slotState.glyphId, "hit-rating");
+    assert.deepEqual(slotState.glyphRarity, "mythic");
+    assert.deepEqual(slotState.glyphQuality, "3");
+    assert.deepEqual(slotState.glyphLevel, "1");
+    assert.deepEqual(slotState.signetId, "20");
+    assert.deepEqual(slotState.signetRarity, "superior");
+    assert.deepEqual(slotState.signetLevel, "15");
 });
 
 QUnit.test("should collect current mapped slot state", function(assert) {
     var slotState = swlcalc.gear.slots.occult.mappedState();
 
-    assert.deepEqual(slotState.equipment_id, "1");
-    assert.deepEqual(slotState.equipment_rarity, 3);
-    assert.deepEqual(slotState.equipment_quality, "1");
-    assert.deepEqual(slotState.equipment_level, "1");
-    assert.deepEqual(slotState.glyph_id, 4);
-    assert.deepEqual(slotState.glyph_rarity, 3);
-    assert.deepEqual(slotState.glyph_quality, "2");
-    assert.deepEqual(slotState.glyph_level, "20");
-    assert.deepEqual(slotState.signet_id, "4");
-    assert.deepEqual(slotState.signet_rarity, 3);
-    assert.deepEqual(slotState.signet_level, "18");
+    assert.deepEqual(slotState.equipmentId, "1");
+    assert.deepEqual(slotState.equipmentRarity, 3);
+    assert.deepEqual(slotState.equipmentQuality, "1");
+    assert.deepEqual(slotState.equipmentLevel, "1");
+    assert.deepEqual(slotState.glyphId, 4);
+    assert.deepEqual(slotState.glyphRarity, 3);
+    assert.deepEqual(slotState.glyphQuality, "2");
+    assert.deepEqual(slotState.glyphLevel, "20");
+    assert.deepEqual(slotState.signetId, "4");
+    assert.deepEqual(slotState.signetRarity, 3);
+    assert.deepEqual(slotState.signetLevel, "18");
 });

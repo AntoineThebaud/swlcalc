@@ -6,9 +6,9 @@ swlcalc.export = function() {
 
     var elInit = function() {
         return {
-            export_btn: $('a.export'),
-            export_text: $('#export-text'),
-            open_export_modal: $('#open-export-modal')
+            exportBtn: $('a.export'),
+            exportText: $('#export-text'),
+            openExportModal: $('#open-export-modal')
         };
     };
 
@@ -21,15 +21,15 @@ swlcalc.export = function() {
      * Associates the right processing to each trigger.
      */
     var bindEvents = function() {
-        el.export_btn.on('click', function(event) {
+        el.exportBtn.on('click', function(event) {
             startExportUrl();
         });
 
-        el.open_export_modal.on('shown.bs.modal', function() {
-          el.export_text.focus();
+        el.openExportModal.on('shown.bs.modal', function() {
+          el.exportText.focus();
         });
 
-        el.export_text.focus(function() {
+        el.exportText.focus(function() {
             $(this).select();
 
             $(this).mouseup(function() {
@@ -45,7 +45,7 @@ swlcalc.export = function() {
     //TODO/REFACTOR : remove or change name ?
     var startExportUrl = function() {
         var url = createExportUrl();
-        el.export_text.val(location.origin + location.pathname + '#' + url);
+        el.exportText.val(location.origin + location.pathname + '#' + url);
     };
 
     /**
@@ -77,23 +77,23 @@ swlcalc.export = function() {
     var createSlotUrl = function(slot, state) {
         // see swlcalc-import.js for the order
         var slotUrl = slot.id + '='
-            + state.equipment_rarity + ','
-            + state.equipment_id + ','
-            + state.equipment_quality + ','
-            + state.equipment_level + ','
-            + state.glyph_rarity + ','
-            + state.glyph_id + ','
-            + state.glyph_quality + ','
-            + state.glyph_level;
+            + state.equipmentRarity + ','
+            + state.equipmentId + ','
+            + state.equipmentQuality + ','
+            + state.equipmentLevel + ','
+            + state.glyphRarity + ','
+            + state.glyphId + ','
+            + state.glyphQuality + ','
+            + state.glyphLevel;
 
             //TODO/REFACTOR : this commented if{} allows the url to be smaller when no signet is set
             // it is temporary disabled for visual issue (select color not updating)
             // in the future, should be reenabled + same behavior for glyphs and even complete slot ?
             // that could allow to see the stats for only one item (but is it usefull ?)
-            /* if(state.signet_id !== 0 && state.signet_id !== '999') { */
-            slotUrl += ',' + state.signet_rarity
-                    + ',' + state.signet_id
-                    + ',' + state.signet_level;
+            /* if(state.signetId !== 0 && state.signetId !== '999') { */
+            slotUrl += ',' + state.signetRarity
+                    + ',' + state.signetId
+                    + ',' + state.signetLevel;
             /* }*/
 
         return slotUrl;

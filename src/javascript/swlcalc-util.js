@@ -27,11 +27,11 @@ swlcalc.util = function() {
     }
 
     var isPrimaryStat = function(stat) {
-        return swlcalc.data.stat_mapping.primary_stats.indexOf(stat) != -1
+        return swlcalc.data.statMapping.primaryStats.indexOf(stat) != -1
     }
 
     var isSecondaryStat = function(stat) {
-        return swlcalc.data.stat_mapping.secondary_stats.indexOf(stat) != -1
+        return swlcalc.data.statMapping.secondaryStats.indexOf(stat) != -1
     }
 
     /**

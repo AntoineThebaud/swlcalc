@@ -1,22 +1,22 @@
 var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
-swlcalc.data.stat_mapping = {
-  primary_stats : [
+swlcalc.data.statMapping = {
+  primaryStats : [
     'attack-rating',
     'heal-rating',
     'hit-rating',
     'hit-points',
     'protection'
   ],
-  secondary_stats : [
+  secondaryStats : [
     'critical-rating',
     'critical-power',
     'evade-rating',
     'defense-rating',
     'hit-rating'
   ],
-  to_pretty : {
+  toPretty : {
     'attack-rating': 'Attack Rating',
     'critical-rating': 'Critical Rating',
     'critical-power': 'Critical Power',
@@ -30,8 +30,8 @@ swlcalc.data.stat_mapping = {
   }
 };
 
-swlcalc.data.secondary_stat_mapping = {
-    to_num: {
+swlcalc.data.secondaryStatMapping = {
+    toNum: {
         'none': 0,
         'hit-rating': 1,
         'critical-rating': 2,
@@ -39,7 +39,7 @@ swlcalc.data.secondary_stat_mapping = {
         'evade-rating': 4,
         'defense-rating': 5,
     },
-    to_stat: {
+    toStat: {
         0: 'none',
         1: 'hit-rating',
         2: 'critical-rating',
@@ -47,7 +47,7 @@ swlcalc.data.secondary_stat_mapping = {
         4: 'evade-rating',
         5: 'defense-rating',
     },
-    to_name: {
+    toName: {
       'hit-rating': 'Accurate',
       'critical-rating': 'Fierce',
       'critical-power': 'Devastating',
@@ -56,8 +56,8 @@ swlcalc.data.secondary_stat_mapping = {
     }
 };
 
-swlcalc.data.rarity_mapping = {
-    to_num: {
+swlcalc.data.rarityMapping = {
+    toNum: {
         'none': 0,
         'standard': 1,
         'superior': 2,
@@ -65,7 +65,7 @@ swlcalc.data.rarity_mapping = {
         'mythic': 4,
         'legendary': 5
     },
-    to_name: {
+    toName: {
         0: 'none',
         1: 'standard',
         2: 'superior',
@@ -73,7 +73,7 @@ swlcalc.data.rarity_mapping = {
         4: 'mythic',
         5: 'legendary'
     },
-    to_colour: {
+    toColour: { // TODO : not used, to remove ?
         'none': 'white',
         'standard': 'green',
         'superior': 'blue',
@@ -81,7 +81,7 @@ swlcalc.data.rarity_mapping = {
         'mythic': 'yellow',
         'legendary': 'red'
     },
-    to_max_level: {
+    toMaxLevel: {
         'none': 0,
         'standard': 20,
         'superior': 25,
@@ -91,9 +91,9 @@ swlcalc.data.rarity_mapping = {
     }
 };
 
-swlcalc.data.quality_mapping = {
+swlcalc.data.qualityMapping = {
     'weapon': {
-        to_name: {
+        toName: {
             1: 'Mk I',
             2: 'Mk II',
             3: 'Mk III',
@@ -101,7 +101,7 @@ swlcalc.data.quality_mapping = {
         }
     },
     'talisman': {
-        to_name: {
+        toName: {
             1: 'Faded',
             2: 'Luminous',
             3: 'Radiant',
@@ -109,7 +109,7 @@ swlcalc.data.quality_mapping = {
         }
     },
     'glyph': {
-        to_name: {
+        toName: {
             1: 'Crude',
             2: 'Simple',
             3: 'Intricate',
@@ -118,8 +118,9 @@ swlcalc.data.quality_mapping = {
     }
 };
 
-swlcalc.data.affix_mapping = {
-    to_num: {
+// TODO : not used, to remove
+swlcalc.data.affixMapping = {
+    toNum: {
         'alacrity': 1,
         'destruction': 2,
         'energy': 3,
@@ -129,7 +130,7 @@ swlcalc.data.affix_mapping = {
         'recovery': 7,
         'warding': 8
     },
-    to_name: {
+    toName: {
         1: 'alacrity',
         2: 'destruction',
         3: 'energy',

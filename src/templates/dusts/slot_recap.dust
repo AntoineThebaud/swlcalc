@@ -16,7 +16,7 @@
                 </td>
                 <td id="{slot.id}-recap-equipment-title-section">
                     <h5 id="{slot.id}-recap-equipment-title">
-                        {?slot.is_weapon}
+                        {?slot.isWeapon}
                         <span id="{slot.id}-recap-equipment-item"></span>
                         <span> </span>
                         <span id="{slot.id}-recap-affix"></span>
@@ -26,7 +26,7 @@
                         <span id="{slot.id}-recap-equipment-quality"></span>
                         <span> </span>
                         <span id="{slot.id}-recap-equipment-item"></span>
-                        {/slot.is_weapon}
+                        {/slot.isWeapon}
                     </h5>
                 </td>
                 <td id="{slot.id}-editbtn-section">
@@ -57,13 +57,13 @@
             <p>
                 <span id="{slot.id}-recap-equipment-stat-power-value" class="stat-value gear"></span>
                 <span> </span>
-                {?slot.is_weapon}
+                {?slot.isWeapon}
                 <span>Weapon Power</span>
                 {:else}
                 <span>Power Rating</span>
-                {/slot.is_weapon}
+                {/slot.isWeapon}
             </p>
-            {^slot.is_weapon}
+            {^slot.isWeapon}
             <div class="stat-transformed">
                 <p>With current Anima Allocation, you gain:</p>
                 <p id="{slot.id}-recap-equipment-stat-hp-section">
@@ -83,7 +83,7 @@
                     <span> Protection</span>
                 </p>
             </div>
-            {/slot.is_weapon}
+            {/slot.isWeapon}
             <hr>
         </div>
         <!-- <p>
@@ -128,12 +128,12 @@
         <div id="{slot.id}-recap-signet-section">
             <h6 id="{slot.id}-recap-signet-title">
                 <span id="{slot.id}-recap-signet-item"></span>
-                {?slot.is_weapon}
+                {?slot.isWeapon}
                 <span> </span>
                 <span id="{slot.id}-recap-affix-quality"></span>
-                {/slot.is_weapon}
+                {/slot.isWeapon}
             </h6>
-            {^slot.is_weapon}
+            {^slot.isWeapon}
             <p class="mediumgrey">
                 <span>Signet (Lv </span>
                 <span id="{slot.id}-recap-signet-level"></span>
@@ -141,7 +141,7 @@
                 <span id="{slot.id}-recap-signet-rarity"></span>
                 <span>)</span>
             </p>
-            {/slot.is_weapon}
+            {/slot.isWeapon}
             <p id="{slot.id}-recap-signet-description">
                 Increases the damage and healing of Elemental Elite Abilities by <span class="bonus-val const">%d</span><span class="bonus-val const">%</span>.
             </p>

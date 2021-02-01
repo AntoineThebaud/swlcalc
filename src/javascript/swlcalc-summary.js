@@ -95,9 +95,9 @@ swlcalc.summary = function() {
         }
 
         // Increment HP/AR/HR based on anima allocation repartition
-        sums['attack-rating'] += Math.round(sums['power-rating'] * swlcalc.data.stats.ar_coefficient * swlcalc.animaAllocation.getDamageRatio());
-        sums['heal-rating']   += Math.round(sums['power-rating'] * swlcalc.data.stats.hr_coefficient * swlcalc.animaAllocation.getHealingRatio());
-        sums['hit-points']    += Math.round(sums['power-rating'] * swlcalc.data.stats.hp_coefficient * swlcalc.animaAllocation.getSurvivabilityRatio());
+        sums['attack-rating'] += Math.round(sums['power-rating'] * swlcalc.data.stats.arCoefficient * swlcalc.animaAllocation.getDamageRatio());
+        sums['heal-rating']   += Math.round(sums['power-rating'] * swlcalc.data.stats.hrCoefficient * swlcalc.animaAllocation.getHealingRatio());
+        sums['hit-points']    += Math.round(sums['power-rating'] * swlcalc.data.stats.hpCoefficient * swlcalc.animaAllocation.getSurvivabilityRatio());
 
         // Main, "head" stats are computed at the end when all required underlying stats have been computed
         sums['combat-power']  = computePrimaryPower('ar', sums['attack-rating'], sums['weapon-power']);
@@ -116,7 +116,7 @@ swlcalc.summary = function() {
     var computePrimaryStatInitialAmount = function(primaryStat) {
         var statData = swlcalc.data.stats.computationFigures.primary[primaryStat];
 
-        return statData.base + statData.capstone + statData.sp_passive;
+        return statData.base + statData.capstone + statData.spPassive;
     };
 
     /*
@@ -162,15 +162,15 @@ swlcalc.summary = function() {
         var statsData = swlcalc.data.stats.computationFigures.secondary;
         // initial values
         var sums = { // TODO "sums" is actually bad wording here
-            'critical-rating':           statsData['crit'].sp_passive_flat,
+            'critical-rating':           statsData['crit'].spPassiveFlat,
             'critical-chance':           0,
-            'critical-power':            statsData['cpow'].sp_passive_flat,
+            'critical-power':            statsData['cpow'].spPassiveFlat,
             'critical-power-percentage': 0,
-            'hit-rating':                statsData['hit'].sp_passive_flat,
+            'hit-rating':                statsData['hit'].spPassiveFlat,
             'glance-reduction':          0,
-            'defense-rating':            statsData['def'].sp_passive_flat,
+            'defense-rating':            statsData['def'].spPassiveFlat,
             'glance-chance':             0,
-            'evade-rating':              statsData['evad'].sp_passive_flat,
+            'evade-rating':              statsData['evad'].spPassiveFlat,
             'evade-chance':              0,
         };
 
@@ -225,7 +225,7 @@ swlcalc.summary = function() {
     var computeSecondaryStat = function(statName, sumGlyphPoints) {
         var stat = swlcalc.data.stats.computationFigures.secondary[statName];
 
-        return stat.sp_passive_percent
+        return stat.spPassivePercent
                + stat.expertise
                + swlcalc.util.precisionRound(
                      Math.min(sumGlyphPoints, stat.hardCap) / stat.softCapRate
@@ -262,8 +262,8 @@ swlcalc.summary = function() {
     /**
      * Computes the average Item Power given by the whole gear
      */
-    var computeAverageILvl = function(sum_ilvl) {
-        return Math.round(sum_ilvl / swlcalc.gear.nbSlots());
+    var computeAverageILvl = function(sumIlvl) {
+        return Math.round(sumIlvl / swlcalc.gear.nbSlots());
     }
 
     /**
