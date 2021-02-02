@@ -35,6 +35,7 @@ QUnit.test("should have required components in the DOM", function(assert) {
             assert.ok(slot.recap.el.equipmentStatHPValue.length !== 0);
             assert.ok(slot.recap.el.equipmentStatARValue.length !== 0);
             assert.ok(slot.recap.el.equipmentStatHRValue.length !== 0);
+            assert.ok(slot.recap.el.equipmentStatProtValue.length !== 0);
         }
         assert.ok(slot.recap.el.equipmentImgSection.length !== 0);
         assert.ok(slot.recap.el.equipmentImgItem.length !== 0);
@@ -121,6 +122,12 @@ QUnit.test("should get and set the slot's equipment stat HR value on recap view"
     assert.equal(swlcalc.gear.slots.head.recap.equipmentStatHRValue(), "+471");
     swlcalc.gear.slots.head.recap.equipmentStatHRValue("+8");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentStatHRValue(), "+8");
+});
+
+QUnit.test("should get and set the slot's equipment stat raw value on recap view", function(assert) {
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatProtValue(), "+468");
+    swlcalc.gear.slots.head.recap.equipmentStatProtValue("+124587");
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatProtValue(), "+124587");
 });
 
 QUnit.test("should get and set the slot's equipment description on recap view", function(assert) {

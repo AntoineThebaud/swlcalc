@@ -20,6 +20,9 @@ QUnit.test("should have required components in the DOM", function(assert) {
         assert.ok(slot.edit.el.equipmentQuality.length !== 0);
         assert.ok(slot.edit.el.equipmentLevel.length !== 0);
         assert.ok(slot.edit.el.equipmentStatPowerValue.length !== 0);
+        if (slot.group != "weapon") {
+            assert.ok(slot.edit.el.equipmentStatProtValue.length !== 0);
+        }
         assert.ok(slot.edit.el.equipmentILvl.length !== 0);
         assert.ok(slot.edit.el.equipmentImgItem.length !== 0);
         assert.ok(slot.edit.el.equipmentImgRarity.length !== 0);
@@ -94,10 +97,16 @@ QUnit.test("should get and set the upper bound for slot's equipment level on edi
     assert.equal(swlcalc.gear.slots.head.edit.equipmentLevelMax(), "99");
 });
 
-QUnit.test("should get and set the slot's equipment stat value on edit view", function(assert) {
+QUnit.test("should get and set the slot's equipment stat power value on edit view", function(assert) {
     assert.equal(swlcalc.gear.slots.head.edit.equipmentStatPowerValue(), "1070");
     swlcalc.gear.slots.head.edit.equipmentStatPowerValue("8");
     assert.equal(swlcalc.gear.slots.head.edit.equipmentStatPowerValue(), "8");
+});
+
+QUnit.test("should get and set the slot's equipment stat prot value on edit view", function(assert) {
+    assert.equal(swlcalc.gear.slots.head.edit.equipmentStatProtValue(), "+468");
+    swlcalc.gear.slots.head.edit.equipmentStatProtValue("+65789");
+    assert.equal(swlcalc.gear.slots.head.edit.equipmentStatProtValue(), "+65789");
 });
 
 QUnit.test("should get and set the slot's equipment iLvl on edit view", function(assert) {

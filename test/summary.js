@@ -13,7 +13,7 @@ QUnit.module("summary-unit-tests", {
 //TODO/TEST : to add a new test to check the accuracy of average ilvl of the gear
 
 QUnit.test("should have required summary in DOM", function(assert) {
-    // Check all Primary stats exist
+    // Check all Main stats exist
     assert.ok($("#stat-ilvl").length !== 0, "stat-ilvl exists");
     assert.ok($("#stat-power-rating").length !== 0, "stat-power-rating exists");
     assert.ok($("#stat-weapon-power").length !== 0, "stat-weapon-power exists");
@@ -32,11 +32,12 @@ QUnit.test("should have required summary in DOM", function(assert) {
     assert.ok($("#stat-glance-reduction").length !== 0, "stat-glance-reduction");
 
     // Check all Defensive stats exist
+    assert.ok($("#stat-protection").length !== 0, "stat-protection exists");
+    assert.ok($("#stat-damage-mitigation").length !== 0, "stat-damage-mitigation exists");
     assert.ok($("#stat-defense-rating").length !== 0, "stat-defense-rating exists");
     assert.ok($("#stat-glance-chance").length !== 0, "stat-glance-chance exists");
     assert.ok($("#stat-evade-rating").length !== 0, "stat-evade-rating exists");
     assert.ok($("#stat-evade-chance").length !== 0, "stat-evade-chance exists");
-    assert.ok($("#stat-protection").length !== 0, "stat-protection exists");
 
     // Check all Other bonuses exist
     assert.ok($("#stat-agent1-bonus25").length !== 0, "stat-agent1-bonus25 exists");
@@ -59,14 +60,20 @@ QUnit.test("should update all stats", function(assert) {
     assert.equal($("#stat-hit-points").html(), "13903");
     assert.equal($("#stat-attack-rating").html(), "6784");
     assert.equal($("#stat-heal-rating").html(), "5951");
+
     assert.equal($("#stat-critical-rating").html(), "+841");
     assert.equal($("#stat-critical-chance").html(), "13.8%");
     assert.equal($("#stat-critical-power").html(), "+1008");
     assert.equal($("#stat-critical-power-percentage").html(), "90.7%");
     assert.equal($("#stat-hit-rating").html(), "+1244");
+
+    assert.equal($("#stat-protection").html(), "4895");
+    assert.equal($("#stat-damage-mitigation").html(), "16.6%");
     assert.equal($("#stat-defense-rating").html(), "+1896");
+    assert.equal($("#stat-glance-chance").html(), "18.7%");
     assert.equal($("#stat-evade-rating").html(), "+1896");
     assert.equal($("#stat-evade-chance").html(), "13.0%");
+
     assert.equal($("#stat-agent1-bonus25").html(), "");
     assert.equal($("#stat-agent1-bonus25").html(), "");
     assert.equal($("#stat-agent2-bonus25").html(), "");
@@ -119,27 +126,31 @@ QUnit.test("should collect primary stats accordingly", function(assert) {
     var sums = swlcalc.summary.collectPrimaryStats();
 
     // base values :
-    assert.equal(sums[ "combat-power" ], 324.2);
-    assert.equal(sums[ "healing-power" ], 86.2);
-    assert.equal(sums[ "weapon-power" ], 0);
-    assert.equal(sums[ "attack-rating" ], 4322);
-    assert.equal(sums[ "heal-rating" ], 4310);
-    assert.equal(sums[ "hit-points" ], 8727);
-    assert.equal(sums[ "power-rating" ], 0);
-    assert.equal(sums[ "ilvl" ], 0);
+    assert.equal(sums["ilvl"], 0);
+    assert.equal(sums["power-rating"], 0);
+    assert.equal(sums["weapon-power"], 0);
+    assert.equal(sums["attack-rating"], 4322);
+    assert.equal(sums["heal-rating"], 4310);
+    assert.equal(sums["hit-points"], 8727);
+    assert.equal(sums["combat-power"], 324.2);
+    assert.equal(sums["healing-power"], 86.2);
+    assert.equal(sums["protection"], 2259);
+    assert.equal(sums["damage-mitigation"], 8.4);
 
     createTankBuild();
 
     var sums = swlcalc.summary.collectPrimaryStats();
 
-    assert.equal(sums[ "ilvl" ], 327);
-    assert.equal(sums[ "power-rating" ], 3730);
-    assert.equal(sums[ "weapon-power" ], 1832);
-    assert.equal(sums[ "attack-rating" ], 6784);
-    assert.equal(sums[ "heal-rating" ], 5951);
-    assert.equal(sums[ "hit-points" ], 13903);
-    assert.equal(sums[ "combat-power" ], 646.2);
-    assert.equal(sums[ "healing-power" ], 155.7);
+    assert.equal(sums["ilvl"], 327);
+    assert.equal(sums["power-rating"], 3730);
+    assert.equal(sums["weapon-power"], 1832);
+    assert.equal(sums["attack-rating"], 6784);
+    assert.equal(sums["heal-rating"], 5951);
+    assert.equal(sums["hit-points"], 13903);
+    assert.equal(sums["combat-power"], 646.2);
+    assert.equal(sums["healing-power"], 155.7);
+    assert.equal(sums["protection"], 4895);
+    assert.equal(sums["damage-mitigation"], 16.6);
 });
 
 QUnit.test("should compute primary power", function(assert) {
@@ -154,40 +165,42 @@ QUnit.test("should compute primary power", function(assert) {
     assert.equal(swlcalc.summary.computePrimaryPower('hr', 3049, 398), 68.9);
 });
 
+QUnit.test("should compute damage mitigation", function(assert) {
+    assert.equal(swlcalc.summary.computeDamageMitigation(0), 0);
+    assert.equal(swlcalc.summary.computeDamageMitigation(50000), 67.1);
+});
+
 // TODO/TEST no test for updateSecondaryStats() (private function)
 
 QUnit.test("should collect secondary stats accordingly", function(assert) {
     var sums = swlcalc.summary.collectSecondaryStats();
 
-    assert.equal(sums[ "critical-rating" ], 756);
-    assert.equal(sums[ "critical-chance" ], 13.3);
-    assert.equal(sums[ "critical-power" ], 1008);
-    assert.equal(sums[ "critical-power-percentage" ], 90.7);
-    assert.equal(sums[ "hit-rating" ], 756);
-    assert.equal(sums[ "glance-reduction" ], 14.9);
-    assert.equal(sums[ "defense-rating" ], 753);
-    assert.equal(sums[ "glance-chance" ], 7.4);
-    assert.equal(sums[ "evade-rating" ], 753);
-    assert.equal(sums[ "evade-chance" ], 5.2);
+    assert.equal(sums["critical-rating"], 756);
+    assert.equal(sums["critical-chance"], 13.3);
+    assert.equal(sums["critical-power"], 1008);
+    assert.equal(sums["critical-power-percentage"], 90.7);
+    assert.equal(sums["hit-rating"], 756);
+    assert.equal(sums["glance-reduction"], 14.9);
+    assert.equal(sums["defense-rating"], 753);
+    assert.equal(sums["glance-chance"], 7.4);
+    assert.equal(sums["evade-rating"], 753);
+    assert.equal(sums["evade-chance"], 5.2);
 
     createTankBuild();
 
     var sums = swlcalc.summary.collectSecondaryStats();
 
-    assert.equal(sums[ "critical-rating" ], 841);
-    assert.equal(sums[ "critical-chance" ], 13.8);
-    assert.equal(sums[ "critical-power" ], 1008);
-    assert.equal(sums[ "critical-power-percentage" ], 90.7);
-    assert.equal(sums[ "hit-rating" ], 1244);
-    assert.equal(sums[ "glance-reduction" ], 24.5);
+    assert.equal(sums["critical-rating"], 841);
+    assert.equal(sums["critical-chance"], 13.8);
+    assert.equal(sums["critical-power"], 1008);
+    assert.equal(sums["critical-power-percentage"], 90.7);
+    assert.equal(sums["hit-rating"], 1244);
+    assert.equal(sums["glance-reduction"], 24.5);
 
-    assert.equal(sums[ "defense-rating" ], 1896);
-    assert.equal(sums[ "glance-chance" ], 18.7);
-    assert.equal(sums[ "evade-rating" ], 1896);
-    assert.equal(sums[ "evade-chance" ], 13.0);
-
-    //TODO/TEST equal(sums['physical-protection'], 660);
-    //TODO/TEST equal(sums['magical-protection'], 300);
+    assert.equal(sums["defense-rating"], 1896);
+    assert.equal(sums["glance-chance"], 18.7);
+    assert.equal(sums["evade-rating"], 1896);
+    assert.equal(sums["evade-chance"], 13.0);
 });
 
 QUnit.test("should compute secondary stats", function(assert) {
@@ -216,8 +229,12 @@ QUnit.test("should compute average ilvl for whole gear", function(assert) {
     assert.equal(swlcalc.summary.computeAverageILvl(900), 100);
 });
 
-// TODO/TEST no test for isStatPercentageBased() (private function)
+// TODO/TEST add test for isStatPercentageBased() (private function)
 
-// TODO/TEST no test for combatPower() (private function)
+// TODO/TEST add test for combatPower() (private function)
 
-// TODO/TEST no test for healingPower() (private function)
+// TODO/TEST add test for healingPower() (private function)
+
+// TODO/TEST add test for computePrimaryStatInitialAmount() (private function)
+
+// TODO/TEST add test for updateOtherBonuses

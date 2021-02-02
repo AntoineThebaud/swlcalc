@@ -296,12 +296,13 @@ swlcalc.summary = function() {
         init: init,
         combatPower: combatPower,
         healingPower: healingPower,
-        computeSecondaryStat: computeSecondaryStat,    //TODO/REFACTOR : visibility relevant only for tests
-        computePrimaryPower: computePrimaryPower,      //TODO/REFACTOR : visibility relevant only for tests
-        computeAverageILvl: computeAverageILvl,        //TODO/REFACTOR : visibility relevant only for tests
-        collectPrimaryStats: collectPrimaryStats,      //TODO/REFACTOR : visibility relevant only for tests
-        collectSecondaryStats: collectSecondaryStats,  //TODO/REFACTOR : visibility relevant only for tests
-        collectAllStats: collectAllStats,              //TODO/REFACTOR : visibility relevant only for tests
+        computeSecondaryStat: computeSecondaryStat,       //TODO/REFACTOR : visibility relevant only for tests
+        computePrimaryPower: computePrimaryPower,         //TODO/REFACTOR : visibility relevant only for tests
+        computeDamageMitigation: computeDamageMitigation, //TODO/REFACTOR : visibility relevant only for tests
+        computeAverageILvl: computeAverageILvl,           //TODO/REFACTOR : visibility relevant only for tests
+        collectPrimaryStats: collectPrimaryStats,         //TODO/REFACTOR : visibility relevant only for tests
+        collectSecondaryStats: collectSecondaryStats,     //TODO/REFACTOR : visibility relevant only for tests
+        collectAllStats: collectAllStats,                 //TODO/REFACTOR : visibility relevant only for tests
         updateAllStats: updateAllStats,
         updateOtherBonuses: updateOtherBonuses
     };

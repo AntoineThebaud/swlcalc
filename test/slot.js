@@ -437,3 +437,15 @@ QUnit.test("should collect current mapped slot state", function(assert) {
     assert.deepEqual(slotState.signetRarity, 3);
     assert.deepEqual(slotState.signetLevel, "18");
 });
+
+// TODO : unit test for stripContent ?
+
+// TODO : unit test for computeItemILvlWithQuality ?
+
+// TODO : unit test for computeItemILvlWithoutQuality ?
+
+// TODO : unit test for getRawProtValue ?
+
+QUnit.test("should retrieve raw protection value", function(assert) {
+    assert.equal(swlcalc.gear.slots.occult.getRawProtValue(), 62);
+});

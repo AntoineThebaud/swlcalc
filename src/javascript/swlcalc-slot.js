@@ -196,6 +196,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Update elements related to equipment stat's rating (calculatations with stats data)
      */
+     // TODO split into updateWeaponStatRating and updateTalismanStatRating
     this.updateEquipmentStatRating = function() {
         var baseValue = 0;
         var bonusValue = 0;
@@ -233,10 +234,13 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.recap.equipmentStatARValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.arCoefficient * swlcalc.animaAllocation.getDamageRatio()));
         this.recap.equipmentStatHRValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hrCoefficient * swlcalc.animaAllocation.getHealingRatio()));
 
-        var valueProtRaw = this.getRawProtValue();
-        var newValue = '+' + Math.round(valueProtRaw + valueProtRaw * swlcalc.data.stats.protIncreasePerSurvivabilityPointCoef * swlcalc.animaAllocation.getSurvivabilityRatio());
-        this.edit.equipmentStatProtValue(newValue);
-        this.recap.equipmentStatProtValue(newValue);
+        var newProtValue = 0;
+        if (this.edit.equipmentId() != 'none') {
+            var valueProtRaw = this.getRawProtValue();
+            newProtValue = '+' + Math.round(valueProtRaw + valueProtRaw * swlcalc.data.stats.protIncreasePerSurvivabilityPointCoef * swlcalc.animaAllocation.getSurvivabilityRatio());
+        }
+        this.edit.equipmentStatProtValue(newProtValue);
+        this.recap.equipmentStatProtValue(newProtValue);
     }
 
     /**
