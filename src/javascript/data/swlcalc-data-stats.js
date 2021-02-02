@@ -3,11 +3,11 @@ swlcalc.data = swlcalc.data || {};
 
 swlcalc.data.stats = {
     // Various coefficients
-    glyphInWeaponCoefficient: 1.225,           // Glyphs in weapons are worth ~22.5% more Item Power than glyphs in talismans.
-    arCoefficient: 1,                            // Power rating fully converts into Attack Rating. // TODO move to computationFigures object ?
-    hrCoefficient: 0.8,                          // Power rating gives lower amount when converting into Heal Rating /!\ approximated value of the real IG multiplier. // TODO move to computationFigures object ?
-    hpCoefficient: 2.855,                        // Power rating gives greater amount when converting into Hit points /!\ approximated value of the real IG multiplier. // TODO move to computationFigures object ?
-    pcritCoefficient: 0.973,                     // Crit Power glyphs give 97.3% of the value of other glyphs.
+    glyphInWeaponCoefficient: 1.225,              // Glyphs in weapons are worth ~22.5% more Item Power than glyphs in talismans.
+    arCoefficient: 1,                             // Power rating fully converts into Attack Rating.
+    hrCoefficient: 0.8,                           // Power rating gives lower amount when converting into Heal Rating /!\ approximated value of the real IG multiplier.
+    hpCoefficient: 2.855,                         // Power rating gives greater amount when converting into Hit points /!\ approximated value of the real IG multiplier.
+    pcritCoefficient: 0.973,                      // Crit Power glyphs give 97.3% of the value of other glyphs.
     protIncreasePerSurvivabilityPointCoef: 2.082, // Survability AA provides increased Protection (* 308.2% at AA 100)
 
     // Data to build Summary table

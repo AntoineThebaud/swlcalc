@@ -9,7 +9,6 @@ swlcalc.data.templateData = {
             kind: 'weapon',
             group: 'weapon',
             isWeapon: true,
-            isPrimary: true // TODO : can be removed (not used)
         },
         {
             id: 'weapon2',
@@ -17,7 +16,6 @@ swlcalc.data.templateData = {
             kind: 'weapon',
             group: 'weapon',
             isWeapon: true,
-            isPrimary: false // TODO : can be removed (not used)
         },
         {
             id: 'head',

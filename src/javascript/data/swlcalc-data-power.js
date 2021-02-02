@@ -1,7 +1,6 @@
 var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
-// TODO : change "init" into "init", etc
 swlcalc.data.powerRating = {
     'weapon': {
         'standard': {

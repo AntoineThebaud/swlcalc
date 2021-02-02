@@ -73,14 +73,6 @@ swlcalc.data.rarityMapping = {
         4: 'mythic',
         5: 'legendary'
     },
-    toColour: { // TODO : not used, to remove ?
-        'none': 'white',
-        'standard': 'green',
-        'superior': 'blue',
-        'epic': 'purple',
-        'mythic': 'yellow',
-        'legendary': 'red'
-    },
     toMaxLevel: {
         'none': 0,
         'standard': 20,
