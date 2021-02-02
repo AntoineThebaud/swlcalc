@@ -196,25 +196,21 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Update elements related to equipment stat's rating (calculatations with stats data)
      */
-     // TODO split into updateWeaponStatRating and updateTalismanStatRating
     this.updateEquipmentStatRating = function() {
-        var baseValue = 0;
-        var bonusValue = 0;
+        var newValue = 0;
+
         if (this.edit.equipmentId() != 'none') {
-            // calculation rule for weapons
-            // TODO rewrite in the style of getRawProtValue() below
+            var data = {};
+            var lvl  = this.edit.equipmentLevel() - 1;
+
             if (this.isWeapon()) {
-                baseValue = swlcalc.data.powerRating.weapon[this.edit.equipmentRarity()].init;
-                bonusValue = swlcalc.data.powerRating.weapon[this.edit.equipmentRarity()].perLevel * (this.edit.equipmentLevel() - 1);
+                data = swlcalc.data.powerRating.weapon[this.edit.equipmentRarity()];
+            } else {
+                data = swlcalc.data.powerRating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()];
             }
-            // calculation rule for talismans
-            // TODO rewrite in the style of getRawProtValue() below
-            else {
-                baseValue = swlcalc.data.powerRating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].init;
-                bonusValue = swlcalc.data.powerRating[this.subgroup][this.edit.equipmentRarity()][this.edit.equipmentQuality()].perLevel * (this.edit.equipmentLevel() - 1);
-            }
+            newValue = data.init + Math.round(data.perLevel * lvl);
         }
-        var newValue = baseValue + Math.round(bonusValue);
+        
         this.edit.equipmentStatPowerValue(newValue);
         this.recap.equipmentStatPowerValue(newValue);
 
