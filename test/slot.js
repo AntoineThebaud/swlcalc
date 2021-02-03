@@ -188,7 +188,7 @@ QUnit.test("should update elements related to glyph's rarity accordingly", funct
     assert.equal(swlcalc.gear.slots.luck.edit.el.glyphLabelLevel.attr('class'), "label-level little border-epic");
     assert.equal(swlcalc.gear.slots.luck.recap.glyphRarity(), "Epic");
     assert.equal(swlcalc.gear.slots.luck.edit.glyphImgRarity(), "assets/images/icons/rarity/epic-42x42.png");
-    assert.equal($('#luck-edit-glyph-quality option').length, 4); //TODO/REFACTOR abstract access
+    assert.equal(swlcalc.gear.slots.luck.edit.el.glyphQuality.prop('options').length, 4);
 
     swlcalc.gear.slots.luck.edit.glyphRarity("superior");
     swlcalc.gear.slots.luck.updateGlyphRarity();
@@ -198,7 +198,7 @@ QUnit.test("should update elements related to glyph's rarity accordingly", funct
     assert.equal(swlcalc.gear.slots.luck.edit.el.glyphLabelLevel.attr('class'), "label-level little border-superior");
     assert.equal(swlcalc.gear.slots.luck.recap.glyphRarity(), "Superior");
     assert.equal(swlcalc.gear.slots.luck.edit.glyphImgRarity(), "assets/images/icons/rarity/superior-42x42.png");
-    assert.equal($('#luck-edit-glyph-quality option').length, 3); //TODO/REFACTOR abstract access
+    assert.equal(swlcalc.gear.slots.luck.edit.el.glyphQuality.prop('options').length, 3);
 });
 
 QUnit.test("should update elements related to glyph's quality accordingly", function(assert) {

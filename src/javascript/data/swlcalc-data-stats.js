@@ -14,8 +14,8 @@ swlcalc.data.stats = {
     computationFigures: {
         primary: {
             'ar': {
-                base: 2000,       // Base amount at level 50
-                capstone: 810,    // Amount brought by Capstone points
+                base: 2000,      // Base amount at level 50
+                capstone: 810,   // Amount brought by Capstone points
                 spPassive: 1512, // Amount brought by the passives skills
                 coef: 0.075 // TODO difference between arCoefficient above and this one is not clear
             },

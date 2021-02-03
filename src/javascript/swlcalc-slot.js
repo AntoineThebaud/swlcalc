@@ -144,7 +144,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
 
     /**
      * Add or remove 4-pip quality ("Resplendent" or "MK IV") to the list of available qualities for this equipment
-     * - 4-pip quality is available starting from Epic rarity, level 1 //TODO to be confirmed for weapons
+     * - 4-pip quality is available starting from Epic rarity, level 1
      */
     this.handle4pipQuality = function() {
         var newQuality = "";
@@ -154,11 +154,11 @@ swlcalc.gear.Slot = function Slot(slotData) {
             newQuality = "Resplendent"
         }
         var map = swlcalc.data.rarityMapping.toNum
-        var optionExists = ($('#' + this.id + '-edit-equipment-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
+        var optionExists = (this.edit.el.equipmentQuality.prop("options")[3] != undefined);
         if (map[this.edit.equipmentRarity()] >= map['epic'] && !optionExists) {
             this.edit.el.equipmentQuality.append("<option value='4'>" + newQuality + "</option>");
         } else if (map[this.edit.equipmentRarity()] < map['epic'] && optionExists) {
-            $('#' + this.id + '-edit-equipment-quality option[value=4]').remove(); // TODO/REFACTOR to abstract access
+            this.edit.el.equipmentQuality.prop("options")[3].remove();
             this.updateEquipmentQuality();
         }
     }
@@ -210,7 +210,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             }
             newValue = data.init + Math.round(data.perLevel * lvl);
         }
-        
+
         this.edit.equipmentStatPowerValue(newValue);
         this.recap.equipmentStatPowerValue(newValue);
 
@@ -323,11 +323,11 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.handleElaborate = function() {
         var rmap = swlcalc.data.rarityMapping.toNum
-        var elaborateOptionExists = ($('#' + this.id + '-edit-glyph-quality option[value=4]').length > 0); // TODO/REFACTOR to abstract access
+        var elaborateOptionExists = (this.edit.el.glyphQuality.prop("options")[3] != undefined);
         if (rmap[this.edit.glyphRarity()] >= rmap['epic'] && !elaborateOptionExists) {
             this.edit.el.glyphQuality.append("<option value='4'>Elaborate</option>");
         } else if (rmap[this.edit.glyphRarity()] < rmap['epic'] && elaborateOptionExists) {
-            $('#' + this.id + '-edit-glyph-quality option[value=4]').remove(); // TODO/REFACTOR to abstract access
+            this.edit.el.glyphQuality.prop("options")[3].remove();
             this.updateGlyphQuality();
         }
     }
@@ -594,8 +594,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
             return val;
         }
     };
-
-    // TODO : uniformized computeItemILvlWithQuality and computeItemILvlWithoutQuality with getRawProtValue : pass parameters or retrieve data itself ?
 
     /**
      * Calculates item power for the given item that has quality attribute (= talisman, weapon or glyph)
