@@ -200,15 +200,9 @@ swlcalc.summary = function() {
         // compute percentage stats
         sums['critical-chance']           = computeSecondaryStat('crit', sums['critical-rating']);
         sums['critical-power-percentage'] = computeSecondaryStat('cpow', sums['critical-power']);
-        sums['glance-reduction']          = computeSecondaryStat('hit', sums['hit-rating']);
-        sums['glance-chance']             = computeSecondaryStat('def', sums['defense-rating']);
+        sums['glance-reduction']          = computeSecondaryStat('hit',  sums['hit-rating']);
+        sums['glance-chance']             = computeSecondaryStat('def',  sums['defense-rating']);
         sums['evade-chance']              = computeSecondaryStat('evad', sums['evade-rating']);
-        // round values for display purpose
-        sums['critical-rating']           = sums['critical-rating'].toFixed(0);
-        sums['critical-chance']           = sums['critical-chance'].toFixed(1);
-        sums['critical-power']            = sums['critical-power'].toFixed(0);
-        sums['critical-power-percentage'] = sums['critical-power-percentage'].toFixed(1);
-        sums['evade-chance']              = sums['evade-chance'].toFixed(1);
 
         return sums;
     };
