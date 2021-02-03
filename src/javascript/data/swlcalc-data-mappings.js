@@ -109,27 +109,3 @@ swlcalc.data.qualityMapping = {
         }
     }
 };
-
-// TODO : not used, to remove
-swlcalc.data.affixMapping = {
-    toNum: {
-        'alacrity': 1,
-        'destruction': 2,
-        'energy': 3,
-        'efficiency': 4,
-        'havoc': 5,
-        'restoration': 6,
-        'recovery': 7,
-        'warding': 8
-    },
-    toName: {
-        1: 'alacrity',
-        2: 'destruction',
-        3: 'energy',
-        4: 'efficiency',
-        5: 'havoc',
-        6: 'restoration',
-        7: 'recovery',
-        8: 'warding'
-    }
-};
