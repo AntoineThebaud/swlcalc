@@ -535,7 +535,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.edit.el.signetId.change();
         this.edit.el.signetRarity.change();
         this.edit.el.signetLevel.change();
-        this.updateSignet(); // TODO to remove ?
     };
 
     /**
