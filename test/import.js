@@ -10,8 +10,6 @@ QUnit.module("import-unit-tests", {
     }
 });
 
-//TODO/TEST : test to complete/enhance
-// - phys & mag protection (TODO/FEATURE)
 QUnit.test("should import URL and set summary and slots", function(assert) {
     var vars = {
         agent3: "0,25",

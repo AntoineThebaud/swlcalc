@@ -80,8 +80,6 @@ QUnit.test("should update all stats", function(assert) {
     assert.equal($("#stat-agent2-bonus50").html(), "<span class=\"bonus-val const\">+7%</span> Hammer Damage");
     assert.equal($("#stat-agent3-bonus25").html(), "");
     assert.equal($("#stat-agent3-bonus50").html(), "");
-
-    //TODO/TEST equal($('#stat-protection').html(), '+660');
 });
 
 // TODO/TEST no test for updateURL() (private function)
@@ -102,12 +100,12 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
         "weapon-power": 1832,
     };
     var expectedSecondaryStats = {
-        "critical-chance": 13.8,           // TODO : should be a number not a string
-        "critical-power": 1008,            // TODO : should be a number not a string
-        "critical-power-percentage": 90.7, // TODO : should be a number not a string
-        "critical-rating": 841,            // TODO : should be a number not a string
+        "critical-chance": 13.8,
+        "critical-power": 1008,
+        "critical-power-percentage": 90.7,
+        "critical-rating": 841,
         "defense-rating": 1896,
-        "evade-chance": 13.0,              // TODO : should be a number not a string
+        "evade-chance": 13.0,
         "evade-rating": 1896,
         "glance-chance": 18.7,
         "glance-reduction": 24.5,
