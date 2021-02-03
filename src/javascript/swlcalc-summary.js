@@ -221,26 +221,27 @@ swlcalc.summary = function() {
 
     /**
      * Display any remaining miscellaneous bonus brought by agents
-     * TODO : improve show/hide + abstract access
      */
     var updateOtherBonuses = function() {
         for (var index in swlcalc.gear.agents) {
             var agent = swlcalc.gear.agents[index];
 
+            var b25 = $('#stat-agent' + (parseInt(index) + 1) + '-bonus25'); // TODO : abstract access
             if (agent.agentData.levels["25"].type == "miscellaneous") {
-                $('#stat-agent' + (parseInt(index) + 1) + '-bonus25').html(agent.text25());
-                $('#stat-agent' + (parseInt(index) + 1) + '-bonus25').show();
+                b25.html(agent.text25());
+                b25.show();
             } else {
-                $('#stat-agent' + (parseInt(index) + 1) + '-bonus25').html("");
-                $('#stat-agent' + (parseInt(index) + 1) + '-bonus25').hide();
+                b25.html("");
+                b25.hide();
             }
 
+            var b50 = $('#stat-agent' + (parseInt(index) + 1) + '-bonus50'); // TODO : abstract access
             if (agent.level() == "50" && agent.agentData.levels["50"].type == "miscellaneous") {
-                $('#stat-agent' + (parseInt(index) + 1) + '-bonus50').html(agent.text50());
-                $('#stat-agent' + (parseInt(index) + 1) + '-bonus50').show();
+                b50.html(agent.text50());
+                b50.show();
             } else {
-                $('#stat-agent' + (parseInt(index) + 1) + '-bonus50').html("");
-                $('#stat-agent' + (parseInt(index) + 1) + '-bonus50').hide();
+                b50.html("");
+                b50.hide();
             }
         }
     };
