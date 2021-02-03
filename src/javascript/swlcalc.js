@@ -24,9 +24,7 @@ swlcalc = function() {
      */
     var renderBody = function() {
         dust.render('body', {
-            // TODO : useless to have 2 different vars here since we use swlcalc.data.templateData.slots in both cases ?
-            slots_recap: swlcalc.data.templateData.slots,
-            slots_edit: swlcalc.data.templateData.slots
+            slots: swlcalc.data.templateData.slots
         },
 
         function(err, out) {

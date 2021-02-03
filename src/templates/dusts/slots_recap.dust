@@ -1,44 +1,45 @@
+<!-- TODO/REFACTOR : accessing slots via indexes is not clear (which slot is slots[5] ? etc)-->
 <div id="slots-recap">
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            {>slot_recap slot=slots_recap[2]/}
+            {>slot_recap slot=slots[2]/}
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
         </div>
     </div>
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            {>slot_recap slot=slots_recap[3]/}
+            {>slot_recap slot=slots[3]/}
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            {>slot_recap slot=slots_recap[4]/}
+            {>slot_recap slot=slots[4]/}
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            {>slot_recap slot=slots_recap[5]/}
+            {>slot_recap slot=slots[5]/}
         </div>
     </div>
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            {>slot_recap slot=slots_recap[6]/}
+            {>slot_recap slot=slots[6]/}
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            {>slot_recap slot=slots_recap[7]/}
+            {>slot_recap slot=slots[7]/}
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            {>slot_recap slot=slots_recap[8]/}
+            {>slot_recap slot=slots[8]/}
         </div>
     </div>
     <div class="row">
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            {>slot_recap slot=slots_recap[0]/}
+            {>slot_recap slot=slots[0]/}
             <p id="weapon-recap-active" class="weapon-active-p">Active Weapon</p>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            {>slot_recap slot=slots_recap[1]/}
+            {>slot_recap slot=slots[1]/}
             <p id="weapon2-recap-active" class="weapon-active-p" hidden>Active Weapon</p>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">

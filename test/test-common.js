@@ -2,10 +2,10 @@
 
 function renderGear() {
     renderTemplate("slots_recap", {
-        slots_recap: swlcalc.data.templateData.slots
+        slots: swlcalc.data.templateData.slots
     });
     renderTemplate("slots_edit", {
-        slots_edit: swlcalc.data.templateData.slots
+        slots: swlcalc.data.templateData.slots
     });
 
     for (var i = 0; i < 3; i++) {

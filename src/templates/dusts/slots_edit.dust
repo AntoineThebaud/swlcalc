@@ -1,4 +1,4 @@
-{#slots_edit}
+{#slots}
 <div id="{id}-edit-modal" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-body">
@@ -196,4 +196,4 @@
 </div>
 {:else}
 <p>No slots found (Bug)!</p>
-{/slots_edit}
+{/slots}
