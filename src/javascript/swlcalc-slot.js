@@ -143,18 +143,14 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Add or remove 4-pip quality ("Resplendent" or "MK IV") to the list of available qualities for this equipment
+     * Add or remove 4-pip quality ("Resplendent" or "Mk IV") to the list of available qualities for this equipment
      * - 4-pip quality is available starting from Epic rarity, level 1
      */
     this.handle4pipQuality = function() {
-        var newQuality = "";
-        if (this.isWeapon()) {
-            newQuality = "MK IV"
-        } else {
-            newQuality = "Resplendent"
-        }
-        var map = swlcalc.data.rarityMapping.toNum
+        var newQuality = swlcalc.data.qualityMapping[this.group].toName[4];
+        var map = swlcalc.data.rarityMapping.toNum;
         var optionExists = (this.edit.el.equipmentQuality.prop("options")[3] != undefined);
+
         if (map[this.edit.equipmentRarity()] >= map['epic'] && !optionExists) {
             this.edit.el.equipmentQuality.append("<option value='4'>" + newQuality + "</option>");
         } else if (map[this.edit.equipmentRarity()] < map['epic'] && optionExists) {
