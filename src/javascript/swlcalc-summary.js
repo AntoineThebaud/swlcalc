@@ -32,10 +32,10 @@ swlcalc.summary = function() {
      * Updates all primary stats in the summary
      */
     var updatePrimaryStats = function() {
-        var sums = collectPrimaryStats();
+        var totals = collectPrimaryStats();
 
-        for (var stat in sums) {
-            $('#stat-' + stat).text(sums[stat] + (isStatPercentageBased(stat) ? "%" : ""));
+        for (var stat in totals) {
+            $('#stat-' + stat).text(totals[stat] + (isStatPercentageBased(stat) ? "%" : ""));
         }
     };
 
@@ -44,7 +44,7 @@ swlcalc.summary = function() {
      */
     var collectPrimaryStats = function() {
         // initial values
-        var sums = { // TODO "sums" is actually bad wording here
+        var totals = {
             'combat-power':      0,
             'healing-power':     0,
             'weapon-power':      0,
@@ -65,10 +65,10 @@ swlcalc.summary = function() {
             if (slot.isWeapon() && !slot.active || slot.edit.equipmentId() == 'none') {
                 continue;
             } else if (slot.isWeapon()) {
-                sums['weapon-power'] = parseInt(slot.edit.equipmentStatPowerValue());
+                totals['weapon-power'] = parseInt(slot.edit.equipmentStatPowerValue());
             } else if (!slot.isWeapon()) {
-                sums['power-rating'] += parseInt(slot.edit.equipmentStatPowerValue());
-                sums['protection']   += parseInt(slot.edit.equipmentStatProtValue());
+                totals['power-rating'] += parseInt(slot.edit.equipmentStatPowerValue());
+                totals['protection']   += parseInt(slot.edit.equipmentStatProtValue());
             }
         }
 
@@ -77,28 +77,28 @@ swlcalc.summary = function() {
             var ad = swlcalc.gear.agents[index].agentData
 
             if (swlcalc.util.isPrimaryStat(ad.levels["25"].type)) {
-                sums[ad.levels["25"].type] += parseInt(ad.levels["25"].value)
+                totals[ad.levels["25"].type] += parseInt(ad.levels["25"].value)
             }
             if (swlcalc.gear.agents[index].level() == 50) {
                 if (swlcalc.util.isPrimaryStat(ad.levels["50"].type)) {
-                    sums[ad.levels["50"].type] += parseInt(ad.levels["50"].value)
+                    totals[ad.levels["50"].type] += parseInt(ad.levels["50"].value)
                 }
             }
         }
 
         // Increment HP/AR/HR based on anima allocation repartition
-        sums['attack-rating'] += Math.round(sums['power-rating'] * swlcalc.data.stats.arCoefficient * swlcalc.animaAllocation.getDamageRatio());
-        sums['heal-rating']   += Math.round(sums['power-rating'] * swlcalc.data.stats.hrCoefficient * swlcalc.animaAllocation.getHealingRatio());
-        sums['hit-points']    += Math.round(sums['power-rating'] * swlcalc.data.stats.hpCoefficient * swlcalc.animaAllocation.getSurvivabilityRatio());
+        totals['attack-rating'] += Math.round(totals['power-rating'] * swlcalc.data.stats.arCoefficient * swlcalc.animaAllocation.getDamageRatio());
+        totals['heal-rating']   += Math.round(totals['power-rating'] * swlcalc.data.stats.hrCoefficient * swlcalc.animaAllocation.getHealingRatio());
+        totals['hit-points']    += Math.round(totals['power-rating'] * swlcalc.data.stats.hpCoefficient * swlcalc.animaAllocation.getSurvivabilityRatio());
 
         // Main, "head" stats are computed at the end when all required underlying stats have been computed
-        sums['combat-power']  = computePrimaryPower('ar', sums['attack-rating'], sums['weapon-power']);
-        sums['healing-power'] = computePrimaryPower('hr', sums['heal-rating'], sums['weapon-power']);
-        sums['ilvl']          = computeAverageILvl(sumOfIlvl);
+        totals['combat-power']  = computePrimaryPower('ar', totals['attack-rating'], totals['weapon-power']);
+        totals['healing-power'] = computePrimaryPower('hr', totals['heal-rating'], totals['weapon-power']);
+        totals['ilvl']          = computeAverageILvl(sumOfIlvl);
 
-        sums['damage-mitigation'] = computeDamageMitigation(sums['protection'])
+        totals['damage-mitigation'] = computeDamageMitigation(totals['protection'])
 
-        return sums;
+        return totals;
     };
 
     /*
@@ -137,10 +137,10 @@ swlcalc.summary = function() {
      * Updates secondary stats in the summary
      */
     var updateSecondaryStats = function() {
-        var sums = collectSecondaryStats();
-        for (var stat in sums) {
-            if (sums[stat] > 0) {
-                $('#stat-' + stat).html(isStatPercentageBased(stat) ? sums[stat].toString() + "%" : '+' + sums[stat]);
+        var totals = collectSecondaryStats();
+        for (var stat in totals) {
+            if (totals[stat] > 0) {
+                $('#stat-' + stat).html(isStatPercentageBased(stat) ? totals[stat].toString() + "%" : '+' + totals[stat]);
             } else {
                 $('#stat-' + stat).html(isStatPercentageBased(stat) ? "0%" : "0");
             }
@@ -153,7 +153,7 @@ swlcalc.summary = function() {
     var collectSecondaryStats = function() {
         var statsData = swlcalc.data.stats.computationFigures.secondary;
         // initial values
-        var sums = { // TODO "sums" is actually bad wording here
+        var totals = {
             'critical-rating':           statsData['crit'].spPassiveFlat,
             'critical-chance':           0,
             'critical-power':            statsData['cpow'].spPassiveFlat,
@@ -172,7 +172,7 @@ swlcalc.summary = function() {
             if(slot.isWeapon() && !slot.active) {
                 continue;
             }
-            sums[slot.edit.glyphId()] += parseInt(slot.edit.glyphStatRating());
+            totals[slot.edit.glyphId()] += parseInt(slot.edit.glyphStatRating());
         }
 
         // sum bonuses brought by agents
@@ -180,23 +180,23 @@ swlcalc.summary = function() {
             var ad = swlcalc.gear.agents[index].agentData
 
             if (swlcalc.util.isSecondaryStat(ad.levels["25"].type)) {
-                sums[ad.levels["25"].type] += parseInt(ad.levels["25"].value)
+                totals[ad.levels["25"].type] += parseInt(ad.levels["25"].value)
             }
             if (swlcalc.gear.agents[index].level() == 50) {
                 if (swlcalc.util.isSecondaryStat(ad.levels["50"].type)) {
-                    sums[ad.levels["50"].type] += parseInt(ad.levels["50"].value)
+                    totals[ad.levels["50"].type] += parseInt(ad.levels["50"].value)
                 }
             }
         }
 
         // compute percentage stats
-        sums['critical-chance']           = computeSecondaryStat('crit', sums['critical-rating']);
-        sums['critical-power-percentage'] = computeSecondaryStat('cpow', sums['critical-power']);
-        sums['glance-reduction']          = computeSecondaryStat('hit',  sums['hit-rating']);
-        sums['glance-chance']             = computeSecondaryStat('def',  sums['defense-rating']);
-        sums['evade-chance']              = computeSecondaryStat('evad', sums['evade-rating']);
+        totals['critical-chance']           = computeSecondaryStat('crit', totals['critical-rating']);
+        totals['critical-power-percentage'] = computeSecondaryStat('cpow', totals['critical-power']);
+        totals['glance-reduction']          = computeSecondaryStat('hit',  totals['hit-rating']);
+        totals['glance-chance']             = computeSecondaryStat('def',  totals['defense-rating']);
+        totals['evade-chance']              = computeSecondaryStat('evad', totals['evade-rating']);
 
-        return sums;
+        return totals;
     };
 
     /*
@@ -282,13 +282,13 @@ swlcalc.summary = function() {
         init: init,
         combatPower: combatPower,
         healingPower: healingPower,
-        computeSecondaryStat: computeSecondaryStat,       //TODO/REFACTOR : visibility relevant only for tests
-        computePrimaryPower: computePrimaryPower,         //TODO/REFACTOR : visibility relevant only for tests
-        computeDamageMitigation: computeDamageMitigation, //TODO/REFACTOR : visibility relevant only for tests
-        computeAverageILvl: computeAverageILvl,           //TODO/REFACTOR : visibility relevant only for tests
-        collectPrimaryStats: collectPrimaryStats,         //TODO/REFACTOR : visibility relevant only for tests
-        collectSecondaryStats: collectSecondaryStats,     //TODO/REFACTOR : visibility relevant only for tests
-        collectAllStats: collectAllStats,                 //TODO/REFACTOR : visibility relevant only for tests
+        computeSecondaryStat: computeSecondaryStat,       // public scope relevant only for unit tests
+        computePrimaryPower: computePrimaryPower,         // public scope relevant only for unit tests
+        computeDamageMitigation: computeDamageMitigation, // public scope relevant only for unit tests
+        computeAverageILvl: computeAverageILvl,           // public scope relevant only for unit tests
+        collectPrimaryStats: collectPrimaryStats,         // public scope relevant only for unit tests
+        collectSecondaryStats: collectSecondaryStats,     // public scope relevant only for unit tests
+        collectAllStats: collectAllStats,                 // public scope relevant only for unit tests
         updateAllStats: updateAllStats,
         updateOtherBonuses: updateOtherBonuses
     };
