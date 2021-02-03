@@ -13,10 +13,16 @@ swlcalc = function() {
         renderBody();
         startSubModules();
         fillSlots();
+
         // visual settings :
         adjustPlacement();
         window.addEventListener('resize', adjustPlacement, true);
         adjustSidebar();
+
+        // prevent accidental refreshes
+        window.onbeforeunload = function(event) {
+            return window.confirm();
+        };
     };
 
     /**
@@ -43,6 +49,7 @@ swlcalc = function() {
         // TODO/REFACTOR : currently we don't check if parameters for each slot are correct !
         if (!$.isEmptyObject(vars) && Object.keys(vars).length >= swlcalc.data.templateData.slots.length) {
             swlcalc.import.start(vars);
+            history.pushState("", document.title, window.location.pathname);
         } else {
            $('#btn-reset').trigger('click');
         }

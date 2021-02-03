@@ -15,14 +15,6 @@ swlcalc.summary = function() {
         updatePrimaryStats();
         updateSecondaryStats();
         updateOtherBonuses();
-        updateURL();
-    };
-
-    /**
-     * Updates URL field of the browser
-     */
-    var updateURL = function(event) {
-        window.location.hash = swlcalc.export.createExportUrl();
     };
 
     /**
