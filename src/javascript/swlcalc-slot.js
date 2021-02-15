@@ -242,7 +242,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newILvl = 0;
         if (!(this.edit.equipmentId() == 'none')) {
             if (this.isWeapon()) {
-                newILvl = this.computeItemILvlWithQuality('weapon', this.edit.equipmentRarity(), this.edit.equipmentQuality(), this.edit.equipmentLevel());
+                newILvl = this.computeItemILvlWithoutQuality('weapon', this.edit.equipmentRarity(), this.edit.equipmentLevel());
             } else {
                 newILvl = this.computeItemILvlWithQuality('talisman', this.edit.equipmentRarity(), this.edit.equipmentQuality(), this.edit.equipmentLevel());
             }
@@ -591,7 +591,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Calculates item power for the given item that has quality attribute (= talisman, weapon or glyph)
+     * Calculates item power for the given item that has quality attribute
      */
     this.computeItemILvlWithQuality = function(element, rarity, quality, level) {
         var data = swlcalc.data.ilvl[element][rarity][quality];
@@ -599,7 +599,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     };
 
     /**
-     * Calculates item power for the given item that doesn't have quality attribute (= signets)
+     * Calculates item power for the given item that doesn't have quality attribute
      */
     this.computeItemILvlWithoutQuality = function(element, rarity, level) {
         var data = swlcalc.data.ilvl[element][rarity];

@@ -94,7 +94,7 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
         "heal-rating": 5952,
         "healing-power": 155.7,
         "hit-points": 13905,
-        "ilvl": 327,
+        "ilvl": 334,
         "power-rating": 3730,
         "protection": 4895,
         "weapon-power": 1832,
@@ -139,7 +139,7 @@ QUnit.test("should collect primary stats accordingly", function(assert) {
 
     var totals = swlcalc.summary.collectPrimaryStats();
 
-    assert.equal(totals["ilvl"], 327);
+    assert.equal(totals["ilvl"], 334);
     assert.equal(totals["power-rating"], 3730);
     assert.equal(totals["weapon-power"], 1832);
     assert.equal(totals["attack-rating"], 6784);

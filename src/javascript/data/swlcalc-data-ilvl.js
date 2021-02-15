@@ -86,88 +86,26 @@ swlcalc.data.ilvl = {
             }
         }
     },
-    'weapon': { // Weapons are worth ~15% more Item Power than talismans + don't have ilvl increased when upgraded to 4-pip
+    'weapon': { // Weapons are worth ~15% more Item Power than talismans + don't have ilvl increasing with quality
         'standard': {
-            '1': {
-                init: 2,
-                perLevel: 39/19 // == (41 - 2) / (20 - 1)
-            },
-            '2': {
-                init: 2,
-                perLevel: 44/19 // == (46 - 2) / (20 - 1)
-            },
-            '3': {
-                init: 3,
-                perLevel: 49/19 // == (52 - 3) / (20 - 1)
-            }
+            init: 3,
+            perLevel: 49/19 // == (52 - 3) / (20 - 1)
         },
         'superior': {
-            '1': {
-                init: 47,
-                perLevel: 73/24 // == (120 - 47) / (25 - 1)
-            },
-            '2': {
-                init: 53,
-                perLevel: 82/24 // == (135 - 53) / (25 - 1)
-            },
-            '3': {
-                init: 59,
-                perLevel: 91/24 // == (150 - 59) / (25 - 1)
-            }
+            init: 59,
+            perLevel: 91/24 // == (150 - 59) / (25 - 1)
         },
         'epic': {
-            '1': {
-                init: 139,
-                perLevel: 117/29 // == (256 - 139) / (30 - 1)
-            },
-            '2': {
-                init: 156,
-                perLevel: 132/29 // == (288 - 156) / (30 - 1)
-            },
-            '3': {
-                init: 174,
-                perLevel: 146/29 // == (320 - 174) / (30 - 1)
-            },
-            '4': {
-                init: 174,
-                perLevel: 146/29 // == (320 - 174) / (30 - 1)
-            }
+            init: 174,
+            perLevel: 146/29 // == (320 - 174) / (30 - 1)
         },
         'mythic': {
-            '1': {
-                init: 296,
-                perLevel: 172/34 // == (468 - 296) / (35 - 1)
-            },
-            '2': {
-                init: 334,
-                perLevel: 193/34 // == (527 - 334) / (35 - 1)
-            },
-            '3': {
-                init: 370,
-                perLevel: 215/34 // == (585 - 370) / (35 - 1)
-            },
-            '4': {
-                init: 370,
-                perLevel: 215/34 // == (585 - 370) / (35 - 1)
-            }
+            init: 370,
+            perLevel: 215/34 // == (585 - 370) / (35 - 1)
         },
         'legendary': {
-            '1': {
-                init: 537,
-                perLevel: 420/69 // == (957 - 537) / (70 - 1)
-            },
-            '2': {
-                init: 605,
-                perLevel: 471/69 // == (1076 - 605) / (70 - 1)
-            },
-            '3': {
-                init: 672,
-                perLevel: 524/69 // == (1196 - 672) / (70 - 1)
-            },
-            '4': {
-                init: 672,
-                perLevel: 524/69 // == (1196 - 672) / (70 - 1)
-            }
+            init: 672,
+            perLevel: 524/69 // == (1196 - 672) / (70 - 1)
         }
     },
     'glyph': {

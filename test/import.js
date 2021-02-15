@@ -30,7 +30,7 @@ QUnit.test("should import URL and set summary and slots", function(assert) {
 
     // Check totals only :
 
-    assert.equal($("#stat-ilvl").html(), "327");
+    assert.equal($("#stat-ilvl").html(), "334");
     assert.equal($("#stat-power-rating").html(), "3730");
     assert.equal($("#stat-weapon-power").html(), "1832");
     assert.equal($("#stat-attack-rating").html(), "8052");
