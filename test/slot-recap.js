@@ -107,7 +107,7 @@ QUnit.test("should get and set the slot's equipment stat raw value on recap view
 });
 
 QUnit.test("should get and set the slot's equipment stat HP value on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatHPValue(), "+1344");
+    assert.equal(swlcalc.gear.slots.head.recap.equipmentStatHPValue(), "+1345");
     swlcalc.gear.slots.head.recap.equipmentStatHPValue("+8");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentStatHPValue(), "+8");
 });

@@ -57,9 +57,9 @@ QUnit.test("should update all stats", function(assert) {
     assert.equal($("#stat-weapon-power").html(), "1832");
     assert.equal($("#stat-combat-power").html(), "646.2");
     assert.equal($("#stat-healing-power").html(), "155.7");
-    assert.equal($("#stat-hit-points").html(), "13903");
+    assert.equal($("#stat-hit-points").html(), "13905");
     assert.equal($("#stat-attack-rating").html(), "6784");
-    assert.equal($("#stat-heal-rating").html(), "5951");
+    assert.equal($("#stat-heal-rating").html(), "5952");
 
     assert.equal($("#stat-critical-rating").html(), "+841");
     assert.equal($("#stat-critical-chance").html(), "13.8%");
@@ -91,9 +91,9 @@ QUnit.test("should collect all stats and return two objects", function(assert) {
         "attack-rating": 6784,
         "damage-mitigation": 16.6,
         "combat-power": 646.2,
-        "heal-rating": 5951,
+        "heal-rating": 5952,
         "healing-power": 155.7,
-        "hit-points": 13903,
+        "hit-points": 13905,
         "ilvl": 327,
         "power-rating": 3730,
         "protection": 4895,
@@ -143,8 +143,8 @@ QUnit.test("should collect primary stats accordingly", function(assert) {
     assert.equal(totals["power-rating"], 3730);
     assert.equal(totals["weapon-power"], 1832);
     assert.equal(totals["attack-rating"], 6784);
-    assert.equal(totals["heal-rating"], 5951);
-    assert.equal(totals["hit-points"], 13903);
+    assert.equal(totals["heal-rating"], 5952);
+    assert.equal(totals["hit-points"], 13905);
     assert.equal(totals["combat-power"], 646.2);
     assert.equal(totals["healing-power"], 155.7);
     assert.equal(totals["protection"], 4895);

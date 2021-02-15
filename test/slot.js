@@ -122,9 +122,9 @@ QUnit.test("should update elements related to equipment's stat rating accordingl
 });
 
 QUnit.test("should update elements related to equipment's \"transformed\" stat value accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHPValue(), "+806");
+    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHPValue(), "+807");
     assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatARValue(), "+424");
-    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHRValue(), "+282");
+    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHRValue(), "+283");
 
     swlcalc.gear.slots.finger.edit.equipmentStatPowerValue("9876");
     $('#anima-allocation-damage-range').val(100);
@@ -132,7 +132,7 @@ QUnit.test("should update elements related to equipment's \"transformed\" stat v
     $('#anima-allocation-survivability-range').val(100);
     swlcalc.gear.slots.finger.updateTalismanStatValues();
 
-    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHPValue(), "+28196");
+    assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHPValue(), "+28209");
     assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatARValue(), "+9876");
     assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatHRValue(), "+0");
 });

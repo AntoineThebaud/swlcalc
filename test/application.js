@@ -23,7 +23,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#stat-weapon-power").html(), "1577");
     assert.equal($("#stat-attack-rating").html(), "8247");
     assert.equal($("#stat-heal-rating").html(), "6710");
-    assert.equal($("#stat-hit-points").html(), "15578");
+    assert.equal($("#stat-hit-points").html(), "15581");
     assert.equal($("#stat-combat-power").html(), "736.8");
     assert.equal($("#stat-healing-power").html(), "165.7");
     assert.equal($("#stat-critical-rating").html(), "+1598");
@@ -202,7 +202,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.ok($("#head-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#head-recap-equipment-stat-power-value").text(), "1113");
     assert.equal($("#head-recap-equipment-stat-prot-value").text(), "+487");
-    assert.equal($("#head-recap-equipment-stat-hp-value").html(), "+1398");
+    assert.equal($("#head-recap-equipment-stat-hp-value").html(), "+1399");
     assert.equal($("#head-recap-equipment-stat-ar-value").html(), "+735");
     assert.equal($("#head-recap-equipment-stat-hr-value").html(), "+490");
     assert.ok($("#head-recap-equipment-img-section").is(":visible"));
@@ -276,7 +276,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.ok($("#finger-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#finger-recap-equipment-stat-power-value").text(), "314");
     assert.equal($("#finger-recap-equipment-stat-prot-value").text(), "+138");
-    assert.equal($("#finger-recap-equipment-stat-hp-value").html(), "+394");
+    assert.equal($("#finger-recap-equipment-stat-hp-value").html(), "+395");
     assert.equal($("#finger-recap-equipment-stat-ar-value").html(), "+207");
     assert.equal($("#finger-recap-equipment-stat-hr-value").html(), "+138");
     assert.ok($("#finger-recap-equipment-img-section").is(":visible"));
@@ -350,7 +350,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.ok($("#neck-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#neck-recap-equipment-stat-power-value").text(), "1136");
     assert.equal($("#neck-recap-equipment-stat-prot-value").text(), "+496");
-    assert.equal($("#neck-recap-equipment-stat-hp-value").html(), "+1427");
+    assert.equal($("#neck-recap-equipment-stat-hp-value").html(), "+1428");
     assert.equal($("#neck-recap-equipment-stat-ar-value").html(), "+750");
     assert.equal($("#neck-recap-equipment-stat-hr-value").html(), "+500");
     assert.ok($("#neck-recap-equipment-img-section").is(":visible"));
@@ -424,9 +424,9 @@ QUnit.test("should import from hash", function(assert) {
     assert.ok($("#wrist-recap-equipment-stat-section").is(":visible"));
     assert.equal($("#wrist-recap-equipment-stat-power-value").text(), "1951");
     assert.equal($("#wrist-recap-equipment-stat-prot-value").text(), "+855");
-    assert.equal($("#wrist-recap-equipment-stat-hp-value").html(), "+2451");
+    assert.equal($("#wrist-recap-equipment-stat-hp-value").html(), "+2452");
     assert.equal($("#wrist-recap-equipment-stat-ar-value").html(), "+1288");
-    assert.equal($("#wrist-recap-equipment-stat-hr-value").html(), "+858");
+    assert.equal($("#wrist-recap-equipment-stat-hr-value").html(), "+859");
     assert.ok($("#wrist-recap-equipment-img-section").is(":visible"));
     // TODO/TEST : buggy, should be ok : assert.equal($("#wrist-recap-equipment-img-item").attr('src'), "assets/images/icons/weapon/Blood Magic Focus.png");
     assert.equal($("#wrist-recap-equipment-img-rarity").attr('src'), "assets/images/icons/rarity/wrist/legendary-42x42.png");
