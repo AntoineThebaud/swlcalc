@@ -309,9 +309,17 @@ div[id="summary"] .table-stats th {
     font-size: 13px;
     border-bottom: 2px solid var(--color-border);
 }
-#table-primary label {
-   margin: 10px 0px 10px 0px;
+div[id="summary"] > h4 {
+    position: relative;
 }
+div[id="summary"] > h4 > button {
+    position: absolute;
+    right: 0px;
+}
+div[id="summary"] > h4 > button > img {
+    width: 20px;
+}
+
 .table-title {
     width: 100%;
 }

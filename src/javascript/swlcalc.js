@@ -144,8 +144,7 @@ swlcalc = function() {
             } else if (!isScrollingDown && scrollTop <= initialSidebarTop) {
                 sidebar.removeClass('fixed');
             }
-            // console.log("sidebarBottom == " + sidebarBottom);
-            // console.log("scrollBottom == " + scrollBottom);
+            
             var dragBottomDown = (sidebarBottom <= scrollBottom && isScrollingDown);
             var dragTopUp = (sidebarTop >= navbarHeight && !isScrollingDown);
 
