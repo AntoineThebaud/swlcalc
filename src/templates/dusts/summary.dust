@@ -27,12 +27,12 @@
             <th></th>
         </thead>
         <tbody>
-            <tr><td class="stat-name">Critical Rating</td><td id="stat-critical-rating" class="stat-value stat-inSummary">0 %</td></tr>
-            <tr class="separator"><td class="stat-name">Critical Chance %</td><td id="stat-critical-chance" class="stat-value stat-inSummary">0</td></tr>
+            <tr><td class="stat-name">Critical Rating</td><td id="stat-critical-rating" class="stat-value stat-inSummary">0</td></tr>
+            <tr class="separator"><td class="stat-name">Critical Chance %</td><td id="stat-critical-chance" class="stat-value stat-inSummary">0 %</td></tr>
             <tr><td class="stat-name">Critical Power Rating</td><td id="stat-critical-power" class="stat-value stat-inSummary">0</td></tr>
             <tr class="separator"><td class="stat-name">Critical Power %</td><td id="stat-critical-power-percentage" class="stat-value stat-inSummary">0 %</td></tr>
             <tr><td class="stat-name">Hit Rating</td><td id="stat-hit-rating" class="stat-value stat-inSummary">0</td></tr>
-            <tr><td class="stat-name">Glance Reduction %</td><td id="stat-glance-reduction" class="stat-value stat-inSummary">0%</td></tr>
+            <tr><td class="stat-name">Glance Reduction %</td><td id="stat-glance-reduction" class="stat-value stat-inSummary">0 %</td></tr>
         </tbody>
     </table>
     <table class="table table-stats">
@@ -69,62 +69,121 @@
     <div class="modal-dialog" role="document">
         <div class="modal-body">
             <div id="summary-edit">
-                <h4>Summary</h4>
+                <h4>Configure passives</h4>
                 <table class="table table-stats">
-                    <thead>
-                        <th>Main Stats</th>
-                        <th></th>
-                    </thead>
                     <tbody>
-                        <tr><td class="stat-name">Item Power</td><td id="stat-ilvl" class="stat-value stat-inSummary">0</td></tr>
-                        <tr><td class="stat-name">Power Rating</td><td id="stat-power-rating" class="stat-value stat-inSummary">0</td></tr>
-                        <tr class="separator"><td class="stat-name">Weapon Power</td><td id="stat-weapon-power" class="stat-value stat-inSummary">0</td></tr>
-                        <tr><td class="stat-name">Attack Rating</td><td id="stat-attack-rating" class="stat-value dps stat-inSummary">0</td></tr>
-                        <tr><td class="stat-name">Heal Rating</td><td id="stat-heal-rating" class="stat-value heal stat-inSummary">0</td></tr>
-                        <tr class="separator"><td class="stat-name">Hit Points</td><td id="stat-hit-points" class="stat-value tank stat-inSummary">0</td></tr>
-                        <tr><td class="stat-name">Combat Power</td><td id="stat-combat-power" class="stat-value dps stat-inSummary">0</td></tr>
-                        <tr><td class="stat-name">Healing Power</td><td id="stat-healing-power" class="stat-value heal stat-inSummary">0</td></tr>
-                    </tbody>
-                </table>
-                <table class="table table-stats">
-                    <thead>
-                        <th>Offensive Stats</th>
-                        <th></th>
-                    </thead>
-                    <tbody>
-                        <tr><td class="stat-name">Critical Rating</td><td id="stat-critical-rating" class="stat-value stat-inSummary">0 %</td></tr>
-                        <tr class="separator"><td class="stat-name">Critical Chance %</td><td id="stat-critical-chance" class="stat-value stat-inSummary">0</td></tr>
-                        <tr><td class="stat-name">Critical Power Rating</td><td id="stat-critical-power" class="stat-value stat-inSummary">0</td></tr>
-                        <tr class="separator"><td class="stat-name">Critical Power %</td><td id="stat-critical-power-percentage" class="stat-value stat-inSummary">0 %</td></tr>
-                        <tr><td class="stat-name">Hit Rating</td><td id="stat-hit-rating" class="stat-value stat-inSummary">0</td></tr>
-                        <tr><td class="stat-name">Glance Reduction %</td><td id="stat-glance-reduction" class="stat-value stat-inSummary">0%</td></tr>
-                    </tbody>
-                </table>
-                <table class="table table-stats">
-                    <thead>
-                        <th>Defensive Stats</th>
-                        <th></th>
-                    </thead>
-                    <tbody>
-                        <tr><td class="stat-name">Protection</td><td id="stat-protection" class="stat-value stat-inSummary">0</td></tr>
-                        <tr class="separator"><td class="stat-name">Damage Mitigation</td><td id="stat-damage-mitigation" class="stat-value stat-inSummary">0%</td></tr>
-                        <tr><td class="stat-name">Defense Rating</td><td id="stat-defense-rating" class="stat-value stat-inSummary">0</td></tr>
-                        <tr class="separator"><td class="stat-name">Glance Chance %</td><td id="stat-glance-chance" class="stat-value stat-inSummary">0%</td></tr>
-                        <tr><td class="stat-name">Evade Rating</td><td id="stat-evade-rating" class="stat-value stat-inSummary">0</td></tr>
-                        <tr><td class="stat-name">Evade Chance %</td><td id="stat-evade-chance" class="stat-value stat-inSummary">0%</td></tr>
-                    </tbody>
-                </table>
-                <table class="table table-stats">
-                    <thead>
-                        <th>Other Bonuses</th>
-                    </thead>
-                    <tbody>
-                        <tr><td id="stat-agent1-bonus25" class="stat-name"></td></tr>
-                        <tr><td id="stat-agent1-bonus50" class="stat-name"></td></tr>
-                        <tr><td id="stat-agent2-bonus25" class="stat-name"></td></tr>
-                        <tr><td id="stat-agent2-bonus50" class="stat-name"></td></tr>
-                        <tr><td id="stat-agent3-bonus25" class="stat-name"></td></tr>
-                        <tr><td id="stat-agent3-bonus50" class="stat-name"></td></tr>
+                        <thead>
+                            <th>Stat</th>
+                            <th>Base</th>            <!-- TODO/GUI : Add info on mouseover-->
+                            <th>Passive Skills</th>  <!-- TODO/GUI : Add info on mouseover-->
+                            <th>Capstones</th>       <!-- TODO/GUI : Add info on mouseover-->
+                            <th>Expertise</th>       <!-- TODO/GUI : Add info on mouseover-->
+                        </thead>
+                        <tr>
+                            <td class="stat-name">Attack Rating</td>
+                            <td id="stat-attack-rating-base" class="stat-value dps stat-inSummary">0</td>
+                            <td id="stat-attack-rating-passive-skills" class="stat-value dps stat-inSummary">0</td>
+                            <td id="stat-attack-rating-capstones" class="stat-value dps stat-inSummary">0</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td class="stat-name">Heal Rating</td>
+                            <td id="stat-heal-rating-base" class="stat-value heal stat-inSummary">0</td>
+                            <td id="stat-heal-rating-passive-skills" class="stat-value heal stat-inSummary">0</td>
+                            <td id="stat-heal-rating-capstones" class="stat-value heal stat-inSummary">0</td>
+                            <td>-</td>
+                        </tr>
+                        <tr class="separator">
+                            <td class="stat-name">Hit Points</td>
+                            <td id="stat-hit-points-base" class="stat-value tank stat-inSummary">0</td>
+                            <td id="stat-hit-points-passive-skills" class="stat-value tank stat-inSummary">0</td>
+                            <td id="stat-hit-points-capstones" class="stat-value tank stat-inSummary">0</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td class="stat-name">Critical Rating</td>
+                            <td id="stat-critical-rating-base" class="stat-value stat-inSummary">0</td>
+                            <td id="stat-critical-rating-passive-skills" class="stat-value stat-inSummary">0</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr class="separator">
+                            <td class="stat-name">Critical Chance %</td>
+                            <td id="stat-critical-chance-base" class="stat-value stat-inSummary">0 %</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td id="stat-critical-chance-expertise" class="stat-value stat-inSummary">0 %</td>
+                        </tr>
+                        <tr>
+                            <td class="stat-name">Critical Power Rating</td>
+                            <td id="stat-critical-power-base" class="stat-value stat-inSummary">0</td>
+                            <td id="stat-critical-power-passive-skills" class="stat-value stat-inSummary">0</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr class="separator">
+                            <td class="stat-name">Critical Power %</td>
+                            <td id="stat-critical-power-percentage-base" class="stat-value stat-inSummary">0 %</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td id="stat-critical-power-expertise" class="stat-value stat-inSummary">0 %</td>
+                        </tr>
+                        <tr>
+                            <td class="stat-name">Hit Rating</td>
+                            <td id="stat-hit-rating-base" class="stat-value stat-inSummary">0</td>
+                            <td id="stat-hit-rating-passive-skills" class="stat-value stat-inSummary">0</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td class="stat-name">Glance Reduction %</td>
+                            <td id="stat-glance-reduction-base" class="stat-value stat-inSummary">0%</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td class="stat-name">Protection</td>
+                            <td id="stat-protection-base" class="stat-value stat-inSummary">0</td>
+                            <td id="stat-protection-passive-skills" class="stat-value stat-inSummary">0</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr class="separator">
+                            <td class="stat-name">Damage Mitigation</td>
+                            <td id="stat-damage-mitigation-base" class="stat-value stat-inSummary">0%</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td class="stat-name">Defense Rating</td>
+                            <td id="stat-defense-rating-base" class="stat-value stat-inSummary">0</td>
+                            <td id="stat-defense-rating-skills" class="stat-value stat-inSummary">0</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr class="separator">
+                            <td class="stat-name">Glance Chance %</td>
+                            <td id="stat-glance-chance-base" class="stat-value stat-inSummary">0%</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td class="stat-name">Evade Rating</td>
+                            <td id="stat-evade-rating-base" class="stat-value stat-inSummary">0</td>
+                            <td id="stat-evade-rating-passive-skills" class="stat-value stat-inSummary">0</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td class="stat-name">Evade Chance %</td>
+                            <td id="stat-evade-chance-base" class="stat-value stat-inSummary">0%</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
