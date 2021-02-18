@@ -65,6 +65,7 @@
 </div>
 
 <!-- Modal window to configure passives -->
+<!-- TODO/REFACTOR : find a way to removed hardcoded values here (= probably render file using data like done for slots)-->
 <div id="summary-edit-modal" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-body">
@@ -82,107 +83,149 @@
                         <tr>
                             <td class="stat-name">Attack Rating</td>
                             <td id="stat-attack-rating-base" class="stat-value dps stat-inSummary">0</td>
-                            <td id="stat-attack-rating-passive-skills" class="stat-value dps stat-inSummary">0</td>
-                            <td id="stat-attack-rating-capstones" class="stat-value dps stat-inSummary">0</td>
-                            <td>-</td>
+                            <td id="stat-attack-rating-passive-skills" class="stat-value dps stat-inSummary">
+                                <input id="stat-attack-rating-passive-skills-slider" type="range" step="1" min="0" max="1512" value="1512">
+                                <span>0</span>
+                            </td>
+                            <td id="stat-attack-rating-capstones" class="stat-value dps stat-inSummary">
+                                <input id="stat-attack-rating-capstones-slider" type="range" step="10" min="0" max="810" value="810">
+                                <span>0</span>
+                            </td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Heal Rating</td>
                             <td id="stat-heal-rating-base" class="stat-value heal stat-inSummary">0</td>
-                            <td id="stat-heal-rating-passive-skills" class="stat-value heal stat-inSummary">0</td>
-                            <td id="stat-heal-rating-capstones" class="stat-value heal stat-inSummary">0</td>
-                            <td>-</td>
+                            <td id="stat-heal-rating-passive-skills" class="stat-value heal stat-inSummary">
+                                <input id="stat-heal-rating-passive-skills-slider" type="range" step="1" min="0" max="1500" value="1500">
+                                <span>0</span>
+                            </td>
+                            <td id="stat-heal-rating-capstones" class="stat-value heal stat-inSummary">
+                                <input id="stat-heal-rating-capstones-slider" type="range" step="10" min="0" max="810" value="810">
+                                <span>0</span>
+                            </td>
+                            <td></td>
                         </tr>
                         <tr class="separator">
                             <td class="stat-name">Hit Points</td>
                             <td id="stat-hit-points-base" class="stat-value tank stat-inSummary">0</td>
-                            <td id="stat-hit-points-passive-skills" class="stat-value tank stat-inSummary">0</td>
-                            <td id="stat-hit-points-capstones" class="stat-value tank stat-inSummary">0</td>
-                            <td>-</td>
+                            <td id="stat-hit-points-passive-skills" class="stat-value tank stat-inSummary">
+                                <input id="stat-hit-points-passive-skills-slider" type="range" step="1" min="0" max="2997" value="2997">
+                                <span>0</span>
+                            </td>
+                            <td id="stat-hit-points-capstones" class="stat-value tank stat-inSummary">
+                                <input id="stat-heal-rating-capstones-slider" type="range" step="30" min="0" max="2430" value="2430">
+                                <span>0</span>
+                            </td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Critical Rating</td>
                             <td id="stat-critical-rating-base" class="stat-value stat-inSummary">0</td>
-                            <td id="stat-critical-rating-passive-skills" class="stat-value stat-inSummary">0</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td id="stat-critical-rating-passive-skills" class="stat-value stat-inSummary">
+                                <input id="stat-critical-rating-passive-skills-slider" type="range" step="1" min="0" max="756" value="756">
+                                <span>0</span>
+                            </td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr class="separator">
                             <td class="stat-name">Critical Chance %</td>
                             <td id="stat-critical-chance-base" class="stat-value stat-inSummary">0 %</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td id="stat-critical-chance-expertise" class="stat-value stat-inSummary">0 %</td>
+                            <td></td>
+                            <td></td>
+                            <td id="stat-critical-chance-expertise" class="stat-value stat-inSummary">0 %
+                                <input id="stat-critical-chance-expertise-slider" type="range" step="0.3" min="0.3" max="7.5" value="7.5">
+                                <span>0 %</span>
+                            </td>
                         </tr>
                         <tr>
                             <td class="stat-name">Critical Power Rating</td>
                             <td id="stat-critical-power-base" class="stat-value stat-inSummary">0</td>
-                            <td id="stat-critical-power-passive-skills" class="stat-value stat-inSummary">0</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td id="stat-critical-power-passive-skills" class="stat-value stat-inSummary">
+                                <input id="stat-critical-power-passive-skills-slider" type="range" step="1" min="0" max="1008" value="1008">
+                                <span>0</span>
+                            </td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr class="separator">
                             <td class="stat-name">Critical Power %</td>
                             <td id="stat-critical-power-percentage-base" class="stat-value stat-inSummary">0 %</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td id="stat-critical-power-expertise" class="stat-value stat-inSummary">0 %</td>
+                            <td></td>
+                            <td></td>
+                            <td id="stat-critical-power-percentage-expertise" class="stat-value stat-inSummary">
+                                <input id="stat-critical-power-percentage-expertise-slider" type="range" step="1.2" min="0" max="30" value="30">
+                                <span>0 %</span>
+                            </td>
                         </tr>
                         <tr>
                             <td class="stat-name">Hit Rating</td>
                             <td id="stat-hit-rating-base" class="stat-value stat-inSummary">0</td>
-                            <td id="stat-hit-rating-passive-skills" class="stat-value stat-inSummary">0</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td id="stat-hit-rating-passive-skills" class="stat-value stat-inSummary">
+                                <input id="stat-hit-rating-passive-skills-slider" type="range" step="1" min="0" max="756" value="756">
+                                <span>0</span>
+                            </td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Glance Reduction %</td>
                             <td id="stat-glance-reduction-base" class="stat-value stat-inSummary">0%</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Protection</td>
                             <td id="stat-protection-base" class="stat-value stat-inSummary">0</td>
-                            <td id="stat-protection-passive-skills" class="stat-value stat-inSummary">0</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td id="stat-protection-passive-skills" class="stat-value stat-inSummary">
+                                <input id="stat-protection-passive-skills-slider" type="range" step="1" min="0" max="2259" value="2259">
+                                <span>0</span>
+                            </td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr class="separator">
                             <td class="stat-name">Damage Mitigation</td>
                             <td id="stat-damage-mitigation-base" class="stat-value stat-inSummary">0%</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Defense Rating</td>
                             <td id="stat-defense-rating-base" class="stat-value stat-inSummary">0</td>
-                            <td id="stat-defense-rating-skills" class="stat-value stat-inSummary">0</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td id="stat-defense-rating-skills" class="stat-value stat-inSummary">
+                                <input id="stat-defense-rating-passive-skills-slider" type="range" step="1" min="0" max="753" value="753">
+                                <span>0</span>
+                            </td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr class="separator">
                             <td class="stat-name">Glance Chance %</td>
                             <td id="stat-glance-chance-base" class="stat-value stat-inSummary">0%</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Evade Rating</td>
                             <td id="stat-evade-rating-base" class="stat-value stat-inSummary">0</td>
-                            <td id="stat-evade-rating-passive-skills" class="stat-value stat-inSummary">0</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td id="stat-evade-rating-passive-skills" class="stat-value stat-inSummary">
+                                <input id="stat-evade-rating-passive-skills-slider" type="range" step="1" min="0" max="753" value="753">
+                                <span>0</span>
+                            </td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Evade Chance %</td>
                             <td id="stat-evade-chance-base" class="stat-value stat-inSummary">0%</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
