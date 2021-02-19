@@ -2,8 +2,186 @@ var swlcalc = swlcalc || {};
 
 swlcalc.summary = function() {
 
-    // useless here but kept for future updates
+    var el = {};
+
+    var elInit = function() {
+        return {
+            // Base
+            valAttackRatingBase:            $('#stat-attack-rating-base'),
+            valHealRatingBase:              $('#stat-heal-rating-base'),
+            valHitPointsBase:               $('#stat-heal-rating-base'),
+            valCriticalRatingBase:          $('#stat-critical-rating-base'),
+            valCriticalChanceBase:          $('#stat-critical-chance-base'),
+            valCriticalPowerBase:           $('#stat-critical-power-base'),
+            valCriticalPowerPercentageBase: $('#stat-critical-power-percentage-base'),
+            valHitRatingBase:               $('#stat-hit-rating-base'),
+            valGlanceReductionBase:         $('#stat-glance-reduction-base'),
+            valProtectionBase:              $('#stat-protection-base'),
+            valDamageMitigationBase:        $('#stat-damage-mitigation-base'),
+            valDefenseRatingBase:           $('#stat-defense-rating-base'),
+            valGlanceChanceBase:            $('#stat-glance-chance-base'),
+            valEvadeRatingBase:             $('#stat-evade-rating-base'),
+            valEvadeChanceBase:             $('#stat-evade-chance-base'),
+
+            // Passive Skills
+            valAttackRatingPassiveSkills:     $('#stat-attack-rating-passive-skills'),
+            rangeAttackRatingPassiveSkills:   $('#stat-attack-rating-passive-skills-slider'),
+            valHealRatingPassiveSkills:       $('#stat-heal-rating-passive-skills'),
+            rangeHealRatingPassiveSkills:     $('#stat-heal-rating-passive-skills-slider'),
+            valHitPointsPassiveSkills:        $('#stat-hit-points-passive-skills'),
+            rangeHitPointsPassiveSkills:      $('#stat-hit-points-passive-skills-slider'),
+            valCriticalRatingPassiveSkills:   $('#stat-critical-rating-passive-skills'),
+            rangeCriticalRatingPassiveSkills: $('#stat-critical-rating-passive-skills-slider'),
+            valCriticalPowerPassiveSkills:    $('#stat-critical-power-passive-skills'),
+            rangeCriticalPowerPassiveSkills:  $('#stat-critical-power-passive-skills-slider'),
+            valHitRatingPassiveSkills:        $('#stat-hit-rating-passive-skills'),
+            rangeHitRatingPassiveSkills:      $('#stat-hit-rating-passive-skills-slider'),
+            valProtectionPassiveSkills:       $('#stat-protection-passive-skills'),
+            rangeProtectionPassiveSkills:     $('#stat-protection-passive-skills-slider'),
+            valDefenseRatingPassiveSkills:    $('#stat-defense-rating-passive-skills'),
+            rangeDefenseRatingPassiveSkills:  $('#stat-defense-rating-passive-skills-slider'),
+            valEvadeRatingPassiveSkills:      $('#stat-evade-rating-passive-skills'),
+            rangeEvadeRatingPassiveSkills:    $('#stat-evade-rating-passive-skills-slider'),
+
+            // Capstones
+            valAttackRatingCapstones:   $('#stat-attack-rating-capstones'),
+            rangeAttackRatingCapstones: $('#stat-attack-rating-capstones-slider'),
+            valHealRatingCapstones:     $('#stat-heal-rating-capstones'),
+            rangeHealRatingCapstones:   $('#stat-heal-rating-capstones-slider'),
+            valHitPointsCapstones:      $('#stat-hit-points-capstones'),
+            rangeHitPointsCapstones:    $('#stat-hit-points-capstones-slider'),
+
+            // Expertise
+            valCriticalChanceExpertise:            $('#stat-critical-chance-expertise'),
+            rangeCriticalChanceExpertise:          $('#stat-critical-chance-expertise-slider'),
+            valCriticalPowerPercentageExpertise:   $('#stat-critical-power-percentage-expertise'),
+            rangeCriticalPowerPercentageExpertise: $('#stat-critical-power-percentage-expertise-slider'),
+        };
+    };
+
     var init = function() {
+        el = elInit();
+        bindEvents();
+    };
+
+    /**
+     * Associates the right processing to each trigger.
+     */
+    var bindEvents = function() {
+        el.rangeAttackRatingPassiveSkills.change(handleAttackRatingPassiveSkillsChange);
+        el.rangeHealRatingPassiveSkills.change(handleHealRatingPassiveSkillsChange);
+        el.rangeHitPointsPassiveSkills.change(handleHitPointsPassiveSkillsChange);
+        el.rangeCriticalRatingPassiveSkills.change(handleCriticalRatingPassiveSkillsChange);
+        el.rangeCriticalPowerPassiveSkills.change(handleCriticalPowerPassiveSkillsChange);
+        el.rangeHitRatingPassiveSkills.change(handleHitRatingPassiveSkillsChange);
+        el.rangeProtectionPassiveSkills.change(handleProtectionPassiveSkillsChange);
+        el.rangeDefenseRatingPassiveSkills.change(handleDefenseRatingPassiveSkillsChange);
+        el.rangeEvadeRatingPassiveSkills.change(handleEvadeRatingPassiveSkillsChange);
+
+        el.rangeAttackRatingCapstones.change(handleAttackRatingCapstonesChange);
+        el.rangeHealRatingCapstones.change(handleHealRatingCapstonesChange);
+        el.rangeHitPointsCapstones.change(handleHitPointsCapstonesChange);
+
+        el.rangeCriticalChanceExpertise.change(handleCriticalChanceExpertiseChange);
+        el.rangeCriticalPowerPercentageExpertise.change(handleCriticalPowerPercentageExpertiseChange);
+    };
+
+    /**
+     * Update the value displayed for the Attack Rating > Passive Skills part
+     */
+    var handleAttackRatingPassiveSkillsChange = function(event) {
+        el.valAttackRatingPassiveSkills.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleHealRatingPassiveSkillsChange = function(event) {
+        el.valHealRatingPassiveSkills.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleHitPointsPassiveSkillsChange = function(event) {
+        el.valHitPointsPassiveSkills.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleCriticalRatingPassiveSkillsChange = function(event) {
+        el.valCriticalRatingPassiveSkills.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleCriticalPowerPassiveSkillsChange = function(event) {
+        el.valCriticalPowerPassiveSkills.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleHitRatingPassiveSkillsChange = function(event) {
+        el.valHitRatingPassiveSkills.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleProtectionPassiveSkillsChange = function(event) {
+        el.valProtectionPassiveSkills.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleDefenseRatingPassiveSkillsChange = function(event) {
+        el.valDefenseRatingPassiveSkills.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleEvadeRatingPassiveSkillsChange = function(event) {
+        el.valEvadeRatingPassiveSkills.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleAttackRatingCapstonesChange = function(event) {
+        el.valAttackRatingCapstones.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleHealRatingCapstonesChange = function(event) {
+        el.valHealRatingCapstones.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleHitPointsCapstonesChange = function(event) {
+        el.valHitPointsCapstones.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleCriticalChanceExpertiseChange = function(event) {
+        el.valCriticalChanceExpertise.text(event.currentTarget.value);
+    };
+
+    /**
+     * TODO comment
+     */
+    var handleCriticalPowerPercentageExpertiseChange = function(event) {
+        el.valCriticalPowerPercentageExpertise.text(event.currentTarget.value);
     };
 
     /**
