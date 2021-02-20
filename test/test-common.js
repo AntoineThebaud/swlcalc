@@ -27,7 +27,7 @@ function renderSummary() {
 
 function renderButtonbar() {
     renderTemplate("navbar", {});
-    renderTemplate("exportmodal", {});
+    renderTemplate("export_modal", {});
 }
 
 function renderTemplate(template_name, data) {
@@ -86,4 +86,8 @@ function initiateAnimaAllocation() {
 
 function initiateExport() {
     swlcalc.export.init();
+}
+
+function initiatePassives() {
+    swlcalc.passives.init();
 }

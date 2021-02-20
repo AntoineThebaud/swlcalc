@@ -24,7 +24,7 @@
                             <strong>Rarity :</strong>
                         </td>
                         <td class="upgrade-select">
-                            {>rarityselect itemtype="equipment"/}
+                            {>rarity_select itemtype="equipment"/}
                         </td>
                         <td class="stat-inSlot">
                             <p class="thin-p">
@@ -65,9 +65,9 @@
                         </td>
                         <td class="upgrade-select">
                             {?isWeapon}
-                            {>qualityselect itemtype="equipment" pip1="Mk I" pip2="Mk II" pip3="Mk III"/}
+                            {>quality_select itemtype="equipment" pip1="Mk I" pip2="Mk II" pip3="Mk III"/}
                             {:else}
-                            {>qualityselect itemtype="equipment" pip1="Faded" pip2="Luminous" pip3="Radiant"/}
+                            {>quality_select itemtype="equipment" pip1="Faded" pip2="Luminous" pip3="Radiant"/}
                             {/isWeapon}
                         </td>
                         <td rowspan="2" class="item-description">
@@ -97,7 +97,7 @@
                             <strong>Rarity :</strong>
                         </td>
                         <td class="upgrade-select">
-                            {>rarityselect itemtype="glyph"/}
+                            {>rarity_select itemtype="glyph"/}
                         </td>
                         <td class="filler"></td>
                     </tr>
@@ -122,7 +122,7 @@
                             <strong>Quality :</strong>
                         </td>
                         <td class="upgrade-select">
-                            {>qualityselect itemtype="glyph" pip1="Crude" pip2="Simple" pip3="Intricate"/}
+                            {>quality_select itemtype="glyph" pip1="Crude" pip2="Simple" pip3="Intricate"/}
                         </td>
                         <td class="stat-inSlot">
                           <span id="{id}-edit-glyph-stat-rating" class="stat-value gear">0</span>
@@ -161,7 +161,7 @@
                             <strong>Rarity :</strong>
                         </td>
                         <td class="upgrade-select">
-                            {>rarityselect itemtype="signet"/}
+                            {>rarity_select itemtype="signet"/}
                         </td>
                         <td rowspan="2" id="{id}-edit-signet-description" class="item-description">
                         </td>

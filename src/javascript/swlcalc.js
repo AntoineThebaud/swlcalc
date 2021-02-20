@@ -73,6 +73,7 @@ swlcalc = function() {
         swlcalc.buttonBar.init();
         swlcalc.animaAllocation.init();
         swlcalc.summary.init();
+        swlcalc.passives.init();
         swlcalc.export.init();
         swlcalc.themeSwitch.init();
     };
@@ -144,7 +145,7 @@ swlcalc = function() {
             } else if (!isScrollingDown && scrollTop <= initialSidebarTop) {
                 sidebar.removeClass('fixed');
             }
-            
+
             var dragBottomDown = (sidebarBottom <= scrollBottom && isScrollingDown);
             var dragTopUp = (sidebarTop >= navbarHeight && !isScrollingDown);
 

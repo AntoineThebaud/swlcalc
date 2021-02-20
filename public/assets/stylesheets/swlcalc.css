@@ -85,6 +85,7 @@ html[theme='sw'] {
 }
 /******************************************************/
 body {
+    color: var(--slot-text-color);
     padding-top: 50px !important;
     padding-right: 0px !important;
     background-image: var(--body-bg-img);
@@ -116,7 +117,6 @@ div.container {
 }
 .section {
     background-color: var(--container-bg-color);
-    color: var(--slot-text-color);
 }
 .section.agents {
     margin-top: 25px;
