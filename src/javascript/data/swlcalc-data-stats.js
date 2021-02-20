@@ -10,7 +10,61 @@ swlcalc.data.stats = {
     pcritCoefficient: 0.973,                       // Crit Power glyphs give 97.3% of the value of other glyphs.
     protIncreasePerSurvivabilityPointCoef: 2.0827, // Survability AA provides increased Protection (* 308.2% at AA 100)
 
+    passives: {
+        arBase: 2000,  // Base amount at level 50
+        arCapstonesMax: 810,  // Amount brought by capstones when all unlocked (= 81 * 10)
+        arCapstonesStep: 10,
+        arPassiveSkills: 1512,
+
+        hrBase: 2000,
+        hrCapstonesMax: 810,  // Amount brought by capstones when all unlocked (= 81 * 10)
+        hrCapstonesStep: 10,
+        hrPassiveSkills: 1500,
+
+        hpBase: 3300,
+        hpCapstonesMax: 2430, // Amount brought by capstones when all unlocked (= 81 * 30)
+        hpCapstonesStep: 30,
+        hpPassiveSkills: 2997,
+
+        criticalRatingBase: 0,
+        criticalRatingPassiveSkills: 756,
+
+        criticalChanceBase: 1,
+        criticalChanceExpertiseMin: 0.3,
+        criticalChanceExpertiseMax: 7.5,
+        criticalChanceExpertiseStep: 0.3,
+
+        criticalPowerBase: 0,
+        criticalPowerPassiveSkills: 1008,
+
+        criticalPowerPercentageBase: 25,
+        criticalPowerPercentageExpertiseMin: 0,
+        criticalPowerPercentageExpertiseMax: 30,
+        criticalPowerPercentageExpertiseStep: 1.2,
+
+        hitRatingBase: 0,
+        hitRatingPassiveSkills: 756,
+
+        glanceReductionBase: 0,
+
+        protectionBase: 0,
+        protectionPassiveSkills: 2259,
+
+        damageMitigationBase: 0,
+
+        defenseRatingBase: 0,
+        defenseRatingPassiveSkills: 753,
+
+        glanceChanceBase: 0,
+
+        evadeRatingBase: 0,
+        evadeRatingPassiveSkills: 753,
+
+        evadeChanceBase: 0,
+    },
+
     // Data to build Summary table
+    // TODO/REFACTOR remove everything that is now in "passives data" above
     computationFigures: {
         primary: {
             'ar': {

@@ -30,7 +30,8 @@ swlcalc = function() {
      */
     var renderBody = function() {
         dust.render('body', {
-            slots: swlcalc.data.templateData.slots
+            slots:    swlcalc.data.templateData.slots,
+            passives: swlcalc.data.stats.passives
         },
 
         function(err, out) {
