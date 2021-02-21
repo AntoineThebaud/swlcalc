@@ -16,7 +16,10 @@
                         </thead>
                         <tr>
                             <td class="stat-name">Attack Rating</td>
-                            <td id="passive-attack-rating-base" class="stat-value dps stat-inSummary">{passives.arBase}</td>
+                            <td class="stat-value dps stat-inSummary">
+                                <input id="passive-attack-rating-base-slider" type="range" step="{passives.arBaseStep}" min="{passives.arBaseMin}" max="{passives.arBaseMax}">
+                                <span id="passive-attack-rating-base">0</span>
+                            </td>
                             <td class="stat-value dps stat-inSummary">
                                 <input id="passive-attack-rating-passive-skills-slider" type="range" step="1" min="0" max="{passives.arPassiveSkills}">
                                 <span id="passive-attack-rating-passive-skills">0</span>
@@ -29,10 +32,13 @@
                         </tr>
                         <tr>
                             <td class="stat-name">Heal Rating</td>
-                            <td id="passive-heal-rating-base" class="stat-value heal stat-inSummary">{passives.hrBase}</td>
+                            <td class="stat-value heal stat-inSummary">
+                                <input id="passive-heal-rating-base-slider" type="range" step="{passives.hrBaseStep}" min="{passives.hrBaseMin}" max="{passives.hrBaseMax}">
+                                <span id="passive-heal-rating-base">0</span>
+                            </td>
                             <td class="stat-value heal stat-inSummary">
                                 <input id="passive-heal-rating-passive-skills-slider" type="range" step="1" min="0" max="{passives.hrPassiveSkills}">
-                                <span id="passive-heal-rating-passive-skills" >0</span>
+                                <span id="passive-heal-rating-passive-skills">0</span>
                             </td>
                             <td class="stat-value heal stat-inSummary">
                                 <input id="passive-heal-rating-capstones-slider" type="range" step="{passives.hrCapstonesStep}" min="0" max="{passives.hrCapstonesMax}">
@@ -42,7 +48,10 @@
                         </tr>
                         <tr class="separator">
                             <td class="stat-name">Hit Points</td>
-                            <td id="passive-hit-points-base" class="stat-value tank stat-inSummary">{passives.hpBase}</td>
+                            <td class="stat-value tank stat-inSummary">
+                                <input id="passive-hit-points-base-slider" type="range" step="{passives.hpBaseStep}" min="{passives.hpBaseMin}" max="{passives.hpBaseMax}">
+                                <span id="passive-hit-points-base">0</span>
+                            </td>
                             <td class="stat-value tank stat-inSummary">
                                 <input id="passive-hit-points-passive-skills-slider" type="range" step="1" min="0" max="{passives.hpPassiveSkills}">
                                 <span id="passive-hit-points-passive-skills">0</span>

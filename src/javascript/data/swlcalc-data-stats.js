@@ -11,18 +11,24 @@ swlcalc.data.stats = {
     protIncreasePerSurvivabilityPointCoef: 2.0827, // Survability AA provides increased Protection (* 308.2% at AA 100)
 
     passives: {
-        arBase: 2000,  // Base amount at level 50
-        arCapstonesMax: 810,  // Amount brought by capstones when all unlocked (= 81 * 10)
+        arBaseMin: 0,          // Base amount at level 1
+        arBaseMax: 2000,       // Base amount at level 50 (50 * 40)
+        arBaseStep: 40,
+        arCapstonesMax: 810,   // Amount brought by capstones when all unlocked (= 81 * 10)
         arCapstonesStep: 10,
         arPassiveSkills: 1512,
 
-        hrBase: 2000,
-        hrCapstonesMax: 810,  // Amount brought by capstones when all unlocked (= 81 * 10)
+        hrBaseMin: 0,          // Base amount at level 1
+        hrBaseMax: 2000,       // Base amount at level 50 (50 * 40)
+        hrBaseStep: 40,
+        hrCapstonesMax: 810,   // Amount brought by capstones when all unlocked (= 81 * 10)
         hrCapstonesStep: 10,
         hrPassiveSkills: 1500,
 
-        hpBase: 3300,
-        hpCapstonesMax: 2430, // Amount brought by capstones when all unlocked (= 81 * 30)
+        hpBaseMin: 300,          // Base amount at level 1
+        hpBaseMax: 3300,       // Base amount at level 50 (50 * 60)
+        hpBaseStep: 60,
+        hpCapstonesMax: 2430,  // Amount brought by capstones when all unlocked (= 81 * 30)
         hpCapstonesStep: 30,
         hpPassiveSkills: 2997,
 

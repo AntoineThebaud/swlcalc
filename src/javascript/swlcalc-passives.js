@@ -8,8 +8,11 @@ swlcalc.passives = function() {
         return {
             // Base
             valAttackRatingBase:            $('#passive-attack-rating-base'),
+            rangeAttackRatingBase:          $('#passive-attack-rating-base-slider'),
             valHealRatingBase:              $('#passive-heal-rating-base'),
-            valHitPointsBase:               $('#passive-heal-rating-base'),
+            rangeHealRatingBase:            $('#passive-heal-rating-base-slider'),
+            valHitPointsBase:               $('#passive-hit-points-base'),
+            rangeHitPointsBase:             $('#passive-hit-points-base-slider'),
             valCriticalRatingBase:          $('#passive-critical-rating-base'),
             valCriticalChanceBase:          $('#passive-critical-chance-base'),
             valCriticalPowerBase:           $('#passive-critical-power-base'),
@@ -68,6 +71,10 @@ swlcalc.passives = function() {
      * Associates the right processing to each trigger.
      */
     var bindEvents = function() {
+        el.rangeAttackRatingBase.change(handleAttackRatingBaseChange);
+        el.rangeHealRatingBase.change(handleHealRatingBaseChange);
+        el.rangeHitPointsBase.change(handleHitPointsBaseChange);
+
         el.rangeAttackRatingPassiveSkills.change(handleAttackRatingPassiveSkillsChange);
         el.rangeHealRatingPassiveSkills.change(handleHealRatingPassiveSkillsChange);
         el.rangeHitPointsPassiveSkills.change(handleHitPointsPassiveSkillsChange);
@@ -85,6 +92,29 @@ swlcalc.passives = function() {
         el.rangeCriticalChanceExpertise.change(handleCriticalChanceExpertiseChange);
         el.rangeCriticalPowerPercentageExpertise.change(handleCriticalPowerPercentageExpertiseChange);
     };
+
+    /**
+     * Update the value displayed for the Attack Rating > Base part
+     */
+    var handleAttackRatingBaseChange = function(event) {
+        el.valAttackRatingBase.text(event.currentTarget.value);
+    };
+
+    /**
+     * Update the value displayed for the Heal Rating > Base part
+     */
+    var handleHealRatingBaseChange = function(event) {
+        el.valHealRatingBase.text(event.currentTarget.value);
+    };
+
+    /**
+     * Update the value displayed for the Hit Points > Base part
+     */
+    var handleHitPointsBaseChange = function(event) {
+        el.valHitPointsBase.text(event.currentTarget.value);
+    };
+
+    /*************************************************************************************/
 
     /**
      * Update the value displayed for the Attack Rating > Passive Skills part
@@ -149,6 +179,8 @@ swlcalc.passives = function() {
         el.valEvadeRatingPassiveSkills.text(event.currentTarget.value);
     };
 
+    /*************************************************************************************/
+
     /**
      * Update the value displayed for the Attack Rating > Capstones part
      */
@@ -169,6 +201,8 @@ swlcalc.passives = function() {
     var handleHitPointsCapstonesChange = function(event) {
         el.valHitPointsCapstones.text(event.currentTarget.value);
     };
+
+    /*************************************************************************************/
 
     /**
      * Update the value displayed for the Critical Chance > Expertise part
