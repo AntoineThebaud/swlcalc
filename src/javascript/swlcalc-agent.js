@@ -81,13 +81,11 @@ swlcalc.gear.Agent = function Agent(index) {
 
     /**
      * Reset the agent by setting default values for each select
+     * (set val then call change() artificially to trigger the event handlers)
      */
     this.reset = function() {
-        this.el.id.prop("selectedIndex", 0);
-        this.el.level.prop("selectedIndex", 0);
-
-        this.el.id.change();
-        this.el.level.change();
+        this.el.id.prop("selectedIndex", 0).change();
+        this.el.level.prop("selectedIndex", 0).change();
     };
 
     /**

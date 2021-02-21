@@ -65,6 +65,7 @@ swlcalc.passives = function() {
     var init = function() {
         el = elInit();
         bindEvents();
+        reset(); //TODO : temporary
     };
 
     /**
@@ -339,6 +340,35 @@ swlcalc.passives = function() {
         return parseInt(el.valEvadeChanceBase.text());
     };
 
+    /*************************************************************************************/
+
+    /**
+     * Reset passives configuration (= set everything to max)
+     * (set val then call change() artificially to trigger the event handlers)
+     */
+    var reset = function() {
+        el.rangeAttackRatingBase.val(el.rangeAttackRatingBase.attr("max")).change();
+        el.rangeHealRatingBase.val(el.rangeHealRatingBase.attr("max")).change();
+        el.rangeHitPointsBase.val(el.rangeHitPointsBase.attr("max")).change();
+
+        el.rangeAttackRatingPassiveSkills.val(el.rangeAttackRatingPassiveSkills.attr("max")).change();
+        el.rangeHealRatingPassiveSkills.val(el.rangeHealRatingPassiveSkills.attr("max")).change();
+        el.rangeHitPointsPassiveSkills.val(el.rangeHitPointsPassiveSkills.attr("max")).change();
+        el.rangeCriticalRatingPassiveSkills.val(el.rangeCriticalRatingPassiveSkills.attr("max")).change();
+        el.rangeCriticalPowerPassiveSkills.val(el.rangeCriticalPowerPassiveSkills.attr("max")).change();
+        el.rangeHitRatingPassiveSkills.val(el.rangeHitRatingPassiveSkills.attr("max")).change();
+        el.rangeProtectionPassiveSkills.val(el.rangeProtectionPassiveSkills.attr("max")).change();
+        el.rangeDefenseRatingPassiveSkills.val(el.rangeDefenseRatingPassiveSkills.attr("max")).change();
+        el.rangeEvadeRatingPassiveSkills.val(el.rangeEvadeRatingPassiveSkills.attr("max")).change();
+
+        el.rangeAttackRatingCapstones.val(el.rangeAttackRatingCapstones.attr("max")).change();
+        el.rangeHealRatingCapstones.val(el.rangeHealRatingCapstones.attr("max")).change();
+        el.rangeHitPointsCapstones.val(el.rangeHitPointsCapstones.attr("max")).change();
+
+        el.rangeCriticalChanceExpertise.val(el.rangeCriticalChanceExpertise.attr("max")).change();
+        el.rangeCriticalPowerPercentageExpertise.val(el.rangeCriticalPowerPercentageExpertise.attr("max")).change();
+    };
+
     var oPublic = {
         init: init,
         getTotalAttackRating: getTotalAttackRating,
@@ -355,7 +385,8 @@ swlcalc.passives = function() {
         getTotalDefenseRating: getTotalDefenseRating,
         getTotalGlanceChance: getTotalGlanceChance,
         getTotalEvadeRating: getTotalEvadeRating,
-        getTotalEvadeChance: getTotalEvadeChance
+        getTotalEvadeChance: getTotalEvadeChance,
+        reset: reset
     };
 
     return oPublic;

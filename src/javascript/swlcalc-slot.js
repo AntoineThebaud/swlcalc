@@ -509,32 +509,22 @@ swlcalc.gear.Slot = function Slot(slotData) {
 
     /**
      * Reset slot by setting default values for each select
+     * (set val then call change() artificially to trigger the event handlers)
      */
     this.reset = function() {
-        this.edit.el.equipmentId.prop("selectedIndex", 0);
-        this.edit.el.equipmentRarity.prop("selectedIndex", 0);
-        this.edit.el.equipmentQuality.prop("selectedIndex", 0);
+        this.edit.el.equipmentId.prop("selectedIndex", 0).change();
+        this.edit.el.equipmentRarity.prop("selectedIndex", 0).change();
+        this.edit.el.equipmentQuality.prop("selectedIndex", 0).change();
         // no need to set equipmentLevel here
 
-        this.edit.el.glyphId.prop("selectedIndex", 0);
-        this.edit.el.glyphRarity.prop("selectedIndex", 0);
-        this.edit.el.glyphQuality.prop("selectedIndex", 0);
+        this.edit.el.glyphId.prop("selectedIndex", 0).change();
+        this.edit.el.glyphRarity.prop("selectedIndex", 0).change();
+        this.edit.el.glyphQuality.prop("selectedIndex", 0).change();
         this.edit.el.glyphLevel.val("20");
 
-        this.edit.el.signetId.prop("selectedIndex", 0);
-        this.edit.el.signetRarity.prop("selectedIndex", 0);
-        this.edit.el.signetLevel.val("20");
-
-        this.edit.el.equipmentId.change();
-        this.edit.el.equipmentRarity.change();
-        this.edit.el.equipmentQuality.change();
-        this.edit.el.glyphId.change();
-        this.edit.el.glyphRarity.change();
-        this.edit.el.glyphQuality.change();
-        this.edit.el.glyphLevel.change();
-        this.edit.el.signetId.change();
-        this.edit.el.signetRarity.change();
-        this.edit.el.signetLevel.change();
+        this.edit.el.signetId.prop("selectedIndex", 0).change();
+        this.edit.el.signetRarity.prop("selectedIndex", 0).change();
+        this.edit.el.signetLevel.val("20").change();
     };
 
     /**

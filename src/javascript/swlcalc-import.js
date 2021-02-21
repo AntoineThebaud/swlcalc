@@ -45,7 +45,6 @@ swlcalc.import = function() {
     /**
      * Loads the slot informations from the hash and update GUI with it.
      */
-    //TODO/REFACTOR maybe there is a better way to update GUI than simulating change() for each element ?
     var loadSlot = function(slotId, values) {
         var slotObj = swlcalc.gear.slots[slotId];
         // values[0] == Item's Rarity
@@ -91,7 +90,6 @@ swlcalc.import = function() {
     /**
      * Loads the agent informations from the hash and update GUI with it.
      */
-    //TODO/REFACTOR maybe there is a better way to update GUI than simulating change() for each element ?
     var loadAgent = function(index, values) {
         var agentObj = swlcalc.gear.agents[index];
         // values[0] == Agent's ID
