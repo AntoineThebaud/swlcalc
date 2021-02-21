@@ -94,98 +94,234 @@ swlcalc.passives = function() {
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Heal Rating > Passive Skills part
      */
     var handleHealRatingPassiveSkillsChange = function(event) {
         el.valHealRatingPassiveSkills.text(event.currentTarget.value);
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Hit Points > Passive Skills part
      */
     var handleHitPointsPassiveSkillsChange = function(event) {
         el.valHitPointsPassiveSkills.text(event.currentTarget.value);
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Critical Rating > Passive Skills part
      */
     var handleCriticalRatingPassiveSkillsChange = function(event) {
         el.valCriticalRatingPassiveSkills.text(event.currentTarget.value);
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Critical Power > Passive Skills part
      */
     var handleCriticalPowerPassiveSkillsChange = function(event) {
         el.valCriticalPowerPassiveSkills.text(event.currentTarget.value);
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Hit Rating > Passive Skills part
      */
     var handleHitRatingPassiveSkillsChange = function(event) {
         el.valHitRatingPassiveSkills.text(event.currentTarget.value);
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Protection > Passive Skills part
      */
     var handleProtectionPassiveSkillsChange = function(event) {
         el.valProtectionPassiveSkills.text(event.currentTarget.value);
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Defense Rating > Passive Skills part
      */
     var handleDefenseRatingPassiveSkillsChange = function(event) {
         el.valDefenseRatingPassiveSkills.text(event.currentTarget.value);
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Evade Rating > Passive Skills part
      */
     var handleEvadeRatingPassiveSkillsChange = function(event) {
         el.valEvadeRatingPassiveSkills.text(event.currentTarget.value);
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Attack Rating > Capstones part
      */
     var handleAttackRatingCapstonesChange = function(event) {
         el.valAttackRatingCapstones.text(event.currentTarget.value);
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Heal Rating > Capstones part
      */
     var handleHealRatingCapstonesChange = function(event) {
         el.valHealRatingCapstones.text(event.currentTarget.value);
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Hit Poiints > Capstones part
      */
     var handleHitPointsCapstonesChange = function(event) {
         el.valHitPointsCapstones.text(event.currentTarget.value);
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Critical Chance > Expertise part
      */
     var handleCriticalChanceExpertiseChange = function(event) {
         el.valCriticalChanceExpertise.text(event.currentTarget.value);
     };
 
     /**
-     * TODO comment
+     * Update the value displayed for the Critical Power percentage > Expertise part
      */
     var handleCriticalPowerPercentageExpertiseChange = function(event) {
         el.valCriticalPowerPercentageExpertise.text(event.currentTarget.value);
     };
 
+    /*************************************************************************************/
+
+    /**
+     * Get the total passive amount of Attack Rating
+     */
+    var getTotalAttackRating = function(event) {
+        return parseInt(el.valAttackRatingBase.text())
+             + parseInt(el.valAttackRatingPassiveSkills.text())
+             + parseInt(el.valAttackRatingCapstones.text());
+    };
+
+    /**
+     * Get the total passive amount of Heal Rating
+     */
+    var getTotalHealRating = function(event) {
+        return parseInt(el.valHealRatingBase.text())
+             + parseInt(el.valHealRatingPassiveSkills.text())
+             + parseInt(el.valHealRatingCapstones.text());
+    };
+
+    /**
+     * Get the total passive amount of Hit Points
+     */
+    var getTotalHitPoints = function(event) {
+        return parseInt(el.valHitPointsBase.text())
+             + parseInt(el.valHitPointsPassiveSkills.text())
+             + parseInt(el.valHitPointsCapstones.text());
+    };
+
+    /**
+     * Get the total passive amount of Critical Rating
+     */
+    var getTotalCriticalRating = function(event) {
+        return parseInt(el.valCriticalRatingBase.text())
+             + parseInt(el.valCriticalRatingPassiveSkills.text());
+    };
+
+    /**
+     * Get the total passive amount of Critical Chance
+     */
+    var getTotalCriticalChance = function(event) {
+        return parseInt(el.valCriticalChanceBase.text())
+             + parseInt(el.valCriticalChanceExpertise.text());
+    };
+
+    /**
+     * Get the total passive amount of Critical Power
+     */
+    var getTotalCriticalPower = function(event) {
+        return parseInt(el.valCriticalPowerBase.text())
+             + parseInt(el.valCriticalPowerPassiveSkills.text());
+    };
+
+    /**
+     * Get the total passive amount of Critical Power percentage
+     */
+    var getTotalCriticalPowerPercentage = function(event) {
+        return parseInt(el.valCriticalPowerPercentageBase.text())
+             + parseInt(el.valCriticalPowerPercentageExpertise.text());
+    };
+
+    /**
+     * Get the total passive amount of Hit Rating
+     */
+    var getTotalHitRating = function(event) {
+        return parseInt(el.valHitRatingBase.text())
+             + parseInt(el.valHitRatingPassiveSkills.text());
+    };
+
+    /**
+     * Get the total passive amount of Glance Reduction
+     */
+    var getTotalGlanceReduction = function(event) {
+        return parseInt(el.valGlanceReductionBase.text());
+    };
+
+    /**
+     * Get the total passive amount of Protection
+     */
+    var getTotalProtection = function(event) {
+        return parseInt(el.valProtectionBase.text())
+             + parseInt(el.valProtectionPassiveSkills.text());
+    };
+
+    /**
+     * Get the total passive amount of Damage Mitigation
+     */
+    var getTotalDamageMitigation = function(event) {
+        return parseInt(el.valDamageMitigationBase.text());
+    };
+
+    /**
+     * Get the total passive amount of Defense Rating
+     */
+    var getTotalDefenseRating = function(event) {
+        return parseInt(el.valDefenseRatingBase.text())
+             + parseInt(el.valDefenseRatingPassiveSkills.text());
+    };
+
+    /**
+     * Get the total passive amount of Glance Chance
+     */
+    var getTotalGlanceChance = function(event) {
+        return parseInt(el.valGlanceChanceBase.text());
+    };
+
+    /**
+     * Get the total passive amount of Evade Rating
+     */
+    var getTotalEvadeRating = function(event) {
+        return parseInt(el.valEvadeRatingBase.text())
+             + parseInt(el.valEvadeRatingPassiveSkills.text());
+    };
+
+    /**
+     * Get the total passive amount of Evade Chance
+     */
+    var getTotalEvadeChance = function(event) {
+        return parseInt(el.valEvadeChanceBase.text());
+    };
+
     var oPublic = {
         init: init,
+        getTotalAttackRating: getTotalAttackRating,
+        getTotalHealRating: getTotalHealRating,
+        getTotalHitPoints: getTotalHitPoints,
+        getTotalCriticalRating: getTotalCriticalRating,
+        getTotalCriticalChance: getTotalCriticalChance,
+        getTotalCriticalPower: getTotalCriticalPower,
+        getTotalCriticalPowerPercentage: getTotalCriticalPowerPercentage,
+        getTotalHitRating: getTotalHitRating,
+        getTotalGlanceReduction: getTotalGlanceReduction,
+        getTotalProtection: getTotalProtection,
+        getTotalDamageMitigation: getTotalDamageMitigation,
+        getTotalDefenseRating: getTotalDefenseRating,
+        getTotalGlanceChance: getTotalGlanceChance,
+        getTotalEvadeRating: getTotalEvadeRating,
+        getTotalEvadeChance: getTotalEvadeChance
     };
 
     return oPublic;
