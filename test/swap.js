@@ -2,6 +2,8 @@
 QUnit.module("swap-unit-tests", {
     beforeEach: function(assert) {
         renderGear();
+        renderPassives();
+        initiatePassives();
         renderAnimaAllocation();
         initiateAnimaAllocation();
         initiateSwapHandlers();

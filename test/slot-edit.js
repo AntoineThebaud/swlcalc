@@ -3,6 +3,8 @@ QUnit.module("slot-edit-unit-tests", {
     beforeEach: function(assert) {
         renderGear();
         renderSummary();
+        renderPassives();
+        initiatePassives();
         renderAnimaAllocation();
         initiateAnimaAllocation();
         initiateHandlers();

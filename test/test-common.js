@@ -21,6 +21,12 @@ function renderAnimaAllocation() {
     renderTemplate("anima_allocation", {});
 }
 
+function renderPassives() {
+    renderTemplate("passives", {
+        passives: swlcalc.data.stats.passives
+    });
+}
+
 function renderSummary() {
     renderTemplate("summary", {});
 }

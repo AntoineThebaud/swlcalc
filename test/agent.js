@@ -2,6 +2,8 @@
 QUnit.module("agent-unit-tests", {
     beforeEach: function(assert) {
         renderGear();
+        renderPassives();
+        initiatePassives();
         renderAnimaAllocation();
         initiateAnimaAllocation();
         initiateHandlers();

@@ -2,6 +2,8 @@
 QUnit.module("import-unit-tests", {
     beforeEach: function(assert) {
         renderGear();
+        renderPassives();
+        initiatePassives();
         renderSummary();
         initiateSummary();
         renderAnimaAllocation();

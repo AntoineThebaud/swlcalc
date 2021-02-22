@@ -260,8 +260,8 @@ swlcalc.passives = function() {
      * Get the total passive amount of Critical Chance
      */
     var getTotalCriticalChance = function(event) {
-        return parseInt(el.valCriticalChanceBase.text())
-             + parseInt(el.valCriticalChanceExpertise.text());
+        return parseFloat(el.valCriticalChanceBase.text())
+             + parseFloat(el.valCriticalChanceExpertise.text());
     };
 
     /**
@@ -276,8 +276,8 @@ swlcalc.passives = function() {
      * Get the total passive amount of Critical Power percentage
      */
     var getTotalCriticalPowerPercentage = function(event) {
-        return parseInt(el.valCriticalPowerPercentageBase.text())
-             + parseInt(el.valCriticalPowerPercentageExpertise.text());
+        return parseFloat(el.valCriticalPowerPercentageBase.text())
+             + parseFloat(el.valCriticalPowerPercentageExpertise.text());
     };
 
     /**
@@ -292,7 +292,7 @@ swlcalc.passives = function() {
      * Get the total passive amount of Glance Reduction
      */
     var getTotalGlanceReduction = function(event) {
-        return parseInt(el.valGlanceReductionBase.text());
+        return parseFloat(el.valGlanceReductionBase.text());
     };
 
     /**
@@ -307,7 +307,7 @@ swlcalc.passives = function() {
      * Get the total passive amount of Damage Mitigation
      */
     var getTotalDamageMitigation = function(event) {
-        return parseInt(el.valDamageMitigationBase.text());
+        return parseFloat(el.valDamageMitigationBase.text());
     };
 
     /**
@@ -322,7 +322,7 @@ swlcalc.passives = function() {
      * Get the total passive amount of Glance Chance
      */
     var getTotalGlanceChance = function(event) {
-        return parseInt(el.valGlanceChanceBase.text());
+        return parseFloat(el.valGlanceChanceBase.text());
     };
 
     /**
@@ -337,7 +337,7 @@ swlcalc.passives = function() {
      * Get the total passive amount of Evade Chance
      */
     var getTotalEvadeChance = function(event) {
-        return parseInt(el.valEvadeChanceBase.text());
+        return parseFloat(el.valEvadeChanceBase.text());
     };
 
     /*************************************************************************************/

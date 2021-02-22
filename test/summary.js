@@ -2,6 +2,8 @@
 QUnit.module("summary-unit-tests", {
     beforeEach: function(assert) {
         renderGear();
+        renderPassives();
+        initiatePassives();
         renderSummary();
         initiateSummary();
         initiateHandlers();
@@ -202,13 +204,13 @@ QUnit.test("should collect secondary stats accordingly", function(assert) {
 });
 
 QUnit.test("should compute secondary stats", function(assert) {
-    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 0), 8.5);
-    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 4000), 33.9);
-    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 8000), 54.4);
+    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 0), 0);
+    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 4000), 25.4);
+    assert.equal(swlcalc.summary.computeSecondaryStat('crit', 8000), 45.9);
 
-    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 0), 55);
-    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 2500), 143.5);
-    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 5000), 202.6);
+    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 0), 0);
+    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 2500), 88.5);
+    assert.equal(swlcalc.summary.computeSecondaryStat('cpow', 5000), 147.6);
 
     assert.equal(swlcalc.summary.computeSecondaryStat('evad', 0), 0);
     assert.equal(swlcalc.summary.computeSecondaryStat('evad', 4000), 27.5);
@@ -232,7 +234,5 @@ QUnit.test("should compute average ilvl for whole gear", function(assert) {
 // TODO/TEST add test for combatPower() (private function)
 
 // TODO/TEST add test for healingPower() (private function)
-
-// TODO/TEST add test for computePrimaryStatInitialAmount() (private function)
 
 // TODO/TEST add test for updateOtherBonuses

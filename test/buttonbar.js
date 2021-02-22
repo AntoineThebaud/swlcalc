@@ -1,6 +1,8 @@
 
 QUnit.module("buttonbar-unit-tests", {
     beforeEach: function(assert) {
+        renderPassives();
+        initiatePassives();
         renderSummary();
         initiateSummary();
         renderButtonbar();

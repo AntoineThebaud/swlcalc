@@ -2,6 +2,8 @@
 QUnit.module("slot-handler-unit-tests", {
     beforeEach: function(assert) {
         renderGear();
+        renderPassives();
+        initiatePassives();
         renderAnimaAllocation();
         initiateAnimaAllocation();
         initiateHandlers();
@@ -125,7 +127,7 @@ QUnit.test("should update any #slot-edit-equipment-quality dropdowns when its as
         swlcalc.gear.slots[id].edit.equipmentRarity("mythic");
         swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
         assert.equal($("#" + id + "-edit-equipment-quality > option").length, 4);
-        
+
         swlcalc.gear.slots[id].edit.equipmentRarity("standard");
         swlcalc.gear.slots[id].edit.el.equipmentRarity.change();
         assert.equal($("#" + id + "-edit-equipment-quality > option").length, 3);

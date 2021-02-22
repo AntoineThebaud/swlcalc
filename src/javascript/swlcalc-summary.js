@@ -45,16 +45,16 @@ swlcalc.summary = function() {
     var collectPrimaryStats = function() {
         // initial values
         var totals = {
+            'attack-rating':     swlcalc.passives.getTotalAttackRating(),
+            'heal-rating':       swlcalc.passives.getTotalHealRating(),
+            'hit-points':        swlcalc.passives.getTotalHitPoints(),
+            'protection':        swlcalc.passives.getTotalProtection(),
+            'damage-mitigation': swlcalc.passives.getTotalDamageMitigation(),
             'combat-power':      0,
             'healing-power':     0,
             'weapon-power':      0,
-            'hit-points':        computePrimaryStatInitialAmount('hp'),
-            'attack-rating':     computePrimaryStatInitialAmount('ar'),
-            'heal-rating':       computePrimaryStatInitialAmount('hr'),
             'power-rating':      0,
             'ilvl':              0,
-            'protection':        computePrimaryStatInitialAmount('protection'),
-            'damage-mitigation': 0
         };
         var sumOfIlvl = 0;
 
@@ -96,19 +96,9 @@ swlcalc.summary = function() {
         totals['healing-power'] = computePrimaryPower('hr', totals['heal-rating'], totals['weapon-power']);
         totals['ilvl']          = computeAverageILvl(sumOfIlvl);
 
-        totals['damage-mitigation'] = computeDamageMitigation(totals['protection'])
+        totals['damage-mitigation'] += computeDamageMitigation(totals['protection'])
 
         return totals;
-    };
-
-    /*
-     * Computes the initial amount for primary stats.
-     * The formula for this is simply summing the amounts brought by base stats, capstones and SP passives
-     */
-    var computePrimaryStatInitialAmount = function(primaryStat) {
-        var statData = swlcalc.data.stats.computationFigures.primary[primaryStat];
-
-        return statData.base + statData.capstone + statData.spPassive;
     };
 
     /*
@@ -151,19 +141,18 @@ swlcalc.summary = function() {
      * Collects glyph stats by going through the whole gear
      */
     var collectSecondaryStats = function() {
-        var statsData = swlcalc.data.stats.computationFigures.secondary;
         // initial values
         var totals = {
-            'critical-rating':           statsData['crit'].spPassiveFlat,
-            'critical-chance':           0,
-            'critical-power':            statsData['cpow'].spPassiveFlat,
-            'critical-power-percentage': 0,
-            'hit-rating':                statsData['hit'].spPassiveFlat,
-            'glance-reduction':          0,
-            'defense-rating':            statsData['def'].spPassiveFlat,
-            'glance-chance':             0,
-            'evade-rating':              statsData['evad'].spPassiveFlat,
-            'evade-chance':              0,
+            'critical-rating':           swlcalc.passives.getTotalCriticalRating(),
+            'critical-chance':           swlcalc.passives.getTotalCriticalChance(),
+            'critical-power':            swlcalc.passives.getTotalCriticalPower(),
+            'critical-power-percentage': swlcalc.passives.getTotalCriticalPowerPercentage(),
+            'hit-rating':                swlcalc.passives.getTotalHitRating(),
+            'glance-reduction':          swlcalc.passives.getTotalGlanceReduction(),
+            'defense-rating':            swlcalc.passives.getTotalDefenseRating(),
+            'glance-chance':             swlcalc.passives.getTotalGlanceChance(),
+            'evade-rating':              swlcalc.passives.getTotalEvadeRating(),
+            'evade-chance':              swlcalc.passives.getTotalEvadeChance(),
         };
 
         // retrieve flat stats
@@ -190,11 +179,11 @@ swlcalc.summary = function() {
         }
 
         // compute percentage stats
-        totals['critical-chance']           = computeSecondaryStat('crit', totals['critical-rating']);
-        totals['critical-power-percentage'] = computeSecondaryStat('cpow', totals['critical-power']);
-        totals['glance-reduction']          = computeSecondaryStat('hit',  totals['hit-rating']);
-        totals['glance-chance']             = computeSecondaryStat('def',  totals['defense-rating']);
-        totals['evade-chance']              = computeSecondaryStat('evad', totals['evade-rating']);
+        totals['critical-chance']           += computeSecondaryStat('crit', totals['critical-rating']);
+        totals['critical-power-percentage'] += computeSecondaryStat('cpow', totals['critical-power']);
+        totals['glance-reduction']          += computeSecondaryStat('hit',  totals['hit-rating']);
+        totals['glance-chance']             += computeSecondaryStat('def',  totals['defense-rating']);
+        totals['evade-chance']              += computeSecondaryStat('evad', totals['evade-rating']);
 
         return totals;
     };
@@ -205,18 +194,14 @@ swlcalc.summary = function() {
      * SWL formulas for glyph stats computation are always like :
      * -> Up to {hardCap} => +1% in the considered stat every {softCapRate}
      * -> After {hardCap} => +1% in the considered stat every {hardCapRate}
-     *
-     * The base amount includes capstone points + weapon expertise when relevant
      */
     var computeSecondaryStat = function(statName, sumGlyphPoints) {
         var stat = swlcalc.data.stats.computationFigures.secondary[statName];
 
-        return stat.spPassivePercent
-               + stat.expertise
-               + swlcalc.util.precisionRound(
-                     Math.min(sumGlyphPoints, stat.hardCap) / stat.softCapRate
-                     + Math.max(sumGlyphPoints - stat.hardCap, 0) / stat.hardCapRate,
-                 1);
+        return swlcalc.util.precisionRound(
+                 Math.min(sumGlyphPoints, stat.hardCap) / stat.softCapRate
+                 + Math.max(sumGlyphPoints - stat.hardCap, 0) / stat.hardCapRate,
+               1);
     };
 
     /**

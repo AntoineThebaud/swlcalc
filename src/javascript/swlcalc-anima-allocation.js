@@ -34,7 +34,7 @@ swlcalc.animaAllocation = function() {
      */
     var handleAnimaAllocationDamageChange = function(event) {
         el.valDamage.text(event.currentTarget.value);
-        applyAnimaAllocation()
+        applyAnimaAllocation();
     };
 
     /**
@@ -42,7 +42,7 @@ swlcalc.animaAllocation = function() {
      */
     var handleAnimaAllocationHealingChange = function(event) {
         el.valHealing.text(event.currentTarget.value);
-        applyAnimaAllocation()
+        applyAnimaAllocation();
     };
 
     /**
@@ -50,7 +50,7 @@ swlcalc.animaAllocation = function() {
      */
     var handleAnimaAllocationSurvivabilityChange = function(event) {
         el.valSurvivability.text(event.currentTarget.value);
-        applyAnimaAllocation()
+        applyAnimaAllocation();
     };
 
     /**
