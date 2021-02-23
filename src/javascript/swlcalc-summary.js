@@ -185,6 +185,12 @@ swlcalc.summary = function() {
         totals['glance-chance']             += computeSecondaryStat('def',  totals['defense-rating']);
         totals['evade-chance']              += computeSecondaryStat('evad', totals['evade-rating']);
 
+        totals['critical-chance']           = swlcalc.util.precisionRound(totals['critical-chance'], 1);
+        totals['critical-power-percentage'] = swlcalc.util.precisionRound(totals['critical-power-percentage'], 1);
+        totals['glance-reduction']          = swlcalc.util.precisionRound(totals['glance-reduction'], 1);
+        totals['glance-chance']             = swlcalc.util.precisionRound(totals['glance-chance'], 1);
+        totals['evade-chance']              = swlcalc.util.precisionRound(totals['evade-chance'], 1);
+
         return totals;
     };
 

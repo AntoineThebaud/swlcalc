@@ -1,16 +1,16 @@
 
 QUnit.module("buttonbar-unit-tests", {
     beforeEach: function(assert) {
-        renderPassives();
-        initiatePassives();
-        renderSummary();
-        initiateSummary();
-        renderButtonbar();
-        initiateButtonBar();
-        renderAnimaAllocation();
-        initiateAnimaAllocation();
         renderGear();
+        renderSummary();
+        renderButtonbar();
+        renderAnimaAllocation();
+        renderPassives();
         initiateHandlers();
+        initiateSummary();
+        initiateButtonBar();
+        initiateAnimaAllocation();
+        initiatePassives();
         createTankBuild();
     }
 });

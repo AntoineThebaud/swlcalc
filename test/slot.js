@@ -4,10 +4,10 @@ QUnit.module("slot-unit-tests", {
         renderGear();
         renderSummary();
         renderPassives();
-        initiatePassives();
         renderAnimaAllocation();
-        initiateAnimaAllocation();
         initiateHandlers();
+        initiateAnimaAllocation();
+        initiatePassives();
         createTankBuild();
     }
 });

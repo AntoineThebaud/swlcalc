@@ -3,11 +3,11 @@ QUnit.module("slot-recap-unit-tests", {
     beforeEach: function(assert) {
         renderGear();
         renderSummary();
-        renderPassives();
-        initiatePassives();
         renderAnimaAllocation();
-        initiateAnimaAllocation();
+        renderPassives();
         initiateHandlers();
+        initiateAnimaAllocation();
+        initiatePassives();
         createTankBuild();
     }
 });
