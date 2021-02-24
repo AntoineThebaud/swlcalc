@@ -152,10 +152,6 @@ swlcalc.export = function() {
 
     var oPublic = {
         init: init,
-        createSlotUrl: createSlotUrl,                       // public scope relevant only for unit tests
-        createAgentUrl: createAgentUrl,                     // public scope relevant only for unit tests
-        createAnimaAllocationUrl: createAnimaAllocationUrl, // public scope relevant only for unit tests
-        createExportUrl: createExportUrl,                   // public scope relevant only for unit tests
         startExportUrl: startExportUrl,
     };
 

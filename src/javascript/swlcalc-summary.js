@@ -274,13 +274,6 @@ swlcalc.summary = function() {
         init: init,
         combatPower: combatPower,
         healingPower: healingPower,
-        computeSecondaryStat: computeSecondaryStat,       // public scope relevant only for unit tests
-        computePrimaryPower: computePrimaryPower,         // public scope relevant only for unit tests
-        computeDamageMitigation: computeDamageMitigation, // public scope relevant only for unit tests
-        computeAverageILvl: computeAverageILvl,           // public scope relevant only for unit tests
-        collectPrimaryStats: collectPrimaryStats,         // public scope relevant only for unit tests
-        collectSecondaryStats: collectSecondaryStats,     // public scope relevant only for unit tests
-        collectAllStats: collectAllStats,                 // public scope relevant only for unit tests
         updateAllStats: updateAllStats,
         updateOtherBonuses: updateOtherBonuses
     };
