@@ -1,21 +1,7 @@
-/*==========================================================================================
- *                                        SWLCALC HASH STRUCTURE (for gear slots):
- *=====================================================|====================================
- *                      Element                        |               Values
- *-----------------------------------------------------|------------------------------------
- *                  ____________ Equipment's Rarity     [1,2,3,4,5]
- *                 / ___________ Equipment's ID         [refer to swlcalc-data-equipments.js]
- *                / / __________ Equipment's Quality    [1,2,3]
- *               / / / _________ Equipment's Level      [1->20/25/30/35/70]
- *              / / / / ________ Glyph's Rarity         [1,2,3,4,5]
- *             / / / / / _______ Glyph's Stat           [0,1,2,3,4,5]
- *            / / / / / / ______ Glyph's Quality        [1,2,3]
- *           / / / / / / / _____ Glyph's Level          [1->20]
- *          / / / / / / / /  ___ Signet's Rarity        [1,2,3,4,5]
- *         / / / / / / / /  / __ Signet's ID            [refer to swlcalc-data-signets.js]
- *        / / / / / / / /  / / _ Signet's Level         [1->20]
- *       v v v v v v v v  v v v
- * wrist=4,1,4,3,4,4,0,3,5,85,3
+/*
+ * swlcalc hash structure is like :                                       SWLCALC HASH STRUCTURE (for gear slots):
+ * wrist=4,1,4,3,4,4,0,3,5,85,3&occult=[...]&aa=33,66,99&passives=1,2,3[...]
+ * -> check the code below for the full mapping
  *=====================================================|====================================*/
 
 var swlcalc = swlcalc || {};
@@ -30,6 +16,8 @@ swlcalc.import = function() {
             paramsArray = urlVars[urlVar].split(',');
             if (urlVar == 'aa') {
                 loadAnimaAllocation(paramsArray);
+            } else if (urlVar == 'passives') {
+                loadPassives(paramsArray);
             } else if (urlVar.substring(0, 5) == 'agent') {
                 var index = parseInt(urlVar.substring(5, 6)) - 1; // either equal to 0, 1 or 2
                 loadAgent(index, paramsArray);
@@ -45,43 +33,32 @@ swlcalc.import = function() {
     /**
      * Loads the slot informations from the hash and update GUI with it.
      */
+    // TODO : move change() to the setter !
     var loadSlot = function(slotId, values) {
         var slotObj = swlcalc.gear.slots[slotId];
-        // values[0] == Item's Rarity
         slotObj.edit.equipmentRarity(swlcalc.data.rarityMapping.toName[values[0]]);
         slotObj.edit.el.equipmentRarity.change();
-        // values[1] == Item's Type (ID)
         slotObj.edit.equipmentId(values[1] == '0' ? 'none' : values[1]);
         slotObj.edit.el.equipmentId.change();
-        // values[2] == Item's Quality
         slotObj.edit.equipmentQuality(values[2]);
         slotObj.edit.el.equipmentQuality.change();
-        // values[3] == Item's Level
         slotObj.edit.equipmentLevel(values[3]);
         slotObj.edit.el.equipmentLevel.change();
-        // values[4] == Glyph's Rarity
         slotObj.edit.glyphRarity(swlcalc.data.rarityMapping.toName[values[4]]);
         slotObj.edit.el.glyphRarity.change();
-        // values[5] == Glyph's Stat
         slotObj.edit.glyphId(swlcalc.data.secondaryStatMapping.toStat[values[5]]);
         slotObj.edit.el.glyphId.change();
-        // values[6] == Glyph's Quality
         slotObj.edit.glyphQuality(values[6]);
         slotObj.edit.el.glyphQuality.change();
-        // values[7] == Glyph's Level
         slotObj.edit.glyphLevel(values[7]);
         slotObj.edit.el.glyphLevel.change();
-        // support signets (values [8], [9] & [10])
         if (typeof values[8] !== 'undefined'
         && typeof values[9] !== 'undefined' && values[9] !== "999"
         && typeof values[10] !== 'undefined') {
-            // values[8] == Signet's Rarity
             slotObj.edit.signetRarity(swlcalc.data.rarityMapping.toName[values[8]]);
             slotObj.edit.el.signetRarity.change();
-            // values[9] == Signet's Type (ID)
             slotObj.edit.signetId((values[9] != '0' ? values[9] : 'none'));
             slotObj.edit.el.signetId.change();
-            // values[10] == Signet's Level
             slotObj.edit.signetLevel(values[10]);
             slotObj.edit.el.signetLevel.change();
         }
@@ -90,12 +67,11 @@ swlcalc.import = function() {
     /**
      * Loads the agent informations from the hash and update GUI with it.
      */
+    // TODO : move change() to the setter !
     var loadAgent = function(index, values) {
         var agentObj = swlcalc.gear.agents[index];
-        // values[0] == Agent's ID
         agentObj.id(values[0]);
         agentObj.el.id.change();
-        // values[1] == Agent's Level
         agentObj.level(values[1]);
         agentObj.el.level.change();
     };
@@ -104,12 +80,35 @@ swlcalc.import = function() {
      * Loads the anima allocation ratios from the hash and update GUI with it.
      */
     var loadAnimaAllocation = function(values) {
-        // values[0] == Damage percentage
         swlcalc.animaAllocation.setDamagePercentage(values[0]);
-        // values[1] == Healing percentage
         swlcalc.animaAllocation.setHealingPercentage(values[1]);
-        // values[2] == Survivability percentage
         swlcalc.animaAllocation.setSurvivabilityPercentage(values[2]);
+    };
+
+    /**
+     * Loads the passives from the hash and update GUI with it.
+     */
+    var loadPassives = function(values) {
+        swlcalc.passives.setAttackRatingBase(values[0]);
+        swlcalc.passives.setHealRatingBase(values[1]);
+        swlcalc.passives.setHitPointsBase(values[2]);
+
+        swlcalc.passives.setAttackRatingPassiveSkills(values[3]);
+        swlcalc.passives.setHealRatingPassiveSkills(values[4]);
+        swlcalc.passives.setHitPointsPassiveSkills(values[5]);
+        swlcalc.passives.setCriticalRatingPassiveSkills(values[6]);
+        swlcalc.passives.setCriticalPowerPassiveSkills(values[7]);
+        swlcalc.passives.setHitRatingPassiveSkills(values[8]);
+        swlcalc.passives.setProtectionPassiveSkills(values[9]);
+        swlcalc.passives.setDefenseRatingPassiveSkills(values[10]);
+        swlcalc.passives.setEvadeRatingPassiveSkills(values[11]);
+
+        swlcalc.passives.setAttackRatingCapstones(values[12]);
+        swlcalc.passives.setHealRatingCapstones(values[13]);
+        swlcalc.passives.setHitPointsCapstones(values[14]);
+
+        swlcalc.passives.setCriticalChanceExpertise(values[15]);
+        swlcalc.passives.setCriticalPowerPercentageExpertise(values[16]);
     };
 
     var oPublic = {

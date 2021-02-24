@@ -113,24 +113,21 @@ swlcalc.animaAllocation = function() {
      * Set current anima allocation percentage for Damage part
      */
     var setDamagePercentage = function(value) {
-        el.rangeDamage.val(value);
-        el.rangeDamage.change();
+        el.rangeDamage.val(value).change();
     }
 
     /**
      * Set current anima allocation percentage for Healing part
      */
     var setHealingPercentage = function(value) {
-        el.rangeHealing.val(value);
-        el.rangeHealing.change();
+        el.rangeHealing.val(value).change();
     }
 
     /**
      * Set current anima allocation percentage for Survivability part
      */
     var setSurvivabilityPercentage = function(value) {
-        el.rangeSurvivability.val(value);
-        el.rangeSurvivability.change();
+        el.rangeSurvivability.val(value).change();
     }
 
     var oPublic = {

@@ -55,18 +55,19 @@ swlcalc.export = function() {
         var url = '';
 
         for (var id in swlcalc.gear.slots) {
-            var slot = swlcalc.gear.slots[id];
-            url += createSlotUrl(slot, slot.mappedState());
+            url += createSlotUrl(id);
             url += '&';
         }
 
         for (var index in swlcalc.gear.agents) {
-            var agent = swlcalc.gear.agents[index];
-            url += createAgentUrl(agent);
+            url += createAgentUrl(index);
             url += '&';
         }
 
         url += createAnimaAllocationUrl();
+        url += '&';
+
+        url += createPassivesUrl();
 
         return url;
     };
@@ -74,9 +75,10 @@ swlcalc.export = function() {
     /**
      * Builds the subpart of the export URL for the submitted slot
      */
-    var createSlotUrl = function(slot, state) {
-        // see swlcalc-import.js for the order
-        var slotUrl = slot.id + '='
+    var createSlotUrl = function(id) {
+        var state = swlcalc.gear.slots[id].mappedState();
+
+        var slotUrl = id + '='
             + state.equipmentRarity + ','
             + state.equipmentId + ','
             + state.equipmentQuality + ','
@@ -84,17 +86,10 @@ swlcalc.export = function() {
             + state.glyphRarity + ','
             + state.glyphId + ','
             + state.glyphQuality + ','
-            + state.glyphLevel;
-
-            //TODO/REFACTOR : this commented if{} allows the url to be smaller when no signet is set
-            // it is temporary disabled for visual issue (select color not updating)
-            // in the future, should be reenabled + same behavior for glyphs and even complete slot ?
-            // that could allow to see the stats for only one item (but is it usefull ?)
-            /* if(state.signetId !== 0 && state.signetId !== '999') { */
-            slotUrl += ',' + state.signetRarity
-                    + ',' + state.signetId
-                    + ',' + state.signetLevel;
-            /* }*/
+            + state.glyphLevel + ','
+            + state.signetRarity + ','
+            + state.signetId + ','
+            + state.signetLevel;
 
         return slotUrl;
     };
@@ -102,8 +97,9 @@ swlcalc.export = function() {
     /**
      * Builds the subpart of the export URL for the submitted agent
      */
-    var createAgentUrl = function(agent, state) {
+    var createAgentUrl = function(index) {
         // see swlcalc-import.js for the order
+        var agent = swlcalc.gear.agents[index];
 
         var agentUrl = 'agent' + agent.index + '='
             + agent.id() + ','
@@ -126,12 +122,40 @@ swlcalc.export = function() {
         return animaAllocationUrl;
     };
 
+    /**
+     * Builds the subpart of the export URL for the passives
+     */
+    var createPassivesUrl = function(agent, state) {
+        // see swlcalc-import.js for the order
+
+        var animaAllocationUrl = 'passives='
+            + swlcalc.passives.getAttackRatingBase() + ','
+            + swlcalc.passives.getHealRatingBase() + ','
+            + swlcalc.passives.getHitPointsBase() + ','
+            + swlcalc.passives.getAttackRatingPassiveSkills() + ','
+            + swlcalc.passives.getHealRatingPassiveSkills() + ','
+            + swlcalc.passives.getHitPointsPassiveSkills() + ','
+            + swlcalc.passives.getCriticalRatingPassiveSkills() + ','
+            + swlcalc.passives.getCriticalPowerPassiveSkills() + ','
+            + swlcalc.passives.getHitRatingPassiveSkills() + ','
+            + swlcalc.passives.getProtectionPassiveSkills() + ','
+            + swlcalc.passives.getDefenseRatingPassiveSkills() + ','
+            + swlcalc.passives.getEvadeRatingPassiveSkills() + ','
+            + swlcalc.passives.getAttackRatingCapstones() + ','
+            + swlcalc.passives.getHealRatingCapstones() + ','
+            + swlcalc.passives.getHitPointsCapstones() + ','
+            + swlcalc.passives.getCriticalChanceExpertise() + ','
+            + swlcalc.passives.getCriticalPowerPercentageExpertise();
+
+        return animaAllocationUrl;
+    };
+
     var oPublic = {
         init: init,
-        createSlotUrl: createSlotUrl,
-        createAgentUrl: createAgentUrl,
-        createAnimaAllocationUrl: createAnimaAllocationUrl,
-        createExportUrl: createExportUrl,
+        createSlotUrl: createSlotUrl,                       // public scope relevant only for unit tests
+        createAgentUrl: createAgentUrl,                     // public scope relevant only for unit tests
+        createAnimaAllocationUrl: createAnimaAllocationUrl, // public scope relevant only for unit tests
+        createExportUrl: createExportUrl,                   // public scope relevant only for unit tests
         startExportUrl: startExportUrl,
     };
 
