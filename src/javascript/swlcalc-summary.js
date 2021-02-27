@@ -87,13 +87,13 @@ swlcalc.summary = function() {
         }
 
         // Increment HP/AR/HR based on anima allocation repartition
-        totals['attack-rating'] += Math.round(totals['power-rating'] * swlcalc.data.stats.arCoefficient * swlcalc.animaAllocation.getDamageRatio());
-        totals['heal-rating']   += Math.round(totals['power-rating'] * swlcalc.data.stats.hrCoefficient * swlcalc.animaAllocation.getHealingRatio());
-        totals['hit-points']    += Math.round(totals['power-rating'] * swlcalc.data.stats.hpCoefficient * swlcalc.animaAllocation.getSurvivabilityRatio());
+        totals['attack-rating'] += Math.round(totals['power-rating'] * swlcalc.data.stats.arConversionCoef * swlcalc.animaAllocation.getDamageRatio());
+        totals['heal-rating']   += Math.round(totals['power-rating'] * swlcalc.data.stats.hrConversionCoef * swlcalc.animaAllocation.getHealingRatio());
+        totals['hit-points']    += Math.round(totals['power-rating'] * swlcalc.data.stats.hpConversionCoef * swlcalc.animaAllocation.getSurvivabilityRatio());
 
         // Main, "head" stats are computed at the end when all required underlying stats have been computed
-        totals['combat-power']  = computePrimaryPower('ar', totals['attack-rating'], totals['weapon-power']);
-        totals['healing-power'] = computePrimaryPower('hr', totals['heal-rating'], totals['weapon-power']);
+        totals['combat-power']  = computePrimaryPower('cp', totals['attack-rating'], totals['weapon-power']);
+        totals['healing-power'] = computePrimaryPower('hp', totals['heal-rating'], totals['weapon-power']);
         totals['ilvl']          = computeAverageILvl(sumOfIlvl);
 
         totals['damage-mitigation'] += computeDamageMitigation(totals['protection'])
@@ -107,7 +107,7 @@ swlcalc.summary = function() {
      * -> Primary Power = (Primary Stat Rating + Weapon Power) * coef
      */
     var computePrimaryPower = function(primaryStat, sumPrimaryStatPoints, weaponPower) {
-        var result = (sumPrimaryStatPoints + weaponPower) * swlcalc.data.stats.computationFigures.primary[primaryStat].coef
+        var result = (sumPrimaryStatPoints + weaponPower) * swlcalc.data.stats.primaryPowerCoefs[primaryStat]
         return swlcalc.util.precisionRound(result, 1)
     };
 
@@ -118,9 +118,7 @@ swlcalc.summary = function() {
      * (Protection rating * 100) / (Protection rating + const divisor)
      */
     var computeDamageMitigation = function(sumProtectionPoints) {
-        var protectionFigures = swlcalc.data.stats.computationFigures.primary['protection'];
-
-        return swlcalc.util.precisionRound((sumProtectionPoints * 100) / (sumProtectionPoints + protectionFigures.constDivisor), 1);
+        return swlcalc.util.precisionRound((sumProtectionPoints * 100) / (sumProtectionPoints + swlcalc.data.stats.protConstDivisor), 1);
     };
 
     /**
@@ -202,11 +200,11 @@ swlcalc.summary = function() {
      * -> After {hardCap} => +1% in the considered stat every {hardCapRate}
      */
     var computeSecondaryStat = function(statName, sumGlyphPoints) {
-        var stat = swlcalc.data.stats.computationFigures.secondary[statName];
+        var statConsts = swlcalc.data.stats.glyphComputationFigures[statName];
 
         return swlcalc.util.precisionRound(
-                 Math.min(sumGlyphPoints, stat.hardCap) / stat.softCapRate
-                 + Math.max(sumGlyphPoints - stat.hardCap, 0) / stat.hardCapRate,
+                 Math.min(sumGlyphPoints, statConsts.hardCap) / statConsts.softCapRate
+                 + Math.max(sumGlyphPoints - statConsts.hardCap, 0) / statConsts.hardCapRate,
                1);
     };
 

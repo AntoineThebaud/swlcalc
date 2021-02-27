@@ -222,14 +222,14 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.updateTalismanStatValues = function() {
         var valuePowerRaw = this.edit.equipmentStatPowerValue();
-        this.recap.equipmentStatHPValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hpCoefficient * swlcalc.animaAllocation.getSurvivabilityRatio()));
-        this.recap.equipmentStatARValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.arCoefficient * swlcalc.animaAllocation.getDamageRatio()));
-        this.recap.equipmentStatHRValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hrCoefficient * swlcalc.animaAllocation.getHealingRatio()));
+        this.recap.equipmentStatHPValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hpConversionCoef * swlcalc.animaAllocation.getSurvivabilityRatio()));
+        this.recap.equipmentStatARValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.arConversionCoef * swlcalc.animaAllocation.getDamageRatio()));
+        this.recap.equipmentStatHRValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hrConversionCoef * swlcalc.animaAllocation.getHealingRatio()));
 
         var newProtValue = 0;
         if (this.edit.equipmentId() != 'none') {
             var valueProtRaw = this.getRawProtValue();
-            newProtValue = '+' + Math.round(valueProtRaw + valueProtRaw * swlcalc.data.stats.protIncreasePerSurvivabilityPointCoef * swlcalc.animaAllocation.getSurvivabilityRatio());
+            newProtValue = '+' + Math.round(valueProtRaw + valueProtRaw * swlcalc.data.stats.protSurvivabilityIncreaseCoef * swlcalc.animaAllocation.getSurvivabilityRatio());
         }
         this.edit.equipmentStatProtValue(newProtValue);
         this.recap.equipmentStatProtValue(newProtValue);
@@ -363,7 +363,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             var bonusValue = swlcalc.data.glyphRating[this.edit.glyphRarity()][this.edit.glyphQuality()].perLevel * (this.edit.glyphLevel() - 1);
             newValue = baseValue + Math.round(bonusValue);
             if (this.edit.glyphId() == 'critical-power') {
-                newValue = newValue * swlcalc.data.stats.pcritCoefficient;
+                newValue = newValue * swlcalc.data.stats.pcritAdjustmentCoef;
             }
             // remove decimals for display
             newValue = newValue.toFixed(0);
@@ -384,7 +384,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         if (this.edit.glyphId() != 'none') {
             newILvl = this.computeItemILvlWithQuality('glyph', this.edit.glyphRarity(), this.edit.glyphQuality(), this.edit.glyphLevel());
             if (this.isWeapon()) {
-                newILvl = newILvl * swlcalc.data.stats.glyphInWeaponCoefficient;
+                newILvl = newILvl * swlcalc.data.stats.glyphInWeaponCoef;
             }
         }
         //register value before it is rounded (used for #slot-total-ilvl)

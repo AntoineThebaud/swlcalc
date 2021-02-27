@@ -2,13 +2,17 @@ var swlcalc = swlcalc || {};
 swlcalc.data = swlcalc.data || {};
 
 swlcalc.data.stats = {
-    // Various coefficients
-    glyphInWeaponCoefficient: 1.225,               // Glyphs in weapons are worth ~22.5% more Item Power than glyphs in talismans.
-    arCoefficient: 1,                              // Power rating fully converts into Attack Rating.
-    hrCoefficient: 0.8001871783,                   // Power rating gives lower amount when converting into Heal Rating /!\ approximated value of the real IG multiplier.
-    hpCoefficient: 2.856288917,                    // Power rating gives greater amount when converting into Hit points /!\ approximated value of the real IG multiplier.
-    pcritCoefficient: 0.973,                       // Crit Power glyphs give 97.3% of the value of other glyphs.
-    protIncreasePerSurvivabilityPointCoef: 2.0827, // Survability AA provides increased Protection (* 308.2% at AA 100)
+    glyphInWeaponCoef: 1.225,              // Glyphs in weapons are worth ~22.5% more Item Power than glyphs in talismans.
+    arConversionCoef: 1,                   // Power rating fully converts into Attack Rating.
+    hrConversionCoef: 0.8001871783,        // Power rating gives lower amount when converting into Heal Rating /!\ approximated value of the real IG multiplier.
+    hpConversionCoef: 2.856288917,         // Power rating gives greater amount when converting into Hit points /!\ approximated value of the real IG multiplier.
+    pcritAdjustmentCoef: 0.973,            // Crit Power glyphs give 97.3% of the value of other glyphs.
+    protSurvivabilityIncreaseCoef: 2.0827, // Survability AA provides increased Protection (* 308.2% at AA 100)
+    protConstDivisor: 24538,               // Const divisor used in Damage mitigation computation
+    primaryPowerCoefs: {
+        'cp': 0.075,                       // Coef applied to compute the Combat Power
+        'hp': 0.02                         // Coef applied to compute the Healing Power
+    },
 
     passives: {
         arBaseMin: 0,          // Base amount at level 1
@@ -69,48 +73,31 @@ swlcalc.data.stats = {
         evadeChanceBase: 0,
     },
 
-    // Data to build Summary table
-    // TODO/REFACTOR remove everything that is now in "passives data" above
-    computationFigures: {
-        primary: {
-            'ar': {
-                coef: 0.075 // TODO difference between arCoefficient above and this one is not clear
-            },
-            'hr': {
-                coef: 0.02 // TODO difference between hrCoefficient above and this one is not clear
-            },
-            'hp': {
-            },
-            'protection': {
-                constDivisor: 24538
-            }
+    glyphComputationFigures: {
+        'hit': {
+            hardCap: 0,            // hard cap for this stat
+            softCapRate: 50.85,    // Rate at which %chance stat increases when below hard cap
+            hardCapRate: 50.85,    // Rate at which %chance stat increases when above hard cap
         },
-        secondary: {
-            'hit': {
-                hardCap: 0,            // hard cap for this stat
-                softCapRate: 50.85,    // Rate at which %chance stat increases when below hard cap
-                hardCapRate: 50.85,    // Rate at which %chance stat increases when above hard cap
-            },
-            'crit': {
-                hardCap: 7000,
-                softCapRate: 157.38,
-                hardCapRate: 693.77,
-            },
-            'cpow': {
-                hardCap: 3950,
-                softCapRate: 28.26,
-                hardCapRate: 135.00,
-            },
-            'def': {
-                hardCap: 4565,
-                softCapRate: 101.66,
-                hardCapRate: 680.13,
-            },
-            'evad': {
-                hardCap: 5000,
-                softCapRate: 145.47,
-                hardCapRate: 963.58,
-            }
+        'crit': {
+            hardCap: 7000,
+            softCapRate: 157.38,
+            hardCapRate: 693.77,
+        },
+        'cpow': {
+            hardCap: 3950,
+            softCapRate: 28.26,
+            hardCapRate: 135.00,
+        },
+        'def': {
+            hardCap: 4565,
+            softCapRate: 101.66,
+            hardCapRate: 680.13,
+        },
+        'evad': {
+            hardCap: 5000,
+            softCapRate: 145.47,
+            hardCapRate: 963.58,
         }
     }
 }
