@@ -27,6 +27,7 @@ html[theme='classic'] {
     --color-mediumgrey: #717171;
     --color-highlightgrey: #ddd;
     --color-bg-darker: #D8D8D8;
+    --color-bg-modalheader: #FFFFFF;
 
     --body-bg-img: unset;
     --body-bg-color: white;
@@ -58,6 +59,7 @@ html[theme='sw'] {
     --color-mediumgrey: #A1A1A1;
     --color-highlightgrey: #A1A1A1;
     --color-bg-darker: #161616;
+    --color-bg-modalheader: #5E5E5E;
 
     --body-bg-img: url("../images/sw_bg.png");
     --body-bg-color: black;
@@ -758,4 +760,8 @@ div[id="passives"] > h4 > button {
 }
 div[id="passives"] > h4 > button > img {
     width: 20px;
+}
+
+.modal-header {
+    background-color: var(--color-bg-modalheader);
 }
