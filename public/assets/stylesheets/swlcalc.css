@@ -26,6 +26,7 @@
 html[theme='classic'] {
     --color-mediumgrey: #717171;
     --color-highlightgrey: #ddd;
+    --color-bg-darker: #D8D8D8;
 
     --body-bg-img: unset;
     --body-bg-color: white;
@@ -56,6 +57,7 @@ html[theme='classic'] {
 html[theme='sw'] {
     --color-mediumgrey: #A1A1A1;
     --color-highlightgrey: #A1A1A1;
+    --color-bg-darker: #161616;
 
     --body-bg-img: url("../images/sw_bg.png");
     --body-bg-color: black;
@@ -319,6 +321,9 @@ div[id="summary"] > h4 > button {
 div[id="summary"] > h4 > button > img {
     width: 20px;
 }
+div[id="summary"] .table-stats td.stat-name {
+    width: 200px;
+}
 
 .table-title {
     width: 100%;
@@ -457,9 +462,6 @@ div[id$="-edit-div"] .table-slots td.signetalign {
     padding-top: 18px;
 }
 /******************************************************/
-td.stat-name {
-    width: 200px;
-}
 .stat-value {
     font-weight: bold;
 }
@@ -728,4 +730,32 @@ div[id="sidebar"] {
 .thin-p {
     margin-bottom: 0px;
     line-height: 1.2;
+}
+
+
+div[id="passives"] .table-stats td {
+    padding: 4px;
+}
+div[id="passives"] .darker {
+    background-color: var(--color-bg-darker);
+}
+div[id="passives"] .table-stats td.stat-name {
+    width: 120px;
+}
+div[id="passives"] .table-stats tr.separator {
+    border-bottom: 1px solid var(--color-border);
+}
+div[id="passives"] .table-stats th {
+    border-bottom: 2px solid var(--color-border);
+    text-align: center;
+}
+div[id="passives"] > h4 {
+    position: relative;
+}
+div[id="passives"] > h4 > button {
+    position: absolute;
+    right: 0px;
+}
+div[id="passives"] > h4 > button > img {
+    width: 20px;
 }
