@@ -94,6 +94,12 @@ swlcalc.passives = function() {
         el.rangeCriticalPowerPercentageExpertise.change(handleCriticalPowerPercentageExpertiseChange);
     };
 
+    /**************************************************************************
+     * Handlers :
+     * ---------------------------------------------------------------------- */
+
+    /* BASE : --------------------------------------------------------------- */
+
     /**
      * Update the value displayed for the Attack Rating > Base part
      */
@@ -118,7 +124,7 @@ swlcalc.passives = function() {
         swlcalc.summary.updateAllStats();
     };
 
-    /*************************************************************************************/
+    /* PASSIVES SKILLS : ---------------------------------------------------- */
 
     /**
      * Update the value displayed for the Attack Rating > Passive Skills part
@@ -192,7 +198,7 @@ swlcalc.passives = function() {
         swlcalc.summary.updateAllStats();
     };
 
-    /*************************************************************************************/
+    /* CAPSTONES : ---------------------------------------------------------- */
 
     /**
      * Update the value displayed for the Attack Rating > Capstones part
@@ -218,7 +224,7 @@ swlcalc.passives = function() {
         swlcalc.summary.updateAllStats();
     };
 
-    /*************************************************************************************/
+    /* EXPERTISE : ---------------------------------------------------------- */
 
     /**
      * Update the value displayed for the Critical Chance > Expertise part
@@ -236,268 +242,280 @@ swlcalc.passives = function() {
         swlcalc.summary.updateAllStats();
     };
 
-    /*************************************************************************************/
+    /**************************************************************************/
+
+    /**************************************************************************
+     * Accessors :
+     * ---------------------------------------------------------------------- */
+
+    /* BASE : --------------------------------------------------------------- */
+
+    /* Attack Rating : */
+    var getAttackRatingBase = function(value) {
+        return parseInt(el.valAttackRatingBase.text());
+    }
+    var setAttackRatingBase = function(value) {
+        el.rangeAttackRatingBase.val(value).change();
+    }
+
+    /* Heal Rating : */
+    var getHealRatingBase = function(value) {
+        return parseInt(el.valHealRatingBase.text());
+    }
+    var setHealRatingBase = function(value) {
+        el.rangeHealRatingBase.val(value).change();
+    }
+
+    /* Hit Points : */
+    var getHitPointsBase = function(value) {
+        return parseInt(el.valHitPointsBase.text());
+    }
+    var setHitPointsBase = function(value) {
+        el.rangeHitPointsBase.val(value).change();
+    }
+
+    /* PASSIVES SKILLS : ---------------------------------------------------- */
+
+    /* Attack Rating : */
+    var getAttackRatingPassiveSkills = function(value) {
+        return parseInt(el.valAttackRatingPassiveSkills.text());
+    }
+    var setAttackRatingPassiveSkills = function(value) {
+        el.rangeAttackRatingPassiveSkills.val(value).change();
+    }
+
+    /* Heal Rating : */
+    var getHealRatingPassiveSkills = function(value) {
+        return parseInt(el.valHealRatingPassiveSkills.text());
+    }
+    var setHealRatingPassiveSkills = function(value) {
+        el.rangeHealRatingPassiveSkills.val(value).change();
+    }
+
+    /* Hit Points : */
+    var getHitPointsPassiveSkills = function(value) {
+        return parseInt(el.valHitPointsPassiveSkills.text());
+    }
+    var setHitPointsPassiveSkills = function(value) {
+        el.rangeHitPointsPassiveSkills.val(value).change();
+    }
+
+    /* Critical Rating : */
+    var getCriticalRatingPassiveSkills = function(value) {
+        return parseInt(el.valCriticalRatingPassiveSkills.text());
+    }
+    var setCriticalRatingPassiveSkills = function(value) {
+        el.rangeCriticalRatingPassiveSkills.val(value).change();
+    }
+
+    /* Critical Power : */
+    var getCriticalPowerPassiveSkills = function(value) {
+        return parseInt(el.valCriticalPowerPassiveSkills.text());
+    }
+    var setCriticalPowerPassiveSkills = function(value) {
+        el.rangeCriticalPowerPassiveSkills.val(value).change();
+    }
+
+    /* Hit Rating : */
+    var getHitRatingPassiveSkills = function(value) {
+        return parseInt(el.valHitRatingPassiveSkills.text());
+    }
+    var setHitRatingPassiveSkills = function(value) {
+        el.rangeHitRatingPassiveSkills.val(value).change();
+    }
+
+    /* Protection : */
+    var getProtectionPassiveSkills = function(value) {
+        return parseInt(el.valProtectionPassiveSkills.text());
+    }
+    var setProtectionPassiveSkills = function(value) {
+        el.rangeProtectionPassiveSkills.val(value).change();
+    }
+
+    /* Defense Rating : */
+    var getDefenseRatingPassiveSkills = function(value) {
+        return parseInt(el.valDefenseRatingPassiveSkills.text());
+    }
+    var setDefenseRatingPassiveSkills = function(value) {
+        el.rangeDefenseRatingPassiveSkills.val(value).change();
+    }
+
+    /* Evade Rating : */
+    var getEvadeRatingPassiveSkills = function(value) {
+        return parseInt(el.valEvadeRatingPassiveSkills.text());
+    }
+    var setEvadeRatingPassiveSkills = function(value) {
+        el.rangeEvadeRatingPassiveSkills.val(value).change();
+    }
+
+    /* CAPSTONES : ---------------------------------------------------------- */
+
+    /* Attack Rating : */
+    var getAttackRatingCapstones = function(value) {
+        return parseInt(el.valAttackRatingCapstones.text());
+    }
+    var setAttackRatingCapstones = function(value) {
+        el.rangeAttackRatingCapstones.val(value).change();
+    }
+
+    /* Heal Rating : */
+    var getHealRatingCapstones = function(value) {
+        return parseInt(el.valHealRatingCapstones.text());
+    }
+    var setHealRatingCapstones = function(value) {
+        el.rangeHealRatingCapstones.val(value).change();
+    }
+
+    /* Hit Points : */
+    var getHitPointsCapstones = function(value) {
+        return parseInt(el.valHitPointsCapstones.text());
+    }
+    var setHitPointsCapstones = function(value) {
+        el.rangeHitPointsCapstones.val(value).change();
+    }
+
+    /* EXPERTISE : ---------------------------------------------------------- */
+
+    /* Critical Chance : */
+    var getCriticalChanceExpertise = function(value) {
+        return parseFloat(el.valCriticalChanceExpertise.text());
+    }
+    var setCriticalChanceExpertise = function(value) {
+        el.rangeCriticalChanceExpertise.val(value).change();
+    }
+
+    /* Critical Power Percentage : */
+    var getCriticalPowerPercentageExpertise = function(value) {
+        return parseFloat(el.valCriticalPowerPercentageExpertise.text());
+    }
+    var setCriticalPowerPercentageExpertise = function(value) {
+        el.rangeCriticalPowerPercentageExpertise.val(value).change();
+    }
+
+    /**************************************************************************
+     * Get Totals :
+     * ---------------------------------------------------------------------- */
 
     /**
      * Get the total passive amount of Attack Rating
      */
-    var getTotalAttackRating = function(event) {
-        return parseInt(el.valAttackRatingBase.text())
-             + parseInt(el.valAttackRatingPassiveSkills.text())
-             + parseInt(el.valAttackRatingCapstones.text());
+    var getTotalAttackRating = function() {
+        return getAttackRatingBase()
+             + getAttackRatingPassiveSkills()
+             + getAttackRatingCapstones();
     };
 
     /**
      * Get the total passive amount of Heal Rating
      */
-    var getTotalHealRating = function(event) {
-        return parseInt(el.valHealRatingBase.text())
-             + parseInt(el.valHealRatingPassiveSkills.text())
-             + parseInt(el.valHealRatingCapstones.text());
+    var getTotalHealRating = function() {
+        return getHealRatingBase()
+             + getHealRatingPassiveSkills()
+             + getHealRatingCapstones();
     };
 
     /**
      * Get the total passive amount of Hit Points
      */
-    var getTotalHitPoints = function(event) {
-        return parseInt(el.valHitPointsBase.text())
-             + parseInt(el.valHitPointsPassiveSkills.text())
-             + parseInt(el.valHitPointsCapstones.text());
+    var getTotalHitPoints = function() {
+        return getHitPointsBase()
+             + getHitPointsPassiveSkills()
+             + getHitPointsCapstones();
     };
 
     /**
      * Get the total passive amount of Critical Rating
      */
-    var getTotalCriticalRating = function(event) {
+    var getTotalCriticalRating = function() {
         return parseInt(el.valCriticalRatingBase.text())
-             + parseInt(el.valCriticalRatingPassiveSkills.text());
+             + getCriticalRatingPassiveSkills();
     };
 
     /**
      * Get the total passive amount of Critical Chance
      */
-    var getTotalCriticalChance = function(event) {
+    var getTotalCriticalChance = function() {
         return parseFloat(el.valCriticalChanceBase.text())
-             + parseFloat(el.valCriticalChanceExpertise.text());
+             + getCriticalChanceExpertise();
     };
 
     /**
      * Get the total passive amount of Critical Power
      */
-    var getTotalCriticalPower = function(event) {
+    var getTotalCriticalPower = function() {
         return parseInt(el.valCriticalPowerBase.text())
-             + parseInt(el.valCriticalPowerPassiveSkills.text());
+             + getCriticalPowerPassiveSkills();
     };
 
     /**
      * Get the total passive amount of Critical Power percentage
      */
-    var getTotalCriticalPowerPercentage = function(event) {
+    var getTotalCriticalPowerPercentage = function() {
         return parseFloat(el.valCriticalPowerPercentageBase.text())
-             + parseFloat(el.valCriticalPowerPercentageExpertise.text());
+             + getCriticalPowerPercentageExpertise();
     };
 
     /**
      * Get the total passive amount of Hit Rating
      */
-    var getTotalHitRating = function(event) {
+    var getTotalHitRating = function() {
         return parseInt(el.valHitRatingBase.text())
-             + parseInt(el.valHitRatingPassiveSkills.text());
+             + getHitRatingPassiveSkills();
     };
 
     /**
      * Get the total passive amount of Glance Reduction
      */
-    var getTotalGlanceReduction = function(event) {
+    var getTotalGlanceReduction = function() {
         return parseFloat(el.valGlanceReductionBase.text());
     };
 
     /**
      * Get the total passive amount of Protection
      */
-    var getTotalProtection = function(event) {
+    var getTotalProtection = function() {
         return parseInt(el.valProtectionBase.text())
-             + parseInt(el.valProtectionPassiveSkills.text());
+             + getProtectionPassiveSkills();
     };
 
     /**
      * Get the total passive amount of Damage Mitigation
      */
-    var getTotalDamageMitigation = function(event) {
+    var getTotalDamageMitigation = function() {
         return parseFloat(el.valDamageMitigationBase.text());
     };
 
     /**
      * Get the total passive amount of Defense Rating
      */
-    var getTotalDefenseRating = function(event) {
+    var getTotalDefenseRating = function() {
         return parseInt(el.valDefenseRatingBase.text())
-             + parseInt(el.valDefenseRatingPassiveSkills.text());
+             + getDefenseRatingPassiveSkills();
     };
 
     /**
      * Get the total passive amount of Glance Chance
      */
-    var getTotalGlanceChance = function(event) {
+    var getTotalGlanceChance = function() {
         return parseFloat(el.valGlanceChanceBase.text());
     };
 
     /**
      * Get the total passive amount of Evade Rating
      */
-    var getTotalEvadeRating = function(event) {
+    var getTotalEvadeRating = function() {
         return parseInt(el.valEvadeRatingBase.text())
-             + parseInt(el.valEvadeRatingPassiveSkills.text());
+             + getEvadeRatingPassiveSkills();
     };
 
     /**
      * Get the total passive amount of Evade Chance
      */
-    var getTotalEvadeChance = function(event) {
+    var getTotalEvadeChance = function() {
         return parseFloat(el.valEvadeChanceBase.text());
     };
 
-    /*************************************************************************************/
-
-    var getAttackRatingBase = function(value) {
-        return parseInt(el.valAttackRatingBase.text());
-    }
-
-    var getHealRatingBase = function(value) {
-        return parseInt(el.valHealRatingBase.text());
-    }
-
-    var getHitPointsBase = function(value) {
-        return parseInt(el.valHitPointsBase.text());
-    }
-
-    var getAttackRatingPassiveSkills = function(value) {
-        return parseInt(el.valAttackRatingPassiveSkills.text());
-    }
-
-    var getHealRatingPassiveSkills = function(value) {
-        return parseInt(el.valHealRatingPassiveSkills.text());
-    }
-
-    var getHitPointsPassiveSkills = function(value) {
-        return parseInt(el.valHitPointsPassiveSkills.text());
-    }
-
-    var getCriticalRatingPassiveSkills = function(value) {
-        return parseInt(el.valCriticalRatingPassiveSkills.text());
-    }
-
-    var getCriticalPowerPassiveSkills = function(value) {
-        return parseInt(el.valCriticalPowerPassiveSkills.text());
-    }
-
-    var getHitRatingPassiveSkills = function(value) {
-        return parseInt(el.valHitRatingPassiveSkills.text());
-    }
-
-    var getProtectionPassiveSkills = function(value) {
-        return parseInt(el.valProtectionPassiveSkills.text());
-    }
-
-    var getDefenseRatingPassiveSkills = function(value) {
-        return parseInt(el.valDefenseRatingPassiveSkills.text());
-    }
-
-    var getEvadeRatingPassiveSkills = function(value) {
-        return parseInt(el.valEvadeRatingPassiveSkills.text());
-    }
-
-    var getAttackRatingCapstones = function(value) {
-        return parseInt(el.valAttackRatingCapstones.text());
-    }
-
-    var getHealRatingCapstones = function(value) {
-        return parseInt(el.valHealRatingCapstones.text());
-    }
-
-    var getHitPointsCapstones = function(value) {
-        return parseInt(el.valHitPointsCapstones.text());
-    }
-
-    var getCriticalChanceExpertise = function(value) {
-        return parseFloat(el.valCriticalChanceExpertise.text());
-    }
-
-    var getCriticalPowerPercentageExpertise = function(value) {
-        return parseInt(el.valCriticalPowerPercentageExpertise.text());
-    }
-
-    /*************************************************************************************/
-
-    var setAttackRatingBase = function(value) {
-        el.rangeAttackRatingBase.val(value).change();
-    }
-
-    var setHealRatingBase = function(value) {
-        el.rangeHealRatingBase.val(value).change();
-    }
-
-    var setHitPointsBase = function(value) {
-        el.rangeHitPointsBase.val(value).change();
-    }
-
-    var setAttackRatingPassiveSkills = function(value) {
-        el.rangeAttackRatingPassiveSkills.val(value).change();
-    }
-
-    var setHealRatingPassiveSkills = function(value) {
-        el.rangeHealRatingPassiveSkills.val(value).change();
-    }
-
-    var setHitPointsPassiveSkills = function(value) {
-        el.rangeHitPointsPassiveSkills.val(value).change();
-    }
-
-    var setCriticalRatingPassiveSkills = function(value) {
-        el.rangeCriticalRatingPassiveSkills.val(value).change();
-    }
-
-    var setCriticalPowerPassiveSkills = function(value) {
-        el.rangeCriticalPowerPassiveSkills.val(value).change();
-    }
-
-    var setHitRatingPassiveSkills = function(value) {
-        el.rangeHitRatingPassiveSkills.val(value).change();
-    }
-
-    var setProtectionPassiveSkills = function(value) {
-        el.rangeProtectionPassiveSkills.val(value).change();
-    }
-
-    var setDefenseRatingPassiveSkills = function(value) {
-        el.rangeDefenseRatingPassiveSkills.val(value).change();
-    }
-
-    var setEvadeRatingPassiveSkills = function(value) {
-        el.rangeEvadeRatingPassiveSkills.val(value).change();
-    }
-
-    var setAttackRatingCapstones = function(value) {
-        el.rangeAttackRatingCapstones.val(value).change();
-    }
-
-    var setHealRatingCapstones = function(value) {
-        el.rangeHealRatingCapstones.val(value).change();
-    }
-
-    var setHitPointsCapstones = function(value) {
-        el.rangeHitPointsCapstones.val(value).change();
-    }
-
-    var setCriticalChanceExpertise = function(value) {
-        el.rangeCriticalChanceExpertise.val(value).change();
-    }
-
-    var setCriticalPowerPercentageExpertise = function(value) {
-        el.rangeCriticalPowerPercentageExpertise.val(value).change();
-    }
-
-    /*************************************************************************************/
+    /**************************************************************************/
 
     /**
      * Reset passives configuration (= set everything to max)
@@ -547,22 +565,6 @@ swlcalc.passives = function() {
         getHitPointsCapstones: getHitPointsCapstones,
         getCriticalChanceExpertise: getCriticalChanceExpertise,
         getCriticalPowerPercentageExpertise: getCriticalPowerPercentageExpertise,
-
-        getTotalAttackRating: getTotalAttackRating,
-        getTotalHealRating: getTotalHealRating,
-        getTotalHitPoints: getTotalHitPoints,
-        getTotalCriticalRating: getTotalCriticalRating,
-        getTotalCriticalChance: getTotalCriticalChance,
-        getTotalCriticalPower: getTotalCriticalPower,
-        getTotalCriticalPowerPercentage: getTotalCriticalPowerPercentage,
-        getTotalHitRating: getTotalHitRating,
-        getTotalGlanceReduction: getTotalGlanceReduction,
-        getTotalProtection: getTotalProtection,
-        getTotalDamageMitigation: getTotalDamageMitigation,
-        getTotalDefenseRating: getTotalDefenseRating,
-        getTotalGlanceChance: getTotalGlanceChance,
-        getTotalEvadeRating: getTotalEvadeRating,
-        getTotalEvadeChance: getTotalEvadeChance,
         // setters
         setAttackRatingBase: setAttackRatingBase,
         setHealRatingBase: setHealRatingBase,
@@ -581,6 +583,22 @@ swlcalc.passives = function() {
         setHitPointsCapstones: setHitPointsCapstones,
         setCriticalChanceExpertise: setCriticalChanceExpertise,
         setCriticalPowerPercentageExpertise: setCriticalPowerPercentageExpertise,
+        // totals computers :
+        getTotalAttackRating: getTotalAttackRating,
+        getTotalHealRating: getTotalHealRating,
+        getTotalHitPoints: getTotalHitPoints,
+        getTotalCriticalRating: getTotalCriticalRating,
+        getTotalCriticalChance: getTotalCriticalChance,
+        getTotalCriticalPower: getTotalCriticalPower,
+        getTotalCriticalPowerPercentage: getTotalCriticalPowerPercentage,
+        getTotalHitRating: getTotalHitRating,
+        getTotalGlanceReduction: getTotalGlanceReduction,
+        getTotalProtection: getTotalProtection,
+        getTotalDamageMitigation: getTotalDamageMitigation,
+        getTotalDefenseRating: getTotalDefenseRating,
+        getTotalGlanceChance: getTotalGlanceChance,
+        getTotalEvadeRating: getTotalEvadeRating,
+        getTotalEvadeChance: getTotalEvadeChance,
     };
 
     return oPublic;
