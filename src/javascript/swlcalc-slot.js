@@ -138,7 +138,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         // update max available level for equipment :
         var maxLvl = swlcalc.data.rarityMapping.toMaxLevel[newRarity];
         this.edit.equipmentLevelMax(maxLvl)
-        this.edit.equipmentLevel(maxLvl);
+        //this.edit.equipmentLevel(maxLvl);
         this.updateEquipmentLevel();
     };
 
@@ -509,22 +509,21 @@ swlcalc.gear.Slot = function Slot(slotData) {
 
     /**
      * Reset slot by setting default values for each select
-     * (set val then call change() artificially to trigger the event handlers)
      */
     this.reset = function() {
-        this.edit.el.equipmentId.prop("selectedIndex", 0).change();
-        this.edit.el.equipmentRarity.prop("selectedIndex", 0).change();
-        this.edit.el.equipmentQuality.prop("selectedIndex", 0).change();
-        // no need to set equipmentLevel here
+        this.edit.equipmentId("none");
+        this.edit.equipmentRarity("standard");
+        this.edit.equipmentQuality("1");
+        this.edit.equipmentLevel("1");
 
-        this.edit.el.glyphId.prop("selectedIndex", 0).change();
-        this.edit.el.glyphRarity.prop("selectedIndex", 0).change();
-        this.edit.el.glyphQuality.prop("selectedIndex", 0).change();
-        this.edit.el.glyphLevel.val("20");
+        this.edit.glyphId("none");
+        this.edit.glyphRarity("standard");
+        this.edit.glyphQuality("1");
+        this.edit.glyphLevel("1");
 
-        this.edit.el.signetId.prop("selectedIndex", 0).change();
-        this.edit.el.signetRarity.prop("selectedIndex", 0).change();
-        this.edit.el.signetLevel.val("20").change();
+        this.edit.signetId("none");
+        this.edit.signetRarity("standard");
+        this.edit.signetLevel("1");
     };
 
     /**

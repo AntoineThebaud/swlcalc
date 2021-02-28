@@ -53,7 +53,6 @@ swlcalc.gear = function() {
     /**
      * Resets all slots
      */
-    //TODO/FEATURE : reset should logically set level to 1
     var reset = function() {
         for (var id in slots) {
             slots[id].reset();

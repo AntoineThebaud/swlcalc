@@ -17,7 +17,7 @@ swlcalc.gear.Agent = function Agent(index) {
      */
     this.id = function() {
         if (arguments.length == 1) {
-            this.el.id.val(arguments[0]);
+            this.el.id.val(arguments[0]).change();
         } else {
             return this.el.id.val();
         }
@@ -28,7 +28,7 @@ swlcalc.gear.Agent = function Agent(index) {
      */
     this.level = function() {
         if (arguments.length == 1) {
-            this.el.level.val(arguments[0]);
+            this.el.level.val(arguments[0]).change();
         } else {
             return this.el.level.val();
         }
@@ -81,11 +81,10 @@ swlcalc.gear.Agent = function Agent(index) {
 
     /**
      * Reset the agent by setting default values for each select
-     * (set val then call change() artificially to trigger the event handlers)
      */
     this.reset = function() {
-        this.el.id.prop("selectedIndex", 0).change();
-        this.el.level.prop("selectedIndex", 0).change();
+        this.id("none");
+        this.level("25");
     };
 
     /**

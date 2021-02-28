@@ -46,7 +46,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.iLvl = function() {
         if (arguments.length == 1) {
-            this.el.iLvl.text(arguments[0]);
+            this.el.iLvl.text(arguments[0]).change();;
         } else {
             return this.el.iLvl.text();
         }
@@ -62,7 +62,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentId = function() {
         if (arguments.length == 1) {
-            this.el.equipmentId.val(arguments[0]);
+            this.el.equipmentId.val(arguments[0]).change();;
         } else {
             return this.el.equipmentId.val();
         }
@@ -73,7 +73,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentRarity = function() {
         if (arguments.length == 1) {
-            this.el.equipmentRarity.val(arguments[0]);
+            this.el.equipmentRarity.val(arguments[0]).change();;
         } else {
             return this.el.equipmentRarity.val();
         }
@@ -84,7 +84,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentQuality = function() {
         if (arguments.length == 1) {
-            this.el.equipmentQuality.val(arguments[0]);
+            this.el.equipmentQuality.val(arguments[0]).change();;
         } else {
             return this.el.equipmentQuality.val();
         }
@@ -95,7 +95,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentLevel = function() {
         if (arguments.length == 1) {
-            this.el.equipmentLevel.val(arguments[0]);
+            this.el.equipmentLevel.val(arguments[0]).change();
         } else {
             return this.el.equipmentLevel.val();
         }
@@ -105,7 +105,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentLevelMin = function() {
         if (arguments.length == 1) {
-            this.el.equipmentLevel.attr('min', arguments[0])
+            this.el.equipmentLevel.attr('min', arguments[0]).change();
         } else {
             return this.el.equipmentLevel.attr('min');
         }
@@ -115,7 +115,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentLevelMax = function() {
         if (arguments.length == 1) {
-            this.el.equipmentLevel.attr('max', arguments[0])
+            this.el.equipmentLevel.attr('max', arguments[0]).change();
         } else {
             return this.el.equipmentLevel.attr('max');
         }
@@ -126,7 +126,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentStatPowerValue = function() {
         if (arguments.length == 1) {
-            this.el.equipmentStatPowerValue.text(arguments[0]);
+            this.el.equipmentStatPowerValue.text(arguments[0]).change();
         } else {
             return this.el.equipmentStatPowerValue.text();
         }
@@ -137,7 +137,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentStatProtValue = function() {
         if (arguments.length == 1) {
-            this.el.equipmentStatProtValue.text(arguments[0]);
+            this.el.equipmentStatProtValue.text(arguments[0]).change();
         } else {
             return this.el.equipmentStatProtValue.text();
         }
@@ -151,7 +151,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentILvl = function() {
         if (arguments.length == 1) {
-            this.el.equipmentILvl.text(arguments[0]);
+            this.el.equipmentILvl.text(arguments[0]).change();
         } else {
             return this.el.equipmentILvl.text();
         }
@@ -162,7 +162,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentDescription = function() {
         if (arguments.length == 1) {
-            this.el.equipmentDescription.html(arguments[0]);
+            this.el.equipmentDescription.html(arguments[0]).change();
         } else {
             return this.el.equipmentDescription.html();
         }
@@ -173,7 +173,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentBonusN = function(index) {
         if (arguments.length == 2) {
-            $('#' + this.id + '-edit-equipment-bonus' + index).html(arguments[1]);
+            $('#' + this.id + '-edit-equipment-bonus' + index).html(arguments[1]).change();
         } else {
             return $('#' + this.id + '-edit-equipment-bonus' + index).html();
         }
@@ -184,7 +184,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentImgItem = function() {
         if (arguments.length == 1) {
-            this.el.equipmentImgItem.attr('src', arguments[0])
+            this.el.equipmentImgItem.attr('src', arguments[0]).change();
         } else {
             return this.el.equipmentImgItem.attr('src');
         }
@@ -195,7 +195,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentImgRarity = function() {
         if (arguments.length == 1) {
-            this.el.equipmentImgRarity.attr('src', arguments[0])
+            this.el.equipmentImgRarity.attr('src', arguments[0]).change();
         } else {
             return this.el.equipmentImgRarity.attr('src');
         }
@@ -206,7 +206,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentImgQuality = function() {
         if (arguments.length == 1) {
-            this.el.equipmentImgQuality.attr('src', arguments[0])
+            this.el.equipmentImgQuality.attr('src', arguments[0]).change();
         } else {
             return this.el.equipmentImgQuality.attr('src');
         }
@@ -217,7 +217,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.equipmentLabelLevel = function() {
         if (arguments.length == 1) {
-            this.el.equipmentLabelLevel.text(arguments[0]);
+            this.el.equipmentLabelLevel.text(arguments[0]).change();
         } else {
             return this.el.equipmentLabelLevel.text();
         }
@@ -233,7 +233,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphId = function() {
         if (arguments.length == 1) {
-            this.el.glyphId.val(arguments[0]);
+            this.el.glyphId.val(arguments[0]).change();
         } else {
             return this.el.glyphId.val();
         }
@@ -244,7 +244,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphRarity = function() {
         if (arguments.length == 1) {
-            this.el.glyphRarity.val(arguments[0]);
+            this.el.glyphRarity.val(arguments[0]).change();
         } else {
             return this.el.glyphRarity.val();
         }
@@ -255,7 +255,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphQuality = function() {
         if (arguments.length == 1) {
-            this.el.glyphQuality.val(arguments[0]);
+            this.el.glyphQuality.val(arguments[0]).change();
         } else {
             return this.el.glyphQuality.val();
         }
@@ -266,7 +266,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphLevel = function() {
         if (arguments.length == 1) {
-            this.el.glyphLevel.val(arguments[0]);
+            this.el.glyphLevel.val(arguments[0]).change();
         } else {
             return this.el.glyphLevel.val();
         }
@@ -276,7 +276,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphLevelMin = function() {
         if (arguments.length == 1) {
-            this.el.glyphLevel.attr('min', arguments[0])
+            this.el.glyphLevel.attr('min', arguments[0]).change();
         } else {
             return this.el.glyphLevel.attr('min');
         }
@@ -286,7 +286,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphLevelMax = function() {
         if (arguments.length == 1) {
-            this.el.glyphLevel.attr('max', arguments[0])
+            this.el.glyphLevel.attr('max', arguments[0]).change();
         } else {
             return this.el.glyphLevel.attr('max');
         }
@@ -297,7 +297,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphStatRating = function() {
         if (arguments.length == 1) {
-            this.el.glyphStatRating.text(arguments[0]);
+            this.el.glyphStatRating.text(arguments[0]).change();
         } else {
             return this.el.glyphStatRating.text();
         }
@@ -308,7 +308,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphStatText = function() {
         if (arguments.length == 1) {
-            this.el.glyphStatText.text(arguments[0]);
+            this.el.glyphStatText.text(arguments[0]).change();
         } else {
             return this.el.glyphStatText.text();
         }
@@ -319,7 +319,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphILvl = function() {
         if (arguments.length == 1) {
-            this.el.glyphILvl.text(arguments[0]);
+            this.el.glyphILvl.text(arguments[0]).change();
         } else {
             return this.el.glyphILvl.text();
         }
@@ -330,7 +330,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphImgItem = function() {
         if (arguments.length == 1) {
-            this.el.glyphImgItem.attr('src', arguments[0])
+            this.el.glyphImgItem.attr('src', arguments[0]).change();
         } else {
             return this.el.glyphImgItem.attr('src');
         }
@@ -341,7 +341,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphImgRarity = function() {
         if (arguments.length == 1) {
-            this.el.glyphImgRarity.attr('src', arguments[0])
+            this.el.glyphImgRarity.attr('src', arguments[0]).change();
         } else {
             return this.el.glyphImgRarity.attr('src');
         }
@@ -352,7 +352,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphImgQuality = function() {
         if (arguments.length == 1) {
-            this.el.glyphImgQuality.attr('src', arguments[0])
+            this.el.glyphImgQuality.attr('src', arguments[0]).change();
         } else {
             return this.el.glyphImgQuality.attr('src');
         }
@@ -363,7 +363,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.glyphLabelLevel = function() {
         if (arguments.length == 1) {
-            this.el.glyphLabelLevel.text(arguments[0]);
+            this.el.glyphLabelLevel.text(arguments[0]).change();
         } else {
             return this.el.glyphLabelLevel.text();
         }
@@ -379,7 +379,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.signetId = function() {
         if (arguments.length == 1) {
-            this.el.signetId.val(arguments[0]);
+            this.el.signetId.val(arguments[0]).change();
         } else {
             return this.el.signetId.val();
         }
@@ -390,7 +390,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.signetRarity = function() {
         if (arguments.length == 1) {
-            this.el.signetRarity.val(arguments[0]);
+            this.el.signetRarity.val(arguments[0]).change();
         } else {
             return this.el.signetRarity.val();
         }
@@ -401,7 +401,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.signetLevel = function() {
         if (arguments.length == 1) {
-            this.el.signetLevel.val(arguments[0]);
+            this.el.signetLevel.val(arguments[0]).change();
         } else {
             return this.el.signetLevel.val();
         }
@@ -411,7 +411,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.signetLevelMin = function() {
         if (arguments.length == 1) {
-            this.el.signetLevel.attr('min', arguments[0])
+            this.el.signetLevel.attr('min', arguments[0]).change();
         } else {
             return this.el.signetLevel.attr('min');
         }
@@ -421,7 +421,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.signetLevelMax = function() {
         if (arguments.length == 1) {
-            this.el.signetLevel.attr('max', arguments[0])
+            this.el.signetLevel.attr('max', arguments[0]).change();
         } else {
             return this.el.signetLevel.attr('max');
         }
@@ -432,7 +432,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.signetILvl = function() {
         if (arguments.length == 1) {
-            this.el.signetILvl.text(arguments[0]);
+            this.el.signetILvl.text(arguments[0]).change();
         } else {
             return this.el.signetILvl.text();
         }
@@ -443,7 +443,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.signetDescription = function() {
         if (arguments.length == 1) {
-            this.el.signetDescription.html(arguments[0]);
+            this.el.signetDescription.html(arguments[0]).change();
         } else {
             return this.el.signetDescription.html();
         }
@@ -455,7 +455,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.signetBonusN = function(index) {
         if (arguments.length == 2) {
-            $('#' + this.id + '-edit-signet-bonus' + index).text(arguments[1]);
+            $('#' + this.id + '-edit-signet-bonus' + index).text(arguments[1]).change();
         } else {
             return $('#' + this.id + '-edit-signet-bonus' + index).text();
         }
@@ -474,7 +474,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.signetImgItem = function() {
         if (arguments.length == 1) {
-            this.el.signetImgItem.attr('src', arguments[0])
+            this.el.signetImgItem.attr('src', arguments[0]).change();
         } else {
             return this.el.signetImgItem.attr('src');
         }
@@ -485,7 +485,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.signetImgRarity = function() {
         if (arguments.length == 1) {
-            this.el.signetImgRarity.attr('src', arguments[0])
+            this.el.signetImgRarity.attr('src', arguments[0]).change();
         } else {
             return this.el.signetImgRarity.attr('src');
         }
@@ -496,7 +496,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
      */
     this.signetLabelLevel = function() {
         if (arguments.length == 1) {
-            this.el.signetLabelLevel.text(arguments[0]);
+            this.el.signetLabelLevel.text(arguments[0]).change();
         } else {
             return this.el.signetLabelLevel.text();
         }

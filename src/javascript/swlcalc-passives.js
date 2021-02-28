@@ -501,7 +501,6 @@ swlcalc.passives = function() {
 
     /**
      * Reset passives configuration (= set everything to max)
-     * (set val then call change() artificially to trigger the event handlers)
      */
     var reset = function() {
         setAttackRatingBase(el.rangeAttackRatingBase.attr("max"));

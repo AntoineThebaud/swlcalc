@@ -33,47 +33,30 @@ swlcalc.import = function() {
     /**
      * Loads the slot informations from the hash and update GUI with it.
      */
-    // TODO : move change() to the setter !
     var loadSlot = function(slotId, values) {
         var slotObj = swlcalc.gear.slots[slotId];
-        slotObj.edit.equipmentRarity(swlcalc.data.rarityMapping.toName[values[0]]);
-        slotObj.edit.el.equipmentRarity.change();
+        var rMap = swlcalc.data.rarityMapping.toName;
+
+        slotObj.edit.equipmentRarity(rMap[values[0]]);
         slotObj.edit.equipmentId(values[1] == '0' ? 'none' : values[1]);
-        slotObj.edit.el.equipmentId.change();
         slotObj.edit.equipmentQuality(values[2]);
-        slotObj.edit.el.equipmentQuality.change();
         slotObj.edit.equipmentLevel(values[3]);
-        slotObj.edit.el.equipmentLevel.change();
-        slotObj.edit.glyphRarity(swlcalc.data.rarityMapping.toName[values[4]]);
-        slotObj.edit.el.glyphRarity.change();
+        slotObj.edit.glyphRarity(rMap[values[4]]);
         slotObj.edit.glyphId(swlcalc.data.secondaryStatMapping.toStat[values[5]]);
-        slotObj.edit.el.glyphId.change();
         slotObj.edit.glyphQuality(values[6]);
-        slotObj.edit.el.glyphQuality.change();
         slotObj.edit.glyphLevel(values[7]);
-        slotObj.edit.el.glyphLevel.change();
-        if (typeof values[8] !== 'undefined'
-        && typeof values[9] !== 'undefined' && values[9] !== "999"
-        && typeof values[10] !== 'undefined') {
-            slotObj.edit.signetRarity(swlcalc.data.rarityMapping.toName[values[8]]);
-            slotObj.edit.el.signetRarity.change();
-            slotObj.edit.signetId((values[9] != '0' ? values[9] : 'none'));
-            slotObj.edit.el.signetId.change();
-            slotObj.edit.signetLevel(values[10]);
-            slotObj.edit.el.signetLevel.change();
-        }
+        slotObj.edit.signetRarity(rMap[values[8]]);
+        slotObj.edit.signetId((values[9] != '0' ? values[9] : 'none'));
+        slotObj.edit.signetLevel(values[10]);
     };
 
     /**
      * Loads the agent informations from the hash and update GUI with it.
      */
-    // TODO : move change() to the setter !
     var loadAgent = function(index, values) {
         var agentObj = swlcalc.gear.agents[index];
         agentObj.id(values[0]);
-        agentObj.el.id.change();
         agentObj.level(values[1]);
-        agentObj.el.level.change();
     };
 
     /**

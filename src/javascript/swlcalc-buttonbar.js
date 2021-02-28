@@ -58,11 +58,8 @@ swlcalc.buttonBar = function() {
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
             slot.edit.equipmentRarity(newRarity);
-            slot.edit.el.equipmentRarity.change();
             slot.edit.glyphRarity(newRarity);
-            slot.edit.el.glyphRarity.change();
             slot.edit.signetRarity(newRarity);
-            slot.edit.el.signetRarity.change();
         }
     };
 
@@ -74,9 +71,7 @@ swlcalc.buttonBar = function() {
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
             slot.edit.equipmentQuality(newQuality);
-            slot.edit.el.equipmentQuality.change();
             slot.edit.glyphQuality(newQuality);
-            slot.edit.el.glyphQuality.change();
         }
     };
 
@@ -86,25 +81,21 @@ swlcalc.buttonBar = function() {
      * of a specific behavior : increase rarity if it is too "low"
      */
     var set4PipsOnAllSlots = function(event) {
-        var map = swlcalc.data.rarityMapping.toNum
-        var upgradedRarity = 'epic'
-        var fourPips = "4"
+        var map = swlcalc.data.rarityMapping.toNum;
+        var upgradedRarity = 'epic';
+        var fourPips = "4";
 
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
             if (map[slot.edit.equipmentRarity()] < map[upgradedRarity]) {
                 slot.edit.equipmentRarity(upgradedRarity);
-                slot.edit.el.equipmentRarity.change();
             }
             slot.edit.equipmentQuality(fourPips);
-            slot.edit.el.equipmentQuality.change();
 
             if (map[slot.edit.glyphRarity()] < map[upgradedRarity]) {
                 slot.edit.glyphRarity(upgradedRarity);
-                slot.edit.el.glyphRarity.change();
             }
             slot.edit.glyphQuality(fourPips);
-            slot.edit.el.glyphQuality.change();
         }
     };
 
@@ -115,17 +106,13 @@ swlcalc.buttonBar = function() {
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
             slot.edit.equipmentLevel(slot.edit.equipmentLevelMin());
-            slot.edit.el.equipmentLevel.change();
             slot.edit.glyphLevel(slot.edit.glyphLevelMin());
-            slot.edit.el.glyphLevel.change();
             slot.edit.signetLevel(slot.edit.signetLevelMin());
-            slot.edit.el.signetLevel.change();
         }
 
         for (var index in swlcalc.gear.agents) {
             var agent = swlcalc.gear.agents[index];
             agent.level(agent.minLvl());
-            agent.el.level.change();
         }
     };
 
@@ -136,17 +123,13 @@ swlcalc.buttonBar = function() {
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
             slot.edit.equipmentLevel(slot.edit.equipmentLevelMax());
-            slot.edit.el.equipmentLevel.change();
             slot.edit.glyphLevel(slot.edit.glyphLevelMax());
-            slot.edit.el.glyphLevel.change();
             slot.edit.signetLevel(slot.edit.signetLevelMax());
-            slot.edit.el.signetLevel.change();
         }
 
         for (var index in swlcalc.gear.agents) {
             var agent = swlcalc.gear.agents[index];
             agent.level(agent.maxLvl());
-            agent.el.level.change();
         }
     };
 
