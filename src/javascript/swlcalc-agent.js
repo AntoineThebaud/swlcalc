@@ -3,7 +3,7 @@ swlcalc.gear = swlcalc.gear || {};
 
 swlcalc.gear.Agent = function Agent(index) {
     this.index = index;
-    this.agentData = swlcalc.data.agents[0]
+    this.agentData = swlcalc.data.agents[0];
 
     this.el = {
         id: $('#agent' + this.index + '-id'),
@@ -12,58 +12,52 @@ swlcalc.gear.Agent = function Agent(index) {
         text50: $('#agent' + this.index + '-text50'),
     };
 
-    /**
-     * Getter/Setter for agent#index-id
-     */
-    this.id = function() {
-        if (arguments.length == 1) {
-            this.el.id.val(arguments[0]).change();
-        } else {
-            return this.el.id.val();
-        }
+
+    /**************************************************************************
+     * Accessors :
+     * ---------------------------------------------------------------------- */
+    /* ID : */
+    this.getId = function() {
+        return this.el.id.val();
+    };
+    this.setId = function(value) {
+        this.el.id.val(value).change();
     };
 
-    /**
-     * Getter/Setter for agent#index-level
-     */
-    this.level = function() {
-        if (arguments.length == 1) {
-            this.el.level.val(arguments[0]).change();
-        } else {
-            return this.el.level.val();
-        }
+    /* Level : */
+    this.getLevel = function() {
+        return this.el.level.val();
+    };
+    this.setLevel = function(value) {
+        this.el.level.val(value).change();
     };
 
-    /**
-     * Getter/Setter for agent#index-text25
-     */
-    this.text25 = function() {
-        if (arguments.length == 1) {
-            this.el.text25.html(arguments[0]);
-        } else {
-            return this.el.text25.html();
-        }
+    /* text25 : */
+    this.getText25 = function() {
+        return this.el.text25.html();
+    };
+    this.setText25 = function(text) {
+        this.el.text25.html(text);
     };
 
-    /**
-     * Getter/Setter for agent#index-text50
-     */
-    this.text50 = function() {
-        if (arguments.length == 1) {
-            this.el.text50.html(arguments[0]);
-        } else {
-            return this.el.text50.html();
-        }
+    /* text50 : */
+    this.getText50 = function() {
+        return this.el.text50.html();
     };
+    this.setText50 = function(text) {
+        this.el.text50.html(text);
+    };
+
+    /**************************************************************************/
 
     /**
      * Update elements related to agent's id
      */
     this.updateId = function() {
-        var newId = this.id();
+        var newId = this.getId();
         this.agentData = swlcalc.data.agents[newId];
 
-        this.text25(this.prettifyBonus(this.agentData, "25"));
+        this.setText25(this.prettifyBonus("25"));
 
         this.updateLevel();
     };
@@ -72,10 +66,10 @@ swlcalc.gear.Agent = function Agent(index) {
      * Update elements related to agent's level
      */
     this.updateLevel = function() {
-        if (this.level() == "50") {
-            this.text50(this.prettifyBonus(this.agentData, "50"));
+        if (this.getLevel() == "50") {
+            this.setText50(this.prettifyBonus("50"));
         } else {
-            this.text50("");
+            this.setText50("");
         }
     };
 
@@ -83,8 +77,8 @@ swlcalc.gear.Agent = function Agent(index) {
      * Reset the agent by setting default values for each select
      */
     this.reset = function() {
-        this.id("none");
-        this.level("25");
+        this.setId("0");
+        this.setLevel("25");
     };
 
     /**
@@ -105,11 +99,13 @@ swlcalc.gear.Agent = function Agent(index) {
     /**
      * Prettify the given agent bonus based on its type
      */
-    this.prettifyBonus = function(agentData, level) {
-        if (agentData.levels[level].type == "miscellaneous" || agentData.levels[level].type == "empty") {
-            return agentData.levels[level].value;
+    this.prettifyBonus = function(level) {
+        var data = this.agentData.bonuses[level];
+
+        if (data.type == "miscellaneous" || data.type == "empty") {
+            return data.value;
         } else {
-            return '<span class="stat-value gear">+' + agentData.levels[level].value + "</span> " + swlcalc.data.statMapping.toPretty[agentData.levels[level].type];
+            return '<span class="stat-value gear">+' + data.value + "</span> " + swlcalc.data.statMapping.toPretty[data.type];
         }
     };
 };

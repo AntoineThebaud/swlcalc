@@ -5,7 +5,7 @@ swlcalc.data.agents = [
     {
         id: 0,
         name: 'None',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'empty',
                 value: 'Empty agent slot'
@@ -19,7 +19,7 @@ swlcalc.data.agents = [
     {
         id: 1,
         name: 'Faction Recruit',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'protection',
                 value: '1000',
@@ -33,7 +33,7 @@ swlcalc.data.agents = [
     {
         id: 2,
         name: 'Jayesh Suresh',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'protection',
                 value: '1000'
@@ -47,7 +47,7 @@ swlcalc.data.agents = [
     {
         id: 3,
         name: 'Christina Del Rio',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'protection',
                 value: '1000'
@@ -61,7 +61,7 @@ swlcalc.data.agents = [
     {
         id: 4,
         name: 'Roman Konstantinov',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490'
@@ -75,7 +75,7 @@ swlcalc.data.agents = [
     {
         id: 5,
         name: 'Warlawurru',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490'
@@ -89,7 +89,7 @@ swlcalc.data.agents = [
     {
         id: 6,
         name: 'Carlos Peraza',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490'
@@ -103,7 +103,7 @@ swlcalc.data.agents = [
     {
         id: 7,
         name: 'Margot Crowley-Mathers',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
@@ -121,7 +121,7 @@ swlcalc.data.agents = [
     {
         id: 8,
         name: 'Calum MacLeod',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
@@ -139,7 +139,7 @@ swlcalc.data.agents = [
     {
         id: 9,
         name: 'Lydia Darling',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325',
@@ -153,7 +153,7 @@ swlcalc.data.agents = [
     {
         id: 10,
         name: 'Aleksey Volkov',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'critical-power',
                 value: '150'
@@ -171,7 +171,7 @@ swlcalc.data.agents = [
     {
         id: 11,
         name: 'Cveta Stojanovic',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325'
@@ -189,7 +189,7 @@ swlcalc.data.agents = [
     {
         id: 12,
         name: 'Virgil',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325'
@@ -203,7 +203,7 @@ swlcalc.data.agents = [
     {
         id: 13,
         name: 'Sarah Skelly',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325'
@@ -217,7 +217,7 @@ swlcalc.data.agents = [
     {
         id: 14,
         name: 'Pierre Delacroix',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325'
@@ -231,7 +231,7 @@ swlcalc.data.agents = [
     {
         id: 15,
         name: 'Wu Liang-Zhi',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'heal-rating',
                 value: '325'
@@ -249,7 +249,7 @@ swlcalc.data.agents = [
     {
         id: 16,
         name: 'Lama Lhakpa',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
@@ -267,7 +267,7 @@ swlcalc.data.agents = [
     {
         id: 17,
         name: 'Siobhan Gowan',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
@@ -285,7 +285,7 @@ swlcalc.data.agents = [
     {
         id: 18,
         name: 'Tiana Cardoza',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'critical-power',
                 value: '150'
@@ -303,7 +303,7 @@ swlcalc.data.agents = [
     {
         id: 19,
         name: 'Ibrahim de la Fuente',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'heal-rating',
                 value: '325'
@@ -317,7 +317,7 @@ swlcalc.data.agents = [
     {
         id: 20,
         name: 'Terry Laputo',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'heal-rating',
                 value: '325'
@@ -331,7 +331,7 @@ swlcalc.data.agents = [
     {
         id: 21,
         name: 'Alessandro Luzio IV',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'heal-rating',
                 value: '325'
@@ -345,7 +345,7 @@ swlcalc.data.agents = [
     {
         id: 22,
         name: 'Dax Reagan',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+2.5%</span> Damage',
@@ -359,7 +359,7 @@ swlcalc.data.agents = [
     {
         id: 23,
         name: 'Oleg Yablokov',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+2.5%</span> Damage'
@@ -373,7 +373,7 @@ swlcalc.data.agents = [
     {
         id: 24,
         name: 'Dae-Su',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+2.5%</span> Damage'
@@ -387,7 +387,7 @@ swlcalc.data.agents = [
     {
         id: 25,
         name: 'Liam Callahan',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Assault Rifle Damage',
@@ -401,7 +401,7 @@ swlcalc.data.agents = [
     {
         id: 26,
         name: 'Lee Chung',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Blade Damage',
@@ -415,7 +415,7 @@ swlcalc.data.agents = [
     {
         id: 27,
         name: 'Giovanni Bellanova',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Blood Damage',
@@ -429,7 +429,7 @@ swlcalc.data.agents = [
     {
         id: 28,
         name: 'Martin Espina',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Chaos Magic Damage',
@@ -443,7 +443,7 @@ swlcalc.data.agents = [
     {
         id: 29,
         name: 'Maxwell Chandler',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Dual Pistols Damage',
@@ -457,7 +457,7 @@ swlcalc.data.agents = [
     {
         id: 30,
         name: 'Astrid Mikkelsen',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Elementalism Damage',
@@ -471,7 +471,7 @@ swlcalc.data.agents = [
     {
         id: 31,
         name: 'Saenchai Khamsing',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Fist Weapons Damage',
@@ -485,7 +485,7 @@ swlcalc.data.agents = [
     {
         id: 32,
         name: 'Thomas Grady',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Hammer Damage',
@@ -499,7 +499,7 @@ swlcalc.data.agents = [
     {
         id: 33,
         name: 'Daniel Martinez',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Shotgun Damage',
@@ -513,7 +513,7 @@ swlcalc.data.agents = [
     {
         id: 34,
         name: 'Callie James',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'protection',
                 value: '1000',
@@ -527,7 +527,7 @@ swlcalc.data.agents = [
     {
         id: 35,
         name: 'Nassir',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490',
@@ -541,7 +541,7 @@ swlcalc.data.agents = [
     {
         id: 36,
         name: 'Montgomery de la Roche',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490',
@@ -555,7 +555,7 @@ swlcalc.data.agents = [
     {
         id: 37,
         name: 'Carter',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490',
@@ -569,7 +569,7 @@ swlcalc.data.agents = [
     {
         id: 38,
         name: 'Hayden J. Montag',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490',
@@ -583,7 +583,7 @@ swlcalc.data.agents = [
     {
         id: 39,
         name: 'Deputy Andy Gardener',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490',
@@ -597,7 +597,7 @@ swlcalc.data.agents = [
     {
         id: 40,
         name: 'Amir',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490',
@@ -611,7 +611,7 @@ swlcalc.data.agents = [
     {
         id: 41,
         name: 'Mihas Blaga',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490',
@@ -625,7 +625,7 @@ swlcalc.data.agents = [
     {
         id: 42,
         name: 'Petru',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490',
@@ -639,7 +639,7 @@ swlcalc.data.agents = [
     {
         id: 43,
         name: 'Aurélie',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490',
@@ -653,7 +653,7 @@ swlcalc.data.agents = [
     {
         id: 44,
         name: 'Mesilande Gwinyai',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'critical-power',
                 value: '150',
@@ -667,7 +667,7 @@ swlcalc.data.agents = [
     {
         id: 45,
         name: 'Victor Cromely',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'critical-power',
                 value: '150',
@@ -681,7 +681,7 @@ swlcalc.data.agents = [
     {
         id: 46,
         name: 'Aliya Zenhar',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'critical-power',
                 value: '150',
@@ -695,7 +695,7 @@ swlcalc.data.agents = [
     {
         id: 47,
         name: 'Ann Thophora',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'critical-power',
                 value: '150',
@@ -709,7 +709,7 @@ swlcalc.data.agents = [
     {
         id: 48,
         name: 'Wekesa Ikande',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'critical-power',
                 value: '150',
@@ -723,7 +723,7 @@ swlcalc.data.agents = [
     {
         id: 49,
         name: 'Mehmet Muzaffer',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'critical-power',
                 value: '150',
@@ -737,7 +737,7 @@ swlcalc.data.agents = [
     {
         id: 50,
         name: 'Che Garcia Hansson',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'critical-power',
                 value: '150',
@@ -751,7 +751,7 @@ swlcalc.data.agents = [
     {
         id: 51,
         name: 'Queen Ranavanlona IV',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'critical-power',
                 value: '150',
@@ -765,7 +765,7 @@ swlcalc.data.agents = [
     {
         id: 52,
         name: 'Dennis Masuhlo',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'critical-power',
                 value: '150',
@@ -779,7 +779,7 @@ swlcalc.data.agents = [
     {
         id: 53,
         name: 'Kwanele',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'critical-power',
                 value: '150',
@@ -793,7 +793,7 @@ swlcalc.data.agents = [
     {
         id: 54,
         name: 'Faction Quartermaster',
-        levels: {
+        bonuses: {
             "25": {
                 value: '<span class="bonus-val const">+2.5%</span> Damage',
                 type: 'miscellaneous',
@@ -807,7 +807,7 @@ swlcalc.data.agents = [
     {
         id: 55,
         name: 'Jack Boone',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490',
@@ -821,7 +821,7 @@ swlcalc.data.agents = [
     {
         id: 56,
         name: 'Jeronimo de Montejo',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490',
@@ -835,7 +835,7 @@ swlcalc.data.agents = [
     {
         id: 57,
         name: 'Lady of the Mists',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325',
@@ -849,7 +849,7 @@ swlcalc.data.agents = [
     {
         id: 58,
         name: 'Fearghas Abernathy',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325',
@@ -863,7 +863,7 @@ swlcalc.data.agents = [
     {
         id: 59,
         name: 'Brann Mac Diarmoda',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325',
@@ -877,7 +877,7 @@ swlcalc.data.agents = [
     {
         id: 60,
         name: 'Nuala Magorian',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325',
@@ -891,7 +891,7 @@ swlcalc.data.agents = [
     {
         id: 61,
         name: 'Amelia Bindings',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325',
@@ -905,7 +905,7 @@ swlcalc.data.agents = [
     {
         id: 62,
         name: 'Francis Rowan',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325',
@@ -919,7 +919,7 @@ swlcalc.data.agents = [
     {
         id: 63,
         name: 'Laughing Jenny',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325',
@@ -933,7 +933,7 @@ swlcalc.data.agents = [
     {
         id: 64,
         name: 'Finn Mulligan',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325',
@@ -947,7 +947,7 @@ swlcalc.data.agents = [
     {
         id: 65,
         name: 'Sif Minervudottir',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325',
@@ -961,7 +961,7 @@ swlcalc.data.agents = [
     {
         id: 66,
         name: 'Lynch',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'attack-rating',
                 value: '325',
@@ -975,7 +975,7 @@ swlcalc.data.agents = [
     {
         id: 67,
         name: 'Romulus Peril',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+2.5%</span> Damage',
@@ -989,7 +989,7 @@ swlcalc.data.agents = [
     {
         id: 68,
         name: 'Artemis',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Assault Rifle Damage',
@@ -1003,7 +1003,7 @@ swlcalc.data.agents = [
     {
         id: 69,
         name: 'Mr. Pilkington',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Blade Damage',
@@ -1017,7 +1017,7 @@ swlcalc.data.agents = [
     {
         id: 70,
         name: 'Dr. Letizia Moretti',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Blood Damage',
@@ -1031,7 +1031,7 @@ swlcalc.data.agents = [
     {
         id: 71,
         name: 'Anastazy Hydock',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Chaos Magic Damage',
@@ -1045,7 +1045,7 @@ swlcalc.data.agents = [
     {
         id: 72,
         name: 'Simon Brisk',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Dual Pistols Damage',
@@ -1059,7 +1059,7 @@ swlcalc.data.agents = [
     {
         id: 73,
         name: 'Dr. Thaddeus Finch',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Elementalism Damage',
@@ -1073,7 +1073,7 @@ swlcalc.data.agents = [
     {
         id: 74,
         name: 'Eve, "the Lady of Mortar"',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Fist Weapons Damage',
@@ -1087,7 +1087,7 @@ swlcalc.data.agents = [
     {
         id: 75,
         name: 'Erasmus Kidderminster',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Hammer Damage',
@@ -1101,7 +1101,7 @@ swlcalc.data.agents = [
     {
         id: 76,
         name: 'Marceline Lupin',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+3.5%</span> Shotgun Damage',
@@ -1115,7 +1115,7 @@ swlcalc.data.agents = [
     {
         id: 77,
         name: 'Elin Bagge',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'hit-points',
                 value: '490',
@@ -1129,7 +1129,7 @@ swlcalc.data.agents = [
     {
         id: 78,
         name: 'Rana Kader',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'evade-rating',
                 value: '250',
@@ -1143,7 +1143,7 @@ swlcalc.data.agents = [
     {
         id: 79,
         name: 'The Cleaner',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val dps">5%</span> chance of knockdown enemy on hit',
@@ -1157,7 +1157,7 @@ swlcalc.data.agents = [
     {
         id: 80,
         name: 'Walter Malone',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+5%</span> Damage Versus Undead',
@@ -1171,7 +1171,7 @@ swlcalc.data.agents = [
     {
         id: 81,
         name: 'The Duo',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'evade-rating',
                 value: '250',
@@ -1185,7 +1185,7 @@ swlcalc.data.agents = [
     {
         id: 82,
         name: 'Diviciacus',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val dps">%d</span> Damage to enemies when you are hit',
@@ -1203,7 +1203,7 @@ swlcalc.data.agents = [
     {
         id: 83,
         name: 'Brigadier Lethe',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+2.5%</span> Damage and Healing',
@@ -1217,7 +1217,7 @@ swlcalc.data.agents = [
     {
         id: 84,
         name: 'De La Guardia',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+2.5%</span> Damage and Healing',
@@ -1231,7 +1231,7 @@ swlcalc.data.agents = [
     {
         id: 85,
         name: 'The Hessian',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+5%</span> Outgoing Damage for 3 seconds on dodge.',
@@ -1245,7 +1245,7 @@ swlcalc.data.agents = [
     {
         id: 86,
         name: 'Rogue Coder',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+2000</span> Protection for 3 seconds on dodge.',
@@ -1259,7 +1259,7 @@ swlcalc.data.agents = [
     {
         id: 87,
         name: 'The Toad Brothers',
-        levels: {
+        bonuses: {
             "25": {
                 type: 'miscellaneous',
                 value: '<span class="bonus-val const">+5%</span> Outgoing Healing for 3 seconds on dodge.',

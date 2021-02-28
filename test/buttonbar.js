@@ -66,7 +66,7 @@ QUnit.test("should set min level on all slots", function(assert) {
       }
       for (var index in swlcalc.gear.agents) {
           var agent = swlcalc.gear.agents[index];
-          assert.equal(agent.level(), "25");
+          assert.equal(agent.getLevel(), "25");
       }
 });
 
@@ -85,7 +85,7 @@ QUnit.test("should set max level on all slots", function(assert) {
       }
       for (var index in swlcalc.gear.agents) {
           var agent = swlcalc.gear.agents[index];
-          assert.equal(agent.level(), "50");
+          assert.equal(agent.getLevel(), "50");
       }
 });
 
@@ -104,6 +104,6 @@ QUnit.test("should reset all slots", function(assert) {
     }
     for (var index in swlcalc.gear.agents) {
         var agent = swlcalc.gear.agents[index];
-        assert.equal(agent.id(), "0");
+        assert.equal(agent.getId(), "0");
     }
 });

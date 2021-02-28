@@ -112,7 +112,7 @@ swlcalc.buttonBar = function() {
 
         for (var index in swlcalc.gear.agents) {
             var agent = swlcalc.gear.agents[index];
-            agent.level(agent.minLvl());
+            agent.setLevel(agent.minLvl());
         }
     };
 
@@ -129,7 +129,7 @@ swlcalc.buttonBar = function() {
 
         for (var index in swlcalc.gear.agents) {
             var agent = swlcalc.gear.agents[index];
-            agent.level(agent.maxLvl());
+            agent.setLevel(agent.maxLvl());
         }
     };
 

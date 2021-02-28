@@ -113,15 +113,15 @@ swlcalc.gear = function() {
         var hp = swlcalc.summary.healingPower();
 
         for (var index in agents) {
-            var l25 = agents[index].agentData.levels["25"];
-            var l50 = agents[index].agentData.levels["50"];
+            var l25 = agents[index].agentData.bonuses["25"];
+            var l50 = agents[index].agentData.bonuses["50"];
 
             if (l25.varbonus != undefined) {
               var res = l25.value.replace("%d", Math.round(l25.varbonus.stat == "Combat Power" ? cp * l25.varbonus.coef : hp * l25.varbonus.coef));
-              agents[index].text25(res);
-            } else if (agents[index].level() == "50" && l50.varbonus != undefined) {
+              agents[index].setText25(res);
+            } else if (agents[index].getLevel() == "50" && l50.varbonus != undefined) {
               var res = l50.value.replace("%d", Math.round(l50.varbonus.stat == "Combat Power" ? cp * l50.varbonus.coef : hp * l50.varbonus.coef));
-              agents[index].text50(res);
+              agents[index].setText50(res);
             }
         }
     };

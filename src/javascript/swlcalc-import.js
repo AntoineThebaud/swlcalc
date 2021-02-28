@@ -55,8 +55,8 @@ swlcalc.import = function() {
      */
     var loadAgent = function(index, values) {
         var agentObj = swlcalc.gear.agents[index];
-        agentObj.id(values[0]);
-        agentObj.level(values[1]);
+        agentObj.setId(values[0]);
+        agentObj.setLevel(values[1]);
     };
 
     /**

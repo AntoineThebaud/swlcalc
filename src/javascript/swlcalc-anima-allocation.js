@@ -67,68 +67,43 @@ swlcalc.animaAllocation = function() {
         swlcalc.gear.updateAllDescriptions();
     }
 
-    /**
-     * Get current anima allocation percentage for Damage part
-     */
+    /**************************************************************************
+     * Accessors :
+     * ---------------------------------------------------------------------- */
+    /* Damage : */
     var getDamagePercentage = function() {
         return el.rangeDamage.val();
     }
-
-    /**
-     * Get current anima allocation percentage for Healing part
-     */
-    var getHealingPercentage = function() {
-        return el.rangeHealing.val();
+    var setDamagePercentage = function(value) {
+        el.rangeDamage.val(value).change();
     }
-
-    /**
-     * Get current anima allocation percentage for Survivability part
-     */
-    var getSurvivabilityPercentage = function() {
-        return el.rangeSurvivability.val();
-    }
-
-    /**
-     * Get current anima allocation ratio for Damage part
-     */
     var getDamageRatio = function() {
         return getDamagePercentage() / 100;
     }
 
-    /**
-     * Get current anima allocation ratio for Healing part
-     */
+    /* Healing : */
+    var getHealingPercentage = function() {
+        return el.rangeHealing.val();
+    }
+    var setHealingPercentage = function(value) {
+        el.rangeHealing.val(value).change();
+    }
     var getHealingRatio = function() {
         return getHealingPercentage() / 100;
     }
 
-    /**
-     * Get current anima allocation ratio for Survivability part
-     */
-    var getSurvivabilityRatio = function() {
-        return getSurvivabilityPercentage() / 100;
+    /* Survivability : */
+    var getSurvivabilityPercentage = function() {
+        return el.rangeSurvivability.val();
     }
-
-    /**
-     * Set current anima allocation percentage for Damage part
-     */
-    var setDamagePercentage = function(value) {
-        el.rangeDamage.val(value).change();
-    }
-
-    /**
-     * Set current anima allocation percentage for Healing part
-     */
-    var setHealingPercentage = function(value) {
-        el.rangeHealing.val(value).change();
-    }
-
-    /**
-     * Set current anima allocation percentage for Survivability part
-     */
     var setSurvivabilityPercentage = function(value) {
         el.rangeSurvivability.val(value).change();
     }
+    var getSurvivabilityRatio = function() {
+        return getSurvivabilityPercentage() / 100;
+    }
+    
+    /**************************************************************************/
 
     var oPublic = {
         el: el,

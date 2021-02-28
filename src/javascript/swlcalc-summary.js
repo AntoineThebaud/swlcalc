@@ -76,12 +76,12 @@ swlcalc.summary = function() {
         for (var index in swlcalc.gear.agents) {
             var ad = swlcalc.gear.agents[index].agentData
 
-            if (swlcalc.util.isPrimaryStat(ad.levels["25"].type)) {
-                totals[ad.levels["25"].type] += parseInt(ad.levels["25"].value)
+            if (swlcalc.util.isPrimaryStat(ad.bonuses["25"].type)) {
+                totals[ad.bonuses["25"].type] += parseInt(ad.bonuses["25"].value)
             }
-            if (swlcalc.gear.agents[index].level() == 50) {
-                if (swlcalc.util.isPrimaryStat(ad.levels["50"].type)) {
-                    totals[ad.levels["50"].type] += parseInt(ad.levels["50"].value)
+            if (swlcalc.gear.agents[index].getLevel() == 50) {
+                if (swlcalc.util.isPrimaryStat(ad.bonuses["50"].type)) {
+                    totals[ad.bonuses["50"].type] += parseInt(ad.bonuses["50"].value)
                 }
             }
         }
@@ -166,12 +166,12 @@ swlcalc.summary = function() {
         for (var index in swlcalc.gear.agents) {
             var ad = swlcalc.gear.agents[index].agentData
 
-            if (swlcalc.util.isSecondaryStat(ad.levels["25"].type)) {
-                totals[ad.levels["25"].type] += parseInt(ad.levels["25"].value)
+            if (swlcalc.util.isSecondaryStat(ad.bonuses["25"].type)) {
+                totals[ad.bonuses["25"].type] += parseInt(ad.bonuses["25"].value)
             }
-            if (swlcalc.gear.agents[index].level() == 50) {
-                if (swlcalc.util.isSecondaryStat(ad.levels["50"].type)) {
-                    totals[ad.levels["50"].type] += parseInt(ad.levels["50"].value)
+            if (swlcalc.gear.agents[index].getLevel() == 50) {
+                if (swlcalc.util.isSecondaryStat(ad.bonuses["50"].type)) {
+                    totals[ad.bonuses["50"].type] += parseInt(ad.bonuses["50"].value)
                 }
             }
         }
@@ -216,8 +216,8 @@ swlcalc.summary = function() {
             var agent = swlcalc.gear.agents[index];
 
             var b25 = $('#stat-agent' + (parseInt(index) + 1) + '-bonus25'); // TODO : abstract access
-            if (agent.agentData.levels["25"].type == "miscellaneous") {
-                b25.html(agent.text25());
+            if (agent.agentData.bonuses["25"].type == "miscellaneous") {
+                b25.html(agent.getText25());
                 b25.show();
             } else {
                 b25.html("");
@@ -225,8 +225,8 @@ swlcalc.summary = function() {
             }
 
             var b50 = $('#stat-agent' + (parseInt(index) + 1) + '-bonus50'); // TODO : abstract access
-            if (agent.level() == "50" && agent.agentData.levels["50"].type == "miscellaneous") {
-                b50.html(agent.text50());
+            if (agent.getLevel() == "50" && agent.agentData.bonuses["50"].type == "miscellaneous") {
+                b50.html(agent.getText50());
                 b50.show();
             } else {
                 b50.html("");

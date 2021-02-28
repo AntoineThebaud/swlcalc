@@ -131,9 +131,9 @@ QUnit.test("should update all agents bonuses correctly", function(assert) {
     $("#agent1-id").change();
     $("#agent1-level").val("50");
     $("#agent1-level").change();
-    assert.equal(swlcalc.gear.agents[0].text50(), "<span class=\"bonus-val dps\">144</span> Physical Damage on Critical Hits");
+    assert.equal(swlcalc.gear.agents[0].getText50(), "<span class=\"bonus-val dps\">144</span> Physical Damage on Critical Hits");
 
     $("#stat-combat-power").html("1000");
     swlcalc.gear.updateAgentsBonuses();
-    assert.equal(swlcalc.gear.agents[0].text50(), "<span class=\"bonus-val dps\">215</span> Physical Damage on Critical Hits");
+    assert.equal(swlcalc.gear.agents[0].getText50(), "<span class=\"bonus-val dps\">215</span> Physical Damage on Critical Hits");
 });

@@ -102,8 +102,8 @@ swlcalc.export = function() {
         var agent = swlcalc.gear.agents[index];
 
         var agentUrl = 'agent' + agent.index + '='
-            + agent.id() + ','
-            + agent.level();
+            + agent.getId() + ','
+            + agent.getLevel();
 
         return agentUrl;
     };
