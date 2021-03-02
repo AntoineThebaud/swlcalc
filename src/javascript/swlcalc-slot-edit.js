@@ -41,464 +41,342 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         signetILvl:              $('#' + this.id + '-edit-signet-ilvl')
     };
 
-    /**
-     * Getter/Setter for #slot-ilvl
-     */
-    this.iLvl = function() {
-        if (arguments.length == 1) {
-            this.el.iLvl.text(arguments[0]).change();;
-        } else {
-            return this.el.iLvl.text();
-        }
+    /**************************************************************************
+     * Accessors :
+     * ---------------------------------------------------------------------- */
+
+    /* GLOBAL : ------------------------------------------------------------- */
+
+    /* #slot-ilvl : */
+    this.getILvl = function() {
+        return this.el.iLvl.text();
+    };
+    this.setILvl = function(arg) {
+        this.el.iLvl.text(arg).change();
     };
 
-    /**********************************************************************************
-     * Equipment functions | (talismans + weapons)
-     *                     V
-     **********************************************************************************/
+    /* EQUIPMENT : ---------------------------------------------------------- */
 
-    /**
-     * Getter/Setter for #slot-edit-equipment-id
-     */
-    this.equipmentId = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentId.val(arguments[0]).change();;
-        } else {
-            return this.el.equipmentId.val();
-        }
+     /* #slot-edit-equipment-id : */
+    this.getEquipmentId = function() {
+        return this.el.equipmentId.val();
+    };
+    this.setEquipmentId = function(arg) {
+        this.el.equipmentId.val(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-equipment-rarity
-     */
-    this.equipmentRarity = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentRarity.val(arguments[0]).change();;
-        } else {
-            return this.el.equipmentRarity.val();
-        }
+    /* #slot-edit-equipment-rarity : */
+    this.getEquipmentRarity = function() {
+        return this.el.equipmentRarity.val();
+    };
+    this.setEquipmentRarity = function(arg) {
+        this.el.equipmentRarity.val(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-equipment-quality
-     */
-    this.equipmentQuality = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentQuality.val(arguments[0]).change();;
-        } else {
-            return this.el.equipmentQuality.val();
-        }
+    /* #slot-edit-equipment-quality : */
+    this.getEquipmentQuality = function() {
+        return this.el.equipmentQuality.val();
+    };
+    this.setEquipmentQuality = function(arg) {
+        this.el.equipmentQuality.val(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-equipment-level
-     */
-    this.equipmentLevel = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentLevel.val(arguments[0]).change();
-        } else {
-            return this.el.equipmentLevel.val();
-        }
+    /* #slot-edit-equipment-level : */
+    this.getEquipmentLevel = function() {
+        return this.el.equipmentLevel.val();
     };
-    /**
-     * Getter/Setter for #slot-edit-equipment-level (min attribute)
-     */
-    this.equipmentLevelMin = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentLevel.attr('min', arguments[0]).change();
-        } else {
-            return this.el.equipmentLevel.attr('min');
-        }
-    };
-    /**
-     * Getter/Setter for #slot-edit-equipment-level (max attribute)
-     */
-    this.equipmentLevelMax = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentLevel.attr('max', arguments[0]).change();
-        } else {
-            return this.el.equipmentLevel.attr('max');
-        }
+    this.setEquipmentLevel = function(arg) {
+        this.el.equipmentLevel.val(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-equipment-stat-power-value
-     */
-    this.equipmentStatPowerValue = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentStatPowerValue.text(arguments[0]).change();
-        } else {
-            return this.el.equipmentStatPowerValue.text();
-        }
+    /* #slot-edit-equipment-level (min attribute) : */
+    this.getEquipmentLevelMin = function() {
+        return this.el.equipmentLevel.attr('min');
+    };
+    this.setEquipmentLevelMin = function(arg) {
+        this.el.equipmentLevel.attr('min', arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-equipment-stat-prot-value
-     */
-    this.equipmentStatProtValue = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentStatProtValue.text(arguments[0]).change();
-        } else {
-            return this.el.equipmentStatProtValue.text();
-        }
+    /* #slot-edit-equipment-level (max attribute) : */
+    this.getEquipmentLevelMax = function() {
+        return this.el.equipmentLevel.attr('max');
+    };
+    this.setEquipmentLevelMax = function(arg) {
+        this.el.equipmentLevel.attr('max', arg).change();
     };
 
-
-    equipmentStatRawProtValue = 0;
-
-    /**
-     * Getter/Setter for #slot-edit-equipment-iLvl
-     */
-    this.equipmentILvl = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentILvl.text(arguments[0]).change();
-        } else {
-            return this.el.equipmentILvl.text();
-        }
+    /* #slot-edit-equipment-stat-power-value : */
+    this.getEquipmentStatPowerValue = function() {
+        return this.el.equipmentStatPowerValue.text();
+    };
+    this.setEquipmentStatPowerValue = function(arg) {
+        this.el.equipmentStatPowerValue.text(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-equipment-description
-     */
-    this.equipmentDescription = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentDescription.html(arguments[0]).change();
-        } else {
-            return this.el.equipmentDescription.html();
-        }
+    /* #slot-edit-equipment-stat-prot-value : */
+    this.getEquipmentStatProtValue = function() {
+        return this.el.equipmentStatProtValue.text();
+    };
+    this.setEquipmentStatProtValue = function(arg) {
+        this.el.equipmentStatProtValue.text(arg).change();
     };
 
-    /**
-     * Getter/Setter for any #slot-edit-equipment-bonusN object
-     */
-    this.equipmentBonusN = function(index) {
-        if (arguments.length == 2) {
-            $('#' + this.id + '-edit-equipment-bonus' + index).html(arguments[1]).change();
-        } else {
-            return $('#' + this.id + '-edit-equipment-bonus' + index).html();
-        }
+    /* #slot-edit-equipment-iLvl : */
+    this.getEquipmentILvl = function() {
+        return this.el.equipmentILvl.text();
+    };
+    this.setEquipmentILvl = function(arg) {
+        this.el.equipmentILvl.text(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-equipment-img-item
-     */
-    this.equipmentImgItem = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentImgItem.attr('src', arguments[0]).change();
-        } else {
-            return this.el.equipmentImgItem.attr('src');
-        }
+    /* #slot-edit-equipment-description : */
+    this.getEquipmentDescription = function() {
+        return this.el.equipmentDescription.html();
+    };
+    this.setEquipmentDescription = function(arg) {
+        this.el.equipmentDescription.html(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-equipment-img-rarity
-     */
-    this.equipmentImgRarity = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentImgRarity.attr('src', arguments[0]).change();
-        } else {
-            return this.el.equipmentImgRarity.attr('src');
-        }
+    /* #slot-edit-equipment-bonusN object : */
+    this.getEquipmentBonusN = function(index) {
+        return $('#' + this.id + '-edit-equipment-bonus' + index).html();
+    };
+    this.setEquipmentBonusN = function(index, value) {
+        $('#' + this.id + '-edit-equipment-bonus' + index).html(value).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-equipment-img-quality
-     */
-    this.equipmentImgQuality = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentImgQuality.attr('src', arguments[0]).change();
-        } else {
-            return this.el.equipmentImgQuality.attr('src');
-        }
+    /* #slot-edit-equipment-img-item : */
+    this.getEquipmentImgItem = function() {
+        return this.el.equipmentImgItem.attr('src');
+    };
+    this.setEquipmentImgItem = function(arg) {
+        this.el.equipmentImgItem.attr('src', arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-equipment-label-level
-     */
-    this.equipmentLabelLevel = function() {
-        if (arguments.length == 1) {
-            this.el.equipmentLabelLevel.text(arguments[0]).change();
-        } else {
-            return this.el.equipmentLabelLevel.text();
-        }
+    /* #slot-edit-equipment-img-rarity : */
+    this.getEquipmentImgRarity = function() {
+        return this.el.equipmentImgRarity.attr('src');
+    };
+    this.setEquipmentImgRarity = function(arg) {
+        this.el.equipmentImgRarity.attr('src', arg).change();
     };
 
-    /**********************************************************************************
-     * Glyph functions |
-     *                 V
-     **********************************************************************************/
-
-    /**
-     * Getter/Setter for #slot-edit-glyph
-     */
-    this.glyphId = function() {
-        if (arguments.length == 1) {
-            this.el.glyphId.val(arguments[0]).change();
-        } else {
-            return this.el.glyphId.val();
-        }
+    /* #slot-edit-equipment-img-quality : */
+    this.getEquipmentImgQuality = function() {
+        return this.el.equipmentImgQuality.attr('src');
+    };
+    this.setEquipmentImgQuality = function(arg) {
+        this.el.equipmentImgQuality.attr('src', arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-glyph-rarity
-     */
-    this.glyphRarity = function() {
-        if (arguments.length == 1) {
-            this.el.glyphRarity.val(arguments[0]).change();
-        } else {
-            return this.el.glyphRarity.val();
-        }
+    /* #slot-edit-equipment-label-level : */
+    this.getEquipmentLabelLevel = function() {
+        return this.el.equipmentLabelLevel.text();
+    };
+    this.setEquipmentLabelLevel = function(arg) {
+        this.el.equipmentLabelLevel.text(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-glyph-quality
-     */
-    this.glyphQuality = function() {
-        if (arguments.length == 1) {
-            this.el.glyphQuality.val(arguments[0]).change();
-        } else {
-            return this.el.glyphQuality.val();
-        }
+    /* GLYPH : -------------------------------------------------------------- */
+
+    /* #slot-edit-glyph : */
+    this.getGlyphId = function() {
+        return this.el.glyphId.val();
+    };
+    this.setGlyphId = function(arg) {
+        this.el.glyphId.val(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-glyph-level
-     */
-    this.glyphLevel = function() {
-        if (arguments.length == 1) {
-            this.el.glyphLevel.val(arguments[0]).change();
-        } else {
-            return this.el.glyphLevel.val();
-        }
+    /* #slot-edit-glyph-rarity : */
+    this.getGlyphRarity = function() {
+        return this.el.glyphRarity.val();
     };
-    /**
-     * Getter/Setter for #slot-edit-glyph-level (min attribute)
-     */
-    this.glyphLevelMin = function() {
-        if (arguments.length == 1) {
-            this.el.glyphLevel.attr('min', arguments[0]).change();
-        } else {
-            return this.el.glyphLevel.attr('min');
-        }
-    };
-    /**
-     * Getter/Setter for #slot-edit-glyph-level (max attribute)
-     */
-    this.glyphLevelMax = function() {
-        if (arguments.length == 1) {
-            this.el.glyphLevel.attr('max', arguments[0]).change();
-        } else {
-            return this.el.glyphLevel.attr('max');
-        }
+    this.setGlyphRarity = function(arg) {
+        this.el.glyphRarity.val(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-glyph-stat-rating
-     */
-    this.glyphStatRating = function() {
-        if (arguments.length == 1) {
-            this.el.glyphStatRating.text(arguments[0]).change();
-        } else {
-            return this.el.glyphStatRating.text();
-        }
+    /* #slot-edit-glyph-quality : */
+    this.getGlyphQuality = function() {
+        return this.el.glyphQuality.val();
+    };
+    this.setGlyphQuality = function(arg) {
+        this.el.glyphQuality.val(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-glyph-stat-text
-     */
-    this.glyphStatText = function() {
-        if (arguments.length == 1) {
-            this.el.glyphStatText.text(arguments[0]).change();
-        } else {
-            return this.el.glyphStatText.text();
-        }
+    /* #slot-edit-glyph-level : */
+    this.getGlyphLevel = function() {
+        return this.el.glyphLevel.val();
+    };
+    this.setGlyphLevel = function(arg) {
+        this.el.glyphLevel.val(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-glyph-iLvl
-     */
-    this.glyphILvl = function() {
-        if (arguments.length == 1) {
-            this.el.glyphILvl.text(arguments[0]).change();
-        } else {
-            return this.el.glyphILvl.text();
-        }
+    /* #slot-edit-glyph-level (min attribute) : */
+    this.getGlyphLevelMin = function() {
+        return this.el.glyphLevel.attr('min');
+    };
+    this.setGlyphLevelMin = function(arg) {
+        this.el.glyphLevel.attr('min', arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-glyph-img-item
-     */
-    this.glyphImgItem = function() {
-        if (arguments.length == 1) {
-            this.el.glyphImgItem.attr('src', arguments[0]).change();
-        } else {
-            return this.el.glyphImgItem.attr('src');
-        }
+    /* #slot-edit-glyph-level (max attribute) : */
+    this.getGlyphLevelMax = function() {
+        return this.el.glyphLevel.attr('max');
+    };
+    this.setGlyphLevelMax = function(arg) {
+        this.el.glyphLevel.attr('max', arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-glyph-img-rarity
-     */
-    this.glyphImgRarity = function() {
-        if (arguments.length == 1) {
-            this.el.glyphImgRarity.attr('src', arguments[0]).change();
-        } else {
-            return this.el.glyphImgRarity.attr('src');
-        }
+    /* #slot-edit-glyph-stat-rating : */
+    this.getGlyphStatRating = function() {
+        return this.el.glyphStatRating.text();
+    };
+    this.setGlyphStatRating = function(arg) {
+        this.el.glyphStatRating.text(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-glyph-img-quality
-     */
-    this.glyphImgQuality = function() {
-        if (arguments.length == 1) {
-            this.el.glyphImgQuality.attr('src', arguments[0]).change();
-        } else {
-            return this.el.glyphImgQuality.attr('src');
-        }
+    /* #slot-edit-glyph-stat-text : */
+    this.getGlyphStatText = function() {
+        return this.el.glyphStatText.text();
+    };
+    this.setGlyphStatText = function() {
+        this.el.glyphStatText.text(arguments[0]).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-glyph-label-level
-     */
-    this.glyphLabelLevel = function() {
-        if (arguments.length == 1) {
-            this.el.glyphLabelLevel.text(arguments[0]).change();
-        } else {
-            return this.el.glyphLabelLevel.text();
-        }
+    /* #slot-edit-glyph-iLvl : */
+    this.getGlyphILvl = function() {
+        return this.el.glyphILvl.text();
+    };
+    this.setGlyphILvl = function(arg) {
+        this.el.glyphILvl.text(arg).change();
     };
 
-    /**********************************************************************************
-     * Signet functions |
-     *                  V
-     **********************************************************************************/
-
-    /**
-     * Getter/Setter for #slot-edit-signet
-     */
-    this.signetId = function() {
-        if (arguments.length == 1) {
-            this.el.signetId.val(arguments[0]).change();
-        } else {
-            return this.el.signetId.val();
-        }
+    /* #slot-edit-glyph-img-item : */
+    this.getGlyphImgItem = function() {
+        return this.el.glyphImgItem.attr('src');
+    };
+    this.setGlyphImgItem = function(arg) {
+        this.el.glyphImgItem.attr('src', arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-signet-rarity
-     */
-    this.signetRarity = function() {
-        if (arguments.length == 1) {
-            this.el.signetRarity.val(arguments[0]).change();
-        } else {
-            return this.el.signetRarity.val();
-        }
+    /* #slot-edit-glyph-img-rarity : */
+    this.getGlyphImgRarity = function() {
+        return this.el.glyphImgRarity.attr('src');
+    };
+    this.setGlyphImgRarity = function(arg) {
+        this.el.glyphImgRarity.attr('src', arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-signet-level
-     */
-    this.signetLevel = function() {
-        if (arguments.length == 1) {
-            this.el.signetLevel.val(arguments[0]).change();
-        } else {
-            return this.el.signetLevel.val();
-        }
+    /* #slot-edit-glyph-img-quality : */
+    this.getGlyphImgQuality = function() {
+        return this.el.glyphImgQuality.attr('src');
     };
-    /**
-     * Getter/Setter for #slot-edit-signet-level (min attribute)
-     */
-    this.signetLevelMin = function() {
-        if (arguments.length == 1) {
-            this.el.signetLevel.attr('min', arguments[0]).change();
-        } else {
-            return this.el.signetLevel.attr('min');
-        }
-    };
-    /**
-     * Getter/Setter for #slot-edit-signet-level (max attribute)
-     */
-    this.signetLevelMax = function() {
-        if (arguments.length == 1) {
-            this.el.signetLevel.attr('max', arguments[0]).change();
-        } else {
-            return this.el.signetLevel.attr('max');
-        }
+    this.setGlyphImgQuality = function(arg) {
+        this.el.glyphImgQuality.attr('src', arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-signet-ilvl
-     */
-    this.signetILvl = function() {
-        if (arguments.length == 1) {
-            this.el.signetILvl.text(arguments[0]).change();
-        } else {
-            return this.el.signetILvl.text();
-        }
+    /* #slot-edit-glyph-label-level : */
+    this.getGlyphLabelLevel = function() {
+        return this.el.glyphLabelLevel.text();
+    };
+    this.setGlyphLabelLevel = function(arg) {
+        this.el.glyphLabelLevel.text(arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-signet-description
-     */
-    this.signetDescription = function() {
-        if (arguments.length == 1) {
-            this.el.signetDescription.html(arguments[0]).change();
-        } else {
-            return this.el.signetDescription.html();
-        }
+    /* SIGNET : ------------------------------------------------------------- */
+
+    /* #slot-edit-signet : */
+    this.getSignetId = function() {
+        return this.el.signetId.val();
+    };
+    this.setSignetId = function(arg) {
+        this.el.signetId.val(arg).change();
     };
 
-    /**
-     * Getter/Setter for any #slot-edit-signet-bonusN object
-     * => not accessible through like this.el.signetBonus1 because this element doesn't exist at application start
-     */
-    this.signetBonusN = function(index) {
-        if (arguments.length == 2) {
-            $('#' + this.id + '-edit-signet-bonus' + index).text(arguments[1]).change();
-        } else {
-            return $('#' + this.id + '-edit-signet-bonus' + index).text();
-        }
+    /* #slot-edit-signet-rarity : */
+    this.getSignetRarity = function() {
+        return this.el.signetRarity.val();
+    };
+    this.setSignetRarity = function(arg) {
+        this.el.signetRarity.val(arg).change();
     };
 
-    /**
-     * Getter for #slot-edit-signet-bonus-wrapper
-     * => not accessible through like this.el.signetBonusWrapper because this element doesn't exist at application start
-     */
-    this.signetBonusWrapper = function() {
+    /* #slot-edit-signet-level : */
+    this.getSignetLevel = function() {
+        return this.el.signetLevel.val();
+    };
+    this.setSignetLevel = function(arg) {
+        this.el.signetLevel.val(arg).change();
+    };
+
+    /* #slot-edit-signet-level (min attribute) : */
+    this.getSignetLevelMin = function() {
+        return this.el.signetLevel.attr('min');
+    };
+    this.setSignetLevelMin = function(arg) {
+        this.el.signetLevel.attr('min', arg).change();
+    };
+
+    /* #slot-edit-signet-level (max attribute) : */
+    this.getSignetLevelMax = function() {
+        return this.el.signetLevel.attr('max');
+    };
+    this.setSignetLevelMax = function(arg) {
+        this.el.signetLevel.attr('max', arg).change();
+    };
+
+    /* #slot-edit-signet-ilvl : */
+    this.getSignetILvl = function() {
+        return this.el.signetILvl.text();
+    };
+    this.setSignetILvl = function(arg) {
+        this.el.signetILvl.text(arg).change();
+    };
+
+    /* #slot-edit-signet-description : */
+    this.getSignetDescription = function() {
+        return this.el.signetDescription.html();
+    };
+    this.setSignetDescription = function() {
+        this.el.signetDescription.html(arguments[0]).change();
+    };
+
+    /* #slot-edit-signet-bonusN object :
+     * (not accessible through like this.el.signetBonus1 because this element doesn't exist at application start) */
+    this.getSignetBonusN = function(index) {
+        return $('#' + this.id + '-edit-signet-bonus' + index).text();
+    };
+    this.setSignetBonusN = function(index, value) {
+        $('#' + this.id + '-edit-signet-bonus' + index).text(value).change();
+    };
+
+    /* #slot-edit-signet-bonus-wrapper :
+     * (not accessible through like this.el.signetBonusWrapper because this element doesn't exist at application start) */
+    this.getSignetBonusWrapper = function() {
         return $('#' + this.id + '-edit-signet-bonus-wrapper');
     };
 
-    /**
-     * Getter/Setter for #slot-edit-signet-img-item
-     */
-    this.signetImgItem = function() {
-        if (arguments.length == 1) {
-            this.el.signetImgItem.attr('src', arguments[0]).change();
-        } else {
-            return this.el.signetImgItem.attr('src');
-        }
+    /* #slot-edit-signet-img-item : */
+    this.getSignetImgItem = function() {
+        return this.el.signetImgItem.attr('src');
+    };
+    this.setSignetImgItem = function(arg) {
+        this.el.signetImgItem.attr('src', arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-signet-img-rarity
-     */
-    this.signetImgRarity = function() {
-        if (arguments.length == 1) {
-            this.el.signetImgRarity.attr('src', arguments[0]).change();
-        } else {
-            return this.el.signetImgRarity.attr('src');
-        }
+    /* #slot-edit-signet-img-rarity : */
+    this.getSignetImgRarity = function() {
+        return this.el.signetImgRarity.attr('src');
+    };
+    this.setSignetImgRarity = function(arg) {
+        this.el.signetImgRarity.attr('src', arg).change();
     };
 
-    /**
-     * Getter/Setter for #slot-edit-signet-label-level
-     */
-    this.signetLabelLevel = function() {
-        if (arguments.length == 1) {
-            this.el.signetLabelLevel.text(arguments[0]).change();
-        } else {
-            return this.el.signetLabelLevel.text();
-        }
+    /* #slot-edit-signet-label-level : */
+    this.getSignetLabelLevel = function() {
+        return this.el.signetLabelLevel.text();
+    };
+    this.setSignetLabelLevel = function(arg) {
+        this.el.signetLabelLevel.text(arg).change();
     };
 };

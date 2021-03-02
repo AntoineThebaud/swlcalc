@@ -31,10 +31,10 @@ QUnit.test("should set rarity on all slots", function(assert) {
         $("#btn-all-" + mixedRarities[r]).click();
         for (var slotId in swlcalc.gear.slots){
             var slot = swlcalc.gear.slots[slotId];
-            assert.equal(slot.edit.equipmentRarity(), mixedRarities[r]);
-            assert.equal(slot.edit.glyphRarity(), mixedRarities[r]);
+            assert.equal(slot.edit.getEquipmentRarity(), mixedRarities[r]);
+            assert.equal(slot.edit.getGlyphRarity(), mixedRarities[r]);
             if (slot.id != "weapon" && slot.id != "weapon2") {
-                assert.equal(slot.edit.signetRarity(), mixedRarities[r]);
+                assert.equal(slot.edit.getSignetRarity(), mixedRarities[r]);
             }
         }
     }
@@ -47,8 +47,8 @@ QUnit.test("should set quality on all slots", function(assert) {
         $("#btn-all-" + mixedQualities[r] + "-pip").click();
         for (var slotId in swlcalc.gear.slots){
             var slot = swlcalc.gear.slots[slotId];
-            assert.equal(slot.edit.equipmentQuality(), mixedQualities[r]);
-            assert.equal(slot.edit.glyphQuality(), mixedQualities[r]);
+            assert.equal(slot.edit.getEquipmentQuality(), mixedQualities[r]);
+            assert.equal(slot.edit.getGlyphQuality(), mixedQualities[r]);
         }
     }
 });
@@ -58,10 +58,10 @@ QUnit.test("should set min level on all slots", function(assert) {
 
       for (var slotId in swlcalc.gear.slots){
           var slot = swlcalc.gear.slots[slotId];
-          assert.equal(slot.edit.equipmentLevel(), "1");
-          assert.equal(slot.edit.glyphLevel(), "1");
+          assert.equal(slot.edit.getEquipmentLevel(), "1");
+          assert.equal(slot.edit.getGlyphLevel(), "1");
           if (slot.id != "weapon" && slot.id != "weapon2") {
-              assert.equal(slot.edit.signetLevel(), "1");
+              assert.equal(slot.edit.getSignetLevel(), "1");
           }
       }
       for (var index in swlcalc.gear.agents) {
@@ -77,10 +77,10 @@ QUnit.test("should set max level on all slots", function(assert) {
 
       for (var slotId in swlcalc.gear.slots){
           var slot = swlcalc.gear.slots[slotId];
-          assert.equal(slot.edit.equipmentLevel(), "35");
-          assert.equal(slot.edit.glyphLevel(), "20");
+          assert.equal(slot.edit.getEquipmentLevel(), "35");
+          assert.equal(slot.edit.getGlyphLevel(), "20");
           if (slot.id != "weapon" && slot.id != "weapon2") {
-              assert.equal(slot.edit.signetLevel(), "20");
+              assert.equal(slot.edit.getSignetLevel(), "20");
           }
       }
       for (var index in swlcalc.gear.agents) {
@@ -98,9 +98,9 @@ QUnit.test("should reset all slots", function(assert) {
 
     for (var slotId in swlcalc.gear.slots) {
         var slot = swlcalc.gear.slots[slotId];
-        assert.equal(slot.edit.equipmentId(), "none");
-        assert.equal(slot.edit.glyphId(), "none");
-        assert.equal(slot.edit.signetId(), "none");
+        assert.equal(slot.edit.getEquipmentId(), "none");
+        assert.equal(slot.edit.getGlyphId(), "none");
+        assert.equal(slot.edit.getSignetId(), "none");
     }
     for (var index in swlcalc.gear.agents) {
         var agent = swlcalc.gear.agents[index];

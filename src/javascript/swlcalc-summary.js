@@ -61,14 +61,14 @@ swlcalc.summary = function() {
         // collect amount brought by gear slots
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            sumOfIlvl += parseInt(slot.edit.iLvl());
-            if (slot.isWeapon() && !slot.active || slot.edit.equipmentId() == 'none') {
+            sumOfIlvl += parseInt(slot.edit.getILvl());
+            if (slot.isWeapon() && !slot.active || slot.edit.getEquipmentId() == 'none') {
                 continue;
             } else if (slot.isWeapon()) {
-                totals['weapon-power'] = parseInt(slot.edit.equipmentStatPowerValue());
+                totals['weapon-power'] = parseInt(slot.edit.getEquipmentStatPowerValue());
             } else if (!slot.isWeapon()) {
-                totals['power-rating'] += parseInt(slot.edit.equipmentStatPowerValue());
-                totals['protection']   += parseInt(slot.edit.equipmentStatProtValue());
+                totals['power-rating'] += parseInt(slot.edit.getEquipmentStatPowerValue());
+                totals['protection']   += parseInt(slot.edit.getEquipmentStatProtValue());
             }
         }
 
@@ -159,7 +159,7 @@ swlcalc.summary = function() {
             if(slot.isWeapon() && !slot.active) {
                 continue;
             }
-            totals[slot.edit.glyphId()] += parseInt(slot.edit.glyphStatRating());
+            totals[slot.edit.getGlyphId()] += parseInt(slot.edit.getGlyphStatRating());
         }
 
         // sum bonuses brought by agents

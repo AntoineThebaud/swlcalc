@@ -37,17 +37,17 @@ swlcalc.import = function() {
         var slotObj = swlcalc.gear.slots[slotId];
         var rMap = swlcalc.data.rarityMapping.toName;
 
-        slotObj.edit.equipmentRarity(rMap[values[0]]);
-        slotObj.edit.equipmentId(values[1] == '0' ? 'none' : values[1]);
-        slotObj.edit.equipmentQuality(values[2]);
-        slotObj.edit.equipmentLevel(values[3]);
-        slotObj.edit.glyphRarity(rMap[values[4]]);
-        slotObj.edit.glyphId(swlcalc.data.secondaryStatMapping.toStat[values[5]]);
-        slotObj.edit.glyphQuality(values[6]);
-        slotObj.edit.glyphLevel(values[7]);
-        slotObj.edit.signetRarity(rMap[values[8]]);
-        slotObj.edit.signetId((values[9] != '0' ? values[9] : 'none'));
-        slotObj.edit.signetLevel(values[10]);
+        slotObj.edit.setEquipmentRarity(rMap[values[0]]);
+        slotObj.edit.setEquipmentId(values[1] == '0' ? 'none' : values[1]);
+        slotObj.edit.setEquipmentQuality(values[2]);
+        slotObj.edit.setEquipmentLevel(values[3]);
+        slotObj.edit.setGlyphRarity(rMap[values[4]]);
+        slotObj.edit.setGlyphId(swlcalc.data.secondaryStatMapping.toStat[values[5]]);
+        slotObj.edit.setGlyphQuality(values[6]);
+        slotObj.edit.setGlyphLevel(values[7]);
+        slotObj.edit.setSignetRarity(rMap[values[8]]);
+        slotObj.edit.setSignetId((values[9] != '0' ? values[9] : 'none'));
+        slotObj.edit.setSignetLevel(values[10]);
     };
 
     /**

@@ -70,6 +70,7 @@ swlcalc.animaAllocation = function() {
     /**************************************************************************
      * Accessors :
      * ---------------------------------------------------------------------- */
+     
     /* Damage : */
     var getDamagePercentage = function() {
         return el.rangeDamage.val();
@@ -102,7 +103,7 @@ swlcalc.animaAllocation = function() {
     var getSurvivabilityRatio = function() {
         return getSurvivabilityPercentage() / 100;
     }
-    
+
     /**************************************************************************/
 
     var oPublic = {

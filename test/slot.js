@@ -31,30 +31,30 @@ QUnit.test("should make slot inactive", function(assert) {
 
 //TODO/BUGGY testing equipment images is not working (maybe because of the image.onload stuff ?). Disabled for now
 QUnit.test("should update elements related to equipment's item/id accordingly", function(assert) {
-    // assert.equal(swlcalc.gear.slots.head.edit.equipmentImgItem(), "assets/images/icons/talisman/head/Ashes.png");
+    // assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgItem(), "assets/images/icons/talisman/head/Ashes.png");
     // assert.equal(swlcalc.gear.slots.head.recap.equipmentImgItem(), "assets/images/icons/talisman/head/Ashes.png");
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentDescription(), "");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentDescription(), "");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentDescription(), "");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentItem(), "Ashes");
 
     swlcalc.gear.slots.head.edit.el.equipmentId.val("12");
     swlcalc.gear.slots.head.updateEquipment();
 
-    // assert.equal(swlcalc.gear.slots.head.edit.equipmentImgItem(), 'assets/images/icons/talisman/head/Cosmic Pigment.png');
+    // assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgItem(), 'assets/images/icons/talisman/head/Cosmic Pigment.png');
     // assert.equal(swlcalc.gear.slots.head.recap.equipmentImgItem(), 'assets/images/icons/talisman/head/Cosmic Pigment.png');
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentDescription(), "Whenever you are hit <span class=\"bonus-val const\">5</span> times in succession, you deal <span id=\"head-edit-equipment-bonus1\" class=\"bonus-val dps\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentDescription(), "Whenever you are hit <span class=\"bonus-val const\">5</span> times in succession, you deal <span id=\"head-edit-equipment-bonus1\" class=\"bonus-val dps\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentDescription(), "Whenever you are hit <span class=\"bonus-val const\">5</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentItem(), "Cosmic Pigment");
 });
 
 QUnit.test("should update elements related to equipment's rarity accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.head.recap.el.equipmentTitle.attr('class'), 'color-epic');
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentImgRarity(), "assets/images/icons/rarity/head/epic-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgRarity(), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentImgRarity(), "assets/images/icons/rarity/head/epic-42x42.png");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentRarity(), "Epic");
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentLevel(), "30");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevel(), "30");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentLevel(), "30");
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentLabelLevel(), "30");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLabelLevel(), "30");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentLabelLevel(), "30");
     assert.equal(swlcalc.gear.slots.head.edit.el.equipmentLabelLevel.attr('class'), 'label-level big border-epic');
     assert.equal(swlcalc.gear.slots.head.recap.el.equipmentLabelLevel.attr('class'), 'label-level big border-epic');
@@ -63,32 +63,32 @@ QUnit.test("should update elements related to equipment's rarity accordingly", f
     swlcalc.gear.slots.head.updateEquipmentRarity();
 
     assert.equal(swlcalc.gear.slots.head.recap.el.equipmentTitle.attr('class'), 'color-legendary');
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentImgRarity(), "assets/images/icons/rarity/head/legendary-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgRarity(), "assets/images/icons/rarity/head/legendary-42x42.png");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentImgRarity(), "assets/images/icons/rarity/head/legendary-42x42.png");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentRarity(), "Legendary");
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentLevel(), "30");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevel(), "30");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentLevel(), "30");
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentLabelLevel(), "30");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLabelLevel(), "30");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentLabelLevel(), "30");
     assert.equal(swlcalc.gear.slots.head.edit.el.equipmentLabelLevel.attr('class'), 'label-level big border-legendary');
     assert.equal(swlcalc.gear.slots.head.recap.el.equipmentLabelLevel.attr('class'), 'label-level big border-legendary');
 });
 
 QUnit.test("should update elements related to equipment's quality accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentImgQuality(), "assets/images/icons/quality/1.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgQuality(), "assets/images/icons/quality/1.png");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentImgQuality(), "assets/images/icons/quality/1.png");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentQuality(), "Faded");
 
     swlcalc.gear.slots.head.edit.el.equipmentQuality.val("4");
     swlcalc.gear.slots.head.updateEquipmentQuality();
 
-    assert.equal(swlcalc.gear.slots.head.edit.equipmentImgQuality(), "assets/images/icons/quality/4.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgQuality(), "assets/images/icons/quality/4.png");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentImgQuality(), "assets/images/icons/quality/4.png");
     assert.equal(swlcalc.gear.slots.head.recap.equipmentQuality(), "Resplendent");
 });
 
 QUnit.test("should update elements related to equipment's quality accordingly (particular case of weapons) ", function(assert) {
-    assert.equal(swlcalc.gear.slots.weapon2.edit.equipmentQuality(), "3");
+    assert.equal(swlcalc.gear.slots.weapon2.edit.getEquipmentQuality(), "3");
     assert.equal(swlcalc.gear.slots.weapon2.recap.affixQuality(), "Mk III");
     assert.equal(swlcalc.gear.slots.weapon2.recap.el.signetTitle.attr('class'), 'color-epic');
 
@@ -101,25 +101,25 @@ QUnit.test("should update elements related to equipment's quality accordingly (p
 
 QUnit.test("should update elements related to equipment's level accordingly", function(assert) {
   assert.equal(swlcalc.gear.slots.occult.recap.equipmentLevel(), "1");
-  assert.equal(swlcalc.gear.slots.occult.edit.equipmentLabelLevel(), "1");
+  assert.equal(swlcalc.gear.slots.occult.edit.getEquipmentLabelLevel(), "1");
   assert.equal(swlcalc.gear.slots.occult.recap.equipmentLabelLevel(), "1");
 
   swlcalc.gear.slots.occult.edit.el.equipmentLevel.val("19");
   swlcalc.gear.slots.occult.updateEquipmentLevel();
 
   assert.equal(swlcalc.gear.slots.occult.recap.equipmentLevel(), "19");
-  assert.equal(swlcalc.gear.slots.occult.edit.equipmentLabelLevel(), "19");
+  assert.equal(swlcalc.gear.slots.occult.edit.getEquipmentLabelLevel(), "19");
   assert.equal(swlcalc.gear.slots.occult.recap.equipmentLabelLevel(), "19");
 });
 
 QUnit.test("should update elements related to equipment's stat rating accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.finger.edit.equipmentStatPowerValue(), "642");
+    assert.equal(swlcalc.gear.slots.finger.edit.getEquipmentStatPowerValue(), "642");
     assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatPowerValue(), "642");
 
     swlcalc.gear.slots.finger.edit.el.equipmentRarity.val("legendary");
     swlcalc.gear.slots.finger.updateEquipmentStatRating();
 
-    assert.equal(swlcalc.gear.slots.finger.edit.equipmentStatPowerValue(), "1405");
+    assert.equal(swlcalc.gear.slots.finger.edit.getEquipmentStatPowerValue(), "1405");
     assert.equal(swlcalc.gear.slots.finger.recap.equipmentStatPowerValue(), "1405");
 });
 
@@ -140,95 +140,95 @@ QUnit.test("should update elements related to equipment's \"transformed\" stat v
 });
 
 QUnit.test("should update elements related to equipment's ilvl accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.wrist.edit.equipmentILvl(), "121");
+    assert.equal(swlcalc.gear.slots.wrist.edit.getEquipmentILvl(), "121");
 
     swlcalc.gear.slots.wrist.edit.el.equipmentRarity.val("standard");
     swlcalc.gear.slots.wrist.updateEquipmentILvl();
-    assert.equal(swlcalc.gear.slots.wrist.edit.equipmentILvl(), "2");
+    assert.equal(swlcalc.gear.slots.wrist.edit.getEquipmentILvl(), "2");
 
     swlcalc.gear.slots.wrist.edit.el.equipmentLevel.val("5");
     swlcalc.gear.slots.wrist.updateEquipmentILvl()
-    assert.equal(swlcalc.gear.slots.wrist.edit.equipmentILvl(), "9");
+    assert.equal(swlcalc.gear.slots.wrist.edit.getEquipmentILvl(), "9");
 
     swlcalc.gear.slots.wrist.edit.el.equipmentId.val("none");
     swlcalc.gear.slots.wrist.updateEquipmentILvl()
-    assert.equal(swlcalc.gear.slots.wrist.edit.equipmentILvl(), "0");
+    assert.equal(swlcalc.gear.slots.wrist.edit.getEquipmentILvl(), "0");
 });
 
 QUnit.test("should update every bonus values present in equipment's description (both edit & recap) accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class=\"bonus-val const\">10%</span>. In addition, once you have lost <span class=\"bonus-val const\">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">275</span> magical damage or your next healing Blood Magic ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">66</span> health.");
+    assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentDescription(), "Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class=\"bonus-val const\">10%</span>. In addition, once you have lost <span class=\"bonus-val const\">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">275</span> magical damage or your next healing Blood Magic ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">66</span> health.");
 
     $("#stat-combat-power").html("9999");
     $("#stat-healing-power").html("2222");
     swlcalc.gear.slots.waist.updateEquipmentBonuses();
 
-    assert.equal(swlcalc.gear.slots.waist.edit.equipmentDescription(), "Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class=\"bonus-val const\">10%</span>. In addition, once you have lost <span class=\"bonus-val const\">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">4250</span> magical damage or your next healing Blood Magic ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">944</span> health.");
+    assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentDescription(), "Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class=\"bonus-val const\">10%</span>. In addition, once you have lost <span class=\"bonus-val const\">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">4250</span> magical damage or your next healing Blood Magic ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">944</span> health.");
 });
 
 QUnit.test("should update elements related to glyph's item/id accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.occult.edit.glyphStatText(), "Evade Rating");
+    assert.equal(swlcalc.gear.slots.occult.edit.getGlyphStatText(), "Evade Rating");
     assert.equal(swlcalc.gear.slots.occult.recap.glyphStatText(), "Evade Rating");
-    assert.equal(swlcalc.gear.slots.occult.edit.glyphImgItem(), "assets/images/icons/glyph/evade-rating.png");
+    assert.equal(swlcalc.gear.slots.occult.edit.getGlyphImgItem(), "assets/images/icons/glyph/evade-rating.png");
     assert.equal(swlcalc.gear.slots.occult.recap.glyphItem(), "Elusive");
 
     swlcalc.gear.slots.occult.edit.el.glyphId.val("critical-rating");
     swlcalc.gear.slots.occult.updateGlyph();
 
-    assert.equal(swlcalc.gear.slots.occult.edit.glyphStatText(), "Critical Rating");
+    assert.equal(swlcalc.gear.slots.occult.edit.getGlyphStatText(), "Critical Rating");
     assert.equal(swlcalc.gear.slots.occult.recap.glyphStatText(), "Critical Rating");
-    assert.equal(swlcalc.gear.slots.occult.edit.glyphImgItem(), "assets/images/icons/glyph/critical-rating.png");
+    assert.equal(swlcalc.gear.slots.occult.edit.getGlyphImgItem(), "assets/images/icons/glyph/critical-rating.png");
     assert.equal(swlcalc.gear.slots.occult.recap.glyphItem(), "Fierce");
 });
 
 QUnit.test("should update elements related to glyph's rarity accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.edit.glyphImgRarity(), "assets/images/icons/rarity/epic-42x42.png");
+    assert.equal(swlcalc.gear.slots.luck.edit.getGlyphImgRarity(), "assets/images/icons/rarity/epic-42x42.png");
     assert.equal(swlcalc.gear.slots.luck.recap.el.glyphTitle.attr('class'), "color-epic");
     assert.equal(swlcalc.gear.slots.luck.edit.el.glyphLabelLevel.attr('class'), "label-level little border-epic");
     assert.equal(swlcalc.gear.slots.luck.recap.glyphRarity(), "Epic");
-    assert.equal(swlcalc.gear.slots.luck.edit.glyphImgRarity(), "assets/images/icons/rarity/epic-42x42.png");
+    assert.equal(swlcalc.gear.slots.luck.edit.getGlyphImgRarity(), "assets/images/icons/rarity/epic-42x42.png");
     assert.equal(swlcalc.gear.slots.luck.edit.el.glyphQuality.prop('options').length, 4);
 
     swlcalc.gear.slots.luck.edit.el.glyphRarity.val("superior");
     swlcalc.gear.slots.luck.updateGlyphRarity();
 
-    assert.equal(swlcalc.gear.slots.luck.edit.glyphImgRarity(), "assets/images/icons/rarity/superior-42x42.png");
+    assert.equal(swlcalc.gear.slots.luck.edit.getGlyphImgRarity(), "assets/images/icons/rarity/superior-42x42.png");
     assert.equal(swlcalc.gear.slots.luck.recap.el.glyphTitle.attr('class'), "color-superior");
     assert.equal(swlcalc.gear.slots.luck.edit.el.glyphLabelLevel.attr('class'), "label-level little border-superior");
     assert.equal(swlcalc.gear.slots.luck.recap.glyphRarity(), "Superior");
-    assert.equal(swlcalc.gear.slots.luck.edit.glyphImgRarity(), "assets/images/icons/rarity/superior-42x42.png");
+    assert.equal(swlcalc.gear.slots.luck.edit.getGlyphImgRarity(), "assets/images/icons/rarity/superior-42x42.png");
     assert.equal(swlcalc.gear.slots.luck.edit.el.glyphQuality.prop('options').length, 3);
 });
 
 QUnit.test("should update elements related to glyph's quality accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.luck.recap.glyphQuality(), "Simple");
-    assert.equal(swlcalc.gear.slots.luck.edit.glyphImgQuality(), "assets/images/icons/quality/2.png");
+    assert.equal(swlcalc.gear.slots.luck.edit.getGlyphImgQuality(), "assets/images/icons/quality/2.png");
 
     swlcalc.gear.slots.luck.edit.el.glyphQuality.val("4");
     swlcalc.gear.slots.luck.updateGlyphQuality();
 
     assert.equal(swlcalc.gear.slots.luck.recap.glyphQuality(), "Elaborate");
-    assert.equal(swlcalc.gear.slots.luck.edit.glyphImgQuality(), "assets/images/icons/quality/4.png");
+    assert.equal(swlcalc.gear.slots.luck.edit.getGlyphImgQuality(), "assets/images/icons/quality/4.png");
 });
 
 QUnit.test("should update elements related to glyph's level accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.neck.edit.glyphLabelLevel(), "20");
+    assert.equal(swlcalc.gear.slots.neck.edit.getGlyphLabelLevel(), "20");
     assert.equal(swlcalc.gear.slots.neck.recap.glyphLevel(), "20");
 
     swlcalc.gear.slots.neck.edit.el.glyphLevel.val("2");
     swlcalc.gear.slots.neck.updateGlyphLevel();
 
-    assert.equal(swlcalc.gear.slots.neck.edit.glyphLabelLevel(), "2");
+    assert.equal(swlcalc.gear.slots.neck.edit.getGlyphLabelLevel(), "2");
     assert.equal(swlcalc.gear.slots.neck.recap.glyphLevel(), "2");
 });
 
 QUnit.test("should update elements related to glyph's stat rating accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.glyphStatRating(), 488);
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), 488);
     assert.deepEqual(swlcalc.gear.slots.head.edit.el.glyphStatRating.html(), "+488");
     assert.equal(swlcalc.gear.slots.head.recap.glyphStatRating(), "+488");
 
     swlcalc.gear.slots.head.edit.el.glyphId.val("critical-power");
     swlcalc.gear.slots.head.updateGlyphRating();
-    assert.equal(swlcalc.gear.slots.head.edit.glyphStatRating(), 475);
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), 475);
     assert.deepEqual(swlcalc.gear.slots.head.edit.el.glyphStatRating.html(), "+475");
     assert.equal(swlcalc.gear.slots.head.recap.glyphStatRating(), "+475");
 
@@ -246,32 +246,32 @@ QUnit.test("should update elements related to glyph's stat rating accordingly", 
 });
 
 QUnit.test("should update elements related to glyph's ilvl accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.weapon2.edit.glyphILvl(), "28");
+    assert.equal(swlcalc.gear.slots.weapon2.edit.getGlyphILvl(), "28");
 
     swlcalc.gear.slots.weapon2.edit.el.glyphRarity.val("mythic");
     swlcalc.gear.slots.weapon2.updateGlyphILvl();
-    assert.equal(swlcalc.gear.slots.weapon2.edit.glyphILvl(), "173");
+    assert.equal(swlcalc.gear.slots.weapon2.edit.getGlyphILvl(), "173");
 
     swlcalc.gear.slots.weapon2.edit.el.glyphLevel.val("8");
     swlcalc.gear.slots.weapon2.updateGlyphILvl();
-    assert.equal(swlcalc.gear.slots.weapon2.edit.glyphILvl(), "193");
+    assert.equal(swlcalc.gear.slots.weapon2.edit.getGlyphILvl(), "193");
 
     swlcalc.gear.slots.weapon2.edit.el.glyphId.val("none");
     swlcalc.gear.slots.weapon2.updateGlyphILvl();
-    assert.equal(swlcalc.gear.slots.weapon2.edit.glyphILvl(), "0");
+    assert.equal(swlcalc.gear.slots.weapon2.edit.getGlyphILvl(), "0");
 });
 
 QUnit.test("should update elements related to signet's item/id accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.signetImgItem(), 'assets/images/icons/signet/head.png');
-    assert.equal(swlcalc.gear.slots.head.edit.signetDescription(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"bonus-val const\">7.0286</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetImgItem(), 'assets/images/icons/signet/head.png');
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"bonus-val const\">7.0286</span><span class=\"bonus-val const\">%</span>.");
     assert.equal(swlcalc.gear.slots.head.recap.signetDescription(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-recap-signet-bonus1\" class=\"bonus-val const\">7.0286</span><span class=\"bonus-val const\">%</span>.");
     assert.equal(swlcalc.gear.slots.head.recap.signetItem(), "Signet of the Ascendant");
 
     swlcalc.gear.slots.head.edit.el.signetId.val("none");
     swlcalc.gear.slots.head.updateSignet();
 
-    assert.equal(swlcalc.gear.slots.head.edit.signetImgItem(), 'assets/images/icons/signet/none.png');
-    assert.equal(swlcalc.gear.slots.head.edit.signetDescription(), "");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetImgItem(), 'assets/images/icons/signet/none.png');
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "");
     assert.equal(swlcalc.gear.slots.head.recap.signetDescription(), "");
     assert.equal(swlcalc.gear.slots.head.recap.signetItem(), "");
 });
@@ -286,7 +286,7 @@ QUnit.test("should update elements related to signet's item/id accordingly (part
 });
 
 QUnit.test("should update elements related to signet's rarity accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.waist.edit.signetImgRarity(), "assets/images/icons/rarity/superior-42x42.png");
+    assert.equal(swlcalc.gear.slots.waist.edit.getSignetImgRarity(), "assets/images/icons/rarity/superior-42x42.png");
     assert.equal(swlcalc.gear.slots.waist.recap.el.signetTitle.attr('class'), "color-superior");
     assert.equal(swlcalc.gear.slots.waist.edit.el.signetLabelLevel.attr('class'), "label-level little border-superior");
     assert.equal(swlcalc.gear.slots.waist.recap.signetRarity(), "Superior");
@@ -294,53 +294,53 @@ QUnit.test("should update elements related to signet's rarity accordingly", func
     swlcalc.gear.slots.waist.edit.el.signetRarity.val("mythic");
     swlcalc.gear.slots.waist.updateSignetRarity();
 
-    assert.equal(swlcalc.gear.slots.waist.edit.signetImgRarity(), "assets/images/icons/rarity/mythic-42x42.png");
+    assert.equal(swlcalc.gear.slots.waist.edit.getSignetImgRarity(), "assets/images/icons/rarity/mythic-42x42.png");
     assert.equal(swlcalc.gear.slots.waist.recap.el.signetTitle.attr('class'), "color-mythic");
     assert.equal(swlcalc.gear.slots.waist.edit.el.signetLabelLevel.attr('class'), "label-level little border-mythic");
     assert.equal(swlcalc.gear.slots.waist.recap.signetRarity(), "Mythic");
 });
 
 QUnit.test("should update elements related to signet's level accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.wrist.edit.signetLabelLevel(), "14");
+    assert.equal(swlcalc.gear.slots.wrist.edit.getSignetLabelLevel(), "14");
     assert.equal(swlcalc.gear.slots.wrist.recap.signetLevel(), "14");
 
     swlcalc.gear.slots.wrist.edit.el.signetLevel.val("5");
     swlcalc.gear.slots.wrist.updateSignetLevel();
 
-    assert.equal(swlcalc.gear.slots.wrist.edit.signetLabelLevel(), "5");
+    assert.equal(swlcalc.gear.slots.wrist.edit.getSignetLabelLevel(), "5");
     assert.equal(swlcalc.gear.slots.wrist.recap.signetLevel(), "5");
 });
 
 QUnit.test("should update elements related to signet's bonus accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "61");
+    assert.equal(swlcalc.gear.slots.luck.edit.getSignetBonusN(1), "61");
 
     $("#stat-combat-power").html("9999");
     swlcalc.gear.slots.luck.updateSignetBonus();
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "941");
+    assert.equal(swlcalc.gear.slots.luck.edit.getSignetBonusN(1), "941");
 
     swlcalc.gear.slots.luck.edit.el.signetRarity.val("mythic");
     swlcalc.gear.slots.luck.updateSignetBonus();
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "1633");
+    assert.equal(swlcalc.gear.slots.luck.edit.getSignetBonusN(1), "1633");
 
     swlcalc.gear.slots.luck.edit.el.signetLevel.val("18");
     swlcalc.gear.slots.luck.updateSignetBonus();
-    assert.equal(swlcalc.gear.slots.luck.edit.signetBonusN(1), "2006");
+    assert.equal(swlcalc.gear.slots.luck.edit.getSignetBonusN(1), "2006");
 });
 
 QUnit.test("should update elements related to signet's ilvl accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.finger.edit.signetILvl(), "5");
+    assert.equal(swlcalc.gear.slots.finger.edit.getSignetILvl(), "5");
 
     swlcalc.gear.slots.finger.edit.el.signetRarity.val("mythic");
     swlcalc.gear.slots.finger.updateSignetILvl();
-    assert.equal(swlcalc.gear.slots.finger.edit.signetILvl(), "100");
+    assert.equal(swlcalc.gear.slots.finger.edit.getSignetILvl(), "100");
 
     swlcalc.gear.slots.finger.edit.el.signetLevel.val("8");
     swlcalc.gear.slots.finger.updateSignetILvl();
-    assert.equal(swlcalc.gear.slots.finger.edit.signetILvl(), "98");
+    assert.equal(swlcalc.gear.slots.finger.edit.getSignetILvl(), "98");
 
     swlcalc.gear.slots.finger.edit.el.signetId.val("none");
     swlcalc.gear.slots.finger.updateSignetILvl();
-    assert.equal(swlcalc.gear.slots.finger.edit.signetILvl(), "0");
+    assert.equal(swlcalc.gear.slots.finger.edit.getSignetILvl(), "0");
 });
 
 QUnit.test("should reset slot state", function(assert) {
@@ -356,44 +356,44 @@ QUnit.test("should reset slot state", function(assert) {
         assert.equal(slot.recap.el.signetEmpty.is(":visible"), true);
         assert.equal(slot.recap.el.signetSection.is(":hidden"), true);
 
-        assert.equal(slot.edit.iLvl(), "0");
-        assert.equal(slot.edit.equipmentId(), "none");
-        assert.equal(slot.edit.equipmentRarity(), "standard");
-        assert.equal(slot.edit.equipmentQuality(), "1");
-        assert.equal(slot.edit.equipmentStatPowerValue(), "0");
-        assert.equal(slot.edit.equipmentLevel(), "1");
+        assert.equal(slot.edit.getILvl(), "0");
+        assert.equal(slot.edit.getEquipmentId(), "none");
+        assert.equal(slot.edit.getEquipmentRarity(), "standard");
+        assert.equal(slot.edit.getEquipmentQuality(), "1");
+        assert.equal(slot.edit.getEquipmentStatPowerValue(), "0");
+        assert.equal(slot.edit.getEquipmentLevel(), "1");
         assert.equal(slot.recap.el.equipmentStatSection.is(":hidden"), true);
-        assert.equal(slot.edit.equipmentImgItem(), "assets/images/icons/equipment/" + slot.kind + "/None.png");
+        assert.equal(slot.edit.getEquipmentImgItem(), "assets/images/icons/equipment/" + slot.kind + "/None.png");
         if (slot.isWeapon()) {
-            assert.equal(slot.edit.equipmentImgRarity(), "assets/images/icons/rarity/standard-42x42.png");
+            assert.equal(slot.edit.getEquipmentImgRarity(), "assets/images/icons/rarity/standard-42x42.png");
         } else {
-            assert.equal(slot.edit.equipmentImgRarity(), "assets/images/icons/rarity/" + slot.id + "/standard-42x42.png");
+            assert.equal(slot.edit.getEquipmentImgRarity(), "assets/images/icons/rarity/" + slot.id + "/standard-42x42.png");
         }
-        assert.equal(slot.edit.equipmentImgQuality(), "assets/images/icons/quality/1.png");
-        assert.equal(slot.edit.equipmentLabelLevel(), "1");
-        assert.equal(slot.edit.equipmentDescription(), "");
-        assert.equal(slot.edit.equipmentILvl(), "0");
-        assert.equal(slot.edit.glyphId(), "none");
-        assert.equal(slot.edit.glyphRarity(), "standard");
-        assert.equal(slot.edit.glyphQuality(), "1");
-        assert.equal(slot.edit.glyphLevel(), "1");
-        assert.equal(slot.edit.glyphStatRating(), "0");
-        assert.equal(slot.edit.glyphStatText(), "");
-        assert.equal(slot.edit.glyphImgItem(), "assets/images/icons/glyph/none.png");
-        assert.equal(slot.edit.glyphImgRarity(), "assets/images/icons/rarity/standard-42x42.png");
-        assert.equal(slot.edit.glyphImgQuality(), "assets/images/icons/quality/1.png");
-        assert.equal(slot.edit.glyphILvl(), "0");
-        assert.equal(slot.edit.signetId(), "none");
+        assert.equal(slot.edit.getEquipmentImgQuality(), "assets/images/icons/quality/1.png");
+        assert.equal(slot.edit.getEquipmentLabelLevel(), "1");
+        assert.equal(slot.edit.getEquipmentDescription(), "");
+        assert.equal(slot.edit.getEquipmentILvl(), "0");
+        assert.equal(slot.edit.getGlyphId(), "none");
+        assert.equal(slot.edit.getGlyphRarity(), "standard");
+        assert.equal(slot.edit.getGlyphQuality(), "1");
+        assert.equal(slot.edit.getGlyphLevel(), "1");
+        assert.equal(slot.edit.getGlyphStatRating(), "0");
+        assert.equal(slot.edit.getGlyphStatText(), "");
+        assert.equal(slot.edit.getGlyphImgItem(), "assets/images/icons/glyph/none.png");
+        assert.equal(slot.edit.getGlyphImgRarity(), "assets/images/icons/rarity/standard-42x42.png");
+        assert.equal(slot.edit.getGlyphImgQuality(), "assets/images/icons/quality/1.png");
+        assert.equal(slot.edit.getGlyphILvl(), "0");
+        assert.equal(slot.edit.getSignetId(), "none");
         if (!slot.isWeapon()) {
-            assert.equal(slot.edit.signetRarity(), "standard");
-            assert.equal(slot.edit.signetLevel(), "1");
-            assert.equal(slot.edit.signetImgItem(), "assets/images/icons/signet/none.png");
-            assert.equal(slot.edit.signetImgRarity(), "assets/images/icons/rarity/standard-42x42.png");
+            assert.equal(slot.edit.getSignetRarity(), "standard");
+            assert.equal(slot.edit.getSignetLevel(), "1");
+            assert.equal(slot.edit.getSignetImgItem(), "assets/images/icons/signet/none.png");
+            assert.equal(slot.edit.getSignetImgRarity(), "assets/images/icons/rarity/standard-42x42.png");
         }
-        assert.equal(slot.edit.signetDescription(), "");
+        assert.equal(slot.edit.getSignetDescription(), "");
         if (!slot.isWeapon()) {
-            assert.equal(slot.edit.signetLabelLevel(), "1");
-            assert.equal(slot.edit.signetILvl(), "0");
+            assert.equal(slot.edit.getSignetLabelLevel(), "1");
+            assert.equal(slot.edit.getSignetILvl(), "0");
         }
     }
 });
