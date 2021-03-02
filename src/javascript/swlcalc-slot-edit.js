@@ -47,7 +47,7 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
 
     /* GLOBAL : ------------------------------------------------------------- */
 
-    /* #slot-ilvl : */
+    /* #slot-edit-ilvl : */
     this.getILvl = function() {
         return this.el.iLvl.text();
     };
@@ -352,8 +352,8 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
 
     /* #slot-edit-signet-bonus-wrapper :
      * (not accessible through like this.el.signetBonusWrapper because this element doesn't exist at application start) */
-    this.getSignetBonusWrapper = function() {
-        return $('#' + this.id + '-edit-signet-bonus-wrapper');
+    this.setSignetBonusWrapper = function(newClass) {
+        $('#' + this.id + '-edit-signet-bonus-wrapper').attr('class', newClass);
     };
 
     /* #slot-edit-signet-img-item : */

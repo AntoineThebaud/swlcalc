@@ -58,7 +58,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newILvl = Math.round(this.rawILvl + this.rawGlyphILvl + this.rawSignetILvl);
 
         this.edit.setILvl(newILvl);
-        this.recap.iLvl(newILvl);
+        this.recap.setILvl(newILvl);
     };
 
     /**********************************************************************************
@@ -79,7 +79,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             newName = 'Empty';
             newImage = 'assets/images/icons/equipment/' + this.kind + '/None.png';
             this.edit.setEquipmentImgItem(newImage);
-            this.recap.equipmentImgItem(newImage);
+            this.recap.setEquipmentImgItem(newImage);
         } else {
             var newEquipmentData = swlcalc.data.equipments.slot[this.kind][this.edit.getEquipmentId() - 1];
 
@@ -87,7 +87,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             image.onload = function() {
                 newImage = 'assets/images/icons/equipment/' + self.kind + '/' + newEquipmentData.name + '.png';
                 self.edit.setEquipmentImgItem(newImage);
-                self.recap.equipmentImgItem(newImage);
+                self.recap.setEquipmentImgItem(newImage);
             }
             image.onerror = function() {
                 if (self.isWeapon()) {
@@ -96,21 +96,19 @@ swlcalc.gear.Slot = function Slot(slotData) {
                     newImage = 'assets/images/icons/equipment/' + self.kind + '/' + swlcalc.data.equipments.slot[self.id][0].name + '.png';
                 }
                 self.edit.setEquipmentImgItem(newImage);
-                self.recap.equipmentImgItem(newImage);
+                self.recap.setEquipmentImgItem(newImage);
             }
             image.src = 'assets/images/icons/equipment/' + this.kind + '/' + newEquipmentData.name + '.png';
 
             newDescription = newEquipmentData.description;
             newName = newEquipmentData.name;
         }
-        //To enable when all images will be present :
-        // this.edit.getEquipmentImgItem(newImage);
-        // this.recap.equipmentImgItem(newImage);
+
         // add "-edit" suffix here to avoid id collision //TODO/REFACTOR better way to do this ?
         this.edit.setEquipmentDescription(newDescription.replace(/%id/g, this.id + '-edit'));
         // add "-recap" suffix here to avoid id collision //TODO/REFACTOR better way to do this ?
-        this.recap.equipmentDescription(newDescription.replace(/%id/g, this.id + '-recap'));
-        this.recap.equipmentItem(newName);
+        this.recap.setEquipmentDescription(newDescription.replace(/%id/g, this.id + '-recap'));
+        this.recap.setEquipmentItem(newName);
     };
 
     /**
@@ -127,10 +125,10 @@ swlcalc.gear.Slot = function Slot(slotData) {
             imgPath = 'assets/images/icons/rarity/' + this.id + '/' + newRarity + '-42x42.png';
         }
         this.edit.setEquipmentImgRarity(imgPath);
-        this.recap.equipmentImgRarity(imgPath);
+        this.recap.setEquipmentImgRarity(imgPath);
         this.edit.el.equipmentLabelLevel.attr('class', 'label-level big border-' + newRarity);
         this.recap.el.equipmentLabelLevel.attr('class', 'label-level big border-' + newRarity);
-        this.recap.equipmentRarity(swlcalc.util.capitalize(newRarity));
+        this.recap.setEquipmentRarity(swlcalc.util.capitalize(newRarity));
 
         // refresh the list of available qualities after a change on rarity
         this.handle4pipQuality();
@@ -167,12 +165,12 @@ swlcalc.gear.Slot = function Slot(slotData) {
 
         var imgPath = 'assets/images/icons/quality/' + newQuality + '.png';
         this.edit.setEquipmentImgQuality(imgPath);
-        this.recap.equipmentImgQuality(imgPath);
+        this.recap.setEquipmentImgQuality(imgPath);
 
         var qualityName = swlcalc.data.qualityMapping[this.group].toName[newQuality];
-        this.recap.equipmentQuality(qualityName);
+        this.recap.setEquipmentQuality(qualityName);
         if (this.isWeapon()) {
-            this.recap.affixQuality(qualityName);
+            this.recap.setAffixQuality(qualityName);
             // little hack here : use quality's index in rarity mapping to display the right color
             this.recap.el.signetTitle.attr('class', 'color-' + swlcalc.data.rarityMapping.toName[newQuality]);
         }
@@ -185,8 +183,8 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newLevel = this.edit.getEquipmentLevel();
 
         this.edit.setEquipmentLabelLevel(newLevel);
-        this.recap.equipmentLevel(newLevel);
-        this.recap.equipmentLabelLevel(newLevel);
+        this.recap.setEquipmentLevel(newLevel);
+        this.recap.setEquipmentLabelLevel(newLevel);
     }
 
     /**
@@ -208,7 +206,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         }
 
         this.edit.setEquipmentStatPowerValue(newValue);
-        this.recap.equipmentStatPowerValue(newValue);
+        this.recap.setEquipmentStatPowerValue(newValue);
 
         if (!this.isWeapon()) {
             this.updateTalismanStatValues();
@@ -222,9 +220,9 @@ swlcalc.gear.Slot = function Slot(slotData) {
      */
     this.updateTalismanStatValues = function() {
         var valuePowerRaw = this.edit.getEquipmentStatPowerValue();
-        this.recap.equipmentStatHPValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hpConversionCoef * swlcalc.animaAllocation.getSurvivabilityRatio()));
-        this.recap.equipmentStatARValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.arConversionCoef * swlcalc.animaAllocation.getDamageRatio()));
-        this.recap.equipmentStatHRValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hrConversionCoef * swlcalc.animaAllocation.getHealingRatio()));
+        this.recap.setEquipmentStatHPValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hpConversionCoef * swlcalc.animaAllocation.getSurvivabilityRatio()));
+        this.recap.setEquipmentStatARValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.arConversionCoef * swlcalc.animaAllocation.getDamageRatio()));
+        this.recap.setEquipmentStatHRValue('+' + Math.round(valuePowerRaw * swlcalc.data.stats.hrConversionCoef * swlcalc.animaAllocation.getHealingRatio()));
 
         var newProtValue = 0;
         if (this.edit.getEquipmentId() != 'none') {
@@ -232,7 +230,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             newProtValue = '+' + Math.round(valueProtRaw + valueProtRaw * swlcalc.data.stats.protSurvivabilityIncreaseCoef * swlcalc.animaAllocation.getSurvivabilityRatio());
         }
         this.edit.setEquipmentStatProtValue(newProtValue);
-        this.recap.equipmentStatProtValue(newProtValue);
+        this.recap.setEquipmentStatProtValue(newProtValue);
     }
 
     /**
@@ -270,7 +268,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             }
             var newBonusVal = Math.round(equipmentData.coefficients[i] * statForComputation)
             this.edit.setEquipmentBonusN(i + 1, newBonusVal);
-            this.recap.equipmentBonusN(i + 1, newBonusVal);
+            this.recap.setEquipmentBonusN(i + 1, newBonusVal);
         }
     }
 
@@ -286,15 +284,15 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newId = this.edit.getGlyphId();
 
         this.edit.setGlyphStatText(swlcalc.data.statMapping.toPretty[newId]);
-        this.recap.glyphStatText(swlcalc.data.statMapping.toPretty[newId]);
+        this.recap.setGlyphStatText(swlcalc.data.statMapping.toPretty[newId]);
 
         var imgPath = 'assets/images/icons/glyph/' + newId + '.png';
         this.edit.setGlyphImgItem(imgPath);
 
         if (newId == 'none') {
-            this.recap.glyphItem('');
+            this.recap.setGlyphItem('');
         } else {
-            this.recap.glyphItem(swlcalc.data.secondaryStatMapping.toName[newId]);
+            this.recap.setGlyphItem(swlcalc.data.secondaryStatMapping.toName[newId]);
         }
     };
 
@@ -307,7 +305,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.edit.setGlyphImgRarity('assets/images/icons/rarity/' + newRarity + '-42x42.png');
         this.recap.el.glyphTitle.attr('class', 'color-' + newRarity);
         this.edit.el.glyphLabelLevel.attr('class', 'label-level little border-' + newRarity);
-        this.recap.glyphRarity(swlcalc.util.capitalize(newRarity));
+        this.recap.setGlyphRarity(swlcalc.util.capitalize(newRarity));
 
         // refresh the list of available qualities after a change on rarity
         this.handleElaborate();
@@ -337,7 +335,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var imgPath = 'assets/images/icons/quality/' + newQuality + '.png';
         this.edit.setGlyphImgQuality(imgPath);
 
-        this.recap.glyphQuality(swlcalc.data.qualityMapping['glyph'].toName[newQuality]);
+        this.recap.setGlyphQuality(swlcalc.data.qualityMapping['glyph'].toName[newQuality]);
     }
 
     /**
@@ -347,7 +345,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newLevel = this.edit.getGlyphLevel();
 
         this.edit.setGlyphLabelLevel(newLevel);
-        this.recap.glyphLevel(newLevel);
+        this.recap.setGlyphLevel(newLevel);
     }
 
     /**
@@ -373,7 +371,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
             }
         }
         this.edit.setGlyphStatRating(newValue);
-        this.recap.glyphStatRating(newValue);
+        this.recap.setGlyphStatRating(newValue);
     };
 
     /**
@@ -416,10 +414,10 @@ swlcalc.gear.Slot = function Slot(slotData) {
         // add "-edit" suffix here to avoid id collision with slot-recap //TODO/REFACTOR better way to do this ?
         this.edit.setSignetDescription(newDescription.replace(/%id/g, this.id + '-edit'));
         // add "-recap" suffix here to avoid id collision with slot-edit //TODO/REFACTOR better way to do this ?
-        this.recap.signetDescription(newDescription.replace(/%id/g, this.id + '-recap'));
+        this.recap.setSignetDescription(newDescription.replace(/%id/g, this.id + '-recap'));
 
-        this.recap.signetItem(newSignet.name);
-        if (this.isWeapon()) this.recap.affix(newSignet.name);
+        this.recap.setSignetItem(newSignet.name);
+        if (this.isWeapon()) this.recap.setAffix(newSignet.name);
     };
 
 
@@ -432,7 +430,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.edit.setSignetImgRarity('assets/images/icons/rarity/' + newRarity + '-42x42.png');
         this.recap.el.signetTitle.attr('class', 'color-' + newRarity);
         this.edit.el.signetLabelLevel.attr('class', 'label-level little border-' + newRarity);
-        this.recap.signetRarity(swlcalc.util.capitalize(newRarity));
+        this.recap.setSignetRarity(swlcalc.util.capitalize(newRarity));
     };
 
     /**
@@ -442,7 +440,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var newLevel = this.edit.getSignetLevel();
 
         this.edit.setSignetLabelLevel(newLevel);
-        this.recap.signetLevel(newLevel);
+        this.recap.setSignetLevel(newLevel);
     };
 
     /**
@@ -467,21 +465,21 @@ swlcalc.gear.Slot = function Slot(slotData) {
             for (i = 0; i < signetData.length; i++) {
                 var newBonusVal = swlcalc.util.precisionRound(signetData[i] * coef, signet.decimals[i]);
                 this.edit.setSignetBonusN(i + 1, newBonusVal);
-                this.recap.signetBonusN(i + 1, newBonusVal);
+                this.recap.setSignetBonusN(i + 1, newBonusVal);
             }
 
             // update affix bonus's color (will do nothing if signet-wrapper doesnt exist)
             // not part of the above loop because, for the moment, there can be only one value at a time for which this coloring applies
             var newClass = 'bonus-val color-' + swlcalc.data.rarityMapping.toName[this.edit.getEquipmentQuality()];
-            this.edit.getSignetBonusWrapper().attr('class', newClass);
-            this.recap.signetBonusWrapper().attr('class', newClass);
+            this.edit.setSignetBonusWrapper(newClass);
+            this.recap.setSignetBonusWrapper(newClass);
         } else {
             var signetData = signet.ratio[this.edit.getSignetRarity()];
 
             for (i = 0; i < signetData.init.length; i++) {
                 var newBonusVal = swlcalc.util.precisionRound((signetData.init[i] + signetData.perLevel[i] * levelMultiplier) * coef, signet.decimals[i]);
                 this.edit.setSignetBonusN(i + 1, newBonusVal);
-                this.recap.signetBonusN(i + 1, newBonusVal);
+                this.recap.setSignetBonusN(i + 1, newBonusVal);
             }
         }
     };
