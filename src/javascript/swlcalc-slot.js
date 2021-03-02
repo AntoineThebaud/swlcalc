@@ -17,10 +17,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     this.rawGlyphILvl = 0.0;
     this.rawSignetILvl = 0.0;
 
-    /**********************************************************************************
-     * Slot functions | (related to the whole gear slot)
-     *                V
-     **********************************************************************************/
+    /* GLOBAL : ------------------------------------------------------------- */
 
      /**
       * Returns true if the slot belongs to the weapon group
@@ -61,10 +58,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.recap.setILvl(newILvl);
     };
 
-    /**********************************************************************************
-     * Equipment functions | (talismans + weapons)
-     *                     V
-     **********************************************************************************/
+    /* EQUIPMENT : ---------------------------------------------------------- */
 
     /**
      * Update elements related to equipment's item (update icon image, description etc)
@@ -272,10 +266,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         }
     }
 
-    /**********************************************************************************
-     * Glyph functions |
-     *                 V
-     **********************************************************************************/
+    /* GLYPH : -------------------------------------------------------------- */
 
     /**
      * Update elements related to glyph's item/id
@@ -392,10 +383,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.updateILvl();
     };
 
-    /**********************************************************************************
-     * Signet functions |
-     *                  V
-     **********************************************************************************/
+    /* SIGNET : ------------------------------------------------------------- */
 
     /**
      * Update elements related to signet's item/id
@@ -500,10 +488,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
         this.updateILvl();
     };
 
-    /**********************************************************************************
-     * Other functions |
-     *                 V
-     **********************************************************************************/
+    /* OTHER : -------------------------------------------------------------- */
 
     /**
      * Reset slot by setting default values for each select

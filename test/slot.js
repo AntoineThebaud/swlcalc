@@ -32,30 +32,30 @@ QUnit.test("should make slot inactive", function(assert) {
 //TODO/BUGGY testing equipment images is not working (maybe because of the image.onload stuff ?). Disabled for now
 QUnit.test("should update elements related to equipment's item/id accordingly", function(assert) {
     // assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgItem(), "assets/images/icons/talisman/head/Ashes.png");
-    // assert.equal(swlcalc.gear.slots.head.recap.getEquipmentImgItem(), "assets/images/icons/talisman/head/Ashes.png");
+    // assert.equal(swlcalc.gear.slots.head.recap.el.equipmentImgItem(), "assets/images/icons/talisman/head/Ashes.png");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentDescription(), "");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentDescription(), "");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentItem(), "Ashes");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentDescription.text(), "");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentItem.text(), "Ashes");
 
     swlcalc.gear.slots.head.edit.el.equipmentId.val("12");
     swlcalc.gear.slots.head.updateEquipment();
 
     // assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgItem(), 'assets/images/icons/talisman/head/Cosmic Pigment.png');
-    // assert.equal(swlcalc.gear.slots.head.recap.getEquipmentImgItem(), 'assets/images/icons/talisman/head/Cosmic Pigment.png');
+    // assert.equal(swlcalc.gear.slots.head.recap.el.equipmentImgItem(), 'assets/images/icons/talisman/head/Cosmic Pigment.png');
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentDescription(), "Whenever you are hit <span class=\"bonus-val const\">5</span> times in succession, you deal <span id=\"head-edit-equipment-bonus1\" class=\"bonus-val dps\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentDescription(), "Whenever you are hit <span class=\"bonus-val const\">5</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentItem(), "Cosmic Pigment");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentDescription.html(), "Whenever you are hit <span class=\"bonus-val const\">5</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentItem.text(), "Cosmic Pigment");
 });
 
 QUnit.test("should update elements related to equipment's rarity accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.head.recap.el.equipmentTitle.attr('class'), 'color-epic');
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgRarity(), "assets/images/icons/rarity/head/epic-42x42.png");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentImgRarity(), "assets/images/icons/rarity/head/epic-42x42.png");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentRarity(), "Epic");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentImgRarity.attr('src'), "assets/images/icons/rarity/head/epic-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentRarity.text(), "Epic");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevel(), "30");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentLevel(), "30");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentLevel.text(), "30");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLabelLevel(), "30");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentLabelLevel(), "30");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentLabelLevel.text(), "30");
     assert.equal(swlcalc.gear.slots.head.edit.el.equipmentLabelLevel.attr('class'), 'label-level big border-epic');
     assert.equal(swlcalc.gear.slots.head.recap.el.equipmentLabelLevel.attr('class'), 'label-level big border-epic');
 
@@ -64,69 +64,69 @@ QUnit.test("should update elements related to equipment's rarity accordingly", f
 
     assert.equal(swlcalc.gear.slots.head.recap.el.equipmentTitle.attr('class'), 'color-legendary');
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgRarity(), "assets/images/icons/rarity/head/legendary-42x42.png");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentImgRarity(), "assets/images/icons/rarity/head/legendary-42x42.png");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentRarity(), "Legendary");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentImgRarity.attr('src'), "assets/images/icons/rarity/head/legendary-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentRarity.text(), "Legendary");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevel(), "30");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentLevel(), "30");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentLevel.text(), "30");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLabelLevel(), "30");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentLabelLevel(), "30");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentLabelLevel.text(), "30");
     assert.equal(swlcalc.gear.slots.head.edit.el.equipmentLabelLevel.attr('class'), 'label-level big border-legendary');
     assert.equal(swlcalc.gear.slots.head.recap.el.equipmentLabelLevel.attr('class'), 'label-level big border-legendary');
 });
 
 QUnit.test("should update elements related to equipment's quality accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgQuality(), "assets/images/icons/quality/1.png");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentImgQuality(), "assets/images/icons/quality/1.png");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentQuality(), "Faded");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentImgQuality.attr('src'), "assets/images/icons/quality/1.png");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentQuality.text(), "Faded");
 
     swlcalc.gear.slots.head.edit.el.equipmentQuality.val("4");
     swlcalc.gear.slots.head.updateEquipmentQuality();
 
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgQuality(), "assets/images/icons/quality/4.png");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentImgQuality(), "assets/images/icons/quality/4.png");
-    assert.equal(swlcalc.gear.slots.head.recap.getEquipmentQuality(), "Resplendent");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentImgQuality.attr('src'), "assets/images/icons/quality/4.png");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentQuality.text(), "Resplendent");
 });
 
 QUnit.test("should update elements related to equipment's quality accordingly (particular case of weapons) ", function(assert) {
     assert.equal(swlcalc.gear.slots.weapon2.edit.getEquipmentQuality(), "3");
-    assert.equal(swlcalc.gear.slots.weapon2.recap.getAffixQuality(), "Mk III");
+    assert.equal(swlcalc.gear.slots.weapon2.recap.el.affixQuality.text(), "Mk III");
     assert.equal(swlcalc.gear.slots.weapon2.recap.el.signetTitle.attr('class'), 'color-epic');
 
     swlcalc.gear.slots.weapon2.edit.el.equipmentQuality.val("1");
     swlcalc.gear.slots.weapon2.updateEquipmentQuality();
 
-    assert.equal(swlcalc.gear.slots.weapon2.recap.getAffixQuality(), "Mk I");
+    assert.equal(swlcalc.gear.slots.weapon2.recap.el.affixQuality.text(), "Mk I");
     assert.equal(swlcalc.gear.slots.weapon2.recap.el.signetTitle.attr('class'), 'color-standard');
 });
 
 QUnit.test("should update elements related to equipment's level accordingly", function(assert) {
-  assert.equal(swlcalc.gear.slots.occult.recap.getEquipmentLevel(), "1");
+  assert.equal(swlcalc.gear.slots.occult.recap.el.equipmentLevel.text(), "1");
   assert.equal(swlcalc.gear.slots.occult.edit.getEquipmentLabelLevel(), "1");
-  assert.equal(swlcalc.gear.slots.occult.recap.getEquipmentLabelLevel(), "1");
+  assert.equal(swlcalc.gear.slots.occult.recap.el.equipmentLabelLevel.text(), "1");
 
   swlcalc.gear.slots.occult.edit.el.equipmentLevel.val("19");
   swlcalc.gear.slots.occult.updateEquipmentLevel();
 
-  assert.equal(swlcalc.gear.slots.occult.recap.getEquipmentLevel(), "19");
+  assert.equal(swlcalc.gear.slots.occult.recap.el.equipmentLevel.text(), "19");
   assert.equal(swlcalc.gear.slots.occult.edit.getEquipmentLabelLevel(), "19");
-  assert.equal(swlcalc.gear.slots.occult.recap.getEquipmentLabelLevel(), "19");
+  assert.equal(swlcalc.gear.slots.occult.recap.el.equipmentLabelLevel.text(), "19");
 });
 
 QUnit.test("should update elements related to equipment's stat rating accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.finger.edit.getEquipmentStatPowerValue(), "642");
-    assert.equal(swlcalc.gear.slots.finger.recap.getEquipmentStatPowerValue(), "642");
+    assert.equal(swlcalc.gear.slots.finger.recap.el.equipmentStatPowerValue.text(), "642");
 
     swlcalc.gear.slots.finger.edit.el.equipmentRarity.val("legendary");
     swlcalc.gear.slots.finger.updateEquipmentStatRating();
 
     assert.equal(swlcalc.gear.slots.finger.edit.getEquipmentStatPowerValue(), "1405");
-    assert.equal(swlcalc.gear.slots.finger.recap.getEquipmentStatPowerValue(), "1405");
+    assert.equal(swlcalc.gear.slots.finger.recap.el.equipmentStatPowerValue.text(), "1405");
 });
 
 QUnit.test("should update elements related to equipment's \"transformed\" stat value accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.finger.recap.getEquipmentStatHPValue(), "+807");
-    assert.equal(swlcalc.gear.slots.finger.recap.getEquipmentStatARValue(), "+424");
-    assert.equal(swlcalc.gear.slots.finger.recap.getEquipmentStatHRValue(), "+283");
+    assert.equal(swlcalc.gear.slots.finger.recap.el.equipmentStatHPValue.text(), "+807");
+    assert.equal(swlcalc.gear.slots.finger.recap.el.equipmentStatARValue.text(), "+424");
+    assert.equal(swlcalc.gear.slots.finger.recap.el.equipmentStatHRValue.text(), "+283");
 
     swlcalc.gear.slots.finger.edit.el.equipmentStatPowerValue.text("9876");
     $('#anima-allocation-damage-range').val(100);
@@ -134,9 +134,9 @@ QUnit.test("should update elements related to equipment's \"transformed\" stat v
     $('#anima-allocation-survivability-range').val(100);
     swlcalc.gear.slots.finger.updateTalismanStatValues();
 
-    assert.equal(swlcalc.gear.slots.finger.recap.getEquipmentStatHPValue(), "+28209");
-    assert.equal(swlcalc.gear.slots.finger.recap.getEquipmentStatARValue(), "+9876");
-    assert.equal(swlcalc.gear.slots.finger.recap.getEquipmentStatHRValue(), "+0");
+    assert.equal(swlcalc.gear.slots.finger.recap.el.equipmentStatHPValue.text(), "+28209");
+    assert.equal(swlcalc.gear.slots.finger.recap.el.equipmentStatARValue.text(), "+9876");
+    assert.equal(swlcalc.gear.slots.finger.recap.el.equipmentStatHRValue.text(), "+0");
 });
 
 QUnit.test("should update elements related to equipment's ilvl accordingly", function(assert) {
@@ -167,24 +167,24 @@ QUnit.test("should update every bonus values present in equipment's description 
 
 QUnit.test("should update elements related to glyph's item/id accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.occult.edit.getGlyphStatText(), "Evade Rating");
-    assert.equal(swlcalc.gear.slots.occult.recap.getGlyphStatText(), "Evade Rating");
+    assert.equal(swlcalc.gear.slots.occult.recap.el.glyphStatText.text(), "Evade Rating");
     assert.equal(swlcalc.gear.slots.occult.edit.getGlyphImgItem(), "assets/images/icons/glyph/evade-rating.png");
-    assert.equal(swlcalc.gear.slots.occult.recap.getGlyphItem(), "Elusive");
+    assert.equal(swlcalc.gear.slots.occult.recap.el.glyphItem.text(), "Elusive");
 
     swlcalc.gear.slots.occult.edit.el.glyphId.val("critical-rating");
     swlcalc.gear.slots.occult.updateGlyph();
 
     assert.equal(swlcalc.gear.slots.occult.edit.getGlyphStatText(), "Critical Rating");
-    assert.equal(swlcalc.gear.slots.occult.recap.getGlyphStatText(), "Critical Rating");
+    assert.equal(swlcalc.gear.slots.occult.recap.el.glyphStatText.text(), "Critical Rating");
     assert.equal(swlcalc.gear.slots.occult.edit.getGlyphImgItem(), "assets/images/icons/glyph/critical-rating.png");
-    assert.equal(swlcalc.gear.slots.occult.recap.getGlyphItem(), "Fierce");
+    assert.equal(swlcalc.gear.slots.occult.recap.el.glyphItem.text(), "Fierce");
 });
 
 QUnit.test("should update elements related to glyph's rarity accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.luck.edit.getGlyphImgRarity(), "assets/images/icons/rarity/epic-42x42.png");
     assert.equal(swlcalc.gear.slots.luck.recap.el.glyphTitle.attr('class'), "color-epic");
     assert.equal(swlcalc.gear.slots.luck.edit.el.glyphLabelLevel.attr('class'), "label-level little border-epic");
-    assert.equal(swlcalc.gear.slots.luck.recap.getGlyphRarity(), "Epic");
+    assert.equal(swlcalc.gear.slots.luck.recap.el.glyphRarity.text(), "Epic");
     assert.equal(swlcalc.gear.slots.luck.edit.getGlyphImgRarity(), "assets/images/icons/rarity/epic-42x42.png");
     assert.equal(swlcalc.gear.slots.luck.edit.el.glyphQuality.prop('options').length, 4);
 
@@ -194,55 +194,55 @@ QUnit.test("should update elements related to glyph's rarity accordingly", funct
     assert.equal(swlcalc.gear.slots.luck.edit.getGlyphImgRarity(), "assets/images/icons/rarity/superior-42x42.png");
     assert.equal(swlcalc.gear.slots.luck.recap.el.glyphTitle.attr('class'), "color-superior");
     assert.equal(swlcalc.gear.slots.luck.edit.el.glyphLabelLevel.attr('class'), "label-level little border-superior");
-    assert.equal(swlcalc.gear.slots.luck.recap.getGlyphRarity(), "Superior");
+    assert.equal(swlcalc.gear.slots.luck.recap.el.glyphRarity.text(), "Superior");
     assert.equal(swlcalc.gear.slots.luck.edit.getGlyphImgRarity(), "assets/images/icons/rarity/superior-42x42.png");
     assert.equal(swlcalc.gear.slots.luck.edit.el.glyphQuality.prop('options').length, 3);
 });
 
 QUnit.test("should update elements related to glyph's quality accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.recap.getGlyphQuality(), "Simple");
+    assert.equal(swlcalc.gear.slots.luck.recap.el.glyphQuality.text(), "Simple");
     assert.equal(swlcalc.gear.slots.luck.edit.getGlyphImgQuality(), "assets/images/icons/quality/2.png");
 
     swlcalc.gear.slots.luck.edit.el.glyphQuality.val("4");
     swlcalc.gear.slots.luck.updateGlyphQuality();
 
-    assert.equal(swlcalc.gear.slots.luck.recap.getGlyphQuality(), "Elaborate");
+    assert.equal(swlcalc.gear.slots.luck.recap.el.glyphQuality.text(), "Elaborate");
     assert.equal(swlcalc.gear.slots.luck.edit.getGlyphImgQuality(), "assets/images/icons/quality/4.png");
 });
 
 QUnit.test("should update elements related to glyph's level accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.neck.edit.getGlyphLabelLevel(), "20");
-    assert.equal(swlcalc.gear.slots.neck.recap.getGlyphLevel(), "20");
+    assert.equal(swlcalc.gear.slots.neck.recap.el.glyphLevel.text(), "20");
 
     swlcalc.gear.slots.neck.edit.el.glyphLevel.val("2");
     swlcalc.gear.slots.neck.updateGlyphLevel();
 
     assert.equal(swlcalc.gear.slots.neck.edit.getGlyphLabelLevel(), "2");
-    assert.equal(swlcalc.gear.slots.neck.recap.getGlyphLevel(), "2");
+    assert.equal(swlcalc.gear.slots.neck.recap.el.glyphLevel.text(), "2");
 });
 
 QUnit.test("should update elements related to glyph's stat rating accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), 488);
     assert.deepEqual(swlcalc.gear.slots.head.edit.el.glyphStatRating.html(), "+488");
-    assert.equal(swlcalc.gear.slots.head.recap.getGlyphStatRating(), "+488");
+    assert.equal(swlcalc.gear.slots.head.recap.el.glyphStatRating.text(), "+488");
 
     swlcalc.gear.slots.head.edit.el.glyphId.val("critical-power");
     swlcalc.gear.slots.head.updateGlyphRating();
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), 475);
     assert.deepEqual(swlcalc.gear.slots.head.edit.el.glyphStatRating.html(), "+475");
-    assert.equal(swlcalc.gear.slots.head.recap.getGlyphStatRating(), "+475");
+    assert.equal(swlcalc.gear.slots.head.recap.el.glyphStatRating.text(), "+475");
 
     swlcalc.gear.slots.head.edit.el.glyphRarity.val("superior");
     swlcalc.gear.slots.head.updateGlyphRating();
-    assert.equal(swlcalc.gear.slots.head.recap.getGlyphStatRating(), "+103");
+    assert.equal(swlcalc.gear.slots.head.recap.el.glyphStatRating.text(), "+103");
 
     swlcalc.gear.slots.head.edit.el.glyphQuality.val("2");
     swlcalc.gear.slots.head.updateGlyphRating();
-    assert.equal(swlcalc.gear.slots.head.recap.getGlyphStatRating(), "+92");
+    assert.equal(swlcalc.gear.slots.head.recap.el.glyphStatRating.text(), "+92");
 
     swlcalc.gear.slots.head.edit.el.glyphLevel.val("20");
     swlcalc.gear.slots.head.updateGlyphRating();
-    assert.equal(swlcalc.gear.slots.head.recap.getGlyphStatRating(), "+202");
+    assert.equal(swlcalc.gear.slots.head.recap.el.glyphStatRating.text(), "+202");
 });
 
 QUnit.test("should update elements related to glyph's ilvl accordingly", function(assert) {
@@ -264,32 +264,32 @@ QUnit.test("should update elements related to glyph's ilvl accordingly", functio
 QUnit.test("should update elements related to signet's item/id accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.head.edit.getSignetImgItem(), 'assets/images/icons/signet/head.png');
     assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"bonus-val const\">7.0286</span><span class=\"bonus-val const\">%</span>.");
-    assert.equal(swlcalc.gear.slots.head.recap.getSignetDescription(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-recap-signet-bonus1\" class=\"bonus-val const\">7.0286</span><span class=\"bonus-val const\">%</span>.");
-    assert.equal(swlcalc.gear.slots.head.recap.getSignetItem(), "Signet of the Ascendant");
+    assert.equal(swlcalc.gear.slots.head.recap.el.signetDescription.html(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-recap-signet-bonus1\" class=\"bonus-val const\">7.0286</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.head.recap.el.signetItem.text(), "Signet of the Ascendant");
 
     swlcalc.gear.slots.head.edit.el.signetId.val("none");
     swlcalc.gear.slots.head.updateSignet();
 
     assert.equal(swlcalc.gear.slots.head.edit.getSignetImgItem(), 'assets/images/icons/signet/none.png');
     assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "");
-    assert.equal(swlcalc.gear.slots.head.recap.getSignetDescription(), "");
-    assert.equal(swlcalc.gear.slots.head.recap.getSignetItem(), "");
+    assert.equal(swlcalc.gear.slots.head.recap.el.signetDescription.text(), "");
+    assert.equal(swlcalc.gear.slots.head.recap.el.signetItem.text(), "");
 });
 
 QUnit.test("should update elements related to signet's item/id accordingly (particular case of weapons) ", function(assert) {
-    assert.equal(swlcalc.gear.slots.weapon.recap.getAffix(), 'of Restoration');
+    assert.equal(swlcalc.gear.slots.weapon.recap.el.affix.text(), 'of Restoration');
 
     swlcalc.gear.slots.weapon.edit.el.signetId.val("2");
     swlcalc.gear.slots.weapon.updateSignet();
 
-    assert.equal(swlcalc.gear.slots.weapon.recap.getAffix(), 'of Destruction');
+    assert.equal(swlcalc.gear.slots.weapon.recap.el.affix.text(), 'of Destruction');
 });
 
 QUnit.test("should update elements related to signet's rarity accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.waist.edit.getSignetImgRarity(), "assets/images/icons/rarity/superior-42x42.png");
     assert.equal(swlcalc.gear.slots.waist.recap.el.signetTitle.attr('class'), "color-superior");
     assert.equal(swlcalc.gear.slots.waist.edit.el.signetLabelLevel.attr('class'), "label-level little border-superior");
-    assert.equal(swlcalc.gear.slots.waist.recap.getSignetRarity(), "Superior");
+    assert.equal(swlcalc.gear.slots.waist.recap.el.signetRarity.text(), "Superior");
 
     swlcalc.gear.slots.waist.edit.el.signetRarity.val("mythic");
     swlcalc.gear.slots.waist.updateSignetRarity();
@@ -297,18 +297,18 @@ QUnit.test("should update elements related to signet's rarity accordingly", func
     assert.equal(swlcalc.gear.slots.waist.edit.getSignetImgRarity(), "assets/images/icons/rarity/mythic-42x42.png");
     assert.equal(swlcalc.gear.slots.waist.recap.el.signetTitle.attr('class'), "color-mythic");
     assert.equal(swlcalc.gear.slots.waist.edit.el.signetLabelLevel.attr('class'), "label-level little border-mythic");
-    assert.equal(swlcalc.gear.slots.waist.recap.getSignetRarity(), "Mythic");
+    assert.equal(swlcalc.gear.slots.waist.recap.el.signetRarity.text(), "Mythic");
 });
 
 QUnit.test("should update elements related to signet's level accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.wrist.edit.getSignetLabelLevel(), "14");
-    assert.equal(swlcalc.gear.slots.wrist.recap.getSignetLevel(), "14");
+    assert.equal(swlcalc.gear.slots.wrist.recap.el.signetLevel.text(), "14");
 
     swlcalc.gear.slots.wrist.edit.el.signetLevel.val("5");
     swlcalc.gear.slots.wrist.updateSignetLevel();
 
     assert.equal(swlcalc.gear.slots.wrist.edit.getSignetLabelLevel(), "5");
-    assert.equal(swlcalc.gear.slots.wrist.recap.getSignetLevel(), "5");
+    assert.equal(swlcalc.gear.slots.wrist.recap.el.signetLevel.text(), "5");
 });
 
 QUnit.test("should update elements related to signet's bonus accordingly", function(assert) {

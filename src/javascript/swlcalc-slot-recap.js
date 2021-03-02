@@ -66,9 +66,6 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     /* GLOBAL : ------------------------------------------------------------- */
 
     /* #slot-recap-ilvl : */
-    this.getILvl = function() {
-        return this.el.iLvl.text();
-    };
     this.setILvl = function(val) {
         this.el.iLvl.text(val);
     };
@@ -76,9 +73,6 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     /* EQUIPMENT : ---------------------------------------------------------- */
 
     /* #slot-recap-equipment-item : */
-    this.getEquipmentItem = function() {
-        return this.el.equipmentItem.text();
-    };
     this.setEquipmentItem = function(val) {
         this.el.equipmentItem.text(val);
         // recap : hide whole section if slot is empty
@@ -96,41 +90,26 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /* #slot-recap-equipment-rarity : */
-    this.getEquipmentRarity = function() {
-        return this.el.equipmentRarity.text();
-    };
     this.setEquipmentRarity = function(val) {
         this.el.equipmentRarity.text(val);
     };
 
     /* #slot-recap-equipment-quality : */
-    this.getEquipmentQuality = function() {
-        return this.el.equipmentQuality.text();
-    };
     this.setEquipmentQuality = function(val) {
         this.el.equipmentQuality.text(val);
     };
 
     /* #slot-recap-equipment-level : */
-    this.getEquipmentLevel = function() {
-        return this.el.equipmentLevel.text();
-    };
     this.setEquipmentLevel = function(val) {
         this.el.equipmentLevel.text(val);
     };
 
     /* #slot-recap-equipment-stat-power-value : */
-    this.getEquipmentStatPowerValue = function() {
-        return this.el.equipmentStatPowerValue.text();
-    };
     this.setEquipmentStatPowerValue = function(val) {
         this.el.equipmentStatPowerValue.text(val);
     };
 
     /* #slot-recap-equipment-stat-hp-value : */
-    this.getEquipmentStatHPValue = function() {
-        return this.el.equipmentStatHPValue.text();
-    };
     this.setEquipmentStatHPValue = function(val) {
         this.el.equipmentStatHPValue.text(val);
         if (val == 0) {
@@ -141,9 +120,6 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /* #slot-recap-equipment-stat-ar-value : */
-    this.getEquipmentStatARValue = function() {
-        return this.el.equipmentStatARValue.text();
-    };
     this.setEquipmentStatARValue = function(val) {
         this.el.equipmentStatARValue.text(val);
         if (val == 0) {
@@ -154,9 +130,6 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /* #slot-recap-equipment-stat-hr-value : */
-    this.getEquipmentStatHRValue = function() {
-        return this.el.equipmentStatHRValue.text();
-    };
     this.setEquipmentStatHRValue = function(val) {
         this.el.equipmentStatHRValue.text(val);
         if (val == 0) {
@@ -167,9 +140,6 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /* #slot-recap-equipment-stat-prot-value : */
-    this.getEquipmentStatProtValue = function() {
-        return this.el.equipmentStatProtValue.text();
-    };
     this.setEquipmentStatProtValue = function(val) {
         this.el.equipmentStatProtValue.text(val);
         if (val == 0) {
@@ -180,9 +150,6 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /* #slot-recap-equipment-description : */
-    this.getEquipmentDescription = function() {
-        return this.el.equipmentDescription.html();
-    };
     this.setEquipmentDescription = function(val) {
         this.el.equipmentDescription.html(val);
         if (val == '') {
@@ -193,17 +160,11 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /* #slot-recap-equipment-bonusN object : */
-    this.getEquipmentBonusN = function(index) {
-        return $('#' + this.id + '-recap-equipment-bonus' + index).html();
-    };
     this.setEquipmentBonusN = function(index, val) {
         $('#' + this.id + '-recap-equipment-bonus' + index).html(val);
     };
 
     /* #slot-recap-equipment-img-item : */
-    this.getEquipmentImgItem = function() {
-        return this.el.equipmentImgItem.attr('src');
-    };
     this.setEquipmentImgItem = function(val) {
         this.el.equipmentImgItem.attr('src', val);
         // recap : hide whole section if img is None
@@ -215,26 +176,17 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /* #slot-recap-equipment-img-rarity : */
-    this.getEquipmentImgRarity = function() {
-        return this.el.equipmentImgRarity.attr('src');
-    };
     this.setEquipmentImgRarity = function(val) {
         this.el.equipmentImgRarity.attr('src', val);
     };
 
     /* #slot-recap-equipment-img-quality : */
-    this.getEquipmentImgQuality = function() {
-        return this.el.equipmentImgQuality.attr('src');
-    };
     this.setEquipmentImgQuality = function(val) {
         this.el.equipmentImgQuality.attr('src', val);
     };
 
 
     /* #slot-recap-equipment-label-level : */
-    this.getEquipmentLabelLevel = function() {
-        return this.el.equipmentLabelLevel.text();
-    };
     this.setEquipmentLabelLevel = function(val) {
         this.el.equipmentLabelLevel.text(val);
     };
@@ -243,9 +195,6 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
 
 
     /* #slot-recap-glyph-item : */
-    this.getGlyphItem = function() {
-        return this.el.glyphItem.text();
-    };
     this.setGlyphItem = function(val) {
         this.el.glyphItem.text(val);
         // recap : hide whole section if glyph slot is empty
@@ -259,41 +208,26 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /* #slot-recap-glyph-rarity : */
-    this.getGlyphRarity = function() {
-        return this.el.glyphRarity.text();
-    };
     this.setGlyphRarity = function(val) {
         this.el.glyphRarity.text(val);
     };
 
     /* #slot-recap-glyph-quality : */
-    this.getGlyphQuality = function() {
-        return this.el.glyphQuality.text();
-    };
     this.setGlyphQuality = function(val) {
         this.el.glyphQuality.text(val);
     };
 
     /* #slot-recap-glyph-level : */
-    this.getGlyphLevel = function() {
-        return this.el.glyphLevel.text();
-    };
     this.setGlyphLevel = function(val) {
         this.el.glyphLevel.text(val);
     };
 
     /*  #slot-recap-glyph-stat-rating : */
-    this.getGlyphStatRating = function() {
-        return this.el.glyphStatRating.text();
-    };
     this.setGlyphStatRating = function(val) {
         this.el.glyphStatRating.text(val);
     };
 
     /* #slot-recap-glyph-stat-text : */
-    this.getGlyphStatText = function() {
-        return this.el.glyphStatText.text();
-    };
     this.setGlyphStatText = function(val) {
         this.el.glyphStatText.text(val);
     };
@@ -301,9 +235,6 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     /* SIGNET : ------------------------------------------------------------- */
 
     /* #slot-recap-signet-item : */
-    this.getSignetItem = function() {
-        return this.el.signetItem.text();
-    };
     this.setSignetItem = function(val) {
         this.el.signetItem.text(val);
         // recap : hide whole section if signet is empty
@@ -317,34 +248,22 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /* #slot-recap-signet-rarity : */
-    this.getSignetRarity = function() {
-        return this.el.signetRarity.text();
-    };
     this.setSignetRarity = function(val) {
         this.el.signetRarity.text(val);
     };
 
     /* #slot-recap-signet-level : */
-    this.getSignetLevel = function() {
-        return this.el.signetLevel.text();
-    };
     this.setSignetLevel = function(val) {
         this.el.signetLevel.text(val);
     };
 
     /* #slot-recap-signet-description : */
-    this.getSignetDescription = function() {
-        return this.el.signetDescription.html();
-    };
     this.setSignetDescription = function(val) {
         this.el.signetDescription.html(val);
     };
 
     /* #slot-recap-signet-bonusN objects
      * => not accessible through like this.el.signetBonus1 because this element doesn't exist at application start : */
-    this.getSignetBonusN = function(index) {
-        return $('#' + this.id + '-recap-signet-bonus' + index).text();
-    };
     this.setSignetBonusN = function(index, val) {
         $('#' + this.id + '-recap-signet-bonus' + index).text(val);
     };
@@ -356,9 +275,6 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /* #slot-recap-affix : */
-    this.getAffix = function() {
-        return this.el.affix.text();
-    };
     this.setAffix = function(val) {
         this.el.affix.text('of '+ val);
         if (val == '') {
@@ -369,9 +285,6 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     };
 
     /* #slot-recap-affix-quality : */
-    this.getAffixQuality = function() {
-        return this.el.affixQuality.text();
-    };
     this.setAffixQuality = function(val) {
         this.el.affixQuality.text(val);
     };

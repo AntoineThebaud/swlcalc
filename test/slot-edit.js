@@ -312,3 +312,5 @@ QUnit.test("should return undefined or empty for elements that don't exist for t
         }
     }
 });
+
+//TODO/TEST add test for setSignetBonusWrapper
