@@ -128,7 +128,7 @@ swlcalc.export = function() {
     var createPassivesUrl = function(agent, state) {
         // see swlcalc-import.js for the order
 
-        var animaAllocationUrl = 'passives='
+        var passivesUrl = 'passives='
             + swlcalc.passives.getAttackRatingBase() + ','
             + swlcalc.passives.getHealRatingBase() + ','
             + swlcalc.passives.getHitPointsBase() + ','
@@ -144,10 +144,12 @@ swlcalc.export = function() {
             + swlcalc.passives.getAttackRatingCapstones() + ','
             + swlcalc.passives.getHealRatingCapstones() + ','
             + swlcalc.passives.getHitPointsCapstones() + ','
-            + swlcalc.passives.getCriticalChanceExpertise() + ','
-            + swlcalc.passives.getCriticalPowerPercentageExpertise();
+            + swlcalc.passives.getCriticalChanceExpertiseWeapon1() + ','
+            + swlcalc.passives.getCriticalChanceExpertiseWeapon2() + ','
+            + swlcalc.passives.getCriticalPowerPercentageExpertiseWeapon1() + ','
+            + swlcalc.passives.getCriticalPowerPercentageExpertiseWeapon2();
 
-        return animaAllocationUrl;
+        return passivesUrl;
     };
 
     var oPublic = {

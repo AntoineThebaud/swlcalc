@@ -734,15 +734,21 @@ div[id="sidebar"] {
     line-height: 1.2;
 }
 
-
+div[id="passives-modal"] > .modal-dialog {
+    width: 900px;
+}
 div[id="passives"] .table-stats td {
     padding: 4px;
+    vertical-align: middle;
 }
 div[id="passives"] .darker {
     background-color: var(--color-bg-darker);
 }
 div[id="passives"] .table-stats td.stat-name {
-    width: 120px;
+    width: 130px;
+}
+div[id="passives"] .table-stats td.stat-value {
+    min-width: 43px;
 }
 div[id="passives"] .table-stats tr.separator {
     border-bottom: 1px solid var(--color-border);
@@ -760,6 +766,9 @@ div[id="passives"] > h4 > button {
 }
 div[id="passives"] > h4 > button > img {
     width: 20px;
+}
+div[id="passives"] .table-stats td.weapon-names {
+    width: 120px;
 }
 
 .modal-header {

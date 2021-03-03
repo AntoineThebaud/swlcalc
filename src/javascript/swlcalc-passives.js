@@ -55,10 +55,14 @@ swlcalc.passives = function() {
             rangeHitPointsCapstones:    $('#passive-hit-points-capstones-slider'),
 
             // Expertise
-            valCriticalChanceExpertise:            $('#passive-critical-chance-expertise'),
-            rangeCriticalChanceExpertise:          $('#passive-critical-chance-expertise-slider'),
-            valCriticalPowerPercentageExpertise:   $('#passive-critical-power-percentage-expertise'),
-            rangeCriticalPowerPercentageExpertise: $('#passive-critical-power-percentage-expertise-slider'),
+            valCriticalChanceExpertiseWeapon1:            $('#passive-critical-chance-expertise-weapon1'),
+            valCriticalChanceExpertiseWeapon2:            $('#passive-critical-chance-expertise-weapon2'),
+            rangeCriticalChanceExpertiseWeapon1:          $('#passive-critical-chance-expertise-slider-weapon1'),
+            rangeCriticalChanceExpertiseWeapon2:          $('#passive-critical-chance-expertise-slider-weapon2'),
+            valCriticalPowerPercentageExpertiseWeapon1:   $('#passive-critical-power-percentage-expertise-weapon1'),
+            valCriticalPowerPercentageExpertiseWeapon2:   $('#passive-critical-power-percentage-expertise-weapon2'),
+            rangeCriticalPowerPercentageExpertiseWeapon1: $('#passive-critical-power-percentage-expertise-slider-weapon1'),
+            rangeCriticalPowerPercentageExpertiseWeapon2: $('#passive-critical-power-percentage-expertise-slider-weapon2'),
         };
     };
 
@@ -90,8 +94,10 @@ swlcalc.passives = function() {
         el.rangeHealRatingCapstones.change(handleHealRatingCapstonesChange);
         el.rangeHitPointsCapstones.change(handleHitPointsCapstonesChange);
 
-        el.rangeCriticalChanceExpertise.change(handleCriticalChanceExpertiseChange);
-        el.rangeCriticalPowerPercentageExpertise.change(handleCriticalPowerPercentageExpertiseChange);
+        el.rangeCriticalChanceExpertiseWeapon1.change(handleCriticalChanceExpertiseChangeWeapon1);
+        el.rangeCriticalChanceExpertiseWeapon2.change(handleCriticalChanceExpertiseChangeWeapon2);
+        el.rangeCriticalPowerPercentageExpertiseWeapon1.change(handleCriticalPowerPercentageExpertiseChangeWeapon1);
+        el.rangeCriticalPowerPercentageExpertiseWeapon2.change(handleCriticalPowerPercentageExpertiseChangeWeapon2);
     };
 
     /**************************************************************************
@@ -227,18 +233,34 @@ swlcalc.passives = function() {
     /* EXPERTISE : ---------------------------------------------------------- */
 
     /**
-     * Update the value displayed for the Critical Chance > Expertise part
+     * Update the value displayed for the Critical Chance > Expertise part for the Primary weapon
      */
-    var handleCriticalChanceExpertiseChange = function(event) {
-        el.valCriticalChanceExpertise.text(event.currentTarget.value);
+    var handleCriticalChanceExpertiseChangeWeapon1 = function(event) {
+        el.valCriticalChanceExpertiseWeapon1.text(event.currentTarget.value);
         swlcalc.summary.updateAllStats();
     };
 
     /**
-     * Update the value displayed for the Critical Power percentage > Expertise part
+     * Update the value displayed for the Critical Chance > Expertise part for the Secondary weapon
      */
-    var handleCriticalPowerPercentageExpertiseChange = function(event) {
-        el.valCriticalPowerPercentageExpertise.text(event.currentTarget.value);
+    var handleCriticalChanceExpertiseChangeWeapon2 = function(event) {
+        el.valCriticalChanceExpertiseWeapon2.text(event.currentTarget.value);
+        swlcalc.summary.updateAllStats();
+    };
+
+    /**
+     * Update the value displayed for the Critical Power percentage > Expertise part for the Primary weapon
+     */
+    var handleCriticalPowerPercentageExpertiseChangeWeapon1 = function(event) {
+        el.valCriticalPowerPercentageExpertiseWeapon1.text(event.currentTarget.value);
+        swlcalc.summary.updateAllStats();
+    };
+
+    /**
+     * Update the value displayed for the Critical Power percentage > Expertise part for the Secondary weapon
+     */
+    var handleCriticalPowerPercentageExpertiseChangeWeapon2 = function(event) {
+        el.valCriticalPowerPercentageExpertiseWeapon2.text(event.currentTarget.value);
         swlcalc.summary.updateAllStats();
     };
 
@@ -377,19 +399,31 @@ swlcalc.passives = function() {
     /* EXPERTISE : ---------------------------------------------------------- */
 
     /* Critical Chance : */
-    var getCriticalChanceExpertise = function(value) {
-        return parseFloat(el.valCriticalChanceExpertise.text());
+    var getCriticalChanceExpertiseWeapon1 = function(value) {
+        return parseFloat(el.valCriticalChanceExpertiseWeapon1.text());
     }
-    var setCriticalChanceExpertise = function(value) {
-        el.rangeCriticalChanceExpertise.val(value).change();
+    var getCriticalChanceExpertiseWeapon2 = function(value) {
+        return parseFloat(el.valCriticalChanceExpertiseWeapon2.text());
+    }
+    var setCriticalChanceExpertiseWeapon1 = function(value) {
+        el.rangeCriticalChanceExpertiseWeapon1.val(value).change();
+    }
+    var setCriticalChanceExpertiseWeapon2 = function(value) {
+        el.rangeCriticalChanceExpertiseWeapon2.val(value).change();
     }
 
     /* Critical Power Percentage : */
-    var getCriticalPowerPercentageExpertise = function(value) {
-        return parseFloat(el.valCriticalPowerPercentageExpertise.text());
+    var getCriticalPowerPercentageExpertiseWeapon1 = function(value) {
+        return parseFloat(el.valCriticalPowerPercentageExpertiseWeapon1.text());
     }
-    var setCriticalPowerPercentageExpertise = function(value) {
-        el.rangeCriticalPowerPercentageExpertise.val(value).change();
+    var getCriticalPowerPercentageExpertiseWeapon2 = function(value) {
+        return parseFloat(el.valCriticalPowerPercentageExpertiseWeapon2.text());
+    }
+    var setCriticalPowerPercentageExpertiseWeapon1 = function(value) {
+        el.rangeCriticalPowerPercentageExpertiseWeapon1.val(value).change();
+    }
+    var setCriticalPowerPercentageExpertiseWeapon2 = function(value) {
+        el.rangeCriticalPowerPercentageExpertiseWeapon2.val(value).change();
     }
 
     /**************************************************************************
@@ -436,7 +470,7 @@ swlcalc.passives = function() {
      */
     var getTotalCriticalChance = function() {
         return parseFloat(el.valCriticalChanceBase.text())
-             + getCriticalChanceExpertise();
+             + (swlcalc.gear.activeWeapon() == swlcalc.gear.slots.weapon.id ? getCriticalChanceExpertiseWeapon1() : getCriticalChanceExpertiseWeapon2());
     };
 
     /**
@@ -452,7 +486,7 @@ swlcalc.passives = function() {
      */
     var getTotalCriticalPowerPercentage = function() {
         return parseFloat(el.valCriticalPowerPercentageBase.text())
-             + getCriticalPowerPercentageExpertise();
+             + (swlcalc.gear.activeWeapon() == swlcalc.gear.slots.weapon.id ? getCriticalPowerPercentageExpertiseWeapon1() : getCriticalPowerPercentageExpertiseWeapon2());
     };
 
     /**
@@ -539,8 +573,10 @@ swlcalc.passives = function() {
         setHealRatingCapstones(el.rangeHealRatingCapstones.attr("max"));
         setHitPointsCapstones(el.rangeHitPointsCapstones.attr("max"));
 
-        setCriticalChanceExpertise(el.rangeCriticalChanceExpertise.attr("max"));
-        setCriticalPowerPercentageExpertise(el.rangeCriticalPowerPercentageExpertise.attr("max"));
+        setCriticalChanceExpertiseWeapon1(el.rangeCriticalChanceExpertiseWeapon1.attr("max"));
+        setCriticalChanceExpertiseWeapon2(el.rangeCriticalChanceExpertiseWeapon2.attr("max"));
+        setCriticalPowerPercentageExpertiseWeapon1(el.rangeCriticalPowerPercentageExpertiseWeapon1.attr("max"));
+        setCriticalPowerPercentageExpertiseWeapon2(el.rangeCriticalPowerPercentageExpertiseWeapon2.attr("max"));
     };
 
     var oPublic = {
@@ -563,8 +599,10 @@ swlcalc.passives = function() {
         getAttackRatingCapstones: getAttackRatingCapstones,
         getHealRatingCapstones: getHealRatingCapstones,
         getHitPointsCapstones: getHitPointsCapstones,
-        getCriticalChanceExpertise: getCriticalChanceExpertise,
-        getCriticalPowerPercentageExpertise: getCriticalPowerPercentageExpertise,
+        getCriticalChanceExpertiseWeapon1: getCriticalChanceExpertiseWeapon1,
+        getCriticalChanceExpertiseWeapon2: getCriticalChanceExpertiseWeapon2,
+        getCriticalPowerPercentageExpertiseWeapon1: getCriticalPowerPercentageExpertiseWeapon1,
+        getCriticalPowerPercentageExpertiseWeapon2: getCriticalPowerPercentageExpertiseWeapon2,
         // setters
         setAttackRatingBase: setAttackRatingBase,
         setHealRatingBase: setHealRatingBase,
@@ -581,8 +619,10 @@ swlcalc.passives = function() {
         setAttackRatingCapstones: setAttackRatingCapstones,
         setHealRatingCapstones: setHealRatingCapstones,
         setHitPointsCapstones: setHitPointsCapstones,
-        setCriticalChanceExpertise: setCriticalChanceExpertise,
-        setCriticalPowerPercentageExpertise: setCriticalPowerPercentageExpertise,
+        setCriticalChanceExpertiseWeapon1: setCriticalChanceExpertiseWeapon1,
+        setCriticalChanceExpertiseWeapon2: setCriticalChanceExpertiseWeapon2,
+        setCriticalPowerPercentageExpertiseWeapon1: setCriticalPowerPercentageExpertiseWeapon1,
+        setCriticalPowerPercentageExpertiseWeapon2: setCriticalPowerPercentageExpertiseWeapon2,
         // totals computers :
         getTotalAttackRating: getTotalAttackRating,
         getTotalHealRating: getTotalHealRating,

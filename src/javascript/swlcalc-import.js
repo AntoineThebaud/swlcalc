@@ -90,8 +90,10 @@ swlcalc.import = function() {
         swlcalc.passives.setHealRatingCapstones(values[13]);
         swlcalc.passives.setHitPointsCapstones(values[14]);
 
-        swlcalc.passives.setCriticalChanceExpertise(values[15]);
-        swlcalc.passives.setCriticalPowerPercentageExpertise(values[16]);
+        swlcalc.passives.setCriticalChanceExpertiseWeapon1(values[15]);
+        swlcalc.passives.setCriticalChanceExpertiseWeapon2(values[16]);
+        swlcalc.passives.setCriticalPowerPercentageExpertiseWeapon1(values[17]);
+        swlcalc.passives.setCriticalPowerPercentageExpertiseWeapon2(values[18]);
     };
 
     var oPublic = {

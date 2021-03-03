@@ -12,7 +12,7 @@
                             <th class="darker" colspan="2">Base</th>      <!-- TODO/GUI : Add info on mouseover-->
                             <th colspan="2">Passive Skills</th>           <!-- TODO/GUI : Add info on mouseover-->
                             <th class="darker" colspan="2">Capstones</th> <!-- TODO/GUI : Add info on mouseover-->
-                            <th colspan="2">Expertise</th>                <!-- TODO/GUI : Add info on mouseover-->
+                            <th colspan="3">Expertise</th>                <!-- TODO/GUI : Add info on mouseover-->
                         </thead>
                         <tr>
                             <td class="stat-name">Attack Rating</td>
@@ -22,7 +22,7 @@
                             <td><span class="stat-value dps stat-inSummary" id="passive-attack-rating-passive-skills">0</span></td>
                             <td class="darker" ><input id="passive-attack-rating-capstones-slider" type="range" step="{passives.arCapstonesStep}" min="0" max="{passives.arCapstonesMax}"></td>
                             <td class="darker stat-value dps stat-inSummary"><span id="passive-attack-rating-capstones">0</span></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Heal Rating</td>
@@ -32,7 +32,7 @@
                             <td><span class="stat-value heal stat-inSummary" id="passive-heal-rating-passive-skills">0</span></td>
                             <td class="darker"><input id="passive-heal-rating-capstones-slider" type="range" step="{passives.hrCapstonesStep}" min="0" max="{passives.hrCapstonesMax}"></td>
                             <td class="darker stat-value heal stat-inSummary"><span id="passive-heal-rating-capstones">0</span></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                         <tr class="separator">
                             <td class="stat-name">Hit Points</td>
@@ -42,7 +42,7 @@
                             <td><span class="stat-value tank stat-inSummary" id="passive-hit-points-passive-skills">0</span></td>
                             <td class="darker"><input id="passive-hit-points-capstones-slider" type="range" step="{passives.hpCapstonesStep}" min="0" max="{passives.hpCapstonesMax}"></td>
                             <td class="darker stat-value tank stat-inSummary"><span id="passive-hit-points-capstones">0</span></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Critical Rating</td>
@@ -50,15 +50,27 @@
                             <td><input id="passive-critical-rating-passive-skills-slider" type="range" step="1" min="0" max="{passives.criticalRatingPassiveSkills}"></td>
                             <td class="stat-value stat-inSummary"><span id="passive-critical-rating-passive-skills">0</span></td>
                             <td class="darker" colspan="2"></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                         <tr class="separator">
                             <td class="stat-name">Critical Chance %</td>
                             <td colspan="2" id="passive-critical-chance-base" class="darker stat-value stat-inSummary">{passives.criticalChanceBase}%</td>
                             <td colspan="2"></td>
                             <td class="darker" colspan="2"></td>
-                            <td><input id="passive-critical-chance-expertise-slider" type="range" step="{passives.criticalChanceExpertiseStep}" min="{passives.criticalChanceExpertiseMin}" max="{passives.criticalChanceExpertiseMax}"></td>
-                            <td class="stat-value stat-inSummary"><span id="passive-critical-chance-expertise">0</span><span>%</span></td>
+                            <td class="weapon-names">
+                                Primary weapon :
+                                <br/>
+                                Secondary weapon :
+                            </td>
+                            <td>
+                                <input id="passive-critical-chance-expertise-slider-weapon1" type="range" step="{passives.criticalChanceExpertiseStep}" min="{passives.criticalChanceExpertiseMin}" max="{passives.criticalChanceExpertiseMax}">
+                                <input id="passive-critical-chance-expertise-slider-weapon2" type="range" step="{passives.criticalChanceExpertiseStep}" min="{passives.criticalChanceExpertiseMin}" max="{passives.criticalChanceExpertiseMax}">
+                            </td>
+                            <td class="stat-value stat-inSummary">
+                                <span id="passive-critical-chance-expertise-weapon1">0</span><span>%</span>
+                                <br/>
+                                <span id="passive-critical-chance-expertise-weapon2">0</span><span>%</span>
+                            </td>
                         </tr>
                         <tr>
                             <td class="stat-name">Critical Power Rating</td>
@@ -66,15 +78,27 @@
                             <td><input id="passive-critical-power-passive-skills-slider" type="range" step="1" min="0" max="{passives.criticalPowerPassiveSkills}"></td>
                             <td><span class="stat-value stat-inSummary" id="passive-critical-power-passive-skills">0</span></td>
                             <td class="darker" colspan="2"></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                         <tr class="separator">
                             <td class="stat-name">Critical Power %</td>
                             <td colspan="2" id="passive-critical-power-percentage-base" class="darker stat-value stat-inSummary">{passives.criticalPowerPercentageBase}%</td>
                             <td colspan="2"></td>
                             <td class="darker" colspan="2"></td>
-                            <td><input id="passive-critical-power-percentage-expertise-slider" type="range" step="{passives.criticalPowerPercentageExpertiseStep}" min="{passives.criticalPowerPercentageExpertiseMin}" max="{passives.criticalPowerPercentageExpertiseMax}"></td>
-                            <td class="stat-value stat-inSummary"><span id="passive-critical-power-percentage-expertise">0</span><span>%</span></td>
+                            <td class="weapon-names">
+                                Primary weapon :
+                                <br/>
+                                Secondary weapon :
+                            </td>
+                            <td>
+                                <input id="passive-critical-power-percentage-expertise-slider-weapon1" type="range" step="{passives.criticalPowerPercentageExpertiseStep}" min="{passives.criticalPowerPercentageExpertiseMin}" max="{passives.criticalPowerPercentageExpertiseMax}">
+                                <input id="passive-critical-power-percentage-expertise-slider-weapon2" type="range" step="{passives.criticalPowerPercentageExpertiseStep}" min="{passives.criticalPowerPercentageExpertiseMin}" max="{passives.criticalPowerPercentageExpertiseMax}">
+                            </td>
+                            <td class="stat-value stat-inSummary">
+                                <span id="passive-critical-power-percentage-expertise-weapon1">0</span><span>%</span>
+                                <br/>
+                                <span id="passive-critical-power-percentage-expertise-weapon2">0</span><span>%</span>
+                            </td>
                         </tr>
                         <tr>
                             <td class="stat-name">Hit Rating</td>
@@ -82,14 +106,14 @@
                             <td><input id="passive-hit-rating-passive-skills-slider" type="range" step="1" min="0" max="{passives.hitRatingPassiveSkills}"></td>
                             <td class="stat-value stat-inSummary"><span id="passive-hit-rating-passive-skills">0</span></td>
                             <td class="darker" colspan="2"></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Glance Reduction %</td>
                             <td colspan="2" id="passive-glance-reduction-base" class="darker stat-value stat-inSummary">{passives.glanceReductionBase}%</td>
                             <td colspan="2"></td>
                             <td class="darker" colspan="2"></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Protection</td>
@@ -97,14 +121,14 @@
                             <td><input id="passive-protection-passive-skills-slider" type="range" step="1" min="0" max="{passives.protectionPassiveSkills}"></td>
                             <td class="stat-value stat-inSummary"><span id="passive-protection-passive-skills">0</span></td>
                             <td class="darker" colspan="2"></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                         <tr class="separator">
                             <td class="stat-name">Damage Mitigation</td>
                             <td colspan="2" id="passive-damage-mitigation-base" class="darker stat-value stat-inSummary">{passives.damageMitigationBase}%</td>
                             <td colspan="2"></td>
                             <td class="darker" colspan="2"></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Defense Rating</td>
@@ -112,14 +136,14 @@
                             <td><input id="passive-defense-rating-passive-skills-slider" type="range" step="1" min="0" max="{passives.defenseRatingPassiveSkills}"></td>
                             <td class="stat-value stat-inSummary"><span id="passive-defense-rating-passive-skills">0</span></td>
                             <td class="darker" colspan="2"></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                         <tr class="separator">
                             <td class="stat-name">Glance Chance %</td>
                             <td colspan="2" id="passive-glance-chance-base" class="darker stat-value stat-inSummary">{passives.glanceChanceBase}%</td>
                             <td colspan="2"></td>
                             <td class="darker" colspan="2"></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Evade Rating</td>
@@ -127,14 +151,14 @@
                             <td><input id="passive-evade-rating-passive-skills-slider" type="range" step="1" min="0" max="{passives.evadeRatingPassiveSkills}"></td>
                             <td class="stat-value stat-inSummary"><span id="passive-evade-rating-passive-skills">0</span></td>
                             <td class="darker" colspan="2"></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                         <tr>
                             <td class="stat-name">Evade Chance %</td>
                             <td colspan="2" id="passive-evade-chance-base" class="darker stat-value stat-inSummary">{passives.evadeChanceBase}%</td>
                             <td colspan="2"></td>
                             <td class="darker" colspan="2"></td>
-                            <td colspan="2"></td>
+                            <td colspan="3"></td>
                         </tr>
                     </tbody>
                 </table>

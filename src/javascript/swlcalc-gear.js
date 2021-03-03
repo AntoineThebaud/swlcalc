@@ -32,8 +32,8 @@ swlcalc.gear = function() {
      * Draw primary weapon (-> hide secondary weapon)
      */
     var drawPrimaryWeapon = function() {
-        swlcalc.gear.slots.weapon.draw();
-        swlcalc.gear.slots.weapon2.sheath();
+        slots.weapon.draw();
+        slots.weapon2.sheath();
     };
 
     /**
@@ -48,6 +48,17 @@ swlcalc.gear = function() {
      */
     var nbAgents = function() {
         return agents.length;
+    };
+
+    /**
+     * Returns the id of the weapon currently active
+     */
+    var activeWeapon = function() {
+        if (slots.weapon.active) {
+            return slots.weapon.id;
+        } else {
+            return slots.weapon2.id;
+        }
     };
 
     /**
@@ -141,6 +152,7 @@ swlcalc.gear = function() {
         init: init,
         nbSlots: nbSlots,
         nbAgents: nbAgents,
+        activeWeapon: activeWeapon,
         reset: reset,
         state: state,
         mappedState: mappedState,
