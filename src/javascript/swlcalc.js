@@ -15,9 +15,13 @@ swlcalc = function() {
         fillSlots();
 
         // visual settings :
+
         adjustPlacement();
         window.addEventListener('resize', adjustPlacement, true);
+
         adjustSidebar();
+
+        $('[data-toggle="tooltip"]').tooltip()
 
         // prevent accidental refreshes
         window.onbeforeunload = function(event) {

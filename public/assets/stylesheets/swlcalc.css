@@ -774,3 +774,15 @@ div[id="passives"] .table-stats td.weapon-names {
 .modal-header {
     background-color: var(--color-bg-modalheader);
 }
+
+.glyphicon-question-sign {
+    float: right;
+    opacity: 50%;
+}
+
+.tooltip {
+    width: 200px;
+}
+.tooltip-inner {
+    max-width: 200px;
+}

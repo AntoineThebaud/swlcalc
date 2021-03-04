@@ -4,7 +4,10 @@
     <div class="modal-dialog" role="document">
         <div class="modal-body">
             <div id="passives">
-                <h4>Configure passives</h4>
+                <h4>
+                    Configure passives
+                    <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="You can use the arrow keys to move a slider after clicking on it"></span>
+                </h4>
                 <table class="table table-stats">
                     <tbody>
                         <thead>

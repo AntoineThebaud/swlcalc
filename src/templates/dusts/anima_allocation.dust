@@ -1,6 +1,9 @@
 <div id="anima_allocation">
     <div>
-        <h4>Anima allocation</h4>
+        <h4>
+            Anima allocation
+            <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="You can use the arrow keys to move a slider after clicking on it"></span>
+        </h4>
 
         <table class="table anima-allocation-table">
             <tr>
