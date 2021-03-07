@@ -79,7 +79,7 @@ QUnit.test("should update all stats", function(assert) {
     assert.equal($("#stat-agent1-bonus25").html(), "");
     assert.equal($("#stat-agent1-bonus25").html(), "");
     assert.equal($("#stat-agent2-bonus25").html(), "");
-    assert.equal($("#stat-agent2-bonus50").html(), "<span class=\"bonus-val const\">+7%</span> Hammer Damage");
+    assert.equal($("#stat-agent2-bonus50").html(), "<span class=\"stat-value const\">+7%</span> Hammer Damage");
     assert.equal($("#stat-agent3-bonus25").html(), "");
     assert.equal($("#stat-agent3-bonus50").html(), "");
 });

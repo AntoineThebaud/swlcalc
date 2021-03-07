@@ -270,7 +270,7 @@ QUnit.test("should get and set the slot's signet iLvl on edit view", function(as
 });
 
 QUnit.test("should get and set the slot's signet description on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.finger.edit.getSignetDescription(), "Increases the damage and healing of all Basic Abilities by <span id=\"finger-edit-signet-bonus1\" class=\"bonus-val const\">2.1011</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.finger.edit.getSignetDescription(), "Increases the damage and healing of all Basic Abilities by <span id=\"finger-edit-signet-bonus1\" class=\"stat-value const\">2.1011</span><span class=\"stat-value const\">%</span>.");
     swlcalc.gear.slots.finger.edit.setSignetDescription("Lorem ipsum dolor sit amet");
     assert.equal(swlcalc.gear.slots.finger.edit.getSignetDescription(), "Lorem ipsum dolor sit amet");
 });

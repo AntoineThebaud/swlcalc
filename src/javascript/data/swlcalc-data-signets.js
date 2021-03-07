@@ -25,7 +25,7 @@ swlcalc.data.signets = {
             {
                 id: 2,
                 name: 'Destruction',
-                description: 'This weapon deals <span id="%id-signet-bonus1" class="bonus-val dps">%d</span> additional damage to enemies that are below <span class="bonus-val const">35%</span> health.',
+                description: 'This weapon deals <span id="%id-signet-bonus1" class="stat-value dps">%d</span> additional damage to enemies that are below <span class="stat-value const">35%</span> health.',
                 decimals: [ 0 ],
                 quality: {
                     '1': [ 0.36 ],
@@ -50,7 +50,7 @@ swlcalc.data.signets = {
             {
                 id: 4,
                 name: 'Efficiency',
-                description: 'Your attacks and heals with this weapon have a <span class="bonus-val const">50%</span> chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span>.',
+                description: 'Your attacks and heals with this weapon have a <span class="stat-value const">50%</span> chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span>.',
                 decimals: [ 1 ],
                 quality: {
                     '1': [ 2 ],
@@ -74,7 +74,7 @@ swlcalc.data.signets = {
             {
                 id: 6,
                 name: 'Restoration',
-                description: 'When you hit or heal a target with this weapon you have a <span class="bonus-val const">50%</span> chance to restore <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span> of your health (up to <span id="%id-signet-bonus2" class="bonus-val heal">%d</span>).',
+                description: 'When you hit or heal a target with this weapon you have a <span class="stat-value const">50%</span> chance to restore <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span> of your health (up to <span id="%id-signet-bonus2" class="stat-value heal">%d</span>).',
                 decimals: [ 2, 0 ],
                 quality: {
                     '1': [ 0.75, 150 ],
@@ -113,7 +113,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of the Gunslinger',
                 type: 'Pistols',
-                description: 'Increases the damage and healing of Pistols Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Pistols Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -142,7 +142,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Cataclysms',
                 type: 'Elementalism',
-                description: 'Increases the damage and healing of Elemental Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Elemental Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -171,7 +171,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Deadly Force',
                 type: 'Shotgun',
-                description: 'Increases the damage and healing of Shotgun Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Shotgun Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -200,7 +200,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Disequilibrium',
                 type: 'Chaos',
-                description: 'Increases the damage and healing of Chaos Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Chaos Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -229,7 +229,7 @@ swlcalc.data.signets = {
                 id: 5,
                 name: 'Signet of Rituals',
                 type: 'Blood',
-                description: 'Increases the damage and healing of Blood Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Blood Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -258,7 +258,7 @@ swlcalc.data.signets = {
                 id: 6,
                 name: 'Signet of the Master',
                 type: 'Blade',
-                description: 'Increases the damage and healing of Blade Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Blade Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -287,7 +287,7 @@ swlcalc.data.signets = {
                 id: 7,
                 name: 'Signet of the Veteran',
                 type: 'Assault Rifle',
-                description: 'Increases the damage and healing of Assault Rifle Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Assault Rifle Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -316,7 +316,7 @@ swlcalc.data.signets = {
                 id: 8,
                 name: 'Signet of Fervour',
                 type: 'Fist',
-                description: 'Increases the damage and healing of Fist Weapon Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Fist Weapon Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -345,7 +345,7 @@ swlcalc.data.signets = {
                 id: 9,
                 name: 'Signet of Shattering',
                 type: 'Hammer',
-                description: 'Increases the damage and healing of Hammer Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Hammer Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -374,7 +374,7 @@ swlcalc.data.signets = {
                 id: 10,
                 name: 'Signet of the Paragon',
                 type: 'All',
-                description: 'Increases the damage and healing of all Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of all Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -403,7 +403,7 @@ swlcalc.data.signets = {
                 id: 11,
                 name: 'Signet of Quick Draw',
                 type: 'Pistols',
-                description: 'Reduces the cooldown of Pistols Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Reduces the cooldown of Pistols Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -432,7 +432,7 @@ swlcalc.data.signets = {
                 id: 12,
                 name: 'Signet of the Conflux',
                 type: 'Elementalism',
-                description: 'Reduces the cooldown of Elemental Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Reduces the cooldown of Elemental Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -461,7 +461,7 @@ swlcalc.data.signets = {
                 id: 13,
                 name: 'Signet of Rapid Response',
                 type: 'Shotgun',
-                description: 'Reduces the cooldown of Shotgun Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Reduces the cooldown of Shotgun Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -490,7 +490,7 @@ swlcalc.data.signets = {
                 id: 14,
                 name: 'Signet of Transience',
                 type: 'Chaos',
-                description: 'Reduces the cooldown of Chaos Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Reduces the cooldown of Chaos Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -519,7 +519,7 @@ swlcalc.data.signets = {
                 id: 15,
                 name: 'Signet of Bloodletting',
                 type: 'Blood',
-                description: 'Reduces the cooldown of Blood Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Reduces the cooldown of Blood Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -548,7 +548,7 @@ swlcalc.data.signets = {
                 id: 16,
                 name: 'Signet of Bladestorm',
                 type: 'Blade',
-                description: 'Reduces the cooldown of Blade Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Reduces the cooldown of Blade Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -577,7 +577,7 @@ swlcalc.data.signets = {
                 id: 17,
                 name: 'Signet of Burst Fire',
                 type: 'Assault Rifle',
-                description: 'Reduces the cooldown of Assault Rifle Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Reduces the cooldown of Assault Rifle Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -606,7 +606,7 @@ swlcalc.data.signets = {
                 id: 18,
                 name: 'Signet of Zeal',
                 type: 'Fist',
-                description: 'Reduces the cooldown of Fist Weapon Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Reduces the cooldown of Fist Weapon Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -635,7 +635,7 @@ swlcalc.data.signets = {
                 id: 19,
                 name: 'Signet of Mauling',
                 type: 'Hammer',
-                description: 'Reduces the cooldown of Hammer Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Reduces the cooldown of Hammer Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -664,7 +664,7 @@ swlcalc.data.signets = {
                 id: 20,
                 name: 'Signet of the Ascendant',
                 type: 'All',
-                description: 'Reduces the cooldown of all Elite Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Reduces the cooldown of all Elite Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -695,7 +695,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of the Gambler',
                 type: 'Pistols',
-                description: 'Increases the damage and healing of Pistols Basic Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Pistols Basic Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -724,7 +724,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Elements',
                 type: 'Elementalism',
-                description: 'Increases the damage and healing of Elementalism Basic Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Elementalism Basic Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -753,7 +753,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Engagement',
                 type: 'Shotgun',
-                description: 'Increases the damage and healing of Shotgun Basic Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Shotgun Basic Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -782,7 +782,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Waxing Delirium',
                 type: 'Chaos',
-                description: 'Increases the damage and healing of Chaos Basic Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Chaos Basic Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -811,7 +811,7 @@ swlcalc.data.signets = {
                 id: 5,
                 name: 'Signet of Incantations',
                 type: 'Blood',
-                description: 'Increases the damage and healing of Blood Basic Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Blood Basic Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -840,7 +840,7 @@ swlcalc.data.signets = {
                 id: 6,
                 name: 'Signet of the Pupil',
                 type: 'Blade',
-                description: 'Increases the damage and healing of Blade Basic Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Blade Basic Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -869,7 +869,7 @@ swlcalc.data.signets = {
                 id: 7,
                 name: 'Signet of Rifleman\'s Creed',
                 type: 'Assault Rifle',
-                description: 'Increases the damage and healing of Assault Rifle Basic Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Assault Rifle Basic Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -898,7 +898,7 @@ swlcalc.data.signets = {
                 id: 8,
                 name: 'Signet of Intensity',
                 type: 'Fist',
-                description: 'Increases the damage and healing of Fist Basic Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Fist Basic Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -927,7 +927,7 @@ swlcalc.data.signets = {
                 id: 9,
                 name: 'Signet of Bludgeoning',
                 type: 'Hammer',
-                description: 'Increases the damage and healing of Hammer Basic Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Hammer Basic Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -956,7 +956,7 @@ swlcalc.data.signets = {
                 id: 10,
                 name: 'Signet of the Neophyte',
                 type: 'All',
-                description: 'Increases the damage and healing of all Basic Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of all Basic Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -987,7 +987,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of the Outlaw',
                 type: 'Pistols',
-                description: 'Increases the damage and healing of Pistols Power Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Pistols Power Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1016,7 +1016,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Devastation',
                 type: 'Elementalism',
-                description: 'Increases the damage and healing of Elementalism Power Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Elementalism Power Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1045,7 +1045,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Riot Control',
                 type: 'Shotgun',
-                description: 'Increases the damage and healing of Shotgun Power Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Shotgun Power Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1074,7 +1074,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Capriciousness',
                 type: 'Chaos',
-                description: 'Increases the damage and healing of Chaos Power Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Chaos Power Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1103,7 +1103,7 @@ swlcalc.data.signets = {
                 id: 5,
                 name: 'Signet of Blood Rites',
                 type: 'Blood',
-                description: 'Increases the damage and healing of Blood Power Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Blood Power Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1132,7 +1132,7 @@ swlcalc.data.signets = {
                 id: 6,
                 name: 'Signet of the Adept',
                 type: 'Blade',
-                description: 'Increases the damage and healing of Blade Power Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Blade Power Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1161,7 +1161,7 @@ swlcalc.data.signets = {
                 id: 7,
                 name: 'Signet of the Commando',
                 type: 'Assault Rifle',
-                description: 'Increases the damage and healing of Assault Rifle Power Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Assault Rifle Power Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1190,7 +1190,7 @@ swlcalc.data.signets = {
                 id: 8,
                 name: 'Signet of Ferocity',
                 type: 'Fist',
-                description: 'Increases the damage and healing of Fist Power Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Fist Power Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1219,7 +1219,7 @@ swlcalc.data.signets = {
                 id: 9,
                 name: 'Signet of Crushing',
                 type: 'Hammer',
-                description: 'Increases the damage and healing of Hammer Power Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Hammer Power Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1248,7 +1248,7 @@ swlcalc.data.signets = {
                 id: 10,
                 name: 'Signet of the Journeyman',
                 type: 'All',
-                description: 'Increases the damage and healing of all Power Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of all Power Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1279,7 +1279,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of Condensed Anima',
                 type: 'All',
-                description: 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the rate at which your Ultimate Ability recharges on ability activation by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1308,7 +1308,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Overwhelming Power',
                 type: 'All',
-                description: 'Increases the damage and healing of Ultimate Abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage and healing of Ultimate Abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1337,7 +1337,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Nemain',
                 type: 'All',
-                description: 'Increases the maximum number of targets hit by area abilities by <span id="%id-signet-bonus1" class="bonus-val const">%d</span> and increases damage by <span id="%id-signet-bonus2" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the maximum number of targets hit by area abilities by <span id="%id-signet-bonus1" class="stat-value const">%d</span> and increases damage by <span id="%id-signet-bonus2" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 0, 4 ],
                 ratio: {
                     'standard': {
@@ -1368,7 +1368,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of Amelioration',
                 type: 'All',
-                description: 'When you critically heal, you gain a beneficial effect that grants you a <span id="%id-signet-bonus1" class="bonus-val heal">%d</span><span class="bonus-val heal">%</span> bonus to healing for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
+                description: 'When you critically heal, you gain a beneficial effect that grants you a <span id="%id-signet-bonus1" class="stat-value heal">%d</span><span class="stat-value heal">%</span> bonus to healing for <span class="stat-value const">5</span> seconds. This ability can only occur once every <span class="stat-value const">15</span> seconds.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1397,7 +1397,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Cruel Delight',
                 type: 'All',
-                description: 'When you critically hit, you are healed for <span id="%id-signet-bonus1" class="bonus-val heal">%d</span>.',
+                description: 'When you critically hit, you are healed for <span id="%id-signet-bonus1" class="stat-value heal">%d</span>.',
                 decimals: [ 4 ],
                 ratio: { // TODO : estimated values here
                     'standard': {
@@ -1426,7 +1426,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Echoes',
                 type: 'All',
-                description: 'When you critically heal, your defensive target is given a beneficial effect that heals for <span id="%id-signet-bonus1" class="bonus-val heal">%d</span> every second for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
+                description: 'When you critically heal, your defensive target is given a beneficial effect that heals for <span id="%id-signet-bonus1" class="stat-value heal">%d</span> every second for <span class="stat-value const">5</span> seconds. This ability can only occur once every <span class="stat-value const">15</span> seconds.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1456,7 +1456,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Empowerment',
                 type: 'All',
-                description: 'When you critically heal, your defensive target is given a beneficial effect that increases their damage by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span> for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
+                description: 'When you critically heal, your defensive target is given a beneficial effect that increases their damage by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span> for <span class="stat-value const">5</span> seconds. This ability can only occur once every <span class="stat-value const">15</span> seconds.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1485,7 +1485,7 @@ swlcalc.data.signets = {
                 id: 5,
                 name: 'Signet of Laceration',
                 type: 'All',
-                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span> bonus to critical damage for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
+                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span> bonus to critical damage for <span class="stat-value const">5</span> seconds. This ability can only occur once every <span class="stat-value const">15</span> seconds.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1514,7 +1514,7 @@ swlcalc.data.signets = {
                 id: 6,
                 name: 'Signet of Sadism',
                 type: 'All',
-                description: 'When you critically hit, your target is affected with a detrimental effect that deals <span id="%id-signet-bonus1" class="bonus-val dps">%d</span> damage every second for <span class="bonus-val const">5</span> seconds. This ability can only occur once every <span class="bonus-val const">15</span> seconds.',
+                description: 'When you critically hit, your target is affected with a detrimental effect that deals <span id="%id-signet-bonus1" class="stat-value dps">%d</span> damage every second for <span class="stat-value const">5</span> seconds. This ability can only occur once every <span class="stat-value const">15</span> seconds.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1544,7 +1544,7 @@ swlcalc.data.signets = {
                 id: 7,
                 name: 'Signet of Thirst',
                 type: 'All',
-                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="%id-signet-bonus1" class="bonus-val heal">%d</span><span class="bonus-val heal">%</span> leech effect for <span class="bonus-val const">5</span> seconds. This effect can heal up to <span id="%id-signet-bonus2" class="bonus-val const">2248</span> damage before being removed, and can only occur once every <span class="bonus-val const">15</span> seconds.',
+                description: 'When you critically hit or heal, you gain a beneficial effect that grants you a <span id="%id-signet-bonus1" class="stat-value heal">%d</span><span class="stat-value heal">%</span> leech effect for <span class="stat-value const">5</span> seconds. This effect can heal up to <span id="%id-signet-bonus2" class="stat-value const">2248</span> damage before being removed, and can only occur once every <span class="stat-value const">15</span> seconds.',
                 decimals: [ 4, 0 ],
                 ratio: {
                     'standard': {
@@ -1573,7 +1573,7 @@ swlcalc.data.signets = {
                 id: 8,
                 name: 'Signet of Thorns',
                 type: 'All',
-                description: 'When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id="%id-signet-bonus1" class="bonus-val dps">%d</span> when they hit you for <span class="bonus-val const">5</span> seconds. This damage scales with your Maximum Health.',
+                description: 'When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id="%id-signet-bonus1" class="stat-value dps">%d</span> when they hit you for <span class="stat-value const">5</span> seconds. This damage scales with your Maximum Health.',
                 decimals: [ 0 ],
                 ratio: {
                     'standard': {
@@ -1603,7 +1603,7 @@ swlcalc.data.signets = {
                 id: 9,
                 name: 'Signet of Vitalization',
                 type: 'All',
-                description: 'When you activate a Signature ability, gain <span id="%id-signet-bonus1" class="bonus-val heal">%d</span> temporary health for <span class="bonus-val const">5</span> seconds.',
+                description: 'When you activate a Signature ability, gain <span id="%id-signet-bonus1" class="stat-value heal">%d</span> temporary health for <span class="stat-value const">5</span> seconds.',
                 decimals: [ 0 ],
                 ratio: {
                     'standard': {
@@ -1632,7 +1632,7 @@ swlcalc.data.signets = {
                 id: 10,
                 name: 'Signet of Resilience',
                 type: 'All',
-                description: 'When you activate a Signature ability, gain <span id="%id-signet-bonus1" class="bonus-val const">%d</span> Protection for <span class="bonus-val const">3</span> seconds.',
+                description: 'When you activate a Signature ability, gain <span id="%id-signet-bonus1" class="stat-value const">%d</span> Protection for <span class="stat-value const">3</span> seconds.',
                 decimals: [ 0 ],
                 ratio: {
                     'standard': {
@@ -1663,7 +1663,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of Biological Metamorphosis',
                 type: 'All',
-                description: 'Increases the healing of Gadgets by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the healing of Gadgets by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1692,7 +1692,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Matter Creation',
                 type: 'All',
-                description: 'Increases the damage of Gadgets by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Increases the damage of Gadgets by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1721,7 +1721,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Time and Space Alteration',
                 type: 'All',
-                description: 'Reduces the cooldown of Gadgets by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Reduces the cooldown of Gadgets by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1752,7 +1752,7 @@ swlcalc.data.signets = {
                 id: 1,
                 name: 'Signet of Acrobatics',
                 type: 'All',
-                description: 'Reduces the cooldown of Active Dodge by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Reduces the cooldown of Active Dodge by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1781,7 +1781,7 @@ swlcalc.data.signets = {
                 id: 2,
                 name: 'Signet of Contortion',
                 type: 'All',
-                description: 'Active dodges break movement hindering effects, but also have their cooldown increased by <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Active dodges break movement hindering effects, but also have their cooldown increased by <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1810,7 +1810,7 @@ swlcalc.data.signets = {
                 id: 3,
                 name: 'Signet of Shoulder Tackle',
                 type: 'All',
-                description: 'Your active dodges have a <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span> to knock down enemies in your path, but also have their cooldown increased by <span id="%id-signet-bonus2" class="bonus-val const">%d</span><span class="bonus-val const">%</span>.',
+                description: 'Your active dodges have a <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span> to knock down enemies in your path, but also have their cooldown increased by <span id="%id-signet-bonus2" class="stat-value const">%d</span><span class="stat-value const">%</span>.',
                 decimals: [ 0, 4 ],
                 ratio: {
                     'standard': {
@@ -1839,7 +1839,7 @@ swlcalc.data.signets = {
                 id: 4,
                 name: 'Signet of Quickness',
                 type: 'All',
-                description: 'After using Active Dodge, you receive a speed bonus of <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span> for <span class="bonus-val const">4</span> seconds.',
+                description: 'After using Active Dodge, you receive a speed bonus of <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span> for <span class="stat-value const">4</span> seconds.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {
@@ -1868,7 +1868,7 @@ swlcalc.data.signets = {
                 id: 5,
                 name: 'Signet of Agility',
                 type: 'All',
-                description: 'Your active dodges have a <span id="%id-signet-bonus1" class="bonus-val const">%d</span><span class="bonus-val const">%</span> chance to not trigger their cooldown.',
+                description: 'Your active dodges have a <span id="%id-signet-bonus1" class="stat-value const">%d</span><span class="stat-value const">%</span> chance to not trigger their cooldown.',
                 decimals: [ 4 ],
                 ratio: {
                     'standard': {

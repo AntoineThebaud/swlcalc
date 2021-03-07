@@ -1,5 +1,5 @@
 <div id="agent{id}-div" class="agent-div">
-    <table class="table agent-table">
+    <table class="table">
         <tr>
             <td class="agent-title" colspan="4">
                 SLOT {id}
@@ -10,7 +10,7 @@
                 <strong>Agent :</strong>
             </td>
             <td>
-                <select id="agent{id}-id" class="agent-name-select" title="Please select agent">
+                <select id="agent{id}-id" title="Please select agent">
                 </select>
             </td>
         </tr>
@@ -19,7 +19,7 @@
                 <strong>Level :</strong>
             </td>
             <td>
-                <select id="agent{id}-level" class="agent-level-select" title="Please select agent">
+                <select id="agent{id}-level" title="Please select agent">
                     <option value="25">25</option>
                     <option value="50">50</option>
                 </select>

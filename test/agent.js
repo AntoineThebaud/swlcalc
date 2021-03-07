@@ -47,13 +47,13 @@ QUnit.test("should get and set agent's text50", function(assert) {
 
 QUnit.test("should update elements related to agent's id", function(assert) {
     assert.equal(swlcalc.gear.agents[1].getText25(), '<span class="stat-value gear">+490</span> Hit Points');
-    assert.equal(swlcalc.gear.agents[1].getText50(), "<span class=\"bonus-val const\">+7%</span> Hammer Damage");
+    assert.equal(swlcalc.gear.agents[1].getText50(), "<span class=\"stat-value const\">+7%</span> Hammer Damage");
 
     swlcalc.gear.agents[1].setId("15");
     swlcalc.gear.agents[1].updateId();
 
     assert.equal(swlcalc.gear.agents[1].getText25(), '<span class="stat-value gear">+325</span> Heal Rating');
-    assert.equal(swlcalc.gear.agents[1].getText50(), '<span class="bonus-val heal">%d</span> Healing on Critical Heals');
+    assert.equal(swlcalc.gear.agents[1].getText50(), '<span class="stat-value heal">%d</span> Healing on Critical Heals');
 });
 
 QUnit.test("should update elements related to agent's level", function(assert) {
@@ -70,7 +70,7 @@ QUnit.test("should update elements related to agent's level", function(assert) {
 QUnit.test("should reset the agent by setting default values for each select", function(assert) {
     assert.equal(swlcalc.gear.agents[1].getId(), '42');
     assert.equal(swlcalc.gear.agents[1].getText25(), '<span class="stat-value gear">+490</span> Hit Points');
-    assert.equal(swlcalc.gear.agents[1].getText50(), '<span class=\"bonus-val const\">+7%</span> Hammer Damage');
+    assert.equal(swlcalc.gear.agents[1].getText50(), '<span class=\"stat-value const\">+7%</span> Hammer Damage');
 
     swlcalc.gear.agents[1].reset();
 

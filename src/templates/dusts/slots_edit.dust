@@ -26,7 +26,7 @@
                         <td class="upgrade-select">
                             {>rarity_select itemtype="equipment"/}
                         </td>
-                        <td class="stat-inSlot">
+                        <td class="stat-inSlotEdit">
                             <p class="thin-p">
                                 <span id="{id}-edit-equipment-stat-power-value" class="stat-value gear">0</span>
                                 <span> </span>
@@ -124,7 +124,7 @@
                         <td class="upgrade-select">
                             {>quality_select itemtype="glyph" pip1="Crude" pip2="Simple" pip3="Intricate"/}
                         </td>
-                        <td class="stat-inSlot">
+                        <td class="stat-inSlotEdit">
                           <span id="{id}-edit-glyph-stat-rating" class="stat-value gear">0</span>
                           <span> </span>
                           <span id="{id}-edit-glyph-stat-text"></span>

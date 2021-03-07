@@ -229,7 +229,7 @@ QUnit.test("should set the slot's signet level on recap view", function(assert) 
 });
 
 QUnit.test("should set the slot's signet description on recap view", function(assert) {
-    assert.equal(swlcalc.gear.slots.finger.recap.el.signetDescription.html(), "Increases the damage and healing of all Basic Abilities by <span id=\"finger-recap-signet-bonus1\" class=\"bonus-val const\">2.1011</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.finger.recap.el.signetDescription.html(), "Increases the damage and healing of all Basic Abilities by <span id=\"finger-recap-signet-bonus1\" class=\"stat-value const\">2.1011</span><span class=\"stat-value const\">%</span>.");
     swlcalc.gear.slots.finger.recap.setSignetDescription("Lorem ipsum dolor sit amet");
     assert.equal(swlcalc.gear.slots.finger.recap.el.signetDescription.html(), "Lorem ipsum dolor sit amet");
 });

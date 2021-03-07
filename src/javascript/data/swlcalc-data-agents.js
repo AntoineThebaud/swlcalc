@@ -68,7 +68,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+28%</span> Basic Damage'
+                value: '<span class="stat-value const">+28%</span> Basic Damage'
             }
         }
     },
@@ -82,7 +82,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+8%</span> Power Damage'
+                value: '<span class="stat-value const">+8%</span> Power Damage'
             }
         }
     },
@@ -96,7 +96,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+20%</span> Elite Damage'
+                value: '<span class="stat-value const">+20%</span> Elite Damage'
             }
         }
     },
@@ -106,7 +106,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
+                value: '<span class="stat-value dps">%d</span> Damage on Critical Hits',
                 varbonus: {
                     coef: 0.1075,
                     stat: 'Combat Power'
@@ -124,7 +124,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
+                value: '<span class="stat-value dps">%d</span> Damage on Critical Hits',
                 varbonus: {
                     coef: 0.1075,
                     stat: 'Combat Power'
@@ -160,7 +160,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val dps">%d</span> Damage on Critical Hits',
+                value: '<span class="stat-value dps">%d</span> Damage on Critical Hits',
                 varbonus: {
                     coef: 0.215,
                     stat: 'Combat Power'
@@ -178,7 +178,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val dps">%d</span> Physical Damage on Critical Hits',
+                value: '<span class="stat-value dps">%d</span> Physical Damage on Critical Hits',
                 varbonus: {
                     coef: 0.215,
                     stat: 'Combat Power'
@@ -196,7 +196,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+28%</span> Basic Damage'
+                value: '<span class="stat-value const">+28%</span> Basic Damage'
             }
         }
     },
@@ -210,7 +210,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+8%</span> Power Damage'
+                value: '<span class="stat-value const">+8%</span> Power Damage'
             }
         }
     },
@@ -224,7 +224,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+20%</span> Elite Damage'
+                value: '<span class="stat-value const">+20%</span> Elite Damage'
             }
         }
     },
@@ -238,7 +238,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
+                value: '<span class="stat-value heal">%d</span> Healing on Critical Heals',
                 varbonus: {
                     coef: 0.215,
                     stat: 'Healing Power'
@@ -252,7 +252,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
+                value: '<span class="stat-value heal">%d</span> Healing on Critical Heals',
                 varbonus: {
                     coef: 0.1075,
                     stat: 'Healing Power'
@@ -270,7 +270,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
+                value: '<span class="stat-value heal">%d</span> Healing on Critical Heals',
                 varbonus: {
                     coef: 0.1075,
                     stat: 'Healing Power'
@@ -292,7 +292,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val heal">%d</span> Healing on Critical Heals',
+                value: '<span class="stat-value heal">%d</span> Healing on Critical Heals',
                 varbonus: {
                     coef: 0.215,
                     stat: 'Healing Power'
@@ -310,7 +310,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+28%</span> Basic Damage'
+                value: '<span class="stat-value const">+28%</span> Basic Damage'
             }
         }
     },
@@ -324,7 +324,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+8%</span> Power Damage'
+                value: '<span class="stat-value const">+8%</span> Power Damage'
             }
         }
     },
@@ -338,7 +338,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+20%</span> Elite Damage'
+                value: '<span class="stat-value const">+20%</span> Elite Damage'
             }
         }
     },
@@ -348,7 +348,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+2.5%</span> Damage',
+                value: '<span class="stat-value const">+2.5%</span> Damage',
             },
             "50": {
                 type: 'hit-points',
@@ -362,7 +362,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+2.5%</span> Damage'
+                value: '<span class="stat-value const">+2.5%</span> Damage'
             },
             "50": {
                 type: 'attack-rating',
@@ -376,7 +376,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+2.5%</span> Damage'
+                value: '<span class="stat-value const">+2.5%</span> Damage'
             },
             "50": {
                 type: 'critical-power',
@@ -390,7 +390,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Assault Rifle Damage',
+                value: '<span class="stat-value const">+3.5%</span> Assault Rifle Damage',
             },
             "50": {
                 type: 'hit-points',
@@ -404,7 +404,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Blade Damage',
+                value: '<span class="stat-value const">+3.5%</span> Blade Damage',
             },
             "50": {
                 type: 'hit-points',
@@ -418,7 +418,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Blood Damage',
+                value: '<span class="stat-value const">+3.5%</span> Blood Damage',
             },
             "50": {
                 type: 'hit-points',
@@ -432,7 +432,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Chaos Magic Damage',
+                value: '<span class="stat-value const">+3.5%</span> Chaos Magic Damage',
             },
             "50": {
                 type: 'hit-points',
@@ -446,7 +446,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Dual Pistols Damage',
+                value: '<span class="stat-value const">+3.5%</span> Dual Pistols Damage',
             },
             "50": {
                 type: 'hit-points',
@@ -460,7 +460,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Elementalism Damage',
+                value: '<span class="stat-value const">+3.5%</span> Elementalism Damage',
             },
             "50": {
                 type: 'hit-points',
@@ -474,7 +474,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Fist Weapons Damage',
+                value: '<span class="stat-value const">+3.5%</span> Fist Weapons Damage',
             },
             "50": {
                 type: 'hit-points',
@@ -488,7 +488,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Hammer Damage',
+                value: '<span class="stat-value const">+3.5%</span> Hammer Damage',
             },
             "50": {
                 type: 'hit-points',
@@ -502,7 +502,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Shotgun Damage',
+                value: '<span class="stat-value const">+3.5%</span> Shotgun Damage',
             },
             "50": {
                 type: 'hit-points',
@@ -520,7 +520,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+5%</span> Damage',
+                value: '<span class="stat-value const">+5%</span> Damage',
             }
         }
     },
@@ -534,7 +534,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Assault Rifle Damage',
+                value: '<span class="stat-value const">+7%</span> Assault Rifle Damage',
             }
         }
     },
@@ -548,7 +548,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Blade Damage',
+                value: '<span class="stat-value const">+7%</span> Blade Damage',
             }
         }
     },
@@ -562,7 +562,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Blood Damage',
+                value: '<span class="stat-value const">+7%</span> Blood Damage',
             }
         }
     },
@@ -576,7 +576,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Chaos Magic Damage',
+                value: '<span class="stat-value const">+7%</span> Chaos Magic Damage',
             }
         }
     },
@@ -590,7 +590,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Dual Pistols Damage',
+                value: '<span class="stat-value const">+7%</span> Dual Pistols Damage',
             }
         }
     },
@@ -604,7 +604,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Elementalism Damage',
+                value: '<span class="stat-value const">+7%</span> Elementalism Damage',
             }
         }
     },
@@ -618,7 +618,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Fist Weapons Damage',
+                value: '<span class="stat-value const">+7%</span> Fist Weapons Damage',
             }
         }
     },
@@ -632,7 +632,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Hammer Damage',
+                value: '<span class="stat-value const">+7%</span> Hammer Damage',
             }
         }
     },
@@ -646,7 +646,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Shotgun Damage',
+                value: '<span class="stat-value const">+7%</span> Shotgun Damage',
             }
         }
     },
@@ -660,7 +660,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Assault Rifle Damage',
+                value: '<span class="stat-value const">+7%</span> Assault Rifle Damage',
             }
         }
     },
@@ -674,7 +674,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Blade Damage',
+                value: '<span class="stat-value const">+7%</span> Blade Damage',
             }
         }
     },
@@ -688,7 +688,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Blood Damage',
+                value: '<span class="stat-value const">+7%</span> Blood Damage',
             }
         }
     },
@@ -702,7 +702,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Chaos Magic Damage',
+                value: '<span class="stat-value const">+7%</span> Chaos Magic Damage',
             }
         }
     },
@@ -716,7 +716,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Dual Pistols Damage',
+                value: '<span class="stat-value const">+7%</span> Dual Pistols Damage',
             }
         }
     },
@@ -730,7 +730,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Elementalism Damage',
+                value: '<span class="stat-value const">+7%</span> Elementalism Damage',
             }
         }
     },
@@ -744,7 +744,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Fist Weapons Damage',
+                value: '<span class="stat-value const">+7%</span> Fist Weapons Damage',
             }
         }
     },
@@ -758,7 +758,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Hammer Damage',
+                value: '<span class="stat-value const">+7%</span> Hammer Damage',
             }
         }
     },
@@ -772,7 +772,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+7%</span> Shotgun Damage',
+                value: '<span class="stat-value const">+7%</span> Shotgun Damage',
             }
         }
     },
@@ -786,7 +786,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+5%</span> Damage and Healing',
+                value: '<span class="stat-value const">+5%</span> Damage and Healing',
             }
         }
     },
@@ -795,7 +795,7 @@ swlcalc.data.agents = [
         name: 'Faction Quartermaster',
         bonuses: {
             "25": {
-                value: '<span class="bonus-val const">+2.5%</span> Damage',
+                value: '<span class="stat-value const">+2.5%</span> Damage',
                 type: 'miscellaneous',
             },
             "50": {
@@ -842,7 +842,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Humans',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Humans',
             }
         }
     },
@@ -856,7 +856,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Cybernetic',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Cybernetic',
             }
         }
     },
@@ -870,7 +870,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Aquatic Creatures',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Aquatic Creatures',
             }
         }
     },
@@ -884,7 +884,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Constructs',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Constructs',
             }
         }
     },
@@ -898,7 +898,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Spirits',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Spirits',
             }
         }
     },
@@ -912,7 +912,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Filth',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Filth',
             }
         }
     },
@@ -926,7 +926,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Demons',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Demons',
             }
         }
     },
@@ -940,7 +940,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Animals',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Animals',
             }
         }
     },
@@ -954,7 +954,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Supernatural Beings',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Supernatural Beings',
             }
         }
     },
@@ -968,7 +968,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Undead',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Undead',
             }
         }
     },
@@ -978,7 +978,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+2.5%</span> Damage',
+                value: '<span class="stat-value const">+2.5%</span> Damage',
             },
             "50": {
                 type: 'heal-rating',
@@ -992,7 +992,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Assault Rifle Damage',
+                value: '<span class="stat-value const">+3.5%</span> Assault Rifle Damage',
             },
             "50": {
                 type: 'heal-rating',
@@ -1006,7 +1006,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Blade Damage',
+                value: '<span class="stat-value const">+3.5%</span> Blade Damage',
             },
             "50": {
                 type: 'heal-rating',
@@ -1020,7 +1020,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Blood Damage',
+                value: '<span class="stat-value const">+3.5%</span> Blood Damage',
             },
             "50": {
                 type: 'heal-rating',
@@ -1034,7 +1034,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Chaos Magic Damage',
+                value: '<span class="stat-value const">+3.5%</span> Chaos Magic Damage',
             },
             "50": {
                 type: 'heal-rating',
@@ -1048,7 +1048,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Dual Pistols Damage',
+                value: '<span class="stat-value const">+3.5%</span> Dual Pistols Damage',
             },
             "50": {
                 type: 'heal-rating',
@@ -1062,7 +1062,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Elementalism Damage',
+                value: '<span class="stat-value const">+3.5%</span> Elementalism Damage',
             },
             "50": {
                 type: 'heal-rating',
@@ -1076,7 +1076,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Fist Weapons Damage',
+                value: '<span class="stat-value const">+3.5%</span> Fist Weapons Damage',
             },
             "50": {
                 type: 'heal-rating',
@@ -1090,7 +1090,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Hammer Damage',
+                value: '<span class="stat-value const">+3.5%</span> Hammer Damage',
             },
             "50": {
                 type: 'heal-rating',
@@ -1104,7 +1104,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+3.5%</span> Shotgun Damage',
+                value: '<span class="stat-value const">+3.5%</span> Shotgun Damage',
             },
             "50": {
                 type: 'heal-rating',
@@ -1136,7 +1136,7 @@ swlcalc.data.agents = [
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Vampires',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Vampires',
             }
         }
     },
@@ -1146,11 +1146,11 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val dps">5%</span> chance of knockdown enemy on hit',
+                value: '<span class="stat-value dps">5%</span> chance of knockdown enemy on hit',
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Filth',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Filth',
             }
         }
     },
@@ -1160,11 +1160,11 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+5%</span> Damage Versus Undead',
+                value: '<span class="stat-value const">+5%</span> Damage Versus Undead',
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Damage Versus Aquatic Creatures',
+                value: '<span class="stat-value const">+10%</span> Damage Versus Aquatic Creatures',
             }
         }
     },
@@ -1188,7 +1188,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val dps">%d</span> Damage to enemies when you are hit',
+                value: '<span class="stat-value dps">%d</span> Damage to enemies when you are hit',
                 varbonus: {
                     coef: 0.15,
                     stat: 'Combat Power'
@@ -1206,7 +1206,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+2.5%</span> Damage and Healing',
+                value: '<span class="stat-value const">+2.5%</span> Damage and Healing',
             },
             "50": {
                 type: 'critical-power',
@@ -1220,7 +1220,7 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+2.5%</span> Damage and Healing',
+                value: '<span class="stat-value const">+2.5%</span> Damage and Healing',
             },
             "50": {
                 type: 'critical-power',
@@ -1234,11 +1234,11 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+5%</span> Outgoing Damage for 3 seconds on dodge.',
+                value: '<span class="stat-value const">+5%</span> Outgoing Damage for 3 seconds on dodge.',
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Outgoing Damage for 3 seconds on dodge.',
+                value: '<span class="stat-value const">+10%</span> Outgoing Damage for 3 seconds on dodge.',
             }
         }
     },
@@ -1248,11 +1248,11 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+2000</span> Protection for 3 seconds on dodge.',
+                value: '<span class="stat-value const">+2000</span> Protection for 3 seconds on dodge.',
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+4000</span> Protection for 3 seconds on dodge.',
+                value: '<span class="stat-value const">+4000</span> Protection for 3 seconds on dodge.',
             }
         }
     },
@@ -1262,11 +1262,11 @@ swlcalc.data.agents = [
         bonuses: {
             "25": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+5%</span> Outgoing Healing for 3 seconds on dodge.',
+                value: '<span class="stat-value const">+5%</span> Outgoing Healing for 3 seconds on dodge.',
             },
             "50": {
                 type: 'miscellaneous',
-                value: '<span class="bonus-val const">+10%</span> Outgoing Healing for 3 seconds on dodge.',
+                value: '<span class="stat-value const">+10%</span> Outgoing Healing for 3 seconds on dodge.',
             }
         }
     }

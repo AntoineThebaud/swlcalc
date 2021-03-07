@@ -143,7 +143,7 @@
             </p>
             {/slot.isWeapon}
             <p id="{slot.id}-recap-signet-description">
-                Increases the damage and healing of Elemental Elite Abilities by <span class="bonus-val const">%d</span><span class="bonus-val const">%</span>.
+                Increases the damage and healing of Elemental Elite Abilities by <span class="stat-value const">%d</span><span class="stat-value const">%</span>.
             </p>
         </div>
         <p id="{slot.id}-recap-signet-empty" class="empty-slot" hidden>

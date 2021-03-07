@@ -42,8 +42,8 @@ QUnit.test("should update elements related to equipment's item/id accordingly", 
 
     // assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgItem(), 'assets/images/icons/talisman/head/Cosmic Pigment.png');
     // assert.equal(swlcalc.gear.slots.head.recap.el.equipmentImgItem(), 'assets/images/icons/talisman/head/Cosmic Pigment.png');
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentDescription(), "Whenever you are hit <span class=\"bonus-val const\">5</span> times in succession, you deal <span id=\"head-edit-equipment-bonus1\" class=\"bonus-val dps\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
-    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentDescription.html(), "Whenever you are hit <span class=\"bonus-val const\">5</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"bonus-val dps\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentDescription(), "Whenever you are hit <span class=\"stat-value const\">5</span> times in succession, you deal <span id=\"head-edit-equipment-bonus1\" class=\"stat-value dps\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentDescription.html(), "Whenever you are hit <span class=\"stat-value const\">5</span> times in succession, you deal <span id=\"head-recap-equipment-bonus1\" class=\"stat-value dps\">%d</span> physical damage to nearby enemies. This damage generates a large amount of hate.");
     assert.equal(swlcalc.gear.slots.head.recap.el.equipmentItem.text(), "Cosmic Pigment");
 });
 
@@ -156,13 +156,13 @@ QUnit.test("should update elements related to equipment's ilvl accordingly", fun
 });
 
 QUnit.test("should update every bonus values present in equipment's description (both edit & recap) accordingly", function(assert) {
-    assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentDescription(), "Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class=\"bonus-val const\">10%</span>. In addition, once you have lost <span class=\"bonus-val const\">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">275</span> magical damage or your next healing Blood Magic ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">66</span> health.");
+    assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentDescription(), "Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class=\"stat-value const\">10%</span>. In addition, once you have lost <span class=\"stat-value const\">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"stat-value dps\">275</span> magical damage or your next healing Blood Magic ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"stat-value heal\">66</span> health.");
 
     $("#stat-combat-power").html("9999");
     $("#stat-healing-power").html("2222");
     swlcalc.gear.slots.waist.updateEquipmentBonuses();
 
-    assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentDescription(), "Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class=\"bonus-val const\">10%</span>. In addition, once you have lost <span class=\"bonus-val const\">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"bonus-val dps\">4250</span> magical damage or your next healing Blood Magic ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"bonus-val heal\">944</span> health.");
+    assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentDescription(), "Reduces the amount of self-damage dealt by Corruption and Martyrdom by <span class=\"stat-value const\">10%</span>. In addition, once you have lost <span class=\"stat-value const\">10%</span> of your health due to corruption or martyrdom, your next damaging Blood Magic ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"stat-value dps\">4250</span> magical damage or your next healing Blood Magic ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"stat-value heal\">944</span> health.");
 });
 
 QUnit.test("should update elements related to glyph's item/id accordingly", function(assert) {
@@ -263,8 +263,8 @@ QUnit.test("should update elements related to glyph's ilvl accordingly", functio
 
 QUnit.test("should update elements related to signet's item/id accordingly", function(assert) {
     assert.equal(swlcalc.gear.slots.head.edit.getSignetImgItem(), 'assets/images/icons/signet/head.png');
-    assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"bonus-val const\">7.0286</span><span class=\"bonus-val const\">%</span>.");
-    assert.equal(swlcalc.gear.slots.head.recap.el.signetDescription.html(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-recap-signet-bonus1\" class=\"bonus-val const\">7.0286</span><span class=\"bonus-val const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"stat-value const\">7.0286</span><span class=\"stat-value const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.head.recap.el.signetDescription.html(), "Reduces the cooldown of all Elite Abilities by <span id=\"head-recap-signet-bonus1\" class=\"stat-value const\">7.0286</span><span class=\"stat-value const\">%</span>.");
     assert.equal(swlcalc.gear.slots.head.recap.el.signetItem.text(), "Signet of the Ascendant");
 
     swlcalc.gear.slots.head.edit.el.signetId.val("none");

@@ -458,7 +458,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
 
             // update affix bonus's color (will do nothing if signet-wrapper doesnt exist)
             // not part of the above loop because, for the moment, there can be only one value at a time for which this coloring applies
-            var newClass = 'bonus-val color-' + swlcalc.data.rarityMapping.toName[this.edit.getEquipmentQuality()];
+            var newClass = 'stat-value color-' + swlcalc.data.rarityMapping.toName[this.edit.getEquipmentQuality()];
             this.edit.setSignetBonusWrapper(newClass);
             this.recap.setSignetBonusWrapper(newClass);
         } else {

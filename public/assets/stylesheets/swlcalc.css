@@ -1,3 +1,4 @@
+/* GENERAL ********************************************************************/
 :root {
 /*  --color-illuminati: #435682;
     --color-templar: #7E2D2F;
@@ -50,7 +51,6 @@ html[theme='classic'] {
     --edit-select-bg: white;
     --aallocation-bg: white;
     --aallocation-text-color: unset;
-    --not-functional: var(--color-lightgrey);
 
     --btn-transparent-idle: #777;
     --btn-transparent-active: #333;
@@ -82,12 +82,10 @@ html[theme='sw'] {
     --edit-select-bg: #333;
     --aallocation-bg: #111;
     --aallocation-text-color: var(--slot-text-color);
-    --not-functional: var(--color-darkgrey);
 
     --btn-transparent-idle: #9d9d9d;
     --btn-transparent-active: #fff;
 }
-/******************************************************/
 body {
     color: var(--slot-text-color);
     padding-top: 50px !important;
@@ -119,6 +117,18 @@ option:disabled {
 div.container {
     width: 1220px;
 }
+.stat-value {
+    font-weight: bold;
+}
+.stat-value.const {
+    color: var(--color-const);
+}
+.stat-value.gear {
+    color: var(--color-attribute);
+}
+.stat-value.aligned {
+    text-align: right;
+}
 .section {
     background-color: var(--container-bg-color);
 }
@@ -128,18 +138,146 @@ div.container {
 .modal-open {
     overflow-y: scroll;
 }
-/******************************************************/
-.masthead {
-    margin-top: 10px;
-}
-.not-functional {
-    color: var(--not-functional) !important;
-}
 .fix-link {
     cursor: pointer;
     pointer-events: none;
 }
-/******************************************************/
+.footer p {
+    margin-top: 25px;
+    margin-bottom: 0;
+    background: var(--bar-bg);
+    color: var(--color-mediumgrey);
+    padding: 10px 25px;
+    text-align: center;
+}
+.fixed {
+    position: fixed;
+}
+div[id="sidebar"] {
+    width: 200px;
+    margin-left: 25px;
+}
+/* GENERAL > COLORED ELEMENTS ----------------------------------------------- */
+.lightgrey {
+    color: var(--color-lightgrey);
+}
+.mediumgrey {
+    color: var(--color-mediumgrey);
+}
+.darkgrey {
+    color: var(--color-darkgrey);
+}
+.color-standard {
+    color: var(--color-standard) !important;
+}
+.color-superior {
+    color: var(--color-superior) !important;
+}
+.color-epic {
+    color: var(--color-epic) !important;
+}
+.color-mythic {
+    color: var(--color-mythic) !important;
+}
+.color-legendary {
+    color: var(--color-legendary) !important;
+}
+.dps {
+    color: var(--color-dps) !important;
+}
+.heal {
+    color: var(--color-heal) !important;
+}
+.tank {
+    color: var(--color-tank) !important;
+}
+.border-standard {
+    border-color: var(--color-standard) !important;
+}
+.border-superior {
+    border-color: var(--color-superior) !important;
+}
+.border-epic {
+    border-color: var(--color-epic) !important;
+}
+.border-mythic {
+    border-color: var(--color-mythic) !important;
+}
+.border-legendary {
+    border-color: var(--color-legendary) !important;
+}
+/* GENERAL > TABLE ---------------------------------------------------------- */
+.table {
+    margin-bottom: 10px;
+}
+.table td {
+    min-width: 32px;
+    min-height: 32px;
+    font-size: 12px;
+    /* padding: 0px; */
+    vertical-align: middle;
+}
+/* GENERAL > Modal windows -------------------------------------------------- */
+.modal-dialog {
+    margin: 10% auto;
+    width: 35%;
+    min-width: 700px;
+}
+.modal-header {
+    background-color: var(--color-bg-modalheader);
+}
+.modal-body {
+    background: var(--edit-bg);
+    border-radius: 15px;
+    border: var(--edit-border);
+}
+/* GENERAL > Helpers  ------------------------------------------------------- */
+.glyphicon-question-sign {
+    float: right;
+    opacity: 50%;
+}
+.tooltip {
+    width: 200px;
+}
+.tooltip-inner {
+    max-width: 200px;
+}
+/* GENERAL > select2  ------------------------------------------------------- */
+.select2-container {
+    color: var(--slot-text-color);
+}
+.equipment-select > .select2-container {
+    max-width: 140px;
+}
+.select2-dropdown {
+    background-color: var(--edit-select-bg) !important;
+    font-size: 12px !important;
+    width: 300px !important;
+}
+.select2-container--default .select2-selection--single {
+    border: 1px solid #ccc !important;
+    background-color: var(--edit-select-bg) !important;
+}
+.select2-container .select2-selection--single {
+    height: 32px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: unset !important;
+    line-height: 32px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 30px !important;
+}
+.select2-container--default .select2-results__option[aria-selected="true"] {
+    background-color: var(--color-highlightgrey) !important;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    color: var(--edit-select-bg) !important;
+}
+.select2-search__field {
+    background-color: var(--edit-select-bg) !important;
+}
+/* TOP MENU BAR ***************************************************************/
 .navbar-icon-a {
     padding: 0 !important;
 }
@@ -206,166 +344,10 @@ div.container {
     background-color: transparent;
     border: none;
 }
-.btn-transparent.focus, .btn-transparent:focus {
+.btn-transparent.focus, .btn-transparent:hover, .btn-transparent.active, .open > .dropdown-toggle.btn-transparent  {
     color: var(--btn-transparent-active);
 }
-.btn-transparent:hover {
-    color: var(--btn-transparent-active);
-}
-.btn-transparent.active, .btn-transparent:active, .open > .dropdown-toggle.btn-transparent {
-    color: var(--btn-transparent-active);
-}
-.btn-transparent.active.focus, .btn-transparent.active:focus, .btn-transparent.active:hover, .btn-transparent:active.focus, .btn-transparent:active:focus, .btn-transparent:active:hover, .open > .dropdown-toggle.btn-transparent.focus, .open > .dropdown-toggle.btn-transparent:focus, .open > .dropdown-toggle.btn-transparent:hover {
-    color: var(--btn-transparent-active);
-}
-/******************************************************/
-.lightgrey {
-    color: var(--color-lightgrey);
-}
-.mediumgrey {
-    color: var(--color-mediumgrey);
-}
-.darkgrey {
-    color: var(--color-darkgrey);
-}
-/******************************************************/
-.color-standard {
-    color: var(--color-standard) !important;
-}
-.color-superior {
-    color: var(--color-superior) !important;
-}
-.color-epic {
-    color: var(--color-epic) !important;
-}
-.color-mythic {
-    color: var(--color-mythic) !important;
-}
-.color-legendary {
-    color: var(--color-legendary) !important;
-}
-/******************************************************/
-.dps {
-    color: var(--color-dps) !important;
-}
-.heal {
-    color: var(--color-heal) !important;
-}
-.tank {
-    color: var(--color-tank) !important;
-}
-/******************************************************/
-.border-standard {
-    border-color: var(--color-standard) !important;
-}
-.border-superior {
-    border-color: var(--color-superior) !important;
-}
-.border-epic {
-    border-color: var(--color-epic) !important;
-}
-.border-mythic {
-    border-color: var(--color-mythic) !important;
-}
-.border-legendary {
-    border-color: var(--color-legendary) !important;
-}
-/******************************************************/
-.btn-group.setter {
-    padding-right: 5px;
-}
-/******************************************************/
-.table {
-    margin-bottom: 10px;
-}
-.table td {
-    min-width: 32px;
-    min-height: 32px;
-    font-size: 12px;
-    /* padding: 0px; */
-    vertical-align: middle;
-}
-.table-slots {
-    border-top: 1px solid var(--color-border);
-}
-div[id$="-edit-div"] select {
-    border-radius: 4px;
-}
-div[id$="-edit-div"] .table-slots td {
-    border: none;
-    padding-top: 10px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-}
-div[id="summary"] .table-stats td {
-    padding: 1px;
-    border-top: none;
-}
-div[id="summary"] .table-stats tr.separator {
-    border-bottom: 1px solid var(--color-border);
-}
-div[id="summary"] .table-stats th {
-    padding-top: 3px;
-    padding-bottom: 0;
-    padding-left: 0;
-    background: var(--summary-category-bg);
-    font-size: 13px;
-    border-bottom: 2px solid var(--color-border);
-}
-div[id="summary"] > h4 {
-    position: relative;
-}
-div[id="summary"] > h4 > button {
-    position: absolute;
-    right: 0px;
-}
-div[id="summary"] > h4 > button > img {
-    width: 20px;
-}
-div[id="summary"] .table-stats td.stat-name {
-    width: 200px;
-}
-
-.table-title {
-    width: 100%;
-}
-.td-title {
-    min-width: 300px;
-}
-tr.with-icon {
-    height: 48px;
-}
-td.filler {
-    width: auto;
-}
-.icon-retweet {
-
-}
-.swap-weapon {
-    margin-bottom: 4px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-right: 6px;
-    padding-left: 6px;
-}
-/******************************************************/
-/* rules relative to any kind of item (talisman, weapon, glyph or signet) */
-div[id$="-edit-div"] .table-slots td.item-title {
-    font-size: 15px;
-    font-style: italic;
-    font-weight: bold;
-    vertical-align: middle;
-    padding-left: 15px;
-}
-div[id$="-edit-div"] .table-slots td.item-description {
-    text-align: justify;
-    line-height: 18px;
-    vertical-align: top;
-    padding-left: 10px;
-    padding-right: 5px;
-}
-/******************************************************/
+/* SLOT ***********************************************************************/
 div.label-level {
     position: absolute;
     top: 0px;
@@ -387,8 +369,7 @@ div.label-level.little {
     width: 20px;
     font-size: 10px;
 }
-/******************************************************/
-/* slot > equipment (talisman/weapon) & glyph & signet */
+/* SLOT > Item images --------------------------------------------------------*/
 td[id$="-img-section"] {
     position: relative;
     vertical-align: top;
@@ -425,14 +406,65 @@ img[id$="-img-rarity"] {
 img[id$="-img-quality"] {
     z-index: 2;
 }
+/* SLOT > EDITION ------------------------------------------------------------*/
+.slot h4 {
+    padding: 0px;
+    display: inline;
+}
+.table-slots {
+    border-top: 1px solid var(--color-border);
+}
+td.stat-inSlotEdit {
+    text-align: center;
+}
+div[id$="-edit-div"] select {
+    border-radius: 4px;
+}
+div[id$="-edit-div"] .table-slots td {
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+div[id$="-edit-div"] .table-slots td.item-title {
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bold;
+    vertical-align: middle;
+    padding-left: 15px;
+}
+div[id$="-edit-div"] .table-slots td.item-description {
+    text-align: justify;
+    line-height: 18px;
+    vertical-align: top;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+.thin-p {
+    margin-bottom: 0px;
+    line-height: 1.2;
+}
+.table-title {
+    width: 100%;
+}
+.td-title {
+    min-width: 300px;
+}
+tr.with-icon {
+    height: 48px;
+}
+td.filler {
+    width: auto;
+}
+/* SLOT > EDITION > Item images ----------------------------------------------*/
 div[id$="-edit-div"] .table-slots td.equipment-select {
     width: 150px;
 }
 div[id$="-edit-div"] .table-slots td.equipment-select select {
     max-width: 140px;
 }
-/******************************************************/
-/* slot > glyph & signet */
+/* SLOT > EDITION > Glyphs & signets -----------------------------------------*/
 div[id$="-edit-div"] .table-slots td.glyph-select,
 div[id$="-edit-div"] .table-slots td.signet-select {
     width: 160px;
@@ -441,8 +473,7 @@ div[id$="-edit-div"] .table-slots td.glyph-select select,
 div[id$="-edit-div"] .table-slots td.signet-select select {
     max-width: 150px;
 }
-/******************************************************/
-/* slot > all > rarity/quality/level */
+/* SLOT > EDITION > rarity/quality/level -------------------------------------*/
 div[id$="-edit-div"] .table-slots td.upgrade-label {
     width: 65px;
 }
@@ -463,49 +494,7 @@ div[id$="-edit-div"] .table-slots input.level-slider {
 div[id$="-edit-div"] .table-slots td.signetalign {
     padding-top: 18px;
 }
-/******************************************************/
-.stat-value {
-    font-weight: bold;
-}
-.stat-value.gear {
-    color: var(--color-attribute);
-}
-td.stat-inSlot {
-    text-align: center;
-}
-td.stat-inSummary {
-    text-align: right;
-}
-/******************************************************/
-.bonus-val {
-    font-weight: bold;
-}
-.bonus-val.const {
-    color: var(--color-const);
-}
-/******************************************************/
-.modal-dialog {
-    margin: 10% auto;
-    width: 35%;
-    min-width: 700px;
-}
-.modal-body {
-    background: var(--edit-bg);
-    border-radius: 15px;
-    border: var(--edit-border);
-}
-.modal-body.export {
-    border-radius: 0px;
-    border: none
-}
-.slot-name {
-    font-weight: normal;
-}
-.slot h4 {
-    padding: 0px;
-    display: inline;
-}
-/******************************************************/
+/* SLOT > EDITION > ilvl -----------------------------------------------------*/
 td.slot-ilvl {
     font-size: 12px;
     padding: 0px;
@@ -521,16 +510,7 @@ td.ilvl {
     vertical-align: bottom;
     line-height: 12px;
 }
-/******************************************************/
-.btn-button-bar {
-    padding: 4px 6px;
-}
-.button-bar-dropdown {
-    min-width: auto;
-}
-/******************************************************/
-/* slot > recap */
-
+/* SLOT > RECAP --------------------------------------------------------------*/
 div[id$="-recap-div"] {
     width: 275px;
     min-height: 300px;
@@ -560,12 +540,18 @@ div[id$="-recap-div"] hr, .agent-div > hr {
     margin-bottom: 4px;
     border-top: 2px solid var(--slot-hr-color);
 }
-/*----------------------------------------------------*/
 td[id$="-recap-equipment-title-section"] {
     width: 160px;
     vertical-align: top;
 }
-/*----------------------------------------------------*/
+.stat-transformed {
+    font-style: italic;
+    margin-left: 18px;
+}
+td[id$="-recap-equipment-img-section"] {
+    height: 60px;
+}
+/* SLOT > RECAP > Edit btn -------------------------------------------------- */
 td[id$="-editbtn-section"] {
     vertical-align: top;
 }
@@ -579,7 +565,7 @@ button[id$="-editbtn"] img {
     width: 25px;
     filter: var(--img-filter);
 }
-/*----------------------------------------------------*/
+/* SLOT > RECAP > Empty slot ------------------------------------------------ */
 div[id$="-recap-div"] .empty-slot {
     margin-top: 8px;
 }
@@ -594,7 +580,7 @@ td[id$="-recap-equipment-empty"] {
     width: 90%;
     height: 30px;
 }
-/*----------------------------------------------------*/
+/* SLOT > RECAP > Active weapon --------------------------------------------- */
 .weapon-active-p {
     width: 275px;
     font-size: 14px;
@@ -611,62 +597,41 @@ div[id$="weapon-recap-div"],
 div[id$="weapon2-recap-div"]{
     margin-bottom: 0px;
 }
-/*----------------------------------------------------*/
-.stat-transformed {
-    font-style: italic;
-    margin-left: 18px;
+/* SUMMARY ********************************************************************/
+div[id="summary"] table td {
+    padding: 1px;
+    border-top: none;
 }
-td[id$="-recap-equipment-img-section"] {
-    height: 60px;
+div[id="summary"] table tr.separator {
+    border-bottom: 1px solid var(--color-border);
 }
-.footer p {
-    margin-top: 25px;
-    margin-bottom: 0;
-    background: var(--bar-bg);
-    color: var(--color-mediumgrey);
-    padding: 10px 25px;
-    text-align: center;
+div[id="summary"] table th {
+    padding-top: 3px;
+    padding-bottom: 0;
+    padding-left: 0;
+    background: var(--summary-category-bg);
+    font-size: 13px;
+    border-bottom: 2px solid var(--color-border);
 }
-
-/*---------------- rules for select2 ----------------*/
-.select2-container {
-    color: var(--slot-text-color);
+div[id="summary"] > h4 {
+    position: relative;
 }
-.equipment-select > .select2-container {
-    max-width: 140px;
+div[id="summary"] > h4 > button {
+    position: absolute;
+    right: 0px;
 }
-.agent-table > tbody > tr > td > .select2-container {
-    width: 100% !important;
+div[id="summary"] > h4 > button > img {
+    width: 20px;
 }
-.select2-dropdown {
-    background-color: var(--edit-select-bg) !important;
-    font-size: 12px !important;
-    width: 300px !important;
+div[id="summary"] table td.stat-name {
+    width: 200px;
 }
-.select2-container--default .select2-selection--single {
-    border: 1px solid #ccc !important;
-    background-color: var(--edit-select-bg) !important;
+/* EXPORT *********************************************************************/
+.modal-body.export {
+    border-radius: 0px;
+    border: none
 }
-.select2-container .select2-selection--single {
-    height: 32px !important;
-}
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: unset !important;
-    line-height: 32px !important;
-}
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-    height: 30px !important;
-}
-.select2-container--default .select2-results__option[aria-selected="true"] {
-    background-color: var(--color-highlightgrey) !important;
-}
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
-    color: var(--edit-select-bg) !important;
-}
-.select2-search__field {
-    background-color: var(--edit-select-bg) !important;
-}
-/*----------------------------------------------------------*/
+/* AGENT **********************************************************************/
 .agent-div {
     background: var(--slot-bg);
     border: var(--slot-border);
@@ -675,34 +640,28 @@ td[id$="-recap-equipment-img-section"] {
     margin-top: 2px;
     margin-bottom: 15px;
 }
-.agent-table > tbody > tr > td {
+.agent-div > table > tbody > tr > td {
     border: none;
     padding: 5px;
 }
-.agent-table > tbody > tr > td.agent-title {
+.agent-div > table > tbody > tr > td.agent-title {
     text-align: center;
     font-size: 14px;
     font-weight: bold;
     padding: 5px;
 }
-.agent-table > tbody > tr > td.agent-name-label {
+.agent-div > table > tbody > tr > td.agent-name-label {
     vertical-align: middle;
     width: 55px;
 }
-.agent-name-select {
-    /* width: 150px;*/
-}
-.agent-table > tbody > tr > td.agent-level-label {
+.agent-div > table > tbody > tr > td.agent-level-label {
     vertical-align: middle;
 }
-.agent-table > tbody > tr > td > select {
+.agent-div > table > tbody > tr > td > select {
     width: 100%;
     border-radius: 4px;
 }
-.agent-level-select {
-    /* width: 150px; */
-}
-/*----------------------------------------------------------*/
+/* ANIMA ALLOCATION ***********************************************************/
 div[id="row-anima-allocation"] {
     margin-bottom: 25px;
 }
@@ -715,45 +674,27 @@ div[id="row-anima-allocation"] {
 .anima-allocation-val {
     padding-right: 5px;
 }
-
-/* div[id="row-summary"] {
-    margin-bottom: 65px;
-} */
-
-.fixed {
-    position: fixed;
-}
-
-div[id="sidebar"] {
-    width: 200px;
-    margin-left: 25px;
-}
-
-.thin-p {
-    margin-bottom: 0px;
-    line-height: 1.2;
-}
-
+/* PASSIVES *******************************************************************/
 div[id="passives-modal"] > .modal-dialog {
     width: 900px;
 }
-div[id="passives"] .table-stats td {
+div[id="passives"] table td {
     padding: 4px;
     vertical-align: middle;
 }
 div[id="passives"] .darker {
     background-color: var(--color-bg-darker);
 }
-div[id="passives"] .table-stats td.stat-name {
+div[id="passives"] table td.stat-name {
     width: 130px;
 }
-div[id="passives"] .table-stats td.stat-value {
+div[id="passives"] table td.stat-value {
     min-width: 43px;
 }
-div[id="passives"] .table-stats tr.separator {
+div[id="passives"] table tr.separator {
     border-bottom: 1px solid var(--color-border);
 }
-div[id="passives"] .table-stats th {
+div[id="passives"] table th {
     border-bottom: 2px solid var(--color-border);
     text-align: center;
 }
@@ -767,22 +708,6 @@ div[id="passives"] > h4 > button {
 div[id="passives"] > h4 > button > img {
     width: 20px;
 }
-div[id="passives"] .table-stats td.weapon-names {
+div[id="passives"] table td.weapon-names {
     width: 120px;
-}
-
-.modal-header {
-    background-color: var(--color-bg-modalheader);
-}
-
-.glyphicon-question-sign {
-    float: right;
-    opacity: 50%;
-}
-
-.tooltip {
-    width: 200px;
-}
-.tooltip-inner {
-    max-width: 200px;
 }
