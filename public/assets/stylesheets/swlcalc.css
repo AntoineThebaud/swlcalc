@@ -157,6 +157,9 @@ div[id="sidebar"] {
     width: 200px;
     margin-left: 25px;
 }
+.separator {
+    border-bottom: 1px solid var(--color-border);
+}
 /* GENERAL > COLORED ELEMENTS ----------------------------------------------- */
 .lightgrey {
     color: var(--color-lightgrey);
@@ -602,9 +605,6 @@ div[id="summary"] table td {
     padding: 1px;
     border-top: none;
 }
-div[id="summary"] table tr.separator {
-    border-bottom: 1px solid var(--color-border);
-}
 div[id="summary"] table th {
     padding-top: 3px;
     padding-bottom: 0;
@@ -690,9 +690,6 @@ div[id="passives"] table td.stat-name {
 }
 div[id="passives"] table td.stat-value {
     min-width: 43px;
-}
-div[id="passives"] table tr.separator {
-    border-bottom: 1px solid var(--color-border);
 }
 div[id="passives"] table th {
     border-bottom: 2px solid var(--color-border);

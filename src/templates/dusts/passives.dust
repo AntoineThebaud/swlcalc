@@ -9,14 +9,14 @@
                     <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="You can use the arrow keys to move a slider after clicking on it"></span>
                 </h4>
                 <table class="table">
+                    <thead>
+                        <th>Stat</th>
+                        <th class="darker" colspan="2">Base</th>      <!-- TODO/GUI : Add info on mouseover-->
+                        <th colspan="2">Passive Skills</th>           <!-- TODO/GUI : Add info on mouseover-->
+                        <th class="darker" colspan="2">Capstones</th> <!-- TODO/GUI : Add info on mouseover-->
+                        <th colspan="3">Expertise</th>                <!-- TODO/GUI : Add info on mouseover-->
+                    </thead>
                     <tbody>
-                        <thead>
-                            <th>Stat</th>
-                            <th class="darker" colspan="2">Base</th>      <!-- TODO/GUI : Add info on mouseover-->
-                            <th colspan="2">Passive Skills</th>           <!-- TODO/GUI : Add info on mouseover-->
-                            <th class="darker" colspan="2">Capstones</th> <!-- TODO/GUI : Add info on mouseover-->
-                            <th colspan="3">Expertise</th>                <!-- TODO/GUI : Add info on mouseover-->
-                        </thead>
                         <tr>
                             <td class="stat-name">Attack Rating</td>
                             <td class="darker"><input id="passive-attack-rating-base-slider" type="range" step="{passives.arBaseStep}" min="{passives.arBaseMin}" max="{passives.arBaseMax}"></td>
