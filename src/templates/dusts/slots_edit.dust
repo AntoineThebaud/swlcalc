@@ -75,22 +75,20 @@
                         </td>
                     </tr>
                     <tr>
-                        <td rowspan="2" class="filler"></td>
-                        <td rowspan="2" class="filler"></td>
-                        <td rowspan="2" class="upgrade-label level-label">
+                        <td class="filler"></td>
+                        <td class="filler"></td>
+                        <td class="upgrade-label level-label">
                             <strong>Level :</strong>
                         </td>
-                        <td rowspan="2" class="upgrade-select">
+                        <td class="upgrade-select">
                             <input id="{id}-edit-equipment-level" type="range" min="1" max="20" value="20" class="level-slider">
                         </td>
                     </tr>
-                    <tr>
-                        <td class="ilvl lightgrey">
+                    <tr class="separator">
+                        <td colspan="5" class="ilvl lightgrey">
                             <span id="{id}-edit-equipment-ilvl">0</span>
                         </td>
                     </tr>
-                </table>
-                <table id="{id}-edit-glyphs" class="table table-slots">
                     <tr>
                         <td class="item-title lightgrey" colspan="2">Glyph</td>
                         <td class="upgrade-label rarity-label">
@@ -139,12 +137,12 @@
                         <td class="upgrade-select level-select">
                             <input id="{id}-edit-glyph-level" type="range" min="1" max="20" value="20" class="level-slider">
                         </td>
-                        <td class="ilvl lightgrey">
+                    </tr>
+                    <tr class="separator">
+                        <td colspan="5" class="ilvl lightgrey">
                             <span id="{id}-edit-glyph-ilvl">0</span>
                         </td>
                     </tr>
-                </table>
-                <table id="{id}-edit-signets" class="table table-slots">
                     {?isWeapon}
                     <tr>
                         <td class="item-title lightgrey" colspan="2">Affix</td>
@@ -167,24 +165,23 @@
                         </td>
                     </tr>
                     <tr>
-                        <td rowspan="2" id="{id}-edit-signet-img-section" class="signet-img">
+                        <td id="{id}-edit-signet-img-section" class="signet-img">
                             <img id="{id}-edit-signet-img-item" src="" alt="Signet"/>
                             <img id="{id}-edit-signet-img-rarity" src=""/>
                             <div id="{id}-edit-signet-label-level" class="label-level little border-standard">20</div>
                         </td>
-                        <td rowspan="2" class="signet-select">
+                        <td class="signet-select">
                             <select id="{id}-edit-signet-id" title="Please select signet"></select>
                         </td>
-                        <td rowspan="2" class="upgrade-label quality-label"> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
+                        <td class="upgrade-label quality-label"> <!-- class is "quality.." instead of "level.." because we skip quality select for signets -->
                             <strong>Level :</strong>
                         </td>
-                        <td rowspan="2" class="upgrade-select signetalign">
+                        <td class="upgrade-select signetalign">
                             <input id="{id}-edit-signet-level" type="range" min="1" max="20" value="20" class="level-slider">
                         </td>
-
                     </tr>
                     <tr>
-                        <td class="ilvl lightgrey">
+                        <td colspan="5" class="ilvl lightgrey">
                             <span id="{id}-edit-signet-ilvl">0</span>
                         </td>
                     </tr>
