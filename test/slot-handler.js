@@ -4,10 +4,12 @@ QUnit.module("slot-handler-unit-tests", {
         renderGear();
         renderPassives();
         renderAnimaAllocation();
+        renderSummary();
         initiateHandlers();
         initiateAnimaAllocation();
         initiatePassives();
         initiateSummary();
+        createTankBuild();
     }
 });
 
@@ -76,18 +78,19 @@ QUnit.test("should have added signets to correct group", function(assert) {
 });
 
 QUnit.test("should set a non-zero ilvl value when selecting a glyph and then set it back to 0 when selecting none option", function(assert) {
-    assert.equal(swlcalc.gear.slots.occult.edit.getGlyphILvl(), 0);
-
-    swlcalc.gear.slots.occult.edit.setGlyphId("critical-rating");
-    assert.equal(swlcalc.gear.slots.occult.edit.getGlyphILvl(), 20);
+    assert.equal(swlcalc.gear.slots.occult.edit.getGlyphILvl(), 115);
 
     swlcalc.gear.slots.occult.edit.setGlyphId("none");
     assert.equal(swlcalc.gear.slots.occult.edit.getGlyphILvl(), 0);
+
+    swlcalc.gear.slots.occult.edit.setGlyphId("critical-rating");
+    assert.equal(swlcalc.gear.slots.occult.edit.getGlyphILvl(), 115);
 });
 
 QUnit.test("should update any #slot-edit-equipment-level sliders when its associated rarity is changed", function(assert) {
     for (var i = 0; i < swlcalc.data.templateData.slots.length; i++) {
         var id = swlcalc.data.templateData.slots[i].id;
+        swlcalc.gear.slots[id].edit.setEquipmentRarity("standard");
         assert.equal($("#" + id + "-edit-equipment-level").attr("max"), 20);
         swlcalc.gear.slots[id].edit.setEquipmentRarity("superior");
         assert.equal($("#" + id + "-edit-equipment-level").attr("max"), 25);
@@ -105,7 +108,7 @@ QUnit.test("should update any #slot-edit-equipment-level sliders when its associ
 QUnit.test("should update any #slot-edit-equipment-quality dropdowns when its associated rarity is changed", function(assert) {
     for (var i = 0; i < swlcalc.data.templateData.slots.length; i++) {
         var id = swlcalc.data.templateData.slots[i].id;
-        assert.equal($("#" + id + "-edit-equipment-quality > option").length, 3);
+        assert.equal($("#" + id + "-edit-equipment-quality > option").length, 4);
 
         swlcalc.gear.slots[id].edit.setEquipmentRarity("legendary");
         assert.equal($("#" + id + "-edit-equipment-quality > option").length, 4);
@@ -122,4 +125,16 @@ QUnit.test("should update any #slot-edit-equipment-quality dropdowns when its as
         swlcalc.gear.slots[id].edit.setEquipmentRarity("standard");
         assert.equal($("#" + id + "-edit-equipment-quality > option").length, 3);
     }
+});
+
+// TODO more tests to check that summary gets updated correctly
+
+QUnit.test("should update total ilvl in the summary", function(assert) {
+    assert.equal($("#stat-ilvl").text(), "334");
+
+    swlcalc.gear.slots.occult.edit.setSignetLevel("7");
+    assert.equal($("#stat-ilvl").text(), "332");
+
+    swlcalc.gear.slots.occult.edit.setSignetId("none");
+    assert.equal($("#stat-ilvl").text(), "327");
 });

@@ -235,9 +235,6 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
      */
     this.handleAffixIdChange = function(event) {
         slotObj.updateSignet();
-
-        swlcalc.summary.updateAllStats();
-        swlcalc.gear.updateSignetsBonuses();
     };
 
     /**
@@ -247,8 +244,7 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateSignet();
         slotObj.updateSignetILvl();
 
-        swlcalc.summary.updateAllStats();
-        swlcalc.gear.updateSignetsBonuses();
+        swlcalc.summary.updateILvl();
     };
 
     /**
@@ -259,8 +255,7 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateSignetRarity();
         slotObj.updateSignetILvl();
 
-        swlcalc.summary.updateAllStats();
-        swlcalc.gear.updateSignetsBonuses();
+        swlcalc.summary.updateILvl();
     };
 
     /**
@@ -270,7 +265,6 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateSignetLevel();
         slotObj.updateSignetILvl();
 
-        swlcalc.summary.updateAllStats();
-        swlcalc.gear.updateSignetsBonuses();
+        swlcalc.summary.updateILvl();
     };
 };
