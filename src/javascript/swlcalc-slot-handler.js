@@ -5,6 +5,7 @@ swlcalc.handler = swlcalc.handler || {};
 swlcalc.gear.SlotHandler = function SlotHandler(slot) {
 
     var slotObj = swlcalc.gear.slots[slot.id];
+    var previousGlyphId = "none";
 
     this.init = function() {
         this.bindEvents();
@@ -177,7 +178,14 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateGlyphRating();
         slotObj.updateGlyphILvl();
 
-        swlcalc.summary.updateAllStats();
+        var newGlyphId = slotObj.edit.getGlyphId();
+
+        // TODO : parallelize these calls ?
+        swlcalc.summary.updateSecondaryStat(newGlyphId);
+        swlcalc.summary.updateSecondaryStat(previousGlyphId);
+        swlcalc.summary.updateILvl();
+
+        previousGlyphId = newGlyphId;
     };
 
     /**
@@ -189,7 +197,8 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateGlyphRating();
         slotObj.updateGlyphILvl();
 
-        swlcalc.summary.updateAllStats();
+        swlcalc.summary.updateSecondaryStat(slotObj.edit.getGlyphId());
+        swlcalc.summary.updateILvl();
     };
 
     /**
@@ -200,7 +209,8 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateGlyphRating();
         slotObj.updateGlyphILvl();
 
-        swlcalc.summary.updateAllStats();
+        swlcalc.summary.updateSecondaryStat(slotObj.edit.getGlyphId());
+        swlcalc.summary.updateILvl();
     };
 
     /**
@@ -211,7 +221,8 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateGlyphRating();
         slotObj.updateGlyphILvl();
 
-        swlcalc.summary.updateAllStats();
+        swlcalc.summary.updateSecondaryStat(slotObj.edit.getGlyphId());
+        swlcalc.summary.updateILvl();
     }
 
     /**********************************************************************************

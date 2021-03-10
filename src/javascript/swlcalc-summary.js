@@ -101,6 +101,22 @@ swlcalc.summary = function() {
         return totals;
     };
 
+    /**
+     * Updates the total ilvl in the summary
+     */
+    var updateILvl = function() {
+        var sumOfIlvl = 0;
+
+        // sum amount brought by gear slots
+        for (var id in swlcalc.gear.slots) {
+            var slot = swlcalc.gear.slots[id];
+            sumOfIlvl += parseInt(slot.edit.getILvl());
+        }
+
+        var newIlvl = computeAverageILvl(sumOfIlvl);
+        $("#stat-ilvl").text(newIlvl);
+    };
+
     /*
      * Computes the Primary (= Combat or Healing) Power for the given Primary Stat Rating and Weapon Power values
      * SWL formula for Primary Power is like :
@@ -119,6 +135,75 @@ swlcalc.summary = function() {
      */
     var computeDamageMitigation = function(sumProtectionPoints) {
         return swlcalc.util.precisionRound((sumProtectionPoints * 100) / (sumProtectionPoints + swlcalc.data.stats.protConstDivisor), 1);
+    };
+
+
+    /**
+     * Update the given secondary stat in the summary
+     */
+    var updateSecondaryStat = function(stat) {
+        if (stat == "none") return;
+
+        var totalValue        = 0;
+        var statPercent       = swlcalc.data.secondaryStatMapping.toPercentStat[stat];
+        var totalValuePercent = 0;
+
+        // sum amount brought by passives
+        switch (stat) {
+            case 'critical-rating':
+                totalValue        += swlcalc.passives.getTotalCriticalRating();
+                totalValuePercent += swlcalc.passives.getTotalCriticalChance();
+                break;
+            case 'critical-power':
+                totalValue        += swlcalc.passives.getTotalCriticalPower();
+                totalValuePercent += swlcalc.passives.getTotalCriticalPowerPercentage();
+                break;
+            case 'hit-rating':
+                totalValue        += swlcalc.passives.getTotalHitRating();
+                totalValuePercent += swlcalc.passives.getTotalGlanceReduction();
+                break;
+            case 'evade-rating':
+                totalValue        += swlcalc.passives.getTotalEvadeRating();
+                totalValuePercent += swlcalc.passives.getTotalEvadeChance();
+                break;
+            case 'defense-rating':
+                totalValue        += swlcalc.passives.getTotalDefenseRating();
+                totalValuePercent += swlcalc.passives.getTotalGlanceChance();
+                break;
+            default:
+                break;
+        }
+
+        // sum amount brought by glyphs
+        for (var id in swlcalc.gear.slots) {
+            var slot = swlcalc.gear.slots[id];
+            if (slot.isWeapon() && !slot.active) {
+                continue;
+            }
+            if (slot.edit.getGlyphId() == stat) {
+                totalValue += parseInt(slot.edit.getGlyphStatRating());
+            }
+        }
+
+        // sum amount brought by agents
+        for (var index in swlcalc.gear.agents) {
+            var agent = swlcalc.gear.agents[index];
+            var ad = swlcalc.gear.agents[index].agentData
+
+            if (agent.agentData.bonuses["25"].type == stat) {
+                totalValue += parseInt(agent.agentData.bonuses["25"].value)
+            }
+            if (agent.getLevel() == 50 && agent.agentData.bonuses["50"].type == stat) {
+                totalValue += parseInt(agent.agentData.bonuses["50"].value)
+            }
+        }
+
+        // compute corresponding percentage stat
+        totalValuePercent = swlcalc.util.precisionRound(totalValuePercent + computeSecondaryStat(stat, totalValue), 1);
+
+        // set the final values on the display
+        $("#stat-" + stat).html((totalValue > 0 ? "+" : "") + totalValue);
+        $("#stat-" + statPercent).html(totalValuePercent.toString() + "%");
     };
 
     /**
@@ -177,11 +262,11 @@ swlcalc.summary = function() {
         }
 
         // compute percentage stats
-        totals['critical-chance']           += computeSecondaryStat('crit', totals['critical-rating']);
-        totals['critical-power-percentage'] += computeSecondaryStat('cpow', totals['critical-power']);
-        totals['glance-reduction']          += computeSecondaryStat('hit',  totals['hit-rating']);
-        totals['glance-chance']             += computeSecondaryStat('def',  totals['defense-rating']);
-        totals['evade-chance']              += computeSecondaryStat('evad', totals['evade-rating']);
+        totals['critical-chance']           += computeSecondaryStat('critical-rating', totals['critical-rating']);
+        totals['critical-power-percentage'] += computeSecondaryStat('critical-power', totals['critical-power']);
+        totals['glance-reduction']          += computeSecondaryStat('hit-rating',  totals['hit-rating']);
+        totals['glance-chance']             += computeSecondaryStat('defense-rating',  totals['defense-rating']);
+        totals['evade-chance']              += computeSecondaryStat('evade-rating', totals['evade-rating']);
 
         totals['critical-chance']           = swlcalc.util.precisionRound(totals['critical-chance'], 1);
         totals['critical-power-percentage'] = swlcalc.util.precisionRound(totals['critical-power-percentage'], 1);
@@ -272,6 +357,10 @@ swlcalc.summary = function() {
         init: init,
         combatPower: combatPower,
         healingPower: healingPower,
+        updatePrimaryStats: updatePrimaryStats,
+        updateSecondaryStats: updateSecondaryStats,
+        updateSecondaryStat: updateSecondaryStat,
+        updateILvl: updateILvl,
         updateAllStats: updateAllStats,
         updateOtherBonuses: updateOtherBonuses
     };

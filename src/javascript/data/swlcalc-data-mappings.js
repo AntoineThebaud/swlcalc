@@ -5,16 +5,15 @@ swlcalc.data.statMapping = {
   primaryStats : [
     'attack-rating',
     'heal-rating',
-    'hit-rating',
     'hit-points',
     'protection'
   ],
   secondaryStats : [
+    'hit-rating',
     'critical-rating',
     'critical-power',
     'evade-rating',
-    'defense-rating',
-    'hit-rating'
+    'defense-rating'
   ],
   toPretty : {
     'attack-rating': 'Attack Rating',
@@ -53,6 +52,13 @@ swlcalc.data.secondaryStatMapping = {
       'critical-power': 'Devastating',
       'evade-rating': 'Elusive',
       'defense-rating': 'Stalwart'
+    },
+    toPercentStat: {
+      'hit-rating': 'glance-reduction',
+      'critical-rating': 'critical-chance',
+      'critical-power': 'critical-power-percentage',
+      'evade-rating': 'evade-chance',
+      'defense-rating': 'glance-chance'
     }
 };
 

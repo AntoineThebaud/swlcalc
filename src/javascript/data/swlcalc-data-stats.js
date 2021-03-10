@@ -74,27 +74,27 @@ swlcalc.data.stats = {
     },
 
     glyphComputationFigures: {
-        'hit': {
+        'hit-rating': {
             hardCap: 0,            // hard cap for this stat
             softCapRate: 50.85,    // Rate at which %chance stat increases when below hard cap
             hardCapRate: 50.85,    // Rate at which %chance stat increases when above hard cap
         },
-        'crit': {
+        'critical-rating': {
             hardCap: 7000,
             softCapRate: 157.38,
             hardCapRate: 693.77,
         },
-        'cpow': {
+        'critical-power': {
             hardCap: 3950,
             softCapRate: 28.26,
             hardCapRate: 135.00,
         },
-        'def': {
+        'defense-rating': {
             hardCap: 4565,
             softCapRate: 101.66,
             hardCapRate: 680.13,
         },
-        'evad': {
+        'evade-rating': {
             hardCap: 5000,
             softCapRate: 145.47,
             hardCapRate: 963.58,
