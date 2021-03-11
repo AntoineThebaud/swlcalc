@@ -23,7 +23,11 @@ swlcalc.swap.SwapHandler = function SwapHandler(slotId) {
         slotObj.draw();
         swlcalc.gear.slots[self.otherWeapon()].sheath();
 
-        swlcalc.summary.updateAllStats();
+        swlcalc.summary.updatePrimaryStats();
+        swlcalc.summary.updateSecondaryStat("critical-rating"); // update stat related to expertise
+        swlcalc.summary.updateSecondaryStat("critical-power"); // update stat related to expertise
+        swlcalc.summary.updateSecondaryStat(slotObj.edit.getGlyphId());
+        swlcalc.summary.updateSecondaryStat(swlcalc.gear.slots[self.otherWeapon()].edit.getGlyphId());
         swlcalc.gear.updateAllDescriptions();
     };
 
