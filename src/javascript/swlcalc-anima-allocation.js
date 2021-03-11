@@ -63,14 +63,15 @@ swlcalc.animaAllocation = function() {
                 slot.updateTalismanStatValues();
             }
         }
-        swlcalc.summary.updateAllStats();
+        swlcalc.summary.updatePrimaryStats();
         swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses();
     }
 
     /**************************************************************************
      * Accessors :
      * ---------------------------------------------------------------------- */
-     
+
     /* Damage : */
     var getDamagePercentage = function() {
         return el.rangeDamage.val();

@@ -67,3 +67,13 @@ QUnit.test("should set anima allocation and affect stats correctly", function(as
     assert.equal($("#stat-heal-rating").html(), "7295");
     assert.equal($("#stat-hit-points").html(), "19871");
 });
+
+QUnit.test("should set anima allocation and affect other bonuses correctly", function(assert) {
+
+    swlcalc.gear.agents[2].setId("15");
+    swlcalc.gear.agents[2].setLevel("50");
+    assert.equal($("#stat-agent3-bonus50").html(), '<span class="stat-value heal">35</span> Healing on Critical Heals');
+
+    swlcalc.animaAllocation.setHealingPercentage("100");
+    assert.equal($("#stat-agent3-bonus50").html(), '<span class="stat-value heal">41</span> Healing on Critical Heals');
+});
