@@ -5,6 +5,7 @@ swlcalc.agenthandler = swlcalc.agenthandler || {};
 swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
 
     var agentObj = swlcalc.gear.agents[id];
+    var previousAgentId = "none";
 
     this.init = function() {
         this.bindEvents();
@@ -47,6 +48,7 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
     /**
      * Handler for agent#id-id
      */
+    // TODO should call updateStat in summary for both previous & new stat like for glyphs !
     this.handleIdChange = function(event) {
         agentObj.updateId();
         swlcalc.summary.updateAllStats();

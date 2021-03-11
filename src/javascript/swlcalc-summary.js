@@ -53,15 +53,12 @@ swlcalc.summary = function() {
             'combat-power':      0,
             'healing-power':     0,
             'weapon-power':      0,
-            'power-rating':      0,
-            'ilvl':              0,
+            'power-rating':      0
         };
-        var sumOfIlvl = 0;
 
         // collect amount brought by gear slots
         for (var id in swlcalc.gear.slots) {
             var slot = swlcalc.gear.slots[id];
-            sumOfIlvl += parseInt(slot.edit.getILvl());
             if (slot.isWeapon() && !slot.active || slot.edit.getEquipmentId() == 'none') {
                 continue;
             } else if (slot.isWeapon()) {
@@ -92,10 +89,8 @@ swlcalc.summary = function() {
         totals['hit-points']    += Math.round(totals['power-rating'] * swlcalc.data.stats.hpConversionCoef * swlcalc.animaAllocation.getSurvivabilityRatio());
 
         // Main, "head" stats are computed at the end when all required underlying stats have been computed
-        totals['combat-power']  = computePrimaryPower('cp', totals['attack-rating'], totals['weapon-power']);
-        totals['healing-power'] = computePrimaryPower('hp', totals['heal-rating'], totals['weapon-power']);
-        totals['ilvl']          = computeAverageILvl(sumOfIlvl);
-
+        totals['combat-power']      =  computePrimaryPower('cp', totals['attack-rating'], totals['weapon-power']);
+        totals['healing-power']     =  computePrimaryPower('hp', totals['heal-rating'], totals['weapon-power']);
         totals['damage-mitigation'] += computeDamageMitigation(totals['protection'])
 
         return totals;

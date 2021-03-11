@@ -124,8 +124,11 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateEquipmentStatRating();
         slotObj.updateEquipmentILvl();
 
-        swlcalc.summary.updateAllStats();
+        swlcalc.summary.updatePrimaryStats();
+        swlcalc.summary.updateILvl();
+
         swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses();
     };
 
     /**
@@ -137,8 +140,11 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateEquipmentStatRating();
         slotObj.updateEquipmentILvl();
 
-        swlcalc.summary.updateAllStats();
+        swlcalc.summary.updatePrimaryStats();
+        swlcalc.summary.updateILvl();
+
         swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses();
     };
 
     /**
@@ -149,8 +155,11 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateEquipmentStatRating();
         slotObj.updateEquipmentILvl();
 
-        swlcalc.summary.updateAllStats();
+        swlcalc.summary.updatePrimaryStats();
+        swlcalc.summary.updateILvl();
+
         swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses();
     };
 
     /**
@@ -161,8 +170,11 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateEquipmentStatRating();
         slotObj.updateEquipmentILvl();
 
-        swlcalc.summary.updateAllStats();
+        swlcalc.summary.updatePrimaryStats();
+        swlcalc.summary.updateILvl();
+        
         swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses();
     };
 
     /**********************************************************************************

@@ -138,3 +138,23 @@ QUnit.test("should update total ilvl in the summary", function(assert) {
     swlcalc.gear.slots.occult.edit.setSignetId("none");
     assert.equal($("#stat-ilvl").text(), "327");
 });
+
+QUnit.test("should update total attack rating in the summary", function(assert) {
+    assert.equal($("#stat-attack-rating").text(), "6784");
+
+    swlcalc.gear.slots.wrist.edit.setEquipmentLevel("29");
+    assert.equal($("#stat-attack-rating").text(), "6934");
+
+    swlcalc.gear.slots.wrist.edit.setEquipmentId("none");
+    assert.equal($("#stat-attack-rating").text(), "6516");
+});
+
+QUnit.test("should update total hit rating in the summary", function(assert) {
+    assert.equal($("#stat-hit-rating").text(), "+1244");
+
+    swlcalc.gear.slots.head.edit.setGlyphLevel("12");
+    assert.equal($("#stat-hit-rating").text(), "+1357");
+
+    swlcalc.gear.slots.head.edit.setGlyphId("none");
+    assert.equal($("#stat-hit-rating").text(), "+756");
+});
