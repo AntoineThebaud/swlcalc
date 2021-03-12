@@ -111,7 +111,10 @@ swlcalc.passives = function() {
      */
     var handleAttackRatingBaseChange = function(event) {
         el.valAttackRatingBase.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updatePrimaryStats();
+        swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses();
     };
 
     /**
@@ -119,7 +122,10 @@ swlcalc.passives = function() {
      */
     var handleHealRatingBaseChange = function(event) {
         el.valHealRatingBase.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updatePrimaryStats();
+        swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses();
     };
 
     /**
@@ -127,7 +133,8 @@ swlcalc.passives = function() {
      */
     var handleHitPointsBaseChange = function(event) {
         el.valHitPointsBase.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updatePrimaryStats();
     };
 
     /* PASSIVES SKILLS : ---------------------------------------------------- */
@@ -137,7 +144,10 @@ swlcalc.passives = function() {
      */
     var handleAttackRatingPassiveSkillsChange = function(event) {
         el.valAttackRatingPassiveSkills.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updatePrimaryStats();
+        swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses();
     };
 
     /**
@@ -145,7 +155,10 @@ swlcalc.passives = function() {
      */
     var handleHealRatingPassiveSkillsChange = function(event) {
         el.valHealRatingPassiveSkills.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updatePrimaryStats();
+        swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses();
     };
 
     /**
@@ -153,7 +166,8 @@ swlcalc.passives = function() {
      */
     var handleHitPointsPassiveSkillsChange = function(event) {
         el.valHitPointsPassiveSkills.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updatePrimaryStats();
     };
 
     /**
@@ -161,7 +175,8 @@ swlcalc.passives = function() {
      */
     var handleCriticalRatingPassiveSkillsChange = function(event) {
         el.valCriticalRatingPassiveSkills.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updateSecondaryStat("critical-rating");
     };
 
     /**
@@ -169,7 +184,8 @@ swlcalc.passives = function() {
      */
     var handleCriticalPowerPassiveSkillsChange = function(event) {
         el.valCriticalPowerPassiveSkills.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updateSecondaryStat("critical-power");
     };
 
     /**
@@ -177,7 +193,8 @@ swlcalc.passives = function() {
      */
     var handleHitRatingPassiveSkillsChange = function(event) {
         el.valHitRatingPassiveSkills.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updateSecondaryStat("hit-rating");
     };
 
     /**
@@ -185,7 +202,8 @@ swlcalc.passives = function() {
      */
     var handleProtectionPassiveSkillsChange = function(event) {
         el.valProtectionPassiveSkills.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updatePrimaryStats();
     };
 
     /**
@@ -193,7 +211,8 @@ swlcalc.passives = function() {
      */
     var handleDefenseRatingPassiveSkillsChange = function(event) {
         el.valDefenseRatingPassiveSkills.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updateSecondaryStat("defense-rating");
     };
 
     /**
@@ -201,7 +220,8 @@ swlcalc.passives = function() {
      */
     var handleEvadeRatingPassiveSkillsChange = function(event) {
         el.valEvadeRatingPassiveSkills.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updateSecondaryStat("evade-rating");
     };
 
     /* CAPSTONES : ---------------------------------------------------------- */
@@ -211,7 +231,10 @@ swlcalc.passives = function() {
      */
     var handleAttackRatingCapstonesChange = function(event) {
         el.valAttackRatingCapstones.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updatePrimaryStats();
+        swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses();
     };
 
     /**
@@ -219,7 +242,10 @@ swlcalc.passives = function() {
      */
     var handleHealRatingCapstonesChange = function(event) {
         el.valHealRatingCapstones.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updatePrimaryStats();
+        swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses();
     };
 
     /**
@@ -227,7 +253,8 @@ swlcalc.passives = function() {
      */
     var handleHitPointsCapstonesChange = function(event) {
         el.valHitPointsCapstones.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updatePrimaryStats();
     };
 
     /* EXPERTISE : ---------------------------------------------------------- */
@@ -237,7 +264,8 @@ swlcalc.passives = function() {
      */
     var handleCriticalChanceExpertiseChangeWeapon1 = function(event) {
         el.valCriticalChanceExpertiseWeapon1.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updateSecondaryStat("critical-rating");
     };
 
     /**
@@ -245,7 +273,8 @@ swlcalc.passives = function() {
      */
     var handleCriticalChanceExpertiseChangeWeapon2 = function(event) {
         el.valCriticalChanceExpertiseWeapon2.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updateSecondaryStat("critical-rating");
     };
 
     /**
@@ -253,7 +282,8 @@ swlcalc.passives = function() {
      */
     var handleCriticalPowerPercentageExpertiseChangeWeapon1 = function(event) {
         el.valCriticalPowerPercentageExpertiseWeapon1.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updateSecondaryStat("critical-power");
     };
 
     /**
@@ -261,7 +291,8 @@ swlcalc.passives = function() {
      */
     var handleCriticalPowerPercentageExpertiseChangeWeapon2 = function(event) {
         el.valCriticalPowerPercentageExpertiseWeapon2.text(event.currentTarget.value);
-        swlcalc.summary.updateAllStats();
+
+        swlcalc.summary.updateSecondaryStat("critical-power");
     };
 
     /**************************************************************************/
