@@ -5,7 +5,8 @@ swlcalc.agenthandler = swlcalc.agenthandler || {};
 swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
 
     var agentObj = swlcalc.gear.agents[id];
-    var previousAgentId = "none";
+    var previousId = 0;
+    var previousAgentLevel = "25";
 
     this.init = function() {
         this.bindEvents();
@@ -48,19 +49,52 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
     /**
      * Handler for agent#id-id
      */
-    // TODO should call updateStat in summary for both previous & new stat like for glyphs !
+    // TODO : maybe too complex.. any way to simplify ?
     this.handleIdChange = function(event) {
         agentObj.updateId();
-        swlcalc.summary.updateAllStats();
-        swlcalc.gear.updateAllDescriptions();
-         /* TODO : calling swlcalc.summary.updateOtherBonuses() a is workaround to solve a display bug in the summary (%d shown instead of computed value).
-          * Let's take worst case scenario (even if dont exist) : an agent that brings AR bonus + Proc damage effect affected by CP.
-          * In such case we need to : update the summary to compute total AR and new CP, then compute the final value for proc damage for the agent slot,
-          * then propagate this other bonus to the "Other bonuses" section of the Summary.
-          * I.e in short : 1) update Summary -> 2) update Agent slot -> 3) update Summary
-          * The best workaround found for now was to call "only" swlcalc.summary.updateOtherBonuses() for the step 3).
-          */
-        swlcalc.summary.updateOtherBonuses();
+
+        var newAgentData      = swlcalc.data.agents[agentObj.getId()];
+        var previousAgentData = swlcalc.data.agents[previousId];
+
+        // Update primary stats if new or previous agent equiped is/was bringing a bonus to them
+        if (swlcalc.util.isPrimaryStat(newAgentData.bonuses["25"].type)
+            || (agentObj.getLevel() == "50" && swlcalc.util.isPrimaryStat(newAgentData.bonuses["50"].type))
+            || swlcalc.util.isPrimaryStat(previousAgentData.bonuses["25"].type)
+            || (agentObj.getLevel() == "50" && swlcalc.util.isPrimaryStat(previousAgentData.bonuses["50"].type))
+        ) {
+            swlcalc.summary.updatePrimaryStats();
+            swlcalc.gear.updateAllDescriptions();
+            swlcalc.summary.updateOtherBonuses();
+        }
+
+        // Update any secondary stat that new or previous agent is/was bringing
+        if (swlcalc.util.isSecondaryStat(newAgentData.bonuses["25"].type)) {
+            swlcalc.summary.updateSecondaryStat(newAgentData.bonuses["25"].type);
+        }
+
+        if (agentObj.getLevel() == "50" && swlcalc.util.isSecondaryStat(newAgentData.bonuses["50"].type)) {
+            swlcalc.summary.updateSecondaryStat(newAgentData.bonuses["50"].type);
+        }
+
+        if (swlcalc.util.isSecondaryStat(previousAgentData.bonuses["25"].type)) {
+            swlcalc.summary.updateSecondaryStat(previousAgentData.bonuses["25"].type);
+        }
+
+        if (agentObj.getLevel() == "50" && swlcalc.util.isSecondaryStat(previousAgentData.bonuses["50"].type)) {
+            swlcalc.summary.updateSecondaryStat(previousAgentData.bonuses["50"].type);
+        }
+
+        // Update other bonuses in case of any change of miscellaneous bonus
+        if (newAgentData.bonuses["25"].type == "miscellaneous"
+            || (agentObj.getLevel() == "50" && newAgentData.bonuses["50"].type == "miscellaneous")
+            || previousAgentData.bonuses["25"].type == "miscellaneous"
+            || (agentObj.getLevel() == "50" && previousAgentData.bonuses["50"].type == "miscellaneous")
+        ) {
+            swlcalc.gear.updateAllDescriptions(); // TODO needed for %d replacement but not optimal..
+            swlcalc.summary.updateOtherBonuses();
+        }
+
+        previousId = agentObj.getId();
     };
 
     /**
@@ -68,8 +102,18 @@ swlcalc.gear.AgentSlotHandler = function AgentSlotHandler(id) {
      */
     this.handleLevelChange = function(event) {
         agentObj.updateLevel();
-        swlcalc.summary.updateAllStats();
-        swlcalc.gear.updateAllDescriptions();
-        swlcalc.summary.updateOtherBonuses(); // TODO : workaround, see previous comment in handleIdChange()
+
+        var l50type = swlcalc.data.agents[agentObj.getId()].bonuses["50"].type;
+
+        if (swlcalc.util.isPrimaryStat(l50type)) {
+            swlcalc.summary.updatePrimaryStats();
+            swlcalc.gear.updateAllDescriptions();
+            swlcalc.summary.updateOtherBonuses();
+        } else if (swlcalc.util.isSecondaryStat(l50type)) {
+            swlcalc.summary.updateSecondaryStat(l50type);
+        } else if (l50type == "miscellaneous") {
+            swlcalc.gear.updateAllDescriptions(); // TODO needed for %d replacement but not optimal..
+            swlcalc.summary.updateOtherBonuses();
+        }
     };
 };
