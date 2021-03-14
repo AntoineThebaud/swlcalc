@@ -29,6 +29,7 @@ swlcalc.swap.SwapHandler = function SwapHandler(slotId) {
         swlcalc.summary.updateSecondaryStat(slotObj.edit.getGlyphId());
         swlcalc.summary.updateSecondaryStat(swlcalc.gear.slots[self.otherWeapon()].edit.getGlyphId());
         swlcalc.gear.updateAllDescriptions();
+        swlcalc.summary.updateOtherBonuses();
     };
 
     this.otherWeapon = function() {
