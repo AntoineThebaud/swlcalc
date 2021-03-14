@@ -172,7 +172,7 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
 
         swlcalc.summary.updatePrimaryStats();
         swlcalc.summary.updateILvl();
-        
+
         swlcalc.gear.updateAllDescriptions();
         swlcalc.summary.updateOtherBonuses();
     };
@@ -247,6 +247,8 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
      */
     this.handleAffixIdChange = function(event) {
         slotObj.updateSignet();
+
+        swlcalc.gear.updateSignetsBonuses();
     };
 
     /**
@@ -257,6 +259,7 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateSignetILvl();
 
         swlcalc.summary.updateILvl();
+        swlcalc.gear.updateSignetsBonuses(); // TODO : needed to replace the %d but not optimal (we should refresh only the current signet)
     };
 
     /**
@@ -268,6 +271,7 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateSignetILvl();
 
         swlcalc.summary.updateILvl();
+        swlcalc.gear.updateSignetsBonuses(); // TODO : needed to replace the %d but not optimal (we should refresh only the current signet)
     };
 
     /**
@@ -278,5 +282,6 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         slotObj.updateSignetILvl();
 
         swlcalc.summary.updateILvl();
+        swlcalc.gear.updateSignetsBonuses(); // TODO : needed to replace the %d but not optimal (we should refresh only the current signet)
     };
 };

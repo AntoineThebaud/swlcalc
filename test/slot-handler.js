@@ -127,6 +127,14 @@ QUnit.test("should update any #slot-edit-equipment-quality dropdowns when its as
     }
 });
 
+QUnit.test("should update signet description", function(assert) {
+    assert.equal($("#wrist-edit-signet-description").text(), 'Increases the rate at which your Ultimate Ability recharges on ability activation by 2.6362%.');
+
+    swlcalc.gear.slots.wrist.edit.setSignetId("3");
+
+    assert.equal($("#wrist-edit-signet-description").text(), 'Increases the maximum number of targets hit by area abilities by 1 and increases damage by 1.5147%.');
+});
+
 // TODO more tests to check that summary gets updated correctly
 
 QUnit.test("should update total ilvl in the summary", function(assert) {
