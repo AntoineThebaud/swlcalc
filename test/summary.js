@@ -50,7 +50,7 @@ QUnit.test("should have required summary in DOM", function(assert) {
     assert.ok($("#stat-agent3-bonus50").length !== 0, "stat-agent3-bonus50 exists");
 });
 
-QUnit.test("should update all stats", function(assert) {
+/*QUnit.test("should update all stats", function(assert) {
     createTankBuild();
 
     swlcalc.summary.updateAllStats();
@@ -82,7 +82,12 @@ QUnit.test("should update all stats", function(assert) {
     assert.equal($("#stat-agent2-bonus50").html(), "<span class=\"stat-value const\">+7%</span> Hammer Damage");
     assert.equal($("#stat-agent3-bonus25").html(), "");
     assert.equal($("#stat-agent3-bonus50").html(), "");
-});
+});*/
+
+
+// TODO/TEST add test for updatePrimaryStats
+
+// TODO/TEST add test for updateSecondaryStat
 
 // TODO/TEST add test for combatPower() (private function)
 

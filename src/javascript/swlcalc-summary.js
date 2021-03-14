@@ -7,42 +7,32 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Refreshes all values in the summary
-     * -> triggered after any change that affects a stat
+     * Updates the total ilvl in the summary
      */
-    //TODO/REFACTOR : to avoid useless refreshes ?
-    var updateAllStats = function() {
-        updatePrimaryStats();
-        updateSecondaryStats();
-        updateOtherBonuses();
+    var updateILvl = function() {
+        var sumOfIlvl = 0;
+
+        // sum amount brought by gear slots
+        for (var id in swlcalc.gear.slots) {
+            var slot = swlcalc.gear.slots[id];
+            sumOfIlvl += parseInt(slot.edit.getILvl());
+        }
+
+        var newIlvl = computeAverageILvl(sumOfIlvl);
+        $("#stat-ilvl").text(newIlvl);
     };
 
     /**
-     * Collects all stats
-     * => forwards to sub functions
+     * Computes the average Item Power given by the whole gear
      */
-    var collectAllStats = function() {
-        return {
-            primary:   collectPrimaryStats(),
-            secondary: collectSecondaryStats()
-        };
-    };
+    var computeAverageILvl = function(sumIlvl) {
+        return Math.round(sumIlvl / swlcalc.gear.nbSlots());
+    }
 
     /**
      * Updates all primary stats in the summary
      */
     var updatePrimaryStats = function() {
-        var totals = collectPrimaryStats();
-
-        for (var stat in totals) {
-            $('#stat-' + stat).text(totals[stat] + (isStatPercentageBased(stat) ? "%" : ""));
-        }
-    };
-
-    /**
-     * Collects primary stats by going through the whole gear
-     */
-    var collectPrimaryStats = function() {
         // initial values
         var totals = {
             'attack-rating':     swlcalc.passives.getTotalAttackRating(),
@@ -93,23 +83,9 @@ swlcalc.summary = function() {
         totals['healing-power']     =  computePrimaryPower('hp', totals['heal-rating'], totals['weapon-power']);
         totals['damage-mitigation'] += computeDamageMitigation(totals['protection'])
 
-        return totals;
-    };
-
-    /**
-     * Updates the total ilvl in the summary
-     */
-    var updateILvl = function() {
-        var sumOfIlvl = 0;
-
-        // sum amount brought by gear slots
-        for (var id in swlcalc.gear.slots) {
-            var slot = swlcalc.gear.slots[id];
-            sumOfIlvl += parseInt(slot.edit.getILvl());
+        for (var stat in totals) {
+            $('#stat-' + stat).text(totals[stat] + (isStatPercentageBased(stat) ? "%" : ""));
         }
-
-        var newIlvl = computeAverageILvl(sumOfIlvl);
-        $("#stat-ilvl").text(newIlvl);
     };
 
     /*
@@ -131,7 +107,6 @@ swlcalc.summary = function() {
     var computeDamageMitigation = function(sumProtectionPoints) {
         return swlcalc.util.precisionRound((sumProtectionPoints * 100) / (sumProtectionPoints + swlcalc.data.stats.protConstDivisor), 1);
     };
-
 
     /**
      * Update the given secondary stat in the summary
@@ -201,77 +176,6 @@ swlcalc.summary = function() {
         $("#stat-" + statPercent).html(totalValuePercent.toString() + "%");
     };
 
-    /**
-     * Updates secondary stats in the summary
-     */
-    var updateSecondaryStats = function() {
-        var totals = collectSecondaryStats();
-        for (var stat in totals) {
-            if (totals[stat] > 0) {
-                $('#stat-' + stat).html(isStatPercentageBased(stat) ? totals[stat].toString() + "%" : '+' + totals[stat]);
-            } else {
-                $('#stat-' + stat).html(isStatPercentageBased(stat) ? "0%" : "0");
-            }
-        }
-    };
-
-    /**
-     * Collects glyph stats by going through the whole gear
-     */
-    var collectSecondaryStats = function() {
-        // initial values
-        var totals = {
-            'critical-rating':           swlcalc.passives.getTotalCriticalRating(),
-            'critical-chance':           swlcalc.passives.getTotalCriticalChance(),
-            'critical-power':            swlcalc.passives.getTotalCriticalPower(),
-            'critical-power-percentage': swlcalc.passives.getTotalCriticalPowerPercentage(),
-            'hit-rating':                swlcalc.passives.getTotalHitRating(),
-            'glance-reduction':          swlcalc.passives.getTotalGlanceReduction(),
-            'defense-rating':            swlcalc.passives.getTotalDefenseRating(),
-            'glance-chance':             swlcalc.passives.getTotalGlanceChance(),
-            'evade-rating':              swlcalc.passives.getTotalEvadeRating(),
-            'evade-chance':              swlcalc.passives.getTotalEvadeChance(),
-        };
-
-        // retrieve flat stats
-        for (var id in swlcalc.gear.slots) {
-            var slot = swlcalc.gear.slots[id];
-            if(slot.isWeapon() && !slot.active) {
-                continue;
-            }
-            totals[slot.edit.getGlyphId()] += parseInt(slot.edit.getGlyphStatRating());
-        }
-
-        // sum bonuses brought by agents
-        for (var index in swlcalc.gear.agents) {
-            var ad = swlcalc.gear.agents[index].agentData
-
-            if (swlcalc.util.isSecondaryStat(ad.bonuses["25"].type)) {
-                totals[ad.bonuses["25"].type] += parseInt(ad.bonuses["25"].value)
-            }
-            if (swlcalc.gear.agents[index].getLevel() == 50) {
-                if (swlcalc.util.isSecondaryStat(ad.bonuses["50"].type)) {
-                    totals[ad.bonuses["50"].type] += parseInt(ad.bonuses["50"].value)
-                }
-            }
-        }
-
-        // compute percentage stats
-        totals['critical-chance']           += computeSecondaryStat('critical-rating', totals['critical-rating']);
-        totals['critical-power-percentage'] += computeSecondaryStat('critical-power', totals['critical-power']);
-        totals['glance-reduction']          += computeSecondaryStat('hit-rating',  totals['hit-rating']);
-        totals['glance-chance']             += computeSecondaryStat('defense-rating',  totals['defense-rating']);
-        totals['evade-chance']              += computeSecondaryStat('evade-rating', totals['evade-rating']);
-
-        totals['critical-chance']           = swlcalc.util.precisionRound(totals['critical-chance'], 1);
-        totals['critical-power-percentage'] = swlcalc.util.precisionRound(totals['critical-power-percentage'], 1);
-        totals['glance-reduction']          = swlcalc.util.precisionRound(totals['glance-reduction'], 1);
-        totals['glance-chance']             = swlcalc.util.precisionRound(totals['glance-chance'], 1);
-        totals['evade-chance']              = swlcalc.util.precisionRound(totals['evade-chance'], 1);
-
-        return totals;
-    };
-
     /*
      * Glyph stats computation function
      *
@@ -316,15 +220,9 @@ swlcalc.summary = function() {
     };
 
     /**
-     * Computes the average Item Power given by the whole gear
-     */
-    var computeAverageILvl = function(sumIlvl) {
-        return Math.round(sumIlvl / swlcalc.gear.nbSlots());
-    }
-
-    /**
      * Boolean function. Determines whether a stat is percentage-based or not
      */
+    // TODO : move to utils
     var isStatPercentageBased = function(statName) {
         return statName == 'critical-power-percentage'
             || statName == 'critical-chance'
@@ -353,10 +251,8 @@ swlcalc.summary = function() {
         combatPower: combatPower,
         healingPower: healingPower,
         updatePrimaryStats: updatePrimaryStats,
-        updateSecondaryStats: updateSecondaryStats,
         updateSecondaryStat: updateSecondaryStat,
         updateILvl: updateILvl,
-        updateAllStats: updateAllStats,
         updateOtherBonuses: updateOtherBonuses
     };
 

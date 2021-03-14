@@ -138,8 +138,6 @@ swlcalc.buttonBar = function() {
      */
     var resetGear = function(event) {
         swlcalc.gear.reset();
-        swlcalc.summary.updateAllStats();
-        swlcalc.gear.updateAllDescriptions();
     };
 
     var oPublic = {
