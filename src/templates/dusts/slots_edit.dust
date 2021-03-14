@@ -70,11 +70,12 @@
                             {>quality_select itemtype="equipment" pip1="Faded" pip2="Luminous" pip3="Radiant"/}
                             {/isWeapon}
                         </td>
-                        <td rowspan="2" class="item-description">
-                            <span id="{id}-edit-equipment-description"></span>
+                        <td rowspan="2">
+                            <p id="{id}-edit-equipment-description"></p>
+                            <p id="{id}-edit-equipment-ilvl" class="lightgrey">0</p>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="separator">
                         <td class="filler"></td>
                         <td class="filler"></td>
                         <td class="upgrade-label level-label">
@@ -82,11 +83,6 @@
                         </td>
                         <td class="upgrade-select">
                             <input id="{id}-edit-equipment-level" type="range" min="1" max="20" value="20" class="level-slider">
-                        </td>
-                    </tr>
-                    <tr class="separator">
-                        <td colspan="5" class="ilvl lightgrey">
-                            <span id="{id}-edit-equipment-ilvl">0</span>
                         </td>
                     </tr>
                     <tr>
@@ -128,7 +124,7 @@
                           <span id="{id}-edit-glyph-stat-text"></span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="separator">
                         <td class="filler"></td>
                         <td class="filler"></td>
                         <td class="upgrade-label level-label">
@@ -137,23 +133,23 @@
                         <td class="upgrade-select level-select">
                             <input id="{id}-edit-glyph-level" type="range" min="1" max="20" value="20" class="level-slider">
                         </td>
-                    </tr>
-                    <tr class="separator">
-                        <td colspan="5" class="ilvl lightgrey">
-                            <span id="{id}-edit-glyph-ilvl">0</span>
+                        <td>
+                            <p id="{id}-edit-glyph-ilvl" class="lightgrey">0</p>
                         </td>
                     </tr>
                     {?isWeapon}
                     <tr>
                         <td class="item-title lightgrey" colspan="2">Affix</td>
-                        <td id="{id}-edit-signet-description" class="item-description" colspan="3" rowspan="2"></td>
+                        <td colspan="3" rowspan="2">
+                            <p id="{id}-edit-signet-description" class="affix-description"></p>
+                        </td>
                     <tr>
                         <td class="signet-select" colspan="2">
-                            <select id="{id}-edit-signet-id" title="Please select signet"></select>
+                            <select id="{id}-edit-signet-id" title="Please select signet" class="affix-id"></select>
                         </td>
                     </tr>
                     {:else}
-                    <tr>
+                    <tr class="signet-first-tr">
                         <td class="item-title lightgrey" colspan="2">Signet</td>
                         <td class="upgrade-label rarity-label">
                             <strong>Rarity :</strong>
@@ -161,7 +157,9 @@
                         <td class="upgrade-select">
                             {>rarity_select itemtype="signet"/}
                         </td>
-                        <td rowspan="2" id="{id}-edit-signet-description" class="item-description">
+                        <td rowspan="2">
+                            <p id="{id}-edit-signet-description"></p>
+                            <p id="{id}-edit-signet-ilvl" class="lightgrey">0</p>
                         </td>
                     </tr>
                     <tr>
@@ -179,11 +177,7 @@
                         <td class="upgrade-select signetalign">
                             <input id="{id}-edit-signet-level" type="range" min="1" max="20" value="20" class="level-slider">
                         </td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" class="ilvl lightgrey">
-                            <span id="{id}-edit-signet-ilvl">0</span>
-                        </td>
+                        <!-- 5th column == rowpsan 2 from previous row -->
                     </tr>
                     {/isWeapon}
                 </table>

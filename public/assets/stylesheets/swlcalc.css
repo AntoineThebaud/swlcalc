@@ -250,7 +250,7 @@ div[id="sidebar"] {
     color: var(--slot-text-color);
 }
 .equipment-select > .select2-container {
-    max-width: 140px;
+    max-width: 150px;
 }
 .select2-dropdown {
     background-color: var(--edit-select-bg) !important;
@@ -383,6 +383,7 @@ td[id$="-equipment-img-section"] {
 td[id$="-glyph-img-section"],
 td[id$="-signet-img-section"] {
     width: 48px;
+    float: right;
 }
 td[id$="-img-section"] img {
     position: absolute;
@@ -437,13 +438,6 @@ div[id$="-edit-div"] .table-slots td.item-title {
     vertical-align: middle;
     padding-left: 15px;
 }
-div[id$="-edit-div"] .table-slots td.item-description {
-    text-align: justify;
-    line-height: 18px;
-    vertical-align: top;
-    padding-left: 10px;
-    padding-right: 5px;
-}
 .thin-p {
     margin-bottom: 0px;
     line-height: 1.2;
@@ -460,21 +454,25 @@ tr.with-icon {
 td.filler {
     width: auto;
 }
-/* SLOT > EDITION > Item images ----------------------------------------------*/
-div[id$="-edit-div"] .table-slots td.equipment-select {
-    width: 150px;
+tr.signet-first-tr {
+    height: 42px;
 }
-div[id$="-edit-div"] .table-slots td.equipment-select select {
-    max-width: 140px;
-}
-/* SLOT > EDITION > Glyphs & signets -----------------------------------------*/
+/* SLOT > EDITION > Item ID --------------------------------------------------*/
+div[id$="-edit-div"] .table-slots td.equipment-select,
 div[id$="-edit-div"] .table-slots td.glyph-select,
 div[id$="-edit-div"] .table-slots td.signet-select {
     width: 160px;
 }
+div[id$="-edit-div"] .table-slots td.equipment-select select,
 div[id$="-edit-div"] .table-slots td.glyph-select select,
 div[id$="-edit-div"] .table-slots td.signet-select select {
     max-width: 150px;
+    margin-right: 10px;
+}
+div[id$="-edit-div"] .table-slots td.signet-select select.affix-id {
+    max-width: 208px;
+}
+div[id$="-edit-div"] .table-slots td.signet-select select {
 }
 /* SLOT > EDITION > rarity/quality/level -------------------------------------*/
 div[id$="-edit-div"] .table-slots td.upgrade-label {
@@ -493,9 +491,29 @@ div[id$="-edit-div"] .table-slots td.quality-label strong {
 }
 div[id$="-edit-div"] .table-slots input.level-slider {
     width: 100px;
+    margin-bottom: 5px;
 }
 div[id$="-edit-div"] .table-slots td.signetalign {
     padding-top: 18px;
+}
+div[id$="-edit-div"] .table-slots p {
+    margin: 0;
+}
+div[id$="-edit-div"] .table-slots p[id$="-ilvl"] {
+    font-size: 10px;
+    font-weight: bold;
+    text-align: right;
+}
+div[id$="-edit-div"] .table-slots p[id$="-edit-equipment-ilvl"] {
+    margin-bottom: 5px;
+}
+div[id$="-edit-div"] .table-slots p[id$="-description"] {
+    min-height: 50px;
+    text-align: justify;
+    padding-left: 10px;
+}
+div[id$="-edit-div"] .table-slots p[id$="-description"].affix-description {
+    padding-left: 0px;
 }
 /* SLOT > EDITION > ilvl -----------------------------------------------------*/
 td.slot-ilvl {
@@ -504,14 +522,6 @@ td.slot-ilvl {
     text-align: right;
     font-weight: bold;
     min-width: 100px;
-}
-td.ilvl {
-    font-size: 10px;
-    font-weight: bold;
-    padding: 0px;
-    text-align: right;
-    vertical-align: bottom;
-    line-height: 12px;
 }
 /* SLOT > RECAP --------------------------------------------------------------*/
 div[id$="-recap-div"] {
