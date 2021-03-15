@@ -34,11 +34,11 @@
     <div class="row">
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 weapon">
             {>slot_recap slot=slots[0]/}
             <p id="weapon-recap-active" class="weapon-active-p">Active Weapon</p>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 weapon">
             {>slot_recap slot=slots[1]/}
             <p id="weapon2-recap-active" class="weapon-active-p" hidden>Active Weapon</p>
         </div>

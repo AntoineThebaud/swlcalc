@@ -526,6 +526,9 @@ td.slot-ilvl {
     min-width: 100px;
 }
 /* SLOT > RECAP --------------------------------------------------------------*/
+div[id="slots-recap"] .weapon {
+    margin-bottom: 20px;
+}
 div[id$="-recap-div"] {
     width: 275px;
     min-height: 300px;
@@ -603,7 +606,7 @@ td[id$="-recap-equipment-empty"] {
     color: var(--active-text-color);
     background-color: var(--active-bg);
     border-radius: 0px 0px 10px 10px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 .weapon-active-div {
     border-radius: 10px 10px 0px 0px !important;
