@@ -111,7 +111,7 @@
                             <td class="darker" colspan="2"></td>
                             <td colspan="3"></td>
                         </tr>
-                        <tr>
+                        <tr class="separator">
                             <td class="stat-name">Glance Reduction %</td>
                             <td colspan="2" id="passive-glance-reduction-base" class="darker stat-value aligned">{passives.glanceReductionBase}%</td>
                             <td colspan="2"></td>
