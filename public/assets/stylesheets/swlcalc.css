@@ -162,6 +162,9 @@ div[id="sidebar"] {
 .separator {
     border-bottom: 1px solid var(--color-border);
 }
+.separator-top {
+    border-top: 1px solid var(--color-border);
+}
 /* GENERAL > COLORED ELEMENTS ----------------------------------------------- */
 .lightgrey {
     color: var(--color-lightgrey);
@@ -416,6 +419,9 @@ img[id$="-img-quality"] {
 .slot h4 {
     padding: 0px;
     display: inline;
+}
+.table-title td {
+    padding-bottom: 5px;
 }
 .table-slots {
     border-top: 1px solid var(--color-border);

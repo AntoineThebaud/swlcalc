@@ -75,7 +75,7 @@
                             <p id="{id}-edit-equipment-ilvl" class="lightgrey">0</p>
                         </td>
                     </tr>
-                    <tr class="separator">
+                    <tr>
                         <td class="filler"></td>
                         <td class="filler"></td>
                         <td class="upgrade-label level-label">
@@ -85,7 +85,7 @@
                             <input id="{id}-edit-equipment-level" type="range" min="1" max="20" value="20" class="level-slider">
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="separator-top">
                         <td class="item-title lightgrey" colspan="2">Glyph</td>
                         <td class="upgrade-label rarity-label">
                             <strong>Rarity :</strong>
@@ -124,7 +124,7 @@
                           <span id="{id}-edit-glyph-stat-text"></span>
                         </td>
                     </tr>
-                    <tr class="separator">
+                    <tr>
                         <td class="filler"></td>
                         <td class="filler"></td>
                         <td class="upgrade-label level-label">
@@ -138,7 +138,7 @@
                         </td>
                     </tr>
                     {?isWeapon}
-                    <tr>
+                    <tr class="separator-top">
                         <td class="item-title lightgrey" colspan="2">Affix</td>
                         <td colspan="3" rowspan="2">
                             <p id="{id}-edit-signet-description" class="affix-description"></p>
@@ -149,7 +149,7 @@
                         </td>
                     </tr>
                     {:else}
-                    <tr class="signet-first-tr">
+                    <tr class="separator-top signet-first-tr">
                         <td class="item-title lightgrey" colspan="2">Signet</td>
                         <td class="upgrade-label rarity-label">
                             <strong>Rarity :</strong>
