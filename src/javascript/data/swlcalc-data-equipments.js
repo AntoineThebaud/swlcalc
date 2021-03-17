@@ -1796,7 +1796,7 @@ swlcalc.data.equipments = {
             {
                 id: 4,
                 name: 'Razor Fossil',
-                description: 'Whenever you or any of your group members defeat an enemy, your damage is increased by <span class="stat-value const">8%</span> for <span class="stat-value const">3</span> seconds. This effect can stack up to <span class="stat-value const">5</span> times.'
+                description: 'Whenever you or any of your group members defeat an enemy, your damage is increased by <span class="stat-value const">8%</span> for <span class="stat-value const">3</span> seconds. This effect can stack up to <span class="stat-value const">5</span> times, however only <span class="stat-value const">1</span> stack can be gained per second.'
             },
             {
                 id: 5,
