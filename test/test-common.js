@@ -1,4 +1,3 @@
-//TODO/REFACTOR : use these functions for each test module setup !
 
 function renderGear() {
     renderTemplate("slots_recap", {
