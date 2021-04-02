@@ -158,6 +158,12 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
         swlcalc.summary.updatePrimaryStats();
         swlcalc.summary.updateILvl();
 
+        /* -----------------------------------------------------------------------------------
+         * Needed to properly take into account Havoc weapon affix in the Summary computations
+         * TODO/REFACTOR : to be triggered only if Havoc affix is set                          */
+        swlcalc.summary.updateSecondaryStat('critical-power');
+        /* ----------------------------------------------------------------------------------- */
+
         swlcalc.gear.updateAllDescriptions();
         swlcalc.summary.updateOtherBonuses();
     };
@@ -248,6 +254,12 @@ swlcalc.gear.SlotHandler = function SlotHandler(slot) {
     this.handleAffixIdChange = function(event) {
         slotObj.updateSignet();
 
+        /* ----------------------------------------------------------------------------------------------------
+         * Needed to properly take into account Havoc and/or Warding weapon affixes in the Summary computations
+         * TODO/REFACTOR : to be triggered only if Havoc or Warding has been set                               */
+        swlcalc.summary.updatePrimaryStats();
+        swlcalc.summary.updateSecondaryStat('critical-power');
+        /* --------------------------------------------------------------------------------------------------- */
         swlcalc.gear.updateSignetsBonuses();
     };
 

@@ -73,6 +73,9 @@ swlcalc.summary = function() {
             }
         }
 
+        // exception : collect amount brought by weapon affix (only valid for Warding)
+        totals['protection'] += retrieveAmountFromAffix('Warding');
+
         // Increment HP/AR/HR based on anima allocation repartition
         totals['attack-rating'] += Math.round(totals['power-rating'] * swlcalc.data.stats.arConversionCoef * swlcalc.animaAllocation.getDamageRatio());
         totals['heal-rating']   += Math.round(totals['power-rating'] * swlcalc.data.stats.hrConversionCoef * swlcalc.animaAllocation.getHealingRatio());
@@ -168,6 +171,11 @@ swlcalc.summary = function() {
             }
         }
 
+        // exception : collect amount brought by weapon affix (only valid for Havoc)
+        if (stat == 'critical-power') {
+            totalValuePercent += retrieveAmountFromAffix('Havoc');
+        }
+
         // compute corresponding percentage stat
         totalValuePercent = swlcalc.util.precisionRound(totalValuePercent + computeSecondaryStat(stat, totalValue), 1);
 
@@ -244,6 +252,21 @@ swlcalc.summary = function() {
      */
     var healingPower = function() {
         return parseInt($('#stat-healing-power').text());
+    }
+
+    /**
+     * Retrieve the amount of stats brought by the provided Affix
+     * /!\ As of now should only be used either with Havoc or Warding
+     */
+    var retrieveAmountFromAffix = function(affixName) {
+        var currentWeapon = swlcalc.gear.slots[swlcalc.gear.activeWeapon()];
+        if (currentWeapon.edit.getSignetId() != "none") {
+            var currentAffixData = swlcalc.data.signets.slot['weapon'][currentWeapon.edit.getSignetId() - 1];
+            if (currentAffixData.name == affixName) {
+                return currentAffixData.quality[currentWeapon.edit.getEquipmentQuality()][0];
+            }
+        }
+        return 0;
     }
 
     var oPublic = {
