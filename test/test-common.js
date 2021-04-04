@@ -7,13 +7,21 @@ function renderGear() {
         slots: swlcalc.data.templateData.slots
     });
 
+    renderAgents();
+
+    initiateGear();
+}
+
+function initiateGear() {
+    swlcalc.gear.init();
+}
+
+function renderAgents() {
     for (var i = 0; i < 3; i++) {
         renderTemplate("agent", {
             id: (i + 1)
         });
     }
-
-    swlcalc.gear.init();
 }
 
 function renderAnimaAllocation() {
@@ -62,8 +70,8 @@ function initiateSwapHandlers() {
 }
 
 function initiateHandlers() {
-    initiateSlotHandlers()
-    initiateAgentHandlers()
+    initiateSlotHandlers();
+    initiateAgentHandlers();
 }
 
 function initiateSlotHandlers() {
