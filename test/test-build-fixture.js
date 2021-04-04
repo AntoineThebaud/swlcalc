@@ -220,7 +220,124 @@ function createTankBuild() {
 
     $("#anima-allocation-healing-range").val("55");
     $("#anima-allocation-healing-range").change();
-    
+
     $("#anima-allocation-survivability-range").val("44");
     $("#anima-allocation-survivability-range").change();
+}
+
+/**
+ * Create a shuffled build
+ * -> equivalent to : #weapon=5,119,3,19,2,2,1,20,0,2,0&weapon2=4,27,2,28,3,4,4,17,0,8,0&head=1,3,1,4,2,1,3,11,3,10,15&finger=5,2,3,69,4,2,1,11,3,1,7&neck=4,5,3,35,1,0,1,12,1,0,9&wrist=1,0,1,20,3,3,4,20,1,0,20&luck=1,0,1,20,1,0,1,20,5,8,20&waist=2,13,3,1,2,3,2,1,2,1,1&occult=5,4,4,70,4,0,1,20,3,2,13&agent1=15,50&agent2=37,25&agent3=10,50&aa=38,5,57&passives=1400,880,960,388,916,2997,488,477,634,2154,494,753,520,270,1950,7.2,4.2,28.8,15.6
+ */
+function createShuffledBuild() {
+    $("#weapon-edit-equipment-id").val("119").change();
+    $("#weapon-edit-equipment-rarity").val("legendary").change();
+    $("#weapon-edit-equipment-quality").val("3").change();
+    $("#weapon-edit-equipment-level").val("19").change();
+    $("#weapon-edit-glyph-id").val("critical-rating").change();
+    $("#weapon-edit-glyph-rarity").val("superior").change();
+    $("#weapon-edit-glyph-quality").val("1").change();
+    $("#weapon-edit-glyph-level").val("1").change();
+    $("#weapon-edit-signet-id").val("2").change();
+
+    $("#weapon2-edit-equipment-id").val("27").change();
+    $("#weapon2-edit-equipment-rarity").val("mythic").change();
+    $("#weapon2-edit-equipment-quality").val("2").change();
+    $("#weapon2-edit-equipment-level").val("28").change();
+    $("#weapon2-edit-glyph-id").val("evade-rating").change();
+    $("#weapon2-edit-glyph-rarity").val("epic").change();
+    $("#weapon2-edit-glyph-quality").val("4").change();
+    $("#weapon2-edit-glyph-level").val("17").change();
+    $("#weapon2-edit-signet-id").val("8").change();
+
+    $("#head-edit-equipment-id").val("3").change();
+    $("#head-edit-equipment-rarity").val("standard").change();
+    $("#head-edit-equipment-quality").val("1").change();
+    $("#head-edit-equipment-level").val("4").change();
+    $("#head-edit-glyph-id").val("hit-rating").change();
+    $("#head-edit-glyph-rarity").val("superior").change();
+    $("#head-edit-glyph-quality").val("3").change();
+    $("#head-edit-glyph-level").val("11").change();
+    $("#head-edit-signet-id").val("10").change();
+    $("#head-edit-signet-rarity").val("epic").change();
+    $("#head-edit-signet-level").val("15").change();
+
+    $("#finger-edit-equipment-id").val("2").change();
+    $("#finger-edit-equipment-rarity").val("legendary").change();
+    $("#finger-edit-equipment-quality").val("3").change();
+    $("#finger-edit-equipment-level").val("69").change();
+    $("#finger-edit-glyph-id").val("critical-rating").change();
+    $("#finger-edit-glyph-rarity").val("mythic").change();
+    $("#finger-edit-glyph-quality").val("1").change();
+    $("#finger-edit-glyph-level").val("11").change();
+    $("#finger-edit-signet-id").val("1").change();
+    $("#finger-edit-signet-rarity").val("epic").change();
+    $("#finger-edit-signet-level").val("7").change();
+
+    $("#neck-edit-equipment-id").val("5").change();
+    $("#neck-edit-equipment-rarity").val("mythic").change();
+    $("#neck-edit-equipment-quality").val("3").change();
+    $("#neck-edit-equipment-level").val("35").change();
+
+    $("#wrist-edit-glyph-id").val("critical-power").change();
+    $("#wrist-edit-glyph-rarity").val("epic").change();
+    $("#wrist-edit-glyph-quality").val("4").change();
+    $("#wrist-edit-glyph-level").val("20").change();
+
+    $("#luck-edit-signet-id").val("8").change();
+    $("#luck-edit-signet-rarity").val("legendary").change();
+    $("#luck-edit-signet-level").val("20").change();
+
+    $("#waist-edit-equipment-id").val("13").change();
+    $("#waist-edit-equipment-rarity").val("superior").change();
+    $("#waist-edit-equipment-quality").val("3").change();
+    $("#waist-edit-equipment-level").val("1").change();
+    $("#waist-edit-glyph-id").val("critical-power").change();
+    $("#waist-edit-glyph-rarity").val("superior").change();
+    $("#waist-edit-glyph-quality").val("2").change();
+    $("#waist-edit-glyph-level").val("1").change();
+    $("#waist-edit-signet-id").val("1").change();
+    $("#waist-edit-signet-rarity").val("superior").change();
+    $("#waist-edit-signet-level").val("1").change();
+
+    $("#occult-edit-equipment-id").val("4").change();
+    $("#occult-edit-equipment-rarity").val("legendary").change();
+    $("#occult-edit-equipment-quality").val("4").change();
+    $("#occult-edit-equipment-level").val("70").change();
+    $("#occult-edit-signet-id").val("2").change();
+    $("#occult-edit-signet-rarity").val("epic").change();
+    $("#occult-edit-signet-level").val("13").change();
+
+    $("#agent1-id").val("15").change();
+    $("#agent1-level").val("50").change();
+
+    $("#agent2-id").val("37").change();
+    $("#agent2-level").val("25").change();
+
+    $("#agent3-id").val("10").change();
+    $("#agent3-level").val("50").change();
+
+    $("#anima-allocation-damage-range").val("38").change();
+    $("#anima-allocation-healing-range").val("5").change();
+    $("#anima-allocation-survivability-range").val("57").change();
+
+    $('#passive-attack-rating-base-slider').val("1400").change();
+    $('#passive-heal-rating-base-slider').val("880").change();
+    $('#passive-hit-points-base-slider').val("960").change();
+    $('#passive-attack-rating-passive-skills-slider').val("388").change();
+    $('#passive-heal-rating-passive-skills-slider').val("916").change();
+    $('#passive-hit-points-passive-skills-slider').val("2997").change();
+    $('#passive-critical-rating-passive-skills-slider').val("488").change();
+    $('#passive-critical-power-passive-skills-slider').val("477").change();
+    $('#passive-hit-rating-passive-skills-slider').val("634").change();
+    $('#passive-protection-passive-skills-slider').val("2154").change();
+    $('#passive-defense-rating-passive-skills-slider').val("494").change();
+    $('#passive-evade-rating-passive-skills-slider').val("753").change();
+    $('#passive-attack-rating-capstones-slider').val("520").change();
+    $('#passive-heal-rating-capstones-slider').val("270").change();
+    $('#passive-hit-points-capstones-slider').val("1950").change();
+    $('#passive-critical-chance-expertise-slider-weapon1').val("7.2").change();
+    $('#passive-critical-chance-expertise-slider-weapon2').val("4.2").change();
+    $('#passive-critical-power-percentage-expertise-slider-weapon1').val("28.8").change();
+    $('#passive-critical-power-percentage-expertise-slider-weapon2').val("16.8").change();
 }
