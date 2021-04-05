@@ -1,12 +1,12 @@
 
 QUnit.module("summary-unit-tests", {
     beforeEach: function(assert) {
-        renderGear();
+        renderGearOLD();
         renderPassives();
         renderSummary();
         renderAnimaAllocation();
         initiateSummary();
-        initiateHandlers();
+        initiateGearHandlers();
         initiateAnimaAllocation();
         initiatePassives();
     }

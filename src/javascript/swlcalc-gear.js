@@ -16,17 +16,29 @@ swlcalc.gear = function() {
      * This method can only be called after the document is ready
      */
     var init = function() {
-        // add gear slots
+        initSlots();
+        drawPrimaryWeapon();
+        initAgents();
+    };
+
+    /**
+     * Add slots to the gear
+     */
+    var initSlots = function() {
         for (var i = 0; i < swlcalc.data.templateData.slots.length; i++) {
             var slotData = swlcalc.data.templateData.slots[i];
             slots[slotData.id] = new swlcalc.gear.Slot(slotData);
         }
-        drawPrimaryWeapon();
-        // add agent slots
+    }
+
+    /**
+     * Add agents to the gear
+     */
+    var initAgents = function() {
         for (var i = 0; i < 3; i++) {
             agents[i] = new swlcalc.gear.Agent(i + 1);
         }
-    };
+    }
 
     /**
      * Draw primary weapon (-> hide secondary weapon)
@@ -72,6 +84,8 @@ swlcalc.gear = function() {
         for (var index in agents) {
             agents[index].reset();
         }
+
+        swlcalc.passives.reset();
     };
 
     /**
@@ -150,6 +164,8 @@ swlcalc.gear = function() {
         slots: slots,
         agents: agents,
         init: init,
+        initSlots: initSlots,
+        initAgents: initAgents,
         nbSlots: nbSlots,
         nbAgents: nbAgents,
         activeWeapon: activeWeapon,

@@ -1,12 +1,12 @@
 
 QUnit.module("buttonbar-unit-tests", {
     beforeEach: function(assert) {
-        renderGear();
+        renderGearOLD();
         renderSummary();
         renderButtonbar();
         renderAnimaAllocation();
         renderPassives();
-        initiateHandlers();
+        initiateGearHandlers();
         initiateSummary();
         initiateButtonBar();
         initiateAnimaAllocation();

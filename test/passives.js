@@ -50,8 +50,8 @@ QUnit.module("passives - unit tests", {
     beforeEach: function() {
         renderPassives();
         renderAnimaAllocation();
-        renderGear();
-        initiateHandlers();
+        renderGearOLD();
+        initiateGearHandlers();
         initiateAnimaAllocation();
         initiatePassives();
     }
@@ -195,11 +195,11 @@ QUnit.test("should get Total/Evade Chance", function(assert) {
 
 QUnit.module("passives - integration tests", {
     beforeEach: function() {
-        renderGear();
+        renderGearOLD();
         renderPassives();
         renderAnimaAllocation();
         renderSummary();
-        initiateHandlers();
+        initiateGearHandlers();
         initiateAnimaAllocation();
         initiatePassives();
         createTankBuild();

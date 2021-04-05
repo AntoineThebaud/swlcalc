@@ -1,11 +1,11 @@
 
 QUnit.module("slot-edit-unit-tests", {
     beforeEach: function(assert) {
-        renderGear();
+        renderGearOLD();
         renderSummary();
         renderPassives();
         renderAnimaAllocation();
-        initiateHandlers();
+        initiateGearHandlers();
         initiateAnimaAllocation();
         initiatePassives();
         createTankBuild();

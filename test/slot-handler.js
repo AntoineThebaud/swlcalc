@@ -1,11 +1,11 @@
 
 QUnit.module("slot-handler-unit-tests", {
     beforeEach: function(assert) {
-        renderGear();
+        renderGearOLD();
         renderPassives();
         renderAnimaAllocation();
         renderSummary();
-        initiateHandlers();
+        initiateGearHandlers();
         initiateAnimaAllocation();
         initiatePassives();
         initiateSummary();

@@ -1,11 +1,11 @@
 
 QUnit.module("export-unit-tests", {
     beforeEach: function(assert) {
-        renderGear();
+        renderGearOLD();
         renderPassives();
         renderAnimaAllocation();
         renderButtonbar(); // TODO/REFACTOR : remove need of button bar in this unit test (= save anima allocation as attribute to gear maybe ?)
-        initiateHandlers();
+        initiateGearHandlers();
         initiateButtonBar();
         initiateAnimaAllocation();
         initiatePassives();

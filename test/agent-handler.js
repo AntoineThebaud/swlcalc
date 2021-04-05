@@ -14,9 +14,7 @@ QUnit.test("should have required all agent controllers in the DOM", function(ass
 
 QUnit.module("agent-handler-events", {
     beforeEach: function(assert) {
-        renderAgents();
-        initiateGear();
-        initiateAgentHandlers();
+        includeAgents();
     }
 });
 
@@ -29,8 +27,7 @@ QUnit.test("should have required event listeners for change on agent controllers
 
 QUnit.module("agent-handler-integration-tests", {
     beforeEach: function(assert) {
-        renderGear();
-        initiateAgentHandlers();
+        includeGear();
     }
 });
 
