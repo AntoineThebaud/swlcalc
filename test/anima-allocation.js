@@ -1,15 +1,7 @@
 
-QUnit.module("buttonbar-unit-tests", {
+QUnit.module("anima-allocation-dom", {
     beforeEach: function(assert) {
-        renderGearOLD();
-        renderPassives();
         renderAnimaAllocation();
-        renderSummary();
-        initiateGearHandlers();
-        initiateSummary();
-        initiateAnimaAllocation();
-        initiatePassives();
-        createTankBuild();
     }
 });
 
@@ -22,58 +14,71 @@ QUnit.test("should have required buttonbar buttons in DOM", function(assert) {
     assert.ok($("#anima-allocation-survivability-val").length !== 0, "anima-allocation-survivability-val exists");
 });
 
-QUnit.test("should set & get anima allocation accordingly", function(assert) {
-    assert.equal(swlcalc.animaAllocation.getDamagePercentage(), "66");
-    assert.equal(swlcalc.animaAllocation.getDamageRatio(), "0.66");
-    assert.equal(swlcalc.animaAllocation.getHealingPercentage(), "55");
-    assert.equal(swlcalc.animaAllocation.getHealingRatio(), "0.55");
-    assert.equal(swlcalc.animaAllocation.getSurvivabilityPercentage(), "44");
-    assert.equal(swlcalc.animaAllocation.getSurvivabilityRatio(), "0.44");
+QUnit.module("anima-allocation-unit-tests", {
+    beforeEach: function(assert) {
+        includeAnimaAllocation();
+    }
+});
 
+QUnit.test("should get anima allocation damage percentage", function(assert) {
+    assert.equal(swlcalc.animaAllocation.getDamagePercentage(), "100");
+});
+
+QUnit.test("should get anima allocation damage ratio", function(assert) {
+    assert.equal(swlcalc.animaAllocation.getDamageRatio(), "1");
+});
+
+QUnit.test("should get anima allocation healing percentage", function(assert) {
+    assert.equal(swlcalc.animaAllocation.getHealingPercentage(), "0");
+});
+
+QUnit.test("should get anima allocation healing ratio", function(assert) {
+    assert.equal(swlcalc.animaAllocation.getHealingRatio(), "0");
+});
+
+QUnit.test("should get anima allocation survivability percentage", function(assert) {
+    assert.equal(swlcalc.animaAllocation.getSurvivabilityPercentage(), "0");
+});
+
+QUnit.test("should get anima allocation survivability ratio", function(assert) {
+    assert.equal(swlcalc.animaAllocation.getSurvivabilityRatio(), "0");
+});
+
+QUnit.module("anima-allocation-integration-tests", {
+    beforeEach: function(assert) {
+        includeGear();
+        includeAnimaAllocation();
+        includeSummary();
+        includePassives();
+
+        createShuffledBuild();
+    }
+});
+
+QUnit.test("should set anima allocation damage and do updates accordingly", function(assert) {
     swlcalc.animaAllocation.setDamagePercentage("33");
-    swlcalc.animaAllocation.setHealingPercentage("22");
-    swlcalc.animaAllocation.setSurvivabilityPercentage("11");
 
     assert.equal(swlcalc.animaAllocation.getDamagePercentage(), "33");
     assert.equal(swlcalc.animaAllocation.getDamageRatio(), "0.33");
+    assert.equal($("#stat-combat-power").html(), "584.6");
+    assert.equal($("#stat-attack-rating").html(), "4056");
+    assert.equal($("#stat-agent3-bonus50").text(), '126 Damage on Critical Hits');
+});
+
+QUnit.test("should set anima allocation damage and do updates accordingly", function(assert) {
+    swlcalc.animaAllocation.setHealingPercentage("22");
+
     assert.equal(swlcalc.animaAllocation.getHealingPercentage(), "22");
     assert.equal(swlcalc.animaAllocation.getHealingRatio(), "0.22");
+    assert.equal($("#stat-healing-power").html(), "141.2");
+    assert.equal($("#stat-heal-rating").html(), "3323");
+    assert.equal($("#stat-agent1-bonus50").text(), '30 Healing on Critical Heals');
+});
+
+QUnit.test("should set anima allocation damage and do updates accordingly", function(assert) {
+    swlcalc.animaAllocation.setSurvivabilityPercentage("11");
+
     assert.equal(swlcalc.animaAllocation.getSurvivabilityPercentage(), "11");
     assert.equal(swlcalc.animaAllocation.getSurvivabilityRatio(), "0.11");
-});
-
-QUnit.test("should set anima allocation and affect stats correctly", function(assert) {
-    assert.equal($("#stat-combat-power").html(), "646.2");
-    assert.equal($("#stat-healing-power").html(), "155.7");
-    assert.equal($("#stat-attack-rating").html(), "6784");
-    assert.equal($("#stat-heal-rating").html(), "5952");
-    assert.equal($("#stat-hit-points").html(), "13905");
-    swlcalc.animaAllocation.setDamagePercentage("100");
-    assert.equal($("#stat-combat-power").html(), "741.3");
-    assert.equal($("#stat-healing-power").html(), "155.7");
-    assert.equal($("#stat-attack-rating").html(), "8052");
-    assert.equal($("#stat-heal-rating").html(), "5952");
-    assert.equal($("#stat-hit-points").html(), "13905");
-    swlcalc.animaAllocation.setHealingPercentage("100");
-    assert.equal($("#stat-combat-power").html(), "741.3");
-    assert.equal($("#stat-healing-power").html(), "182.5");
-    assert.equal($("#stat-attack-rating").html(), "8052");
-    assert.equal($("#stat-heal-rating").html(), "7295");
-    assert.equal($("#stat-hit-points").html(), "13905");
-    swlcalc.animaAllocation.setSurvivabilityPercentage("100");
-    assert.equal($("#stat-combat-power").html(), "741.3");
-    assert.equal($("#stat-healing-power").html(), "182.5");
-    assert.equal($("#stat-attack-rating").html(), "8052");
-    assert.equal($("#stat-heal-rating").html(), "7295");
-    assert.equal($("#stat-hit-points").html(), "19871");
-});
-
-QUnit.test("should set anima allocation and affect other bonuses correctly", function(assert) {
-
-    swlcalc.gear.agents[2].setId("15");
-    swlcalc.gear.agents[2].setLevel("50");
-    assert.equal($("#stat-agent3-bonus50").html(), '<span class="stat-value heal">35</span> Healing on Critical Heals');
-
-    swlcalc.animaAllocation.setHealingPercentage("100");
-    assert.equal($("#stat-agent3-bonus50").html(), '<span class="stat-value heal">41</span> Healing on Critical Heals');
+    assert.equal($("#stat-hit-points").html(), "8061");
 });
