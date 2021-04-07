@@ -28,22 +28,32 @@ QUnit.test("should have required passives in DOM", function(assert) {
     assert.ok($("#passive-hit-points-capstones").length !== 0, "passive-hit-points-capstones exists");
 
     assert.ok($("#passive-critical-rating-passive-skills-slider").length !== 0, "passive-critical-rating-passive-skills-slider exists");
+    assert.ok($("#passive-critical-rating-passive-skills").length !== 0, "passive-critical-rating-passive-skills exists");
 
     assert.ok($("#passive-critical-chance-expertise-slider-weapon1").length !== 0, "passive-critical-chance-expertise-slider-weapon1 exists");
+    assert.ok($("#passive-critical-chance-expertise-weapon1").length !== 0, "passive-critical-chance-expertise-weapon1 exists");
     assert.ok($("#passive-critical-chance-expertise-slider-weapon2").length !== 0, "passive-critical-chance-expertise-slider-weapon2 exists");
+    assert.ok($("#passive-critical-chance-expertise-weapon2").length !== 0, "passive-critical-chance-expertise-weapon2 exists");
 
     assert.ok($("#passive-critical-power-passive-skills-slider").length !== 0, "passive-critical-power-passive-skills-slider exists");
+    assert.ok($("#passive-critical-power-passive-skills").length !== 0, "passive-critical-power-passive-skills exists");
 
     assert.ok($("#passive-critical-power-percentage-expertise-slider-weapon1").length !== 0, "passive-critical-power-percentage-expertise-slider-weapon1 exists");
+    assert.ok($("#passive-critical-power-percentage-expertise-weapon1").length !== 0, "passive-critical-power-percentage-expertise-weapon1 exists");
     assert.ok($("#passive-critical-power-percentage-expertise-slider-weapon2").length !== 0, "passive-critical-power-percentage-expertise-slider-weapon2 exists");
+    assert.ok($("#passive-critical-power-percentage-expertise-weapon2").length !== 0, "passive-critical-power-percentage-expertise-weapon2 exists");
 
     assert.ok($("#passive-hit-rating-passive-skills-slider").length !== 0, "passive-hit-rating-passive-skills-slider exists");
+    assert.ok($("#passive-hit-rating-passive-skills").length !== 0, "passive-hit-rating-passive-skills exists");
 
     assert.ok($("#passive-protection-passive-skills-slider").length !== 0, "passive-protection-passive-skills-slider exists");
+    assert.ok($("#passive-protection-passive-skills").length !== 0, "passive-protection-passive-skills exists");
 
     assert.ok($("#passive-defense-rating-passive-skills-slider").length !== 0, "passive-defense-rating-passive-skills-slider exists");
+    assert.ok($("#passive-defense-rating-passive-skills").length !== 0, "passive-defense-rating-passive-skills exists");
 
     assert.ok($("#passive-evade-rating-passive-skills-slider").length !== 0, "passive-evade-rating-passive-skills-slider exists");
+    assert.ok($("#passive-evade-rating-passive-skills").length !== 0, "passive-evade-rating-passive-skills exists");
 });
 
 QUnit.module("passives - unit tests", {
