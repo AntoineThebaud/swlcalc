@@ -110,6 +110,10 @@ function renderButtonbar() {
 function initiateButtonBar() {
     swlcalc.buttonBar.init();
 }
+function includeButtonBar() {
+    renderButtonbar();
+    initiateButtonBar();
+}
 /* OTHER ---------------------------------------------------------------------*/
 function clearFixture() {
     $("#qunit-fixture").html("");

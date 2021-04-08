@@ -1,17 +1,7 @@
 
-QUnit.module("buttonbar-unit-tests", {
+QUnit.module("buttonbar-dom", {
     beforeEach: function(assert) {
-        renderGearOLD();
-        renderSummary();
         renderButtonbar();
-        renderAnimaAllocation();
-        renderPassives();
-        initiateGearHandlers();
-        initiateSummary();
-        initiateButtonBar();
-        initiateAnimaAllocation();
-        initiatePassives();
-        createTankBuild();
     }
 });
 
@@ -22,6 +12,28 @@ QUnit.test("should have required buttonbar buttons in DOM", function(assert) {
     assert.ok($("#btn-all-mythic").length !== 0, "all-mythic button exists");
     assert.ok($("#btn-all-legendary").length !== 0, "all-legendary button exists");
     assert.ok($("#btn-reset").length !== 0, "reset button exists");
+
+    assert.ok($("#btn-all-1-pip").length !== 0, "all-1-pip button exists");
+    assert.ok($("#btn-all-2-pip").length !== 0, "all-2-pip button exists");
+    assert.ok($("#btn-all-3-pip").length !== 0, "all-3-pip button exists");
+    assert.ok($("#btn-all-4-pip").length !== 0, "all-4-pip button exists");
+
+    assert.ok($("#btn-all-lvl-min").length !== 0, "all-lvl-min button exists");
+    assert.ok($("#btn-all-lvl-max").length !== 0, "all-lvl-max button exists");
+
+    assert.ok($("#btn-reset").length !== 0, "reset button exists");
+});
+
+QUnit.module("buttonbar-integration-tests", {
+    beforeEach: function(assert) {
+        includeButtonBar();
+        includeGear();
+        includeAnimaAllocation();
+        includeSummary();
+        includePassives();
+
+        createShuffledBuild();
+    }
 });
 
 QUnit.test("should set rarity on all slots", function(assert) {
@@ -92,9 +104,7 @@ QUnit.test("should set max level on all slots", function(assert) {
 QUnit.test("should reset everything", function(assert) {
     swlcalc.buttonBar.resetAll();
 
-    assert.equal($("#stat-ilvl").text(), "0");
-    assert.equal($("#stat-power-rating").text(), "0");
-    assert.equal($("#stat-weapon-power").text(), "0");
+    // check everything has been reseted (picks few elements for each case)
 
     for (var slotId in swlcalc.gear.slots) {
         var slot = swlcalc.gear.slots[slotId];
@@ -102,8 +112,21 @@ QUnit.test("should reset everything", function(assert) {
         assert.equal(slot.edit.getGlyphId(), "none");
         assert.equal(slot.edit.getSignetId(), "none");
     }
+
     for (var index in swlcalc.gear.agents) {
         var agent = swlcalc.gear.agents[index];
         assert.equal(agent.getId(), "0");
     }
+
+    assert.equal($("#stat-ilvl").text(), "0");
+    assert.equal($("#stat-power-rating").text(), "0");
+    assert.equal($("#stat-weapon-power").text(), "0");
+
+    assert.equal($("#anima-allocation-damage-val").text(), "100");
+    assert.equal($("#anima-allocation-healing-val").text(), "0");
+
+    assert.equal($("#passive-attack-rating-base-slider").val(), '2000');
+    assert.equal($("#passive-heal-rating-passive-skills-slider").val(), '1500');
+    assert.equal($("#passive-critical-chance-expertise-weapon1").text(), '7.5');
+    assert.equal($("#passive-protection-passive-skills").text(), '2259');
 });
