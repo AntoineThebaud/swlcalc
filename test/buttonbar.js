@@ -89,8 +89,8 @@ QUnit.test("should set max level on all slots", function(assert) {
       }
 });
 
-QUnit.test("should reset all slots", function(assert) {
-    swlcalc.buttonBar.resetGear();
+QUnit.test("should reset everything", function(assert) {
+    swlcalc.buttonBar.resetAll();
 
     assert.equal($("#stat-ilvl").text(), "0");
     assert.equal($("#stat-power-rating").text(), "0");

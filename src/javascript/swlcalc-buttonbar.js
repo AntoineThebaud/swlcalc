@@ -47,7 +47,7 @@ swlcalc.buttonBar = function() {
         el.btnAllLvlMin.on('click', setMinLevelOnAllSlots);
         el.btnAllLvlMax.on('click', setMaxLevelOnAllSlots);
 
-        el.btnReset.on('click', resetGear);
+        el.btnReset.on('click', resetAll);
     };
 
     /**
@@ -136,14 +136,16 @@ swlcalc.buttonBar = function() {
     /**
      * Set all slots to 'none'
      */
-    var resetGear = function(event) {
+    var resetAll = function(event) {
         swlcalc.gear.reset();
+        swlcalc.passives.reset();
+        swlcalc.animaAllocation.reset();
     };
 
     var oPublic = {
         el: el,
         init: init,
-        resetGear: resetGear
+        resetAll: resetAll
     };
 
     return oPublic;

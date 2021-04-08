@@ -84,8 +84,6 @@ swlcalc.gear = function() {
         for (var index in agents) {
             agents[index].reset();
         }
-
-        swlcalc.passives.reset();
     };
 
     /**

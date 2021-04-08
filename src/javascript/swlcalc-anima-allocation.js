@@ -30,6 +30,15 @@ swlcalc.animaAllocation = function() {
     };
 
     /**
+     * Reset anima allocation (= set attack to max, the rest to min)
+     */
+    var reset = function() {
+        setDamagePercentage(el.rangeDamage.attr("max"));
+        setHealingPercentage(el.rangeHealing.attr("min"));
+        setSurvivabilityPercentage(el.rangeSurvivability.attr("min"));
+    };
+
+    /**
      * Update the value displayed for the Damage part and apply the anima allocation change on whole gear
      */
     var handleAnimaAllocationDamageChange = function(event) {
@@ -110,6 +119,7 @@ swlcalc.animaAllocation = function() {
     var oPublic = {
         el: el,
         init: init,
+        reset: reset,
         getDamagePercentage: getDamagePercentage,
         getHealingPercentage: getHealingPercentage,
         getSurvivabilityPercentage: getSurvivabilityPercentage,
