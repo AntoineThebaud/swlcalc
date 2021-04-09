@@ -313,4 +313,15 @@ QUnit.test("should return undefined or empty for elements that don't exist for t
     }
 });
 
+QUnit.test("should update any talisman and weapon bonuses correctly", function(assert) {
+    // change equipped weapons
+    $("#waist-edit-equipment-id").val("12");
+    $("#waist-edit-equipment-id").change();
+    assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentDescription(), "Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"stat-value dps\">727</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"stat-value heal\">174</span> health.");
+    $("#weapon2-edit-equipment-id").val("53");
+    $("#weapon2-edit-equipment-id").change();
+    assert.equal(swlcalc.gear.slots.weapon2.edit.getEquipmentDescription(), "Whenever you hit, you have a <span class=\"stat-value const\">33%</span> chance to hex your target and deal an additional <span id=\"weapon2-edit-equipment-bonus1\" class=\"stat-value dps\">97</span>-<span id=\"weapon2-edit-equipment-bonus2\" class=\"stat-value dps\">485</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class=\"stat-value const\">5</span> times. This effect is guaranteed to trigger on critical hits.<br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id=\"weapon2-edit-equipment-bonus3\" class=\"stat-value dps\">61</span>-<span id=\"weapon2-edit-equipment-bonus4\" class=\"stat-value dps\">304</span> magical damage, based on the number of times the damaging effect has been applied.");
+});
+
+
 //TODO/TEST add test for setSignetBonusWrapper
