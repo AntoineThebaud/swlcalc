@@ -114,22 +114,21 @@ function includeButtonBar() {
     renderButtonbar();
     initiateButtonBar();
 }
-/* OTHER ---------------------------------------------------------------------*/
-function clearFixture() {
-    $("#qunit-fixture").html("");
+/* EXPORT --------------------------------------------------------------------*/
+function initiateExport() {
+    swlcalc.export.init();
 }
-
+/* SWAP ----------------------------------------------------------------------*/
 function initiateSwapHandlers() {
     swlcalc.swap['weapon'] = new swlcalc.swap.SwapHandler('weapon');
     swlcalc.swap['weapon'].init();
     swlcalc.swap['weapon2'] = new swlcalc.swap.SwapHandler('weapon2');
     swlcalc.swap['weapon2'].init();
 }
-
-function initiateExport() {
-    swlcalc.export.init();
+/* OTHER ---------------------------------------------------------------------*/
+function clearFixture() {
+    $("#qunit-fixture").html("");
 }
-
 function renderTemplate(template_name, data) {
     dust.render(template_name, data,
 

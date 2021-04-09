@@ -134,7 +134,7 @@ swlcalc.buttonBar = function() {
     };
 
     /**
-     * Set all slots to 'none'
+     * Reset the whole calculator (set all slots & agents to 'none', put passives & aa to their default values...)
      */
     var resetAll = function(event) {
         swlcalc.gear.reset();

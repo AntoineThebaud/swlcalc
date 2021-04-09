@@ -1,20 +1,16 @@
 
-QUnit.module("export-unit-tests", {
+QUnit.module("export-integration-tests", {
     beforeEach: function(assert) {
-        renderGearOLD();
-        renderPassives();
-        renderAnimaAllocation();
-        renderButtonbar(); // TODO/REFACTOR : remove need of button bar in this unit test (= save anima allocation as attribute to gear maybe ?)
-        initiateGearHandlers();
-        initiateButtonBar();
-        initiateAnimaAllocation();
-        initiatePassives();
+        includeButtonBar();
+        includeGear();
+        includeAnimaAllocation();
+        includePassives();
         initiateExport();
-        createTankBuild();
+        createShuffledBuild();
     }
 });
 
 QUnit.test("should start export url and set in textfield", function(assert) {
     swlcalc.export.startExportUrl();
-    assert.equal($("#export-text").val(), location.origin + location.pathname + "#weapon=3,1,1,30,2,2,1,1,0,6,0&weapon2=3,2,3,30,2,2,1,1,0,2,0&head=3,1,1,30,4,1,3,1,2,20,15&finger=3,1,1,30,3,5,2,20,1,10,9&neck=3,1,1,30,3,5,2,20,2,10,3&wrist=3,1,1,1,3,5,2,20,1,1,14&luck=3,1,1,1,3,4,2,20,3,8,6&waist=3,13,1,30,3,4,2,20,2,3,11&occult=3,1,1,1,3,4,2,20,3,4,18&agent1=2,25&agent2=42,50&agent3=0,25&aa=66,55,44&passives=2000,2000,3300,1512,1500,2997,756,1008,756,2259,753,753,810,810,2430,7.5,7.5,30,30");
+    assert.equal($("#export-text").val(), location.origin + location.pathname + "#weapon=5,119,3,19,2,2,1,20,0,2,0&weapon2=4,27,2,28,3,4,4,17,0,8,0&head=1,3,1,4,2,1,3,11,3,10,15&finger=5,2,3,69,4,2,1,11,3,1,7&neck=4,5,3,35,1,0,1,20,1,0,20&wrist=1,0,1,20,3,3,4,20,1,0,20&luck=1,0,1,20,1,0,1,20,5,8,20&waist=2,13,3,1,2,3,2,1,2,1,1&occult=5,4,4,70,1,0,1,20,3,2,13&agent1=15,50&agent2=37,25&agent3=10,50&aa=38,5,57&passives=1400,880,960,388,916,2997,488,477,634,2154,494,753,520,270,1950,7.2,4.2,28.8,16.8");
 });
