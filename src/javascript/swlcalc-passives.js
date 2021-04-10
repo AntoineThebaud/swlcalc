@@ -68,8 +68,8 @@ swlcalc.passives = function() {
 
     var init = function() {
         el = elInit();
+        swlcalc.passives.reset(); // set all passives to max values by default before binding events
         bindEvents();
-        reset(); //TODO : temporary
     };
 
     /**
@@ -305,7 +305,7 @@ swlcalc.passives = function() {
 
     /* Attack Rating : */
     var getAttackRatingBase = function(value) {
-        return parseInt(el.valAttackRatingBase.text());
+        return parseInt(el.rangeAttackRatingBase.val());
     }
     var setAttackRatingBase = function(value) {
         el.rangeAttackRatingBase.val(value).change();
@@ -313,7 +313,7 @@ swlcalc.passives = function() {
 
     /* Heal Rating : */
     var getHealRatingBase = function(value) {
-        return parseInt(el.valHealRatingBase.text());
+        return parseInt(el.rangeHealRatingBase.val());
     }
     var setHealRatingBase = function(value) {
         el.rangeHealRatingBase.val(value).change();
@@ -321,7 +321,7 @@ swlcalc.passives = function() {
 
     /* Hit Points : */
     var getHitPointsBase = function(value) {
-        return parseInt(el.valHitPointsBase.text());
+        return parseInt(el.rangeHitPointsBase.val());
     }
     var setHitPointsBase = function(value) {
         el.rangeHitPointsBase.val(value).change();
@@ -331,7 +331,7 @@ swlcalc.passives = function() {
 
     /* Attack Rating : */
     var getAttackRatingPassiveSkills = function(value) {
-        return parseInt(el.valAttackRatingPassiveSkills.text());
+        return parseInt(el.rangeAttackRatingPassiveSkills.val());
     }
     var setAttackRatingPassiveSkills = function(value) {
         el.rangeAttackRatingPassiveSkills.val(value).change();
@@ -339,7 +339,7 @@ swlcalc.passives = function() {
 
     /* Heal Rating : */
     var getHealRatingPassiveSkills = function(value) {
-        return parseInt(el.valHealRatingPassiveSkills.text());
+        return parseInt(el.rangeHealRatingPassiveSkills.val());
     }
     var setHealRatingPassiveSkills = function(value) {
         el.rangeHealRatingPassiveSkills.val(value).change();
@@ -347,7 +347,7 @@ swlcalc.passives = function() {
 
     /* Hit Points : */
     var getHitPointsPassiveSkills = function(value) {
-        return parseInt(el.valHitPointsPassiveSkills.text());
+        return parseInt(el.rangeHitPointsPassiveSkills.val());
     }
     var setHitPointsPassiveSkills = function(value) {
         el.rangeHitPointsPassiveSkills.val(value).change();
@@ -355,7 +355,7 @@ swlcalc.passives = function() {
 
     /* Critical Rating : */
     var getCriticalRatingPassiveSkills = function(value) {
-        return parseInt(el.valCriticalRatingPassiveSkills.text());
+        return parseInt(el.rangeCriticalRatingPassiveSkills.val());
     }
     var setCriticalRatingPassiveSkills = function(value) {
         el.rangeCriticalRatingPassiveSkills.val(value).change();
@@ -363,7 +363,7 @@ swlcalc.passives = function() {
 
     /* Critical Power : */
     var getCriticalPowerPassiveSkills = function(value) {
-        return parseInt(el.valCriticalPowerPassiveSkills.text());
+        return parseInt(el.rangeCriticalPowerPassiveSkills.val());
     }
     var setCriticalPowerPassiveSkills = function(value) {
         el.rangeCriticalPowerPassiveSkills.val(value).change();
@@ -371,7 +371,7 @@ swlcalc.passives = function() {
 
     /* Hit Rating : */
     var getHitRatingPassiveSkills = function(value) {
-        return parseInt(el.valHitRatingPassiveSkills.text());
+        return parseInt(el.rangeHitRatingPassiveSkills.val());
     }
     var setHitRatingPassiveSkills = function(value) {
         el.rangeHitRatingPassiveSkills.val(value).change();
@@ -379,7 +379,7 @@ swlcalc.passives = function() {
 
     /* Protection : */
     var getProtectionPassiveSkills = function(value) {
-        return parseInt(el.valProtectionPassiveSkills.text());
+        return parseInt(el.rangeProtectionPassiveSkills.val());
     }
     var setProtectionPassiveSkills = function(value) {
         el.rangeProtectionPassiveSkills.val(value).change();
@@ -387,7 +387,7 @@ swlcalc.passives = function() {
 
     /* Defense Rating : */
     var getDefenseRatingPassiveSkills = function(value) {
-        return parseInt(el.valDefenseRatingPassiveSkills.text());
+        return parseInt(el.rangeDefenseRatingPassiveSkills.val());
     }
     var setDefenseRatingPassiveSkills = function(value) {
         el.rangeDefenseRatingPassiveSkills.val(value).change();
@@ -395,7 +395,7 @@ swlcalc.passives = function() {
 
     /* Evade Rating : */
     var getEvadeRatingPassiveSkills = function(value) {
-        return parseInt(el.valEvadeRatingPassiveSkills.text());
+        return parseInt(el.rangeEvadeRatingPassiveSkills.val());
     }
     var setEvadeRatingPassiveSkills = function(value) {
         el.rangeEvadeRatingPassiveSkills.val(value).change();
@@ -405,7 +405,7 @@ swlcalc.passives = function() {
 
     /* Attack Rating : */
     var getAttackRatingCapstones = function(value) {
-        return parseInt(el.valAttackRatingCapstones.text());
+        return parseInt(el.rangeAttackRatingCapstones.val());
     }
     var setAttackRatingCapstones = function(value) {
         el.rangeAttackRatingCapstones.val(value).change();
@@ -413,7 +413,7 @@ swlcalc.passives = function() {
 
     /* Heal Rating : */
     var getHealRatingCapstones = function(value) {
-        return parseInt(el.valHealRatingCapstones.text());
+        return parseInt(el.rangeHealRatingCapstones.val());
     }
     var setHealRatingCapstones = function(value) {
         el.rangeHealRatingCapstones.val(value).change();
@@ -421,7 +421,7 @@ swlcalc.passives = function() {
 
     /* Hit Points : */
     var getHitPointsCapstones = function(value) {
-        return parseInt(el.valHitPointsCapstones.text());
+        return parseInt(el.rangeHitPointsCapstones.val());
     }
     var setHitPointsCapstones = function(value) {
         el.rangeHitPointsCapstones.val(value).change();
@@ -431,13 +431,14 @@ swlcalc.passives = function() {
 
     /* Critical Chance : */
     var getCriticalChanceExpertiseWeapon1 = function(value) {
-        return parseFloat(el.valCriticalChanceExpertiseWeapon1.text());
-    }
-    var getCriticalChanceExpertiseWeapon2 = function(value) {
-        return parseFloat(el.valCriticalChanceExpertiseWeapon2.text());
+        return parseFloat(el.rangeCriticalChanceExpertiseWeapon1.val());
     }
     var setCriticalChanceExpertiseWeapon1 = function(value) {
         el.rangeCriticalChanceExpertiseWeapon1.val(value).change();
+    }
+
+    var getCriticalChanceExpertiseWeapon2 = function(value) {
+        return parseFloat(el.rangeCriticalChanceExpertiseWeapon2.val());
     }
     var setCriticalChanceExpertiseWeapon2 = function(value) {
         el.rangeCriticalChanceExpertiseWeapon2.val(value).change();
@@ -445,13 +446,14 @@ swlcalc.passives = function() {
 
     /* Critical Power Percentage : */
     var getCriticalPowerPercentageExpertiseWeapon1 = function(value) {
-        return parseFloat(el.valCriticalPowerPercentageExpertiseWeapon1.text());
-    }
-    var getCriticalPowerPercentageExpertiseWeapon2 = function(value) {
-        return parseFloat(el.valCriticalPowerPercentageExpertiseWeapon2.text());
+        return parseFloat(el.rangeCriticalPowerPercentageExpertiseWeapon1.val());
     }
     var setCriticalPowerPercentageExpertiseWeapon1 = function(value) {
         el.rangeCriticalPowerPercentageExpertiseWeapon1.val(value).change();
+    }
+
+    var getCriticalPowerPercentageExpertiseWeapon2 = function(value) {
+        return parseFloat(el.rangeCriticalPowerPercentageExpertiseWeapon2.val());
     }
     var setCriticalPowerPercentageExpertiseWeapon2 = function(value) {
         el.rangeCriticalPowerPercentageExpertiseWeapon2.val(value).change();
