@@ -188,14 +188,22 @@ QUnit.module("slot-edit-integration-tests", {
     }
 });
 
+// TODO : cover all changes done to summary + -recap
 QUnit.test("should set the slot's equipment id and cascade the update accordingly", function(assert) {
     swlcalc.gear.slots.head.edit.setEquipmentId("6");
 
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentId(), "6");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentDescription(), "Whenever you hit the same enemy <span class=\"stat-value const\">6</span> times in succession, your next damaging Power Ability deals an additional <span id=\"head-edit-equipment-bonus1\" class=\"stat-value dps\">634</span> physical damage.");
     //TODO not working assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgItem(), "assets/images/icons/weapon/something.png");
+
+    swlcalc.gear.slots.head.edit.setEquipmentId("none");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentId(), "none");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentDescription(), "");
+    assert.equal($("#stat-attack-rating").text(), "4294");
 });
 
+// TODO : cover all changes done to summary + -recap
 QUnit.test("should set the slot's equipment rarity and cascade the update accordingly", function(assert) {
     swlcalc.gear.slots.head.edit.setEquipmentRarity("legendary");
 
@@ -205,8 +213,10 @@ QUnit.test("should set the slot's equipment rarity and cascade the update accord
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatProtValue(), "+982");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentILvl(), "483");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "587");
+    assert.equal($("#stat-attack-rating").text(), "5041");
 });
 
+// TODO : cover all changes done to summary + -recap
 QUnit.test("should set the slot's equipment quality and cascade the update accordingly", function(assert) {
     swlcalc.gear.slots.head.edit.setEquipmentQuality("3");
 
@@ -216,8 +226,10 @@ QUnit.test("should set the slot's equipment quality and cascade the update accor
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatProtValue(), "+46");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentILvl(), "10");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "114");
+    assert.equal($("#stat-attack-rating").text(), "4328");
 });
 
+// TODO : cover all changes done to summary + -recap
 QUnit.test("should set the slot's equipment level and cascade the update accordingly", function(assert) {
     swlcalc.gear.slots.head.edit.setEquipmentLevel("14");
 
@@ -227,6 +239,7 @@ QUnit.test("should set the slot's equipment level and cascade the update accordi
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatProtValue(), "+85");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentILvl(), "25");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "129");
+    assert.equal($("#stat-attack-rating").text(), "4359");
 });
 
 QUnit.test("should set the lower bound for slot's equipment level and cascade the update accordingly", function(assert) {
@@ -247,6 +260,7 @@ QUnit.test("should set & get the slot's equipment bonus value", function(assert)
     assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentBonusN(1), "19920804");
 });
 
+// TODO : cover all changes done to summary + -recap
 QUnit.test("should set the slot's glyph id and cascade the update accordingly", function(assert) {
     swlcalc.gear.slots.head.edit.setGlyphId("evade-rating");
 
@@ -254,8 +268,21 @@ QUnit.test("should set the slot's glyph id and cascade the update accordingly", 
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphImgItem(), "assets/images/icons/glyph/evade-rating.png");
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "+172");
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatText(), "Evade Rating");
+    assert.equal($("#stat-hit-rating").text(), "+634");
+    assert.equal($("#stat-evade-rating").text(), "+925");
+
+    swlcalc.gear.slots.head.edit.setGlyphId("none");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphId(), "none");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphImgItem(), "assets/images/icons/glyph/none.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "0");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatText(), "");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphILvl(), "0");
+    assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "65");
+    assert.equal($("#stat-evade-rating").text(), "+753");
 });
 
+// TODO : cover all changes done to summary + -recap
 QUnit.test("should set the slot's glyph rarity and cascade the update accordingly", function(assert) {
     swlcalc.gear.slots.head.edit.setGlyphRarity("mythic");
 
@@ -266,6 +293,7 @@ QUnit.test("should set the slot's glyph rarity and cascade the update accordingl
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "271");
 });
 
+// TODO : cover all changes done to summary + -recap
 QUnit.test("should set the slot's glyph quality and cascade the update accordingly", function(assert) {
     swlcalc.gear.slots.head.edit.setGlyphQuality("1");
 
@@ -276,6 +304,7 @@ QUnit.test("should set the slot's glyph quality and cascade the update according
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "102");
 });
 
+// TODO : cover all changes done to summary + -recap
 QUnit.test("should set the slot's glyph level and cascade the update accordingly", function(assert) {
     swlcalc.gear.slots.head.edit.setGlyphLevel("20");
 
@@ -284,6 +313,7 @@ QUnit.test("should set the slot's glyph level and cascade the update accordingly
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "+231");
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphILvl(), "63");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "128");
+    assert.equal($("#stat-hit-rating").text(), "+865");
 });
 
 QUnit.test("should set the lower bound for slot's glyph level and cascade the update accordingly", function(assert) {
@@ -298,14 +328,24 @@ QUnit.test("should set the upper bound for slot's glyph level and cascade the up
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphLevelMax(), "99");
 });
 
+// TODO : cover all changes done to summary + -recap
 QUnit.test("should set the slot's signet id and cascade the update accordingly", function(assert) {
     swlcalc.gear.slots.head.edit.setSignetId("3");
 
     assert.equal(swlcalc.gear.slots.head.edit.getSignetId(), "3");
     assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "Increases the damage and healing of Shotgun Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"stat-value const\">18.6479</span><span class=\"stat-value const\">%</span>.");
     assert.equal(swlcalc.gear.slots.head.edit.getSignetImgItem(), "assets/images/icons/signet/head.png");
+
+    swlcalc.gear.slots.head.edit.setSignetId("none");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetId(), "none");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetImgItem(), "assets/images/icons/signet/none.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetILvl(), "0");
+    assert.equal($("#stat-ilvl").text(), "556");
 });
 
+// TODO : cover all changes done to summary + -recap
 QUnit.test("should set the slot's signet rarity and cascade the update accordingly", function(assert) {
     swlcalc.gear.slots.head.edit.setSignetRarity("legendary");
 
@@ -316,6 +356,7 @@ QUnit.test("should set the slot's signet rarity and cascade the update according
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "238");
 });
 
+// TODO : cover all changes done to summary + -recap
 QUnit.test("should set the slot's signet level and cascade the update accordingly", function(assert) {
     swlcalc.gear.slots.head.edit.setSignetLevel("7");
 
@@ -324,6 +365,7 @@ QUnit.test("should set the slot's signet level and cascade the update accordingl
     assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "Increases the damage and healing of all Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"stat-value const\">12.3684</span><span class=\"stat-value const\">%</span>.");
     assert.equal(swlcalc.gear.slots.head.edit.getSignetILvl(), "48");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "102");
+    assert.equal($("#stat-ilvl").text(), "561");
 });
 
 QUnit.test("should set the lower bound for slot's signet level and cascade the update accordingly", function(assert) {
