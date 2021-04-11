@@ -53,37 +53,27 @@ QUnit.module("agent-integration-tests", {
     }
 });
 
-// TODO : check Summary has been updated
 QUnit.test("should set agent's id and do updates accordingly", function(assert) {
-    assert.equal(swlcalc.gear.agents[2].getText25(), '<span class="stat-value gear">+150</span> Critical Power');
-    assert.equal(swlcalc.gear.agents[2].getText50(), '<span class="stat-value dps">130</span> Damage on Critical Hits');
-
     swlcalc.gear.agents[2].setId("15");
 
     assert.equal(swlcalc.gear.agents[2].getText25(), '<span class="stat-value gear">+325</span> Heal Rating');
     assert.equal(swlcalc.gear.agents[2].getText50(), '<span class="stat-value heal">29</span> Healing on Critical Heals');
+    assert.equal($("#stat-agent3-bonus50").text(), "29 Healing on Critical Heals");
 });
 
-// TODO : check Summary has been updated
 QUnit.test("should set agent's level and do updates accordingly", function(assert) {
-    assert.equal(swlcalc.gear.agents[1].getText25(), '<span class="stat-value gear">+490</span> Hit Points');
-    assert.equal(swlcalc.gear.agents[1].getText50(), '');
-
     swlcalc.gear.agents[1].setLevel("50");
 
     assert.equal(swlcalc.gear.agents[1].getText25(), '<span class="stat-value gear">+490</span> Hit Points');
     assert.equal(swlcalc.gear.agents[1].getText50(), '<span class="stat-value const">+7%</span> Blood Damage');
+    assert.equal($("#stat-agent2-bonus50").text(), "+7% Blood Damage");
 });
 
-// TODO : check Summary has been updated
 QUnit.test("should reset the agent by setting default values for each select", function(assert) {
-    assert.equal(swlcalc.gear.agents[0].getId(), '15');
-    assert.equal(swlcalc.gear.agents[0].getText25(), '<span class="stat-value gear">+325</span> Heal Rating');
-    assert.equal(swlcalc.gear.agents[0].getText50(), '<span class="stat-value heal">27</span> Healing on Critical Heals');
-
     swlcalc.gear.agents[0].reset();
 
     assert.equal(swlcalc.gear.agents[0].getId(), '0');
     assert.equal(swlcalc.gear.agents[0].getText25(), 'Empty agent slot');
     assert.equal(swlcalc.gear.agents[0].getText50(), '');
+    assert.equal($("#stat-agent1-bonus50").text(), "");
 });
