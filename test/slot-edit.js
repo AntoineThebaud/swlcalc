@@ -1,14 +1,7 @@
 
-QUnit.module("slot-edit-unit-tests", {
+QUnit.module("slot-edit-dom", {
     beforeEach: function(assert) {
-        renderGearOLD();
-        renderSummary();
-        renderPassives();
-        renderAnimaAllocation();
-        initiateGearHandlers();
-        initiateAnimaAllocation();
-        initiatePassives();
-        createTankBuild();
+        includeGear();
     }
 });
 
@@ -57,244 +50,113 @@ QUnit.test("should have required components in the DOM", function(assert) {
     }
 });
 
-QUnit.test("should get and set slot's total iLvl on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "425");
+QUnit.module("slot-edit-unit-tests", {
+    beforeEach: function(assert) {
+        includeGear();
+    }
+});
+
+QUnit.test("should set & get the slot's total iLvl", function(assert) {
     swlcalc.gear.slots.head.edit.setILvl("9999");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "9999");
 });
 
-QUnit.test("should get and set the slot's equipment id on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentId(), "1");
-    swlcalc.gear.slots.head.edit.setEquipmentId("3");
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentId(), "3");
-});
-
-QUnit.test("should get and set the slot's equipment rarity on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentRarity(), "epic");
-    swlcalc.gear.slots.head.edit.setEquipmentRarity("legendary");
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentRarity(), "legendary");
-});
-
-QUnit.test("should get and set the slot's equipment quality on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentQuality(), "1");
-    swlcalc.gear.slots.head.edit.setEquipmentQuality("4");
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentQuality(), "4");
-});
-
-QUnit.test("should get and set the slot's equipment level on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevel(), "30");
-    swlcalc.gear.slots.head.edit.setEquipmentLevel("14");
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevel(), "14");
-});
-
-QUnit.test("should get and set the lower bound for slot's equipment level on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevelMin(), "1");
-    swlcalc.gear.slots.head.edit.setEquipmentLevelMin("99");
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevelMin(), "99");
-});
-
-QUnit.test("should get and set the upper bound for slot's equipment level on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevelMax(), "30");
-    swlcalc.gear.slots.head.edit.setEquipmentLevelMax("99");
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevelMax(), "99");
-});
-
-QUnit.test("should get and set the slot's equipment stat power value on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatPowerValue(), "1070");
+QUnit.test("should set & get the slot's equipment stat power value", function(assert) {
     swlcalc.gear.slots.head.edit.setEquipmentStatPowerValue("8");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatPowerValue(), "8");
 });
 
-QUnit.test("should get and set the slot's equipment stat prot value on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatProtValue(), "+468");
+QUnit.test("should set & get the slot's equipment stat prot value", function(assert) {
     swlcalc.gear.slots.head.edit.setEquipmentStatProtValue("+65789");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatProtValue(), "+65789");
 });
 
-QUnit.test("should get and set the slot's equipment iLvl on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentILvl(), "223");
+QUnit.test("should set & get the slot's equipment iLvl", function(assert) {
     swlcalc.gear.slots.head.edit.setEquipmentILvl("800000000000");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentILvl(), "800000000000");
 });
 
-QUnit.test("should get and set the slot's equipment description on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.finger.edit.getEquipmentDescription(), "");
+QUnit.test("should set & get the slot's equipment description", function(assert) {
     swlcalc.gear.slots.finger.edit.setEquipmentDescription("Lorem ipsum dolor sit amet");
     assert.equal(swlcalc.gear.slots.finger.edit.getEquipmentDescription(), "Lorem ipsum dolor sit amet");
 });
 
-QUnit.test("should get and set the slot's equipment bonus value on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentBonusN(1), "275");
-    assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentBonusN(2), "66");
-    swlcalc.gear.slots.waist.edit.setEquipmentBonusN(1, "19920804");
-    assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentBonusN(1), "19920804");
-});
-
-QUnit.test("should get and set the slot's equipment item image on edit view", function(assert) {
-    // TODO/BUG : this one should finish in status ok !
-    // assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgItem(), 'assets/images/icons/talisman/head/Ashes.png');
+QUnit.test("should set & get the slot's equipment item image", function(assert) {
     swlcalc.gear.slots.head.edit.setEquipmentImgItem("lorem/ipsum/dolor/sit/amet");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgItem(), "lorem/ipsum/dolor/sit/amet");
 });
 
-QUnit.test("should get and set the slot's equipment border image on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgRarity(), "assets/images/icons/rarity/head/epic-42x42.png");
+QUnit.test("should set & get the slot's equipment border image", function(assert) {
     swlcalc.gear.slots.head.edit.setEquipmentImgRarity("lorem/ipsum/dolor/sit/amet");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgRarity(), "lorem/ipsum/dolor/sit/amet");
 });
 
-QUnit.test("should get and set the slot's equipment pip image on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgQuality(), "assets/images/icons/quality/1.png");
+QUnit.test("should set & get the slot's equipment pip image", function(assert) {
     swlcalc.gear.slots.head.edit.setEquipmentImgQuality("lorem/ipsum/dolor/sit/amet");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgQuality(), "lorem/ipsum/dolor/sit/amet");
 });
 
-QUnit.test("should get and set the slot's equipment level label on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLabelLevel(), "30");
+QUnit.test("should set & get the slot's equipment level label", function(assert) {
     swlcalc.gear.slots.head.edit.setEquipmentLabelLevel("1304");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLabelLevel(), "1304");
 });
 
-QUnit.test("should get and set the slot's glyph id on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphId(), "hit-rating");
-    swlcalc.gear.slots.head.edit.setGlyphId("evade-rating");
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphId(), "evade-rating");
-});
-
-QUnit.test("should get and set the slot's glyph rarity on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphRarity(), "mythic");
-    swlcalc.gear.slots.head.edit.setGlyphRarity("standard");
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphRarity(), "standard");
-});
-
-QUnit.test("should get and set the slot's glyph quality on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphQuality(), "3");
-    swlcalc.gear.slots.head.edit.setGlyphQuality("1");
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphQuality(), "1");
-});
-
-QUnit.test("should get and set the slot's glyph level on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphLevel(), "1");
-    swlcalc.gear.slots.head.edit.setGlyphLevel("7");
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphLevel(), "7");
-});
-
-QUnit.test("should get and set the lower bound for slot's glyph level on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.edit.getGlyphLevelMin(), "1");
-    swlcalc.gear.slots.luck.edit.setGlyphLevelMin("99");
-    assert.equal(swlcalc.gear.slots.luck.edit.getGlyphLevelMin(), "99");
-});
-
-QUnit.test("should get and set the upper bound for slot's glyph level on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphLevelMax(), "20");
-    swlcalc.gear.slots.head.edit.setGlyphLevelMax("99");
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphLevelMax(), "99");
-});
-
-QUnit.test("should get and set the slot's glyph stat rating on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "+488");
+QUnit.test("should set the slot's glyph stat rating and cascade the update accordingly", function(assert) {
     swlcalc.gear.slots.head.edit.setGlyphStatRating("-99");
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "-99");
 });
 
-QUnit.test("should get and set the slot's glyph stat text on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.wrist.edit.getGlyphStatText(), "Defense Rating");
+QUnit.test("should set & get the slot's glyph stat text", function(assert) {
     swlcalc.gear.slots.wrist.edit.setGlyphStatText("Accele Rating");
     assert.equal(swlcalc.gear.slots.wrist.edit.getGlyphStatText(), "Accele Rating");
 });
 
-QUnit.test("should get and set the slot's glyph iLvl on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.neck.edit.getGlyphILvl(), 115);
-    swlcalc.gear.slots.neck.edit.setGlyphILvl(666);
-    assert.equal(swlcalc.gear.slots.neck.edit.getGlyphILvl(), 666);
+QUnit.test("should set & get the slot's glyph iLvl", function(assert) {
+    swlcalc.gear.slots.neck.edit.setGlyphILvl("666");
+    assert.equal(swlcalc.gear.slots.neck.edit.getGlyphILvl(), "666");
 });
 
-QUnit.test("should get and set the slot's glyph item image on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphImgItem(), "assets/images/icons/glyph/hit-rating.png");
+QUnit.test("should set & get the slot's glyph item image", function(assert) {
     swlcalc.gear.slots.head.edit.setGlyphImgItem("lorem/ipsum/dolor/sit/amet");
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphImgItem(), "lorem/ipsum/dolor/sit/amet");
 });
 
-QUnit.test("should get and set the slot's glyph border image on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getGlyphImgRarity(), "assets/images/icons/rarity/mythic-42x42.png");
+QUnit.test("should set & get the slot's glyph border image", function(assert) {
     swlcalc.gear.slots.head.edit.setGlyphImgRarity("lorem/ipsum/dolor/sit/amet");
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphImgRarity(), "lorem/ipsum/dolor/sit/amet");
 });
 
-QUnit.test("should get and set the slot's glyph pip image on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.weapon2.edit.getGlyphImgQuality(), "assets/images/icons/quality/1.png");
+QUnit.test("should set & get the slot's glyph pip image", function(assert) {
     swlcalc.gear.slots.weapon2.edit.setGlyphImgQuality("lorem/ipsum/dolor/sit/amet");
     assert.equal(swlcalc.gear.slots.weapon2.edit.getGlyphImgQuality(), "lorem/ipsum/dolor/sit/amet");
 });
 
-QUnit.test("should get and set the slot's glyph level label on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.neck.edit.getGlyphLabelLevel(), "20");
+QUnit.test("should set & get the slot's glyph level label", function(assert) {
     swlcalc.gear.slots.neck.edit.setGlyphLabelLevel("1217");
     assert.equal(swlcalc.gear.slots.neck.edit.getGlyphLabelLevel(), "1217");
 });
 
-QUnit.test("should get and set the slot's signet id on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.occult.edit.getSignetId(), "4");
-    swlcalc.gear.slots.occult.edit.setSignetId("none");
-    assert.equal(swlcalc.gear.slots.occult.edit.getSignetId(), "none");
+QUnit.test("should set & get the slot's signet iLvl", function(assert) {
+    swlcalc.gear.slots.head.edit.setSignetILvl("666");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetILvl(), "666");
 });
 
-QUnit.test("should get and set the slot's signet rarity on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getSignetRarity(), "superior");
-    swlcalc.gear.slots.head.edit.setSignetRarity("legendary");
-    assert.equal(swlcalc.gear.slots.head.edit.getSignetRarity(), "legendary");
-});
-
-QUnit.test("should get and set the slot's signet level on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getSignetLevel(), "15");
-    swlcalc.gear.slots.head.edit.setSignetLevel("7");
-    assert.equal(swlcalc.gear.slots.head.edit.getSignetLevel(), "7");
-});
-
-QUnit.test("should get and set the lower bound for slot's signet level on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.edit.getSignetLevelMin(), "1");
-    swlcalc.gear.slots.luck.edit.setSignetLevelMin("99");
-    assert.equal(swlcalc.gear.slots.luck.edit.getSignetLevelMin(), "99");
-});
-
-QUnit.test("should get and set the upper bound for slot's signet level on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.waist.edit.getSignetLevelMax(), "20");
-    swlcalc.gear.slots.waist.edit.setSignetLevelMax("99");
-    assert.equal(swlcalc.gear.slots.waist.edit.getSignetLevelMax(), "99");
-});
-
-QUnit.test("should get and set the slot's signet iLvl on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getSignetILvl(), 26);
-    swlcalc.gear.slots.head.edit.setSignetILvl(666);
-    assert.equal(swlcalc.gear.slots.head.edit.getSignetILvl(), 666);
-});
-
-QUnit.test("should get and set the slot's signet description on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.finger.edit.getSignetDescription(), "Increases the damage and healing of all Basic Abilities by <span id=\"finger-edit-signet-bonus1\" class=\"stat-value const\">2.1011</span><span class=\"stat-value const\">%</span>.");
+QUnit.test("should set & get the slot's signet description", function(assert) {
     swlcalc.gear.slots.finger.edit.setSignetDescription("Lorem ipsum dolor sit amet");
     assert.equal(swlcalc.gear.slots.finger.edit.getSignetDescription(), "Lorem ipsum dolor sit amet");
 });
 
-QUnit.test("should get and set the slot's signet bonus value on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.luck.edit.getSignetBonusN(1), "61");
-    swlcalc.gear.slots.luck.edit.setSignetBonusN(1, "1992.0804");
-    assert.equal(swlcalc.gear.slots.luck.edit.getSignetBonusN(1), "1992.0804");
-});
-
-QUnit.test("should get and set the slot's signet item image on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.wrist.edit.getSignetImgItem(), "assets/images/icons/signet/wrist.png");
+QUnit.test("should set & get the slot's signet item image", function(assert) {
     swlcalc.gear.slots.wrist.edit.setSignetImgItem("lorem/ipsum/dolor/sit/amet");
     assert.equal(swlcalc.gear.slots.wrist.edit.getSignetImgItem(), "lorem/ipsum/dolor/sit/amet");
 });
 
-QUnit.test("should get and set the slot's signet border image on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.head.edit.getSignetImgRarity(), "assets/images/icons/rarity/superior-42x42.png");
+QUnit.test("should set & get the slot's signet border image", function(assert) {
     swlcalc.gear.slots.head.edit.setSignetImgRarity("lorem/ipsum/dolor/sit/amet");
     assert.equal(swlcalc.gear.slots.head.edit.getSignetImgRarity(), "lorem/ipsum/dolor/sit/amet");
 });
 
-QUnit.test("should get and set the slot's signet level label on edit view", function(assert) {
-    assert.equal(swlcalc.gear.slots.occult.edit.getSignetLabelLevel(), "18");
+QUnit.test("should set & get the slot's signet level label", function(assert) {
     swlcalc.gear.slots.occult.edit.setSignetLabelLevel("1304");
     assert.equal(swlcalc.gear.slots.occult.edit.getSignetLabelLevel(), "1304");
 });
@@ -313,15 +175,171 @@ QUnit.test("should return undefined or empty for elements that don't exist for t
     }
 });
 
-QUnit.test("should update any talisman and weapon bonuses correctly", function(assert) {
-    // change equipped weapons
-    $("#waist-edit-equipment-id").val("12");
-    $("#waist-edit-equipment-id").change();
-    assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentDescription(), "Whenever you activate the Frenzied Wrath or Invigorating Wrath abilities, your next damaging Fist Weapon ability will deal an additional <span id=\"waist-edit-equipment-bonus1\" class=\"stat-value dps\">727</span> physical damage or your next healing Fist Weapon ability will restore an additional <span id=\"waist-edit-equipment-bonus2\" class=\"stat-value heal\">174</span> health.");
-    $("#weapon2-edit-equipment-id").val("53");
-    $("#weapon2-edit-equipment-id").change();
-    assert.equal(swlcalc.gear.slots.weapon2.edit.getEquipmentDescription(), "Whenever you hit, you have a <span class=\"stat-value const\">33%</span> chance to hex your target and deal an additional <span id=\"weapon2-edit-equipment-bonus1\" class=\"stat-value dps\">97</span>-<span id=\"weapon2-edit-equipment-bonus2\" class=\"stat-value dps\">485</span> magical damage. The damage dealt increases each time this effect is applied, up to a maximum of <span class=\"stat-value const\">5</span> times. This effect is guaranteed to trigger on critical hits.<br>When an enemy affected by this hex is defeated, nearby enemies are dealt <span id=\"weapon2-edit-equipment-bonus3\" class=\"stat-value dps\">61</span>-<span id=\"weapon2-edit-equipment-bonus4\" class=\"stat-value dps\">304</span> magical damage, based on the number of times the damaging effect has been applied.");
+//TODO/TEST add test for setSignetBonusWrapper
+
+QUnit.module("slot-edit-integration-tests", {
+    beforeEach: function(assert) {
+        includeGear();
+        includeAnimaAllocation();
+        includeSummary();
+        includePassives();
+
+        createShuffledBuild();
+    }
 });
 
+QUnit.test("should set the slot's equipment id and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setEquipmentId("6");
 
-//TODO/TEST add test for setSignetBonusWrapper
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentId(), "6");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentDescription(), "Whenever you hit the same enemy <span class=\"stat-value const\">6</span> times in succession, your next damaging Power Ability deals an additional <span id=\"head-edit-equipment-bonus1\" class=\"stat-value dps\">634</span> physical damage.");
+    //TODO not working assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgItem(), "assets/images/icons/weapon/something.png");
+});
+
+QUnit.test("should set the slot's equipment rarity and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setEquipmentRarity("legendary");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentRarity(), "legendary");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgRarity(), "assets/images/icons/rarity/head/legendary-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatPowerValue(), "1966");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatProtValue(), "+982");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentILvl(), "483");
+    assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "587");
+});
+
+QUnit.test("should set the slot's equipment quality and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setEquipmentQuality("3");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentQuality(), "3");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgQuality(), "assets/images/icons/quality/3.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatPowerValue(), "91");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatProtValue(), "+46");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentILvl(), "10");
+    assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "114");
+});
+
+QUnit.test("should set the slot's equipment level and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setEquipmentLevel("14");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevel(), "14");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLabelLevel(), "14");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatPowerValue(), "172");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatProtValue(), "+85");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentILvl(), "25");
+    assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "129");
+});
+
+QUnit.test("should set the lower bound for slot's equipment level and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setEquipmentLevelMin("99");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevelMin(), "99");
+});
+
+QUnit.test("should set the upper bound for slot's equipment level and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setEquipmentLevelMax("99");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentLevelMax(), "99");
+});
+
+QUnit.test("should set & get the slot's equipment bonus value", function(assert) {
+    swlcalc.gear.slots.waist.edit.setEquipmentBonusN(1, "19920804");
+
+    assert.equal(swlcalc.gear.slots.waist.edit.getEquipmentBonusN(1), "19920804");
+});
+
+QUnit.test("should set the slot's glyph id and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setGlyphId("evade-rating");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphId(), "evade-rating");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphImgItem(), "assets/images/icons/glyph/evade-rating.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "+172");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatText(), "Evade Rating");
+});
+
+QUnit.test("should set the slot's glyph rarity and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setGlyphRarity("mythic");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphRarity(), "mythic");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphImgRarity(), "assets/images/icons/rarity/mythic-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "+591");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphILvl(), "206");
+    assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "271");
+});
+
+QUnit.test("should set the slot's glyph quality and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setGlyphQuality("1");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphQuality(), "1");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphImgQuality(), "assets/images/icons/quality/1.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "+138");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphILvl(), "37");
+    assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "102");
+});
+
+QUnit.test("should set the slot's glyph level and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setGlyphLevel("20");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphLevel(), "20");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphLabelLevel(), "20");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "+231");
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphILvl(), "63");
+    assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "128");
+});
+
+QUnit.test("should set the lower bound for slot's glyph level and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.luck.edit.setGlyphLevelMin("99");
+
+    assert.equal(swlcalc.gear.slots.luck.edit.getGlyphLevelMin(), "99");
+});
+
+QUnit.test("should set the upper bound for slot's glyph level and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setGlyphLevelMax("99");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getGlyphLevelMax(), "99");
+});
+
+QUnit.test("should set the slot's signet id and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setSignetId("3");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetId(), "3");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "Increases the damage and healing of Shotgun Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"stat-value const\">18.6479</span><span class=\"stat-value const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetImgItem(), "assets/images/icons/signet/head.png");
+});
+
+QUnit.test("should set the slot's signet rarity and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setSignetRarity("legendary");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetRarity(), "legendary");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetImgRarity(), "assets/images/icons/rarity/legendary-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "Increases the damage and healing of all Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"stat-value const\">41.0097</span><span class=\"stat-value const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetILvl(), "184");
+    assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "238");
+});
+
+QUnit.test("should set the slot's signet level and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.head.edit.setSignetLevel("7");
+
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetLevel(), "7");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetLabelLevel(), "7");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "Increases the damage and healing of all Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"stat-value const\">12.3684</span><span class=\"stat-value const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.head.edit.getSignetILvl(), "48");
+    assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "102");
+});
+
+QUnit.test("should set the lower bound for slot's signet level and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.luck.edit.setSignetLevelMin("99");
+
+    assert.equal(swlcalc.gear.slots.luck.edit.getSignetLevelMin(), "99");
+});
+
+QUnit.test("should set the upper bound for slot's signet level and cascade the update accordingly", function(assert) {
+    swlcalc.gear.slots.waist.edit.setSignetLevelMax("99");
+
+    assert.equal(swlcalc.gear.slots.waist.edit.getSignetLevelMax(), "99");
+});
+
+QUnit.test("should set & get the slot's signet bonus value", function(assert) {
+    swlcalc.gear.slots.luck.edit.setSignetBonusN(1, "1992.0804");
+
+    assert.equal(swlcalc.gear.slots.luck.edit.getSignetBonusN(1), "1992.0804");
+});

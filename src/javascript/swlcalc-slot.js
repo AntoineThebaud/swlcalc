@@ -1,6 +1,11 @@
 var swlcalc = swlcalc || {};
 swlcalc.gear = swlcalc.gear || {};
 
+// TODO : idea for refactoring to analyze : for a given element, move the update of the
+// recap part to the setter of -edit ? like this e.g edit.setEquipmentImgItem() will
+// always automatically trigger recap.setEquipmentImgItem()
+// NB : maybe use change event + handlers instead of setters ? maybe overkill
+
 swlcalc.gear.Slot = function Slot(slotData) {
     var self      = this;
     this.id       = slotData.id;
