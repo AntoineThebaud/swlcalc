@@ -1,12 +1,12 @@
 
 QUnit.module("export-integration-tests", {
     beforeEach: function(assert) {
-        includeButtonBar();
         includeGear();
         includeAnimaAllocation();
         includePassives();
+        includeButtonBar();
         initiateExport();
-        
+
         createShuffledBuild();
     }
 });

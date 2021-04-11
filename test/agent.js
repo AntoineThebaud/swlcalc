@@ -47,10 +47,7 @@ QUnit.test("should return the maximum level available for this agent", function(
 
 QUnit.module("agent-integration-tests", {
     beforeEach: function(assert) {
-        includeGear();
-        includeAnimaAllocation();
-        includeSummary();
-        includePassives();
+        includeCoreModules();
 
         createShuffledBuild();
     }

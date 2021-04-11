@@ -179,10 +179,7 @@ QUnit.test("should return undefined or empty for elements that don't exist for t
 
 QUnit.module("slot-edit-integration-tests", {
     beforeEach: function(assert) {
-        includeGear();
-        includeAnimaAllocation();
-        includeSummary();
-        includePassives();
+        includeCoreModules();
 
         createShuffledBuild();
     }

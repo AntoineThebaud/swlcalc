@@ -71,10 +71,7 @@ QUnit.test("should compute item iLvl without quality", function(assert) {
 
 QUnit.module("slot-integration-tests", {
     beforeEach: function(assert) {
-        includeGear();
-        includeAnimaAllocation();
-        includeSummary();
-        includePassives();
+        includeCoreModules();
 
         createShuffledBuild();
     }

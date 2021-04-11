@@ -192,10 +192,7 @@ QUnit.test("should get Total/Evade Chance", function(assert) {
 
 QUnit.module("passives - integration tests", {
     beforeEach: function() {
-        includeGear();
-        includeAnimaAllocation();
-        includeSummary();
-        includePassives();
+        includeCoreModules();
 
         createShuffledBuild();
     }

@@ -26,11 +26,8 @@ QUnit.test("should have required buttonbar buttons in DOM", function(assert) {
 
 QUnit.module("buttonbar-integration-tests", {
     beforeEach: function(assert) {
+        includeCoreModules();
         includeButtonBar();
-        includeGear();
-        includeAnimaAllocation();
-        includeSummary();
-        includePassives();
 
         createShuffledBuild();
     }

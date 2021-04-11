@@ -76,10 +76,7 @@ QUnit.test("should have added signets to correct group", function(assert) {
 
 QUnit.module("slot-handler-unit-tests", {
     beforeEach: function(assert) {
-        includeGear();
-        includeAnimaAllocation();
-        includeSummary();
-        includePassives();
+        includeCoreModules();
 
         createShuffledBuild();
     }
@@ -88,7 +85,7 @@ QUnit.module("slot-handler-unit-tests", {
 QUnit.test("should update any #slot-edit-equipment-level sliders when its associated rarity is changed", function(assert) {
     for (var i = 0; i < swlcalc.data.templateData.slots.length; i++) {
         var id = swlcalc.data.templateData.slots[i].id;
-        
+
         swlcalc.gear.slots[id].edit.setEquipmentRarity("standard");
         assert.equal($("#" + id + "-edit-equipment-level").attr("max"), 20);
 

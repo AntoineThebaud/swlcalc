@@ -209,10 +209,7 @@ QUnit.test("should set the slot's affix quality", function(assert) {
 
 QUnit.module("slot-recap-integration-tests", {
     beforeEach: function(assert) {
-        includeGear();
-        includeAnimaAllocation();
-        includeSummary();
-        includePassives();
+        includeCoreModules();
 
         createShuffledBuild();
     }

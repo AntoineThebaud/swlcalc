@@ -46,10 +46,7 @@ QUnit.test("should get anima allocation survivability ratio", function(assert) {
 
 QUnit.module("anima-allocation-integration-tests", {
     beforeEach: function(assert) {
-        includeGear();
-        includeAnimaAllocation();
-        includeSummary();
-        includePassives();
+        includeCoreModules();
 
         createShuffledBuild();
     }

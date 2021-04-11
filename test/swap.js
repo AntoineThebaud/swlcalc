@@ -1,10 +1,7 @@
 
 QUnit.module("swap-integration-tests", {
     beforeEach: function(assert) {
-        includeGear();
-        includeAnimaAllocation();
-        includeSummary();
-        includePassives();
+        includeCoreModules();
         initiateSwapHandlers();
 
         createShuffledBuild();

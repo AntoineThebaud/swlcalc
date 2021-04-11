@@ -74,10 +74,7 @@ QUnit.test("should get healing power", function(assert) {
 
 QUnit.module("summary-integration-tests", {
     beforeEach: function(assert) {
-        includeGear();
-        includeAnimaAllocation();
-        includeSummary();
-        includePassives();
+        includeCoreModules();
 
         createShuffledBuild();
     }

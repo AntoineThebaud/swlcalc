@@ -1,10 +1,7 @@
 
 QUnit.module("import-integration-tests", {
     beforeEach: function(assert) {
-        includeGear();
-        includeAnimaAllocation();
-        includeSummary();
-        includePassives();
+        includeCoreModules();
     }
 });
 

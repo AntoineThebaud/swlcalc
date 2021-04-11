@@ -1,17 +1,4 @@
 /* GEAR ----------------------------------------------------------------------*/
-// TEMP keep old version for not-yet-updated tests
-function renderGearOLD() {
-    renderTemplate("slots_recap", {
-        slots: swlcalc.data.templateData.slots
-    });
-    renderTemplate("slots_edit", {
-        slots: swlcalc.data.templateData.slots
-    });
-
-    renderAgents();
-
-    initiateGear();
-}
 function renderGear() {
     renderTemplate("slots_recap", {
         slots: swlcalc.data.templateData.slots
@@ -22,17 +9,11 @@ function renderGear() {
 
     renderAgents();
 }
-function initiateGear() {
-    swlcalc.gear.init();
-}
-function initiateGearHandlers() {
-    initiateSlotHandlers();
-    initiateAgentHandlers();
-}
 function includeGear() {
     renderGear();
-    initiateGear();
-    initiateGearHandlers();
+    swlcalc.gear.init();
+    initiateSlotHandlers();
+    initiateAgentsHandlers();
 }
 /* SLOTS --------------------------------------------------------------------*/
 function initiateSlots() {
@@ -53,10 +34,7 @@ function renderAgents() {
         });
     }
 }
-function initiateAgents() {
-    swlcalc.gear.initAgents();
-}
-function initiateAgentHandlers() {
+function initiateAgentsHandlers() {
     for (var i = 0; i < 3; i++) {
         swlcalc.agenthandler[i] = new swlcalc.gear.AgentSlotHandler(i);
         swlcalc.agenthandler[i].init();
@@ -64,8 +42,8 @@ function initiateAgentHandlers() {
 }
 function includeAgents() {
     renderAgents();
-    initiateAgents();
-    initiateAgentHandlers();
+    swlcalc.gear.initAgents();
+    initiateAgentsHandlers();
 }
 /* ANIMA ALLOCATION  ---------------------------------------------------------*/
 function renderAnimaAllocation() {
@@ -84,35 +62,26 @@ function renderPassives() {
         passives: swlcalc.data.stats.passives
     });
 }
-function initiatePassives() {
-    swlcalc.passives.init();
-}
 function includePassives() {
     renderPassives();
-    initiatePassives();
+    swlcalc.passives.init();
 }
 /* SUMMARY -------------------------------------------------------------------*/
 function renderSummary() {
     renderTemplate("summary", {});
 }
-function initiateSummary() {
-    swlcalc.summary.init();
-}
 function includeSummary() {
     renderSummary();
-    initiateSummary();
+    swlcalc.summary.init();
 }
 /* BUTTONBAR -----------------------------------------------------------------*/
 function renderButtonbar() {
     renderTemplate("navbar", {});
     renderTemplate("export_modal", {});
 }
-function initiateButtonBar() {
-    swlcalc.buttonBar.init();
-}
 function includeButtonBar() {
     renderButtonbar();
-    initiateButtonBar();
+    swlcalc.buttonBar.init();
 }
 /* EXPORT --------------------------------------------------------------------*/
 function initiateExport() {
@@ -126,6 +95,12 @@ function initiateSwapHandlers() {
     swlcalc.swap['weapon2'].init();
 }
 /* OTHER ---------------------------------------------------------------------*/
+function includeCoreModules() {
+    includeGear();
+    includeAnimaAllocation();
+    includeSummary();
+    includePassives();
+}
 function clearFixture() {
     $("#qunit-fixture").html("");
 }

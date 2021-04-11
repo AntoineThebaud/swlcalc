@@ -1,11 +1,8 @@
 
 QUnit.module("gear-integration-tests", {
     beforeEach: function(assert) {
-        includeGear();
-        includeAnimaAllocation();
-        includeSummary();
-        includePassives();
-        
+        includeCoreModules();
+
         createShuffledBuild();
     }
 });
