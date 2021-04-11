@@ -27,14 +27,14 @@ QUnit.test("should collect current slot state", function(assert) {
 
     assert.deepEqual(slotState.equipmentRarity, "standard");
     assert.deepEqual(slotState.equipmentQuality, "1");
-    assert.deepEqual(slotState.equipmentLevel, "20");
+    assert.deepEqual(slotState.equipmentLevel, "1");
     assert.deepEqual(slotState.glyphId, "none");
     assert.deepEqual(slotState.glyphRarity, "standard");
     assert.deepEqual(slotState.glyphQuality, "1");
-    assert.deepEqual(slotState.glyphLevel, "20");
+    assert.deepEqual(slotState.glyphLevel, "1");
     assert.deepEqual(slotState.signetId, "none");
     assert.deepEqual(slotState.signetRarity, "standard");
-    assert.deepEqual(slotState.signetLevel, "20");
+    assert.deepEqual(slotState.signetLevel, "1");
 });
 
 QUnit.test("should collect current mapped slot state", function(assert) {
@@ -43,18 +43,18 @@ QUnit.test("should collect current mapped slot state", function(assert) {
     assert.deepEqual(slotState.equipmentId, 0);
     assert.deepEqual(slotState.equipmentRarity, 1);
     assert.deepEqual(slotState.equipmentQuality, "1");
-    assert.deepEqual(slotState.equipmentLevel, "20");
+    assert.deepEqual(slotState.equipmentLevel, "1");
     assert.deepEqual(slotState.glyphId, 0);
     assert.deepEqual(slotState.glyphRarity, 1);
     assert.deepEqual(slotState.glyphQuality, "1");
-    assert.deepEqual(slotState.glyphLevel, "20");
+    assert.deepEqual(slotState.glyphLevel, "1");
     assert.deepEqual(slotState.signetId, 0);
     assert.deepEqual(slotState.signetRarity, 1);
-    assert.deepEqual(slotState.signetLevel, "20");
+    assert.deepEqual(slotState.signetLevel, "1");
 });
 
 QUnit.test("should retrieve raw protection value", function(assert) {
-    assert.equal(swlcalc.gear.slots.occult.getRawProtValue(), 21); //NB : weird but not causing issue
+    assert.equal(swlcalc.gear.slots.occult.getRawProtValue(), 4);
 });
 
 QUnit.test("should compute item iLvl with quality", function(assert) {

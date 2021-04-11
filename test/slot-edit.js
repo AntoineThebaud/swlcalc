@@ -191,13 +191,40 @@ QUnit.test("should set the slot's equipment id and cascade the update accordingl
 
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentId(), "6");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentDescription(), "Whenever you hit the same enemy <span class=\"stat-value const\">6</span> times in succession, your next damaging Power Ability deals an additional <span id=\"head-edit-equipment-bonus1\" class=\"stat-value dps\">634</span> physical damage.");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentItem.text(), "Ashes of Elder Things");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentDescription.text(), "Whenever you hit the same enemy 6 times in succession, your next damaging Power Ability deals an additional 634 physical damage.");
     //TODO not working assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgItem(), "assets/images/icons/weapon/something.png");
+    assert.ok(swlcalc.gear.slots.head.recap.el.equipmentTitleSection.is(":visible"));
+    assert.ok(swlcalc.gear.slots.head.recap.el.equipmentSubtitleSection.is(":visible"));
+    assert.ok(swlcalc.gear.slots.head.recap.el.equipmentImgSection.is(":visible"));
+    assert.ok(swlcalc.gear.slots.head.recap.el.equipmentStatSection.is(":visible"));
+    assert.ok(swlcalc.gear.slots.head.recap.el.equipmentEmpty.is(":hidden"));
 
     swlcalc.gear.slots.head.edit.setEquipmentId("none");
 
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentId(), "none");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentDescription(), "");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentImgItem(), "assets/images/icons/equipment/head/None.png");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatPowerValue(), "0");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatProtValue(), "0");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentILvl(), "0");
+    assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "104");
+    assert.equal(swlcalc.gear.slots.head.edit.getEquipmentDescription(), "");
+    assert.ok(swlcalc.gear.slots.head.recap.el.equipmentTitleSection.is(":hidden"));
+    assert.ok(swlcalc.gear.slots.head.recap.el.equipmentSubtitleSection.is(":hidden"));
+    assert.ok(swlcalc.gear.slots.head.recap.el.equipmentImgSection.is(":hidden"));
+    assert.ok(swlcalc.gear.slots.head.recap.el.equipmentStatSection.is(":hidden"));
+    assert.ok(swlcalc.gear.slots.head.recap.el.equipmentEmpty.is(":visible"));
+    assert.equal($("#stat-ilvl").text(), "562");
+    assert.equal($("#stat-power-rating").text(), "5225");
     assert.equal($("#stat-attack-rating").text(), "4294");
+    assert.equal($("#stat-heal-rating").text(), "2600");
+    assert.equal($("#stat-hit-points").text(), "14904");
+    assert.equal($("#stat-combat-power").text(), "602.4");
+    assert.equal($("#stat-healing-power").text(), "126.8");
+    assert.equal($("#stat-agent1-bonus50").text(), "27 Healing on Critical Heals");
+    assert.equal($("#stat-agent3-bonus50").text(), "129 Damage on Critical Hits");
+    //TODO check agent slots too ?
 });
 
 // TODO : cover all changes done to summary + -recap
@@ -210,7 +237,28 @@ QUnit.test("should set the slot's equipment rarity and cascade the update accord
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatProtValue(), "+982");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentILvl(), "483");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "587");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentTitle.attr('class'), "color-legendary");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentImgRarity.attr('src'), "assets/images/icons/rarity/head/legendary-42x42.png");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentLabelLevel.attr('class'), "label-level big border-legendary");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentRarity.text(), "Legendary");
+    assert.equal(swlcalc.gear.slots.head.recap.el.iLvl.text(), "587");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatPowerValue.text(), "1966");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatHPValue.text(), "+3201");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatARValue.text(), "+747");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatHRValue.text(), "+79");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatProtValue.text(), "+982");
+    assert.equal($("#stat-ilvl").text(), "615");
+    assert.equal($("#stat-power-rating").text(), "7191");
     assert.equal($("#stat-attack-rating").text(), "5041");
+    assert.equal($("#stat-heal-rating").text(), "2679");
+    assert.equal($("#stat-hit-points").text(), "18105");
+    assert.equal($("#stat-combat-power").text(), "658.4");
+    assert.equal($("#stat-healing-power").text(), "128.3");
+    assert.equal($("#stat-protection").text(), "5745");
+    assert.equal($("#stat-damage-mitigation").text(), "19%");
+    assert.equal($("#stat-agent1-bonus50").text(), "28 Healing on Critical Heals");
+    assert.equal($("#stat-agent3-bonus50").text(), "141 Damage on Critical Hits");
+    //TODO check agent slots too ?
 });
 
 // TODO : cover all changes done to summary + -recap
@@ -223,7 +271,26 @@ QUnit.test("should set the slot's equipment quality and cascade the update accor
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatProtValue(), "+46");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentILvl(), "10");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "114");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentQuality.text(), "Radiant");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentImgQuality.attr('src'), "assets/images/icons/quality/3.png");
+    assert.equal(swlcalc.gear.slots.head.recap.el.iLvl.text(), "114");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatPowerValue.text(), "91");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatHPValue.text(), "+148");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatARValue.text(), "+35");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatHRValue.text(), "+4");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatProtValue.text(), "+46");
+    assert.equal($("#stat-ilvl").text(), "563");
+    assert.equal($("#stat-power-rating").text(), "5316");
     assert.equal($("#stat-attack-rating").text(), "4328");
+    assert.equal($("#stat-heal-rating").text(), "2604");
+    assert.equal($("#stat-hit-points").text(), "15052");
+    assert.equal($("#stat-combat-power").text(), "604.9");
+    assert.equal($("#stat-healing-power").text(), "126.8");
+    assert.equal($("#stat-protection").text(), "4809");
+    assert.equal($("#stat-damage-mitigation").text(), "16.4%");
+    assert.equal($("#stat-agent1-bonus50").text(), "27 Healing on Critical Heals");
+    assert.equal($("#stat-agent3-bonus50").text(), "130 Damage on Critical Hits");
+    //TODO check agent slots too ?
 });
 
 // TODO : cover all changes done to summary + -recap
@@ -236,7 +303,26 @@ QUnit.test("should set the slot's equipment level and cascade the update accordi
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentStatProtValue(), "+85");
     assert.equal(swlcalc.gear.slots.head.edit.getEquipmentILvl(), "25");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "129");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentLevel.text(), "14");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentLabelLevel.text(), "14");
+    assert.equal(swlcalc.gear.slots.head.recap.el.iLvl.text(), "129");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatPowerValue.text(), "172");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatHPValue.text(), "+280");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatARValue.text(), "+65");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatHRValue.text(), "+7");
+    assert.equal(swlcalc.gear.slots.head.recap.el.equipmentStatProtValue.text(), "+85");
+    assert.equal($("#stat-ilvl").text(), "564");
+    assert.equal($("#stat-power-rating").text(), "5397");
     assert.equal($("#stat-attack-rating").text(), "4359");
+    assert.equal($("#stat-heal-rating").text(), "2607");
+    assert.equal($("#stat-hit-points").text(), "15184");
+    assert.equal($("#stat-combat-power").text(), "607.3");
+    assert.equal($("#stat-healing-power").text(), "126.9");
+    assert.equal($("#stat-protection").text(), "4848");
+    assert.equal($("#stat-damage-mitigation").text(), "16.5%");
+    assert.equal($("#stat-agent1-bonus50").text(), "27 Healing on Critical Heals");
+    assert.equal($("#stat-agent3-bonus50").text(), "131 Damage on Critical Hits");
+    //TODO check agent slots too ?
 });
 
 QUnit.test("should set the lower bound for slot's equipment level and cascade the update accordingly", function(assert) {
@@ -266,7 +352,24 @@ QUnit.test("should set the slot's glyph id and cascade the update accordingly", 
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "+172");
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatText(), "Evade Rating");
     assert.equal($("#stat-hit-rating").text(), "+634");
+    assert.equal($("#stat-glance-reduction").text(), "12.5%");
     assert.equal($("#stat-evade-rating").text(), "+925");
+    assert.equal($("#stat-evade-chance").text(), "6.4%");
+
+    swlcalc.gear.slots.neck.edit.setGlyphId("critical-power");
+
+    assert.equal(swlcalc.gear.slots.neck.edit.getGlyphId(), "critical-power");
+    assert.equal(swlcalc.gear.slots.neck.edit.getGlyphImgItem(), "assets/images/icons/glyph/critical-power.png");
+    assert.equal(swlcalc.gear.slots.neck.edit.getGlyphStatRating(), "+12");
+    assert.equal(swlcalc.gear.slots.neck.edit.getGlyphStatText(), "Critical Power");
+    assert.equal(swlcalc.gear.slots.neck.recap.el.iLvl.text(), "511");
+    assert.ok(swlcalc.gear.slots.neck.recap.el.glyphSection.is(":visible"));
+    assert.ok(swlcalc.gear.slots.head.recap.el.glyphEmpty.is(":hidden"));
+    assert.equal(swlcalc.gear.slots.neck.recap.el.glyphItem.text(), "Devastating");
+    assert.equal(swlcalc.gear.slots.neck.recap.el.glyphStatText.text(), "Critical Power");
+    assert.equal($("#stat-ilvl").text(), "563");
+    assert.equal($("#stat-critical-power").text(), "+1184");
+    assert.equal($("#stat-critical-power-percentage").text(), "95.7%");
 
     swlcalc.gear.slots.head.edit.setGlyphId("none");
 
@@ -276,7 +379,10 @@ QUnit.test("should set the slot's glyph id and cascade the update accordingly", 
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatText(), "");
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphILvl(), "0");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "65");
+    assert.ok(swlcalc.gear.slots.head.recap.el.glyphSection.is(":hidden"));
+    assert.ok(swlcalc.gear.slots.head.recap.el.glyphEmpty.is(":visible"));
     assert.equal($("#stat-evade-rating").text(), "+753");
+    assert.equal($("#stat-evade-chance").text(), "5.2%");
 });
 
 // TODO : cover all changes done to summary + -recap
@@ -288,6 +394,13 @@ QUnit.test("should set the slot's glyph rarity and cascade the update accordingl
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "+591");
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphILvl(), "206");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "271");
+    assert.equal(swlcalc.gear.slots.head.recap.el.iLvl.text(), "271");
+    assert.equal(swlcalc.gear.slots.head.recap.el.glyphTitle.attr('class'), "color-mythic");
+    assert.equal(swlcalc.gear.slots.head.recap.el.glyphRarity.text(), "Mythic");
+    assert.equal(swlcalc.gear.slots.head.recap.el.glyphStatRating.text(), "+591");
+    assert.equal($("#stat-ilvl").text(), "580");
+    assert.equal($("#stat-hit-rating").text(), "+1225");
+    assert.equal($("#stat-glance-reduction").text(), "24.1%");
 });
 
 // TODO : cover all changes done to summary + -recap
@@ -299,6 +412,12 @@ QUnit.test("should set the slot's glyph quality and cascade the update according
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "+138");
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphILvl(), "37");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "102");
+    assert.equal(swlcalc.gear.slots.head.recap.el.iLvl.text(), "102");
+    assert.equal(swlcalc.gear.slots.head.recap.el.glyphQuality.text(), "Crude");
+    assert.equal(swlcalc.gear.slots.head.recap.el.glyphStatRating.text(), "+138");
+    assert.equal($("#stat-ilvl").text(), "561");
+    assert.equal($("#stat-hit-rating").text(), "+772");
+    assert.equal($("#stat-glance-reduction").text(), "15.2%");
 });
 
 // TODO : cover all changes done to summary + -recap
@@ -310,7 +429,12 @@ QUnit.test("should set the slot's glyph level and cascade the update accordingly
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphStatRating(), "+231");
     assert.equal(swlcalc.gear.slots.head.edit.getGlyphILvl(), "63");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "128");
+    assert.equal(swlcalc.gear.slots.head.recap.el.iLvl.text(), "128");
+    assert.equal(swlcalc.gear.slots.head.recap.el.glyphLevel.text(), "20");
+    assert.equal(swlcalc.gear.slots.head.recap.el.glyphStatRating.text(), "+231");
+    assert.equal($("#stat-ilvl").text(), "564");
     assert.equal($("#stat-hit-rating").text(), "+865");
+    assert.equal($("#stat-glance-reduction").text(), "17%");
 });
 
 QUnit.test("should set the lower bound for slot's glyph level and cascade the update accordingly", function(assert) {
@@ -333,12 +457,29 @@ QUnit.test("should set the slot's signet id and cascade the update accordingly",
     assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "Increases the damage and healing of Shotgun Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"stat-value const\">18.6479</span><span class=\"stat-value const\">%</span>.");
     assert.equal(swlcalc.gear.slots.head.edit.getSignetImgItem(), "assets/images/icons/signet/head.png");
 
+    swlcalc.gear.slots.neck.edit.setSignetId("3");
+
+    assert.equal(swlcalc.gear.slots.neck.edit.getSignetId(), "3");
+    assert.equal(swlcalc.gear.slots.neck.edit.getSignetDescription(), "Increases the damage and healing of Shotgun Power Abilities by <span id=\"neck-edit-signet-bonus1\" class=\"stat-value const\">0.29</span><span class=\"stat-value const\">%</span>.");
+    assert.equal(swlcalc.gear.slots.neck.edit.getSignetImgItem(), "assets/images/icons/signet/neck.png");
+    assert.equal(swlcalc.gear.slots.neck.edit.getILvl(), "510");
+    assert.equal(swlcalc.gear.slots.neck.recap.el.iLvl.text(), "510");
+    assert.ok(swlcalc.gear.slots.neck.recap.el.signetSection.is(":visible"));
+    assert.ok(swlcalc.gear.slots.neck.recap.el.signetEmpty.is(":hidden"));
+    assert.equal(swlcalc.gear.slots.neck.recap.el.signetItem.text(), "Signet of Riot Control");
+    assert.equal(swlcalc.gear.slots.neck.recap.el.signetDescription.text(), "Increases the damage and healing of Shotgun Power Abilities by 0.29%.");
+    assert.equal($("#stat-ilvl").text(), "563");
+
     swlcalc.gear.slots.head.edit.setSignetId("none");
 
     assert.equal(swlcalc.gear.slots.head.edit.getSignetId(), "none");
     assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "");
     assert.equal(swlcalc.gear.slots.head.edit.getSignetImgItem(), "assets/images/icons/signet/none.png");
     assert.equal(swlcalc.gear.slots.head.edit.getSignetILvl(), "0");
+    assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "54");
+    assert.equal(swlcalc.gear.slots.head.recap.el.iLvl.text(), "54");
+    assert.ok(swlcalc.gear.slots.head.recap.el.signetSection.is(":hidden"));
+    assert.ok(swlcalc.gear.slots.head.recap.el.signetEmpty.is(":visible"));
     assert.equal($("#stat-ilvl").text(), "556");
 });
 
@@ -351,6 +492,11 @@ QUnit.test("should set the slot's signet rarity and cascade the update according
     assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "Increases the damage and healing of all Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"stat-value const\">41.0097</span><span class=\"stat-value const\">%</span>.");
     assert.equal(swlcalc.gear.slots.head.edit.getSignetILvl(), "184");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "238");
+    assert.equal(swlcalc.gear.slots.head.recap.el.iLvl.text(), "238");
+    assert.equal(swlcalc.gear.slots.head.recap.el.signetTitle.attr('class'), "color-legendary");
+    assert.equal(swlcalc.gear.slots.head.recap.el.signetRarity.text(), "Legendary");
+    assert.equal(swlcalc.gear.slots.head.recap.el.signetDescription.text(), "Increases the damage and healing of all Elite Abilities by 41.0097%.");
+    assert.equal($("#stat-ilvl").text(), "576");
 });
 
 // TODO : cover all changes done to summary + -recap
@@ -362,6 +508,9 @@ QUnit.test("should set the slot's signet level and cascade the update accordingl
     assert.equal(swlcalc.gear.slots.head.edit.getSignetDescription(), "Increases the damage and healing of all Elite Abilities by <span id=\"head-edit-signet-bonus1\" class=\"stat-value const\">12.3684</span><span class=\"stat-value const\">%</span>.");
     assert.equal(swlcalc.gear.slots.head.edit.getSignetILvl(), "48");
     assert.equal(swlcalc.gear.slots.head.edit.getILvl(), "102");
+    assert.equal(swlcalc.gear.slots.head.recap.el.iLvl.text(), "102");
+    assert.equal(swlcalc.gear.slots.head.recap.el.signetLevel.text(), "7");
+    assert.equal(swlcalc.gear.slots.head.recap.el.signetDescription.text(), "Increases the damage and healing of all Elite Abilities by 12.3684%.");
     assert.equal($("#stat-ilvl").text(), "561");
 });
 

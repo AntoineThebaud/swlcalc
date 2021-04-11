@@ -82,3 +82,5 @@ QUnit.test("should set anima allocation damage and do updates accordingly", func
     assert.equal(swlcalc.animaAllocation.getSurvivabilityRatio(), "0.11");
     assert.equal($("#stat-hit-points").html(), "8061");
 });
+
+//TODO : add test to check that e.g equipmentStatHRSection is hidden when survivability AA is set to 0

@@ -82,7 +82,7 @@
                             <strong>Level :</strong>
                         </td>
                         <td class="upgrade-select">
-                            <input id="{id}-edit-equipment-level" type="range" min="1" max="20" value="20" class="level-slider">
+                            <input id="{id}-edit-equipment-level" type="range" min="1" max="20" value="1" class="level-slider">
                         </td>
                     </tr>
                     <tr class="separator-top">
@@ -131,7 +131,7 @@
                             <strong>Level :</strong>
                         </td>
                         <td class="upgrade-select level-select">
-                            <input id="{id}-edit-glyph-level" type="range" min="1" max="20" value="20" class="level-slider">
+                            <input id="{id}-edit-glyph-level" type="range" min="1" max="20" value="1" class="level-slider">
                         </td>
                         <td>
                             <p id="{id}-edit-glyph-ilvl" class="lightgrey">0</p>
@@ -175,7 +175,7 @@
                             <strong>Level :</strong>
                         </td>
                         <td class="upgrade-select signetalign">
-                            <input id="{id}-edit-signet-level" type="range" min="1" max="20" value="20" class="level-slider">
+                            <input id="{id}-edit-signet-level" type="range" min="1" max="20" value="1" class="level-slider">
                         </td>
                         <!-- 5th column == rowpsan 2 from previous row -->
                     </tr>
