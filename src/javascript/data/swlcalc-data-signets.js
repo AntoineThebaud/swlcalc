@@ -13,7 +13,7 @@ swlcalc.data.signets = {
             {
                 id: 1,
                 name: 'Alacrity',
-                description: 'Increased your move speed by <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span> while in combat.',
+                description: 'Increased your move speed by <span id="%id-affix-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span> while in combat.',
                 decimals: [ 0 ],
                 quality: {
                     '1': [ 10 ],
@@ -38,7 +38,7 @@ swlcalc.data.signets = {
             {
                 id: 3,
                 name: 'Energy',
-                description: 'When you use a Power Ability with this weapon you have <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span> of consuming one less Energy.',
+                description: 'When you use a Power Ability with this weapon you have <span id="%id-affix-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span> of consuming one less Energy.',
                 decimals: [ 0 ],
                 quality: {
                     '1': [ 11 ],
@@ -50,7 +50,7 @@ swlcalc.data.signets = {
             {
                 id: 4,
                 name: 'Efficiency',
-                description: 'Your attacks and heals with this weapon have a <span class="stat-value const">50%</span> chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span>.',
+                description: 'Your attacks and heals with this weapon have a <span class="stat-value const">50%</span> chance to reduce the remaining cooldown time on your Elite Ability by <span id="%id-affix-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span>.',
                 decimals: [ 1 ],
                 quality: {
                     '1': [ 2 ],
@@ -62,7 +62,7 @@ swlcalc.data.signets = {
             {
                 id: 5,
                 name: 'Havoc',
-                description: '<span id="%id-signet-bonus-wrapper">+<span id="%id-signet-bonus1">%d</span>%</span> critical hit damage and critical healing.',
+                description: '<span id="%id-affix-bonus-wrapper">+<span id="%id-signet-bonus1">%d</span>%</span> critical hit damage and critical healing.',
                 decimals: [ 1 ],
                 quality: {
                     '1': [ 2.5 ],
@@ -74,7 +74,7 @@ swlcalc.data.signets = {
             {
                 id: 6,
                 name: 'Restoration',
-                description: 'When you hit or heal a target with this weapon you have a <span class="stat-value const">50%</span> chance to restore <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span> of your health (up to <span id="%id-signet-bonus2" class="stat-value heal">%d</span>).',
+                description: 'When you hit or heal a target with this weapon you have a <span class="stat-value const">50%</span> chance to restore <span id="%id-affix-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span> of your health (up to <span id="%id-signet-bonus2" class="stat-value heal">%d</span>).',
                 decimals: [ 2, 0 ],
                 quality: {
                     '1': [ 0.75, 150 ],
@@ -86,7 +86,7 @@ swlcalc.data.signets = {
             {
                 id: 7,
                 name: 'Recovery',
-                description: 'You receive <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span> more health from incoming heals.',
+                description: 'You receive <span id="%id-affix-bonus-wrapper"><span id="%id-signet-bonus1">%d</span>%</span> more health from incoming heals.',
                 decimals: [ 1 ],
                 quality: {
                     '1': [ 2.5 ],
@@ -98,7 +98,7 @@ swlcalc.data.signets = {
             {
                 id: 8,
                 name: 'Warding',
-                description: 'Increases Protection by <span id="%id-signet-bonus-wrapper"><span id="%id-signet-bonus1">%d</span></span> while wielded.',
+                description: 'Increases Protection by <span id="%id-affix-bonus-wrapper"><span id="%id-signet-bonus1">%d</span></span> while wielded.',
                 decimals: [ 0 ],
                 quality: {
                     '1': [ 525 ],

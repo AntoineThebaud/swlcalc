@@ -268,12 +268,6 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
         $('#' + this.id + '-recap-signet-bonus' + index).text(val);
     };
 
-    /* #slot-edit-signet-bonus-wrapper
-     * => not accessible through like this.el.signetBonusWrapper because this element doesn't exist at application start : */
-    this.setSignetBonusWrapper = function(newClass) {
-        $('#' + this.id + '-recap-signet-bonus-wrapper').attr('class', newClass);
-    };
-
     /* #slot-recap-affix : */
     this.setAffix = function(val) {
         this.el.affix.text('of '+ val);
@@ -287,5 +281,11 @@ swlcalc.gear.SlotRecap = function SlotRecap(slotData) {
     /* #slot-recap-affix-quality : */
     this.setAffixQuality = function(val) {
         this.el.affixQuality.text(val);
+    };
+
+    /* #slot-edit-affix-bonus-wrapper
+     * => not accessible through like this.el.signetBonusWrapper because this element doesn't exist at application start : */
+    this.setAffixBonusWrapper = function(newClass) {
+        $('#' + this.id + '-recap-affix-bonus-wrapper').attr('class', newClass);
     };
 };

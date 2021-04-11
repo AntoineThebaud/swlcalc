@@ -350,12 +350,6 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
         $('#' + this.id + '-edit-signet-bonus' + index).text(value);
     };
 
-    /* #slot-edit-signet-bonus-wrapper :
-     * (not accessible through like this.el.signetBonusWrapper because this element doesn't exist at application start) */
-    this.setSignetBonusWrapper = function(newClass) {
-        $('#' + this.id + '-edit-signet-bonus-wrapper').attr('class', newClass);
-    };
-
     /* #slot-edit-signet-img-item : */
     this.getSignetImgItem = function() {
         return this.el.signetImgItem.attr('src');
@@ -378,5 +372,11 @@ swlcalc.gear.SlotEdit = function SlotEdit(slotData) {
     };
     this.setSignetLabelLevel = function(arg) {
         this.el.signetLabelLevel.text(arg);
+    };
+
+    /* #slot-edit-affix-bonus-wrapper :
+     * (not accessible through like this.el.affixBonusWrapper because this element doesn't exist at application start) */
+    this.setAffixBonusWrapper = function(newClass) {
+        $('#' + this.id + '-edit-affix-bonus-wrapper').attr('class', newClass);
     };
 };

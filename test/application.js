@@ -154,7 +154,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-recap-signet-item").text(), "Warding");
     assert.equal($("#weapon2-recap-signet-rarity").html(), undefined);
     assert.equal($("#weapon2-recap-signet-level").html(), undefined);
-    assert.equal($("#weapon2-recap-signet-description").html(), "Increases Protection by <span id=\"weapon2-recap-signet-bonus-wrapper\" class=\"stat-value color-superior\"><span id=\"weapon2-recap-signet-bonus1\">1050</span></span> while wielded.");
+    assert.equal($("#weapon2-recap-signet-description").html(), "Increases Protection by <span id=\"weapon2-recap-affix-bonus-wrapper\" class=\"stat-value color-superior\"><span id=\"weapon2-recap-signet-bonus1\">1050</span></span> while wielded.");
     assert.equal($("#weapon2-recap-affix").html(), "of Warding");
     assert.equal($("#weapon2-recap-affix-quality").html(), "Mk II");
     assert.equal($("#weapon2-edit-ilvl").html(), "703");
@@ -186,7 +186,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#weapon2-edit-signet-rarity").val(), undefined);
     assert.equal($("#weapon2-edit-signet-level").val(), undefined);
     assert.equal($("#weapon2-edit-signet-img-rarity").attr('src'), undefined);
-    assert.equal($("#weapon2-edit-signet-description").html(), 'Increases Protection by <span id=\"weapon2-edit-signet-bonus-wrapper\" class=\"stat-value color-superior\"><span id=\"weapon2-edit-signet-bonus1\">1050</span></span> while wielded.');
+    assert.equal($("#weapon2-edit-signet-description").html(), 'Increases Protection by <span id=\"weapon2-edit-affix-bonus-wrapper\" class=\"stat-value color-superior\"><span id=\"weapon2-edit-signet-bonus1\">1050</span></span> while wielded.');
     assert.equal($("#weapon2-edit-signet-label-level").html(), undefined);
     assert.equal($("#weapon2-edit-signet-ilvl").html(), undefined);
 

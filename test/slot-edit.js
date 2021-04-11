@@ -175,7 +175,7 @@ QUnit.test("should return undefined or empty for elements that don't exist for t
     }
 });
 
-//TODO/TEST add test for setSignetBonusWrapper
+//TODO/TEST add test for setAffixBonusWrapper
 
 QUnit.module("slot-edit-integration-tests", {
     beforeEach: function(assert) {
@@ -384,4 +384,9 @@ QUnit.test("should set & get the slot's signet bonus value", function(assert) {
     swlcalc.gear.slots.luck.edit.setSignetBonusN(1, "1992.0804");
 
     assert.equal(swlcalc.gear.slots.luck.edit.getSignetBonusN(1), "1992.0804");
+});
+
+QUnit.test("should set the weapon's affix bonus value color", function(assert) {
+    swlcalc.gear.slots.weapon2.edit.setAffixBonusWrapper("myclass");
+    assert.equal($('#weapon2-edit-affix-bonus-wrapper').attr('class'), "myclass");
 });
