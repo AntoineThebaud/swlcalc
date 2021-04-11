@@ -1,18 +1,9 @@
 
-QUnit.module("summary-unit-tests", {
+QUnit.module("summary-dom-tests", {
     beforeEach: function(assert) {
-        renderGearOLD();
-        renderPassives();
         renderSummary();
-        renderAnimaAllocation();
-        initiateSummary();
-        initiateGearHandlers();
-        initiateAnimaAllocation();
-        initiatePassives();
     }
 });
-
-//TODO/TEST : to add a new test to check the accuracy of average ilvl of the gear
 
 QUnit.test("should have required summary in DOM", function(assert) {
     // Check all Main stats exist
@@ -50,47 +41,61 @@ QUnit.test("should have required summary in DOM", function(assert) {
     assert.ok($("#stat-agent3-bonus50").length !== 0, "stat-agent3-bonus50 exists");
 });
 
-/*QUnit.test("should update all stats", function(assert) {
-    createTankBuild();
+QUnit.module("summary-unit-tests", {
+    beforeEach: function(assert) {
+        includeSummary();
+    }
+});
 
-    swlcalc.summary.updateAllStats();
+QUnit.test("should compute primary stat", function(assert) {
+    assert.equal(swlcalc.summary.computePrimaryPower("cp", 5000, 5000), 750);
+    assert.equal(swlcalc.summary.computePrimaryPower("hp", 5000, 5000), 200);
+});
 
-    assert.equal($("#stat-power-rating").html(), "3730");
-    assert.equal($("#stat-weapon-power").html(), "1832");
-    assert.equal($("#stat-combat-power").html(), "646.2");
-    assert.equal($("#stat-healing-power").html(), "155.7");
-    assert.equal($("#stat-hit-points").html(), "13905");
-    assert.equal($("#stat-attack-rating").html(), "6784");
-    assert.equal($("#stat-heal-rating").html(), "5952");
+QUnit.test("should compute damage mitigation", function(assert) {
+    assert.equal(swlcalc.summary.computeDamageMitigation(1000), 3.9);
+    assert.equal(swlcalc.summary.computeDamageMitigation(10000), 29);
+    assert.equal(swlcalc.summary.computeDamageMitigation(100000), 80.3);
+});
 
-    assert.equal($("#stat-critical-rating").html(), "+841");
-    assert.equal($("#stat-critical-chance").html(), "13.8%");
-    assert.equal($("#stat-critical-power").html(), "+1008");
-    assert.equal($("#stat-critical-power-percentage").html(), "90.7%");
-    assert.equal($("#stat-hit-rating").html(), "+1244");
+QUnit.test("should compute secondary stat", function(assert) {
+    assert.equal(swlcalc.summary.computeSecondaryStat("critical-rating", 1000), 6.4);
+    assert.equal(swlcalc.summary.computeSecondaryStat("critical-rating", 10000), 48.8);
+    assert.equal(swlcalc.summary.computeSecondaryStat("critical-rating", 100000), 178.5);
+});
 
-    assert.equal($("#stat-protection").html(), "4895");
-    assert.equal($("#stat-damage-mitigation").html(), "16.6%");
-    assert.equal($("#stat-defense-rating").html(), "+1896");
-    assert.equal($("#stat-glance-chance").html(), "18.7%");
-    assert.equal($("#stat-evade-rating").html(), "+1896");
-    assert.equal($("#stat-evade-chance").html(), "13%");
+QUnit.test("should get combat power", function(assert) {
+    assert.equal(swlcalc.summary.combatPower(), 0);
+});
 
-    assert.equal($("#stat-agent1-bonus25").html(), "");
-    assert.equal($("#stat-agent1-bonus25").html(), "");
-    assert.equal($("#stat-agent2-bonus25").html(), "");
-    assert.equal($("#stat-agent2-bonus50").html(), "<span class=\"stat-value const\">+7%</span> Hammer Damage");
-    assert.equal($("#stat-agent3-bonus25").html(), "");
-    assert.equal($("#stat-agent3-bonus50").html(), "");
-});*/
+QUnit.test("should get healing power", function(assert) {
+    assert.equal(swlcalc.summary.healingPower(), 0);
+});
 
+QUnit.module("summary-integration-tests", {
+    beforeEach: function(assert) {
+        includeGear();
+        includeAnimaAllocation();
+        includeSummary();
+        includePassives();
 
-// TODO/TEST add test for updatePrimaryStats
+        createShuffledBuild();
+    }
+});
 
-// TODO/TEST add test for updateSecondaryStat
+QUnit.test("should compute the average ilvl", function(assert) {
+    assert.equal(swlcalc.summary.computeAverageILvl(9000), 1000);
+});
 
-// TODO/TEST add test for combatPower() (private function)
+QUnit.test("should retrieve amount from affix", function(assert) {
+    assert.equal(swlcalc.summary.retrieveAmountFromAffix("Havoc"), 0);
+    assert.equal(swlcalc.summary.retrieveAmountFromAffix("Warding"), 0);
 
-// TODO/TEST add test for healingPower() (private function)
+    swlcalc.gear.slots.weapon2.draw();
+    swlcalc.gear.slots.weapon.sheath();
 
-// TODO/TEST add test for updateOtherBonuses
+    assert.equal(swlcalc.summary.retrieveAmountFromAffix("Havoc"), 0);
+    assert.equal(swlcalc.summary.retrieveAmountFromAffix("Warding"), 1050);
+});
+
+// NB : the various update functions are already covered via slots, agents & passives tests

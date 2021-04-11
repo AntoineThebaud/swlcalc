@@ -5,6 +5,7 @@ QUnit.module("gear-integration-tests", {
         includeAnimaAllocation();
         includeSummary();
         includePassives();
+        
         createShuffledBuild();
     }
 });

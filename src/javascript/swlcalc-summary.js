@@ -271,12 +271,17 @@ swlcalc.summary = function() {
 
     var oPublic = {
         init: init,
+        computeAverageILvl: computeAverageILvl, // visibility for testing purpose only
         combatPower: combatPower,
         healingPower: healingPower,
         updatePrimaryStats: updatePrimaryStats,
+        computePrimaryPower: computePrimaryPower, // visibility for testing purpose only
+        computeDamageMitigation: computeDamageMitigation, // visibility for testing purpose only
         updateSecondaryStat: updateSecondaryStat,
+        computeSecondaryStat: computeSecondaryStat, // visibility for testing purpose only
         updateILvl: updateILvl,
-        updateOtherBonuses: updateOtherBonuses
+        updateOtherBonuses: updateOtherBonuses,
+        retrieveAmountFromAffix: retrieveAmountFromAffix // visibility for testing purpose only
     };
 
     return oPublic;

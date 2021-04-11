@@ -6,6 +6,7 @@ QUnit.module("export-integration-tests", {
         includeAnimaAllocation();
         includePassives();
         initiateExport();
+        
         createShuffledBuild();
     }
 });

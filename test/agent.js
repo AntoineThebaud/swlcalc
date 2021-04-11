@@ -56,6 +56,7 @@ QUnit.module("agent-integration-tests", {
     }
 });
 
+// TODO : check Summary has been updated
 QUnit.test("should set agent's id and do updates accordingly", function(assert) {
     assert.equal(swlcalc.gear.agents[2].getText25(), '<span class="stat-value gear">+150</span> Critical Power');
     assert.equal(swlcalc.gear.agents[2].getText50(), '<span class="stat-value dps">130</span> Damage on Critical Hits');
@@ -66,6 +67,7 @@ QUnit.test("should set agent's id and do updates accordingly", function(assert) 
     assert.equal(swlcalc.gear.agents[2].getText50(), '<span class="stat-value heal">29</span> Healing on Critical Heals');
 });
 
+// TODO : check Summary has been updated
 QUnit.test("should set agent's level and do updates accordingly", function(assert) {
     assert.equal(swlcalc.gear.agents[1].getText25(), '<span class="stat-value gear">+490</span> Hit Points');
     assert.equal(swlcalc.gear.agents[1].getText50(), '');
@@ -76,6 +78,7 @@ QUnit.test("should set agent's level and do updates accordingly", function(asser
     assert.equal(swlcalc.gear.agents[1].getText50(), '<span class="stat-value const">+7%</span> Blood Damage');
 });
 
+// TODO : check Summary has been updated
 QUnit.test("should reset the agent by setting default values for each select", function(assert) {
     assert.equal(swlcalc.gear.agents[0].getId(), '15');
     assert.equal(swlcalc.gear.agents[0].getText25(), '<span class="stat-value gear">+325</span> Heal Rating');
