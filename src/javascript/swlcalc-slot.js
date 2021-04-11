@@ -135,7 +135,6 @@ swlcalc.gear.Slot = function Slot(slotData) {
         // update max available level for equipment :
         var maxLvl = swlcalc.data.rarityMapping.toMaxLevel[newRarity];
         this.edit.setEquipmentLevelMax(maxLvl)
-        //this.edit.getEquipmentLevel(maxLvl);
         this.updateEquipmentLevel();
     };
 
@@ -570,6 +569,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Calculates item power for the given item that has quality attribute
      */
+    //TODO : move to gear scope instead ? or to -data-ilvl ? or util ?
     this.computeItemILvlWithQuality = function(element, rarity, quality, level) {
         var data = swlcalc.data.ilvl[element][rarity][quality];
         return data.init + data.perLevel * (level - 1);
@@ -578,6 +578,7 @@ swlcalc.gear.Slot = function Slot(slotData) {
     /**
      * Calculates item power for the given item that doesn't have quality attribute
      */
+    //TODO : move to gear scope instead ? or to -data-ilvl ? or util ?
     this.computeItemILvlWithoutQuality = function(element, rarity, level) {
         var data = swlcalc.data.ilvl[element][rarity];
         return data.init + data.perLevel * (level - 1);

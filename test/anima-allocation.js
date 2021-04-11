@@ -55,6 +55,7 @@ QUnit.module("anima-allocation-integration-tests", {
     }
 });
 
+// TODO : cover equipment's transformed values, signet bonuses, agents etc
 QUnit.test("should set anima allocation damage and do updates accordingly", function(assert) {
     swlcalc.animaAllocation.setDamagePercentage("33");
 
@@ -65,6 +66,7 @@ QUnit.test("should set anima allocation damage and do updates accordingly", func
     assert.equal($("#stat-agent3-bonus50").text(), '126 Damage on Critical Hits');
 });
 
+// TODO : cover equipment's transformed values, signet bonuses, agents etc
 QUnit.test("should set anima allocation damage and do updates accordingly", function(assert) {
     swlcalc.animaAllocation.setHealingPercentage("22");
 
@@ -75,6 +77,7 @@ QUnit.test("should set anima allocation damage and do updates accordingly", func
     assert.equal($("#stat-agent1-bonus50").text(), '30 Healing on Critical Heals');
 });
 
+// TODO : cover equipment's transformed values, signet bonuses, agents etc
 QUnit.test("should set anima allocation damage and do updates accordingly", function(assert) {
     swlcalc.animaAllocation.setSurvivabilityPercentage("11");
 
