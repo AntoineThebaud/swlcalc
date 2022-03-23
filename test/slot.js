@@ -254,9 +254,9 @@ QUnit.test("should update elements related to signet's level accordingly", funct
 
 QUnit.test("should update elements related to signet's bonus accordingly", function(assert) {
     $("#stat-combat-power").html("9999");
-    swlcalc.gear.slots.luck.updateSignetBonus();
+    swlcalc.gear.slots.weapon.updateSignetBonus();
 
-    assert.equal(swlcalc.gear.slots.luck.edit.getSignetBonusN(1), "3500");
+    assert.equal(swlcalc.gear.slots.weapon.edit.getSignetBonusN(1), "10699");
 });
 
 QUnit.test("should update elements related to signet's ilvl accordingly", function(assert) {

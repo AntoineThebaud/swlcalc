@@ -259,10 +259,12 @@ swlcalc.gear.Slot = function Slot(slotData) {
         var statForComputation = 0;
 
         for (i = 0; i < equipmentData.coefficients.length; i++) {
-            if (equipmentData.stats[i] == 'Combat Power') {
+            if (equipmentData.stats[i] == 'Combat Power') { // TODO use shared const instead of hardcoded string
                 statForComputation = swlcalc.summary.combatPower();
-            } else if (equipmentData.stats[i] == 'Healing Power') {
+            } else if (equipmentData.stats[i] == 'Healing Power') { // TODO use shared const instead of hardcoded string
                 statForComputation = swlcalc.summary.healingPower();
+            } else if (equipmentData.stats[i] == 'Hit Points') { // TODO use shared const instead of hardcoded string
+                statForComputation = swlcalc.summary.hitPoints();
             }
             var newBonusVal = Math.round(equipmentData.coefficients[i] * statForComputation)
             this.edit.setEquipmentBonusN(i + 1, newBonusVal);
@@ -443,12 +445,15 @@ swlcalc.gear.Slot = function Slot(slotData) {
 
         var signet = swlcalc.data.signets.slot[this.kind][this.edit.getSignetId() - 1]
         var levelMultiplier = this.edit.getSignetLevel() - 1;
-        // coefficient in case CP or HP is used in the bonus computation
+
+        // coefficient defaults to 1, but is set to the corresponding stat if applies
         var coef = 1
-        if (signet.stat == 'Combat Power') {
+        if (signet.stat == 'Combat Power') { // TODO use shared const instead of hardcoded string
             coef = swlcalc.summary.combatPower();
-        } else if (signet.stat == 'Healing Power') {
+        } else if (signet.stat == 'Healing Power') { // TODO use shared const instead of hardcoded string
             coef = swlcalc.summary.healingPower();
+        } else if (signet.stat == 'Hit Points') { // TODO use shared const instead of hardcoded string
+            coef = swlcalc.summary.hitPoints();
         }
 
         if (this.isWeapon()) {

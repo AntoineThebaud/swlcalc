@@ -214,7 +214,6 @@ QUnit.test("should set Base/AR and affect the whole calculator accordingly", fun
     assert.equal($("#stat-combat-power").text(), "574.4");
     assert.equal(swlcalc.gear.agents[2].getText50(), "<span class=\"stat-value dps\">123</span> Damage on Critical Hits");
     assert.equal(swlcalc.gear.slots.weapon.edit.getSignetDescription(), "This weapon deals <span id=\"weapon-edit-signet-bonus1\" class=\"stat-value dps\">614</span> additional damage to enemies that are below <span class=\"stat-value const\">35%</span> health.");
-    assert.equal(swlcalc.gear.slots.luck.edit.getSignetDescription(), "When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id=\"luck-edit-signet-bonus1\" class=\"stat-value dps\">201</span> when they hit you for <span class=\"stat-value const\">5</span> seconds. This damage scales with your Maximum Health.");
 });
 
 QUnit.test("should set Base/HR and affect the whole calculator accordingly", function(assert) {
@@ -243,7 +242,6 @@ QUnit.test("should set Passives Skills/AR and affect the whole calculator accord
     assert.equal($("#stat-combat-power").text(), "627.8");
     assert.equal(swlcalc.gear.agents[2].getText50(), "<span class=\"stat-value dps\">135</span> Damage on Critical Hits");
     assert.equal(swlcalc.gear.slots.weapon.edit.getSignetDescription(), "This weapon deals <span id=\"weapon-edit-signet-bonus1\" class=\"stat-value dps\">671</span> additional damage to enemies that are below <span class=\"stat-value const\">35%</span> health.");
-    assert.equal(swlcalc.gear.slots.luck.edit.getSignetDescription(), "When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id=\"luck-edit-signet-bonus1\" class=\"stat-value dps\">219</span> when they hit you for <span class=\"stat-value const\">5</span> seconds. This damage scales with your Maximum Health.");
 });
 
 QUnit.test("should set Passives Skills/HR and affect the whole calculator accordingly", function(assert) {
@@ -320,7 +318,6 @@ QUnit.test("should set Capstones/AR and affect the whole calculator accordingly"
     assert.equal($("#stat-combat-power").text(), "565.4");
     assert.equal(swlcalc.gear.agents[2].getText50(), "<span class=\"stat-value dps\">121</span> Damage on Critical Hits");
     assert.equal(swlcalc.gear.slots.weapon.edit.getSignetDescription(), "This weapon deals <span id=\"weapon-edit-signet-bonus1\" class=\"stat-value dps\">605</span> additional damage to enemies that are below <span class=\"stat-value const\">35%</span> health.");
-    assert.equal(swlcalc.gear.slots.luck.edit.getSignetDescription(), "When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id=\"luck-edit-signet-bonus1\" class=\"stat-value dps\">198</span> when they hit you for <span class=\"stat-value const\">5</span> seconds. This damage scales with your Maximum Health.");
 });
 
 QUnit.test("should set Capstones/HR and affect the whole calculator accordingly", function(assert) {

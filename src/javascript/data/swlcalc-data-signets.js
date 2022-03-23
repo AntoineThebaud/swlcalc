@@ -1575,29 +1575,29 @@ swlcalc.data.signets = {
                 type: 'All',
                 description: 'When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id="%id-signet-bonus1" class="stat-value dps">%d</span> when they hit you for <span class="stat-value const">5</span> seconds. This damage scales with your Maximum Health.',
                 decimals: [ 0 ],
-                ratio: {
+                ratio: { // TODO wrong figures ! extrapolated from the lvl 1 standard figure found here https://www.tswdb.com/miscellaneous/signets/ + pre-rebalance patch figures (all in all : ~ divided by 10 compared to before)
                     'standard': {
-                        init: [ 0.004 ],
-                        perLevel: [ 0.0226/19 ] // == (0.0266 - 0.004) / (20 - 1)
+                        init: [ 0.0003 ],
+                        perLevel: [ 0.0024/19 ] // == (0.0027 - 0.0003) / (20 - 1)
                     },
                     'superior': {
-                        init: [ 0.0333 ],
-                        perLevel: [ 0.0372/19 ] // == (0.0705 - 0.0333) / (20 - 1)
+                        init: [ 0.0033 ],
+                        perLevel: [ 0.0037/19 ] // == (0.0071 - 0.0033) / (20 - 1)
                     },
                     'epic': {
-                        init: [ 0.0818 ],
-                        perLevel: [ 0.0466/19 ] // == (0.1284 - 0.0818) / (20 - 1)
+                        init: [ 0.0082 ],
+                        perLevel: [ 0.0046/19 ] // == (0.0128 - 0.0082) / (20 - 1)
                     },
                     'mythic': {
-                        init: [ 0.1477 ],
-                        perLevel: [ 0.0592/19 ] // == (0.2069 - 0.1477) / (20 - 1)
+                        init: [ 0.0148 ],
+                        perLevel: [ 0.0059/19 ] // == (0.0207 - 0.0148) / (20 - 1)
                     },
                     'legendary': {
-                        init: [ 0.2309 ],
-                        perLevel: [ 0.1191/19 ] // == (0.35 - 0.2309) / (20 - 1)
+                        init: [ 0.0231 ],
+                        perLevel: [ 0.0119/19 ] // == (0.035 - 0.0231) / (20 - 1)
                     }
                 },
-                stat: 'Combat Power'
+                stat: 'Hit Points'
             },
             {
                 id: 9,

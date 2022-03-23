@@ -469,7 +469,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#luck-recap-signet-item").text(), "Signet of Thorns");
     assert.equal($("#luck-recap-signet-rarity").html(), "Legendary");
     assert.equal($("#luck-recap-signet-level").html(), "20");
-    assert.equal($("#luck-recap-signet-description").text(), "When you activate a Signature ability, gain a beneficial effect that damages attackers for 211 when they hit you for 5 seconds. This damage scales with your Maximum Health.");
+    assert.equal($("#luck-recap-signet-description").text(), "When you activate a Signature ability, gain a beneficial effect that damages attackers for 543 when they hit you for 5 seconds. This damage scales with your Maximum Health.");
     assert.equal($("#luck-recap-affix").html(), undefined);
     assert.equal($("#luck-recap-affix-quality").html(), undefined);
     assert.equal($("#luck-edit-ilvl").html(), "193");
@@ -501,7 +501,7 @@ QUnit.test("should import from hash", function(assert) {
     assert.equal($("#luck-edit-signet-rarity").val(), "legendary");
     assert.equal($("#luck-edit-signet-level").val(), "20");
     assert.equal($("#luck-edit-signet-img-rarity").attr('src'), "assets/images/icons/rarity/legendary-42x42.png");
-    assert.equal($("#luck-edit-signet-description").text(), 'When you activate a Signature ability, gain a beneficial effect that damages attackers for 211 when they hit you for 5 seconds. This damage scales with your Maximum Health.');
+    assert.equal($("#luck-edit-signet-description").text(), 'When you activate a Signature ability, gain a beneficial effect that damages attackers for 543 when they hit you for 5 seconds. This damage scales with your Maximum Health.');
     assert.equal($("#luck-edit-signet-label-level").html(), "20");
     assert.equal($("#luck-edit-signet-ilvl").html(), "193");
 

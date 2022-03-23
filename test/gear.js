@@ -73,7 +73,6 @@ QUnit.test("should update all signets bonuses accordingly", function(assert) {
     $("#stat-combat-power").html("1000");
     swlcalc.gear.updateSignetsBonuses();
     assert.equal(swlcalc.gear.slots.weapon.edit.getSignetDescription(), "This weapon deals <span id=\"weapon-edit-signet-bonus1\" class=\"stat-value dps\">1070</span> additional damage to enemies that are below <span class=\"stat-value const\">35%</span> health.");
-    assert.equal(swlcalc.gear.slots.luck.edit.getSignetDescription(), "When you activate a Signature ability, gain a beneficial effect that damages attackers for <span id=\"luck-edit-signet-bonus1\" class=\"stat-value dps\">350</span> when they hit you for <span class=\"stat-value const\">5</span> seconds. This damage scales with your Maximum Health.");
 });
 
 QUnit.test("should update all agents bonuses accordingly", function(assert) {

@@ -255,6 +255,13 @@ swlcalc.summary = function() {
     }
 
     /**
+     * Getter for Hit Points
+     */
+    var hitPoints = function() {
+        return parseInt($('#stat-hit-points').text());
+    }
+
+    /**
      * Retrieve the amount of stats brought by the provided Affix
      * /!\ As of now should only be used either with Havoc or Warding
      */
@@ -274,6 +281,7 @@ swlcalc.summary = function() {
         computeAverageILvl: computeAverageILvl, // visibility for testing purpose only
         combatPower: combatPower,
         healingPower: healingPower,
+        hitPoints: hitPoints,
         updatePrimaryStats: updatePrimaryStats,
         computePrimaryPower: computePrimaryPower, // visibility for testing purpose only
         computeDamageMitigation: computeDamageMitigation, // visibility for testing purpose only
