@@ -5,9 +5,17 @@ swlcalc is a fan-made gear planner for Secret World Legends (SWL), a MMORPG by F
 
 swlcalc can be found at : http://AntoineThebaud.github.io/swlcalc
 
-This project is still under development. Some features to be released can be found in the [swlcalc features board](https://github.com/AntoineThebaud/swlcalc/projects/1). Feel free to suggest new features in the [issues](https://github.com/AntoineThebaud/swlcalc/issues) !
+Some features yet to be released can be found in the [swlcalc features board](https://github.com/AntoineThebaud/swlcalc/projects/1). Feel free to drop suggestions in the [issues](https://github.com/AntoineThebaud/swlcalc/issues) !
 
 # Contributing
+
+## Disclaimer
+
+swlcalc is in maintenance mode for quite some time now. There are still [features & improvements](https://github.com/AntoineThebaud/swlcalc/projects) that could be considered, but the main functionalities are long implemented. For sure this is also due to the fact that SWL didn't get any major update since Sept 2020.
+
+swlcalc code & the technologies it relies on are quite old fashioned and no longer in line with modern Javascript standards. Actually this has always been the case from the beginning of the project, as this was [already true for tswcalc](https://github.com/joakibj/tswcalc/issues/49). The goal when building swlcalc at the time was indeed to quickly come up with a working app, hence this choice. Thus be aware if you ever come around here and would like to contribute. Despite this be assured that contributions are still welcome :)
+
+## General
 
 Pull requests are welcome! All active development of swlcalc takes place in the [`develop`](https://github.com/AntoineThebaud/swlcalc/tree/develop) branch. The tip of [`master`](https://github.com/AntoineThebaud/swlcalc/tree/master) always points to the latest, stable release. All releases are tagged. The latest release is deployed to the [`gh-pages`](https://github.com/joakibj/tswcalc/tree/gh-pages) branch.
 
