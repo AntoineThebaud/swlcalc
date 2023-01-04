@@ -1,6 +1,6 @@
 {
   "name": "swlcalc",
-  "version": "2.10.3",
+  "version": "2.10.4",
   "author": "Antoine THEBAUD <antoine.thebaud@yahoo.fr>",
   "description": "Gear planner for Secret World Legends",
   "repository": {
@@ -21,7 +21,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "grunt": "~1.1.0",
+    "grunt": "~1.5.3",
     "grunt-contrib-clean": "~2.0.0",
     "grunt-contrib-compress": "~1.5.0",
     "grunt-contrib-concat": "~1.0.1",
